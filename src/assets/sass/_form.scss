@@ -1,0 +1,221 @@
+@import './variables';
+
+.kata {
+  &-form {
+    &__element {
+      margin-bottom: 16px;
+    }
+
+    &__element-column {
+      display: flex;
+      flex-wrap: wrap;
+      .kata-form__element {
+        flex: 1 1 0;
+        &:nth-child(2n) {
+          margin-left: $space-4;
+        }
+      }
+    }
+
+    &__tag {
+      &-label {
+        font-size: 11px;
+        line-height: 1.45;
+        display: inline-block;
+        margin-top: 4px;
+
+        color: $gray-60;
+      }
+    }
+
+    &__label {
+      font-size: 12px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: 0.2px;
+      text-align: left;
+      color: $gray-50;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    &__error-label {
+      margin: 4px 0;
+      color: $red;
+      display: block;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    &__input {
+      &-text {
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        display: block;
+        border-radius: 6px;
+
+        background-color: #ffffff;
+        border: solid 1px $gray-30;
+        padding: 8px 16px;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0);
+        transition: all $transition-fast $transition-easing;
+        outline: none;
+
+        &:disabled {
+          background-color: $gray-10;
+          border-color: $gray-30;
+        }
+
+        &:hover:not(:disabled):not(.disabled) {
+          background-color: $gray-10;
+          border: solid 1px $kata-blue;
+        }
+
+        &:active:not(:disabled):not(.disabled),
+        &:focus:not(:disabled):not(.disabled) {
+          background-color: #ffffff;
+          border: solid 1px $kata-blue;
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 0 4px $soft-kata-blue;
+        }
+
+        &--error {
+          border: solid 1px $red;
+        }
+
+        &__line {
+          border: none;
+          border-bottom: solid 1px $gray-30;
+          border-radius: 0;
+
+          &:hover:not(:disabled):not(.disabled) {
+            border: none;
+            border-bottom: solid 1px $kata-blue;
+            background: transparent;
+          }
+
+          &:focus:not(:disabled):not(.disabled),
+          &:active:not(:disabled):not(.disabled) {
+            border: none;
+            box-shadow: none;
+            border-bottom: solid 1px $kata-blue;
+          }
+        }
+      }
+
+      &-number {
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          opacity: 1;
+        }
+      }
+
+      &-select {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        border-radius: 6px;
+        background-color: $white;
+        border: solid 1px $gray-30;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0);
+        transition: all $transition-fast $transition-easing;
+        outline: none;
+
+        &:hover:not(:disabled):not(.disabled) {
+          background-color: $gray-10;
+          border: solid 1px $kata-blue;
+        }
+
+        &:active:not(:disabled):not(.disabled),
+        &:focus:not(:disabled):not(.disabled) {
+          background-color: $white;
+          border: solid 1px $kata-blue;
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 0 4px $soft-kata-blue;
+        }
+
+        &--error {
+          border: solid 1px $red;
+        }
+
+        &--icon {
+          color: #333333;
+          padding-right: 4px;
+          vertical-align: middle !important;
+        }
+
+        &--disabled,
+        &--disabled:focus,
+        &--disabled:active,
+        &--disabled:hover {
+          background-color: $gray-10 !important;
+          border-color: $gray-30 !important;
+          box-shadow: none !important;
+        }
+      }
+
+      &-check {
+        &-label {
+          margin-bottom: 0;
+          // line-height: 16px;
+        }
+      }
+    }
+
+    .input-group-icon {
+      justify-content: center;
+      padding: 0;
+      width: 38px;
+      border-color: $gray-30;
+      background-color: $gray-10;
+      border-radius: $border-radius-medium;
+
+      i:before {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &-info {
+    &__container {
+      margin-bottom: 24px;
+    }
+
+    &__label {
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      margin-bottom: 4px;
+
+      color: $gray-50;
+    }
+
+    &__content {
+      font-weight: 500;
+      margin-bottom: 8px;
+
+      color: $gray-70;
+    }
+  }
+}
+
+.has-error {
+  .kata-form__input-text,
+  .kata-form__input-select {
+    border: solid 1px $red;
+    &:active,
+    &:focus {
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 0 4px lighten($red, 30);
+    }
+  }
+}
+
+.form-control {
+  &:disabled,
+  &.disabled {
+    background-color: $gray-10;
+    border-color: $gray-30;
+    cursor: not-allowed;
+  }
+}

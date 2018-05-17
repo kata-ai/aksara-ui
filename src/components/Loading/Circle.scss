@@ -1,0 +1,13 @@
+@import '../../assets/sass/variables';
+
+.kata-loader-circle {
+  display: inline-block;
+  vertical-align: middle;
+  /*
+    Set the color of the icon
+  */
+  svg path,
+  svg rect {
+    fill: $kata-blue;
+  }
+}

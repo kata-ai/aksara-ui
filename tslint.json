@@ -1,0 +1,6 @@
+{
+  "extends": ["tslint-config-kata"],
+  "rules": {
+    "interface-name": false
+  }
+}

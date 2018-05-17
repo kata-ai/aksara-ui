@@ -1,0 +1,23 @@
+@import 'custom/mixins';
+
+@include font-face(
+  'MuseoSansRounded',
+  '../fonts/museo-sans/MuseoSansRounded-300',
+  300,
+  normal,
+  otf
+);
+@include font-face(
+  'MuseoSansRounded',
+  '../fonts/museo-sans/MuseoSansRounded-500',
+  500,
+  normal,
+  otf
+);
+@include font-face(
+  'MuseoSansRounded',
+  '../fonts/museo-sans/MuseoSansRounded-700',
+  700,
+  normal,
+  otf
+);
