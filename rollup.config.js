@@ -25,7 +25,16 @@ export default {
       format: 'es'
     }
   ],
-  external: ['classnames', 'moment', 'react-dates', 'react-custom-scrollbars', 'shortid'],
+  external: [
+    'classnames',
+    'dom-helpers',
+    'lodash-es',
+    'moment',
+    'react-custom-scrollbars',
+    'react-dates',
+    'react-overlays',
+    'shortid'
+  ],
   plugins: [
     external(),
     typescript(),

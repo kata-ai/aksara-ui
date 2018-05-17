@@ -6,3 +6,4 @@ export * from './Loading';
 export * from './Modal';
 export * from './Pagination';
 export * from './SplitButton';
+export * from './Tooltip';
