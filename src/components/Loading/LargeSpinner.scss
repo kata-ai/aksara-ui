@@ -1,0 +1,39 @@
+$colors: #2a90ff, #2662cf, #19428c, #001b8a, #2662cf, #2a90ff, #19428c, #001b8a;
+body {
+  background-color: #f6f7f8;
+}
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  height: 20px;
+  width: 20px;
+  transform: translate(-50%, -50%);
+}
+[class^='ball-'] {
+  position: absolute;
+  display: block;
+  left: 30px;
+  width: 8px;
+  height: 8px;
+  border-radius: 6px;
+  transition: all 0.5s;
+  animation: circleRotate 4s both infinite;
+  transform-origin: 0 250% 0;
+}
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+@for $i from 1 through 8 {
+  .ball-#{$i} {
+    z-index: -#{$i};
+    background-color: nth($colors, $i);
+    animation-timing-function: cubic-bezier(0.5, 0.3 * $i, 0.9, 0.9);
+  }
+}
