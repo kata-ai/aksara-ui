@@ -1,0 +1,37 @@
+@import '../../assets/sass/variables';
+
+$placements: (
+  top,
+  right,
+  bottom,
+  left
+);
+
+@mixin tooltipArrowMods($placements) {
+  @each $place in $placements {
+    &__#{$place} {
+      .kata-tooltip__arrow::before {
+        border-#{$place}-color: $gray-80;
+      }
+    }
+  }
+}
+
+.kata-tooltip {
+  @include tooltipArrowMods($placements);
+
+  &__inner {
+    text-align: center;
+    border-radius: 2px;
+    font-size: 9px;
+    letter-spacing: 0.2px;
+    line-height: 1.33;
+    max-height: 56px;
+    overflow: scroll;
+    padding: 4px;
+    width: 128px;
+
+    color: $gray-40;
+    background-color: $gray-80;
+  }
+}
