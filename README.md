@@ -12,6 +12,12 @@ npm install --save kata-kit
 
 ## Usage
 
+first import css file in your entry files
+```
+import 'kata-kit/dist/style.css';
+```
+
+then you can use kata-kit component from other files
 ```jsx
 import React, { Component } from 'react'
 
