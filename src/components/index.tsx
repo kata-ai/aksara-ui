@@ -1,3 +1,5 @@
+import '../assets/fonts/kata-icons/kata-icons.css';
+
 export * from './Banner';
 export * from './Button';
 export * from './DateRangePicker';
