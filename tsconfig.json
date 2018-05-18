@@ -25,12 +25,15 @@
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "pretty": true,
-    "removeComments": true
+    "removeComments": true,
   },
   "exclude": [
     "node_modules",
     "dist",
     "jest",
     "src/assets"
-  ]
+  ],
+  // "include": [
+  //   "svg.d.ts"
+  // ]
 }
