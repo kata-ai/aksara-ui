@@ -11,6 +11,7 @@
   "scripts": {
     "test": "cross-env CI=1 node scripts/test.js",
     "test:watch": "node scripts/test.js",
+    "test:coverage": "node scripts/test.js --coverage",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
@@ -83,23 +84,15 @@
     "tslint-config-kata": "^1.0.4",
     "typescript": "^2.8.3"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "jest": {
     "collectCoverageFrom": [
-      "src/components/**/*.{js,jsx,ts,tsx}"
+      "src/components/**/*.{tsx}",
+      "!src/components/index.tsx"
     ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ],
+    "coverageReporters": ["json", "lcov"],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
     "testMatch": [
       "<rootDir>/src/__tests__/**/*.ts?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).ts?(x)"
@@ -114,10 +107,7 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
     ],
-    "moduleDirectories": [
-      "node_modules",
-      "<rootDir>/src/"
-    ],
+    "moduleDirectories": ["node_modules", "<rootDir>/src/"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
