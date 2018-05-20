@@ -2,7 +2,7 @@
 
 > UI Kit for React from Kata.ai
 
-[![NPM](https://img.shields.io/npm/v/kata-kit.svg)](https://www.npmjs.com/package/kata-kit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/kata-kit.svg)](https://www.npmjs.com/package/kata-kit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)[![Build Status](https://travis-ci.org/kata-ai/kata-kit.svg?branch=master)](https://travis-ci.org/kata-ai/kata-kit)
 
 ## Install
 
@@ -13,11 +13,13 @@ npm install --save kata-kit
 ## Usage
 
 first import css file in your entry files
+
 ```
 import 'kata-kit/dist/style.css';
 ```
 
 then you can use kata-kit component from other files
+
 ```jsx
 import React, { Component } from 'react'
 
