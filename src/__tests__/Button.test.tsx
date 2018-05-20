@@ -1,6 +1,5 @@
 import React from 'react';
 import Enzyme from 'enzyme';
-import sinon from 'sinon';
 
 const EnzymeAdapter = require('enzyme-adapter-react-16');
 
@@ -16,7 +15,6 @@ describe('Button component', () => {
     const ele = shallow(<Button>Confirm</Button>);
 
     expect(ele.containsMatchingElement(<button>Confirm</button>)).toBeTruthy();
-    expect(ele.find('.kata-btn').exists()).toBeTruthy();
     expect(ele.find('.kata-btn').exists()).toBeTruthy();
     expect(ele.find('.kata-btn__secondary').exists()).toBeTruthy();
     expect(ele.find('.btn-outline-secondary').exists()).toBeFalsy();
