@@ -1,0 +1,104 @@
+// @import 'assets/sass/typography';
+@import 'assets/sass/variables';
+
+$card-background: #fff;
+$card-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+$card-border-radius: 8px;
+$card-heading-padding: 16px 16px 8px 24px;
+$card-body-margin: 8px 24px;
+
+@keyframes card-fade-in {
+  from {
+    transform: translateY(5px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kata {
+  &-card {
+    display: flex;
+    flex-direction: column;
+    background: $card-background;
+    box-shadow: $card-shadow;
+    border-radius: $card-border-radius;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    animation: card-fade-in $transition-normal $transition-easing;
+
+    &--disabled {
+      background: $gray-10 !important;
+      box-shadow: none !important;
+      border: 1px solid $gray-30;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    &__heading {
+      padding: $card-heading-padding;
+      display: flex;
+
+      &--ellipsis {
+        width: 1px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &-title {
+        // @extend .heading2;
+        flex: 1 0 auto;
+      }
+
+      &-action {
+        flex: 0 1 auto;
+      }
+    }
+
+    &__body {
+      padding: $card-body-margin;
+      &--as-button {
+        align-self: center;
+      }
+    }
+
+    &__button {
+      cursor: pointer;
+      padding: 24px 48px;
+      text-align: center;
+
+      &-icon {
+        font-size: 32px;
+        color: $kata-blue;
+      }
+
+      &-label {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.54;
+        color: $kata-blue;
+      }
+    }
+
+    &__icon-add {
+      font-size: xx-large;
+      color: $kata-blue;
+    }
+
+    &__avatar {
+      width: 40px;
+      height: 40px;
+      border: solid 1px $gray-30;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
