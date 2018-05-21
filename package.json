@@ -1,6 +1,6 @@
 {
   "name": "kata-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "UI Kit for React from Kata.ai",
   "author": "kata-ai",
   "license": "MIT",
@@ -86,15 +86,28 @@
     "tslint-config-kata": "^1.0.4",
     "typescript": "^2.8.3"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "jest": {
     "collectCoverageFrom": [
       "src/components/**/*.{tsx}",
       "!src/components/index.tsx"
     ],
-    "coverageReporters": ["json", "lcov"],
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+    "coverageReporters": [
+      "json",
+      "lcov"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
     "testMatch": [
       "<rootDir>/src/__tests__/**/*.ts?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).ts?(x)"
@@ -109,7 +122,10 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
     ],
-    "moduleDirectories": ["node_modules", "<rootDir>/src/"],
+    "moduleDirectories": [
+      "node_modules",
+      "<rootDir>/src/"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
