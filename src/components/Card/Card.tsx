@@ -1,5 +1,4 @@
-import React from 'react';
-import { CSSProperties } from 'react';
+import React, { CSSProperties } from 'react';
 import classNames from 'classnames';
 
 import './Card.scss';
@@ -18,9 +17,17 @@ interface Props {
 
 export default class Card extends React.Component<Props> {
   render() {
-    const classes = `kata-card ${this.props.className || ''} ${
-      this.props.disabled ? 'kata-card--disabled' : ''
-    }`;
+    const classes = classNames(
+      'kata-card',
+      this.props.disabled && 'kata-card--disabled',
+      this.props.className
+    );
+
+    const innerClasses = classNames({
+      'kata-card__body': true,
+      'kata-card__body--as-button': this.props.asButton
+    });
+
     return this.props.noWrap ? (
       <div
         className={classes}
@@ -59,14 +66,7 @@ export default class Card extends React.Component<Props> {
             )}
           </div>
         ) : null}
-        <div
-          className={classNames({
-            'kata-card__body': true,
-            'kata-card__body--as-button': this.props.asButton
-          })}
-        >
-          {this.props.children}
-        </div>
+        <div className={innerClasses}>{this.props.children}</div>
       </div>
     );
   }
