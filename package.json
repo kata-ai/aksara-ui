@@ -18,7 +18,7 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "prepublish": "cross-env NODE_ENV=production npm run build",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "report-coverage": "codecov -f ./coverage/*.json",
     "commit": "git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS"
   },
@@ -57,8 +57,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^4.1.1",
+    "codecov": "^3.0.2",
     "commitizen": "^2.9.6",
-    "coveralls": "^3.0.1",
     "cross-env": "^5.1.4",
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
