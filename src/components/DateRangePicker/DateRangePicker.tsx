@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { DateRangePicker } from 'react-dates';
 
+import '../../assets/sass/vendor/react-dates.scss';
 import './DateRangePicker.scss';
 
 interface Props {
