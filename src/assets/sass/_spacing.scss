@@ -1,4 +1,4 @@
-@import 'assets/sass/variables';
+@import './variables';
 
 @each $prop, $abbrev in (margin: m, padding: p) {
   @each $length in $space-list {
