@@ -1,4 +1,7 @@
+import 'bootstrap/scss/bootstrap.scss';
+
 import '../assets/fonts/kata-icons/kata-icons.css';
+import '../assets/sass/kata-style.scss';
 
 export * from './Banner';
 export * from './Button';
