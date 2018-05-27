@@ -3,7 +3,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 import DrawerContext from './DrawerContext';
 
-interface Props {
+export interface Props {
   children: any;
   className?: string;
 }

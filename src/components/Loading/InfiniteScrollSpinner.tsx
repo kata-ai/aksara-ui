@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import './InfiniteScrollSpinner.scss';
 
-interface Props {
+export interface Props {
   bsStyle?: string;
   sm?: boolean;
   lg?: boolean;

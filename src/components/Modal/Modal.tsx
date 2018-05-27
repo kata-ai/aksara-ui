@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 
 import ModalWrapper from './ModalWrapper';
 
-interface Props {
+export interface Props {
   show: boolean;
   noBackdrop?: boolean;
   onClose(): void;
 }
 
-interface States {
+export interface States {
   show: boolean;
   visible: boolean;
 }

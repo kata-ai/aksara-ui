@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 
-type State = 'error' | 'success' | 'warning' | 'info';
+export type State = 'error' | 'success' | 'warning' | 'info';
 
-interface Props {
+export interface Props {
   state: State;
   message: any;
   className?: string;

@@ -3,7 +3,7 @@ import shortid from 'shortid';
 
 import './Circle.scss';
 
-interface Props {
+export interface Props {
   size?: number;
   className?: string;
 }

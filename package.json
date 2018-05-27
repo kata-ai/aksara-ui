@@ -6,6 +6,7 @@
   "license": "MIT",
   "repository": "kata-ai/kata-kit",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {

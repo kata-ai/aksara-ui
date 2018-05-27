@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import './Card.scss';
 
-interface Props {
+export interface Props {
   title?: string;
   action?: any;
   asButton?: boolean;

@@ -7,7 +7,7 @@ import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
 import { Button } from '../Button';
 
-interface Props {
+export interface Props {
   title?: string;
   message?: any;
   okLabel?: string;

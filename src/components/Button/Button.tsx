@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { Circle } from '../Loading';
 
-type Color =
+export type Color =
   | 'primary'
   | 'secondary'
   | 'success'
@@ -12,7 +12,7 @@ type Color =
   | 'info'
   | 'white';
 
-interface Props {
+export interface Props {
   disabled?: boolean;
   color?: Color;
   size?: 'lg' | 'sm' | '';

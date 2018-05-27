@@ -3,14 +3,14 @@ import isNumber from 'lodash-es/isNumber';
 
 import { Button } from 'components/Button';
 
-interface Props {
+export interface Props {
   className?: string;
   current: number;
   total: number;
   onSelect(page: number): void;
 }
 
-interface States {}
+export interface States {}
 
 class Pagination extends Component<Props, States> {
   generatePages = () => {

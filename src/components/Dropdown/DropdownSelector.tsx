@@ -8,7 +8,7 @@ import { Circle } from 'components/Loading';
 
 import './DropdownSelector.scss';
 
-interface Props {
+export interface Props {
   value?: string | number | boolean;
   placeholder?: string;
   block?: boolean;
@@ -18,7 +18,7 @@ interface Props {
   onSelect?(value: string): void;
 }
 
-interface States {}
+export interface States {}
 
 class DropdownSelector extends React.PureComponent<Props, States> {
   static defaultProps = {

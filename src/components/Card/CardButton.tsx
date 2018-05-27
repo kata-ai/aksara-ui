@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-interface Props {
+export interface Props {
   label: string;
   icon?: string;
   className?: string;

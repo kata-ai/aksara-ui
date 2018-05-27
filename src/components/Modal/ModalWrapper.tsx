@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import './Modal.scss';
 
-interface Props {
+export interface Props {
   noBackdrop?: boolean;
   show: boolean;
   visible: boolean;

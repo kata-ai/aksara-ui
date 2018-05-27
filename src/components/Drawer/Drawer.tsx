@@ -4,14 +4,14 @@ import classnames from 'classnames';
 
 import DrawerContext from './DrawerContext';
 
-interface Props {
+export interface Props {
   children?: any;
   isOpen: boolean;
   noBackdrop?: boolean;
   className?: string;
   onClose(): void;
 }
-interface State {
+export interface State {
   isOpen: boolean;
   overflow: boolean;
 }

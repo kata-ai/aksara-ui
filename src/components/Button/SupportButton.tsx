@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { Circle } from '../Loading';
 
-interface Props {
+export interface Props {
   disabled?: boolean;
   size?: 'lg' | 'sm' | '';
   isIcon?: boolean;
