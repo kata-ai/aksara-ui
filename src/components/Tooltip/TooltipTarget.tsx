@@ -23,7 +23,7 @@ const composeFunctions = (...funcs) => {
   return compose(validFuncs);
 };
 
-interface Props {
+export interface Props {
   component: any;
   children: any;
   placement?: 'top' | 'right' | 'bottom' | 'left';
@@ -40,15 +40,15 @@ interface Props {
   onBlur?(): void;
 }
 
-interface State {
+export interface State {
   show: boolean;
 }
 
 /**
- * Handle default props using interface.
+ * Handle default props using export interface.
  * @see https://github.com/DefinitelyTyped/DefinitelyTyped/issues/11640#issuecomment-295155472
  */
-interface DefaultProps {
+export interface DefaultProps {
   defaultShow: boolean;
   placement: string;
   trigger: string | string[];

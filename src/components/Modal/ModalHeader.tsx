@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from 'components/Button';
 
-interface Props {
+export interface Props {
   className?: string;
   noClose?: boolean;
   children: any;

@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import Circle from '../Loading/Circle';
 
-type Color = 'primary' | 'success' | 'danger' | 'warning';
+export type Color = 'primary' | 'success' | 'danger' | 'warning';
 
-interface Props {
+export interface Props {
   disabled?: boolean;
   color?: Color;
   icon: string;

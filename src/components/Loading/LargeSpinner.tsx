@@ -2,7 +2,7 @@ import React, { SFC } from 'react';
 
 import './LargeSpinner.scss';
 
-interface Props {}
+export interface Props {}
 
 const LargeSpinner: SFC<Props> = (props: Props) => {
   return (

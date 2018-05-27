@@ -3,7 +3,7 @@ import React, { SFC } from 'react';
 import Loader from '../../assets/images/loader.svg';
 import './Robot.scss';
 
-interface Props {}
+export interface Props {}
 
 const Robot: SFC<Props> = (props: Props) => {
   return (

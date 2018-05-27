@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import omit from 'lodash-es/omit';
 
-interface Props {
+export interface Props {
   children: any;
   isOpen?: boolean;
   className?: string;

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import omit from 'lodash-es/omit';
 
-interface Props {
+export interface Props {
   placement?: 'top' | 'right' | 'bottom' | 'left';
   className?: string;
 

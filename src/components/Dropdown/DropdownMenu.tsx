@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import classNames from 'classnames';
 
-interface Props {
+export interface Props {
   isOpen?: boolean;
   right?: boolean;
   className?: string;

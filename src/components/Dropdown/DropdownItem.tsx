@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react';
 import classNames from 'classnames';
 
-interface Props {
+export interface Props {
   value?: string | number | boolean;
   children?: any;
   className?: string;

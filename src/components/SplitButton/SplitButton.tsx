@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Button } from 'components/Button';
 import { Dropdown, DropdownToggle, DropdownMenu } from 'components/Dropdown';
 
-type Color =
+export type Color =
   | 'primary'
   | 'secondary'
   | 'success'
@@ -12,7 +12,7 @@ type Color =
   | 'info'
   | 'white';
 
-interface Props {
+export interface Props {
   color: Color;
   size?: 'small' | 'normal';
   title: string;

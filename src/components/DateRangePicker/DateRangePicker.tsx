@@ -5,13 +5,13 @@ import { DateRangePicker } from 'react-dates';
 import '../../assets/sass/vendor/react-dates.scss';
 import './DateRangePicker.scss';
 
-interface Props {
+export interface Props {
   startDate?: number;
   endDate?: number;
   changeDate: (startDate: number, endDate: number) => void;
 }
 
-interface State {
+export interface State {
   startDate: moment.Moment;
   endDate: moment.Moment;
   focusedInput: any;

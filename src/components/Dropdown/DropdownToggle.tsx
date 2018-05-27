@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { Button } from 'components/Button';
 
-interface Props {
+export interface Props {
   tag?: any;
   caret?: boolean;
   className?: string;

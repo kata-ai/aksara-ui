@@ -3,7 +3,7 @@ import { Button } from 'components/Button';
 
 import DrawerContext from './DrawerContext';
 
-interface Props {
+export interface Props {
   title: string;
   className?: string;
 }
