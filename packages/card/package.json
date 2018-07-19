@@ -1,0 +1,24 @@
+{
+  "name": "@kata-kit/card",
+  "version": "0.1.0",
+  "description": "Card component for kata-kit.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "clean": "rimraf lib"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "styled-components": "^3.3.3"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3"
+  }
+}

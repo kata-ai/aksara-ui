@@ -1,0 +1,8 @@
+{
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "extends": ["tslint-config-kata", "tslint-config-prettier"],
+  "rules": {
+    "prettier": true,
+    "interface-name": [true, "never-prefix"]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "kata-kit",
+  "version": "0.1.0",
+  "description": "The component library powering the Kata.ai platform.",
+  "main": "N/A",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "contributors": [
+    {
+      "name": "Resi Respati",
+      "email": "resi@kata.ai"
+    }
+  ],
+  "license": "Apache-2.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "lerna": "lerna"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "tslint-config-kata": "^1.0.5",
+    "tslint-config-prettier": "^1.13.0",
+    "tslint-plugin-prettier": "^1.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@types/node": "^10.5.2",
+    "@types/react": "^16.4.6",
+    "@types/react-dom": "^16.0.6",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "husky": "^0.14.3",
+    "lerna": "^2.11.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.10.0",
+    "typescript": "~2.9.2",
+    "webpack": "^4.16.1"
+  }
+}
