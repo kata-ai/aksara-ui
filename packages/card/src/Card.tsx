@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react';
-import styled, { keyframes } from 'styled-components';
-import classNames from 'classnames';
+import styled from 'styled-components';
 
 export interface Props {
   /** Card title. */
@@ -32,7 +31,10 @@ export class Card extends React.Component<Props> {
           <CardHeading>
             <CardHeadingTitle>
               {this.props.avatar && (
-                <img src={this.props.avatar} className="kata-card__avatar mr-1" />
+                <img
+                  src={this.props.avatar}
+                  className="kata-card__avatar mr-1"
+                />
               )}
               {this.props.title}
             </CardHeadingTitle>
@@ -48,25 +50,15 @@ export class Card extends React.Component<Props> {
             )}
           </CardHeading>
         ) : null}
-        <CardBody asButton={this.props.asButton}>{this.props.children}</CardBody>
+        <CardBody asButton={this.props.asButton}>
+          {this.props.children}
+        </CardBody>
       </CardRoot>
     );
   }
 }
 
 export default Card;
-
-const cardFadeIn = keyframes`
-  from {
-    transform: translateY(5px);
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
 
 interface CardRootProps {
   disabled?: boolean;
@@ -75,7 +67,8 @@ interface CardRootProps {
 const CardRoot = styled('div')`
   display: flex;
   flex-direction: column;
-  background: ${(props: CardRootProps) => (props.disabled ? '#f6f7f8' : '#fff')};
+  background: ${(props: CardRootProps) =>
+    props.disabled ? '#f6f7f8' : '#fff'};
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -86,10 +79,6 @@ const CardRoot = styled('div')`
     transform: translateY(-2px);
   }
 `;
-
-interface CardHeadingProps {
-  ellipsis?: boolean;
-}
 
 const CardHeading = styled('div')`
   padding: 16px 16px 8px 24px;

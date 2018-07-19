@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import styled from 'styled-components';
 
@@ -10,12 +10,17 @@ export interface CardGridProps {
 
 class CardGrid extends React.Component<CardGridProps> {
   render() {
-    const { centered, className, cardsPerRow = 3 } = this.props;
+    const { className, cardsPerRow = 3 } = this.props;
     return (
       <Wrapper className={classnames(className)}>
         {React.Children.map(
           this.props.children,
-          Item => (Item ? <CardWrapper cardsPerRow={cardsPerRow}>{Item}</CardWrapper> : Item)
+          Item =>
+            Item ? (
+              <CardWrapper cardsPerRow={cardsPerRow}>{Item}</CardWrapper>
+            ) : (
+              Item
+            )
         )}
       </Wrapper>
     );

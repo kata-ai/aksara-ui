@@ -5,9 +5,10 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = Object.assign({}, config, {
   mode: isProduction ? 'production' : 'development',
-  entry: './src/index.ts',
+  entry: {
+    index: './src/index.ts'
+  },
   output: {
-    path: path.resolve(__dirname, 'lib'),
-    filename: 'index.js'
+    path: path.resolve(__dirname, 'lib')
   }
 });
