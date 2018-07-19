@@ -11,6 +11,21 @@ module.exports = {
         loader: 'ts-loader',
         // TODO: use fork-ts-checker-webpack-plugin
         options: {}
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
       }
     ]
   },
