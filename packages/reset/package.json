@@ -6,9 +6,9 @@
   "repository": "https://github.com/kata-ai/kata-kit.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
-  "kata-kit:src": {
-    "main": "src/index.ts"
-  },
+  "files": [
+    "./lib"
+  ],
   "scripts": {
     "build": "rimraf lib && tsc",
     "clean": "rimraf lib"

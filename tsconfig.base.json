@@ -6,6 +6,7 @@
     "lib": ["esnext", "dom"],
     "jsx": "react",
     "strict": true,
+    "declaration": true,
     "esModuleInterop": true
   }
 }

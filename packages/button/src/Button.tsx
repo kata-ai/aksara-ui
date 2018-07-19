@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import classNames from 'classnames';
-import styled from 'styled-components';
+
+import styles from './Button.st.css';
 
 // import { Circle } from '@kata-kit/loading';
 
@@ -65,6 +66,7 @@ export class Button extends React.Component<ButtonProps> {
     } = this.props;
 
     const classes = classNames(
+      styles.root,
       'btn',
       'kata-btn',
       `kata-btn__${color}`,
@@ -80,7 +82,7 @@ export class Button extends React.Component<ButtonProps> {
     );
 
     return (
-      <ButtonWrapper
+      <button
         type={type}
         {...props}
         className={classes}
@@ -95,35 +97,7 @@ export class Button extends React.Component<ButtonProps> {
         ) : (
           this.props.children
         )}
-      </ButtonWrapper>
+      </button>
     );
   }
 }
-
-const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
-  display: inline-block;
-  border: none;
-  padding: 10px 24px;
-  height: 40px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  border-radius: 4px;
-  line-height: 1.538rem;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-
-  colors &:not([disabled]) {
-    cursor: pointer;
-  }
-
-  &:disabled {
-    background: #c2c7c8;
-    border: solid 1px darken(#c2c7c8, 10%);
-
-    &:hover {
-      background: #c2c7c8;
-      border: solid 1px darken(#c2c7c8, 10%);
-    }
-  }
-`;

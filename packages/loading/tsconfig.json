@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "declaration": true,
-    "outDir": "./lib"
+    "outDir": "."
   },
   "include": ["./src/**/*", "./images/**/*"],
   "exclude": ["./lib", "./**/__stories__"]
