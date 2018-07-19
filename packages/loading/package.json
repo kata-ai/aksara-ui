@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/loading",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Loading component for kata-kit.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

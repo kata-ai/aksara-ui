@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/card",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Card component for kata-kit.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

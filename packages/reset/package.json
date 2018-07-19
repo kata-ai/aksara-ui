@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/reset",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Provides necessary CSS resets to use kata-kit.",
   "main": "./lib/index.js",
   "repository": "https://github.com/kata-ai/kata-kit.git",
