@@ -1,3 +1,4 @@
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const StylablePlugin = require('stylable-webpack-plugin');
 const stylableOptions = { injectBundleCss: true, nsDelimiter: '--' };
 
@@ -8,9 +9,14 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
-        // TODO: use fork-ts-checker-webpack-plugin
-        options: {}
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -39,5 +45,8 @@ module.exports = {
   devServer: {
     disableHostCheck: true
   },
-  plugins: [new StylablePlugin(stylableOptions)]
+  plugins: [
+    new StylablePlugin(stylableOptions),
+    new ForkTsCheckerWebpackPlugin()
+  ]
 };
