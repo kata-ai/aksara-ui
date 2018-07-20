@@ -1,3 +1,5 @@
+@namespace "Button";
+
 .root {
   display: inline-block;
   border: none;
@@ -10,4 +12,8 @@
   text-decoration: none;
   text-align: center;
   transition: all 0.3s ease;
+}
+
+.root:not(:disabled) {
+  cursor: pointer;
 }
