@@ -4,6 +4,7 @@
   "description": "Loading component for kata-kit.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
   "repository": "https://github.com/kata-ai/kata-kit.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",

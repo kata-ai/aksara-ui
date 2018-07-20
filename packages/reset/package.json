@@ -3,6 +3,7 @@
   "version": "0.5.0",
   "description": "Provides necessary CSS resets to use kata-kit.",
   "main": "./lib/index.js",
+  "kata-kit:src": "./src/index.ts",
   "repository": "https://github.com/kata-ai/kata-kit.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",

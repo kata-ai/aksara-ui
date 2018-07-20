@@ -12,7 +12,12 @@ const InfiniteScrollSpinner: React.SFC<InfiniteScrollSpinnerProps> = props => {
   const classname = classnames(props.bsStyle);
 
   return (
-    <Wrapper bsStyle={props.bsStyle} sm={props.sm} lg={props.lg} className={classname}>
+    <Wrapper
+      bsStyle={props.bsStyle}
+      sm={props.sm}
+      lg={props.lg}
+      className={classname}
+    >
       <div className="bounce1" />
       <div className="bounce2" />
       <div className="bounce3" />

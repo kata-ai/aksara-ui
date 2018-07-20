@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "lib": ["esnext", "dom"],
@@ -9,6 +9,6 @@
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true
+    "esModuleInterop": true
   }
 }

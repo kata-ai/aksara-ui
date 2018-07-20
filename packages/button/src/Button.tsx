@@ -5,6 +5,8 @@ import styles from './Button.st.css';
 
 // import { Circle } from '@kata-kit/loading';
 
+console.log(React); // tslint:disable-line
+
 export type ButtonColors =
   | 'primary'
   | 'secondary'
@@ -29,7 +31,7 @@ export interface ButtonProps {
   children: any;
 }
 
-export class Button extends React.Component<ButtonProps> {
+class Button extends React.Component<ButtonProps> {
   static defaultProps = {
     color: 'secondary',
     type: 'button',
@@ -101,3 +103,5 @@ export class Button extends React.Component<ButtonProps> {
     );
   }
 }
+
+export default Button;

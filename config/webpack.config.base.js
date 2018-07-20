@@ -11,10 +11,8 @@ module.exports = {
         test: /\.tsx?$/,
         use: [
           {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true
-            }
+            loader: require.resolve('ts-loader'),
+            options: {}
           }
         ]
       },
@@ -22,7 +20,7 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: require.resolve('url-loader'),
             options: {
               limit: 8192
             }
@@ -31,19 +29,16 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack']
+        use: [require.resolve('@svgr/webpack')]
       }
     ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   },
   output: {
     filename: '[name].js',
     pathinfo: true
-  },
-  devServer: {
-    disableHostCheck: true
   },
   plugins: [
     new StylablePlugin(stylableOptions),
