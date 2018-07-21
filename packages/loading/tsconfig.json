@@ -6,5 +6,5 @@
     "outDir": "."
   },
   "include": ["./src/**/*", "./images/**/*"],
-  "exclude": ["./lib", "./**/__stories__"]
+  "exclude": ["./lib", "./**/__stories__", "./scripts"]
 }
