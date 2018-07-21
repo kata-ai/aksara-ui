@@ -20,6 +20,17 @@ module.exports = Object.assign({}, config, {
     ...config.resolve,
     mainFields: ['kata-kit:src', 'main']
   },
+  module: {
+    ...config.module,
+    rules: [
+      ...config.module.rules,
+      {
+        // exclude css from stylable component
+        test: /^(?!.*\.st\.css$).*\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+      }
+    ]
+  },
   plugins: [
     ...config.plugins,
     new HtmlWebpackPlugin({
