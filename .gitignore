@@ -5,6 +5,7 @@
 # Build directories
 lib/
 storybook-static/
+dist/
 
 # Lockfiles
 /package-lock.json
@@ -59,6 +60,9 @@ typings/
 
 # Optional eslint cache
 .eslintcache
+
+# Optional rollup-plugin-typescript2 cache
+.rpt2_cache
 
 # Optional REPL history
 .node_repl_history
