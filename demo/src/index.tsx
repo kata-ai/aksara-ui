@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import '@kata-kit/reset';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import '@kata-kit/fonts/museo-sans-rounded.css';
+import '@kata-kit/reset';
 
 import Main from './main';
 

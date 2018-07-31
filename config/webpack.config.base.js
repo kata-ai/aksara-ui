@@ -30,6 +30,13 @@ module.exports = {
       {
         test: /\.svg$/,
         use: [require.resolve('@svgr/webpack')]
+      },
+      {
+        test: /\.(ttf|eot|otf|woff|woff2)$/,
+        loader: require.resolve('file-loader'),
+        options: {
+          name: 'fonts/[name].[hash:8].[ext]'
+        }
       }
     ]
   },
