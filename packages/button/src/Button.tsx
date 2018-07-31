@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 
 import styles from './Button.st.css';
 
@@ -67,8 +67,8 @@ class Button extends React.Component<ButtonProps> {
       ...props
     } = this.props;
 
+    /*
     const classes = classNames(
-      styles.root,
       'btn',
       'kata-btn',
       `kata-btn__${color}`,
@@ -82,14 +82,23 @@ class Button extends React.Component<ButtonProps> {
       },
       className
     );
+    */
 
     return (
       <button
+        {...styles(
+          'root',
+          {
+            primary: color === 'primary',
+            secondary: color === 'secondary',
+            danger: color === 'danger'
+          },
+          this.props
+        )}
         type={type}
-        {...props}
-        className={classes}
         onClick={this.onClick}
         disabled={disabled || loading}
+        {...props}
       >
         {loading ? (
           <Fragment>

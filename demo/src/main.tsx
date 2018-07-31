@@ -13,7 +13,10 @@ const Main = () => (
     </div>
     <div>
       <h2>Button</h2>
-      <Button>Demo Component</Button>
+      <Button>Demo Component</Button>{' '}
+      <Button color="primary">Primary Button</Button>{' '}
+      <Button color="secondary">Secondary Button</Button>{' '}
+      <Button color="danger">Danger Button</Button>{' '}
     </div>
   </div>
 );
