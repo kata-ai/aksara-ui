@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StylablePlugin = require('stylable-webpack-plugin');
+const stylableOptions = { outputCSS: true, includeCSSInJS: false };
+
 const config = require('../config/webpack.config.base');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -33,6 +36,7 @@ module.exports = Object.assign({}, config, {
   },
   plugins: [
     ...config.plugins,
+    new StylablePlugin(stylableOptions),
     new HtmlWebpackPlugin({
       title: 'kata-kit',
       template: path.join(__dirname, 'public/index.html'),

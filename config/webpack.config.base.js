@@ -1,6 +1,6 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const StylablePlugin = require('stylable-webpack-plugin');
-const stylableOptions = { injectBundleCss: true, nsDelimiter: '--' };
+const stylableOptions = { outputCSS: false, includeCSSInJS: true };
 
 module.exports = {
   devtool: 'source-map',

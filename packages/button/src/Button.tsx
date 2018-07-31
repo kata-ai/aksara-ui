@@ -1,8 +1,13 @@
 import React, { Fragment } from 'react';
-// import classNames from 'classnames';
 
 import styles from './Button.st.css';
 
+// FIXME: This errors because of our tsconfig path options. Should we:
+// A. use separate tsconfig file between referencing each package in monorepo
+//    and for building the project itself, or
+// B. give up altogether and just write the typings manually?
+//
+// ALSO: should we make this a peerdep?
 import { Circle } from '@kata-kit/loading';
 
 export type ButtonColors =
@@ -64,23 +69,6 @@ class Button extends React.Component<ButtonProps> {
       outline,
       ...props
     } = this.props;
-
-    /*
-    const classes = classNames(
-      'btn',
-      'kata-btn',
-      `kata-btn__${color}`,
-      `btn${outline ? '-outline' : ''}-${color}`,
-      size ? `btn-${size}` : false,
-      block ? `btn-block` : false,
-      {
-        active,
-        'position-relative': loading,
-        'kata-btn-icon': isIcon
-      },
-      className
-    );
-    */
 
     return (
       <button
