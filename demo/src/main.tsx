@@ -24,6 +24,12 @@ const Main = () => (
       <Button className="btn" color="danger">
         Danger Button
       </Button>{' '}
+      <Button className="btn" color="primary" disabled>
+        Disabled Button
+      </Button>{' '}
+      <Button className="btn" color="primary" loading>
+        Loading
+      </Button>{' '}
     </div>
   </div>
 );

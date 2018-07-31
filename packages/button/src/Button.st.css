@@ -2,6 +2,7 @@
 
 .root {
   display: inline-block;
+  position: relative;
   border: none;
   padding: 10px 24px;
   height: 40px;
@@ -12,6 +13,8 @@
   line-height: 1.538rem; /* $subtitle-line-height */
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
   transition: all 0.3s ease;
 
   -st-states: primary, secondary, danger;
@@ -19,6 +22,11 @@
 
 .root:not(:disabled) {
   cursor: pointer;
+}
+
+.root:disabled {
+  background: #c2c7c8 !important;
+  border: solid 1px #a7aeb0 !important;
 }
 
 /* TODO: Create variables file? */
@@ -58,4 +66,20 @@
   border: none;
   color: #fff /* $white */;
   background-color: #e53935 /* $red */;
+}
+
+.btnTextInvisible {
+  visibility: hidden;
+}
+
+.loaderCircle {
+  margin: -6px 0;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+}
+
+.loaderCircle svg path,
+.loaderCircle svg rect {
+  fill: #fff /* $white */;
 }

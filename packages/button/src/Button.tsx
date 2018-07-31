@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 
 import styles from './Button.st.css';
 
-// import { Circle } from '@kata-kit/loading';
+import { Circle } from '@kata-kit/loading';
 
 console.log(React); // tslint:disable-line
 
@@ -102,8 +102,10 @@ class Button extends React.Component<ButtonProps> {
       >
         {loading ? (
           <Fragment>
-            {/* <Circle size={30} /> */}
-            <span className="invisible">{this.props.children}</span>
+            <Circle className={styles.loaderCircle} size={30} />
+            <span className={styles.btnTextInvisible}>
+              {this.props.children}
+            </span>
           </Fragment>
         ) : (
           this.props.children

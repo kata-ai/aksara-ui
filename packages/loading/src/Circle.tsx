@@ -1,16 +1,16 @@
 import React, { SFC } from 'react';
 import shortid from 'shortid';
 
-import './Circle.scss';
+import styles from './Circle.st.css';
 
 export interface LoadingCircleProps {
   size?: number;
   className?: string;
 }
 
-export const Circle: SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
+const Circle: SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
   return (
-    <div className={`kata-loader-circle ${props.className || ''}`} title="0">
+    <div {...styles('root', {}, props)} title="0">
       <svg
         version="1.1"
         id={shortid.generate()}
@@ -49,3 +49,5 @@ export const Circle: SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
     </div>
   );
 };
+
+export default Circle;
