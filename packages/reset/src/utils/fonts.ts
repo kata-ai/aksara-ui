@@ -57,9 +57,7 @@ export default css`
 
   p,
   .body-text {
-    font-size: 1rem !important;
     font-weight: normal !important;
-    line-height: 2 !important;
     color: #484c4f;
   }
 

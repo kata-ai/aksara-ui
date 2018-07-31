@@ -5,8 +5,6 @@ import styles from './Button.st.css';
 
 import { Circle } from '@kata-kit/loading';
 
-console.log(React); // tslint:disable-line
-
 export type ButtonColors =
   | 'primary'
   | 'secondary'
