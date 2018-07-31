@@ -13,10 +13,17 @@ const Main = () => (
     </div>
     <div>
       <h2>Button</h2>
-      <Button>Demo Component</Button>{' '}
-      <Button color="primary">Primary Button</Button>{' '}
-      <Button color="secondary">Secondary Button</Button>{' '}
-      <Button color="danger">Danger Button</Button>{' '}
+      {/* stylable won't work if we set a custom className inside the component */}
+      <Button className="btn">Demo Component</Button>{' '}
+      <Button className="btn" color="primary">
+        Primary Button
+      </Button>{' '}
+      <Button className="btn" color="secondary">
+        Secondary Button
+      </Button>{' '}
+      <Button className="btn" color="danger">
+        Danger Button
+      </Button>{' '}
     </div>
   </div>
 );
