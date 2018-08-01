@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
-export interface Props {
+export interface CardProps {
   /** Card title. */
   title?: string;
   /** An action button. Can be a dropdown, or anything. */
@@ -19,7 +19,7 @@ export interface Props {
 /**
  * A simple card element.
  */
-export class Card extends React.Component<Props> {
+export class Card extends React.Component<CardProps> {
   render() {
     return this.props.noWrap ? (
       <CardRoot onClick={this.props.onClick} style={this.props.style}>

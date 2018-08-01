@@ -16,6 +16,7 @@
     "@kata-kit/card": "^0.5.0",
     "@kata-kit/common": "^0.5.0",
     "@kata-kit/fonts": "^0.5.0",
+    "@kata-kit/layout": "^0.5.0",
     "@kata-kit/reset": "^0.5.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
