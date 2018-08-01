@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
+import { Container } from '@kata-kit/layout';
 import { Tooltip, TooltipTarget } from '@kata-kit/tooltip';
 
 export interface DashboardProps {
@@ -30,44 +31,45 @@ export default class Dashboard extends React.Component<DashboardProps> {
       headerContent,
       image,
       children,
+      isStarter,
       isHeadingCentered
     } = this.props;
     return (
-      <Root className={className}>
-        <div className="kata-dashboard__heading kata-dashboard__heading--starter kata-dashboard--normalizer">
-          <div
-            className={classNames({
-              'kata-dashboard__heading-content': true,
-              'kata-dashboard__heading-content__centered': isHeadingCentered
-            })}
-          >
-            <div className="kata-dashboard__header">
-              <DashboardTitle isStarter>{title}</DashboardTitle>
-              {tooltip && (
-                <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
-                  <i className="icon-info kata-dashboard__tooltip" />
-                </TooltipTarget>
+      <Root className={classNames(className, isStarter && 'is-starter')}>
+        <DashboardStarterHeading>
+          <Container>
+            <div
+              className={classNames({
+                'kata-dashboard__heading-content': true,
+                'kata-dashboard__heading-content__centered': isHeadingCentered
+              })}
+            >
+              <DashboardHeader>
+                <DashboardTitle isStarter>{title}</DashboardTitle>
+                {tooltip && (
+                  <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
+                    <DashboardTooltip className="icon-info" />
+                  </TooltipTarget>
+                )}
+              </DashboardHeader>
+              {subTitle && (
+                <DashboardSubtitle isStarter>{subTitle}</DashboardSubtitle>
+              )}
+              {headerContent && (
+                <DashboardHeaderContent>{headerContent}</DashboardHeaderContent>
               )}
             </div>
-            {subTitle && (
-              <h2 className="kata-dashboard__subtitle title">{subTitle}</h2>
-            )}
-            {headerContent && (
-              <div className="kata-dashboard__header-content kata-dashboard__header-content--starter">
-                {headerContent}
+            {image && (
+              <div className="kata-dashboard__heading-image">
+                <img src={image} alt="header-img" />
               </div>
             )}
-          </div>
-          {image && (
-            <div className="kata-dashboard__heading-image">
-              <img src={image} alt="header-img" />
-            </div>
-          )}
-        </div>
+          </Container>
+        </DashboardStarterHeading>
 
-        <div className="kata-dashboard__content kata-dashboard__content--starter kata-dashboard--normalizer">
-          {children}
-        </div>
+        <DashboardContent className={classNames(isStarter && 'is-starter')}>
+          <Container>{children}</Container>
+        </DashboardContent>
       </Root>
     );
   };
@@ -90,29 +92,33 @@ export default class Dashboard extends React.Component<DashboardProps> {
 
     return (
       <Root className={className}>
-        <DashboardHeader>
-          {headerContent || (
-            <Fragment>
-              <DashboardTitle>{title}</DashboardTitle>
-              {tooltip && (
-                <TooltipTarget
-                  trigger="hover"
-                  component={<Tooltip>{tooltip}</Tooltip>}
-                >
-                  <DashboardTooltip className="icon-info" />
-                </TooltipTarget>
-              )}
-            </Fragment>
+        <Container>
+          <DashboardHeader>
+            {headerContent || (
+              <Fragment>
+                <DashboardTitle>{title}</DashboardTitle>
+                {tooltip && (
+                  <TooltipTarget
+                    trigger="hover"
+                    component={<Tooltip>{tooltip}</Tooltip>}
+                  >
+                    <DashboardTooltip className="icon-info" />
+                  </TooltipTarget>
+                )}
+              </Fragment>
+            )}
+          </DashboardHeader>
+          {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
+          {paragraph && (
+            <DashboardParagraph
+              className={classNames(isStarter && 'is-starter')}
+            >
+              {paragraph}
+            </DashboardParagraph>
           )}
-        </DashboardHeader>
-        {subTitle && (
-          <h2 className="kata-dashboard__subtitle title">{subTitle}</h2>
-        )}
-        {paragraph && (
-          <p className="kata-dashboard__paragraph body-text">{paragraph}</p>
-        )}
 
-        <div className="kata-dashboard__content mt-3">{children}</div>
+          <DashboardContent>{children}</DashboardContent>
+        </Container>
       </Root>
     );
   }
@@ -127,9 +133,20 @@ const DashboardIn = keyframes`
   }
 `;
 
-const Root = styled('div')`
-  padding: 1.846153846rem /* $space-3 */ 20px;
+const Root = styled<DashboardProps, 'div'>('div')`
   animation: ${DashboardIn} 0.5s ease;
+
+  &:not(.is-starter) {
+    padding: 1.846153846rem /* $space-3 */ 20px;
+
+    @media (min-width: 1280px /* $break-medium */) {
+      padding: 1.846153846rem /* $space-3 */ 40px;
+    }
+
+    @media (min-width: 1366px /* $break-large */) {
+      padding: 1.846153846rem /* $space-3 */ 48px;
+    }
+  }
 `;
 
 const DashboardHeader = styled('div')`
@@ -156,4 +173,52 @@ const DashboardTitle = styled<DashboardProps, 'h1'>('h1')`
   margin-bottom: 0;
   flex: 0 0 auto;
   color: ${props => props.isStarter && 'white'};
+`;
+
+const DashboardSubtitle = styled<DashboardProps, 'h2'>('h2')`
+  color: ${props => props.isStarter && 'white'};
+`;
+
+const DashboardParagraph = styled('p')`
+  &:not(.is-starter) {
+    margin-top: 8px;
+    max-width: 480px;
+    word-wrap: break-word;
+    color: #fff !important;
+    font-weight: 300;
+  }
+`;
+
+const DashboardHeaderContent = styled('div')`
+  &:not(.is-starter) {
+    margin-top: 8px;
+    max-width: 480px;
+    word-wrap: break-word;
+    color: #fff !important;
+    font-weight: 300;
+  }
+
+  & p {
+    margin-top: 8px;
+    max-width: 480px;
+    word-wrap: break-word;
+    color: #fff !important;
+    font-weight: 300;
+  }
+`;
+
+const DashboardContent = styled('div')`
+  &:not(.is-starter) {
+    margin-top: 1.846153846rem /* $space-3 */;
+  }
+
+  &.is-starter {
+    margin-top: -100px !important;
+  }
+`;
+
+const DashboardStarterHeading = styled('div')`
+  display: flex;
+  padding: 48px 48px 136px;
+  background-color: #006fe6 /* $kata-blue */;
 `;

@@ -21,12 +21,14 @@ export interface CardProps {
  */
 export class Card extends React.Component<CardProps> {
   render() {
-    return this.props.noWrap ? (
-      <CardRoot onClick={this.props.onClick} style={this.props.style}>
-        {this.props.children}
+    const { className, noWrap, onClick, style, children } = this.props;
+
+    return noWrap ? (
+      <CardRoot onClick={onClick} style={style} className={className}>
+        {children}
       </CardRoot>
     ) : (
-      <CardRoot onClick={this.props.onClick} style={this.props.style}>
+      <CardRoot onClick={onClick} style={style} className={className}>
         {!this.props.asButton && this.props.title ? (
           <CardHeading>
             <CardHeadingTitle>
@@ -50,9 +52,7 @@ export class Card extends React.Component<CardProps> {
             )}
           </CardHeading>
         ) : null}
-        <CardBody asButton={this.props.asButton}>
-          {this.props.children}
-        </CardBody>
+        <CardBody asButton={this.props.asButton}>{children}</CardBody>
       </CardRoot>
     );
   }

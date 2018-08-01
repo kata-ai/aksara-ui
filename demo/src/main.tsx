@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Button } from '@kata-kit/button';
-import { Card, CardGrid } from '@kata-kit/card';
+import { DashboardCard, CardGrid } from '@kata-kit/card';
 import { EmptyMessage } from '@kata-kit/common';
-import { Dashboard } from '@kata-kit/dashboard';
+import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import {
   Wrapper,
   Content,
@@ -16,18 +16,41 @@ const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
 const Main = () => (
   <Wrapper>
-    <Sidebar>
+    <Sidebar collapsed>
       <SidebarMain logo={Logo} />
       <SidebarSub>SidebarSub</SidebarSub>
     </Sidebar>
     <Content>
       <Dashboard
+        isStarter
         title="kata-kit Demo"
-        tooltip="This project is intended to test the look and feel of the kata-kit
-            component, as well as a development environment."
+        headerContent={
+          <p>
+            This project is intended to test the look and feel of the kata-kit
+            component, as well as a development environment.
+          </p>
+        }
       >
+        <DashboardContentHeader>Cards</DashboardContentHeader>
+        <CardGrid>
+          <DashboardCard title="Card 1">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </DashboardCard>
+          <DashboardCard title="Card 2">
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.
+          </DashboardCard>
+          <DashboardCard title="Card 3">
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.
+          </DashboardCard>
+        </CardGrid>
         <div>
-          <h2>Typography</h2>
+          <DashboardContentHeader isSecondary>
+            Typography
+          </DashboardContentHeader>
           <div>
             <h1>Understanding Conversation, Humanizing Interaction</h1>
             <h2>Understanding Conversation, Humanizing Interaction</h2>
@@ -52,7 +75,7 @@ const Main = () => (
           </div>
         </div>
         <div>
-          <h2>Button</h2>
+          <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
           <div>
             {/* stylable won't work if we set a custom className inside the component */}
             <Button>Demo Component</Button>{' '}
@@ -68,27 +91,9 @@ const Main = () => (
           </div>
         </div>
         <div>
-          <h2>Card</h2>
-          <div>
-            <CardGrid>
-              <Card title="Card 1">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </Card>
-              <Card title="Card 2">
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book.
-              </Card>
-              <Card title="Card 3">
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </Card>
-            </CardGrid>
-          </div>
-        </div>
-        <div>
-          <h2>Empty Message</h2>
+          <DashboardContentHeader isSecondary>
+            Empty Message
+          </DashboardContentHeader>
           <div>
             <EmptyMessage title="Empty Message">
               Empty message example.

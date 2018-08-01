@@ -41,7 +41,7 @@ const CardWrapper = styled<CardGridProps, 'div'>('div')`
   padding: 0 0.615384615rem;
   margin-bottom: 1.230769231rem;
 
-  @media (min-width: 1050px) {
+  @media (min-width: 1280px) {
     flex: ${props => props.cardsPerRow === 3 && '0 1 33.33%'};
   }
 `;
