@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": ".",
+    "outDir": "."
+  },
+  "include": ["./src/**/*", "../../types/**/*.d.ts"],
+  "exclude": ["./lib", "./**/__stories__", "./scripts"]
+}

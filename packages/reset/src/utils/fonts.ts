@@ -57,6 +57,7 @@ export default css`
 
   p,
   .body-text {
+    font-size: 1rem;
     font-weight: normal;
     color: #484c4f;
   }

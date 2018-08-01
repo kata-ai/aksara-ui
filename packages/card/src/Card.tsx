@@ -100,4 +100,5 @@ interface CardBodyProps {
 
 const CardBody = styled<CardBodyProps, 'div'>('div')`
   padding: 8px 24px;
+  font-size: 1rem;
 `;

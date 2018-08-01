@@ -6,6 +6,11 @@ import globals from './utils/globals';
 import fonts from './utils/fonts';
 
 injectGlobal`
+  :root {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
   ${reboot}
   ${globals}
   ${fonts}
