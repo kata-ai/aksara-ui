@@ -1,4 +1,4 @@
-# @kata-kit/reset
+# @kata-kit/card
 
 > Provides necessary CSS resets to use kata-kit.
 

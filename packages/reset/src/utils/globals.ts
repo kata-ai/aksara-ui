@@ -1,21 +1,19 @@
 import { css } from 'styled-components';
 
 export default css`
-  :root {
-    font-size: 13px;
-    line-height: 20px;
-  }
-
   html,
   body,
   #root {
     width: 100%;
     height: 100%;
+    font-size: 13px;
+    line-height: 20px;
   }
 
   body {
-    font-family: 'Museo Sans Rounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: 'Museo Sans Rounded', -apple-system, BlinkMacSystemFont,
+      'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol';
     background: #f6f7f8;
     color: #484c4f;
   }

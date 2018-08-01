@@ -3,26 +3,26 @@ import { css } from 'styled-components';
 export default css`
   h1,
   .h1 {
-    font-size: 1.85rem !important;
-    font-weight: 500 !important;
-    line-height: 2.461rem !important;
+    font-size: 1.85rem;
+    font-weight: 500;
+    line-height: 2.461rem;
     color: #24282d;
   }
 
   h2,
   .h2 {
-    font-size: 1.5rem !important;
-    font-weight: 500 !important;
-    line-height: 2.153rem !important;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.153rem;
     color: #24282d;
   }
 
   h3,
   .h3,
   .title {
-    font-size: 1.25rem !important;
-    font-weight: 500 !important;
-    line-height: 1.846rem !important;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.846rem;
     color: #24282d;
   }
 
@@ -33,31 +33,31 @@ export default css`
   h6,
   .h6,
   .subtitle {
-    font-size: 1.075rem !important;
-    font-weight: 700 !important;
-    line-height: 1.538rem !important;
+    font-size: 1.075rem;
+    font-weight: 700;
+    line-height: 1.538rem;
     color: #24282d;
   }
 
   .text-label {
-    font-size: 0.925rem !important;
-    font-weight: 700 !important;
-    line-height: 1.384rem !important;
-    letter-spacing: 0.2px !important;
+    font-size: 0.925rem;
+    font-weight: 700;
+    line-height: 1.384rem;
+    letter-spacing: 0.2px;
     color: #949a9d;
   }
 
   small,
   .text-small {
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    line-height: 1.23rem !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.23rem;
     color: #676b6d;
   }
 
   p,
   .body-text {
-    font-weight: normal !important;
+    font-weight: normal;
     color: #484c4f;
   }
 

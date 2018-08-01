@@ -1,0 +1,29 @@
+{
+  "name": "@kata-kit/common",
+  "version": "0.5.0",
+  "description": "Common components, toolkits, and methods for kata-kit.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "clean": "rimraf lib"
+  },
+  "dependencies": {
+    "@kata-kit/assets": "^0.5.0",
+    "classnames": "^2.2.6",
+    "styled-components": "^3.3.3"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3"
+  }
+}

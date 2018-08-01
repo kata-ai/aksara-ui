@@ -1,0 +1,13 @@
+{
+  "name": "@kata-kit/assets",
+  "version": "0.5.0",
+  "description": "kata-kit asset package.",
+  "main": "N/A",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.3.0"
+  }
+}
