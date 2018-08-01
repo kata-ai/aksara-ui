@@ -14,7 +14,7 @@ export default css`
     font-family: 'Museo Sans Rounded', -apple-system, BlinkMacSystemFont,
       'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
       'Segoe UI Emoji', 'Segoe UI Symbol';
-    background: #f6f7f8;
+    background-color: #f6f7f8;
     color: #484c4f;
   }
 
