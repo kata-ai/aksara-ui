@@ -1,5 +1,8 @@
-import DashboardRoot from './DashboardRoot';
+import Wrapper from './Wrapper';
 import Content from './Content';
-import Sidebar from './Sidebar';
 
-export { DashboardRoot, Content, Sidebar };
+import Sidebar from './Sidebar';
+import SidebarMain from './SidebarMain';
+import SidebarSub from './SidebarSub';
+
+export { Wrapper, Content, Sidebar, SidebarMain, SidebarSub };
