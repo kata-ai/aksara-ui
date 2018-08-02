@@ -1,42 +1,71 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StylablePlugin = require('stylable-webpack-plugin');
-const stylableOptions = { outputCSS: true, includeCSSInJS: false };
-
-const config = require('../config/webpack.config.base');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-module.exports = Object.assign({}, config, {
+module.exports = {
+  devtool: 'source-map',
   mode: isProduction ? 'production' : 'development',
   entry: {
     demo: path.resolve(__dirname, './src/index.tsx')
   },
   output: {
-    ...config.output,
+    pathinfo: true,
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'build'),
     publicPath: '/'
   },
   resolve: {
-    ...config.resolve,
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     mainFields: ['kata-kit:src', 'main']
   },
   module: {
-    ...config.module,
     rules: [
-      ...config.module.rules,
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: require.resolve('ts-loader'),
+            options: {}
+          }
+        ]
+      },
       {
         // exclude css from stylable component
         test: /^(?!.*\.st\.css$).*\.css$/,
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+      },
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        use: [
+          {
+            loader: require.resolve('url-loader'),
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(bmp|gif|jpe?g|svg)$/,
+        loader: require.resolve('file-loader'),
+        options: {
+          name: 'media/[name].[hash:8].[ext]'
+        }
+      },
+      {
+        test: /\.(ttf|eot|otf|woff|woff2)$/,
+        loader: require.resolve('file-loader'),
+        options: {
+          name: 'media/[name].[hash:8].[ext]'
+        }
       }
     ]
   },
   plugins: [
-    ...config.plugins,
-    new StylablePlugin(stylableOptions),
+    new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'kata-kit',
       template: path.join(__dirname, 'public/index.html'),
@@ -64,4 +93,4 @@ module.exports = Object.assign({}, config, {
       disableDotRule: true
     }
   }
-});
+};
