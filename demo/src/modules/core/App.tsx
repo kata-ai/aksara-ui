@@ -3,8 +3,10 @@ import {
   withRouter,
   RouteComponentProps,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
+import styled from 'styled-components';
 
 import {
   Wrapper,
@@ -21,6 +23,10 @@ import Docs from '../docs';
 
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
+const SidebarSubTitle = styled('h1')`
+  margin-bottom: 1.846153846rem /* $space-3 */;
+`;
+
 class App extends React.Component<RouteComponentProps<{}>> {
   isSidebarCollapsed() {
     return this.props.location.pathname.search(/docs/) === -1;
@@ -31,16 +37,22 @@ class App extends React.Component<RouteComponentProps<{}>> {
       <Wrapper>
         <Sidebar collapsed={this.isSidebarCollapsed()}>
           <SidebarMain logo={Logo}>
-            <SidebarMainMenu exact to="/" icon="settings">
+            <SidebarMainMenu exact to="/" icon="bot">
               Demo
             </SidebarMainMenu>
-            <SidebarMainMenu to="/docs" icon="cms">
+            <SidebarMainMenu to="/docs" icon="docs">
               Docs
             </SidebarMainMenu>
+            <SidebarMainMenu to="/components" icon="method">
+              Components
+            </SidebarMainMenu>
           </SidebarMain>
-          <SidebarSub titleElement={<h1>Sidebar</h1>}>
-            <SidebarSubMenu to="/" icon="bot">
+          <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
+            <SidebarSubMenu exact to="/docs/">
               Menu 1
+            </SidebarSubMenu>
+            <SidebarSubMenu exact to="/docs/item/">
+              Menu 2
             </SidebarSubMenu>
           </SidebarSub>
         </Sidebar>
@@ -48,6 +60,7 @@ class App extends React.Component<RouteComponentProps<{}>> {
           <Switch>
             <Route exact path="/" component={Demo} />
             <Route path="/docs" component={Docs} />
+            <Route render={() => <Redirect to="/" />} />
           </Switch>
         </Content>
       </Wrapper>

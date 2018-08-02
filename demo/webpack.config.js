@@ -14,8 +14,8 @@ module.exports = Object.assign({}, config, {
   },
   output: {
     ...config.output,
-    filename: '[name].[chunkhash:8].js',
-    chunkFilename: '[name].[chunkhash:8].chunk.js',
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'build'),
     publicPath: '/'
   },
@@ -57,6 +57,11 @@ module.exports = Object.assign({}, config, {
   ],
   devServer: {
     disableHostCheck: true,
-    historyApiFallback: true
+    hot: true,
+    historyApiFallback: {
+      // Paths with dots should still use the history fallback.
+      // See https://github.com/facebookincubator/create-react-app/issues/387.
+      disableDotRule: true
+    }
   }
 });

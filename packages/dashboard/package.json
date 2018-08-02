@@ -16,17 +16,15 @@
     "clean": "rimraf lib"
   },
   "dependencies": {
+    "@kata-kit/layout": "^0.5.0",
+    "@kata-kit/tooltip": "^0.5.0",
     "classnames": "^2.2.6",
     "styled-components": "^3.3.3"
   },
   "peerDependencies": {
-    "@kata-kit/layout": "^0.5.0",
-    "@kata-kit/tooltip": "^0.5.0",
     "react": "^16.3.0"
   },
   "devDependencies": {
-    "@kata-kit/layout": "^0.5.0",
-    "@kata-kit/tooltip": "^0.5.0",
     "@types/classnames": "^2.2.3"
   }
 }
