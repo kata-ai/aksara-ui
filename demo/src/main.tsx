@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from '@kata-kit/button';
 import { DashboardCard, CardGrid } from '@kata-kit/card';
-import { EmptyMessage } from '@kata-kit/common';
+import { EmptyMessage, Board } from '@kata-kit/common';
 import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import {
   Wrapper,
@@ -47,59 +47,49 @@ const Main = () => (
             electronic typesetting, remaining essentially unchanged.
           </DashboardCard>
         </CardGrid>
-        <div>
-          <DashboardContentHeader isSecondary>
-            Typography
-          </DashboardContentHeader>
-          <div>
-            <h1>Understanding Conversation, Humanizing Interaction</h1>
-            <h2>Understanding Conversation, Humanizing Interaction</h2>
-            <h3>Understanding Conversation, Humanizing Interaction</h3>
-            <h4>Understanding Conversation, Humanizing Interaction</h4>
-            <h5 className="text-label">
-              Understanding Conversation, Humanizing Interaction
-            </h5>
-            <h6 className="text-small">
-              Understanding Conversation, Humanizing Interaction
-            </h6>
-          </div>
-          <div>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </div>
-        </div>
-        <div>
-          <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
-          <div>
-            {/* stylable won't work if we set a custom className inside the component */}
-            <Button>Demo Component</Button>{' '}
-            <Button color="primary">Primary Button</Button>{' '}
-            <Button color="secondary">Secondary Button</Button>{' '}
-            <Button color="danger">Danger Button</Button>{' '}
-            <Button color="primary" disabled>
-              Disabled Button
-            </Button>{' '}
-            <Button color="primary" loading>
-              Loading
-            </Button>{' '}
-          </div>
-        </div>
-        <div>
-          <DashboardContentHeader isSecondary>
-            Empty Message
-          </DashboardContentHeader>
-          <div>
-            <EmptyMessage title="Empty Message">
-              Empty message example.
-            </EmptyMessage>
-          </div>
-        </div>
+        <DashboardContentHeader isSecondary>Typography</DashboardContentHeader>
+        <Board>
+          <h1>Understanding Conversation, Humanizing Interaction</h1>
+          <h2>Understanding Conversation, Humanizing Interaction</h2>
+          <h3>Understanding Conversation, Humanizing Interaction</h3>
+          <h4>Understanding Conversation, Humanizing Interaction</h4>
+          <h5 className="text-label">
+            Understanding Conversation, Humanizing Interaction
+          </h5>
+          <h6 className="text-small">
+            Understanding Conversation, Humanizing Interaction
+          </h6>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </p>
+        </Board>
+        <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
+        <Board>
+          {/* stylable won't work if we set a custom className inside the component */}
+          <Button>Demo Component</Button>{' '}
+          <Button color="primary">Primary Button</Button>{' '}
+          <Button color="secondary">Secondary Button</Button>{' '}
+          <Button color="danger">Danger Button</Button>{' '}
+          <Button color="primary" disabled>
+            Disabled Button
+          </Button>{' '}
+          <Button color="primary" loading>
+            Loading
+          </Button>{' '}
+        </Board>
+        <DashboardContentHeader isSecondary>
+          Empty Message
+        </DashboardContentHeader>
+        <Board>
+          <EmptyMessage title="Empty Message">
+            Empty message example.
+          </EmptyMessage>
+        </Board>
       </Dashboard>
     </Content>
   </Wrapper>

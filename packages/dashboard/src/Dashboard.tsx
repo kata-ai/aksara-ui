@@ -208,12 +208,19 @@ const DashboardHeaderContent = styled('div')`
 `;
 
 const DashboardContent = styled('div')`
-  &:not(.is-starter) {
-    margin-top: 1.846153846rem /* $space-3 */;
+  padding: 1.846153846rem /* $space-3 */ 20px;
+
+  @media (min-width: 1280px /* $break-medium */) {
+    padding: 1.846153846rem /* $space-3 */ 40px;
+  }
+
+  @media (min-width: 1366px /* $break-large */) {
+    padding: 1.846153846rem /* $space-3 */ 48px;
   }
 
   &.is-starter {
     margin-top: -100px !important;
+    padding-top: 0 !important;
   }
 `;
 
