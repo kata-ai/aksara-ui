@@ -226,6 +226,14 @@ const DashboardContent = styled('div')`
 
 const DashboardStarterHeading = styled('div')`
   display: flex;
-  padding: 48px 48px 136px;
+  padding: 20px 20px 136px;
   background-color: #006fe6 /* $kata-blue */;
+
+  @media (min-width: 1280px /* $break-medium */) {
+    padding: 40px 40px 136px;
+  }
+
+  @media (min-width: 1366px /* $break-large */) {
+    padding: 48px 48px 136px;
+  }
 `;

@@ -1,9 +1,12 @@
+// tslint:disable:no-console
+
 import React from 'react';
 
 import { Button } from '@kata-kit/button';
 import { DashboardCard, CardGrid } from '@kata-kit/card';
 import { EmptyMessage, Board } from '@kata-kit/common';
 import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
+import { Banner } from '@kata-kit/banner';
 import {
   Wrapper,
   Content,
@@ -90,6 +93,17 @@ const Main = () => (
             Empty message example.
           </EmptyMessage>
         </Board>
+        <DashboardContentHeader isSecondary>Banners</DashboardContentHeader>
+        <div>
+          <Banner state="success" message="Hallo" />
+          <Banner
+            state="info"
+            message="Hallo"
+            onClose={() => console.log('test')}
+          />
+          <Banner state="error" message="Hallo" />
+          <Banner state="warning" message="Hallo" />
+        </div>
       </Dashboard>
     </Content>
   </Wrapper>
