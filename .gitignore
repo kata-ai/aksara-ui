@@ -76,6 +76,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# JetBrains settings
+.idea
+
 # =========================
 # Operating System Files
 # =========================
