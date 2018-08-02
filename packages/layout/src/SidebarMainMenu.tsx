@@ -29,6 +29,8 @@ const Root = styled(NavLink)`
   display: block;
   color: #676b6d /* $gray-60 */;
   text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   & .main-menu-icon {
     width: 40px;

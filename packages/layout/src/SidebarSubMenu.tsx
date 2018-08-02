@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -6,7 +6,7 @@ export interface SidebarSubMenuProps extends NavLinkProps {
   className?: string;
   to: string;
   exact?: boolean;
-  icon: string;
+  icon?: string;
 }
 
 const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
@@ -16,7 +16,13 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
   ...rest
 }) => (
   <Root className={className} activeClassName="is-active" {...rest}>
-    <SubMenuIcon className={`icon-${icon}`} /> {children}
+    {icon ? (
+      <Fragment>
+        <SubMenuIcon className={`icon-${icon}`} /> {children}
+      </Fragment>
+    ) : (
+      <Fragment>{children}</Fragment>
+    )}
   </Root>
 );
 
@@ -40,6 +46,15 @@ const Root = styled(NavLink)`
   &:active {
     background: #484c4f /* $gray-70 */;
     color: #fff /* $white */;
+  }
+
+  &.is-active {
+    color: #006fe6 /* $kata-blue */;
+
+    &:hover {
+      background: none;
+      color: #006fe6 /* $kata-blue */;
+    }
   }
 `;
 
