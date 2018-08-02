@@ -22,9 +22,12 @@
     "@kata-kit/reset": "*",
     "@kata-kit/tooltip": "*",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.4",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
+    "@types/react-router-dom": "^4.3.0",
     "bootstrap": "^4.1.2",
     "css-loader": "^1.0.0",
     "style-loader": "^0.21.0",

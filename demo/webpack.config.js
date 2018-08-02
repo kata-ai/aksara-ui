@@ -56,6 +56,7 @@ module.exports = Object.assign({}, config, {
     })
   ],
   devServer: {
-    disableHostCheck: true
+    disableHostCheck: true,
+    historyApiFallback: true
   }
 });
