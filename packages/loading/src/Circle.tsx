@@ -1,7 +1,6 @@
 import React, { SFC } from 'react';
+import styled from 'styled-components';
 import shortid from 'shortid';
-
-import styles from './Circle.st.css';
 
 export interface LoadingCircleProps {
   size?: number;
@@ -10,7 +9,7 @@ export interface LoadingCircleProps {
 
 const Circle: SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
   return (
-    <div {...styles('root', {}, props)} title="0">
+    <Root className={props.className} title="0">
       <svg
         version="1.1"
         id={shortid.generate()}
@@ -46,8 +45,18 @@ const Circle: SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
           />
         </path>
       </svg>
-    </div>
+    </Root>
   );
 };
 
 export default Circle;
+
+const Root = styled('div')`
+  display: inline-block;
+  vertical-align: middle;
+
+  & svg path,
+  & svg rect {
+    fill: #006fe6 /* $kata-blue */;
+  }
+`;

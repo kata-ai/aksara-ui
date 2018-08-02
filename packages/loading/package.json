@@ -13,7 +13,7 @@
     "./images"
   ],
   "scripts": {
-    "build": "rimraf lib && webpack",
+    "build": "rimraf lib && tsc",
     "clean": "rimraf lib"
   },
   "dependencies": {

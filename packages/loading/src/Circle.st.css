@@ -1,9 +1,0 @@
-.root {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.root svg path,
-.root svg rect {
-  fill: #006fe6 /* $kata-blue */;
-}
