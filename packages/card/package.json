@@ -12,7 +12,7 @@
     "./lib"
   ],
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "rimraf lib && tsc",
     "clean": "rimraf lib"
   },
   "dependencies": {

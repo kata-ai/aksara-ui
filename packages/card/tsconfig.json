@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": ".",
-    "outDir": "."
+    "declarationDir": "./lib",
+    "outDir": "./lib"
   },
   "include": ["./src/**/*", "../../types/**/*.d.ts"],
   "exclude": ["./lib", "./**/__stories__", "./scripts"]

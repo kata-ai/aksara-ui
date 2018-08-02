@@ -12,11 +12,13 @@
     "./lib"
   ],
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "rimraf lib && tsc",
     "clean": "rimraf lib"
   },
   "dependencies": {
-    "@kata-kit/loading": "^0.5.0"
+    "@kata-kit/loading": "^0.5.0",
+    "polished": "^1.9.3",
+    "styled-components": "^3.3.3"
   },
   "peerDependencies": {
     "react": "^16.3.0"

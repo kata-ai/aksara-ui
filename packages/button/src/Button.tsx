@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
-
-import styles from './Button.st.css';
+import styled from 'styled-components';
+import classnames from 'classnames';
+import { darken } from 'polished';
 
 // FIXME: This errors because of our tsconfig path options. Should we:
 // A. use separate tsconfig file between referencing each package in monorepo
@@ -71,16 +72,8 @@ class Button extends React.Component<ButtonProps> {
     } = this.props;
 
     return (
-      <button
-        {...styles(
-          'root',
-          {
-            primary: color === 'primary',
-            secondary: color === 'secondary',
-            danger: color === 'danger'
-          },
-          this.props
-        )}
+      <ButtonWrapper
+        className={classnames(color)}
         type={type}
         onClick={this.onClick}
         disabled={disabled || loading}
@@ -88,17 +81,95 @@ class Button extends React.Component<ButtonProps> {
       >
         {loading ? (
           <Fragment>
-            <Circle className={styles.loaderCircle} size={30} />
-            <span className={styles.btnTextInvisible}>
-              {this.props.children}
-            </span>
+            <LoaderCircle size={30} />
+            <InvisibleText>{this.props.children}</InvisibleText>
           </Fragment>
         ) : (
           this.props.children
         )}
-      </button>
+      </ButtonWrapper>
     );
   }
 }
 
 export default Button;
+
+const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
+  display: ${props => (props.block ? 'block' : 'inline-block')};
+  position: relative;
+  border: none;
+  padding: 10px 24px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  border-radius: 4px;
+  line-height: 1.538rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+
+  &[disabled] {
+    background: #c2c7c8 !important;
+    border: solid 1px ${darken(0.1, '#c2c7c8')} !important;
+
+    &:hover {
+      background: #c2c7c8 !important;
+      border: solid 1px ${darken(0.1, '#c2c7c8')} !important;
+    }
+  }
+
+  &.primary {
+    background-color: #2053af; /* $cobalt */
+    border-color: #2053af; /* $cobalt */
+    color: #fff; /* $white */
+
+    &:hover,
+    &:active {
+      color: #fff; /* $white */
+      background-color: #2662cf; /* $semi-cobalt */
+    }
+  }
+
+  &.secondary {
+    border: none;
+    color: #949a9d /* $gray-50 */;
+    background-color: #f6f7f8 /* $gray-10 */;
+
+    &:hover {
+      color: #949a9d /* $gray-50 */;
+      background-color: #edf1f2 /* $gray-20 */;
+    }
+
+    &:active {
+      color: #fff /* $white */;
+      background-color: #484c4f /* $gray-70 */;
+    }
+  }
+
+  &.danger {
+    border: none;
+    color: #fff /* $white */;
+    background-color: #e53935 /* $red */;
+  }
+`;
+
+const LoaderCircle = styled(Circle)`
+  margin: -6px 0;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+
+  svg path,
+  svg rect {
+    fill: #fff /* $white */;
+  }
+`;
+
+const InvisibleText = styled('span')`
+  visibility: hidden;
+`;
