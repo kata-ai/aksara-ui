@@ -48,11 +48,11 @@ class App extends React.Component<RouteComponentProps<{}>> {
             </SidebarMainMenu>
           </SidebarMain>
           <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
-            <SidebarSubMenu exact to="/docs/">
-              Menu 1
+            <SidebarSubMenu exact to="/docs">
+              Index
             </SidebarSubMenu>
-            <SidebarSubMenu exact to="/docs/item/">
-              Menu 2
+            <SidebarSubMenu exact to="/docs/page">
+              Page
             </SidebarSubMenu>
           </SidebarSub>
         </Sidebar>
