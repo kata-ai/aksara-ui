@@ -19,6 +19,7 @@
     "@kata-kit/dashboard": "*",
     "@kata-kit/fonts": "*",
     "@kata-kit/layout": "*",
+    "@kata-kit/pagination": "*",
     "@kata-kit/reset": "*",
     "@kata-kit/tooltip": "*",
     "react": "^16.4.1",

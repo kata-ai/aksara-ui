@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import classnames from 'classnames';
 import { darken } from 'polished';
 
-// FIXME: This errors because of our tsconfig path options. Should we:
-// A. use separate tsconfig file between referencing each package in monorepo
-//    and for building the project itself, or
-// B. give up altogether and just write the typings manually?
-//
-// ALSO: should we make this a peerdep?
 import { Circle } from '@kata-kit/loading';
+
+// TODO items:
+// - Cannot extend button below in other packages using `styled-components`, so
+//   styles specific to `@kata-kit/pagination` is still extended here.
+//   Possible solution: upgrade to `styled-components@^3.4.0`.
 
 export type ButtonColors =
   | 'primary'
@@ -27,7 +26,7 @@ export interface ButtonProps {
   isIcon?: boolean;
   className?: string;
   onClick?: any;
-  type?: 'button' | 'submit';
+  type?: string;
   block?: boolean;
   active?: boolean;
   loading?: boolean;
@@ -60,7 +59,7 @@ class Button extends React.Component<ButtonProps> {
     const {
       className,
       size,
-      color,
+      color = 'secondary',
       type,
       block,
       active,
@@ -68,12 +67,13 @@ class Button extends React.Component<ButtonProps> {
       disabled,
       isIcon,
       outline,
+      children,
       ...props
     } = this.props;
 
     return (
       <ButtonWrapper
-        className={classnames(color)}
+        className={classnames(color, className)}
         type={type}
         onClick={this.onClick}
         disabled={disabled || loading}
@@ -81,11 +81,11 @@ class Button extends React.Component<ButtonProps> {
       >
         {loading ? (
           <Fragment>
-            <LoaderCircle size={30} />
-            <InvisibleText>{this.props.children}</InvisibleText>
+            <LoaderCircle className={classnames(color, className)} size={30} />
+            <InvisibleText>{children}</InvisibleText>
           </Fragment>
         ) : (
-          this.props.children
+          children
         )}
       </ButtonWrapper>
     );
@@ -156,6 +156,41 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
     color: #fff /* $white */;
     background-color: #e53935 /* $red */;
   }
+
+  &.white {
+    border: 1px solid #e2e6e8 /* $gray-30 */;
+    color: #484c4f /* $gray-70 */;
+    background-color: #fff /* $white */;
+
+    &:hover {
+      color: #484c4f /* $gray-70 */;
+      background-color: #f6f7f8 /* $gray-10 */;
+    }
+
+    &:active {
+      color: #fff /* $white */;
+      background-color: #484c4f /* $gray-70 */ !important;
+    }
+  }
+
+  &.pagination {
+    background: #fff /* $white */;
+    margin-left: 4px;
+    line-height: 1;
+    min-width: 32px;
+    width: auto;
+
+    &:disabled,
+    &[disabled] {
+      background: #f6f7f8 /* $gray-10 */;
+    }
+
+    &.is-active {
+      background: #006fe6 /* $kata-blue */;
+      border-color: #006fe6 /* $kata-blue */;
+      color: #fff /* $white */;
+    }
+  }
 `;
 
 const LoaderCircle = styled(Circle)`
@@ -167,6 +202,13 @@ const LoaderCircle = styled(Circle)`
   svg path,
   svg rect {
     fill: #fff /* $white */;
+  }
+
+  .white {
+    svg path,
+    svg rect {
+      fill: #484c4f /* $gray-70 */;
+    }
   }
 `;
 

@@ -11,6 +11,7 @@ import { DashboardCard, CardGrid } from '@kata-kit/card';
 import { EmptyMessage, Board } from '@kata-kit/common';
 import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import { Banner } from '@kata-kit/banner';
+import { Pagination } from '@kata-kit/pagination';
 
 export default () => (
   <Dashboard
@@ -96,5 +97,13 @@ export default () => (
       <Banner state="error" message="Hallo" />
       <Banner state="warning" message="Hallo" />
     </div>
+    <DashboardContentHeader isSecondary>Pagination</DashboardContentHeader>
+    <Board>
+      <Pagination
+        current={3}
+        total={50}
+        onSelect={select => console.log('selected', select)}
+      />
+    </Board>
   </Dashboard>
 );
