@@ -64,7 +64,7 @@ class Pagination extends Component<PaginationProps, PaginationState> {
       <PaginationBase className={className}>
         <Button
           isIcon
-          appearance="white"
+          color="white"
           className="pagination"
           disabled={current === 1}
           onClick={() => this.props.onSelect(current - 1)}
@@ -75,7 +75,7 @@ class Pagination extends Component<PaginationProps, PaginationState> {
           <PaginationButton
             key={index}
             isIcon
-            appearance="white"
+            color="white"
             className={classnames(
               'pagination',
               page === current && 'is-active'
@@ -87,7 +87,7 @@ class Pagination extends Component<PaginationProps, PaginationState> {
         ))}
         <PaginationButton
           isIcon
-          appearance="white"
+          color="white"
           className="pagination"
           disabled={current === this.props.total}
           onClick={() => this.props.onSelect(current + 1)}

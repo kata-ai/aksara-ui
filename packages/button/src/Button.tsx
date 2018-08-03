@@ -10,7 +10,7 @@ import { Circle } from '@kata-kit/loading';
 //   styles specific to `@kata-kit/pagination` is still extended here.
 //   Possible solution: upgrade to `styled-components@^3.4.0`.
 
-export type ButtonAppearance =
+export type ButtonColors =
   | 'primary'
   | 'secondary'
   | 'success'
@@ -21,7 +21,7 @@ export type ButtonAppearance =
 
 export interface ButtonProps {
   disabled?: boolean;
-  appearance?: ButtonAppearance;
+  color?: ButtonColors;
   size?: 'lg' | 'sm' | '';
   isIcon?: boolean;
   className?: string;
@@ -36,7 +36,7 @@ export interface ButtonProps {
 
 class Button extends React.Component<ButtonProps> {
   static defaultProps = {
-    color: 'secondary',
+    color: 'secondary' as ButtonColors,
     type: 'button',
     block: false,
     active: false,
@@ -59,7 +59,7 @@ class Button extends React.Component<ButtonProps> {
     const {
       className,
       size,
-      appearance,
+      color,
       type,
       block,
       active,
@@ -73,7 +73,7 @@ class Button extends React.Component<ButtonProps> {
 
     return (
       <ButtonWrapper
-        className={classnames(appearance, className)}
+        className={classnames(color, className)}
         type={type}
         onClick={this.onClick}
         disabled={disabled || loading}
@@ -81,10 +81,7 @@ class Button extends React.Component<ButtonProps> {
       >
         {loading ? (
           <Fragment>
-            <LoaderCircle
-              className={classnames(appearance, className)}
-              size={30}
-            />
+            <LoaderCircle className={classnames(color, className)} size={30} />
             <InvisibleText>{children}</InvisibleText>
           </Fragment>
         ) : (
