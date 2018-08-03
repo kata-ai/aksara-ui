@@ -115,6 +115,7 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
     cursor: pointer;
   }
 
+  &:disabled,
   &[disabled] {
     background: #c2c7c8 !important;
     border: solid 1px ${darken(0.1, '#c2c7c8')} !important;
@@ -171,7 +172,7 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
 
     &:active {
       color: #fff /* $white */;
-      background-color: #484c4f /* $gray-70 */ !important;
+      background-color: #484c4f /* $gray-70 */;
     }
   }
 

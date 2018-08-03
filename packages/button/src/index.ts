@@ -1,6 +1,14 @@
-import Button from './Button';
+import Button, { ButtonProps, ButtonColors, ButtonSizes } from './Button';
 import FloatingButton from './FloatingButton';
 import SupportButton from './SupportButton';
 import ToggleButton from './ToggleButton';
 
-export { Button, FloatingButton, SupportButton, ToggleButton };
+export {
+  Button,
+  ButtonProps,
+  ButtonColors,
+  ButtonSizes,
+  FloatingButton,
+  SupportButton,
+  ToggleButton
+};

@@ -116,11 +116,27 @@ export default () => (
     </div>
     <DashboardContentHeader isSecondary>Pagination</DashboardContentHeader>
     <Board>
-      <Pagination
-        current={3}
-        total={50}
-        onSelect={select => console.log('selected', select)}
-      />
+      <div style={{ marginBottom: '8px' }}>
+        <Pagination
+          current={3}
+          total={50}
+          onSelect={select => console.log('selected', select)}
+        />
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Pagination
+          current={1}
+          total={50}
+          onSelect={select => console.log('selected', select)}
+        />
+      </div>
+      <div>
+        <Pagination
+          current={22}
+          total={50}
+          onSelect={select => console.log('selected', select)}
+        />
+      </div>
     </Board>
     <DashboardContentHeader isSecondary>Tooltip</DashboardContentHeader>
     <Board>

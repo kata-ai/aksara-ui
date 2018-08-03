@@ -113,13 +113,13 @@ const PaginationButton = styled(Button)`
 
   &:disabled,
   &[disabled] {
-    background: #f6f7f8 /* $gray-10 */;
+    background: #f6f7f8 /* $gray-10 */ !important;
   }
 
   &.is-active,
   &.is-active:hover {
-    background: #006fe6 /* $kata-blue */;
-    border-color: #006fe6 /* $kata-blue */;
-    color: #fff /* $white */;
+    background: #006fe6 /* $kata-blue */ !important;
+    border-color: #006fe6 /* $kata-blue */ !important;
+    color: #fff /* $white */ !important;
   }
 `;
