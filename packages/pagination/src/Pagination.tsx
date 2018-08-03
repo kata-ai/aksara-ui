@@ -117,7 +117,8 @@ const PaginationButton = styled(Button)`
     background: #f6f7f8 /* $gray-10 */;
   }
 
-  &.is-active {
+  &.is-active,
+  &.is-active:hover {
     background: #006fe6 /* $kata-blue */;
     border-color: #006fe6 /* $kata-blue */;
     color: #fff /* $white */;
