@@ -10,7 +10,7 @@
     "./lib"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc",
+    "build": "rimraf lib && tsc -p tsconfig.build.json",
     "clean": "rimraf lib"
   },
   "author": "Kata.ai <info@kata.ai>",
