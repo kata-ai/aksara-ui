@@ -12,6 +12,7 @@ import { EmptyMessage, Board } from '@kata-kit/common';
 import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import { Banner } from '@kata-kit/banner';
 import { Pagination } from '@kata-kit/pagination';
+import { TooltipTarget, Tooltip } from '@kata-kit/tooltip';
 
 export default () => (
   <Dashboard
@@ -104,6 +105,12 @@ export default () => (
         total={50}
         onSelect={select => console.log('selected', select)}
       />
+    </Board>
+    <DashboardContentHeader isSecondary>Tooltip</DashboardContentHeader>
+    <Board>
+      <TooltipTarget component={<Tooltip>Hello! This is a tooltip.</Tooltip>}>
+        <span>Hover over me!</span>
+      </TooltipTarget>
     </Board>
   </Dashboard>
 );
