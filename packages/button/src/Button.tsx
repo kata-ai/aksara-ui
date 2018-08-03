@@ -95,7 +95,7 @@ export default Button;
 const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
   display: ${props => (props.block ? 'block' : 'inline-block')};
   position: relative;
-  border: 1px solid transparent;
+  border: none;
   background: none;
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};
