@@ -1,7 +1,12 @@
 // tslint:disable:no-console
 import React from 'react';
 
-import { Button, FloatingButton, SupportButton } from '@kata-kit/button';
+import {
+  Button,
+  FloatingButton,
+  SupportButton,
+  ToggleButton
+} from '@kata-kit/button';
 import { DashboardCard, CardGrid } from '@kata-kit/card';
 import { EmptyMessage, Board } from '@kata-kit/common';
 import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
@@ -71,6 +76,10 @@ export default () => (
       <FloatingButton icon="bot" /> <FloatingButton icon="bot" disabled />{' '}
       <SupportButton>SupportButton</SupportButton>{' '}
       <SupportButton loading>Loading</SupportButton>{' '}
+      <ToggleButton
+        renderActive={() => <Button>ToggleButton</Button>}
+        renderInactive={() => <Button>ToggleButton Inactive</Button>}
+      />{' '}
     </Board>
     <DashboardContentHeader isSecondary>Empty Message</DashboardContentHeader>
     <Board>
