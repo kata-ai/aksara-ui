@@ -65,13 +65,13 @@ export default () => (
     <Board>
       {/* stylable won't work if we set a custom className inside the component */}
       <Button>Demo Component</Button>{' '}
-      <Button color="primary">Primary Button</Button>{' '}
-      <Button color="secondary">Secondary Button</Button>{' '}
-      <Button color="danger">Danger Button</Button>{' '}
-      <Button color="primary" disabled>
+      <Button appearance="primary">Primary Button</Button>{' '}
+      <Button appearance="secondary">Secondary Button</Button>{' '}
+      <Button appearance="danger">Danger Button</Button>{' '}
+      <Button appearance="primary" disabled>
         Disabled Button
       </Button>{' '}
-      <Button color="primary" loading>
+      <Button appearance="primary" loading>
         Loading
       </Button>{' '}
       <FloatingButton icon="bot" /> <FloatingButton icon="bot" disabled />{' '}

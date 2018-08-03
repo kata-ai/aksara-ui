@@ -64,7 +64,7 @@ class Pagination extends Component<PaginationProps, PaginationState> {
       <PaginationBase className={className}>
         <Button
           isIcon
-          color="white"
+          appearance="white"
           className="pagination"
           disabled={current === 1}
           onClick={() => this.props.onSelect(current - 1)}
@@ -72,10 +72,10 @@ class Pagination extends Component<PaginationProps, PaginationState> {
           &laquo;
         </Button>
         {pages.map((page, index) => (
-          <Button
+          <PaginationButton
             key={index}
             isIcon
-            color="white"
+            appearance="white"
             className={classnames(
               'pagination',
               page === current && 'is-active'
@@ -83,17 +83,17 @@ class Pagination extends Component<PaginationProps, PaginationState> {
             onClick={() => (isNumber(page) ? this.props.onSelect(page) : null)}
           >
             {page}
-          </Button>
+          </PaginationButton>
         ))}
-        <Button
+        <PaginationButton
           isIcon
-          color="white"
+          appearance="white"
           className="pagination"
           disabled={current === this.props.total}
           onClick={() => this.props.onSelect(current + 1)}
         >
           &raquo;
-        </Button>
+        </PaginationButton>
       </PaginationBase>
     );
   }
@@ -103,4 +103,23 @@ export default Pagination;
 
 const PaginationBase = styled('div')`
   display: inline-block;
+`;
+
+const PaginationButton = styled(Button)`
+  background: #fff /* $white */;
+  margin-left: 4px;
+  line-height: 1;
+  min-width: 32px;
+  width: auto;
+
+  &:disabled,
+  &[disabled] {
+    background: #f6f7f8 /* $gray-10 */;
+  }
+
+  &.is-active {
+    background: #006fe6 /* $kata-blue */;
+    border-color: #006fe6 /* $kata-blue */;
+    color: #fff /* $white */;
+  }
 `;

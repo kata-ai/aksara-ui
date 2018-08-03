@@ -10,7 +10,7 @@ import { Circle } from '@kata-kit/loading';
 //   styles specific to `@kata-kit/pagination` is still extended here.
 //   Possible solution: upgrade to `styled-components@^3.4.0`.
 
-export type ButtonColors =
+export type ButtonAppearance =
   | 'primary'
   | 'secondary'
   | 'success'
@@ -21,7 +21,7 @@ export type ButtonColors =
 
 export interface ButtonProps {
   disabled?: boolean;
-  color?: ButtonColors;
+  appearance?: ButtonAppearance;
   size?: 'lg' | 'sm' | '';
   isIcon?: boolean;
   className?: string;
@@ -59,7 +59,7 @@ class Button extends React.Component<ButtonProps> {
     const {
       className,
       size,
-      color = 'secondary',
+      appearance,
       type,
       block,
       active,
@@ -73,7 +73,7 @@ class Button extends React.Component<ButtonProps> {
 
     return (
       <ButtonWrapper
-        className={classnames(color, className)}
+        className={classnames(appearance, className)}
         type={type}
         onClick={this.onClick}
         disabled={disabled || loading}
@@ -81,7 +81,10 @@ class Button extends React.Component<ButtonProps> {
       >
         {loading ? (
           <Fragment>
-            <LoaderCircle className={classnames(color, className)} size={30} />
+            <LoaderCircle
+              className={classnames(appearance, className)}
+              size={30}
+            />
             <InvisibleText>{children}</InvisibleText>
           </Fragment>
         ) : (
@@ -170,25 +173,6 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
     &:active {
       color: #fff /* $white */;
       background-color: #484c4f /* $gray-70 */ !important;
-    }
-  }
-
-  &.pagination {
-    background: #fff /* $white */;
-    margin-left: 4px;
-    line-height: 1;
-    min-width: 32px;
-    width: auto;
-
-    &:disabled,
-    &[disabled] {
-      background: #f6f7f8 /* $gray-10 */;
-    }
-
-    &.is-active {
-      background: #006fe6 /* $kata-blue */;
-      border-color: #006fe6 /* $kata-blue */;
-      color: #fff /* $white */;
     }
   }
 `;
