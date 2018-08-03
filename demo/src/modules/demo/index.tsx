@@ -27,16 +27,23 @@ export default () => (
   >
     <DashboardContentHeader>Cards</DashboardContentHeader>
     <CardGrid>
-      <DashboardCard title="Card 1">
+      <DashboardCard title="First Card">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </DashboardCard>
-      <DashboardCard title="Card 2">
+      <DashboardCard title="Second Card">
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s, when an unknown printer took a galley of type and scrambled it to
         make a type specimen book.
       </DashboardCard>
-      <DashboardCard title="Card 3">
+      <DashboardCard
+        title="Card With Action"
+        action={
+          <Button color="secondary" isIcon>
+            <i className="icon-more" />
+          </Button>
+        }
+      >
         It has survived not only five centuries, but also the leap into
         electronic typesetting, remaining essentially unchanged.
       </DashboardCard>
@@ -74,6 +81,15 @@ export default () => (
       </Button>{' '}
       <Button color="primary" loading>
         Loading
+      </Button>{' '}
+      <Button color="primary" size="sm">
+        Small Button
+      </Button>{' '}
+      <Button color="secondary" size="sm" outline>
+        Small Button
+      </Button>{' '}
+      <Button color="secondary" isIcon>
+        <i className="icon-bot" />
       </Button>{' '}
       <FloatingButton icon="bot" /> <FloatingButton icon="bot" disabled />{' '}
       <SupportButton>SupportButton</SupportButton>{' '}

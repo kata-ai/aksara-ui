@@ -19,10 +19,12 @@ export type ButtonColors =
   | 'info'
   | 'white';
 
+export type ButtonSizes = 'lg' | 'sm';
+
 export interface ButtonProps {
   disabled?: boolean;
   color?: ButtonColors;
-  size?: 'lg' | 'sm' | '';
+  size?: ButtonSizes;
   isIcon?: boolean;
   className?: string;
   onClick?: any;
@@ -31,13 +33,13 @@ export interface ButtonProps {
   active?: boolean;
   loading?: boolean;
   outline?: boolean;
-  children: any;
 }
 
 class Button extends React.Component<ButtonProps> {
   static defaultProps = {
     color: 'secondary' as ButtonColors,
     type: 'button',
+    size: 'lg' as ButtonSizes,
     block: false,
     active: false,
     disabled: false,
@@ -58,22 +60,18 @@ class Button extends React.Component<ButtonProps> {
   render() {
     const {
       className,
-      size,
       color,
       type,
-      block,
-      active,
       loading,
       disabled,
       isIcon,
-      outline,
       children,
       ...props
     } = this.props;
 
     return (
       <ButtonWrapper
-        className={classnames(color, className)}
+        className={classnames(color, isIcon && 'icon', className)}
         type={type}
         onClick={this.onClick}
         disabled={disabled || loading}
@@ -97,16 +95,20 @@ export default Button;
 const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
   display: ${props => (props.block ? 'block' : 'inline-block')};
   position: relative;
-  border: none;
-  padding: 10px 24px;
-  height: 40px;
-  font-size: 1rem;
-  font-weight: 500;
+  border: 1px solid transparent;
+  background: none;
+  padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
+  height: ${props => (props.size === 'sm' ? '32px' : '40px')};
+  font-size: ${props => (props.size === 'sm' ? '11px' : '1rem')};
+  font-weight: ${props => (props.size === 'sm' ? '700' : '500')};
+  line-height: ${props => (props.size === 'sm' ? '16px !important' : '20px')};
   letter-spacing: 0.2px;
   border-radius: 4px;
   line-height: 1.538rem;
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
   transition: all 0.3s ease;
 
   &:not([disabled]) {
@@ -170,6 +172,19 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
     &:active {
       color: #fff /* $white */;
       background-color: #484c4f /* $gray-70 */ !important;
+    }
+  }
+
+  &.icon {
+    height: 32px;
+    width: 32px;
+    padding: 8px;
+    text-align: center;
+    background: none;
+    color: #676b6d /* $gray-60 */;
+
+    i:before {
+      font-size: 16px;
     }
   }
 `;

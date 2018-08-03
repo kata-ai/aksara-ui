@@ -62,15 +62,14 @@ class Pagination extends Component<PaginationProps, PaginationState> {
     const pages = this.generatePages();
     return (
       <PaginationBase className={className}>
-        <Button
+        <PaginationButton
           isIcon
           color="white"
-          className="pagination"
           disabled={current === 1}
           onClick={() => this.props.onSelect(current - 1)}
         >
           &laquo;
-        </Button>
+        </PaginationButton>
         {pages.map((page, index) => (
           <PaginationButton
             key={index}
@@ -88,7 +87,6 @@ class Pagination extends Component<PaginationProps, PaginationState> {
         <PaginationButton
           isIcon
           color="white"
-          className="pagination"
           disabled={current === this.props.total}
           onClick={() => this.props.onSelect(current + 1)}
         >
@@ -111,6 +109,7 @@ const PaginationButton = styled(Button)`
   line-height: 1;
   min-width: 32px;
   width: auto;
+  user-select: none;
 
   &:disabled,
   &[disabled] {
