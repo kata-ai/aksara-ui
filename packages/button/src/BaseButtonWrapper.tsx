@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import ButtonStyles from './ButtonStyles';
+
 export default styled.button`
   display: inline-block;
   font-weight: 400;
@@ -42,4 +44,6 @@ export default styled.button`
       transition: none;
     }
   }
+
+  ${ButtonStyles};
 `;

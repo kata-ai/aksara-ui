@@ -5,7 +5,7 @@ import styled, { keyframes } from 'styled-components';
 import { Circle } from '@kata-kit/loading';
 import { colors, layerShadows, transitions } from '@kata-kit/variables';
 
-import ButtonWrapper from './ButtonWrapper';
+import BaseButtonWrapper from './BaseButtonWrapper';
 
 export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
 
@@ -86,7 +86,7 @@ const popIn = keyframes`
   }
 `;
 
-const FloatingButtonWrapper = styled(ButtonWrapper)`
+const FloatingButtonWrapper = styled(BaseButtonWrapper)`
   height: 40px;
   width: 40px;
   font-weight: 500;
