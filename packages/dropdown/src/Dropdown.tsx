@@ -2,8 +2,11 @@ import React, { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import omit from 'lodash-es/omit';
+import styled from 'styled-components';
 
-interface Props {
+import BaseDropdown from './BaseDropdownWrapper';
+
+interface DropdownProps {
   isOpen?: boolean;
   className?: string;
   disabled?: boolean;
@@ -13,7 +16,7 @@ interface Props {
   onSelect?(value?: string | number | boolean): void;
 }
 
-class Dropdown extends React.Component<Props> {
+class Dropdown extends React.Component<DropdownProps> {
   static defaultProps = {
     isOpen: false,
     block: false,
@@ -55,7 +58,7 @@ class Dropdown extends React.Component<Props> {
     this.setState({ isOpen: false });
   };
 
-  componentWillReceiveProps(nextProps: Props) {
+  componentWillReceiveProps(nextProps: DropdownProps) {
     if (nextProps) {
       this.setState({
         ...this.state,
@@ -73,17 +76,12 @@ class Dropdown extends React.Component<Props> {
     const classes = classNames(
       `kata-drop${direction}`,
       `drop${direction}`,
-      'position-relative',
-      block ? 'd-block' : 'd-inline-block',
-      disabled ? 'disabled' : '',
       className
     );
 
-    // TODO:
-    // - Styles.
-    // - The `div` component below messes up. Figure out why.
+    // TODO: use new React context instead of cloneElement
     return (
-      <div className={classes} {...props}>
+      <DropdownWrapper className={classes} {...props}>
         {React.Children.map(children, (Item: ReactElement<any>) => {
           return Item &&
             Item.type &&
@@ -99,9 +97,15 @@ class Dropdown extends React.Component<Props> {
               })
             : Item;
         })}
-      </div>
+      </DropdownWrapper>
     );
   }
 }
 
 export default Dropdown;
+
+const DropdownWrapper = styled<DropdownProps, any>(BaseDropdown)`
+  display: ${(props: DropdownProps) =>
+    props.block ? 'd-block' : 'd-inline-block'};
+  position: relative;
+`;
