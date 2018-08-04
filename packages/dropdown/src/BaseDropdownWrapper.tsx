@@ -34,7 +34,7 @@ export default styled.div`
 
       &__item {
         padding: 10px 16px;
-        color: ${gray70} !important;
+        color: ${defaultTheme.colors.gray70} !important;
         cursor: pointer;
         white-space: nowrap;
         overflow: hidden;
