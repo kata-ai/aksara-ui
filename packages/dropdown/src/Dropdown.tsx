@@ -106,6 +106,6 @@ export default Dropdown;
 
 const DropdownWrapper = styled<DropdownProps, any>(BaseDropdown)`
   display: ${(props: DropdownProps) =>
-    props.block ? 'd-block' : 'd-inline-block'};
+    props.block ? 'block' : 'inline-block'};
   position: relative;
 `;
