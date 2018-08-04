@@ -105,14 +105,30 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Banners</DashboardContentHeader>
     <div>
-      <Banner state="success" message="Hallo" />
-      <Banner
-        state="info"
-        message="Hallo"
-        onClose={() => console.log('test')}
-      />
-      <Banner state="error" message="Hallo" />
-      <Banner state="warning" message="Hallo" />
+      <div style={{ marginBottom: '8px' }}>
+        <Banner
+          state="success"
+          message="An alert! - You've succesfully read it."
+        />
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Banner
+          state="info"
+          message="This alert doesn't show any importance, but it's worth checking out."
+        />
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Banner
+          state="error"
+          message="Uh oh, something's not right with this alert - try fixing some things?"
+        />
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Banner
+          state="warning"
+          message="Warning - best check yourself, this alert isn't looking good."
+        />
+      </div>
     </div>
     <DashboardContentHeader isSecondary>Pagination</DashboardContentHeader>
     <Board>
