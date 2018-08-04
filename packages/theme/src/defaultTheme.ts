@@ -167,7 +167,7 @@ const breaks = {
   breakLarge
 };
 
-export {
+const defaultTheme = {
   breaks,
   colors,
   spaces,
@@ -176,3 +176,5 @@ export {
   transitions,
   fontProps
 };
+
+export default defaultTheme;

@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 
 import { Circle } from '@kata-kit/loading';
-import { colors } from '@kata-kit/variables';
 
 import ButtonBase from './ButtonBase';
 import ButtonStyles from './ButtonStyles';
@@ -94,22 +93,22 @@ const SupportButtonWrapper = styled('button')`
   font-size: 11px;
   line-height: 1.45;
 
-  color: ${colors.gray50};
-  border: 1px solid ${colors.gray30};
+  color: ${props => props.theme.colors.gray50};
+  border: 1px solid ${props => props.theme.colors.gray30};
   background: #fff;
   position: ${(props: SupportButtonProps) =>
     props.loading ? 'relative !important' : 'inherit'};
 
   &:hover {
-    background-color: ${colors.gray10};
-    color: ${colors.gray50};
+    background-color: ${props => props.theme.colors.gray10};
+    color: ${props => props.theme.colors.gray50};
   }
 
   &:focus {
     box-shadow: unset;
 
-    color: ${colors.white};
-    background-color: ${colors.gray70};
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.gray70};
   }
 
   &.icon {

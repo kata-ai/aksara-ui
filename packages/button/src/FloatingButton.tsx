@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
 import { Circle } from '@kata-kit/loading';
-import { colors, layerShadows, transitions } from '@kata-kit/variables';
 
 import ButtonBase from './ButtonBase';
 import ButtonStyles from './ButtonStyles';
@@ -93,18 +92,18 @@ const FloatingButtonWrapper = styled('button')`
   font-weight: 500;
   border-radius: 50%;
   line-height: 1;
-  box-shadow: ${layerShadows.layer200Shadow};
+  box-shadow: ${props => props.theme.layerShadows.layer200Shadow};
   font-size: 16px;
   vertical-align: middle;
-  color: ${colors.gray60};
-  background: ${colors.white};
+  color: ${props => props.theme.colors.gray60};
+  background: ${props => props.theme.colors.white};
   align-items: center;
   justify-content: center;
   position: relative;
   cursor: pointer;
 
-  animation: ${popIn} ${transitions.transitionFast}
-    ${transitions.transitionEasing};
+  animation: ${popIn} ${props => props.theme.transitions.transitionFast}
+    ${props => props.theme.transitions.transitionEasing};
 
   &.corner-right {
     position: absolute;
@@ -119,36 +118,36 @@ const FloatingButtonWrapper = styled('button')`
   &.primary {
     &:hover,
     &:active {
-      color: ${colors.kataBlue};
+      color: ${props => props.theme.colors.kataBlue};
     }
   }
 
   &.success {
     &:hover,
     &:active {
-      color: ${colors.green};
+      color: ${props => props.theme.colors.green};
     }
   }
 
   &.danger {
     &:hover,
     &:active {
-      color: ${colors.red};
+      color: ${props => props.theme.colors.red};
     }
   }
 
   &.warning {
     &:hover,
     &:active {
-      color: ${colors.yellow};
+      color: ${props => props.theme.colors.yellow};
     }
   }
 
   &:disabled,
   &.disabled {
-    background: ${colors.gray10};
+    background: ${props => props.theme.colors.gray10};
     &:hover {
-      color: ${colors.gray60};
+      color: ${props => props.theme.colors.gray60};
     }
   }
 

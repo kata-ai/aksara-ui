@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { borderRadiuses, layerShadows, colors } from '@kata-kit/variables';
+import { defaultTheme } from '@kata-kit/theme';
 import DropdownStyles from './DropdownStyles';
 
 export const dropdownMenu = css`
-  border-radius: ${borderRadiuses.borderRadiusSmall};
-  box-shadow: ${layerShadows.layer200Shadow};
+  border-radius: ${defaultTheme.borderRadiuses.borderRadiusSmall};
+  box-shadow: ${defaultTheme.layerShadows.layer200Shadow};
 `;
 
 export default styled.div`
@@ -28,7 +28,7 @@ export default styled.div`
         font-weight: 700;
         font-size: 12px;
         letter-spacing: 0.2px;
-        color: ${colors.gray50};
+        color: ${defaultTheme.colors.gray50};
         padding: 0 16px;
       }
 
@@ -41,17 +41,17 @@ export default styled.div`
         text-overflow: ellipsis;
 
         &--selected {
-          color: ${colors.kataBlue};
+          color: ${defaultTheme.colors.kataBlue};
         }
 
         &:hover:not(.disabled) {
-          background: ${colors.gray10};
+          background: ${defaultTheme.colors.gray10};
         }
 
         &:focus:not(.disabled),
         &:active:not(.disabled) {
-          background: ${colors.gray10};
-          color: ${colors.kataBlue} !important;
+          background: ${defaultTheme.colors.gray10};
+          color: ${defaultTheme.colors.kataBlue} !important;
         }
       }
 
@@ -60,8 +60,8 @@ export default styled.div`
 
         &--open {
           button {
-            color: ${colors.white};
-            background-color: ${colors.gray70} !important;
+            color: ${defaultTheme.colors.white};
+            background-color: ${defaultTheme.colors.gray70} !important;
           }
         }
 
