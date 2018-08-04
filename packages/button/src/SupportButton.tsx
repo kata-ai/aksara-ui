@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import { Circle } from '@kata-kit/loading';
 import { colors } from '@kata-kit/variables';
 
-import ButtonWrapper from './BaseButtonWrapper';
+import ButtonBase from './ButtonBase';
+import ButtonStyles from './ButtonStyles';
 
 export interface SupportButtonProps {
   disabled?: boolean;
@@ -86,8 +87,9 @@ class Button extends React.Component<SupportButtonProps> {
 
 export default Button;
 
-const SupportButtonWrapper = styled(ButtonWrapper)`
-  padding: 8px 16px;
+const SupportButtonWrapper = styled('button')`
+  ${props => ButtonBase(props)} padding: 8px 16px;
+  border-radius: 4px;
   font-weight: 700;
   font-size: 11px;
   line-height: 1.45;
@@ -122,6 +124,8 @@ const SupportButtonWrapper = styled(ButtonWrapper)`
       font-size: 16px;
     }
   }
+
+  ${ButtonStyles};
 `;
 
 const LoaderCircle = styled(Circle)`

@@ -5,7 +5,8 @@ import styled, { keyframes } from 'styled-components';
 import { Circle } from '@kata-kit/loading';
 import { colors, layerShadows, transitions } from '@kata-kit/variables';
 
-import BaseButtonWrapper from './BaseButtonWrapper';
+import ButtonBase from './ButtonBase';
+import ButtonStyles from './ButtonStyles';
 
 export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
 
@@ -86,8 +87,8 @@ const popIn = keyframes`
   }
 `;
 
-const FloatingButtonWrapper = styled(BaseButtonWrapper)`
-  height: 40px;
+const FloatingButtonWrapper = styled('button')`
+  ${props => ButtonBase(props)} height: 40px;
   width: 40px;
   font-weight: 500;
   border-radius: 50%;
@@ -144,7 +145,7 @@ const FloatingButtonWrapper = styled(BaseButtonWrapper)`
   }
 
   &:disabled,
-  &[disabled] {
+  &.disabled {
     background: ${colors.gray10};
     &:hover {
       color: ${colors.gray60};
@@ -158,6 +159,8 @@ const FloatingButtonWrapper = styled(BaseButtonWrapper)`
     text-align: center;
     background: none;
   }
+
+  ${ButtonStyles};
 `;
 
 const LoaderCircle = styled(Circle)`

@@ -5,6 +5,8 @@ import { darken } from 'polished';
 
 import { Circle } from '@kata-kit/loading';
 
+import ButtonBase, { ButtonBaseProps } from './ButtonBase';
+
 // TODO items:
 // - Cannot extend button below in other packages using `styled-components`, so
 //   styles specific to `@kata-kit/pagination` is still extended here.
@@ -21,7 +23,7 @@ export type ButtonColors =
 
 export type ButtonSizes = 'lg' | 'sm';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonBaseProps {
   disabled?: boolean;
   color?: ButtonColors;
   size?: ButtonSizes;
@@ -29,7 +31,6 @@ export interface ButtonProps {
   className?: string;
   onClick?: any;
   type?: string;
-  block?: boolean;
   active?: boolean;
   loading?: boolean;
   outline?: boolean;
@@ -93,30 +94,17 @@ class Button extends React.Component<ButtonProps> {
 export default Button;
 
 const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
-  display: ${props => (props.block ? 'block' : 'inline-block')};
-  position: relative;
-  border: none;
-  background: none;
+  ${props => ButtonBase(props)};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};
   font-size: ${props => (props.size === 'sm' ? '11px' : '1rem')};
   font-weight: ${props => (props.size === 'sm' ? '700' : '500')};
   line-height: ${props => (props.size === 'sm' ? '16px !important' : '20px')};
-  letter-spacing: 0.2px;
   border-radius: 4px;
   line-height: 1.538rem;
-  text-decoration: none;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  transition: all 0.3s ease;
-
-  &:not([disabled]) {
-    cursor: pointer;
-  }
 
   &:disabled,
-  &[disabled] {
+  &.disabled {
     background: #c2c7c8 !important;
     border: solid 1px ${darken(0.1, '#c2c7c8')} !important;
 
@@ -173,19 +161,6 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
     &:active {
       color: #fff /* $white */;
       background-color: #484c4f /* $gray-70 */;
-    }
-  }
-
-  &.icon {
-    height: 32px;
-    width: 32px;
-    padding: 8px;
-    text-align: center;
-    background: none;
-    color: #676b6d /* $gray-60 */;
-
-    i:before {
-      font-size: 16px;
     }
   }
 `;
