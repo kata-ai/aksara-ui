@@ -18,16 +18,17 @@ const gray60 = '#676b6d';
 const gray70 = '#484c4f';
 const gray80 = '#24282d';
 
-const space1 = '0.615384615rem';
-const space2 = '1.230769231rem';
-const space3 = '1.846153846rem';
-const space4 = '2.461538462rem';
-const space5 = '3.076923077rem';
-const space6 = '3.692307692rem';
-const space7 = '4.307692308rem';
-const space8 = '4.923076923rem';
-const space9 = '5.538461538rem';
-const space10 = '6.153846154rem';
+// Spacer widths in rem units, counted from the base font size 13px.
+const space1 = '0.615384615rem'; // 8px
+const space2 = '1.230769231rem'; // 16px
+const space3 = '1.846153846rem'; // 24px
+const space4 = '2.461538462rem'; // 32px
+const space5 = '3.076923077rem'; // 40px
+const space6 = '3.692307692rem'; // 48px
+const space7 = '4.307692308rem'; // 56px
+const space8 = '4.923076923rem'; // 64px
+const space9 = '5.538461538rem'; // 72px
+const space10 = '6.153846154rem'; // 80px
 
 const borderRadiusXs = '2px';
 const borderRadiusSmall = '4px';
