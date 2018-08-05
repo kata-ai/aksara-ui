@@ -13,6 +13,7 @@ import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import { Banner } from '@kata-kit/banner';
 import { Pagination } from '@kata-kit/pagination';
 import { TooltipTarget, Tooltip } from '@kata-kit/tooltip';
+import { Theme, variables } from '@kata-kit/theme';
 import { Badge } from '@kata-kit/badge';
 
 export default () => (
@@ -72,33 +73,49 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
     <Board>
-      {/* stylable won't work if we set a custom className inside the component */}
-      <Button>Demo Component</Button>{' '}
-      <Button color="primary">Primary Button</Button>{' '}
-      <Button color="secondary">Secondary Button</Button>{' '}
-      <Button color="danger">Danger Button</Button>{' '}
-      <Button color="primary" disabled>
-        Disabled Button
-      </Button>{' '}
-      <Button color="primary" loading>
-        Loading
-      </Button>{' '}
-      <Button color="primary" size="sm">
-        Small Button
-      </Button>{' '}
-      <Button color="secondary" size="sm" outline>
-        Small Button
-      </Button>{' '}
-      <Button color="secondary" isIcon>
-        <i className="icon-bot" />
-      </Button>{' '}
-      <FloatingButton icon="bot" /> <FloatingButton icon="bot" disabled />{' '}
-      <SupportButton>SupportButton</SupportButton>{' '}
-      <SupportButton loading>Loading</SupportButton>{' '}
-      <ToggleButton
-        renderActive={() => <Button>ToggleButton</Button>}
-        renderInactive={() => <Button>ToggleButton Inactive</Button>}
-      />{' '}
+      <div style={{ marginBottom: '8px' }}>
+        <Button>Demo Component</Button>{' '}
+        <Button color="primary">Primary Button</Button>{' '}
+        <Button color="secondary">Secondary Button</Button>{' '}
+        <Button color="danger">Danger Button</Button>{' '}
+        <Button color="primary" disabled>
+          Disabled Button
+        </Button>{' '}
+        <Button color="primary" loading>
+          Loading
+        </Button>{' '}
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Button color="primary" size="sm">
+          Small Button
+        </Button>{' '}
+        <Button color="secondary" size="sm" outline>
+          Small Button
+        </Button>{' '}
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Button color="secondary" isIcon>
+          <i className="icon-bot" />
+        </Button>{' '}
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <FloatingButton icon="bot" /> <FloatingButton icon="bot" disabled />{' '}
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <SupportButton>SupportButton</SupportButton>{' '}
+        <SupportButton loading>Loading</SupportButton>{' '}
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <ToggleButton
+          renderActive={() => <Button>ToggleButton</Button>}
+          renderInactive={() => <Button>ToggleButton Inactive</Button>}
+        />{' '}
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Button block color="primary">
+          Block Button
+        </Button>{' '}
+      </div>
     </Board>
     <DashboardContentHeader isSecondary>Empty Message</DashboardContentHeader>
     <Board>
@@ -107,6 +124,40 @@ export default () => (
     <DashboardContentHeader isSecondary>Badge</DashboardContentHeader>
     <Board>
       <Badge>entity</Badge>
+    </Board>
+    <DashboardContentHeader isSecondary>Theme</DashboardContentHeader>
+    <Board>
+      <Theme>
+        {theme => (
+          <div
+            style={{
+              padding: '12px',
+              backgroundColor: theme.backgroundColor,
+              color: theme.textColor
+            }}
+          >
+            <p>BackgroundTheme ({JSON.stringify(theme)})</p>
+            <Theme
+              values={{
+                backgroundColor: variables.colors.gray80,
+                textColor: variables.colors.gray10
+              }}
+            >
+              {theme => (
+                <div
+                  style={{
+                    padding: '12px',
+                    backgroundColor: theme.backgroundColor,
+                    color: theme.textColor
+                  }}
+                >
+                  BackgroundTheme ({JSON.stringify(theme)})
+                </div>
+              )}
+            </Theme>
+          </div>
+        )}
+      </Theme>
     </Board>
     <DashboardContentHeader isSecondary>Banners</DashboardContentHeader>
     <div>

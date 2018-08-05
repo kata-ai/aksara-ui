@@ -2,6 +2,7 @@ import variables from './utils/variables';
 import KataKitThemeProvider, {
   KataKitThemeProviderProps
 } from './KataKitThemeProvider';
+import Theme from './components/Theme';
 import ThemedComponent from './components/ThemedComponent';
 import { KataKitDefaultTheme, ThemeAttributes } from './types';
 
@@ -12,5 +13,7 @@ export {
   KataKitDefaultTheme,
   KataKitThemeProviderProps,
   ThemeAttributes,
+  Theme,
   ThemedComponent
 };
+export { Provider, Consumer } from './components/ThemeContext';
