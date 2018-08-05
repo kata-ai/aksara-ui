@@ -23,7 +23,12 @@ const Root = styled('div')`
   position: fixed;
   top: 0;
   bottom: 0;
+  user-select: none;
   z-index: 1;
+
+  a {
+    color: #676b6d /* $gray-60 */;
+  }
 `;
 
 const Logo = styled('img')`
