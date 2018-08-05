@@ -3,9 +3,9 @@ import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
 import { Circle } from '@kata-kit/loading';
+import { variables } from '@kata-kit/theme';
 
 import ButtonBase from './ButtonBase';
-import ButtonStyles from './ButtonStyles';
 
 export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
 
@@ -87,23 +87,23 @@ const popIn = keyframes`
 `;
 
 const FloatingButtonWrapper = styled('button')`
-  ${props => ButtonBase(props)} height: 40px;
+  ${ButtonBase} height: 40px;
   width: 40px;
   font-weight: 500;
   border-radius: 50%;
   line-height: 1;
-  box-shadow: ${props => props.theme.layerShadows.layer200Shadow};
+  box-shadow: ${variables.layerShadows.layer200Shadow};
   font-size: 16px;
   vertical-align: middle;
-  color: ${props => props.theme.colors.gray60};
-  background: ${props => props.theme.colors.white};
+  color: ${variables.colors.gray60};
+  background: ${variables.colors.white};
   align-items: center;
   justify-content: center;
   position: relative;
   cursor: pointer;
 
-  animation: ${popIn} ${props => props.theme.transitions.transitionFast}
-    ${props => props.theme.transitions.transitionEasing};
+  animation: ${popIn} ${variables.transitions.transitionFast}
+    ${variables.transitions.transitionEasing};
 
   &.corner-right {
     position: absolute;
@@ -118,36 +118,36 @@ const FloatingButtonWrapper = styled('button')`
   &.primary {
     &:hover,
     &:active {
-      color: ${props => props.theme.colors.kataBlue};
+      color: ${variables.colors.kataBlue};
     }
   }
 
   &.success {
     &:hover,
     &:active {
-      color: ${props => props.theme.colors.green};
+      color: ${variables.colors.green};
     }
   }
 
   &.danger {
     &:hover,
     &:active {
-      color: ${props => props.theme.colors.red};
+      color: ${variables.colors.red};
     }
   }
 
   &.warning {
     &:hover,
     &:active {
-      color: ${props => props.theme.colors.yellow};
+      color: ${variables.colors.yellow};
     }
   }
 
   &:disabled,
   &.disabled {
-    background: ${props => props.theme.colors.gray10};
+    background: ${variables.colors.gray10};
     &:hover {
-      color: ${props => props.theme.colors.gray60};
+      color: ${variables.colors.gray60};
     }
   }
 
@@ -158,8 +158,6 @@ const FloatingButtonWrapper = styled('button')`
     text-align: center;
     background: none;
   }
-
-  ${ButtonStyles};
 `;
 
 const LoaderCircle = styled(Circle)`

@@ -1,12 +1,14 @@
-import { css, ThemedStyledProps } from 'styled-components';
+import { css } from 'styled-components';
+import { variables } from '@kata-kit/theme';
 
 export interface ButtonBaseProps {
   block?: boolean;
 }
 
-const ButtonBase = (props: ThemedStyledProps<ButtonBaseProps, any>) => css`
+const ButtonBase = (props: ButtonBaseProps) => css`
   display: ${props.block ? 'block' : 'inline-block'};
   position: relative;
+  width: ${props.block ? '100%' : 'auto'};
   border: none;
   background: none;
   letter-spacing: 0.2px;
@@ -54,7 +56,7 @@ const ButtonBase = (props: ThemedStyledProps<ButtonBaseProps, any>) => css`
     padding: 8px;
     text-align: center;
     background: none;
-    color: #676b6d /* $gray-60 */;
+    color: ${variables.colors.gray60};
 
     i:before {
       font-size: 16px;

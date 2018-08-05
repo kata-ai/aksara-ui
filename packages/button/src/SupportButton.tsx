@@ -3,9 +3,9 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 
 import { Circle } from '@kata-kit/loading';
+import { variables } from '@kata-kit/theme';
 
 import ButtonBase from './ButtonBase';
-import ButtonStyles from './ButtonStyles';
 
 export interface SupportButtonProps {
   disabled?: boolean;
@@ -86,29 +86,28 @@ class Button extends React.Component<SupportButtonProps> {
 
 export default Button;
 
-const SupportButtonWrapper = styled('button')`
-  ${props => ButtonBase(props)} padding: 8px 16px;
+const SupportButtonWrapper = styled<SupportButtonProps, 'button'>('button')`
+  ${ButtonBase} padding: 8px 16px;
   border-radius: 4px;
   font-weight: 700;
   font-size: 11px;
   line-height: 1.45;
 
-  color: ${props => props.theme.colors.gray50};
-  border: 1px solid ${props => props.theme.colors.gray30};
+  color: ${variables.colors.gray50};
+  border: 1px solid ${variables.colors.gray30};
   background: #fff;
-  position: ${(props: SupportButtonProps) =>
-    props.loading ? 'relative !important' : 'inherit'};
+  position: ${props => (props.loading ? 'relative !important' : 'inherit')};
 
   &:hover {
-    background-color: ${props => props.theme.colors.gray10};
-    color: ${props => props.theme.colors.gray50};
+    background-color: ${variables.colors.gray10};
+    color: ${variables.colors.gray50};
   }
 
   &:focus {
     box-shadow: unset;
 
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.gray70};
+    color: ${variables.colors.white};
+    background-color: ${variables.colors.gray70};
   }
 
   &.icon {
@@ -123,8 +122,6 @@ const SupportButtonWrapper = styled('button')`
       font-size: 16px;
     }
   }
-
-  ${ButtonStyles};
 `;
 
 const LoaderCircle = styled(Circle)`
