@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from '../theme';
+import styles from '../styles';
 import { variables, ThemedComponent } from '@kata-kit/theme';
 
-interface BadgeProps {
+export interface BadgeProps {
   color?: 'primary' | 'secondary';
 }
 
@@ -21,14 +22,7 @@ export default class Badge extends React.Component<BadgeProps> {
 }
 
 const Root = styled('span')`
-  display: inline-block;
-  padding: 2px 4px;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.45;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
+  ${styles}
   border-radius: ${variables.borderRadiuses.borderRadiusXs};
   color: ${props => props.theme.textColor};
   background-color: ${props => props.theme.backgroundColor};
