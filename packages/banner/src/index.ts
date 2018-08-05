@@ -1,3 +1,3 @@
-import Banner from './Banner';
+import Banner from './components/Banner';
 
 export { Banner };
