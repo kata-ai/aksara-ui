@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./lib",
-    "outFile": "./lib/index.js"
+    "outDir": "./lib"
   },
   "include": ["./src/**/*", "../../types/**/*.d.ts"],
   "exclude": ["./lib", "./**/__stories__", "./scripts"]
