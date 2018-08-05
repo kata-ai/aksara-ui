@@ -76,7 +76,7 @@ const transitionEasing = 'ease';
 const breakMedium = '1280px';
 const breakLarge = '1366px';
 
-const colors = {
+export const colors = {
   white,
   red,
   green,
@@ -98,7 +98,7 @@ const colors = {
   gray80
 };
 
-const spaces = {
+export const spaces = {
   space1,
   space2,
   space3,
@@ -111,7 +111,7 @@ const spaces = {
   space10
 };
 
-const fontProps = {
+export const fontProps = {
   rootFontSize,
   rootLineHeight,
   h1FontSize,
@@ -141,33 +141,33 @@ const fontProps = {
   tooltipLetterSpacing
 };
 
-const layerShadows = {
+export const layerShadows = {
   layer100Shadow,
   layer200Shadow,
   layer300Shadow,
   layer400Shadow
 };
 
-const borderRadiuses = {
+export const borderRadiuses = {
   borderRadiusXs,
   borderRadiusSmall,
   borderRadiusMedium,
   borderRadiusLarge
 };
 
-const transitions = {
+export const transitions = {
   transitionFast,
   transitionNormal,
   transitionSlow,
   transitionEasing
 };
 
-const breaks = {
+export const breaks = {
   breakMedium,
   breakLarge
 };
 
-const defaultTheme = {
+export const defaultTheme = {
   breaks,
   colors,
   spaces,

@@ -2,8 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import defaultTheme from './defaultTheme';
-
-export type KataKitDefaultTheme = typeof defaultTheme;
+import { KataKitDefaultTheme } from './types';
 
 export interface KataKitThemeProviderProps {
   theme?: KataKitDefaultTheme;

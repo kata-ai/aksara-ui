@@ -1,12 +1,9 @@
 import defaultTheme from './defaultTheme';
 import KataKitThemeProvider, {
-  KataKitDefaultTheme,
   KataKitThemeProviderProps
 } from './KataKitThemeProvider';
+import { KataKitDefaultTheme } from './types';
 
-export {
-  defaultTheme,
-  KataKitDefaultTheme,
-  KataKitThemeProvider,
-  KataKitThemeProviderProps
-};
+// TODO: switch away from ThemeProvider to React Context API
+export default KataKitThemeProvider;
+export { defaultTheme, KataKitDefaultTheme, KataKitThemeProviderProps };
