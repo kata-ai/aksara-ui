@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -35,7 +36,19 @@ module.exports = {
       {
         // exclude css from stylable component
         test: /^(?!.*\.st\.css$).*\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+        use: [
+          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        // exclude css from stylable component
+        test: /\.s(a|c)ss$/,
+        use: [
+          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          { loader: 'sass-loader', options: { outputStyle: 'compressed' } }
+        ]
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
@@ -66,6 +79,10 @@ module.exports = {
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[name].chunk.css'
+    }),
     new HtmlWebpackPlugin({
       title: 'kata-kit',
       template: path.join(__dirname, 'public/index.html'),
