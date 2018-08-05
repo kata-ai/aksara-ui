@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Circle } from '@kata-kit/loading';
 import { variables } from '@kata-kit/theme';
 
-import ButtonBase from './ButtonBase';
+import ButtonBase from '../styles';
 
 export interface SupportButtonProps {
   disabled?: boolean;

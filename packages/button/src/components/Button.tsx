@@ -5,7 +5,7 @@ import { darken } from 'polished';
 
 import { Circle } from '@kata-kit/loading';
 
-import ButtonBase, { ButtonBaseProps } from './ButtonBase';
+import ButtonBase, { ButtonBaseProps } from '../styles';
 
 // TODO items:
 // - Cannot extend button below in other packages using `styled-components`, so
