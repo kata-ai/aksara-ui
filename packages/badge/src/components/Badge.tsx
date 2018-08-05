@@ -1,29 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import theme from '../theme';
+import themes from '../theme';
 import styles from '../styles';
-import { variables, ThemedComponent } from '@kata-kit/theme';
+import { variables, ThemeAttributes, Theme } from '@kata-kit/theme';
+
+export type BadgeColors =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger';
 
 export interface BadgeProps {
-  color?: 'primary' | 'secondary';
+  color?: BadgeColors;
 }
 
 export default class Badge extends React.Component<BadgeProps> {
   render() {
-    const { children } = this.props;
+    const { children, color } = this.props;
 
     return (
-      <ThemedComponent props="default" theme={theme}>
-        {props => <Root theme={props.theme}>{children}</Root>}
-      </ThemedComponent>
+      <Theme values={color && themes[color] ? themes[color] : themes.default}>
+        {themeAttributes => <Root {...themeAttributes}>{children}</Root>}
+      </Theme>
     );
   }
 }
 
-const Root = styled('span')`
+const Root = styled<ThemeAttributes, 'span'>('span')`
   ${styles}
   border-radius: ${variables.borderRadiuses.borderRadiusXs};
-  color: ${props => props.theme.textColor};
-  background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.textColor};
+  background-color: ${props => props.backgroundColor};
 `;

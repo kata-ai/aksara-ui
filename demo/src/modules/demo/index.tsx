@@ -138,7 +138,11 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Badge</DashboardContentHeader>
     <Board>
-      <Badge>entity</Badge>
+      <Badge>entity</Badge> <Badge color="primary">primary</Badge>{' '}
+      <Badge color="secondary">secondary</Badge>{' '}
+      <Badge color="success">success</Badge>{' '}
+      <Badge color="warning">warning</Badge>{' '}
+      <Badge color="danger">danger</Badge>{' '}
     </Board>
     <DashboardContentHeader isSecondary>Theme</DashboardContentHeader>
     <Board>
