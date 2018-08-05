@@ -8,7 +8,7 @@ export const defaultTheme: ThemeAttributes = {
   linkColorActive: '#0056b3',
   linkColorOutline: '#0056b3',
   headingColor: variables.colors.gray80,
-  textColor: variables.colors.gray80,
+  textColor: variables.colors.gray70,
   mutedHeadingColor: variables.colors.gray60,
   mutedTextColor: variables.colors.gray50
 };
