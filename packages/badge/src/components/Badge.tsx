@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from '../theme';
-import { defaultTheme } from '@kata-kit/theme';
+import { variables, ThemedComponent } from '@kata-kit/theme';
 
 interface BadgeProps {
   color?: 'primary' | 'secondary';
@@ -12,7 +12,11 @@ export default class Badge extends React.Component<BadgeProps> {
   render() {
     const { children } = this.props;
 
-    return <Root>{children}</Root>;
+    return (
+      <ThemedComponent props="default" theme={theme}>
+        {props => <Root theme={props.theme}>{children}</Root>}
+      </ThemedComponent>
+    );
   }
 }
 
@@ -25,7 +29,7 @@ const Root = styled('span')`
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: ${defaultTheme.borderRadiuses.borderRadiusXs};
-  color: ${theme.textColor};
-  background-color: ${theme.backgroundColor};
+  border-radius: ${variables.borderRadiuses.borderRadiusXs};
+  color: ${props => props.theme.textColor};
+  background-color: ${props => props.theme.backgroundColor};
 `;
