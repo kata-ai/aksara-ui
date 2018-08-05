@@ -12,6 +12,7 @@
     "dev": "webpack-dev-server --hot"
   },
   "dependencies": {
+    "@kata-kit/badge": "*",
     "@kata-kit/banner": "*",
     "@kata-kit/button": "*",
     "@kata-kit/card": "*",

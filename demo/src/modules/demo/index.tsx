@@ -13,6 +13,7 @@ import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import { Banner } from '@kata-kit/banner';
 import { Pagination } from '@kata-kit/pagination';
 import { TooltipTarget, Tooltip } from '@kata-kit/tooltip';
+import { Badge } from '@kata-kit/badge';
 
 export default () => (
   <Dashboard
@@ -102,6 +103,10 @@ export default () => (
     <DashboardContentHeader isSecondary>Empty Message</DashboardContentHeader>
     <Board>
       <EmptyMessage title="Empty Message">Empty message example.</EmptyMessage>
+    </Board>
+    <DashboardContentHeader isSecondary>Badge</DashboardContentHeader>
+    <Board>
+      <Badge>entity</Badge>
     </Board>
     <DashboardContentHeader isSecondary>Banners</DashboardContentHeader>
     <div>
