@@ -2,10 +2,7 @@ import variables from './utils/variables';
 
 export type KataKitDefaultTheme = typeof variables;
 
-export type ThemeValue = string;
-export type ThemeModeAttributes = { [mode: string]: ThemeValue };
-export type ThemeModeProps = { mode: string };
-export type ThemeProps = { theme: ThemeModeProps };
+export type ThemeAttributesMap = { [color: string]: ThemeAttributes };
 
 export type ThemeAttributes = {
   backgroundColor: string;

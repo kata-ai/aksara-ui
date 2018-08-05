@@ -1,23 +1,27 @@
 import React from 'react';
-import { ThemeAttributes } from '../types';
+import { ThemeAttributesMap, ThemeAttributes } from '../types';
+import Theme from './Theme';
 
-interface ThemedComponentRenderProps {
-  props?: string;
-  theme: ThemeAttributes;
+interface ThemedComponentProps {
+  color: any;
+  themes: ThemeAttributesMap;
+  children?: ((theme: ThemeAttributes) => JSX.Element) | React.ReactNode;
 }
-
-interface ThemedComponentProps extends ThemedComponentRenderProps {
-  children: RenderCallback;
-}
-
-type RenderCallback = (props: ThemedComponentRenderProps) => JSX.Element;
 
 const ThemedComponent: React.SFC<ThemedComponentProps> = ({
-  children,
-  props,
-  theme
-}: ThemedComponentProps) => {
-  return children({ props, theme });
-};
+  color,
+  themes,
+  children
+}) => (
+  <Theme
+    values={
+      color && typeof color === 'string' && themes[color]
+        ? themes[color]
+        : themes.default
+    }
+  >
+    {children}
+  </Theme>
+);
 
 export default ThemedComponent;
