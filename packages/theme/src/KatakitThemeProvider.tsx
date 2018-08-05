@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import defaultTheme from './defaultTheme';
+import variables from './utils/variables';
 import { KataKitDefaultTheme } from './types';
 
 export interface KataKitThemeProviderProps {
@@ -15,7 +15,7 @@ export default class KataKitThemeProvider extends React.Component<
     const { theme, children } = this.props;
 
     return (
-      <ThemeProvider theme={{ ...defaultTheme, ...theme }}>
+      <ThemeProvider theme={{ ...variables, ...theme }}>
         {children}
       </ThemeProvider>
     );

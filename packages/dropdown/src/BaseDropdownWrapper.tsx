@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { defaultTheme } from '@kata-kit/theme';
+import { variables } from '@kata-kit/theme';
 import DropdownStyles from './DropdownStyles';
 
 export const dropdownMenu = css`
-  border-radius: ${defaultTheme.borderRadiuses.borderRadiusSmall};
-  box-shadow: ${defaultTheme.layerShadows.layer200Shadow};
+  border-radius: ${variables.borderRadiuses.borderRadiusSmall};
+  box-shadow: ${variables.layerShadows.layer200Shadow};
 `;
 
 export default styled.div`
@@ -28,30 +28,30 @@ export default styled.div`
         font-weight: 700;
         font-size: 12px;
         letter-spacing: 0.2px;
-        color: ${defaultTheme.colors.gray50};
+        color: ${variables.colors.gray50};
         padding: 0 16px;
       }
 
       &__item {
         padding: 10px 16px;
-        color: ${defaultTheme.colors.gray70} !important;
+        color: ${variables.colors.gray70} !important;
         cursor: pointer;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
 
         &--selected {
-          color: ${defaultTheme.colors.kataBlue};
+          color: ${variables.colors.kataBlue};
         }
 
         &:hover:not(.disabled) {
-          background: ${defaultTheme.colors.gray10};
+          background: ${variables.colors.gray10};
         }
 
         &:focus:not(.disabled),
         &:active:not(.disabled) {
-          background: ${defaultTheme.colors.gray10};
-          color: ${defaultTheme.colors.kataBlue} !important;
+          background: ${variables.colors.gray10};
+          color: ${variables.colors.kataBlue} !important;
         }
       }
 
@@ -60,8 +60,8 @@ export default styled.div`
 
         &--open {
           button {
-            color: ${defaultTheme.colors.white};
-            background-color: ${defaultTheme.colors.gray70} !important;
+            color: ${variables.colors.white};
+            background-color: ${variables.colors.gray70} !important;
           }
         }
 

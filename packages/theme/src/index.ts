@@ -1,4 +1,4 @@
-import defaultTheme from './defaultTheme';
+import variables from './utils/variables';
 import KataKitThemeProvider, {
   KataKitThemeProviderProps
 } from './KataKitThemeProvider';
@@ -8,7 +8,7 @@ import { KataKitDefaultTheme, ThemeAttributes } from './types';
 // TODO: switch away from ThemeProvider to React Context API
 export default KataKitThemeProvider;
 export {
-  defaultTheme,
+  variables,
   KataKitDefaultTheme,
   KataKitThemeProviderProps,
   ThemeAttributes,

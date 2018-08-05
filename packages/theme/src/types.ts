@@ -1,6 +1,6 @@
-import defaultTheme from './defaultTheme';
+import variables from './utils/variables';
 
-export type KataKitDefaultTheme = typeof defaultTheme;
+export type KataKitDefaultTheme = typeof variables;
 
 export type ThemeValue = string;
 export type ThemeModeAttributes = { [mode: string]: ThemeValue };
