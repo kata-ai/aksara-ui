@@ -15,4 +15,6 @@ export type ThemeAttributes = {
   linkColorActive?: string;
   linkColorOutline?: string;
   headingColor?: string;
+  mutedHeadingColor?: string;
+  mutedTextColor?: string;
 };

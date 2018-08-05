@@ -3,6 +3,7 @@ import KataKitThemeProvider, {
   KataKitThemeProviderProps
 } from './KataKitThemeProvider';
 import Theme from './components/Theme';
+import KataReset from './components/KataReset';
 import ThemedComponent from './components/ThemedComponent';
 import { KataKitDefaultTheme, ThemeAttributes } from './types';
 
@@ -14,6 +15,7 @@ export {
   KataKitThemeProviderProps,
   ThemeAttributes,
   Theme,
+  KataReset,
   ThemedComponent
 };
 export { Provider, Consumer } from './components/ThemeContext';

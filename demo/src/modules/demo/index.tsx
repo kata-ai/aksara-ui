@@ -1,5 +1,6 @@
 // tslint:disable:no-console
 import React from 'react';
+import styled, { css } from 'styled-components';
 
 import {
   Button,
@@ -13,8 +14,22 @@ import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import { Banner } from '@kata-kit/banner';
 import { Pagination } from '@kata-kit/pagination';
 import { TooltipTarget, Tooltip } from '@kata-kit/tooltip';
-import { Theme, variables } from '@kata-kit/theme';
+import { Theme, ThemeAttributes, variables } from '@kata-kit/theme';
 import { Badge } from '@kata-kit/badge';
+
+// since we don't use <Reset /> yet, paragraph text color is still overridden
+// globally, so this is temporary.
+const ThemeDemo = styled('div')`
+  ${(props: ThemeAttributes) => css`
+    padding: 12px;
+    background-color: ${props.backgroundColor};
+    color: ${props.textColor};
+
+    p {
+      color: ${props.textColor};
+    }
+  `};
+`;
 
 export default () => (
   <Dashboard
@@ -127,35 +142,31 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Theme</DashboardContentHeader>
     <Board>
+      {/* TODO: use global <Reset /> to fix paragraph colors. */}
       <Theme>
         {theme => (
-          <div
-            style={{
-              padding: '12px',
-              backgroundColor: theme.backgroundColor,
-              color: theme.textColor
-            }}
-          >
-            <p>BackgroundTheme ({JSON.stringify(theme)})</p>
+          <ThemeDemo {...theme}>
+            <p>
+              BackgroundTheme (backgroundColor: {theme.backgroundColor},
+              textColor: {theme.textColor})
+            </p>
             <Theme
               values={{
                 backgroundColor: variables.colors.gray80,
                 textColor: variables.colors.gray10
               }}
             >
-              {theme => (
-                <div
-                  style={{
-                    padding: '12px',
-                    backgroundColor: theme.backgroundColor,
-                    color: theme.textColor
-                  }}
-                >
-                  BackgroundTheme ({JSON.stringify(theme)})
-                </div>
+              {innerTheme => (
+                <ThemeDemo {...innerTheme}>
+                  <p style={{ marginBottom: 0 }}>
+                    BackgroundTheme (backgroundColor:{' '}
+                    {innerTheme.backgroundColor}, textColor:{' '}
+                    {innerTheme.textColor})
+                  </p>
+                </ThemeDemo>
               )}
             </Theme>
-          </div>
+          </ThemeDemo>
         )}
       </Theme>
     </Board>
