@@ -67,7 +67,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
           </Container>
         </DashboardStarterHeading>
 
-        <DashboardContent className={classNames(isStarter && 'is-starter')}>
+        <DashboardContent>
           <Container>{children}</Container>
         </DashboardContent>
       </Root>
@@ -130,22 +130,6 @@ const DashboardIn = keyframes`
   }
   to {
     opacity: 1;
-  }
-`;
-
-const Root = styled<DashboardProps, 'div'>('div')`
-  animation: ${DashboardIn} 0.5s ease;
-
-  &:not(.is-starter) {
-    padding: 1.846153846rem /* $space-3 */ 20px;
-
-    @media (min-width: 1280px /* $break-medium */) {
-      padding: 1.846153846rem /* $space-3 */ 40px;
-    }
-
-    @media (min-width: 1366px /* $break-large */) {
-      padding: 1.846153846rem /* $space-3 */ 48px;
-    }
   }
 `;
 
@@ -217,11 +201,6 @@ const DashboardContent = styled('div')`
   @media (min-width: 1366px /* $break-large */) {
     padding: 1.846153846rem /* $space-3 */ 48px;
   }
-
-  &.is-starter {
-    margin-top: -100px !important;
-    padding-top: 0 !important;
-  }
 `;
 
 const DashboardStarterHeading = styled('div')`
@@ -235,5 +214,34 @@ const DashboardStarterHeading = styled('div')`
 
   @media (min-width: 1366px /* $break-large */) {
     padding: 48px 48px 136px;
+  }
+`;
+
+const Root = styled<DashboardProps, 'div'>('div')`
+  animation: ${DashboardIn} 0.5s ease;
+
+  &:not(.is-starter) {
+    padding: 1.846153846rem /* $space-3 */ 20px;
+
+    @media (min-width: 1280px /* $break-medium */) {
+      padding: 1.846153846rem /* $space-3 */ 40px;
+    }
+
+    @media (min-width: 1366px /* $break-large */) {
+      padding: 1.846153846rem /* $space-3 */ 48px;
+    }
+  }
+
+  &.is-starter {
+    ${DashboardHeader} {
+      h1 {
+        color: #fff;
+      }
+    }
+
+    ${DashboardContent} {
+      margin-top: -100px !important;
+      padding-top: 0 !important;
+    }
   }
 `;
