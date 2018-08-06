@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 import { variables } from '@kata-kit/theme';
 import DropdownStyles from './DropdownStyles';
@@ -8,7 +8,7 @@ export const dropdownMenu = css`
   box-shadow: ${variables.layerShadows.layer200Shadow};
 `;
 
-export default styled.div`
+export const DropdownBase = () => css`
   ${DropdownStyles};
 
   .kata-drop-toggle {

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import omit from 'lodash-es/omit';
 import styled from 'styled-components';
 
-import BaseDropdown from './BaseDropdownWrapper';
+import { DropdownBase } from './styles';
 
 interface DropdownProps {
   isOpen?: boolean;
@@ -104,7 +104,8 @@ class Dropdown extends React.Component<DropdownProps> {
 
 export default Dropdown;
 
-const DropdownWrapper = styled<DropdownProps, any>(BaseDropdown)`
+const DropdownWrapper = styled<DropdownProps, any>('div')`
+  ${DropdownBase}
   display: ${(props: DropdownProps) =>
     props.block ? 'block' : 'inline-block'};
   position: relative;
