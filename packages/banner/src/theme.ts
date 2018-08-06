@@ -21,7 +21,7 @@ const error: ThemeAttributes = {
 };
 
 const themes = {
-  default: error,
+  defaultTheme: error,
   success,
   info,
   warning,

@@ -17,7 +17,7 @@ const ThemedComponent: React.SFC<ThemedComponentProps> = ({
     values={
       color && typeof color === 'string' && themes[color]
         ? themes[color]
-        : themes.default
+        : themes.defaultTheme
     }
   >
     {children}
