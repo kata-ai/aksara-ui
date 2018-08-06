@@ -1,0 +1,34 @@
+{
+  "name": "@kata-kit/layout",
+  "version": "0.5.0",
+  "description": "Layout components for kata-kit.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.build.json",
+    "clean": "rimraf lib"
+  },
+  "dependencies": {
+    "@kata-kit/theme": "^0.5.0",
+    "classnames": "^2.2.6",
+    "react-custom-scrollbars": "^4.2.1",
+    "styled-components": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/react-custom-scrollbars": "^4.0.4",
+    "@types/react-router-dom": "^4.3.0",
+    "react-router-dom": "^4.3.1"
+  }
+}

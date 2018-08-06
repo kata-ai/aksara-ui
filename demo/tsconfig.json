@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "outDir": ".",
+    "paths": {
+      "@kata-kit/*": ["../packages/*/src"]
+    }
+  },
+  "include": ["./src/**/*", "../types/**/*.d.ts"],
+  "exclude": ["./lib", "./**/__stories__"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@kata-kit/tooltip",
+  "version": "0.5.0",
+  "description": "Tooltip component for kata-kit.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.build.json",
+    "clean": "rimraf lib"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "dom-helpers": "^3.3.1",
+    "lodash-es": "^4.17.10",
+    "react-overlays": "^0.8.3",
+    "styled-components": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/lodash-es": "^4.17.1",
+    "@types/react-overlays": "^0.8.4"
+  }
+}

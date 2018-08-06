@@ -1,65 +1,43 @@
 # kata-kit
 
-> UI Kit for React from Kata.ai
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
-[![NPM](https://img.shields.io/npm/v/kata-kit.svg)](https://www.npmjs.com/package/kata-kit) [![Build Status](https://travis-ci.org/kata-ai/kata-kit.svg?branch=master)](https://travis-ci.org/kata-ai/kata-kit) [![codecov](https://codecov.io/gh/kata-ai/kata-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/kata-ai/kata-kit)
+> The component library powering the Kata.ai platform.
 
-## Install
-
-```bash
-npm install --save kata-kit
-```
+`kata-kit` is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
 
 ## Usage
 
-first import css file in your entry files
+### Prerequisites
 
-```
-import 'kata-kit/dist/style.css';
-```
+At the bare minimum, you should at least import the global CSS reset provided by `kata-kit`.
 
-then you can use kata-kit component from other files
-
-```jsx
-import React, { Component } from 'react'
-
-import { Banner } from 'kata-kit'
-
-class Example extends Component {
-  render () {
-    return (
-      <Banner state="success" message="Hallo" />
-      <Banner state="info" message="Hallo" />
-    )
-  }
-}
+```js
+import '@kata-kit/reset';
 ```
 
-## Development
+### Example
 
-First, you need to run `npm link` on this root folder.
+`kata-kit` is built in React, with styling done in styled-components. To use these components, import them as follows:
 
+```tsx
+// Example for `<Button />` component.
+
+import React from 'react';
+import { Button } from '@kata-kit/button';
+
+export default () => <Button>Push Me</Button>;
 ```
-npm link # this will create global symlink on your machine
-```
-
-Second, you'll run rollup to watch your `src/` module and automatically recompile it into dist/ whenever you make changes.
-
-```
-npm start # runs rollup with watch flag
-```
-
-Third, go to your desired project and then run `npm link kata-kit`
-
-```
-cd /path/to/your/project
-npm link kata-kit # kata-kit package will be placed in your project's node_modules
-```
-
-## Publish
-
-This package is using [semver versioning](https://semver.org/). To publish an update, you need to install [this publishing package](https://github.com/sindresorhus/np) to make your life easier. Please read the documentation thoroughly.
 
 ## License
 
-MIT © [kata-ai](https://github.com/kata-ai)
+This is a [monorepo](https://github.com/babel/babel/blob/master/doc/design/monorepo.md), which means different packages can have different licenses.
+
+By default, root level of this repo, as well as the demo site, are licensed under the [Apache 2.0 license](LICENSE). While most components use the same license, please note that some packages (like our assets package) may use a different license. Any overriding licenses for each package will be mentioned in the `LICENSE` file locaten at the root of each package.
+
+Copyright (c) 2018 Kata.ai and/or contributors. All rights reserved.
+
+## Maintainers
+
+- Resi Respati ([@resir014](https://twitter.com/resir014)) – [Kata.ai](https://kata.ai)
+- Reyhan Sofian Haqqi – [Kata.ai](https://kata.ai)

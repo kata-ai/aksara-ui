@@ -1,0 +1,22 @@
+{
+  "name": "@kata-kit/reset",
+  "version": "0.5.0",
+  "description": "Provides necessary CSS resets to use kata-kit.",
+  "main": "./lib/index.css",
+  "kata-kit:src": "./src/index.scss",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && node-sass src/index.scss lib/index.css --output-style compressed",
+    "clean": "rimraf lib"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.9.2"
+  }
+}

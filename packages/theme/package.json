@@ -1,0 +1,25 @@
+{
+  "name": "@kata-kit/theme",
+  "version": "0.5.0",
+  "description": "kata-kit theme provider.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.build.json",
+    "clean": "rimraf lib"
+  },
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "styled-components": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  }
+}
+

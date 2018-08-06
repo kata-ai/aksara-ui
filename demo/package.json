@@ -1,0 +1,49 @@
+{
+  "name": "@kata-kit/demo",
+  "version": "0.5.0",
+  "description": "kata-kit development environment",
+  "main": "index.js",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "build": "rimraf build && webpack --mode production",
+    "dev": "webpack-dev-server --hot"
+  },
+  "dependencies": {
+    "@kata-kit/badge": "*",
+    "@kata-kit/banner": "*",
+    "@kata-kit/button": "*",
+    "@kata-kit/card": "*",
+    "@kata-kit/common": "*",
+    "@kata-kit/dashboard": "*",
+    "@kata-kit/fonts": "*",
+    "@kata-kit/layout": "*",
+    "@kata-kit/pagination": "*",
+    "@kata-kit/reset": "*",
+    "@kata-kit/theme": "*",
+    "@kata-kit/tooltip": "*",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.4",
+    "react-router-dom": "^4.3.1",
+    "styled-components": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^4.3.0",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "fork-ts-checker-webpack-plugin": "^0.4.3",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.4.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
