@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import themes from '../theme';
 import styles from '../styles';
-import { variables, ThemeAttributes, ThemedComponent } from '@kata-kit/theme';
+import ThemedComponent, { variables, ThemeAttributes } from '@kata-kit/theme';
 
 export type BadgeColors =
   | 'primary'

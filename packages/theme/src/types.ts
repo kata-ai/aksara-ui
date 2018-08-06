@@ -1,7 +1,3 @@
-import variables from './utils/variables';
-
-export type KataKitDefaultTheme = typeof variables;
-
 export type ThemeAttributesMap = {
   defaultTheme: ThemeAttributes;
   [color: string]: ThemeAttributes;

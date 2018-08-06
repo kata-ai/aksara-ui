@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BannerBase from '../styles';
 import themes from '../theme';
-import { ThemeAttributes, ThemedComponent } from '@kata-kit/theme';
+import ThemedComponent, { ThemeAttributes } from '@kata-kit/theme';
 
 export type BannerState = 'error' | 'success' | 'warning' | 'info';
 
