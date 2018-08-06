@@ -1,20 +1,26 @@
 # @kata-kit/dashboard
 
-> Common components, toolkits, and methods for kata-kit.
+> Tooltip component for kata-kit.
 
 ## Install
 
 ```sh
 # yarn
-yarn add @kata-kit/dashboard
+yarn add @kata-kit/tooltip
 # npm
-npm install @kata-kit/dashboard
+npm install @kata-kit/tooltip
 ```
 
 ## Usage
 
 To use this component within your React app, import as follows:
 
-```javascript
-import { Dashboard } from '@kata-kit/dashboard';
+```jsx
+import { TooltipTarget, Tooltip } from '@kata-kit/tooltip';
+
+const Component = () => (
+  <TooltipTarget component={<Tooltip>Hello! This is a tooltip.</Tooltip>}>
+    <span>Hover over me!</span>
+  </TooltipTarget>
+);
 ```

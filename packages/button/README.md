@@ -15,6 +15,8 @@ npm install @kata-kit/button
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { Button } from '@kata-kit/button';
+
+const Component = () => <Button>Push Me</Button>;
 ```

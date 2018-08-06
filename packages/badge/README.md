@@ -15,7 +15,7 @@ npm install @kata-kit/badge
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { Badge } from '@kata-kit/badge';
 
 const Component = () => <Badge color="default" message="text" />;

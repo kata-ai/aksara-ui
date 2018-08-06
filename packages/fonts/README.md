@@ -14,11 +14,19 @@ npm install @kata-kit/fonts
 ## Usage
 
 We use two fonts in Kata Design Language: `Museo Sans`, and `Museo Sans Rounded`.
-To use this component within your React app, import as follows:
+To use these fonts within your app, import as follows:
 
-```javascript
+```jsx
 // Museo Sans
 import '@kata-kit/fonts/museo-sans.css';
 // Museo Sans Rounded
 import '@kata-kit/fonts/museo-sans-rounded.css';
+```
+
+### Icon fonts.
+
+We also provided some icon sets. To them, import as follows:
+
+```jsx
+import '@kata-kit/fonts/kata-icons.css';
 ```

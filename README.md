@@ -20,7 +20,7 @@ import '@kata-kit/reset';
 
 `kata-kit` is built in React, with styling done in styled-components. To use these components, import them as follows:
 
-```tsx
+```jsx
 // Example for `<Button />` component.
 
 import React from 'react';

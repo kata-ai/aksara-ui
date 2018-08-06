@@ -13,8 +13,9 @@ npm install @kata-kit/reset
 
 ## Usage
 
-To use this component within your React app, import as follows:
+At the bare minimum, you should at least import this CSS reset to write apps
+according to the Kata Design Language.
 
-```javascript
+```jsx
 import '@kata-kit/reset';
 ```

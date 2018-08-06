@@ -16,6 +16,5 @@ npm install @kata-kit/assets
 Simply import the images you'd like, e.g.:
 
 ```javascript
-// Museo Sans
-import '@kata-kit/assets/images/form-empty';
+import '@kata-kit/assets/images/form-empty.svg';
 ```

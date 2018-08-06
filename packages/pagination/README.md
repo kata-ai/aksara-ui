@@ -6,16 +6,16 @@
 
 ```sh
 # yarn
-yarn add @kata-kit/loading
+yarn add @kata-kit/pagination
 # npm
-npm install @kata-kit/loading
+npm install @kata-kit/pagination
 ```
 
 ## Usage
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { Pagination } from '@kata-kit/pagination';
 
 const Component = () => (

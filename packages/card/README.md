@@ -1,6 +1,6 @@
 # @kata-kit/card
 
-> Provides necessary CSS resets to use kata-kit.
+> Card component for kata-kit.
 
 ## Install
 
@@ -16,5 +16,29 @@ npm install @kata-kit/card
 To use this component within your React app, import as follows:
 
 ```javascript
-import { Card } from '@kata-kit/card';
+import { CardGrid, Card } from '@kata-kit/card';
+
+const Component = () => (
+  <CardGrid>
+    <DashboardCard title="First Card">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </DashboardCard>
+    <DashboardCard title="Second Card">
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book.
+    </DashboardCard>
+    <DashboardCard
+      title="Card With Action"
+      action={
+        <Button color="secondary" isIcon>
+          <i className="icon-more" />
+        </Button>
+      }
+    >
+      It has survived not only five centuries, but also the leap into electronic
+      typesetting, remaining essentially unchanged.
+    </DashboardCard>
+  </CardGrid>
+);
 ```

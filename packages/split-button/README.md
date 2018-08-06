@@ -15,7 +15,7 @@ npm install @kata-kit/split-button
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { SplitButton } from '@kata-kit/split-button';
 import { DropdownItem } from '@kata-kit/dropdown';
 

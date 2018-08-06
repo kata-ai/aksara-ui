@@ -1,6 +1,6 @@
 # @kata-kit/dashboard
 
-> Common components, toolkits, and methods for kata-kit.
+> Dashboard component for kata-kit.
 
 ## Install
 
@@ -15,6 +15,21 @@ npm install @kata-kit/dashboard
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { Dashboard } from '@kata-kit/dashboard';
+
+const Component = () => (
+  <Dashboard
+    isStarter
+    title="kata-kit Demo"
+    headerContent={
+      <p>
+        This project is intended to test the look and feel of the kata-kit
+        component, as well as a development environment.
+      </p>
+    }
+  >
+    ...
+  </Dashboard>
+);
 ```

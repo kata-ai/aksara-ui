@@ -15,7 +15,7 @@ npm install @kata-kit/loading
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { Robot } from '@kata-kit/loading';
 
 const Component = () => <Robot />;

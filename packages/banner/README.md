@@ -1,6 +1,6 @@
 # @kata-kit/banner
 
-> Common components, toolkits, and methods for kata-kit.
+> Banner component for kata-kit.
 
 ## Install
 
@@ -15,6 +15,10 @@ npm install @kata-kit/banner
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { Banner } from '@kata-kit/banner';
+
+const Component = () => (
+  <Banner state="success" message="An alert! - You've succesfully read it." />
+);
 ```

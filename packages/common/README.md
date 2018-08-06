@@ -15,6 +15,6 @@ npm install @kata-kit/common
 
 To use this component within your React app, import as follows:
 
-```javascript
+```jsx
 import { EmptyMessage } from '@kata-kit/common';
 ```

@@ -15,6 +15,13 @@ npm install @kata-kit/dropdown
 
 To use this component within your React app, import as follows:
 
-```javascript
-import { Dropdown } from '@kata-kit/dropdown';
+```jsx
+import { DropdownSelector, DropdownItem } from '@kata-kit/dropdown';
+
+const Component = ({ onSelect, value }) => (
+  <DropdownSelector onSelect={onSelect} value={value}>
+    <DropdownItem>Hehe</DropdownItem>
+    <DropdownItem>Hoho</DropdownItem>
+  </DropdownSelector>
+);
 ```
