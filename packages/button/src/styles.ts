@@ -36,18 +36,13 @@ const ButtonBase = (props: ButtonBaseProps) => css`
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 
-  &:not(:disabled),
-  &:not(.disabled) {
+  &:not(:disabled):not(.disabled) {
     cursor: pointer;
   }
 
   &.disabled,
   &:disabled {
     opacity: 0.65;
-  }
-
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
   }
 
   &.icon {

@@ -100,10 +100,17 @@ const FloatingButtonWrapper = styled('button')`
   align-items: center;
   justify-content: center;
   position: relative;
-  cursor: pointer;
 
   animation: ${popIn} ${variables.transitions.transitionFast}
     ${variables.transitions.transitionEasing};
+
+  &:focus {
+    box-shadow: ${variables.layerShadows.layer200Shadow};
+  }
+
+  &.focus {
+    box-shadow: ${variables.layerShadows.layer200Shadow};
+  }
 
   &.corner-right {
     position: absolute;
