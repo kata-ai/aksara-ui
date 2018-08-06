@@ -5,10 +5,12 @@ export const defaultTheme: ThemeAttributes = {
   backgroundColor: variables.colors.gray10,
   linkColor: variables.colors.kataBlue,
   linkColorHover: variables.colors.kataBlue,
-  linkColorActive: '#0056b3',
-  linkColorOutline: '#0056b3',
+  linkColorActive: variables.colors.darkKataBlue,
+  linkColorOutline: variables.colors.darkKataBlue,
   headingColor: variables.colors.gray80,
   textColor: variables.colors.gray70,
+  borderColor: 'transparent',
+  focusOutlineColor: variables.colors.softKataBlue,
   mutedHeadingColor: variables.colors.gray60,
   mutedTextColor: variables.colors.gray50
 };

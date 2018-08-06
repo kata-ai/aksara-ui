@@ -147,7 +147,7 @@ export default () => (
           <Theme
             values={{
               backgroundColor: variables.colors.gray80,
-              textColor: variables.colors.gray10
+              textColor: variables.colors.gray20
             }}
           >
             {innerTheme => (

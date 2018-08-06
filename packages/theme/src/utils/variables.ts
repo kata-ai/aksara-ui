@@ -5,6 +5,7 @@ const yellow = '#ffc400';
 const softKataBlue = '#d8ebff';
 const lightKataBlue = '#7fbcff';
 const kataBlue = '#006fe6';
+const darkKataBlue = '#0056b3';
 const lightCobalt = '#6386c7';
 const semiCobalt = '#2662cf';
 const cobalt = '#2053af';
@@ -17,6 +18,12 @@ const gray50 = '#949a9d';
 const gray60 = '#676b6d';
 const gray70 = '#484c4f';
 const gray80 = '#24282d';
+const special01 = '#f8bbd0';
+const special03 = '#bbcaf8';
+const special04 = '#bbe7f8';
+const special06 = '#bbf8c4';
+const special07 = '#d6f8bb';
+const special09 = '#f8e5bb';
 
 // Spacer widths in rem units, counted from the base font size 13px.
 const space1 = '0.615384615rem'; // 8px
@@ -84,6 +91,7 @@ export const colors = {
   softKataBlue,
   lightKataBlue,
   kataBlue,
+  darkKataBlue,
   lightCobalt,
   semiCobalt,
   cobalt,
@@ -95,7 +103,13 @@ export const colors = {
   gray50,
   gray60,
   gray70,
-  gray80
+  gray80,
+  special01,
+  special03,
+  special04,
+  special06,
+  special07,
+  special09
 };
 
 export const spaces = {
