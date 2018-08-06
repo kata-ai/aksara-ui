@@ -1,6 +1,6 @@
 // tslint:disable:no-console
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import {
   Button,
@@ -14,21 +14,13 @@ import { Dashboard, DashboardContentHeader } from '@kata-kit/dashboard';
 import { Banner } from '@kata-kit/banner';
 import { Pagination } from '@kata-kit/pagination';
 import { TooltipTarget, Tooltip } from '@kata-kit/tooltip';
-import { Theme, ThemeAttributes, variables } from '@kata-kit/theme';
+import { KataReset, Theme, variables } from '@kata-kit/theme';
 import { Badge } from '@kata-kit/badge';
 
 // since we don't use <Reset /> yet, paragraph text color is still overridden
 // globally, so this is temporary.
-const ThemeDemo = styled('div')`
-  ${(props: ThemeAttributes) => css`
-    padding: 12px;
-    background-color: ${props.backgroundColor};
-    color: ${props.textColor};
-
-    p {
-      color: ${props.textColor};
-    }
-  `};
+const ThemeDemo = styled(KataReset)`
+  padding: 12px;
 `;
 
 export default () => (
@@ -144,14 +136,13 @@ export default () => (
       <Badge color="warning">warning</Badge>{' '}
       <Badge color="danger">danger</Badge>{' '}
     </Board>
-    <DashboardContentHeader isSecondary>Theme</DashboardContentHeader>
+    <DashboardContentHeader isSecondary>Theme Reset</DashboardContentHeader>
     <Board>
-      {/* TODO: use global <Reset /> to fix paragraph colors. */}
       <Theme>
         {theme => (
           <ThemeDemo {...theme}>
             <p>
-              BackgroundTheme (backgroundColor: {theme.backgroundColor},
+              Default Reset (backgroundColor: {theme.backgroundColor},
               textColor: {theme.textColor})
             </p>
             <Theme
@@ -163,7 +154,7 @@ export default () => (
               {innerTheme => (
                 <ThemeDemo {...innerTheme}>
                   <p style={{ marginBottom: 0 }}>
-                    BackgroundTheme (backgroundColor:{' '}
+                    Modified Reset (backgroundColor:{' '}
                     {innerTheme.backgroundColor}, textColor:{' '}
                     {innerTheme.textColor})
                   </p>
