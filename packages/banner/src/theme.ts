@@ -12,7 +12,7 @@ const info: ThemeAttributes = {
 
 const warning: ThemeAttributes = {
   backgroundColor: variables.colors.yellow,
-  textColor: variables.colors.white
+  textColor: variables.colors.gray70
 };
 
 const error: ThemeAttributes = {

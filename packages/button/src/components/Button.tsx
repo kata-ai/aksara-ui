@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import classnames from 'classnames';
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 
 import { Circle } from '@kata-kit/loading';
 
@@ -127,7 +127,6 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
   }
 
   &.secondary {
-    border: none;
     color: #949a9d /* $gray-50 */;
     background-color: #f6f7f8 /* $gray-10 */;
 
@@ -143,9 +142,13 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
   }
 
   &.danger {
-    border: none;
     color: #fff /* $white */;
     background-color: #e53935 /* $red */;
+
+    &:hover {
+      color: #fff /* $white */;
+      background-color: ${lighten(0.05, '#e53935')};
+    }
   }
 
   &.white {

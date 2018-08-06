@@ -9,6 +9,7 @@
   "private": true,
   "scripts": {
     "build": "rimraf build && webpack --mode production",
+    "clean": "rimraf build",
     "dev": "webpack-dev-server --hot"
   },
   "dependencies": {
@@ -18,10 +19,12 @@
     "@kata-kit/card": "*",
     "@kata-kit/common": "*",
     "@kata-kit/dashboard": "*",
+    "@kata-kit/dropdown": "*",
     "@kata-kit/fonts": "*",
     "@kata-kit/layout": "*",
     "@kata-kit/pagination": "*",
     "@kata-kit/reset": "*",
+    "@kata-kit/split-button": "*",
     "@kata-kit/theme": "*",
     "@kata-kit/tooltip": "*",
     "react": "^16.4.1",

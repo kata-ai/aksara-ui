@@ -6,7 +6,8 @@ import {
   Button,
   FloatingButton,
   SupportButton,
-  ToggleButton
+  ToggleButton,
+  ButtonGroup
 } from '@kata-kit/button';
 import { DashboardCard, CardGrid } from '@kata-kit/card';
 import { EmptyMessage, Board } from '@kata-kit/common';
@@ -16,6 +17,8 @@ import { Pagination } from '@kata-kit/pagination';
 import { TooltipTarget, Tooltip } from '@kata-kit/tooltip';
 import { KataReset, Theme, variables } from '@kata-kit/theme';
 import { Badge } from '@kata-kit/badge';
+import { SplitButton } from '@kata-kit/split-button';
+import { DropdownItem } from '@kata-kit/dropdown';
 
 // since we don't use <Reset /> yet, paragraph text color is still overridden
 // globally, so this is temporary.
@@ -103,6 +106,12 @@ export default () => (
         </Button>{' '}
       </div>
       <div style={{ marginBottom: '8px' }}>
+        <ButtonGroup>
+          <Button color="primary">Primary Button</Button>
+          <Button color="danger">Danger Button</Button>
+        </ButtonGroup>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
         <Button color="primary" size="sm">
           Small Button
         </Button>{' '}
@@ -133,6 +142,13 @@ export default () => (
           Block Button
         </Button>{' '}
       </div>
+    </Board>
+    <DashboardContentHeader isSecondary>Split Button</DashboardContentHeader>
+    <Board>
+      <SplitButton title="Publish" color="primary">
+        <DropdownItem>Dropdown Item 1</DropdownItem>
+        <DropdownItem>Dropdown Item 2</DropdownItem>
+      </SplitButton>
     </Board>
     <DashboardContentHeader isSecondary>Empty Message</DashboardContentHeader>
     <Board>
