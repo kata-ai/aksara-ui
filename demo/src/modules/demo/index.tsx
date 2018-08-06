@@ -77,6 +77,16 @@ export default () => (
         centuries, but also the leap into electronic typesetting, remaining
         essentially unchanged.
       </p>
+      <p>
+        Text with a link will{' '}
+        <a
+          href="https://www.youtube.com/watch?v=BVggF2TxSu8"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          look like this
+        </a>.
+      </p>
     </Board>
     <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
     <Board>
