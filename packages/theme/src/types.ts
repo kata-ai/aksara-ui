@@ -3,7 +3,7 @@ import variables from './utils/variables';
 export type KataKitDefaultTheme = typeof variables;
 
 export type ThemeAttributesMap = {
-  default: ThemeAttributes;
+  defaultTheme: ThemeAttributes;
   [color: string]: ThemeAttributes;
 };
 
