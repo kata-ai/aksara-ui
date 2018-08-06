@@ -5,6 +5,28 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+const babelPreset = prod => ({
+  presets: [
+    '@babel/preset-react',
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          browsers: ['>1%', 'not ie 11', 'not op_mini all']
+        }
+      }
+    ]
+  ],
+  plugins: [
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-syntax-import-meta',
+    ['@babel/plugin-proposal-class-properties', { loose: false }],
+    '@babel/plugin-proposal-json-strings',
+    ['babel-plugin-styled-components', { displayName: !prod, minify: prod }],
+    'react-hot-loader/babel'
+  ]
+});
+
 module.exports = {
   devtool: 'source-map',
   mode: isProduction ? 'production' : 'development',
@@ -25,11 +47,27 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: babelPreset(isProduction)
+        }
+      },
+      {
         test: /\.tsx?$/,
         use: [
           {
+            loader: 'babel-loader',
+            options: babelPreset(isProduction)
+          },
+          {
             loader: require.resolve('ts-loader'),
-            options: {}
+            options: {
+              // disable type checker - we will use it in fork plugin
+              transpileOnly: true,
+              configFile: path.resolve(__dirname, 'tsconfig.build.json')
+            }
           }
         ]
       },
