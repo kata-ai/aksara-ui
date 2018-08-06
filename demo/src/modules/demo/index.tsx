@@ -137,34 +137,31 @@ export default () => (
       <Badge color="danger">danger</Badge>{' '}
     </Board>
     <DashboardContentHeader isSecondary>Theme Reset</DashboardContentHeader>
-    <Board>
-      <Theme>
-        {theme => (
-          <ThemeDemo {...theme}>
-            <p>
-              Default Reset (backgroundColor: {theme.backgroundColor},
-              textColor: {theme.textColor})
-            </p>
-            <Theme
-              values={{
-                backgroundColor: variables.colors.gray80,
-                textColor: variables.colors.gray10
-              }}
-            >
-              {innerTheme => (
-                <ThemeDemo {...innerTheme}>
-                  <p style={{ marginBottom: 0 }}>
-                    Modified Reset (backgroundColor:{' '}
-                    {innerTheme.backgroundColor}, textColor:{' '}
-                    {innerTheme.textColor})
-                  </p>
-                </ThemeDemo>
-              )}
-            </Theme>
-          </ThemeDemo>
-        )}
-      </Theme>
-    </Board>
+    <Theme>
+      {theme => (
+        <ThemeDemo {...theme}>
+          <p>
+            Default Reset (backgroundColor: {theme.backgroundColor}, textColor:{' '}
+            {theme.textColor})
+          </p>
+          <Theme
+            values={{
+              backgroundColor: variables.colors.gray80,
+              textColor: variables.colors.gray10
+            }}
+          >
+            {innerTheme => (
+              <ThemeDemo {...innerTheme}>
+                <p style={{ marginBottom: 0 }}>
+                  Modified Reset (backgroundColor: {innerTheme.backgroundColor},
+                  textColor: {innerTheme.textColor})
+                </p>
+              </ThemeDemo>
+            )}
+          </Theme>
+        </ThemeDemo>
+      )}
+    </Theme>
     <DashboardContentHeader isSecondary>Banners</DashboardContentHeader>
     <div>
       <div style={{ marginBottom: '8px' }}>
