@@ -33,7 +33,7 @@ export default () => <Button>Push Me</Button>;
 
 This is a [monorepo](https://github.com/babel/babel/blob/master/doc/design/monorepo.md), which means different packages can have different licenses.
 
-By default, root level of this repo, as well as the demo site, are licensed under the [Apache 2.0 license](LICENSE). While most components use the same license, please note that some packages (like our assets package) may use a different license. Any overriding licenses for each package will be mentioned in the `LICENSE` file locaten at the root of each package.
+By default, the root level of this repo, as well as the demo site, are licensed under the [Apache 2.0 license](LICENSE). While most components use the same license, please note that some packages (like our assets package located in `@kata-kit/assets`) may use a different license. Any overriding licenses for each package will be mentioned in the `LICENSE` file located at the root of each package.
 
 Copyright (c) 2018 Kata.ai and/or contributors. All rights reserved.
 
