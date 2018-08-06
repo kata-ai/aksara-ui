@@ -157,14 +157,6 @@ const FloatingButtonWrapper = styled('button')`
       color: ${variables.colors.gray60};
     }
   }
-
-  &.icon {
-    height: 32px;
-    width: 32px;
-    padding: 8px;
-    text-align: center;
-    background: none;
-  }
 `;
 
 const LoaderCircle = styled(Circle)`

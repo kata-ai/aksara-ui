@@ -97,13 +97,18 @@ export default () => (
         <Button>Demo Component</Button>{' '}
         <Button color="primary">Primary Button</Button>{' '}
         <Button color="secondary">Secondary Button</Button>{' '}
-        <Button color="danger">Danger Button</Button>{' '}
         <Button color="primary" disabled>
           Disabled Button
         </Button>{' '}
         <Button color="primary" loading>
           Loading
         </Button>{' '}
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <Button color="success">Success Button</Button>{' '}
+        <Button color="warning">Warning Button</Button>{' '}
+        <Button color="danger">Danger Button</Button>{' '}
+        <Button color="white">White Button</Button>{' '}
       </div>
       <div style={{ marginBottom: '8px' }}>
         <ButtonGroup>

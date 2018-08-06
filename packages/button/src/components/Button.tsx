@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import classnames from 'classnames';
-import { darken, lighten } from 'polished';
+import { darken } from 'polished';
 
 import { Circle } from '@kata-kit/loading';
+import ThemedComponent, { ThemeAttributes } from '@kata-kit/theme';
+import themes from '../theme';
 
 import ButtonBase, { ButtonBaseProps } from '../styles';
 
@@ -71,29 +73,37 @@ class Button extends React.Component<ButtonProps> {
     } = this.props;
 
     return (
-      <ButtonWrapper
-        className={classnames(color, isIcon && 'icon', className)}
-        type={type}
-        onClick={this.onClick}
-        disabled={disabled || loading}
-        {...props}
-      >
-        {loading ? (
-          <Fragment>
-            <LoaderCircle className={classnames(color, className)} size={30} />
-            <InvisibleText>{children}</InvisibleText>
-          </Fragment>
-        ) : (
-          children
+      <ThemedComponent color={color} themes={themes.button}>
+        {themeAttributes => (
+          <ButtonWrapper
+            className={classnames(color, isIcon && 'icon', className)}
+            type={type}
+            onClick={this.onClick}
+            disabled={disabled || loading}
+            {...props}
+            {...themeAttributes}
+          >
+            {loading ? (
+              <Fragment>
+                <LoaderCircle
+                  className={classnames(color, className)}
+                  size={30}
+                />
+                <InvisibleText>{children}</InvisibleText>
+              </Fragment>
+            ) : (
+              children
+            )}
+          </ButtonWrapper>
         )}
-      </ButtonWrapper>
+      </ThemedComponent>
     );
   }
 }
 
 export default Button;
 
-const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
+const ButtonWrapper = styled<ButtonProps & ThemeAttributes, 'button'>('button')`
   ${props => ButtonBase(props)};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};
@@ -103,6 +113,22 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
   border-radius: 4px;
   line-height: 1.538rem;
 
+  color: ${props => props.textColor};
+  border-color: ${props => props.borderColor};
+  background-color: ${props => props.backgroundColor};
+
+  &:hover {
+    color: ${props => props.linkColorHover};
+    border-color: ${props => props.borderColorHover};
+    background-color: ${props => props.backgroundColorHover};
+  }
+
+  &:active {
+    color: ${props => props.linkColorActive};
+    border-color: ${props => props.borderColorActive};
+    background-color: ${props => props.backgroundColorActive};
+  }
+
   &:disabled,
   &.disabled {
     background: #c2c7c8 !important;
@@ -111,59 +137,6 @@ const ButtonWrapper = styled<ButtonProps, 'button'>('button')`
     &:hover {
       background: #c2c7c8 !important;
       border: solid 1px ${darken(0.1, '#c2c7c8')} !important;
-    }
-  }
-
-  &.primary {
-    background-color: #2053af; /* $cobalt */
-    border-color: #2053af; /* $cobalt */
-    color: #fff; /* $white */
-
-    &:hover,
-    &:active {
-      color: #fff; /* $white */
-      background-color: #2662cf; /* $semi-cobalt */
-    }
-  }
-
-  &.secondary {
-    color: #949a9d /* $gray-50 */;
-    background-color: #f6f7f8 /* $gray-10 */;
-
-    &:hover {
-      color: #949a9d /* $gray-50 */;
-      background-color: #edf1f2 /* $gray-20 */;
-    }
-
-    &:active {
-      color: #fff /* $white */;
-      background-color: #484c4f /* $gray-70 */;
-    }
-  }
-
-  &.danger {
-    color: #fff /* $white */;
-    background-color: #e53935 /* $red */;
-
-    &:hover {
-      color: #fff /* $white */;
-      background-color: ${lighten(0.05, '#e53935')};
-    }
-  }
-
-  &.white {
-    border: 1px solid #e2e6e8 /* $gray-30 */;
-    color: #484c4f /* $gray-70 */;
-    background-color: #fff /* $white */;
-
-    &:hover {
-      color: #484c4f /* $gray-70 */;
-      background-color: #f6f7f8 /* $gray-10 */;
-    }
-
-    &:active {
-      color: #fff /* $white */;
-      background-color: #484c4f /* $gray-70 */;
     }
   }
 `;

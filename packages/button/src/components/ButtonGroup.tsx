@@ -12,6 +12,8 @@ export default class ButtonGroup extends React.Component<ButtonGroupProps> {
 }
 
 const Root = styled('div')`
+  border-collapse: collapse;
+
   button,
   a {
     border-radius: 0;
