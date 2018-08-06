@@ -46,9 +46,6 @@ const ButtonBase = (props: ButtonBaseProps) => css`
   }
 
   &.icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 32px;
     width: 32px;
     padding: 4px 8px;
@@ -57,7 +54,11 @@ const ButtonBase = (props: ButtonBaseProps) => css`
     color: ${variables.colors.gray60};
 
     i {
-      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
     }
 
     i:before {
