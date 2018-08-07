@@ -7,7 +7,7 @@ export interface SidebarMainProps {
 
 const SidebarMain: React.SFC<SidebarMainProps> = ({ logo, children }) => (
   <Root>
-    <Logo src={logo} alt="Kata.ai" />
+    {logo && <Logo src={logo} alt="Kata.ai" />}
     {children}
   </Root>
 );
@@ -15,6 +15,8 @@ const SidebarMain: React.SFC<SidebarMainProps> = ({ logo, children }) => (
 export default SidebarMain;
 
 const Root = styled('div')`
+  display: flex;
+  flex-direction: column;
   padding: 1.846153846rem /* $space-3 */ 0.615384615rem /* $space-1 */;
   width: 4.923076923rem /* $space-8 */;
   background-color: #24282d /* $gray-80 */;

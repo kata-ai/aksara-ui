@@ -30,6 +30,11 @@ a {
   &:active {
     color: #0056b3;
   }
+
+  &:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+  }
 }
 
 #root {
