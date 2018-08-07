@@ -4,7 +4,7 @@ import { variables } from './utils/variables';
 export const defaultTheme: ThemeAttributes = {
   backgroundColor: variables.colors.gray10,
   linkColor: variables.colors.kataBlue,
-  linkColorHover: variables.colors.kataBlue,
+  linkColorHover: variables.colors.darkKataBlue,
   linkColorActive: variables.colors.darkKataBlue,
   linkColorOutline: variables.colors.darkKataBlue,
   headingColor: variables.colors.gray80,

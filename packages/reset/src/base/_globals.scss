@@ -18,6 +18,20 @@ body {
   color: #484c4f;
 }
 
+a {
+  color: #006fe6;
+  text-decoration: none;
+
+  &:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: #0056b3;
+  }
+}
+
 #root {
   transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
   -webkit-transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
