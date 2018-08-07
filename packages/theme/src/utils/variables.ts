@@ -19,11 +19,15 @@ const gray60 = '#676b6d';
 const gray70 = '#484c4f';
 const gray80 = '#24282d';
 const special01 = '#f8bbd0';
+const special02 = '#e8bbf8';
 const special03 = '#bbcaf8';
 const special04 = '#bbe7f8';
+const special05 = '#bbf8ee';
 const special06 = '#bbf8c4';
 const special07 = '#d6f8bb';
+const special08 = '#f5f8bb';
 const special09 = '#f8e5bb';
+const special10 = '#f8cebb';
 
 // Spacer widths in rem units, counted from the base font size 13px.
 const space1 = '0.615384615rem'; // 8px
@@ -105,11 +109,15 @@ export const colors = {
   gray70,
   gray80,
   special01,
+  special02,
   special03,
   special04,
+  special05,
   special06,
   special07,
-  special09
+  special08,
+  special09,
+  special10
 };
 
 export const spaces = {
