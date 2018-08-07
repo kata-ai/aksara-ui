@@ -1,6 +1,6 @@
 # kata-kit
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![build Status)](https://img.shields.io/travis/kata-ai/kata-kit.svg)](https://travis-ci.org/kata-ai/kata-kit) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 > The component library powering the Kata.ai platform.
 
