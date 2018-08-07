@@ -17,7 +17,8 @@ export const SplitButtonBase = () => css`
   }
 
   .kata-splitbutton__toggle--withtext {
-    padding: 10px 24px;
+    padding: 6px 16px;
+
     .kata-drop-toggle {
       margin-left: 8px;
       vertical-align: middle;

@@ -2,13 +2,14 @@ import React, { Fragment } from 'react';
 import omit from 'lodash-es/omit';
 import classNames from 'classnames';
 
-import { Button, ButtonColors } from '@kata-kit/button';
+import { Button, ButtonColors, ButtonSizes } from '@kata-kit/button';
 
 interface Props {
   tag?: any;
   caret?: boolean;
   className?: string;
   color?: ButtonColors;
+  size?: ButtonSizes;
 
   // Private properties, should not be used publicly
   block?: boolean;

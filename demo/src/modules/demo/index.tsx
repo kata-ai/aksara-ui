@@ -94,7 +94,6 @@ export default () => (
     <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
     <Board>
       <div style={{ marginBottom: '8px' }}>
-        <Button>Demo Component</Button>{' '}
         <Button color="primary">Primary Button</Button>{' '}
         <Button color="secondary">Secondary Button</Button>{' '}
         <Button color="primary" disabled>
@@ -112,8 +111,8 @@ export default () => (
       </div>
       <div style={{ marginBottom: '8px' }}>
         <ButtonGroup>
-          <Button color="primary">Primary Button</Button>
-          <Button color="danger">Danger Button</Button>
+          <Button color="primary">Button Group 1</Button>
+          <Button>Button Group 2</Button>
         </ButtonGroup>
       </div>
       <div style={{ marginBottom: '8px' }}>
@@ -126,6 +125,9 @@ export default () => (
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Button color="secondary" isIcon>
+          <i className="icon-bot" />
+        </Button>{' '}
+        <Button color="secondary" isIcon disabled>
           <i className="icon-bot" />
         </Button>{' '}
       </div>
@@ -150,10 +152,23 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Split Button</DashboardContentHeader>
     <Board>
-      <SplitButton title="Publish" color="primary">
-        <DropdownItem>Dropdown Item 1</DropdownItem>
-        <DropdownItem>Dropdown Item 2</DropdownItem>
-      </SplitButton>
+      <div style={{ marginBottom: '8px' }}>
+        <SplitButton title="Publish" color="primary">
+          <DropdownItem>Dropdown Item 1</DropdownItem>
+          <DropdownItem>Dropdown Item 2</DropdownItem>
+        </SplitButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <SplitButton
+          title="Prediction Filter"
+          color="white"
+          subtitle="All"
+          size="sm"
+        >
+          <DropdownItem>Dropdown Item 1</DropdownItem>
+          <DropdownItem>Dropdown Item 2</DropdownItem>
+        </SplitButton>
+      </div>
     </Board>
     <DashboardContentHeader isSecondary>Empty Message</DashboardContentHeader>
     <Board>
