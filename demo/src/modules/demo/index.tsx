@@ -94,7 +94,6 @@ export default () => (
     <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
     <Board>
       <div style={{ marginBottom: '8px' }}>
-        <Button>Demo Component</Button>{' '}
         <Button color="primary">Primary Button</Button>{' '}
         <Button color="secondary">Secondary Button</Button>{' '}
         <Button color="primary" disabled>
@@ -112,8 +111,8 @@ export default () => (
       </div>
       <div style={{ marginBottom: '8px' }}>
         <ButtonGroup>
-          <Button color="primary">Primary Button</Button>
-          <Button color="danger">Danger Button</Button>
+          <Button color="primary">Button Group 1</Button>
+          <Button>Button Group 2</Button>
         </ButtonGroup>
       </div>
       <div style={{ marginBottom: '8px' }}>
@@ -126,6 +125,9 @@ export default () => (
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Button color="secondary" isIcon>
+          <i className="icon-bot" />
+        </Button>{' '}
+        <Button color="secondary" isIcon disabled>
           <i className="icon-bot" />
         </Button>{' '}
       </div>
@@ -150,10 +152,24 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Split Button</DashboardContentHeader>
     <Board>
-      <SplitButton title="Publish" color="primary">
-        <DropdownItem>Dropdown Item 1</DropdownItem>
-        <DropdownItem>Dropdown Item 2</DropdownItem>
-      </SplitButton>
+      <div style={{ marginBottom: '8px' }}>
+        <SplitButton title="Publish" color="primary">
+          <DropdownItem>Dropdown Item 1</DropdownItem>
+          <DropdownItem>Dropdown Item 2</DropdownItem>
+        </SplitButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <SplitButton
+          title="Prediction Filter"
+          color="white"
+          subtitle="All"
+          size="sm"
+        >
+          <DropdownItem>None</DropdownItem>
+          <DropdownItem>Duplicate</DropdownItem>
+          <DropdownItem>All</DropdownItem>
+        </SplitButton>
+      </div>
     </Board>
     <DashboardContentHeader isSecondary>Empty Message</DashboardContentHeader>
     <Board>
@@ -198,25 +214,29 @@ export default () => (
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="success"
-          message="An alert! - You've succesfully read it."
+          message="A banner! - You've succesfully read it."
+          onClose={() => console.log('onClose')}
         />
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="info"
-          message="This alert doesn't show any importance, but it's worth checking out."
+          message="This banner shows information that isn't critical, but worth knowing."
+          onClose={() => console.log('onClose')}
         />
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="error"
-          message="Uh oh, something's not right with this alert - try fixing some things?"
+          message="Uh oh, something's not right with this banner - try fixing some things?"
+          onClose={() => console.log('onClose')}
         />
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="warning"
-          message="Warning - best check yourself, this alert isn't looking good."
+          message="Heads up - this banner isn't looking good, tread with caution."
+          onClose={() => console.log('onClose')}
         />
       </div>
     </div>

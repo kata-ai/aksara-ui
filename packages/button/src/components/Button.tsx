@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import classnames from 'classnames';
 import { darken } from 'polished';
 
 import { Circle } from '@kata-kit/loading';
-import ThemedComponent, { ThemeAttributes } from '@kata-kit/theme';
+import ThemedComponent, { ThemeAttributes, variables } from '@kata-kit/theme';
 import themes from '../theme';
 
 import ButtonBase, { ButtonBaseProps } from '../styles';
@@ -76,10 +76,12 @@ class Button extends React.Component<ButtonProps> {
       <ThemedComponent color={color} themes={themes.button}>
         {themeAttributes => (
           <ButtonWrapper
-            className={classnames(color, isIcon && 'icon', className)}
+            className={classnames(isIcon && 'icon', className)}
             type={type}
             onClick={this.onClick}
             disabled={disabled || loading}
+            color={color}
+            isIcon={isIcon}
             {...props}
             {...themeAttributes}
           >
@@ -102,6 +104,52 @@ class Button extends React.Component<ButtonProps> {
 }
 
 export default Button;
+
+const LoaderCircle = styled(Circle)`
+  margin: -6px 0;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+
+  svg path,
+  svg rect {
+    fill: #fff /* $white */;
+  }
+
+  .white {
+    svg path,
+    svg rect {
+      fill: #484c4f /* $gray-70 */;
+    }
+  }
+`;
+
+const isIconStyles = css`
+  ${LoaderCircle} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg path,
+    svg rect {
+      fill: ${variables.colors.kataBlue};
+    }
+  }
+`;
+
+const InvisibleText = styled('span')`
+  visibility: hidden;
+`;
 
 const ButtonWrapper = styled<ButtonProps & ThemeAttributes, 'button'>('button')`
   ${props => ButtonBase(props)};
@@ -131,35 +179,18 @@ const ButtonWrapper = styled<ButtonProps & ThemeAttributes, 'button'>('button')`
 
   &:disabled,
   &.disabled {
-    background: #c2c7c8 !important;
-    border: solid 1px ${darken(0.1, '#c2c7c8')} !important;
+    background-color: ${props =>
+      props.isIcon ? props.backgroundColorHover : '#c2c7c8'};
+    border-color: ${props =>
+      props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8')};
 
     &:hover {
-      background: #c2c7c8 !important;
-      border: solid 1px ${darken(0.1, '#c2c7c8')} !important;
+      background-color: ${props =>
+        props.isIcon ? props.backgroundColorHover : '#c2c7c8'};
+      border-color: ${props =>
+        props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8')};
     }
   }
-`;
 
-const LoaderCircle = styled(Circle)`
-  margin: -6px 0;
-  position: absolute;
-  left: 50%;
-  margin-left: -15px;
-
-  svg path,
-  svg rect {
-    fill: #fff /* $white */;
-  }
-
-  .white {
-    svg path,
-    svg rect {
-      fill: #484c4f /* $gray-70 */;
-    }
-  }
-`;
-
-const InvisibleText = styled('span')`
-  visibility: hidden;
+  ${props => props.isIcon && isIconStyles};
 `;

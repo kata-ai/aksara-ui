@@ -86,6 +86,17 @@ class Button extends React.Component<SupportButtonProps> {
 
 export default Button;
 
+const LoaderCircle = styled(Circle)`
+  position: absolute;
+  left: 50%;
+  margin-left: -16px;
+  margin-top: -8px;
+`;
+
+const InvisibleText = styled('span')`
+  visibility: hidden;
+`;
+
 const SupportButtonWrapper = styled<SupportButtonProps, 'button'>('button')`
   ${ButtonBase} padding: 8px 16px;
   border-radius: 4px;
@@ -108,6 +119,13 @@ const SupportButtonWrapper = styled<SupportButtonProps, 'button'>('button')`
 
     color: ${variables.colors.white};
     background-color: ${variables.colors.gray70};
+
+    ${LoaderCircle} {
+      svg path,
+      svg rect {
+        fill: ${variables.colors.white};
+      }
+    }
   }
 
   &.icon {
@@ -122,15 +140,4 @@ const SupportButtonWrapper = styled<SupportButtonProps, 'button'>('button')`
       font-size: 16px;
     }
   }
-`;
-
-const LoaderCircle = styled(Circle)`
-  position: absolute;
-  left: 50%;
-  margin-left: -16px;
-  margin-top: -8px;
-`;
-
-const InvisibleText = styled('span')`
-  visibility: hidden;
 `;
