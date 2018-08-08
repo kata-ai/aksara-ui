@@ -235,7 +235,7 @@ export default () => (
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="warning"
-          message="Heads up - this baner isn't looking good, tread with caution."
+          message="Heads up - this banner isn't looking good, tread with caution."
           onClose={() => console.log('onClose')}
         />
       </div>
