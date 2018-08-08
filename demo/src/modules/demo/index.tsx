@@ -165,8 +165,9 @@ export default () => (
           subtitle="All"
           size="sm"
         >
-          <DropdownItem>Dropdown Item 1</DropdownItem>
-          <DropdownItem>Dropdown Item 2</DropdownItem>
+          <DropdownItem>None</DropdownItem>
+          <DropdownItem>Duplicate</DropdownItem>
+          <DropdownItem>All</DropdownItem>
         </SplitButton>
       </div>
     </Board>
@@ -213,25 +214,29 @@ export default () => (
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="success"
-          message="An alert! - You've succesfully read it."
+          message="A banner! - You've succesfully read it."
+          onClose={() => console.log('onClose')}
         />
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="info"
-          message="This alert doesn't show any importance, but it's worth checking out."
+          message="This banner shows information that isn't critical, but worth knowing."
+          onClose={() => console.log('onClose')}
         />
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="error"
-          message="Uh oh, something's not right with this alert - try fixing some things?"
+          message="Uh oh, something's not right with this banner - try fixing some things?"
+          onClose={() => console.log('onClose')}
         />
       </div>
       <div style={{ marginBottom: '8px' }}>
         <Banner
           state="warning"
-          message="Warning - best check yourself, this alert isn't looking good."
+          message="Heads up - this baner isn't looking good, tread with caution."
+          onClose={() => console.log('onClose')}
         />
       </div>
     </div>

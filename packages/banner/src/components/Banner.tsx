@@ -30,7 +30,7 @@ class Banner extends React.Component<BannerProps> {
             </Icon>
             <Message>{this.props.message}</Message>
             {this.props.onClose && (
-              <CloseButton onClick={this.props.onClose}>
+              <CloseButton onClick={this.props.onClose} {...themeAttributes}>
                 <i className="icon-close" />
               </CloseButton>
             )}
@@ -43,19 +43,14 @@ class Banner extends React.Component<BannerProps> {
 
 export default Banner;
 
-const Root = styled<ThemeAttributes, 'div'>('div')`
-  ${BannerBase} background-color: ${props => props.backgroundColor};
-  color: ${props => props.textColor};
-
-  i {
-    display: inline-block;
-    color: ${props => props.textColor};
-    font-size: 16px;
-  }
-`;
-
 const Icon = styled('div')`
-  margin: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
 `;
 
 const Message = styled('div')`
@@ -63,10 +58,47 @@ const Message = styled('div')`
   margin-right: 16px;
 `;
 
-const CloseButton = styled('button')`
-  margin: 10px 16px;
+const CloseButton = styled<ThemeAttributes, 'button'>('button')`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16px;
   padding: 0;
   background: none;
   border: none;
   cursor: pointer;
+  color: ${props => props.textColor};
+  font-size: 13px;
+  width: 16px;
+  height: 16px;
+
+  &:focus {
+    outline: none;
+
+    i {
+      outline: 2px solid ${props => props.textColor};
+      outline-offset: 2px;
+    }
+  }
+`;
+
+const Root = styled<ThemeAttributes, 'div'>('div')`
+  ${BannerBase} background-color: ${props => props.backgroundColor};
+  color: ${props => props.textColor};
+
+  ${Icon} {
+    i {
+      display: inline-block;
+      color: ${props => props.textColor};
+      height: 16px;
+    }
+  }
+
+  ${CloseButton} {
+    i {
+      display: inline-block;
+      color: ${props => props.textColor};
+      height: 13px;
+    }
+  }
 `;
