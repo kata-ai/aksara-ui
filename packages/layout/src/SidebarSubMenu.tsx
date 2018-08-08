@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { variables } from '@kata-kit/theme';
+
 export interface SidebarSubMenuProps extends NavLinkProps {
   className?: string;
   to: string;
@@ -30,17 +32,19 @@ export default SidebarSubMenu;
 
 const Span = styled('span')`
   font-size: 1rem;
-  color: #484c4f /* $gray-70 */;
+  color: ${variables.colors.gray70};
 `;
 
 const Root = styled(NavLink)`
   display: block;
   min-height: 35px;
   padding: 6px 8px;
-  color: #484c4f /* $gray-70 */;
+  color: ${variables.colors.gray70};
   text-decoration: none;
   margin-bottom: 0.615384615rem /* $space-1 */;
+  border: 1px solid transparent;
   border-radius: 6px /* $border-radius-medium */;
+  transition: all 0.3s ease;
 
   &:hover {
     text-decoration: none;
@@ -57,6 +61,11 @@ const Root = styled(NavLink)`
     ${Span} {
       color: #fff /* $white */;
     }
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${variables.colors.softKataBlue};
   }
 
   &.is-active {

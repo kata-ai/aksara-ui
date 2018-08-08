@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import classnames from 'classnames';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
-import { variables } from '@kata-kit/theme';
-
 export interface SidebarMainMenuProps extends NavLinkProps {
   className?: string;
   icon: string;
@@ -74,11 +72,6 @@ const Root = styled(NavLink)`
 
   &:focus {
     outline: 0;
-  }
-
-  &:active {
-    border-radius: 2px;
-    box-shadow: 0 0 0 2px ${variables.colors.softKataBlue};
   }
 
   &.is-active {
