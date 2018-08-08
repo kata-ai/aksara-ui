@@ -61,6 +61,15 @@ const ButtonBase = (props: ButtonBaseProps) => css`
       height: 100%;
     }
 
+    &:disabled,
+    &.disabled {
+      &:hover,
+      &:focus,
+      &:active {
+        color: ${variables.colors.gray60};
+      }
+    }
+
     i:before {
       font-size: 16px;
     }
