@@ -12,6 +12,11 @@
     "clean": "rimraf build",
     "dev": "webpack-dev-server --hot"
   },
+  "browserslist": [
+    ">1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.56",
     "@kata-kit/badge": "*",
@@ -44,14 +49,17 @@
     "@babel/preset-env": "^7.0.0-beta.56",
     "@babel/preset-react": "^7.0.0-beta.56",
     "@types/react-router-dom": "^4.3.0",
+    "autoprefixer": "^9.1.0",
     "babel-loader": "^8.0.0-beta.4",
     "babel-plugin-styled-components": "^1.5.1",
     "css-loader": "^1.0.0",
+    "cssnano": "^4.0.5",
     "file-loader": "^1.1.11",
     "fork-ts-checker-webpack-plugin": "^0.4.3",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.4.2",
