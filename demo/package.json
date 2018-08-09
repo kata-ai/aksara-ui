@@ -13,6 +13,7 @@
     "dev": "webpack-dev-server --hot"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.56",
     "@kata-kit/badge": "*",
     "@kata-kit/banner": "*",
     "@kata-kit/button": "*",
