@@ -1,16 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { RouteComponentProps, Switch, Route } from 'react-router-dom';
 
-import DocsHome from './DocsHome';
-import DocsPage from './DocsPage';
+import DocsHome from './pages/home';
+import DocsPage from './pages/DocsPage';
+import DocsReset from '../core/components/DocsReset';
 
 const Docs: React.SFC<RouteComponentProps<{}>> = ({ match }) => (
-  <Fragment>
+  <DocsReset>
     <Switch>
       <Route exact path={`${match.path}`} render={DocsHome} />
       <Route path={`${match.path}/page`} render={DocsPage} />
     </Switch>
-  </Fragment>
+  </DocsReset>
 );
 
 export default Docs;

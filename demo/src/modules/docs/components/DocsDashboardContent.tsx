@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { variables } from '@kata-kit/theme';
+
 const DocsDashboardContent: React.SFC = ({ children }) => (
   <Root>{children}</Root>
 );
@@ -8,5 +10,5 @@ const DocsDashboardContent: React.SFC = ({ children }) => (
 export default DocsDashboardContent;
 
 const Root = styled('div')`
-  margin-top: 1.846153846rem /* $space-3 */;
+  margin-top: ${variables.spaces.space3};
 `;

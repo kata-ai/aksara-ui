@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { variables } from '@kata-kit/theme';
+
 const DocsDashboard: React.SFC = ({ children }) => (
   <Root>
     <Container>{children}</Container>
@@ -11,21 +13,14 @@ export default DocsDashboard;
 
 const Root = styled('div')`
   min-height: 100vh;
-  padding: 1.846153846rem /* $space-3 */ 20px;
-  background-color: #fff;
+  padding: ${variables.spaces.space3} 20px;
 
-  @media (min-width: 1280px /* $break-medium */) {
-    padding: 1.846153846rem /* $space-3 */ 40px;
+  @media (min-width: ${variables.breaks.breakMedium}) {
+    padding: ${variables.spaces.space3} 40px;
   }
 
-  @media (min-width: 1366px /* $break-large */) {
-    padding: 1.846153846rem /* $space-3 */ 48px;
-  }
-
-  & p {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 300;
+  @media (min-width: ${variables.breaks.breakLarge}) {
+    padding: ${variables.spaces.space3} 48px;
   }
 `;
 

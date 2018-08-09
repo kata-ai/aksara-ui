@@ -44,7 +44,7 @@ class App extends React.Component<RouteComponentProps<{}>> {
               Docs
             </SidebarMainMenu>
             <SidebarMainMenu to="/components" icon="method">
-              Components
+              Kit
             </SidebarMainMenu>
           </SidebarMain>
           <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
