@@ -20,6 +20,7 @@ import {
 
 import Demo from '../demo';
 import Docs from '../docs';
+import ComponentLibrary from '../components';
 
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
@@ -29,7 +30,7 @@ const SidebarSubTitle = styled('h1')`
 
 class App extends React.Component<RouteComponentProps<{}>> {
   isSidebarCollapsed() {
-    return this.props.location.pathname.search(/docs/) === -1;
+    return this.props.location.pathname.search(/docs|components/) === -1;
   }
 
   render() {
@@ -60,6 +61,7 @@ class App extends React.Component<RouteComponentProps<{}>> {
           <Switch>
             <Route exact path="/" component={Demo} />
             <Route path="/docs" component={Docs} />
+            <Route path="/components" component={ComponentLibrary} />
             <Route render={() => <Redirect to="/" />} />
           </Switch>
         </Content>
