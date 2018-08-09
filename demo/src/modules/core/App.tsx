@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 import {
   Wrapper,
+  SidebarAndContent,
   Content,
   Sidebar,
   SidebarMain,
@@ -48,14 +49,16 @@ class App extends React.Component<RouteComponentProps<{}>> {
               Kit
             </SidebarMainMenu>
           </SidebarMain>
-          <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
-            <SidebarSubMenu exact to="/docs">
-              Index
-            </SidebarSubMenu>
-            <SidebarSubMenu exact to="/docs/page">
-              Page
-            </SidebarSubMenu>
-          </SidebarSub>
+          {!this.isSidebarCollapsed() && (
+            <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
+              <SidebarSubMenu exact to="/docs">
+                Index
+              </SidebarSubMenu>
+              <SidebarSubMenu exact to="/docs/page">
+                Page
+              </SidebarSubMenu>
+            </SidebarSub>
+          )}
         </Sidebar>
         <Content>
           <Switch>
