@@ -6,5 +6,5 @@ const Content: React.SFC = ({ children }) => <Wrapper>{children}</Wrapper>;
 export default Content;
 
 const Wrapper = styled('div')`
-  display: table-cell;
+  flex: 1 1 auto;
 `;
