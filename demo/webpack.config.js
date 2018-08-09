@@ -3,27 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const babelPreset = prod => ({
-  presets: [
-    '@babel/preset-react',
-    [
-      '@babel/preset-env',
-      {
-        targets: {
-          browsers: ['>1%', 'not ie 11', 'not op_mini all']
-        }
-      }
-    ]
-  ],
-  plugins: [
-    '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-syntax-import-meta',
-    ['@babel/plugin-proposal-class-properties', { loose: false }],
-    '@babel/plugin-proposal-json-strings',
-    ['babel-plugin-styled-components', { displayName: !prod, minify: prod }],
-    'react-hot-loader/babel'
-  ]
-});
+const babelPreset = require('./config/babelrc');
+const postcssConfig = require('./config/postcss');
 
 module.exports = (env, argv) => {
   // I know there's a lot going on here, but listen.
@@ -80,7 +61,11 @@ module.exports = (env, argv) => {
           test: /^(?!.*\.st\.css$).*\.css$/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-            'css-loader'
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: postcssConfig
+            }
           ]
         },
         {
@@ -89,6 +74,10 @@ module.exports = (env, argv) => {
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: postcssConfig
+            },
             { loader: 'sass-loader', options: { outputStyle: 'compressed' } }
           ]
         },

@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 import {
   Wrapper,
+  SidebarAndContent,
   Content,
   Sidebar,
   SidebarMain,
@@ -35,34 +36,40 @@ class App extends React.Component<RouteComponentProps<{}>> {
   render() {
     return (
       <Wrapper>
-        <Sidebar collapsed={this.isSidebarCollapsed()}>
-          <SidebarMain logo={Logo}>
-            <SidebarMainMenu exact to="/" icon="bot">
-              Demo
-            </SidebarMainMenu>
-            <SidebarMainMenu to="/docs" icon="docs">
-              Docs
-            </SidebarMainMenu>
-            <SidebarMainMenu to="/components" icon="method">
-              Components
-            </SidebarMainMenu>
-          </SidebarMain>
-          <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
-            <SidebarSubMenu exact to="/docs">
-              Index
-            </SidebarSubMenu>
-            <SidebarSubMenu exact to="/docs/page">
-              Page
-            </SidebarSubMenu>
-          </SidebarSub>
-        </Sidebar>
-        <Content>
-          <Switch>
-            <Route exact path="/" component={Demo} />
-            <Route path="/docs" component={Docs} />
-            <Route render={() => <Redirect to="/" />} />
-          </Switch>
-        </Content>
+        <SidebarAndContent>
+          <Sidebar collapsed={this.isSidebarCollapsed()}>
+            <SidebarMain logo={Logo}>
+              <SidebarMainMenu exact to="/" icon="bot">
+                Demo
+              </SidebarMainMenu>
+              <SidebarMainMenu to="/docs" icon="docs">
+                Docs
+              </SidebarMainMenu>
+              <SidebarMainMenu to="/components" icon="method">
+                Components
+              </SidebarMainMenu>
+            </SidebarMain>
+            {!this.isSidebarCollapsed() && (
+              <SidebarSub
+                titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}
+              >
+                <SidebarSubMenu exact to="/docs">
+                  Index
+                </SidebarSubMenu>
+                <SidebarSubMenu exact to="/docs/page">
+                  Page
+                </SidebarSubMenu>
+              </SidebarSub>
+            )}
+          </Sidebar>
+          <Content>
+            <Switch>
+              <Route exact path="/" component={Demo} />
+              <Route path="/docs" component={Docs} />
+              <Route render={() => <Redirect to="/" />} />
+            </Switch>
+          </Content>
+        </SidebarAndContent>
       </Wrapper>
     );
   }
