@@ -7,17 +7,7 @@
  * @param {boolean} prod true if webpack is running in production mode.
  */
 const babelPreset = prod => ({
-  presets: [
-    '@babel/preset-react',
-    [
-      '@babel/preset-env',
-      {
-        targets: {
-          browsers: ['>1%', 'not ie 11', 'not op_mini all']
-        }
-      }
-    ]
-  ],
+  presets: ['@babel/preset-react', '@babel/preset-env'],
   plugins: [
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-syntax-import-meta',

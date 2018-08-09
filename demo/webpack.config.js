@@ -4,6 +4,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const babelPreset = require('./config/babelrc');
+const postcssConfig = require('./config/postcss');
 
 module.exports = (env, argv) => {
   // I know there's a lot going on here, but listen.
@@ -60,7 +61,11 @@ module.exports = (env, argv) => {
           test: /^(?!.*\.st\.css$).*\.css$/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-            'css-loader'
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: postcssConfig
+            }
           ]
         },
         {
@@ -69,6 +74,10 @@ module.exports = (env, argv) => {
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: postcssConfig
+            },
             { loader: 'sass-loader', options: { outputStyle: 'compressed' } }
           ]
         },
