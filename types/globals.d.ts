@@ -10,5 +10,6 @@ declare module '*.css' {
 
 declare module '*.mdx' {
   const MDXComponent: (props) => JSX.Element;
+  export const meta: Record<string, any>;
   export default MDXComponent;
 }

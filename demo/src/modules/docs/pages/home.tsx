@@ -4,11 +4,11 @@ import DocsDashboardHeading from '../components/DocsDashboardHeading';
 import DocsDashboardContent from '../components/DocsDashboardContent';
 
 // TODO: improve how we map + import MDX files
-import Index from '../../../../../docs/index.mdx';
+import Index, { meta } from '../../../../../docs/index.mdx';
 
 const DocsHome = () => (
   <DocsDashboard>
-    <DocsDashboardHeading>Introduction</DocsDashboardHeading>
+    <DocsDashboardHeading>{meta.title}</DocsDashboardHeading>
     <DocsDashboardContent>
       <Index />
     </DocsDashboardContent>
