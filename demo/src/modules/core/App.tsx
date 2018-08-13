@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   withRouter,
   RouteComponentProps,
@@ -7,7 +7,6 @@ import {
   Redirect
 } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import styled from 'styled-components';
 
 import {
   Wrapper,
@@ -15,24 +14,14 @@ import {
   Content,
   Sidebar,
   SidebarMain,
-  SidebarMainMenu,
-  SidebarSub,
-  SidebarSubMenu
+  SidebarMainMenu
 } from '@kata-kit/layout';
 
 import Loading from './components/Loading';
-import { variables } from '@kata-kit/theme';
+import * as sidebar from './sidebar';
+import SidebarLoading from './components/SidebarLoading';
 
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
-
-const SidebarSubTitle = styled('h1')`
-  margin-bottom: 1.846153846rem /* $space-3 */;
-`;
-
-const SidebarSubHeading = styled('h5')`
-  margin-top: ${variables.spaces.space2};
-  padding: 6px 8px;
-`;
 
 const Demo = Loadable({
   loader: () => import('../demo'),
@@ -54,49 +43,62 @@ class App extends React.Component<RouteComponentProps<{}>> {
     return this.props.location.pathname.search(/docs|components/) === -1;
   }
 
+  getCurrentLocation() {
+    const locations =
+      this.props.location && this.props.location.pathname
+        ? this.props.location.pathname.split('/')
+        : [];
+    return locations.length > 1 ? locations[1] : undefined;
+  }
+
+  getSidebarSub(location: string) {
+    const DocsSidebar = Loadable({
+      loader: () => import('../docs/sidebar'),
+      loading: SidebarLoading
+    });
+
+    const ComponentLibrarySidebar = Loadable({
+      loader: () => import('../components/sidebar'),
+      loading: SidebarLoading
+    });
+
+    switch (location) {
+      case 'docs': {
+        return <DocsSidebar />;
+      }
+      case 'components': {
+        return <ComponentLibrarySidebar />;
+      }
+      default: {
+        return null;
+      }
+    }
+  }
+
   render() {
+    const currLoc = this.getCurrentLocation();
+
     return (
       <Wrapper>
         <SidebarAndContent>
           <Sidebar collapsed={this.isSidebarCollapsed()}>
             <SidebarMain logo={Logo}>
-              <SidebarMainMenu exact to="/" icon="dict">
-                Demo
-              </SidebarMainMenu>
-              <SidebarMainMenu to="/docs" icon="docs">
-                Design
-              </SidebarMainMenu>
-              <SidebarMainMenu to="/components" icon="method">
-                Kit
-              </SidebarMainMenu>
+              {Object.keys(sidebar.menus).map(menu => (
+                <Fragment key={menu}>
+                  <SidebarMainMenu
+                    exact={sidebar.menus[menu].isExact}
+                    to={sidebar.menus[menu].path}
+                    icon={sidebar.menus[menu].icon}
+                  >
+                    {sidebar.menus[menu].title}
+                  </SidebarMainMenu>
+                </Fragment>
+              ))}
             </SidebarMain>
             {!this.isSidebarCollapsed() && (
-              <SidebarSub
-                titleElement={<SidebarSubTitle>Design</SidebarSubTitle>}
-              >
-                <SidebarSubMenu exact to="/docs">
-                  Index
-                </SidebarSubMenu>
-                <SidebarSubMenu to="/docs/page">Page</SidebarSubMenu>
-                <SidebarSubHeading className="text-label">
-                  Overview
-                </SidebarSubHeading>
-                <SidebarSubMenu to="/docs/overview/introduction">
-                  Introduction
-                </SidebarSubMenu>
-                <SidebarSubMenu to="/docs/overview/design-principles">
-                  Design Principles
-                </SidebarSubMenu>
-                <SidebarSubMenu to="/docs/overview/voice-and-tone">
-                  Voice and Tone
-                </SidebarSubMenu>
-                <SidebarSubHeading className="text-label">
-                  Foundations
-                </SidebarSubHeading>
-                <SidebarSubMenu to="/docs/foundations/colour">
-                  Colour
-                </SidebarSubMenu>
-              </SidebarSub>
+              <Fragment>
+                {currLoc ? this.getSidebarSub(currLoc) : null}
+              </Fragment>
             )}
           </Sidebar>
           <Content>
@@ -104,6 +106,7 @@ class App extends React.Component<RouteComponentProps<{}>> {
               <Route exact path="/" component={Demo} />
               <Route path="/docs" component={Docs} />
               <Route path="/components" component={ComponentLibrary} />
+              <Route path="/demo" component={Demo} />
               <Route render={() => <Redirect to="/" />} />
             </Switch>
           </Content>
