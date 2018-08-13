@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
       publicPath: '/'
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.md', '.mdx'],
       mainFields: ['kata-kit:src', 'main']
     },
     module: {
@@ -38,6 +38,17 @@ module.exports = (env, argv) => {
             loader: 'babel-loader',
             options: babelPreset(isProduction)
           }
+        },
+        {
+          test: /\.mdx?$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: babelPreset(isProduction)
+            },
+            '@mdx-js/loader'
+          ]
         },
         {
           test: /\.tsx?$/,
