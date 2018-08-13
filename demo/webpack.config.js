@@ -1,10 +1,26 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const glob = require('glob');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const GenerateJsonPlugin = require('generate-json-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const babelPreset = require('./config/babelrc');
 const postcssConfig = require('./config/postcss');
+
+const pathRegex = /^.*[\\/]/;
+const packageList = {};
+
+glob.sync('../packages/*').forEach(path => {
+  const packageName = path.replace(pathRegex, '');
+  const {
+    name,
+    version,
+    description
+  } = require(`../packages/${packageName}/package.json`);
+
+  packageList[packageName] = { name, version, description };
+});
 
 module.exports = (env, argv) => {
   // I know there's a lot going on here, but listen.
@@ -80,7 +96,6 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          // exclude css from stylable component
           test: /\.s(a|c)ss$/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
@@ -141,7 +156,8 @@ module.exports = (env, argv) => {
           minifyCSS: true,
           minifyURLs: true
         }
-      })
+      }),
+      new GenerateJsonPlugin('kata-kit-packages.json', packageList)
     ],
     devServer: {
       disableHostCheck: true,
