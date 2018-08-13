@@ -10,7 +10,7 @@ const HomePage: React.SFC<RouteComponentProps<{}>> = ({ history }) => (
     <Inner>
       <Container>
         <img
-          style={{ marginBottom: '24px' }}
+          style={{ marginBottom: '24px', width: '100%', maxWidth: '434px' }}
           src={require('../images/kata-platform.svg')}
         />
         <h1>Kata Design System</h1>
