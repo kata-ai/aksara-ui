@@ -21,11 +21,17 @@ import {
 } from '@kata-kit/layout';
 
 import Loading from './components/Loading';
+import { variables } from '@kata-kit/theme';
 
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
 const SidebarSubTitle = styled('h1')`
   margin-bottom: 1.846153846rem /* $space-3 */;
+`;
+
+const SidebarSubHeading = styled('h5')`
+  margin-top: ${variables.spaces.space2};
+  padding: 6px 8px;
 `;
 
 const Demo = Loadable({
@@ -54,7 +60,7 @@ class App extends React.Component<RouteComponentProps<{}>> {
         <SidebarAndContent>
           <Sidebar collapsed={this.isSidebarCollapsed()}>
             <SidebarMain logo={Logo}>
-              <SidebarMainMenu exact to="/" icon="bot">
+              <SidebarMainMenu exact to="/" icon="dict">
                 Demo
               </SidebarMainMenu>
               <SidebarMainMenu to="/docs" icon="docs">
@@ -66,13 +72,29 @@ class App extends React.Component<RouteComponentProps<{}>> {
             </SidebarMain>
             {!this.isSidebarCollapsed() && (
               <SidebarSub
-                titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}
+                titleElement={<SidebarSubTitle>Design</SidebarSubTitle>}
               >
                 <SidebarSubMenu exact to="/docs">
                   Index
                 </SidebarSubMenu>
-                <SidebarSubMenu exact to="/docs/page">
-                  Page
+                <SidebarSubMenu to="/docs/page">Page</SidebarSubMenu>
+                <SidebarSubHeading className="text-label">
+                  Overview
+                </SidebarSubHeading>
+                <SidebarSubMenu to="/docs/overview/introduction">
+                  Introduction
+                </SidebarSubMenu>
+                <SidebarSubMenu to="/docs/overview/design-principles">
+                  Design Principles
+                </SidebarSubMenu>
+                <SidebarSubMenu to="/docs/overview/voice-and-tone">
+                  Voice and Tone
+                </SidebarSubMenu>
+                <SidebarSubHeading className="text-label">
+                  Foundations
+                </SidebarSubHeading>
+                <SidebarSubMenu to="/docs/foundations/colour">
+                  Colour
                 </SidebarSubMenu>
               </SidebarSub>
             )}
