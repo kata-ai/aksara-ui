@@ -6,6 +6,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
+import Loadable from 'react-loadable';
 import styled from 'styled-components';
 
 import {
@@ -19,15 +20,28 @@ import {
   SidebarSubMenu
 } from '@kata-kit/layout';
 
-import Demo from '../demo';
-import Docs from '../docs';
-import ComponentLibrary from '../components';
+import Loading from './components/Loading';
 
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
 const SidebarSubTitle = styled('h1')`
   margin-bottom: 1.846153846rem /* $space-3 */;
 `;
+
+const Demo = Loadable({
+  loader: () => import('../demo'),
+  loading: Loading
+});
+
+const Docs = Loadable({
+  loader: () => import('../docs'),
+  loading: Loading
+});
+
+const ComponentLibrary = Loadable({
+  loader: () => import('../components'),
+  loading: Loading
+});
 
 class App extends React.Component<RouteComponentProps<{}>> {
   isSidebarCollapsed() {
