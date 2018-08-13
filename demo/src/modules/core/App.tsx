@@ -20,6 +20,7 @@ import {
 import Loading from './components/Loading';
 import * as sidebar from './sidebar';
 import SidebarLoading from './components/SidebarLoading';
+import Home from '../home';
 
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
@@ -103,7 +104,7 @@ class App extends React.Component<RouteComponentProps<{}>> {
           </Sidebar>
           <Content>
             <Switch>
-              <Route exact path="/" component={Demo} />
+              <Route exact path="/" component={Home} />
               <Route path="/docs" component={Docs} />
               <Route path="/components" component={ComponentLibrary} />
               <Route path="/demo" component={Demo} />

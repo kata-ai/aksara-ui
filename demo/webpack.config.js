@@ -159,6 +159,11 @@ module.exports = (env, argv) => {
       }),
       new GenerateJsonPlugin('kata-kit-packages.json', packageList)
     ],
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
+    },
     devServer: {
       disableHostCheck: true,
       hot: true,
