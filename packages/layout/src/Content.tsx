@@ -7,4 +7,6 @@ export default Content;
 
 const Wrapper = styled('div')`
   flex: 1 1 auto;
+  position: relative;
+  z-index: 1;
 `;
