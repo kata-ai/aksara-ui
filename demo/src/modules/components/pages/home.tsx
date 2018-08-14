@@ -1,5 +1,5 @@
 import React from 'react';
 
-const ComponentLibraryPage = () => <div>ComponentLibraryPage</div>;
+const ComponentsHome = () => <div>ComponentLibraryPage</div>;
 
-export default ComponentLibraryPage;
+export default ComponentsHome;

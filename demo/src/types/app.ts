@@ -14,3 +14,9 @@ export interface SubMenuDefinition {
     isExact?: true;
   };
 }
+
+export interface PackageMetadata {
+  name: string;
+  version: string;
+  description: string;
+}
