@@ -9,4 +9,5 @@ const Wrapper = styled('div')`
   flex: 1 1 auto;
   position: relative;
   z-index: 1;
+  overflow-x: auto;
 `;
