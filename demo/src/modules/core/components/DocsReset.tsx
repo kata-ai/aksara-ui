@@ -13,9 +13,12 @@ const DocsReset: React.SFC = ({ children }) => (
 export default DocsReset;
 
 const ResetWrapper = styled(KataReset)`
+  min-height: 100%;
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
+  overflow-x: auto;
+  word-wrap: break-word;
 
   h1,
   .h1,
