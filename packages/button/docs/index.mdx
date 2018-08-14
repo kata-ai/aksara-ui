@@ -3,3 +3,56 @@ import ButtonExample1 from '../examples/0-basic-example'
 A simple button. Can be used on any circumstances.
 
 <ButtonExample1 />
+
+## Button Props
+
+### `disabled?: boolean`
+
+Whether the button is disabled or not.
+
+### `color?: ButtonColors`
+
+The color of the button. One of the following:
+
+- `'primary'`
+- `'secondary'`
+- `'success'`
+- `'danger'`
+- `'warning'`
+- `'info'`
+- `'white'`
+
+### `color?: ButtonSizes`
+
+The size of the button. One of the following:
+
+- `'sm'`
+- `'lg'`
+
+### `isIcon?: boolean`
+
+Whether the button is an icon button or not.
+
+### `className?: string`
+
+Additional CSS classes to give to the button.
+
+### `onClick?: React.MouseEventHandler<HTMLButtonElement>`
+
+Event handler triggered during `onClick`.
+
+### `type?: string`
+
+The default HTML type of the button. Defaults to `button`.
+
+### `active?: boolean`
+
+Whether the button is active or not.
+
+### `loading?: boolean`
+
+Triggers the loading state of the button.
+
+### `outline?: boolean`
+
+If the button is an outline button, define it here.
