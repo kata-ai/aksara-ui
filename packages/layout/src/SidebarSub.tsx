@@ -23,6 +23,8 @@ const Root = styled('div')`
   flex-direction: column;
   flex: 1 1 auto;
   position: relative;
+  background: ${variables.colors.white};
+  border-right: 1px solid ${variables.colors.gray30};
 `;
 
 const SubHeader = styled('div')`

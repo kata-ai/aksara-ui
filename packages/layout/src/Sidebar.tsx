@@ -19,7 +19,6 @@ const Sidebar: React.SFC<SidebarProps> = ({ collapsed, children }) => {
 export default Sidebar;
 
 const Wrapper = styled<SidebarProps, 'div'>('div')`
-  background: #fff; /* $white */
   position: relative;
   z-index: 2;
 `;
