@@ -38,7 +38,7 @@ class ComponentLibrarySidebar extends React.Component<Props, State> {
 
     return (
       <SidebarSub titleElement={<SidebarSubTitle>Components</SidebarSubTitle>}>
-        <SidebarSubMenu exact to="/docs">
+        <SidebarSubMenu exact to="/components">
           Index
         </SidebarSubMenu>
         {packages && (
