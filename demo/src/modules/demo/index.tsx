@@ -76,9 +76,9 @@ export default () => (
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged.
+        scrambled it to make a <strong>type specimen book</strong>. It has
+        survived not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged.
       </p>
       <p>
         Text with a link will{' '}
@@ -88,33 +88,127 @@ export default () => (
           rel="noopener noreferrer"
         >
           look like this
-        </a>.
+        </a>
+        .
       </p>
+    </Board>
+    <DashboardContentHeader isSecondary>Tables</DashboardContentHeader>
+    <Board>
+      <table className="kata-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>@kata-kit/button</td>
+            <td>Button component</td>
+            <td>1.0.0</td>
+          </tr>
+          <tr>
+            <td>@kata-kit/card</td>
+            <td>Card component</td>
+            <td>1.0.4</td>
+          </tr>
+          <tr>
+            <td>@kata-kit/theme</td>
+            <td>Theming framework</td>
+            <td>2.1.0</td>
+          </tr>
+        </tbody>
+      </table>
     </Board>
     <DashboardContentHeader isSecondary>Button</DashboardContentHeader>
     <Board>
+      <h3>Primary</h3>
       <div style={{ marginBottom: '8px' }}>
-        <Button color="primary">Primary Button</Button>{' '}
-        <Button color="secondary">Secondary Button</Button>{' '}
+        <Button color="primary">Default</Button>{' '}
+        <Button color="primary" className="active">
+          Active
+        </Button>{' '}
         <Button color="primary" disabled>
-          Disabled Button
+          Disabled
         </Button>{' '}
         <Button color="primary" loading>
           Loading
         </Button>{' '}
       </div>
+      <h3>Secondary</h3>
       <div style={{ marginBottom: '8px' }}>
-        <Button color="success">Success Button</Button>{' '}
-        <Button color="warning">Warning Button</Button>{' '}
-        <Button color="danger">Danger Button</Button>{' '}
-        <Button color="white">White Button</Button>{' '}
+        <Button color="secondary">Default</Button>{' '}
+        <Button color="secondary" active>
+          Active
+        </Button>{' '}
+        <Button color="secondary" disabled>
+          Disabled
+        </Button>{' '}
+        <Button color="secondary" loading>
+          Loading
+        </Button>{' '}
       </div>
+      <h3>Success</h3>
+      <div style={{ marginBottom: '8px' }}>
+        <Button color="success">Default</Button>{' '}
+        <Button color="success" className="active">
+          Active
+        </Button>{' '}
+        <Button color="success" disabled>
+          Disabled
+        </Button>{' '}
+        <Button color="success" loading>
+          Loading
+        </Button>{' '}
+      </div>
+      <h3>Warning</h3>
+      <div style={{ marginBottom: '8px' }}>
+        <Button color="warning">Default</Button>{' '}
+        <Button color="warning" className="active">
+          Active
+        </Button>{' '}
+        <Button color="warning" disabled>
+          Disabled
+        </Button>{' '}
+        <Button color="warning" loading>
+          Loading
+        </Button>{' '}
+      </div>
+      <h3>Danger</h3>
+      <div style={{ marginBottom: '8px' }}>
+        <Button color="danger">Default</Button>{' '}
+        <Button color="danger" className="active">
+          Active
+        </Button>{' '}
+        <Button color="danger" disabled>
+          Disabled
+        </Button>{' '}
+        <Button color="danger" loading>
+          Loading
+        </Button>{' '}
+      </div>
+      <h3>White</h3>
+      <div style={{ marginBottom: '8px' }}>
+        <Button color="white">Default</Button>{' '}
+        <Button color="white" className="active">
+          Active
+        </Button>{' '}
+        <Button color="white" disabled>
+          Disabled
+        </Button>{' '}
+        <Button color="white" loading>
+          Loading
+        </Button>{' '}
+      </div>
+      <h3>Button Group</h3>
       <div style={{ marginBottom: '8px' }}>
         <ButtonGroup>
           <Button color="primary">Button Group 1</Button>
           <Button>Button Group 2</Button>
         </ButtonGroup>
       </div>
+      <h3>Small Button</h3>
       <div style={{ marginBottom: '8px' }}>
         <Button color="primary" size="sm">
           Small Button
@@ -123,6 +217,7 @@ export default () => (
           Small Button
         </Button>{' '}
       </div>
+      <h3>Icon Button</h3>
       <div style={{ marginBottom: '8px' }}>
         <Button color="secondary" isIcon>
           <i className="icon-bot" />
@@ -131,19 +226,23 @@ export default () => (
           <i className="icon-bot" />
         </Button>{' '}
       </div>
+      <h3>Floating Button</h3>
       <div style={{ marginBottom: '8px' }}>
         <FloatingButton icon="bot" /> <FloatingButton icon="bot" disabled />{' '}
       </div>
+      <h3>Support Button</h3>
       <div style={{ marginBottom: '8px' }}>
         <SupportButton>SupportButton</SupportButton>{' '}
         <SupportButton loading>Loading</SupportButton>{' '}
       </div>
+      <h3>Toggle Button</h3>
       <div style={{ marginBottom: '8px' }}>
         <ToggleButton
           renderActive={() => <Button>ToggleButton</Button>}
           renderInactive={() => <Button>ToggleButton Inactive</Button>}
         />{' '}
       </div>
+      <h3>Block Button</h3>
       <div style={{ marginBottom: '8px' }}>
         <Button block color="primary">
           Block Button
