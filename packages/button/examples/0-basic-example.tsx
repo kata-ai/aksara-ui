@@ -20,7 +20,7 @@ const ButtonExample1 = () => (
     <h3>Secondary</h3>
     <div style={{ marginBottom: '8px' }}>
       <Button color="secondary">Default</Button>{' '}
-      <Button color="secondary" active>
+      <Button color="secondary" className="active">
         Active
       </Button>{' '}
       <Button color="secondary" disabled>
