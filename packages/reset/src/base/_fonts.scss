@@ -55,8 +55,12 @@ small,
 p,
 .body-text {
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 500;
   color: #484c4f;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .text-primary {

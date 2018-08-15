@@ -13,6 +13,7 @@ const Div = styled('div')`
   ${(p: ThemeAttributes) => css`
     background-color: ${p.backgroundColor};
     color: ${p.textColor};
+    font-weight: 500;
 
     a {
       color: ${resolveColor('linkColor')};
@@ -96,8 +97,13 @@ const Div = styled('div')`
     p,
     .body-text {
       font-size: 1rem;
-      font-weight: normal;
+      font-weight: 500;
       color: ${p.textColor};
+    }
+
+    strong {
+      font-weight: 700;
+      color: ${resolveColor('headingColor')};
     }
 
     .text-primary {
