@@ -21,7 +21,7 @@ const ComponentsHome: React.SFC<Props> = ({ packagesList, match }) => (
   <DocsDashboard>
     <DocsDashboardHeading>Components</DocsDashboardHeading>
     <DocsDashboardContent>
-      <table>
+      <table className="striped hover">
         <thead>
           <tr>
             <th>Name</th>

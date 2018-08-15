@@ -94,7 +94,7 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Tables</DashboardContentHeader>
     <Board>
-      <table className="kata-table">
+      <table className="striped hover">
         <thead>
           <tr>
             <th>Name</th>
