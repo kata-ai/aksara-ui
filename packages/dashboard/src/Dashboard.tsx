@@ -31,39 +31,37 @@ export default class Dashboard extends React.Component<DashboardProps> {
       headerContent,
       image,
       children,
-      isStarter,
-      isHeadingCentered
+      isStarter
     } = this.props;
     return (
       <Root className={classNames(className, isStarter && 'is-starter')}>
         <DashboardStarterHeading>
           <Container>
-            <div
-              className={classNames({
-                'kata-dashboard__heading-content': true,
-                'kata-dashboard__heading-content__centered': isHeadingCentered
-              })}
-            >
-              <DashboardHeader>
-                <DashboardTitle isStarter>{title}</DashboardTitle>
-                {tooltip && (
-                  <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
-                    <DashboardTooltip className="icon-info" />
-                  </TooltipTarget>
+            <DashboardStarterInner>
+              <DashboardStarterLeft>
+                <DashboardHeader>
+                  <DashboardTitle isStarter>{title}</DashboardTitle>
+                  {tooltip && (
+                    <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
+                      <DashboardTooltip className="icon-info" />
+                    </TooltipTarget>
+                  )}
+                </DashboardHeader>
+                {subTitle && (
+                  <DashboardSubtitle isStarter>{subTitle}</DashboardSubtitle>
                 )}
-              </DashboardHeader>
-              {subTitle && (
-                <DashboardSubtitle isStarter>{subTitle}</DashboardSubtitle>
+                {headerContent && (
+                  <DashboardHeaderContent>
+                    {headerContent}
+                  </DashboardHeaderContent>
+                )}
+              </DashboardStarterLeft>
+              {image && (
+                <DashboardStarterImage>
+                  <img src={image} alt="header-img" />
+                </DashboardStarterImage>
               )}
-              {headerContent && (
-                <DashboardHeaderContent>{headerContent}</DashboardHeaderContent>
-              )}
-            </div>
-            {image && (
-              <div className="kata-dashboard__heading-image">
-                <img src={image} alt="header-img" />
-              </div>
-            )}
+            </DashboardStarterInner>
           </Container>
         </DashboardStarterHeading>
 
@@ -166,10 +164,35 @@ const DashboardSubtitle = styled<DashboardProps, 'h2'>('h2')`
 const DashboardParagraph = styled('p')`
   &:not(.is-starter) {
     margin-top: 8px;
-    max-width: 480px;
     word-wrap: break-word;
     color: #fff !important;
     font-weight: 300;
+  }
+`;
+
+const DashboardStarterInner = styled('div')`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px /* $break-medium */) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
+
+const DashboardStarterLeft = styled('div')`
+  width: 100%;
+  max-width: 480px;
+`;
+
+const DashboardStarterImage = styled('div')`
+  display: none;
+  height: 100%;
+  max-height: 184px;
+
+  @media (min-width: 1024px /* $break-medium */) {
+    display: block;
   }
 `;
 
@@ -205,7 +228,7 @@ const DashboardContent = styled('div')`
 
 const DashboardStarterHeading = styled('div')`
   display: flex;
-  padding: 20px 20px 136px;
+  padding: 40px 20px 136px;
   background-color: #006fe6 /* $kata-blue */;
 
   @media (min-width: 1280px /* $break-medium */) {
