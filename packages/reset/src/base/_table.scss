@@ -25,8 +25,9 @@ table {
       border-bottom: solid 1px $gray-30;
 
       td {
-        padding: 14px 16px;
+        padding: 12px 16px;
         vertical-align: middle;
+        font-size: 13px;
 
         color: $gray-70;
       }
@@ -47,7 +48,7 @@ table {
     tbody {
       tr {
         &:hover {
-          background: $gray-10;
+          background: $gray-20;
         }
       }
     }
