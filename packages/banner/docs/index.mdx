@@ -1,11 +1,17 @@
-import ExampleContainer from '../../../utils/Example';
-import BannerExample0 from '../examples/0-basic-example'
-import BannerExample1 from '../examples/1-closable-banners'
+import { Example, Props } from '../../../utils/src';
+import BannerExample0 from '../examples/0-basic-example';
+import BannerExample1 from '../examples/1-closable-banners';
+
+import { bannerProps } from './props';
 
 Banners are used to convey important information to users.
 
-<ExampleContainer title="Basic Example" children={<BannerExample0 />} />
+<Example title="Basic Example" children={<BannerExample0 />} />
 
 Banners can also be closable.
 
-<ExampleContainer title="Closable Banners" children={<BannerExample1 />} />
+<Example title="Closable Banners" children={<BannerExample1 />} />
+
+## Banner Props
+
+<Props props={bannerProps} />

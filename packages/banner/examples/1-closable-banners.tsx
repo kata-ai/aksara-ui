@@ -14,7 +14,7 @@ class BannerExample1 extends React.Component<{}, BannerState> {
 
     this.state = {
       state: 'warning',
-      message: 'Hey! Now close this banner by clicking that X button.',
+      message: 'Hey, no peeking! Close this banner by clicking that X button.',
       open: false
     };
   }

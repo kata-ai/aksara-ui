@@ -1,59 +1,12 @@
-import ExampleContainer from '../../../utils/Example';
-import ButtonExample1 from '../examples/0-basic-example'
+import { Example, Props } from '../../../utils/src';
+import ButtonExample1 from '../examples/0-basic-example';
 
-A simple button. Can be used on any circumstances.
+import { buttonProps } from './props';
 
-<ExampleContainer title="Basic Example" children={<ButtonExample1 />} />
+Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.
+
+<Example title="Basic Example" children={<ButtonExample1 />} />
 
 ## Button Props
 
-### `disabled?: boolean`
-
-Whether the button is disabled or not.
-
-### `color?: ButtonColors`
-
-The color of the button. One of the following:
-
-- `'primary'`
-- `'secondary'`
-- `'success'`
-- `'danger'`
-- `'warning'`
-- `'info'`
-- `'white'`
-
-### `color?: ButtonSizes`
-
-The size of the button. One of the following:
-
-- `'sm'`
-- `'lg'`
-
-### `isIcon?: boolean`
-
-Whether the button is an icon button or not.
-
-### `className?: string`
-
-Additional CSS classes to give to the button.
-
-### `onClick?: React.MouseEventHandler<HTMLButtonElement>`
-
-Event handler triggered during `onClick`.
-
-### `type?: string`
-
-The default HTML type of the button. Defaults to `button`.
-
-### `active?: boolean` (Deprecated)
-
-Whether the button is active or not.
-
-### `loading?: boolean`
-
-Triggers the loading state of the button.
-
-### `outline?: boolean`
-
-If the button is an outline button, define it here.
+<Props props={buttonProps} />
