@@ -32,7 +32,9 @@ class ComponentLibrarySidebar extends React.Component<Props, State> {
           <Fragment>
             <SidebarSubHeading>Components</SidebarSubHeading>
             {Object.keys(packagesList).map(p => (
-              <SidebarSubMenu to={`/components/${p}`}>{p}</SidebarSubMenu>
+              <SidebarSubMenu key={p} to={`/components/${p}`}>
+                {p}
+              </SidebarSubMenu>
             ))}
           </Fragment>
         )}

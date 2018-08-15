@@ -39,7 +39,7 @@ const ComponentsPage: React.SFC<Props> = ({ packagesList, match }) => {
 
   return (
     <DocsDashboard>
-      <DocsDashboardHeading>{metadata.name}</DocsDashboardHeading>
+      {metadata && <DocsDashboardHeading>{metadata.name}</DocsDashboardHeading>}
       <DocsDashboardContent>
         <Doc />
       </DocsDashboardContent>
