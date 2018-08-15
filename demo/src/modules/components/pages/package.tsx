@@ -1,6 +1,7 @@
 // TODO: *actually load the doc files of each package.
 
 import React from 'react';
+import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import Loadable from 'react-loadable';
 
@@ -8,6 +9,8 @@ import DocsDashboard from '../../docs/components/DocsDashboard';
 import DocsDashboardHeading from '../../docs/components/DocsDashboardHeading';
 import DocsDashboardContent from '../../docs/components/DocsDashboardContent';
 import Loading from '../../core/components/Loading';
+
+import { PackageMetadata, RootStore } from '../../../types/app';
 
 const generateDocs = (params: RouteParams) =>
   Loadable({
@@ -19,18 +22,24 @@ const generateDocs = (params: RouteParams) =>
     }
   });
 
+interface PropsFromState {
+  packagesError?: string;
+  packagesList: Record<string, PackageMetadata>;
+}
+
 interface RouteParams {
   package: string;
 }
 
-const ComponentsPage: React.SFC<RouteComponentProps<RouteParams>> = ({
-  match
-}) => {
+type Props = PropsFromState & RouteComponentProps<RouteParams>;
+
+const ComponentsPage: React.SFC<Props> = ({ packagesList, match }) => {
+  const metadata = packagesList[match.params.package];
   const Doc = generateDocs(match.params);
 
   return (
     <DocsDashboard>
-      <DocsDashboardHeading>{match.params.package}</DocsDashboardHeading>
+      <DocsDashboardHeading>{metadata.name}</DocsDashboardHeading>
       <DocsDashboardContent>
         <Doc />
       </DocsDashboardContent>
@@ -38,4 +47,9 @@ const ComponentsPage: React.SFC<RouteComponentProps<RouteParams>> = ({
   );
 };
 
-export default ComponentsPage;
+const mapStateToProps = ({ packages }: RootStore) => ({
+  packagesError: packages.errors,
+  packagesList: packages.list
+});
+
+export default connect(mapStateToProps)(ComponentsPage);

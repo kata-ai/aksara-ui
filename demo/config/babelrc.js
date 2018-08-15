@@ -14,8 +14,8 @@ const babelPreset = prod => ({
     ['@babel/plugin-proposal-class-properties', { loose: false }],
     '@babel/plugin-proposal-json-strings',
     ['babel-plugin-styled-components', { displayName: !prod, minify: prod }],
-    'react-hot-loader/babel',
-    'react-loadable/babel'
+    'react-loadable/babel',
+    'react-hot-loader/babel'
   ]
 });
 

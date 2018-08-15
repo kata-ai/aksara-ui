@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
 import {
   withRouter,
   RouteComponentProps,
@@ -22,6 +24,9 @@ import * as sidebar from './sidebar';
 import SidebarLoading from './components/SidebarLoading';
 import Home from '../home';
 
+import { RootStore, PackageMetadata } from '../../types/app';
+import { populatePackages, populateError } from '../../store/packages/actions';
+
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
 const Demo = Loadable({
@@ -39,7 +44,18 @@ const ComponentLibrary = Loadable({
   loading: Loading
 });
 
-class App extends React.Component<RouteComponentProps<{}>> {
+interface PropsFromState {
+  packagesError?: string;
+  packagesList: Record<string, PackageMetadata>;
+}
+
+interface OtherProps {
+  dispatch: Dispatch;
+}
+
+type Props = PropsFromState & OtherProps & RouteComponentProps<{}>;
+
+class App extends React.Component<Props> {
   isSidebarCollapsed() {
     return this.props.location.pathname.search(/docs|components/) === -1;
   }
@@ -74,6 +90,13 @@ class App extends React.Component<RouteComponentProps<{}>> {
         return null;
       }
     }
+  }
+
+  componentDidMount() {
+    fetch('/kata-kit-packages.json')
+      .then(res => res.json())
+      .then(json => this.props.dispatch(populatePackages(json)))
+      .catch(err => this.props.dispatch(populateError(err.message)));
   }
 
   render() {
@@ -117,4 +140,9 @@ class App extends React.Component<RouteComponentProps<{}>> {
   }
 }
 
-export default withRouter(App);
+const mapStateToProps = ({ packages }: RootStore) => ({
+  packagesError: packages.errors,
+  packagesList: packages.list
+});
+
+export default withRouter(connect(mapStateToProps)(App));

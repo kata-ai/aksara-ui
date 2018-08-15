@@ -5,14 +5,18 @@ import { variables } from '@kata-kit/theme';
 import { CardGrid, DashboardCard } from '@kata-kit/card';
 import { Container } from '@kata-kit/layout';
 
+const HeroImage = styled('img')`
+  margin-bottom: ${variables.spaces.space3};
+  max-width: 100%;
+  height: 100%;
+  max-height: 242px;
+`;
+
 const HomePage: React.SFC<RouteComponentProps<{}>> = ({ history }) => (
   <Root>
     <Inner>
       <Container>
-        <img
-          style={{ marginBottom: '24px', height: '100%', maxHeight: '242px' }}
-          src={require('../images/kata-platform.svg')}
-        />
+        <HeroImage src={require('../images/kata-platform.svg')} />
         <h1>Kata Design System</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Est maxime
@@ -24,7 +28,7 @@ const HomePage: React.SFC<RouteComponentProps<{}>> = ({ history }) => (
       <Container>
         <CardGrid>
           <DashboardCard
-            title="Documentation &amp; Guidelines"
+            title="Design Guidelines"
             onClick={() => history.push('/docs')}
           >
             Lorem Ipsum is simply dummy text of the printing and typesetting

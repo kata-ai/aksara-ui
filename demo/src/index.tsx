@@ -10,10 +10,13 @@ import '@kata-kit/fonts/kata-icons.css';
 import '@kata-kit/reset';
 
 import Main from './main';
+import configureStore from './store';
+
+const { store, history } = configureStore();
 
 ReactDOM.render(
   <AppContainer>
-    <Main />
+    <Main store={store} history={history} />
   </AppContainer>,
   document.getElementById('root')
 );
@@ -23,7 +26,7 @@ if (module.hot) {
     const NextMain = require('./main').default;
     ReactDOM.render(
       <AppContainer>
-        <NextMain />
+        <NextMain store={store} history={history} />
       </AppContainer>,
       document.getElementById('root')
     );
