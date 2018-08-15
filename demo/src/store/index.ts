@@ -14,7 +14,7 @@ export default function configureStore(initialState?: RootStore) {
     connectRouter(history)(reducers),
     compose(
       applyMiddleware(routerMiddleware(history)),
-      devTools && devTools()
+      devTools ? devTools() : (f: any) => f
     )
   );
 
