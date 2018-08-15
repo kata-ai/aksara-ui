@@ -67,7 +67,13 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          test: /\.tsx?$/,
+          test: /\.raw\.tsx?$/,
+          exclude: /node_modules/,
+          use: ['raw-loader']
+        },
+        {
+          test: /^(?!.*\.raw\.tsx?$).*\.tsx?$/,
+          exclude: /node_modules/,
           use: [
             {
               loader: 'babel-loader',

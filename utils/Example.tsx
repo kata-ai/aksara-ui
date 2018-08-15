@@ -44,6 +44,8 @@ const Inner = styled(KataReset)`
   color: ${props => props.theme.textColor};
   border: 1px solid ${props => props.theme.borderColor};
   border-radius: ${variables.borderRadiuses.borderRadiusMedium};
+  font-size: 13px;
+  line-height: 20px;
 `;
 
 const outerTheme: ThemeAttributes = {

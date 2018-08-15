@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Example from '../../../utils/Example';
 import { Button } from '../src/index';
 
 const ButtonExample1 = () => (
-  <Example title="Basic Example">
+  <Fragment>
     <h3>Primary</h3>
     <div style={{ marginBottom: '8px' }}>
       <Button color="primary">Default</Button>{' '}
@@ -83,7 +82,7 @@ const ButtonExample1 = () => (
         Loading
       </Button>{' '}
     </div>
-  </Example>
+  </Fragment>
 );
 
 export default ButtonExample1;
