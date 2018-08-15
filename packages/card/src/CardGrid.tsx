@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styled from 'styled-components';
+import { variables } from '@kata-kit/theme';
 
 export interface CardGridProps {
   className?: string;
@@ -37,11 +38,15 @@ const Wrapper = styled<CardGridProps, 'div'>('div')`
 `;
 
 const CardWrapper = styled<CardGridProps, 'div'>('div')`
-  flex: 0 1 50%;
+  flex: 0 1 100%;
   padding: 0 0.615384615rem;
   margin-bottom: 1.230769231rem;
 
-  @media (min-width: 1280px) {
-    flex: ${props => props.cardsPerRow === 3 && '0 1 33.33%'};
+  @media (min-width: ${variables.breaks.breakSmall}) {
+    flex: 0 1 50%;
+  }
+
+  @media (min-width: ${variables.breaks.breakMedium}) {
+    flex: ${props => (props.cardsPerRow === 3 ? '0 1 33.33%' : '0 1 50%')};
   }
 `;

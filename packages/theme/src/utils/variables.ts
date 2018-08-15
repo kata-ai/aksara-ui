@@ -84,6 +84,7 @@ const transitionNormal = '0.5s';
 const transitionSlow = '0.75s';
 const transitionEasing = 'ease';
 
+const breakSmall = '1024px';
 const breakMedium = '1280px';
 const breakLarge = '1366px';
 
@@ -185,6 +186,7 @@ export const transitions = {
 };
 
 export const breaks = {
+  breakSmall,
   breakMedium,
   breakLarge
 };
