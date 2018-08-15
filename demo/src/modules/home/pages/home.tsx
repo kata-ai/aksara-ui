@@ -65,12 +65,20 @@ const Inner = styled('div')`
 
 // TODO: the `!important` is temporary until `@kata-kit/card` is properly themed
 const InnerSecondary = styled('div')`
-  padding: 0 48px ${variables.spaces.space10};
+  padding: 0 20px ${variables.spaces.space10};
   flex: 1 1 auto;
   color: ${variables.colors.gray70} !important;
 
   h2 {
     color: ${variables.colors.gray70} !important;
+  }
+
+  @media (min-width: ${variables.breaks.breakMedium}) {
+    padding: 0 40px ${variables.spaces.space10};
+  }
+
+  @media (min-width: ${variables.breaks.breakLarge}) {
+    padding: 0 48px ${variables.spaces.space10};
   }
 `;
 
