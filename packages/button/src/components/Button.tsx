@@ -164,7 +164,8 @@ const ButtonWrapper = styled<ButtonProps & ThemeAttributes, 'button'>('button')`
   &:not(:disabled):not(.disabled) {
     color: ${props => props.textColor};
     border-color: ${props => props.borderColor};
-    background-color: ${props => props.backgroundColor};
+    background-color: ${props =>
+      props.isIcon ? 'transparent' : props.backgroundColor};
 
     &:hover {
       color: ${props => props.linkColorHover};
