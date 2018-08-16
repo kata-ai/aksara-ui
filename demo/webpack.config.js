@@ -36,8 +36,12 @@ module.exports = (env, argv) => {
       demo: path.resolve(__dirname, './src/index.tsx')
     },
     output: {
-      filename: '[name].js',
-      chunkFilename: '[name].chunk.js',
+      filename: isProduction
+        ? 'static/js/[name].[chunkhash:8].js'
+        : 'static/js/bundle.js',
+      chunkFilename: isProduction
+        ? 'static/js/[name].[chunkhash:8].chunk.js'
+        : 'static/js/[name].chunk.js',
       path: path.resolve(__dirname, 'build'),
       publicPath: '/'
     },
@@ -48,103 +52,113 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: babelPreset(isProduction)
-          }
+          test: /\.(js|jsx|mjs)$/,
+          loader: require.resolve('source-map-loader'),
+          enforce: 'pre',
+          include: path.resolve(__dirname, './src')
         },
         {
-          test: /\.mdx?$/,
-          exclude: /node_modules/,
-          use: [
+          // "oneOf" will traverse all following loaders until one will
+          // match the requirements. When no loader matches it will fall
+          // back to the "file" loader at the end of the loader list.
+          oneOf: [
             {
-              loader: 'babel-loader',
-              options: babelPreset(isProduction)
-            },
-            '@mdx-js/loader'
-          ]
-        },
-        {
-          test: /\.raw\.tsx?$/,
-          exclude: /node_modules/,
-          use: ['raw-loader']
-        },
-        {
-          test: /^(?!.*\.raw\.tsx?$).*\.tsx?$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'babel-loader',
-              options: babelPreset(isProduction)
+              test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+              use: [
+                {
+                  loader: require.resolve('url-loader'),
+                  options: {
+                    limit: 8192
+                  }
+                }
+              ]
             },
             {
-              loader: require.resolve('ts-loader'),
+              test: /\.js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: 'babel-loader',
+                options: babelPreset(isProduction)
+              }
+            },
+            {
+              test: /\.mdx?$/,
+              exclude: /node_modules/,
+              use: [
+                {
+                  loader: 'babel-loader',
+                  options: babelPreset(isProduction)
+                },
+                '@mdx-js/loader'
+              ]
+            },
+            {
+              test: /\.raw\.tsx?$/,
+              exclude: /node_modules/,
+              use: ['raw-loader']
+            },
+            {
+              test: /^(?!.*\.raw\.tsx?$).*\.tsx?$/,
+              exclude: /node_modules/,
+              use: [
+                {
+                  loader: 'babel-loader',
+                  options: babelPreset(isProduction)
+                },
+                {
+                  loader: require.resolve('ts-loader'),
+                  options: {
+                    // disable type checker - we will use it in fork plugin
+                    transpileOnly: true,
+                    configFile: path.resolve(__dirname, 'tsconfig.build.json')
+                  }
+                }
+              ]
+            },
+            {
+              // exclude css from stylable component
+              test: /^(?!.*\.st\.css$).*\.css$/,
+              use: [
+                isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+                'css-loader',
+                {
+                  loader: 'postcss-loader',
+                  options: postcssConfig
+                }
+              ]
+            },
+            {
+              test: /\.s(a|c)ss$/,
+              use: [
+                isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+                'css-loader',
+                {
+                  loader: 'postcss-loader',
+                  options: postcssConfig
+                },
+                {
+                  loader: 'sass-loader',
+                  options: { outputStyle: 'compressed' }
+                }
+              ]
+            },
+            {
+              exclude: [/\.js$/, /\.tsx?$/, /\.html$/, /\.json$/],
+              loader: require.resolve('file-loader'),
               options: {
-                // disable type checker - we will use it in fork plugin
-                transpileOnly: true,
-                configFile: path.resolve(__dirname, 'tsconfig.build.json')
+                name: 'static/media/[name].[hash:8].[ext]'
               }
             }
           ]
-        },
-        {
-          // exclude css from stylable component
-          test: /^(?!.*\.st\.css$).*\.css$/,
-          use: [
-            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: postcssConfig
-            }
-          ]
-        },
-        {
-          test: /\.s(a|c)ss$/,
-          use: [
-            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: postcssConfig
-            },
-            { loader: 'sass-loader', options: { outputStyle: 'compressed' } }
-          ]
-        },
-        {
-          test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-          use: [
-            {
-              loader: require.resolve('url-loader'),
-              options: {
-                limit: 8192
-              }
-            }
-          ]
-        },
-        {
-          test: /\.(bmp|gif|jpe?g|svg)$/,
-          loader: require.resolve('file-loader'),
-          options: {
-            name: 'media/[name].[hash:8].[ext]'
-          }
-        },
-        {
-          test: /\.(ttf|eot|otf|woff|woff2)$/,
-          loader: require.resolve('file-loader'),
-          options: {
-            name: 'media/[name].[hash:8].[ext]'
-          }
         }
       ]
     },
     plugins: [
       new ForkTsCheckerWebpackPlugin(),
       new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[name].chunk.css'
+        filename: 'static/css/[name].[contenthash:8].css',
+        chunkFilename: 'static/css/[name].[contenthash:8].css',
+        path: path.resolve(__dirname, 'build')
       }),
       new HtmlWebpackPlugin({
         title: 'kata-kit',
