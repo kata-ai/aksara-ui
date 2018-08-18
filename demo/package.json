@@ -25,6 +25,7 @@
     "@kata-kit/card": "*",
     "@kata-kit/common": "*",
     "@kata-kit/dashboard": "*",
+    "@kata-kit/doc-utils": "*",
     "@kata-kit/dropdown": "*",
     "@kata-kit/fonts": "*",
     "@kata-kit/layout": "*",

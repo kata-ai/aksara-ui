@@ -20,7 +20,8 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "demo"
+      "demo",
+      "doc-utils"
     ]
   },
   "scripts": {

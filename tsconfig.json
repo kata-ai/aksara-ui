@@ -4,7 +4,7 @@
     "baseUrl": "./packages",
     "paths": {
       "@kata-kit/*": ["./*/src"],
-      "@kata-kit/doc-utils": ["../utils/src"]
+      "@kata-kit/doc-utils": ["../doc-utils/src"]
     }
   }
 }

@@ -1,4 +1,4 @@
-import { PropAttributesMap } from '../../../utils/src';
+import { PropAttributesMap } from '@kata-kit/doc-utils';
 
 export const bannerProps: PropAttributesMap = {
   state: {
