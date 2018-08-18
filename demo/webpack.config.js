@@ -16,10 +16,18 @@ glob.sync('../packages/*').forEach(path => {
   const {
     name,
     version,
-    description
+    description,
+    dependencies,
+    peerDependencies
   } = require(`../packages/${packageName}/package.json`);
 
-  packageList[packageName] = { name, version, description };
+  packageList[packageName] = {
+    name,
+    version,
+    description,
+    dependencies,
+    peerDependencies
+  };
 });
 
 module.exports = (env, argv) => {
@@ -93,7 +101,9 @@ module.exports = (env, argv) => {
               ]
             },
             {
-              test: /\.raw\.tsx?$/,
+              // Any JS/TS files ending with `.raw` will be extracted
+              // in raw text.
+              test: /\.raw\.(js|jsx|ts|tsx)$/,
               exclude: /node_modules/,
               use: ['raw-loader']
             },
@@ -101,6 +111,8 @@ module.exports = (env, argv) => {
               test: /^(?!.*\.raw\.tsx?$).*\.tsx?$/,
               exclude: /node_modules/,
               use: [
+                // Chaining TypeScript with babel allows for finer control
+                // of the build process.
                 {
                   loader: 'babel-loader',
                   options: babelPreset(isProduction)
