@@ -9,7 +9,7 @@ export interface SidebarMainProps {
 
 const SidebarMain: React.SFC<SidebarMainProps> = ({ logo, children }) => (
   <Root>
-    <Logo src={logo} alt="Kata.ai" />
+    {logo && <Logo src={logo} alt="Kata.ai" />}
     <Scrollbars>{children}</Scrollbars>
   </Root>
 );

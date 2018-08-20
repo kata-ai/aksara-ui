@@ -18,7 +18,7 @@ class Pagination extends Component<PaginationProps, PaginationState> {
   generatePages = () => {
     const { total, current } = this.props;
     const maxButtons = 5;
-    const pageButtons: any[] = [];
+    const pageButtons: React.ReactText[] = [];
 
     let startPage;
     let endPage;
@@ -80,6 +80,7 @@ class Pagination extends Component<PaginationProps, PaginationState> {
               page === current && 'is-active'
             )}
             onClick={() => (isNumber(page) ? this.props.onSelect(page) : null)}
+            disabled={!isNumber(page)}
           >
             {page}
           </PaginationButton>
