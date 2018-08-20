@@ -38,7 +38,7 @@ export class Card extends React.Component<CardProps> {
                   className="kata-card__avatar mr-1"
                 />
               )}
-              {this.props.title}
+              <span>{this.props.title}</span>
             </CardHeadingTitle>
             {this.props.action && (
               <CardHeadingAction
@@ -73,6 +73,7 @@ const CardRoot = styled('div')`
   border-radius: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
+  word-wrap: break-word;
 
   &:hover {
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);

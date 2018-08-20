@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Scrollbars from 'react-custom-scrollbars';
+import { variables } from '@kata-kit/theme';
 
 export interface SidebarSubProps {
   titleElement?: React.ReactElement<any> | null;
@@ -7,14 +9,28 @@ export interface SidebarSubProps {
 
 const SidebarSub: React.SFC<SidebarSubProps> = ({ titleElement, children }) => (
   <Root>
-    {titleElement && titleElement}
-    {children}
+    {titleElement && <SubHeader>{titleElement}</SubHeader>}
+    <Scrollbars style={{ flex: '1 1 auto' }}>
+      <SubContent>{children}</SubContent>
+    </Scrollbars>
   </Root>
 );
 
 export default SidebarSub;
 
 const Root = styled('div')`
-  margin-left: 4.923076923rem /* $space-8 */;
-  padding: 1.846153846rem /* $space-3 */ 1.230769231rem /* $space-2 */;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+  background: ${variables.colors.white};
+  border-right: 1px solid ${variables.colors.gray30};
+`;
+
+const SubHeader = styled('div')`
+  padding: ${variables.spaces.space3} ${variables.spaces.space2} 0;
+`;
+
+const SubContent = styled('div')`
+  padding: 0 ${variables.spaces.space2} ${variables.spaces.space3};
 `;

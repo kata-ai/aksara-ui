@@ -43,6 +43,7 @@ const ButtonBase = (props: ButtonBaseProps) => css`
   &.disabled,
   &:disabled {
     opacity: 0.65;
+    color: ${variables.colors.white};
   }
 
   &.icon {
@@ -50,7 +51,7 @@ const ButtonBase = (props: ButtonBaseProps) => css`
     width: 32px;
     padding: 4px 8px;
     text-align: center;
-    background: none;
+    background-color: transparent;
     color: ${variables.colors.gray60};
 
     i {

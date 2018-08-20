@@ -152,7 +152,9 @@ const FloatingButtonWrapper = styled('button')`
 
   &:disabled,
   &.disabled {
-    background: ${variables.colors.gray10};
+    background-color: ${variables.colors.gray10};
+    color: ${variables.colors.gray60};
+
     &:hover {
       color: ${variables.colors.gray60};
     }

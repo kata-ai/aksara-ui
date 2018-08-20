@@ -161,20 +161,24 @@ const ButtonWrapper = styled<ButtonProps & ThemeAttributes, 'button'>('button')`
   border-radius: 4px;
   line-height: 1.538rem;
 
-  color: ${props => props.textColor};
-  border-color: ${props => props.borderColor};
-  background-color: ${props => props.backgroundColor};
+  &:not(:disabled):not(.disabled) {
+    color: ${props => props.textColor};
+    border-color: ${props => props.borderColor};
+    background-color: ${props =>
+      props.isIcon ? 'transparent' : props.backgroundColor};
 
-  &:hover {
-    color: ${props => props.linkColorHover};
-    border-color: ${props => props.borderColorHover};
-    background-color: ${props => props.backgroundColorHover};
-  }
+    &:hover {
+      color: ${props => props.linkColorHover};
+      border-color: ${props => props.borderColorHover};
+      background-color: ${props => props.backgroundColorHover};
+    }
 
-  &:active {
-    color: ${props => props.linkColorActive};
-    border-color: ${props => props.borderColorActive};
-    background-color: ${props => props.backgroundColorActive};
+    &:active,
+    &.active {
+      color: ${props => props.linkColorActive};
+      border-color: ${props => props.borderColorActive};
+      background-color: ${props => props.backgroundColorActive};
+    }
   }
 
   &:disabled,
