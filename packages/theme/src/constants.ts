@@ -6,7 +6,7 @@ export const defaultTheme: ThemeAttributes = {
   linkColor: variables.colors.kataBlue,
   linkColorHover: variables.colors.darkKataBlue,
   linkColorActive: variables.colors.darkKataBlue,
-  linkColorOutline: variables.colors.darkKataBlue,
+  linkColorOutline: variables.colors.lightKataBlue,
   headingColor: variables.colors.gray80,
   textColor: variables.colors.gray70,
   borderColor: 'transparent',

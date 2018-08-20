@@ -40,12 +40,14 @@ const Span = styled('span')`
 `;
 
 const Root = styled(NavLink)`
-  padding: 0.615384615rem /* $space-1 */ 0 12px;
+  margin: 0 0 16px;
+  padding: 4px 0;
   font-size: 12px;
   display: block;
   text-decoration: none;
   text-overflow: ellipsis;
   overflow: hidden;
+  transition: all 0.3s ease;
 
   & .main-menu-icon {
     width: 40px;
@@ -66,6 +68,10 @@ const Root = styled(NavLink)`
       background: #484c4f /* $gray-70 */;
       color: #949a9d /* $gray-50 */;
     }
+  }
+
+  &:focus {
+    outline: 0;
   }
 
   &.is-active {
