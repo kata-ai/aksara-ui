@@ -103,7 +103,7 @@ module.exports = (env, argv) => {
             {
               // Any JS/TS files ending with `.raw` will be extracted
               // in raw text.
-              test: /\.raw\.(js|jsx|ts|tsx)$/,
+              test: [/\.raw\.(js|jsx|ts|tsx)$/, /\.txt$/],
               exclude: /node_modules/,
               use: ['raw-loader']
             },

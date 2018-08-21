@@ -1,16 +1,16 @@
+import { Fragment } from 'react';
 import { Example, Props } from '@kata-kit/doc-utils';
-import BannerExample0 from '../examples/0-basic-example';
-import BannerExample1 from '../examples/1-closable-banners';
 
+import { Banner } from '../src/index';
 import { bannerProps } from './props';
 
 Banners are used to convey important information to users.
 
-<Example title="Basic Example" children={<BannerExample0 />} />
+<Example title="Basic Example" scope={{ Banner, Fragment }} code={require('../examples/0-basic-example.txt')} />
 
 Banners can also be closable.
 
-<Example title="Closable Banners" children={<BannerExample1 />} />
+<Example title="Closable Banners" scope={{ Banner, Fragment }} code={require('../examples/1-closable-banners.txt')} />
 
 ## Banner Props
 

@@ -1,11 +1,11 @@
 import { Example, Props } from '@kata-kit/doc-utils';
-import ButtonExample1 from '../examples/0-basic-example';
 
+import { Button } from '../src/index'
 import { buttonProps } from './props';
 
 Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.
 
-<Example title="Basic Example" children={<ButtonExample1 />} />
+<Example title="Basic Example" scope={{ Button }} code={require('../examples/0-basic-example.txt')} />
 
 ## Button Props
 

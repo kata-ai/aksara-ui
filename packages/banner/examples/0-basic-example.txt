@@ -1,8 +1,4 @@
-import React, { Fragment } from 'react';
-
-import { Banner } from '../src/index';
-
-const BannerExample0 = () => (
+() => (
   <Fragment>
     <div style={{ marginBottom: '8px' }}>
       <Banner
@@ -30,5 +26,3 @@ const BannerExample0 = () => (
     </div>
   </Fragment>
 );
-
-export default BannerExample0;

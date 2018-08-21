@@ -1,15 +1,5 @@
-import React, { Fragment } from 'react';
-
-import { Banner } from '../src/index';
-
-interface BannerState {
-  state: string;
-  message: string;
-  open?: boolean;
-}
-
-class BannerExample1 extends React.Component<{}, BannerState> {
-  constructor(props: {}) {
+class BannerExample1 extends React.Component {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -19,7 +9,7 @@ class BannerExample1 extends React.Component<{}, BannerState> {
     };
   }
 
-  toggleBanner = () => {
+  toggleBanner() {
     this.setState(prevState => ({
       open: !prevState.open
     }));
@@ -33,7 +23,7 @@ class BannerExample1 extends React.Component<{}, BannerState> {
         <div>
           {open ? (
             <Banner
-              state={state as any}
+              state={state}
               message={message}
               onClose={() => this.toggleBanner()}
             />
@@ -45,5 +35,3 @@ class BannerExample1 extends React.Component<{}, BannerState> {
     );
   }
 }
-
-export default BannerExample1;
