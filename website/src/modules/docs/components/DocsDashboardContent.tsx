@@ -10,5 +10,9 @@ const DocsDashboardContent: React.SFC = ({ children }) => (
 export default DocsDashboardContent;
 
 const Root = styled('div')`
-  margin-top: ${variables.spaces.space3};
+  h1 {
+    &:first-child {
+      margin-bottom: ${variables.spaces.space3};
+    }
+  }
 `;

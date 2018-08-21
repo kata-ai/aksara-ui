@@ -12,14 +12,6 @@ const DocsSidebar = () => (
     <SidebarSubMenu to="/docs/overview/introduction">
       Introduction
     </SidebarSubMenu>
-    <SidebarSubMenu to="/docs/overview/design-principles">
-      Design Principles
-    </SidebarSubMenu>
-    <SidebarSubMenu to="/docs/overview/voice-and-tone">
-      Voice and Tone
-    </SidebarSubMenu>
-    <SidebarSubHeading>Foundations</SidebarSubHeading>
-    <SidebarSubMenu to="/docs/foundations/colour">Colour</SidebarSubMenu>
   </SidebarSub>
 );
 
