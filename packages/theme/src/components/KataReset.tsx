@@ -14,6 +14,8 @@ const Div = styled('div')`
     background-color: ${p.backgroundColor};
     color: ${p.textColor};
     font-weight: 500;
+    font-size: ${variables.fontProps.rootFontSize};
+    line-height: ${variables.fontProps.rootLineHeight};
 
     a {
       color: ${resolveColor('linkColor')};
