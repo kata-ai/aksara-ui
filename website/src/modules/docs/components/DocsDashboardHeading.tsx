@@ -10,11 +10,16 @@ const DocsDashboardHeading: React.SFC = ({ children }) => (
 
 export default DocsDashboardHeading;
 
+const Heading = styled('h1')`
+  margin: 0;
+`;
+
 const Root = styled('div')`
   display: flex;
   margin-bottom: ${variables.spaces.space3};
-`;
 
-const Heading = styled('h1')`
-  margin: 0;
+  ${Heading} {
+    font-size: 36px;
+    line-height: 54px;
+  }
 `;

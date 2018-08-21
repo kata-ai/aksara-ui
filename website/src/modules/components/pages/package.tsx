@@ -41,6 +41,13 @@ const Hr = styled('hr')`
   border-bottom: 1px solid ${variables.colors.gray30};
 `;
 
+const DepsBlock = styled('div')`
+  h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+`;
+
 const Dependencies = styled('ul')`
   padding-left: 0;
   list-style-type: none;
@@ -69,7 +76,7 @@ const ComponentsPage: React.SFC<Props> = ({ packagesList, match }) => {
         {(dependencyList.length !== 0 || peerDependencyList.length !== 0) && (
           <Fragment>
             {dependencyList.length !== 0 && (
-              <Fragment>
+              <DepsBlock>
                 <h2>Dependencies</h2>
                 <Dependencies>
                   {dependencyList.map(d => (
@@ -78,11 +85,11 @@ const ComponentsPage: React.SFC<Props> = ({ packagesList, match }) => {
                     </li>
                   ))}
                 </Dependencies>
-              </Fragment>
+              </DepsBlock>
             )}
 
             {peerDependencyList.length !== 0 && (
-              <Fragment>
+              <DepsBlock>
                 <h2>Peer Dependencies</h2>
                 <Dependencies>
                   {peerDependencyList.map(d => (
@@ -91,7 +98,7 @@ const ComponentsPage: React.SFC<Props> = ({ packagesList, match }) => {
                     </li>
                   ))}
                 </Dependencies>
-              </Fragment>
+              </DepsBlock>
             )}
             <Hr />
           </Fragment>

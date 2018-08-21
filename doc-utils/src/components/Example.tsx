@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { variables, Theme, KataReset, ThemeAttributes } from '@kata-kit/theme';
 
+// TODO: Include code examples (`raw-loader` perhaps?)
+
 interface ExampleProps {
   title?: string;
 }
