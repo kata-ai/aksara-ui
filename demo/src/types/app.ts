@@ -24,6 +24,9 @@ export interface PackageMetadata {
   dependencies: {
     [key: string]: string;
   };
+  peerDependencies?: {
+    [key: string]: string;
+  };
 }
 
 export interface RootStore {
