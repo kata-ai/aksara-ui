@@ -1,6 +1,4 @@
-// TODO: *actually load the doc files of each package.
-
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import Loadable from 'react-loadable';
@@ -56,12 +54,6 @@ const Dependencies = styled('ul')`
 const ComponentsPage: React.SFC<Props> = ({ packagesList, match }) => {
   const metadata = packagesList[match.params.package];
   const Doc = generateDocs(match.params);
-  const dependencyList = metadata.dependencies
-    ? Object.keys(metadata.dependencies).map(d => ({
-        name: d,
-        version: metadata.dependencies[d]
-      }))
-    : [];
   const peerDependencyList = metadata.peerDependencies
     ? Object.keys(metadata.peerDependencies).map(d => ({
         name: d,
@@ -73,36 +65,19 @@ const ComponentsPage: React.SFC<Props> = ({ packagesList, match }) => {
     <DocsDashboard>
       {metadata && <DocsDashboardHeading>{metadata.name}</DocsDashboardHeading>}
       <DocsDashboardContent>
-        {(dependencyList.length !== 0 || peerDependencyList.length !== 0) && (
-          <Fragment>
-            {dependencyList.length !== 0 && (
-              <DepsBlock>
-                <h2>Dependencies</h2>
-                <Dependencies>
-                  {dependencyList.map(d => (
-                    <li key={d.name}>
-                      <code>{`"${d.name}": "${d.version}"`}</code>
-                    </li>
-                  ))}
-                </Dependencies>
-              </DepsBlock>
-            )}
-
-            {peerDependencyList.length !== 0 && (
-              <DepsBlock>
-                <h2>Peer Dependencies</h2>
-                <Dependencies>
-                  {peerDependencyList.map(d => (
-                    <li key={d.name}>
-                      <code>{`"${d.name}": "${d.version}"`}</code>
-                    </li>
-                  ))}
-                </Dependencies>
-              </DepsBlock>
-            )}
-            <Hr />
-          </Fragment>
+        {peerDependencyList.length !== 0 && (
+          <DepsBlock>
+            <h2>Peer Dependencies</h2>
+            <Dependencies>
+              {peerDependencyList.map(d => (
+                <li key={d.name}>
+                  <code>{`"${d.name}": "${d.version}"`}</code>
+                </li>
+              ))}
+            </Dependencies>
+          </DepsBlock>
         )}
+        <Hr />
         <Doc />
       </DocsDashboardContent>
     </DocsDashboard>
