@@ -45,12 +45,12 @@ class Example extends React.Component<ExampleProps, ExampleState> {
                   onToggle={state => this.toggleCodePreview(state)}
                   renderActive={() => (
                     <Button size="sm" color="primary">
-                      Show Preview
+                      Show Code
                     </Button>
                   )}
                   renderInactive={() => (
                     <Button size="sm" color="secondary">
-                      Hide Preview
+                      Hide Code
                     </Button>
                   )}
                 />
