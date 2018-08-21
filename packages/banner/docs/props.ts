@@ -2,7 +2,8 @@ import { PropAttributesMap } from '@kata-kit/doc-utils';
 
 export const bannerProps: PropAttributesMap = {
   state: {
-    type: "'error' | 'success' | 'warning' | 'info'",
+    type: 'BannerState',
+    oneOf: ["'error'", "'success'", "'warning'", "'info'"],
     required: true,
     description: 'The color state of the banner.'
   },

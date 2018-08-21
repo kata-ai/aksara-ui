@@ -7,13 +7,22 @@ export const buttonProps: PropAttributesMap = {
     defaultValue: 'false'
   },
   color: {
-    type:
-      "'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'white'",
+    type: 'ButtonColors',
+    oneOf: [
+      "'primary'",
+      "'secondary'",
+      "'success'",
+      "'danger'",
+      "'warning'",
+      "'info'",
+      "'white'"
+    ],
     description: 'The color of the button.',
     defaultValue: "'secondary'"
   },
   size: {
-    type: "'sm' | 'lg'",
+    type: 'ButtonSizes',
+    oneOf: ["'sm'", "'lg'"],
     description: 'The size of the button.',
     defaultValue: "'lg'"
   },

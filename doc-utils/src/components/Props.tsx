@@ -37,6 +37,13 @@ const Props: React.SFC<PropsProps> = ({ props }) => (
               </PropDeprecated>
             )}
             <div dangerouslySetInnerHTML={{ __html: prop.description }} />
+            {prop.oneOf && (
+              <PropUnion>
+                <code>
+                  type {prop.type} = {prop.oneOf.join(' | ')}
+                </code>
+              </PropUnion>
+            )}
           </PropBody>
         </Prop>
       );
@@ -51,6 +58,10 @@ const PropName = styled('code')`
   padding: 2px 4px;
   border-radius: ${variables.borderRadiuses.borderRadiusSmall};
   font-size: 90%;
+`;
+
+const PropUnion = styled('div')`
+  margin-top: ${variables.spaces.space1};
 `;
 
 const PropType = styled('code')`

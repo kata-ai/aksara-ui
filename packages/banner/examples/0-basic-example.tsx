@@ -22,7 +22,7 @@ const BannerExample0 = () => (
         message="Uh oh, something's not right with this banner - try fixing some things?"
       />
     </div>
-    <div style={{ marginBottom: '8px' }}>
+    <div>
       <Banner
         state="warning"
         message="Heads up - this banner isn't looking good, tread with caution."
