@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "@kata-kit/*": ["./*/src"]
+      "@kata-kit/*": ["./*/src"],
+      "@kata-kit/doc-utils": ["../doc-utils/src"]
     }
   }
 }
