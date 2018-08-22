@@ -11,7 +11,6 @@ interface RouteParams {
 }
 
 const DocsPage: React.SFC<RouteComponentProps<RouteParams>> = ({ match }) => {
-  console.log(match.params.page);
   const LazyloadedPage = Loadable({
     loader: () => import(`../../../../../docs/${match.params.page}.mdx`),
     loading: Loading
