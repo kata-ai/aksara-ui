@@ -5,3 +5,8 @@ export interface PackagesStore {
   errors?: string;
   list: Record<string, PackageMetadata>;
 }
+
+export interface DependencyMetadata {
+  name: string;
+  version: string;
+}
