@@ -44,18 +44,20 @@ class Example extends React.Component<ExampleProps, ExampleState> {
                   active={!codeIsVisible}
                   onToggle={state => this.toggleCodePreview(state)}
                   renderActive={() => (
-                    <Button size="sm" color="primary">
-                      Show Code
+                    <Button size="sm" isIcon>
+                      <i className="icon-method" />
                     </Button>
                   )}
                   renderInactive={() => (
-                    <Button size="sm" color="secondary">
-                      Hide Code
+                    <Button size="sm" isIcon>
+                      <i className="icon-method" />
                     </Button>
                   )}
                 />
               </TitleWrapper>
-              {codeIsVisible && <LiveEditor />}
+              <CodeWrapper codeIsVisible={codeIsVisible}>
+                <LiveEditor />
+              </CodeWrapper>
               <LiveError />
               <Theme values={innerTheme}>
                 {innerTheme => (
@@ -94,6 +96,7 @@ const TitleWrapper = styled('div')`
 `;
 
 const Inner = styled('div')`
+  margin-top: ${variables.spaces.space1};
   background-color: ${props => props.theme.backgroundColor};
   color: ${props => props.theme.textColor};
   border: 1px solid ${props => props.theme.borderColor};
@@ -110,6 +113,22 @@ const PreviewReset = styled(KataReset)`
   }
 `;
 
+const CodeWrapper = styled<ExampleState, 'div'>('div')`
+  display: ${props => (props.codeIsVisible ? 'block' : 'none')};
+  height: 100%;
+  max-height: 300px;
+  border: 1px solid transparent;
+  border-radius: ${variables.borderRadiuses.borderRadiusMedium};
+  overflow: hidden;
+  overflow-y: auto;
+  transition: max-height ${variables.transitions.transitionFast} ease;
+
+  .prism-code {
+    font-size: 13px;
+    line-height: 20px;
+  }
+`;
+
 const Wrapper = styled<ThemeAttributes & ExampleState, 'div'>('div')`
   margin: ${variables.spaces.space3} 0;
   padding: ${variables.spaces.space1};
@@ -123,15 +142,6 @@ const Wrapper = styled<ThemeAttributes & ExampleState, 'div'>('div')`
   ${Title} {
     color: ${props =>
       props.codeIsVisible ? props.backgroundColor : props.textColor};
-  }
-
-  .prism-code {
-    margin-bottom: ${variables.spaces.space1};
-    font-size: 13px;
-    line-height: 20px;
-    border: 1px solid transparent;
-    border-radius: ${variables.borderRadiuses.borderRadiusMedium};
-    overflow: hidden;
   }
 `;
 
