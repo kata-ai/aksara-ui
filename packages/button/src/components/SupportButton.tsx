@@ -7,7 +7,8 @@ import { variables } from '@kata-kit/theme';
 
 import ButtonBase from '../styles';
 
-export interface SupportButtonProps {
+export interface SupportButtonProps
+  extends React.HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   size?: 'lg' | 'sm' | '';
   isIcon?: boolean;

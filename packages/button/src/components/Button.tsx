@@ -25,7 +25,9 @@ export type ButtonColors =
 
 export type ButtonSizes = 'lg' | 'sm';
 
-export interface ButtonProps extends ButtonBaseProps {
+export interface ButtonProps
+  extends ButtonBaseProps,
+    React.HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   color?: ButtonColors;
   size?: ButtonSizes;

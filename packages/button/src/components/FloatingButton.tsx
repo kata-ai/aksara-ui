@@ -9,7 +9,8 @@ import ButtonBase from '../styles';
 
 export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
 
-export interface FloatingButtonProps {
+export interface FloatingButtonProps
+  extends React.HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   color?: FloatingButtonColor;
   icon?: string;
