@@ -82,7 +82,14 @@ module.exports = (env, argv) => {
               ]
             },
             {
-              test: /\.js$/,
+              // Any JS/TS files ending with `.raw` will be extracted
+              // in raw text.
+              test: [/\.raw\.(js|ts|tsx)$/, /\.txt$/],
+              exclude: /node_modules/,
+              use: ['raw-loader']
+            },
+            {
+              test: /(?!.*\.raw\.js?$).*\.js?$/,
               exclude: /node_modules/,
               use: {
                 loader: 'babel-loader',
@@ -99,13 +106,6 @@ module.exports = (env, argv) => {
                 },
                 '@mdx-js/loader'
               ]
-            },
-            {
-              // Any JS/TS files ending with `.raw` will be extracted
-              // in raw text.
-              test: [/\.raw\.(js|jsx|ts|tsx)$/, /\.txt$/],
-              exclude: /node_modules/,
-              use: ['raw-loader']
             },
             {
               test: /^(?!.*\.raw\.tsx?$).*\.tsx?$/,

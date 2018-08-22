@@ -13,7 +13,7 @@ class BannerExample1 extends React.Component {
     this.setState(prevState => ({
       open: !prevState.open
     }));
-  };
+  }
 
   render() {
     const { state, message, open } = this.state;
