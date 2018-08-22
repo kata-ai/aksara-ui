@@ -16,12 +16,14 @@ const HomePage: React.SFC<RouteComponentProps<{}>> = ({ history }) => (
   <Root>
     <Inner>
       <Container>
-        <HeroImage src={require('../images/kata-platform.svg')} />
-        <h1>Kata Design System</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est maxime
-          inventore fuga.
-        </p>
+        <Hero>
+          <HeroImage src={require('../images/kata-platform.svg')} />
+          <h1>Kata Design System</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est maxime
+            inventore fuga.
+          </p>
+        </Hero>
       </Container>
     </Inner>
     <InnerSecondary>
@@ -63,6 +65,13 @@ const Inner = styled('div')`
   text-align: center;
 `;
 
+const Hero = styled('div')`
+  h1,
+  p {
+    font-weight: 300;
+  }
+`;
+
 // TODO: the `!important` is temporary until `@kata-kit/card` is properly themed
 const InnerSecondary = styled('div')`
   padding: 0 20px ${variables.spaces.space10};
@@ -95,8 +104,4 @@ const Root = styled('div')`
     ${variables.colors.cobalt},
     #0044aa
   );
-
-  h1 {
-    font-weight: 300;
-  }
 `;
