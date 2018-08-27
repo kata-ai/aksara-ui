@@ -15,7 +15,8 @@ const DrawerFooter: React.SFC = props => (
 export default DrawerFooter;
 
 const Root = styled('div')`
-  height: 88px;
+  min-height: 88px;
+  max-height: 93px;
   position: absolute;
   bottom: 0;
   left: 0;

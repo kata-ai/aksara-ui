@@ -32,10 +32,13 @@ export default DrawerHeader;
 
 const DrawerTitle = styled('h2')`
   flex: 1 0 auto;
+  margin-bottom: 0;
 `;
 
 const DrawerHeadingWrapper = styled('div')`
   display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 26px 48px;
 `;
 
