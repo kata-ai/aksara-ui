@@ -35,6 +35,13 @@ const Root = styled('div')`
       font-size: 16px;
       line-height: 24px;
       font-weight: 300;
+
+      code {
+        background-color: ${variables.colors.gray10};
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-size: 90%;
+      }
     }
   }
 `;
