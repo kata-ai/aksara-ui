@@ -1,0 +1,22 @@
+import { Fragment } from 'react';
+
+import { Example, Props } from '@kata-kit/doc-utils';
+import { Button } from '@kata-kit/button';
+
+import { Modal, ModalHeader, ModalBody, ModalFooter } from '../src'
+import { drawerProps } from './props';
+
+Similar to the [Bootstrap](https://getbootstrap.com) modal, the kata-kit modal outputs dialog boxes which can be used for user notifications, or other custom content.
+
+## Examples
+
+<Example
+  title="Basic Example"
+  scope={{ Fragment, Button, Modal, ModalHeader, ModalBody, ModalFooter }}
+  code={require('../examples/0-basic-example.raw')}
+/>
+
+
+## Modal Props
+
+<Props props={drawerProps} />

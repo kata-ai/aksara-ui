@@ -1,14 +1,14 @@
-# @kata-kit/drawer
+# @kata-kit/modal
 
-> Drawer component for kata-kit.
+> Modal component for kata-kit.
 
 ## Install
 
 ```sh
 # yarn
-yarn add @kata-kit/drawer
+yarn add @kata-kit/modal
 # npm
-npm install @kata-kit/drawer
+npm install @kata-kit/modal
 ```
 
 ## Usage
