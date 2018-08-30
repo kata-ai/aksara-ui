@@ -1,41 +1,41 @@
 @font-face {
   font-family: 'Museo Sans Rounded';
-  src: url('./files/MuseoSansRounded-100.otf');
+  src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-100.otf');
   font-style: normal;
   font-weight: 100;
 }
 
 @font-face {
   font-family: 'Museo Sans Rounded';
-  src: url('./files/MuseoSansRounded-300.otf');
+  src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-300.otf');
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Museo Sans Rounded';
-  src: url('./files/MuseoSansRounded-500.otf');
+  src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-500.otf');
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Museo Sans Rounded';
-  src: url('./files/MuseoSansRounded-700.otf');
+  src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-700.otf');
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Museo Sans Rounded';
-  src: url('./files/MuseoSansRounded-900.otf');
+  src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-900.otf');
   font-style: normal;
   font-weight: 900;
 }
 
 @font-face {
   font-family: 'Museo Sans Rounded';
-  src: url('./files/MuseoSansRounded-1000.otf');
+  src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-1000.otf');
   font-style: normal;
   font-weight: 1000;
 }
