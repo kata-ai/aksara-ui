@@ -14,35 +14,35 @@ export interface ModalHeaderProps {
 const ModalHeader: React.SFC<ModalHeaderProps> = ({ className, title }) => (
   <ModalContext.Consumer>
     {api => (
-      <DrawerHeading
+      <ModalHeading
         className={classnames(api.overflow && 'is-overflow', className)}
       >
-        <DrawerHeadingWrapper>
-          <DrawerTitle>{title}</DrawerTitle>
+        <ModalHeadingWrapper>
+          <ModalTitle>{title}</ModalTitle>
           <Button isIcon onClick={api.onClose}>
             <i className="icon-close" />
           </Button>
-        </DrawerHeadingWrapper>
-      </DrawerHeading>
+        </ModalHeadingWrapper>
+      </ModalHeading>
     )}
   </ModalContext.Consumer>
 );
 
 export default ModalHeader;
 
-const DrawerTitle = styled('h2')`
+const ModalTitle = styled('h2')`
   flex: 1 0 auto;
   margin-bottom: 0;
 `;
 
-const DrawerHeadingWrapper = styled('div')`
+const ModalHeadingWrapper = styled('div')`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 18px 24px 14px;
 `;
 
-const DrawerHeading = styled('div')`
+const ModalHeading = styled('div')`
   position: relative;
   z-index: 1;
 

@@ -12,10 +12,8 @@ export const ModalBase = (props: WithThemeProps<ModalProps>) => css`
   display: block;
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  height: 100%;
+  right: 0;
   min-height: 1px;
   z-index: 1050;
   transition: opacity 0.15s ease-out;

@@ -8,8 +8,7 @@ export const drawerProps: PropAttributesMap = {
   },
   noBackdrop: {
     type: 'boolean',
-    description:
-      "Set to <code>true</code> if you want the drawer to feature an overlay backdrop. Set to <code>'static'</code> to make the overlay backdrop unclickable.",
+    description: 'Hide the dark overlay behind the modal.',
     defaultValue: 'false'
   },
   className: {
