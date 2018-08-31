@@ -31,6 +31,12 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     backdrop: 'static'
   };
 
+  static getDerivedStateFromProps(props: DrawerProps, state: DrawerState) {
+    return {
+      isOpen: props.isOpen
+    };
+  }
+
   el: HTMLDivElement;
 
   constructor(props: DrawerProps) {
@@ -47,7 +53,6 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   bindHandlers() {
     this.watchOverflow = this.watchOverflow.bind(this);
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
-    this.getContextAPI = this.getContextAPI.bind(this);
   }
 
   componentDidMount() {
@@ -57,12 +62,6 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   componentWillUnmount() {
     this.reset();
     document.body.removeChild(this.el);
-  }
-
-  componentWillReceiveProps(next: DrawerProps) {
-    if (this.props.isOpen !== next.isOpen) {
-      this.setState({ isOpen: next.isOpen });
-    }
   }
 
   componentDidUpdate(prev: DrawerProps) {
