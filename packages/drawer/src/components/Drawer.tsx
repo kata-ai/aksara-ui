@@ -40,6 +40,14 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
       isOpen: props.isOpen,
       overflow: false
     };
+
+    this.bindHandlers();
+  }
+
+  bindHandlers() {
+    this.watchOverflow = this.watchOverflow.bind(this);
+    this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.getContextAPI = this.getContextAPI.bind(this);
   }
 
   componentDidMount() {
@@ -76,25 +84,25 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     }
   };
 
-  onCloseDrawer = () => {
+  onCloseDrawer() {
     this.props.onClose();
-  };
+  }
 
-  watchOverflow = (position: number) => {
+  watchOverflow(position: number) {
     if (position > 0.05) {
       this.setState({ overflow: true });
     } else {
       this.setState({ overflow: false });
     }
-  };
+  }
 
-  getContextAPI = () => {
+  getContextAPI() {
     return {
       overflow: this.state.overflow,
       watchOverflow: this.watchOverflow,
       onClose: this.onCloseDrawer
     };
-  };
+  }
 
   render() {
     const wrapper = (

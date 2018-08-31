@@ -51,6 +51,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
       show: false,
       visible: false
     };
+
+    this.bindHandlers();
+  }
+
+  bindHandlers() {
+    this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.watchOverflow = this.watchOverflow.bind(this);
   }
 
   componentDidMount() {
@@ -69,26 +76,26 @@ class Modal extends React.Component<ModalProps, ModalState> {
     }
   }
 
-  onCloseDrawer = () => {
+  onCloseDrawer() {
     this.props.onClose();
-  };
+  }
 
-  watchOverflow = (position: number) => {
+  watchOverflow(position: number) {
     if (position > 0.05) {
       this.setState({ visible: true });
     } else {
       this.setState({ visible: false });
     }
-  };
+  }
 
-  getContextAPI = () => {
+  getContextAPI() {
     return {
       show: this.state.show,
       overflow: this.state.visible,
       watchOverflow: this.watchOverflow,
       onClose: this.onCloseDrawer
     };
-  };
+  }
 
   render() {
     const wrapper = (
