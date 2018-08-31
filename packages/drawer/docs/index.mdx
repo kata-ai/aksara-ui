@@ -1,0 +1,32 @@
+import { Fragment } from 'react';
+
+import { Example, Props } from '@kata-kit/doc-utils';
+import { Button } from '@kata-kit/button';
+
+import { Drawer, DrawerHeader, DrawerBody, DrawerFooter } from '../src'
+import { drawerProps } from './props';
+
+Drawers are modals that pop out from the right side of the screen. In the context of the Kata Design System (KDS), drawers are used to hold detail forms.
+
+## Examples
+
+Basic usage:
+
+<Example
+  title="Basic Example"
+  scope={{ Fragment, Button, Drawer, DrawerHeader, DrawerBody, DrawerFooter }}
+  code={require('../examples/0-basic-example.raw')}
+/>
+
+You can also set `backdrop` to `true` to allow dismissing drawer by clicking the backdrop.
+
+<Example
+  title="Basic Example (with backdrop dismissal)"
+  scope={{ Fragment, Button, Drawer, DrawerHeader, DrawerBody, DrawerFooter }}
+  code={require('../examples/1-basic-example-backdrop.raw')}
+/>
+
+
+## Drawer Props
+
+<Props props={drawerProps} />

@@ -3,7 +3,7 @@ import { ThemeAttributesMap, ThemeAttributes } from '../types';
 import Theme from './Theme';
 
 interface ThemedComponentProps {
-  color: any;
+  color?: any;
   themes: ThemeAttributesMap;
   children?: ((theme: ThemeAttributes) => JSX.Element) | React.ReactNode;
 }
