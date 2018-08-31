@@ -74,14 +74,14 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     }
   }
 
-  reset = () => {
+  reset() {
     try {
       document.body.classList.remove('noscroll');
       this.watchOverflow(0);
     } catch (err) {
       // do nothing
     }
-  };
+  }
 
   onCloseDrawer() {
     this.props.onClose();
