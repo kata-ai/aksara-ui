@@ -1,1 +1,24 @@
+import { Fragment } from 'react';
+import { Example, Props } from '@kata-kit/doc-utils';
+
+import { Card, CardGrid, DashboardCard } from '../src/index';
+import { Button } from '../../button/src/index';
+import { variables } from '../../theme/src/index';
+
 This document is a stub. Please help [expand it](https://github.com/kata-ai/kata-kit).
+
+<Example title="Basic Example" scope={{ Card, Fragment, variables }} code={require('../examples/0-basic-example.raw')} />
+
+## Dashboard Cards
+
+We have a special `<DashboardCard />` component for card elements in dashboard. It will be displayed in a grid fashion.
+
+<Example title="Dashboard Cards" scope={{ Card, CardGrid, DashboardCard, Fragment }} code={require('../examples/1-dashboard-cards.raw')} />
+
+## With Action
+
+<Example title="With Action" scope={{ Card, CardGrid, Button, DashboardCard, Fragment }} code={require('../examples/2-with-action.raw')} />
+
+## Card Props
+
+TODO

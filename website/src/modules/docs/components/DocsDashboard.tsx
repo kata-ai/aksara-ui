@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { variables } from '@kata-kit/theme';
+import { Container } from '@kata-kit/layout';
 
 const DocsDashboard: React.SFC = ({ children }) => (
   <Root>
@@ -22,10 +23,4 @@ const Root = styled('div')`
   @media (min-width: ${variables.breaks.breakLarge}) {
     padding: ${variables.spaces.space3} 48px;
   }
-`;
-
-const Container = styled('div')`
-  width: 100%;
-  max-width: 704px;
-  margin: 0 auto;
 `;
