@@ -1,6 +1,5 @@
 import { css, ThemedStyledProps } from 'styled-components';
-import { ThemeAttributes } from 'theme/src/types';
-// import { variables } from '@kata-kit/theme';
+import { ThemeAttributes } from '@kata-kit/theme';
 
 export const InputTextBase = (
   props: ThemedStyledProps<{}, ThemeAttributes>
