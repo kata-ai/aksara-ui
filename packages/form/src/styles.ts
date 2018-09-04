@@ -17,6 +17,16 @@ export const InputTextBase = (
   transition: all 0.3s ease;
   outline: none;
 
+  &::placeholder {
+    color: ${props.theme.mutedTextColor};
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: ${props.theme.backgroundColorHover};
+    color: ${props.theme.mutedTextColor};
+  }
+
   &:not(:disabled):not(.disabled) {
     &:hover {
       background-color: ${props.theme.backgroundColorHover};

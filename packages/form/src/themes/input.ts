@@ -10,6 +10,7 @@ const defaultTheme: ThemeAttributes = {
   backgroundColorHover: variables.colors.gray10,
   backgroundColorActive: variables.colors.white,
   textColor: variables.colors.gray80,
+  mutedTextColor: variables.colors.gray50,
   borderColor: variables.colors.gray30,
   borderColorHover: variables.colors.kataBlue,
   focusOutlineColor: variables.colors.softKataBlue

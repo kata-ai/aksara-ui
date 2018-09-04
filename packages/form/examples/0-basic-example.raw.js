@@ -1,7 +1,13 @@
 () => (
   <Fragment>
-    <InputText placeholder="input text" />
-    <br />
-    <InputTextarea rows={4} placeholder="input textarea" />
+    <FormGroup>
+      <InputText placeholder="input text" />
+    </FormGroup>
+    <FormGroup>
+      <InputText disabled placeholder="input disabled" />
+    </FormGroup>
+    <FormGroup>
+      <InputTextarea rows={4} placeholder="input textarea" />
+    </FormGroup>
   </Fragment>
 );
