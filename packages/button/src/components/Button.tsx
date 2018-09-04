@@ -51,7 +51,13 @@ class Button extends React.Component<ButtonProps> {
     outline: false
   };
 
-  onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  constructor(props: ButtonProps) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(e: React.MouseEvent<HTMLButtonElement>) {
     if (this.props.disabled) {
       e.preventDefault();
       return;

@@ -29,7 +29,13 @@ class Button extends React.Component<SupportButtonProps> {
     outline: false
   };
 
-  onClick = e => {
+  constructor(props: SupportButtonProps) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(e: React.SyntheticEvent) {
     if (this.props.disabled) {
       e.preventDefault();
       return;
@@ -38,7 +44,7 @@ class Button extends React.Component<SupportButtonProps> {
     if (this.props.onClick) {
       this.props.onClick(e);
     }
-  };
+  }
 
   render() {
     const {
