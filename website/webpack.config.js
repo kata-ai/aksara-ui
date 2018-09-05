@@ -40,16 +40,14 @@ module.exports = (env, argv) => {
   return {
     devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     mode: isProduction ? 'production' : 'development',
-    entry: {
-      demo: path.resolve(__dirname, './src/index.tsx')
-    },
+    entry: [path.resolve(__dirname, './src/index.tsx')],
     output: {
       filename: isProduction
         ? 'static/js/[name].[chunkhash:8].js'
-        : 'static/js/bundle.js',
+        : 'static/js/[name].js',
       chunkFilename: isProduction
-        ? 'static/js/[name].[chunkhash:8].chunk.js'
-        : 'static/js/[name].chunk.js',
+        ? 'static/js/[name].[chunkhash:8].js'
+        : 'static/js/[name].js',
       path: path.resolve(__dirname, 'build'),
       publicPath: '/'
     },
@@ -193,7 +191,24 @@ module.exports = (env, argv) => {
     ],
     optimization: {
       splitChunks: {
-        chunks: 'all'
+        chunks: 'async',
+        minSize: 30000,
+        minChunks: 1,
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '~',
+        name: true,
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
       }
     },
     devServer: {
