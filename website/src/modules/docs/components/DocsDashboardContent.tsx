@@ -44,7 +44,7 @@ const Root = styled('div')`
       font-size: 90%;
     }
 
-    pre {
+    pre:not(.prism-code) {
       background-color: ${variables.colors.gray10};
       padding: 8px 16px;
 

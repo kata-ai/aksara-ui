@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Example, Props } from '@kata-kit/doc-utils';
 
-import { Button } from '../src/index'
+import { Button, FloatingButton, SupportButton, ToggleButton } from '../src/index'
 import { buttonProps } from './props';
 
 Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.
@@ -10,17 +10,23 @@ Buttons express what action will occur when the user clicks or touches it. Butto
 
 ## Floating Buttons
 
-TODO
+Floating buttons are buttons with styles similar to that of cards, hence "floating".
+
+<Example title="Floating Buttons" scope={{ FloatingButton, Fragment }} code={require('../examples/3-floating-buttons.raw')} />
 
 ## Toggle Buttons
 
-The `<ToggleButton />` is a special component which helps in rendering button states on components with toggle states.
+The `<ToggleButton />` is a special helper component to render different button states on components with toggle states.
 
-[TODO: Example.]
+**Note:** Currently, `ToggleButton` doesn't work as it's intended to be. We're looking to fix this in a couple of days.
+
+<Example title="ToggleButtons" scope={{ Button, ToggleButton, Fragment }} code={require('../examples/1-toggle-buttons.raw')} />
 
 ## Support Button
 
-TODO
+Support buttons are subtle buttons, used for secondary actions on a form, card, etc.
+
+<Example title="Support Button" scope={{ SupportButton, Fragment }} code={require('../examples/2-support-buttons.raw')} />
 
 ## Button Props
 
