@@ -6,7 +6,7 @@ import DropdownMenu from './DropdownMenu';
 
 import { Circle } from '@kata-kit/loading';
 
-interface Props {
+interface DropdownSelectorProps {
   value?: string | number | boolean;
   placeholder?: string;
   block?: boolean;
@@ -18,7 +18,10 @@ interface Props {
 
 interface States {}
 
-class DropdownSelector extends React.PureComponent<Props, States> {
+class DropdownSelector extends React.PureComponent<
+  DropdownSelectorProps,
+  States
+> {
   static defaultProps = {
     placeholder: 'Select...',
     loading: false,

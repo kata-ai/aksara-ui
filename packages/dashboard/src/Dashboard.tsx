@@ -22,7 +22,13 @@ export default class Dashboard extends React.Component<DashboardProps> {
     isStarter: false
   };
 
-  renderStarter = () => {
+  constructor(props: DashboardProps) {
+    super(props);
+
+    this.renderStarter = this.renderStarter.bind(this);
+  }
+
+  renderStarter() {
     const {
       className,
       title,
@@ -70,7 +76,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
         </DashboardContent>
       </Root>
     );
-  };
+  }
 
   render() {
     const {

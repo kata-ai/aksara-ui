@@ -86,6 +86,11 @@ export default class TooltipTarget extends React.Component<
       show: props.defaultShow
     };
 
+    this.handleToggle = this.handleToggle.bind(this);
+    this.show = this.show.bind(this);
+    this.hide = this.hide.bind(this);
+    this.createOverlay = this.createOverlay.bind(this);
+
     this.handleMouseOver = e =>
       this.handleMouseOverOut(this.handleDelayedShow, e, 'fromElement');
     this.handleMouseOut = e =>
@@ -113,13 +118,13 @@ export default class TooltipTarget extends React.Component<
     clearTimeout(this.hoverHideDelay);
   }
 
-  handleToggle = () => {
+  handleToggle() {
     if (this.state.show) {
       this.hide();
     } else {
       this.show();
     }
-  };
+  }
 
   handleMouseOverOut(handler: any, e: any, relatedNative: string) {
     const target = e.currentTarget;
@@ -185,15 +190,15 @@ export default class TooltipTarget extends React.Component<
     ReactDOM.unstable_renderSubtreeIntoContainer(this, this.overlay, this.node);
   };
 
-  show = () => {
+  show() {
     this.setState({ ...this.state, show: true });
-  };
+  }
 
-  hide = () => {
+  hide() {
     this.setState({ ...this.state, show: false });
-  };
+  }
 
-  createOverlay = (component: any, overlayProps: any) => {
+  createOverlay(component: any, overlayProps: any) {
     return (
       <Overlay
         show={this.state.show}
@@ -207,7 +212,7 @@ export default class TooltipTarget extends React.Component<
         })}
       </Overlay>
     );
-  };
+  }
 
   render() {
     const {

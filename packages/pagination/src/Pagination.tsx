@@ -15,7 +15,13 @@ interface PaginationProps {
 interface PaginationState {}
 
 class Pagination extends Component<PaginationProps, PaginationState> {
-  generatePages = () => {
+  constructor(props: PaginationProps) {
+    super(props);
+
+    this.generatePages = this.generatePages.bind(this);
+  }
+
+  generatePages() {
     const { total, current } = this.props;
     const maxButtons = 5;
     const pageButtons: React.ReactText[] = [];
@@ -55,11 +61,12 @@ class Pagination extends Component<PaginationProps, PaginationState> {
     }
 
     return pageButtons;
-  };
+  }
 
   render() {
     const { current, className } = this.props;
     const pages = this.generatePages();
+
     return (
       <PaginationBase className={className}>
         <PaginationButton
