@@ -30,7 +30,13 @@ class FloatingButton extends React.Component<FloatingButtonProps> {
     disabled: false
   };
 
-  onClick = e => {
+  constructor(props: FloatingButtonProps) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(e: React.SyntheticEvent) {
     if (this.props.disabled) {
       e.preventDefault();
       return;
@@ -39,7 +45,7 @@ class FloatingButton extends React.Component<FloatingButtonProps> {
     if (this.props.onClick) {
       this.props.onClick(e);
     }
-  };
+  }
 
   render() {
     const {

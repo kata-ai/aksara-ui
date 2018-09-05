@@ -26,9 +26,19 @@ class Dropdown extends React.Component<DropdownProps> {
   state = {
     isOpen: false
   };
-  handleClickOutside = e => {
+
+  constructor(props: DropdownProps) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.onSelect = this.onSelect.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
+
+  handleClickOutside(e: React.SyntheticEvent) {
     try {
-      if (ReactDOM.findDOMNode(this)!.contains(e.target)) {
+      // TODO: fix event types
+      if (ReactDOM.findDOMNode(this)!.contains(e.target as any)) {
         // if click event on this element then do nothing
         return;
       }
@@ -36,27 +46,37 @@ class Dropdown extends React.Component<DropdownProps> {
     } catch (error) {
       // do nothing
     }
-  };
-  toggle = e => {
+  }
+
+  toggle(e: React.SyntheticEvent) {
     if (this.props.disabled) {
       return;
     }
+
     const { isOpen } = this.state;
+
     if (!isOpen) {
       // if dropdown will open then add event listener handleClickOutside
-      document.addEventListener('click', this.handleClickOutside, false);
+      document.addEventListener('click', this.handleClickOutside as any, false);
     } else {
       // if dropdown will close then remove event listener handleClickOutside
-      document.removeEventListener('click', this.handleClickOutside, false);
+      document.removeEventListener(
+        'click',
+        this.handleClickOutside as any,
+        false
+      );
     }
+
     this.setState({ isOpen: !this.state.isOpen });
-  };
-  onSelect = (value?: string | number | boolean) => {
+  }
+
+  onSelect(value?: string | number | boolean) {
     if (this.props.onSelect && value) {
       this.props.onSelect(value);
     }
+
     this.setState({ isOpen: false });
-  };
+  }
 
   componentWillReceiveProps(nextProps: DropdownProps) {
     if (nextProps) {

@@ -1,45 +1,38 @@
 import React, { ReactElement } from 'react';
 import classNames from 'classnames';
 
-interface Props {
+type DropdownDirection = 'up' | 'down' | 'left' | 'right';
+
+interface DropdownMenuProps {
   isOpen?: boolean;
   right?: boolean;
   className?: string;
 
   // Private
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: DropdownDirection;
   onSelect?(value?: string | number | boolean): void;
 }
 
-class DropdownMenu extends React.Component<Props> {
+class DropdownMenu extends React.Component<DropdownMenuProps> {
   static defaultProps = {
     right: false
   };
 
   static displayName = 'DropdownMenu';
 
-  getDirectionClass = direction => {
-    if (direction === 'up') {
-      return 'dropup-menu';
-    }
-
-    return '';
-  };
-
   render() {
     const { isOpen, right, direction, className, onSelect } = this.props;
+    const classes = classNames(
+      'dropdown-menu',
+      className,
+      right ? 'dropdown-menu-right' : false,
+      `kata-drop${direction}__menu`,
+      right ? `kata-drop${direction}__menu--right` : false,
+      isOpen ? 'show' : false
+    );
 
     return (
-      <div
-        className={classNames(
-          'dropdown-menu',
-          className,
-          right ? 'dropdown-menu-right' : false,
-          `kata-drop${direction}__menu`,
-          right ? `kata-drop${direction}__menu--right` : false,
-          isOpen ? 'show' : false
-        )}
-      >
+      <div className={classes}>
         {React.Children.map(
           this.props.children,
           (Item: ReactElement<any>) =>

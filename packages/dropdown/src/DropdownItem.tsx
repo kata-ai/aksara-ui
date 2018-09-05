@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react';
 import classNames from 'classnames';
 
-interface Props {
+interface DropdownItemProps {
   value?: string | number | boolean;
   children?: any;
   className?: string;
@@ -15,21 +15,29 @@ interface Props {
   onSelect?(value?: string | number | boolean): void;
 }
 
-class DropdownItem extends React.Component<Props> {
+class DropdownItem extends React.Component<DropdownItemProps> {
   static defaultProps = {
     active: false,
     disabled: false
   };
 
-  onClick = (event: SyntheticEvent<any>) => {
+  constructor(props: DropdownItemProps) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(event: SyntheticEvent<any>) {
     const { value, onClick, onSelect } = this.props;
+
     if (onClick) {
       onClick(event);
     }
+
     if (onSelect) {
       onSelect(value);
     }
-  };
+  }
 
   render() {
     const {
