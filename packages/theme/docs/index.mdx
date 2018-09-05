@@ -1,15 +1,31 @@
+import { Example, Props } from '@kata-kit/doc-utils';
+
+import { KataReset, Theme, variables } from '../src/index';
+
 `@kata-kit/theme` contains source code for the kata-kit theming framework.
 
 We use `styled-components` for styling our components, which combines the power of styled-components, as well as the familiarity of regular SCSS, through the power of tagged template literals. This package provides top-level and inner-level style resets, as well as abstractions on top of styled-components, which allows for simpler component theming.
 
-## Resetting Styles
-
-TODO
-
 ## How Theming Works in `kata-kit`
 
-TODO
+As mentioned above, `styled-components` combines the familiarity of plain CSS/SCSS and the power of CSS-in-JS. It has it's own theming support with the `ThemeProvider` component, however it's quite convoluted when you try to solve global-local theming hierarches.
+
+Therefore, we borrowed some elements from [Atlaskit](https://atlaskit.atlassian.com/packages/core/theme) and provided a minimal theming API which is based on React's [Context API](https://reactjs.org/docs/context.html).
+
+## Resetting Styles
+
+The `KataReset` component applies CSS resets to all of its descendant nodes.
+
+<Example title="Reset" scope={{ KataReset }} code={require('../examples/0-reset.raw')} />
+
+The `KataReset` component uses the theming context's `Consumer`, so we can easily override the default theme with a `Theme` component.
+
+<Example title="Themed Reset" scope={{ Theme, KataReset, variables }} code={require('../examples/1-themed-reset.raw')} />
 
 ## Using `<ThemedComponent />`
 
-TODO
+A component can have multiple color states. To make switching between them easier to manage, we provided a `ThemedComponent` component which resolves a theme string with its respective `ThemeAttributes` map.
+
+You can see this component in action on either the `Button` or `Badge` component.
+
+[TODO: Example]
