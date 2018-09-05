@@ -1,13 +1,26 @@
 () => (
   <Fragment>
     <FormGroup>
-      <InputText placeholder="input text" />
+      <FormLabel htmlFor="text">Text input</FormLabel>
+      <InputText id="text" name="text" placeholder="Type here..." />
     </FormGroup>
     <FormGroup>
-      <InputText disabled placeholder="input disabled" />
+      <FormLabel htmlFor="disabled">Disabled input</FormLabel>
+      <InputText
+        id="disabled"
+        name="disabled"
+        disabled
+        placeholder="Can't touch this"
+      />
     </FormGroup>
     <FormGroup>
-      <InputTextarea rows={4} placeholder="input textarea" />
+      <FormLabel htmlFor="textarea">Disabled input</FormLabel>
+      <InputTextarea
+        id="textarea"
+        name="textarea"
+        rows={4}
+        placeholder="Type here..."
+      />
     </FormGroup>
   </Fragment>
 );

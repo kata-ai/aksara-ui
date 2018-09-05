@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { variables } from '@kata-kit/theme';
 
-interface FormGroupProps {
+export interface FormGroupProps {
   className?: string;
 }
 
