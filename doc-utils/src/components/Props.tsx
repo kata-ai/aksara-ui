@@ -54,10 +54,7 @@ const Props: React.SFC<PropsProps> = ({ props }) => (
 export default Props;
 
 const PropName = styled('code')`
-  background-color: ${variables.colors.special04};
-  padding: 2px 4px;
-  border-radius: ${variables.borderRadiuses.borderRadiusSmall};
-  font-size: 90%;
+  background-color: ${variables.colors.special04} !important;
 `;
 
 const PropUnion = styled('div')`
@@ -65,17 +62,11 @@ const PropUnion = styled('div')`
 `;
 
 const PropType = styled('code')`
-  background-color: ${variables.colors.special06};
-  padding: 2px 4px;
-  border-radius: ${variables.borderRadiuses.borderRadiusSmall};
-  font-size: 90%;
+  background-color: ${variables.colors.special06} !important;
 `;
 
 const PropDefault = styled('code')`
   background-color: none;
-  padding: 2px 4px;
-  border-radius: ${variables.borderRadiuses.borderRadiusSmall};
-  font-size: 90%;
 `;
 
 const PropBody = styled('div')`
@@ -83,9 +74,6 @@ const PropBody = styled('div')`
 
   code {
     background-color: ${variables.colors.gray10};
-    padding: 2px 4px;
-    border-radius: ${variables.borderRadiuses.borderRadiusSmall};
-    font-size: 90%;
   }
 `;
 
