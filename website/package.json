@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.js",
+    "build:docs": "node scripts/build.js",
     "clean": "rimraf build",
     "dev": "webpack-dev-server --hot"
   },
