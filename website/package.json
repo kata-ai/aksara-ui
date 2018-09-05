@@ -8,9 +8,10 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "build:docs": "node scripts/build.js",
+    "build:www": "node scripts/build.js",
     "clean": "rimraf build",
-    "dev": "webpack-dev-server --hot"
+    "dev": "node scripts/start.js",
+    "start": "npm run dev"
   },
   "browserslist": [
     ">1%",
@@ -38,6 +39,9 @@
     "@kata-kit/tooltip": "*",
     "@mdx-js/mdx": "^0.15.0",
     "connected-react-router": "^4.4.1",
+    "object-assign": "^4.1.1",
+    "promise": "^8.0.1",
+    "raf": "^3.4.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
@@ -48,7 +52,8 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-saga": "^0.16.0",
     "styled-components": "^3.4.0",
-    "typesafe-actions": "^2.0.4"
+    "typesafe-actions": "^2.0.4",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.56",
@@ -73,6 +78,8 @@
     "chalk": "^2.4.1",
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.5",
+    "dotenv": "^6.0.0",
+    "dotenv-expand": "^4.2.0",
     "file-loader": "^1.1.11",
     "fork-ts-checker-webpack-plugin": "^0.4.3",
     "fs-extra": "^7.0.0",
@@ -81,6 +88,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "raw-loader": "^0.5.1",
     "react-dev-utils": "^5.0.2",
@@ -88,6 +96,7 @@
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.4.2",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
