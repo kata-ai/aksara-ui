@@ -14,7 +14,7 @@
       />
     </FormGroup>
     <FormGroup>
-      <FormLabel htmlFor="textarea">Disabled input</FormLabel>
+      <FormLabel htmlFor="textarea">Text area</FormLabel>
       <InputTextarea
         id="textarea"
         name="textarea"
