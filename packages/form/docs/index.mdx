@@ -1,0 +1,32 @@
+import { Fragment } from 'react'
+import { Example, Props } from '@kata-kit/doc-utils';
+
+import { InputText, InputTextarea, FormGroup, FormLabel, FormError } from '../src/index';
+import { inputProps, formProps } from './props'
+
+This component contains form elements that are used within kata-kit
+
+## Components
+
+* `FormGroup`
+* `FormError`
+* `FormLabel`
+* `InputText`
+* `InputTextarea`
+* `InputSelect` (w/ `react-select` v2) [TODO]
+
+<Example title="Basic Example" scope={{ InputText, InputTextarea, FormGroup, FormLabel, FormError, Fragment }} code={require('../examples/0-basic-example.raw')} />
+
+<Example title="Error States" scope={{ InputText, InputTextarea, FormGroup, FormLabel, FormError, Fragment }} code={require('../examples/1-error-states.raw')} />
+
+## Input Props
+
+All Input props (`InputText`, `InputTextarea`, and `InputLabel`) extend from their respective React attributes, with some additions.
+
+<Props props={inputProps} />
+
+## Form Props
+
+The following are props for `FormLabel`, `FormGroup`, and `FormError` components.
+
+<Props props={formProps} />

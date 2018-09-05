@@ -28,6 +28,7 @@
     "@kata-kit/doc-utils": "*",
     "@kata-kit/dropdown": "*",
     "@kata-kit/fonts": "*",
+    "@kata-kit/form": "*",
     "@kata-kit/layout": "*",
     "@kata-kit/loading": "*",
     "@kata-kit/pagination": "*",
