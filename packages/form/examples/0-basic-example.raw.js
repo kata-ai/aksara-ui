@@ -1,8 +1,8 @@
 () => (
   <Fragment>
     <FormGroup>
-      <FormLabel htmlFor="text">Text input</FormLabel>
-      <InputText id="text" name="text" placeholder="Type here..." />
+      <FormLabel htmlFor="Dummy">Text input</FormLabel>
+      <InputText id="textDummy" name="textDummy" placeholder="Type here..." />
     </FormGroup>
     <FormGroup>
       <FormLabel htmlFor="disabled">Disabled input</FormLabel>

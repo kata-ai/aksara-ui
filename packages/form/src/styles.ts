@@ -1,11 +1,22 @@
 import { css, ThemedStyledProps } from 'styled-components';
-import { ThemeAttributes } from '@kata-kit/theme';
+import { ThemeAttributes, variables } from '@kata-kit/theme';
+
+export const FormErrorBase = (
+  props: ThemedStyledProps<{}, ThemeAttributes>
+) => css`
+  margin: ${variables.spaces.space1} 0;
+  color: ${props.theme.textColor};
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+`;
 
 export const FormLabelBase = (
   props: ThemedStyledProps<{}, ThemeAttributes>
 ) => css`
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: ${variables.spaces.space1};
   font-size: 12px;
   font-weight: bold;
   font-style: normal;

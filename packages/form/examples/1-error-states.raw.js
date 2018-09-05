@@ -14,6 +14,7 @@
         errors
         placeholder="Type here..."
       />
+      <FormError>Please enter an email address.</FormError>
     </FormGroup>
   </Fragment>
 );
