@@ -1,7 +1,7 @@
 () => (
   <Fragment>
     <FormGroup>
-      <FormLabel htmlFor="Dummy">Text input</FormLabel>
+      <FormLabel htmlFor="textDummy">Text input</FormLabel>
       <InputText id="textDummy" name="textDummy" placeholder="Type here..." />
     </FormGroup>
     <FormGroup>
