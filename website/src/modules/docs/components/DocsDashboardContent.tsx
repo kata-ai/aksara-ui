@@ -43,5 +43,15 @@ const Root = styled('div')`
       border-radius: 4px;
       font-size: 90%;
     }
+
+    pre {
+      background-color: ${variables.colors.gray10};
+      padding: 8px 16px;
+
+      code {
+        background: none;
+        padding: 0;
+      }
+    }
   }
 `;
