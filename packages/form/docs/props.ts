@@ -8,7 +8,7 @@ export const inputProps: PropAttributesMap = {
   },
   className: {
     type: 'string',
-    description: 'Additional CSS classes to give to the button.',
+    description: 'Additional CSS classes to give to the component.',
     defaultValue: 'undefined'
   }
 };
@@ -16,7 +16,7 @@ export const inputProps: PropAttributesMap = {
 export const formProps: PropAttributesMap = {
   className: {
     type: 'string',
-    description: 'Additional CSS classes to give to the button.',
+    description: 'Additional CSS classes to give to the component.',
     defaultValue: 'undefined'
   }
 };
