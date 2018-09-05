@@ -19,6 +19,7 @@ import { KataReset, Theme, variables } from '@kata-kit/theme';
 import { Badge } from '@kata-kit/badge';
 import { SplitButton } from '@kata-kit/split-button';
 import { DropdownItem } from '@kata-kit/dropdown';
+import { InputText } from '@kata-kit/form';
 
 // since we don't use <Reset /> yet, paragraph text color is still overridden
 // globally, so this is temporary.
@@ -281,6 +282,10 @@ export default () => (
       <Badge color="success">success</Badge>{' '}
       <Badge color="warning">warning</Badge>{' '}
       <Badge color="danger">danger</Badge>{' '}
+    </Board>
+    <DashboardContentHeader isSecondary>Forms</DashboardContentHeader>
+    <Board>
+      <InputText placeholder="Type something..." />{' '}
     </Board>
     <DashboardContentHeader isSecondary>Theme Reset</DashboardContentHeader>
     <Theme>

@@ -47,10 +47,6 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
       overflow: false
     };
 
-    this.bindHandlers();
-  }
-
-  bindHandlers() {
     this.watchOverflow = this.watchOverflow.bind(this);
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
   }

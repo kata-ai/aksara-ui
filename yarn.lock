@@ -5966,6 +5966,10 @@ polished@^1.9.3:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/polished/-/polished-1.9.3.tgz#d61b8a0c4624efe31e2583ff24a358932b6b75e1"
 
+polished@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-2.0.3.tgz#54bb5f474bebe149e760d4015ed04207817fd38e"
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"

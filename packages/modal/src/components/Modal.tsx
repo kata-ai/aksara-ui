@@ -24,6 +24,13 @@ export interface ModalState {
 }
 
 class Modal extends React.Component<ModalProps, ModalState> {
+  el: HTMLDivElement;
+
+  state = {
+    show: false,
+    visible: false
+  };
+
   static defaultProps = {
     noBackdrop: false
   };
@@ -42,22 +49,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
     }
   }
 
-  el: HTMLDivElement;
-
   constructor(props: ModalProps) {
     super(props);
     this.el = document.createElement('div');
-    this.state = {
-      show: false,
-      visible: false
-    };
 
-    this.bindHandlers();
-  }
-
-  bindHandlers() {
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
     this.watchOverflow = this.watchOverflow.bind(this);
+    this.getContextAPI = this.getContextAPI.bind(this);
   }
 
   componentDidMount() {

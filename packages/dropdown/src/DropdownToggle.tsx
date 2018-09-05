@@ -4,7 +4,9 @@ import classNames from 'classnames';
 
 import { Button, ButtonColors, ButtonSizes } from '@kata-kit/button';
 
-interface Props {
+type DropdownDirection = 'up' | 'down' | 'left' | 'right';
+
+interface DropdownToggleProps {
   tag?: any;
   caret?: boolean;
   className?: string;
@@ -14,13 +16,13 @@ interface Props {
   // Private properties, should not be used publicly
   block?: boolean;
   isOpen?: boolean;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: DropdownDirection;
   toggle?: (e: React.SyntheticEvent<any>) => void;
 }
 
 const Caret = () => <i className="kata-drop-toggle icon-arrow" />;
 
-class DropdownToggle extends React.Component<Props> {
+class DropdownToggle extends React.Component<DropdownToggleProps> {
   static defaultProps = {
     tag: 'button',
     caret: true
@@ -28,18 +30,27 @@ class DropdownToggle extends React.Component<Props> {
 
   static displayName = 'DropdownToggle';
 
-  onClick = e => {
+  constructor(props: DropdownToggleProps) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+    this.renderChildren = this.renderChildren.bind(this);
+  }
+
+  onClick(e: React.SyntheticEvent) {
     e.stopPropagation();
+
     if (this.props.toggle) {
       this.props.toggle(e);
     }
-  };
+  }
 
-  renderChildren = () => {
+  private renderChildren() {
     const { caret, direction, children } = this.props;
     if (!caret) {
       return children;
     }
+
     if (direction === 'left') {
       return (
         <Fragment>
@@ -47,13 +58,14 @@ class DropdownToggle extends React.Component<Props> {
         </Fragment>
       );
     }
+
     return (
       <Fragment>
         {children}
         <Caret />
       </Fragment>
     );
-  };
+  }
 
   render() {
     const { tag, children, caret, className, block, isOpen, ...props } = omit(
@@ -76,17 +88,15 @@ class DropdownToggle extends React.Component<Props> {
       );
     }
 
+    const classes = classNames(
+      {
+        'kata-dropdown--menu-open': this.props.isOpen
+      },
+      className
+    );
+
     return (
-      <div
-        {...props}
-        className={classNames(
-          {
-            'kata-dropdown--menu-open': this.props.isOpen
-          },
-          className
-        )}
-        onClick={this.onClick}
-      >
+      <div {...props} className={classes} onClick={this.onClick}>
         {this.renderChildren()}
       </div>
     );
