@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { variables } from '@kata-kit/theme';
+import hljsTheme from '../hljs-theme';
 
 const DocsDashboardContent: React.SFC = ({ children }) => (
   <Root>{children}</Root>
@@ -44,14 +45,11 @@ const Root = styled('div')`
       font-size: 90%;
     }
 
-    pre:not(.prism-code) {
-      background-color: ${variables.colors.gray10};
-      padding: 8px 16px;
-
-      code {
-        background: none;
-        padding: 0;
-      }
+    .hljs {
+      /* Override default .hljs padding below */
+      padding: 8px 16px !important;
     }
+
+    ${hljsTheme};
   }
 `;

@@ -790,9 +790,9 @@
   dependencies:
     "@mdx-js/tag" "^0.15.0"
 
-"@mdx-js/mdx@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-0.15.0.tgz#34c6516fb28c518e3d8ed388ca282a148e2125d3"
+"@mdx-js/mdx@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-0.15.2.tgz#e6e5422875bfada10d1c16c07145e3c02f109db2"
   dependencies:
     mdast-util-to-hast "^3.0.0"
     remark-parse "^5.0.0"
@@ -3327,6 +3327,12 @@ fastparse@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.1.tgz#d1e2643b38a94d7583b479060e6c4affc94071f8"
 
+fault@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/fault/-/fault-1.0.2.tgz#c3d0fec202f172a3a4d414042ad2bb5e2a3ffbaa"
+  dependencies:
+    format "^0.2.2"
+
 faye-websocket@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.10.0.tgz#4e492f8d04dfb6f89003507f6edbf2d501e7c6f4"
@@ -3506,6 +3512,10 @@ form-data@~2.3.1:
     asynckit "^0.4.0"
     combined-stream "1.0.6"
     mime-types "^2.1.12"
+
+format@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
 
 forwarded@~0.1.2:
   version "0.1.2"
@@ -3935,6 +3945,10 @@ he@1.1.x:
 hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
+
+highlight.js@~9.12.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
 history@^4.7.2:
   version "4.7.2"
@@ -5022,6 +5036,13 @@ lower-case@^1.1.1:
 lowercase-keys@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
+
+lowlight@^1.2.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/lowlight/-/lowlight-1.10.0.tgz#fbbd9158240d9c6c07c44b055ff0c32f1a2c9b99"
+  dependencies:
+    fault "^1.0.2"
+    highlight.js "~9.12.0"
 
 lru-cache@^4.0.1, lru-cache@^4.1.1:
   version "4.1.3"
@@ -6916,6 +6937,13 @@ regjsparser@^0.3.0:
 relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
+
+remark-highlight.js@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/remark-highlight.js/-/remark-highlight.js-5.0.0.tgz#468fb8ac6e1702bd44ee9670e172e26e2fa0f05a"
+  dependencies:
+    lowlight "^1.2.0"
+    unist-util-visit "^1.0.0"
 
 remark-parse@^5.0.0:
   version "5.0.0"

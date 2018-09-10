@@ -8,6 +8,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const GenerateJsonPlugin = require('generate-json-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const remarkHighlight = require('remark-highlight.js');
 
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
@@ -136,7 +137,12 @@ const config = {
                 loader: 'babel-loader',
                 options: babelPreset()
               },
-              '@mdx-js/loader'
+              {
+                loader: '@mdx-js/loader',
+                options: {
+                  mdPlugins: [remarkHighlight]
+                }
+              }
             ]
           },
           {

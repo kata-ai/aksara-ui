@@ -5,11 +5,11 @@ const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const GenerateJsonPlugin = require('generate-json-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const remarkHighlight = require('remark-highlight.js');
 
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
@@ -122,7 +122,12 @@ const config = {
                 loader: 'babel-loader',
                 options: babelPreset(true)
               },
-              '@mdx-js/loader'
+              {
+                loader: '@mdx-js/loader',
+                options: {
+                  mdPlugins: [remarkHighlight]
+                }
+              }
             ]
           },
           {
