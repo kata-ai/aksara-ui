@@ -27,7 +27,7 @@ export const themedComponentProps: PropAttributesMap = {
   },
   children: {
     description:
-      'Either a render prop with the the <code>ThemeAttributes</code> object passed, or a plain component that catches any passed <code>ThemeAttributesMap</code> (e.g. <code>KataReset</code>)',
+      'Either a render prop with the the <code>ThemeAttributes</code> object passed, or a plain component which consumes <code>ThemeContext</code> (e.g. <code>KataReset</code>)',
     type: '((theme: ThemeAttributes) => JSX.Element) | React.ReactNode'
   }
 };
