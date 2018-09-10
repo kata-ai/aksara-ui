@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Example, Props } from '@kata-kit/doc-utils';
 
 import ThemedComponent, { KataReset, Theme, variables } from '../src/index';
+import { themeProps, themedComponentProps } from './props'
 
 `@kata-kit/theme` contains source code for the kata-kit theming framework.
 
@@ -19,7 +20,27 @@ The `KataReset` component applies CSS resets to all of its descendant nodes.
 
 <Example title="Reset" scope={{ KataReset }} code={require('../examples/0-reset.raw')} />
 
-The `KataReset` component uses the theming context's `Consumer`, so we can easily override the default theme with a `Theme` component.
+The `KataReset` component uses the theming context's `Consumer`, so we can easily override the default theme with a `Theme` component. The default values that can be overridden are as follows:
+
+```tsx
+export type ThemeAttributes = {
+  backgroundColor: string;
+  backgroundColorHover?: string;
+  backgroundColorActive?: string;
+  textColor: string;
+  linkColor?: string;
+  linkColorHover?: string;
+  linkColorActive?: string;
+  linkColorOutline?: string;
+  borderColor?: string;
+  borderColorHover?: string;
+  borderColorActive?: string;
+  focusOutlineColor?: string;
+  headingColor?: string;
+  mutedHeadingColor?: string;
+  mutedTextColor?: string;
+};
+```
 
 <Example title="Themed Reset" scope={{ Theme, KataReset, variables }} code={require('../examples/1-themed-reset.raw')} />
 
@@ -33,12 +54,12 @@ You can see this theming method in action either the `Button` or `Badge` compone
 
 ## Reset Props
 
-TODO
+All `KataReset` props are extended from the default `HTMLDivElement` attributes.
 
 ## `Theme` Props
 
-TODO
+<Props props={themeProps} />
 
 ## `ThemedComponent` Props
 
-TODO
+<Props props={themedComponentProps} />

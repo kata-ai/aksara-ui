@@ -37,7 +37,7 @@
             }}
           >
             You can, of course, include these as a theme prop in your
-            `styled-components` components.
+            `styled-components`.
           </div>
         )}
       </ThemedComponent>
