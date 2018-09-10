@@ -370,7 +370,10 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Tooltip</DashboardContentHeader>
     <Board>
-      <TooltipTarget component={<Tooltip>Hello! This is a tooltip.</Tooltip>}>
+      <TooltipTarget
+        placement="right"
+        component={<Tooltip>Hello! This is a tooltip.</Tooltip>}
+      >
         <span>Hover over me!</span>
       </TooltipTarget>
     </Board>

@@ -1,1 +1,18 @@
-This document is a stub. Please help [expand it](https://github.com/kata-ai/kata-kit).
+import { Fragment } from 'react'
+import { Example, Props } from '@kata-kit/doc-utils';
+
+import { TooltipTarget, Tooltip } from '../src/index'
+import { tooltipProps } from './props';
+
+Tooltips are enabled when a mouse hovers into the target element.
+
+## Examples
+
+<Example title="Basic Example" scope={{ TooltipTarget, Tooltip, Fragment }} code={require('../examples/0-basic-example.raw')} />
+
+## Tooltip Props
+
+These props are specifically for the `<TooltipTarget />` component. All of these will get passed down to the child `<Tooltip />` component.
+
+<Props props={tooltipProps} />
+
