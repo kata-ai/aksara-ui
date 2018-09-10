@@ -19,7 +19,7 @@ import { KataReset, Theme, variables } from '@kata-kit/theme';
 import { Badge } from '@kata-kit/badge';
 import { SplitButton } from '@kata-kit/split-button';
 import { DropdownItem } from '@kata-kit/dropdown';
-import { InputText } from '@kata-kit/form';
+import { InputText, FormGroup, FormLabel, InputTextarea } from '@kata-kit/form';
 
 // since we don't use <Reset /> yet, paragraph text color is still overridden
 // globally, so this is temporary.
@@ -285,7 +285,28 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Forms</DashboardContentHeader>
     <Board>
-      <InputText placeholder="Type something..." />{' '}
+      <FormGroup>
+        <FormLabel htmlFor="textDummy">Text input</FormLabel>
+        <InputText id="textDummy" name="textDummy" placeholder="Type here..." />
+      </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="disabled">Disabled input</FormLabel>
+        <InputText
+          id="disabled"
+          name="disabled"
+          disabled
+          placeholder="Can't touch this"
+        />
+      </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor="textarea">Text area</FormLabel>
+        <InputTextarea
+          id="textarea"
+          name="textarea"
+          rows={4}
+          placeholder="Type here..."
+        />
+      </FormGroup>
     </Board>
     <DashboardContentHeader isSecondary>Theme Reset</DashboardContentHeader>
     <Theme>
