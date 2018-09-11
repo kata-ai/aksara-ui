@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Theme } from '@kata-kit/theme';
+
 export interface DashboardContentHeaderProps {
   className?: string;
   isSecondary?: boolean;
@@ -11,9 +13,17 @@ const DashboardContentHeader: React.SFC<DashboardContentHeaderProps> = ({
   className,
   isSecondary
 }) => (
-  <Root className={className} isSecondary={isSecondary}>
-    {children}
-  </Root>
+  <Theme>
+    {themeAttributes => (
+      <Root
+        className={className}
+        isSecondary={isSecondary}
+        {...themeAttributes}
+      >
+        {children}
+      </Root>
+    )}
+  </Theme>
 );
 
 export default DashboardContentHeader;

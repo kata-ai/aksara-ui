@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
 import { Container } from '@kata-kit/layout';
+import { Theme } from '@kata-kit/theme';
 import { Tooltip, TooltipTarget } from '@kata-kit/tooltip';
 
 export interface DashboardProps {
@@ -39,42 +40,52 @@ export default class Dashboard extends React.Component<DashboardProps> {
       children,
       isStarter
     } = this.props;
-    return (
-      <Root className={classNames(className, isStarter && 'is-starter')}>
-        <DashboardStarterHeading>
-          <Container>
-            <DashboardStarterInner>
-              <DashboardStarterLeft>
-                <DashboardHeader>
-                  <DashboardTitle isStarter>{title}</DashboardTitle>
-                  {tooltip && (
-                    <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
-                      <DashboardTooltip className="icon-info" />
-                    </TooltipTarget>
-                  )}
-                </DashboardHeader>
-                {subTitle && (
-                  <DashboardSubtitle isStarter>{subTitle}</DashboardSubtitle>
-                )}
-                {headerContent && (
-                  <DashboardHeaderContent>
-                    {headerContent}
-                  </DashboardHeaderContent>
-                )}
-              </DashboardStarterLeft>
-              {image && (
-                <DashboardStarterImage>
-                  <img src={image} alt="header-img" />
-                </DashboardStarterImage>
-              )}
-            </DashboardStarterInner>
-          </Container>
-        </DashboardStarterHeading>
 
-        <DashboardContent>
-          <Container>{children}</Container>
-        </DashboardContent>
-      </Root>
+    return (
+      <Theme>
+        {themeAttributes => (
+          <Root
+            className={classNames(className, isStarter && 'is-starter')}
+            {...themeAttributes}
+          >
+            <DashboardStarterHeading>
+              <Container>
+                <DashboardStarterInner>
+                  <DashboardStarterLeft>
+                    <DashboardHeader>
+                      <DashboardTitle isStarter>{title}</DashboardTitle>
+                      {tooltip && (
+                        <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
+                          <DashboardTooltip className="icon-info" />
+                        </TooltipTarget>
+                      )}
+                    </DashboardHeader>
+                    {subTitle && (
+                      <DashboardSubtitle isStarter>
+                        {subTitle}
+                      </DashboardSubtitle>
+                    )}
+                    {headerContent && (
+                      <DashboardHeaderContent>
+                        {headerContent}
+                      </DashboardHeaderContent>
+                    )}
+                  </DashboardStarterLeft>
+                  {image && (
+                    <DashboardStarterImage>
+                      <img src={image} alt="header-img" />
+                    </DashboardStarterImage>
+                  )}
+                </DashboardStarterInner>
+              </Container>
+            </DashboardStarterHeading>
+
+            <DashboardContent>
+              <Container>{children}</Container>
+            </DashboardContent>
+          </Root>
+        )}
+      </Theme>
     );
   }
 
@@ -95,35 +106,39 @@ export default class Dashboard extends React.Component<DashboardProps> {
     }
 
     return (
-      <Root className={className}>
-        <Container>
-          <DashboardHeader>
-            {headerContent || (
-              <Fragment>
-                <DashboardTitle>{title}</DashboardTitle>
-                {tooltip && (
-                  <TooltipTarget
-                    trigger="hover"
-                    component={<Tooltip>{tooltip}</Tooltip>}
-                  >
-                    <DashboardTooltip className="icon-info" />
-                  </TooltipTarget>
+      <Theme>
+        {themeAttributes => (
+          <Root className={className} {...themeAttributes}>
+            <Container>
+              <DashboardHeader>
+                {headerContent || (
+                  <Fragment>
+                    <DashboardTitle>{title}</DashboardTitle>
+                    {tooltip && (
+                      <TooltipTarget
+                        trigger="hover"
+                        component={<Tooltip>{tooltip}</Tooltip>}
+                      >
+                        <DashboardTooltip className="icon-info" />
+                      </TooltipTarget>
+                    )}
+                  </Fragment>
                 )}
-              </Fragment>
-            )}
-          </DashboardHeader>
-          {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
-          {paragraph && (
-            <DashboardParagraph
-              className={classNames(isStarter && 'is-starter')}
-            >
-              {paragraph}
-            </DashboardParagraph>
-          )}
+              </DashboardHeader>
+              {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
+              {paragraph && (
+                <DashboardParagraph
+                  className={classNames(isStarter && 'is-starter')}
+                >
+                  {paragraph}
+                </DashboardParagraph>
+              )}
 
-          <DashboardContent>{children}</DashboardContent>
-        </Container>
-      </Root>
+              <DashboardContent>{children}</DashboardContent>
+            </Container>
+          </Root>
+        )}
+      </Theme>
     );
   }
 }
