@@ -1,5 +1,9 @@
 import React from 'react';
 
+import ThemedComponent from '@kata-kit/theme';
+
+import themes from '../theme';
+
 export interface ToggleButtonStates {
   active: boolean;
 }
@@ -41,9 +45,17 @@ class ToggleButton extends React.Component<
 
   render() {
     return (
-      <div className="kata-toggle-button" onClick={this.handleToggle}>
-        {this.renderState()}
-      </div>
+      <ThemedComponent themes={themes.button}>
+        {themeAttributes => (
+          <div
+            className="kata-toggle-button"
+            onClick={this.handleToggle}
+            {...themeAttributes}
+          >
+            {this.renderState()}
+          </div>
+        )}
+      </ThemedComponent>
     );
   }
 

@@ -123,3 +123,25 @@ export const floatingButtonProps: PropAttributesMap = {
     defaultValue: 'false'
   }
 };
+
+export const toggleButtonProps: PropAttributesMap = {
+  active: {
+    type: 'boolean',
+    description: 'Whether the button is active or not.',
+    defaultValue: 'false'
+  },
+  onToggle: {
+    type: '(state: boolean) => void',
+    description: 'Toggle event handler.'
+  },
+  renderActive: {
+    type: 'JSX.Element',
+    description: 'Render active element',
+    required: true
+  },
+  renderInactive: {
+    type: 'JSX.Element',
+    description: 'Render inactive element',
+    required: true
+  }
+};

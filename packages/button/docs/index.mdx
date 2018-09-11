@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import { Example, Props } from '@kata-kit/doc-utils';
 
-import { Button, FloatingButton } from '../src/index'
-import { buttonProps, floatingButtonProps } from './props';
+import { Button, FloatingButton, ToggleButton } from '../src/index'
+import { buttonProps, floatingButtonProps, toggleButtonProps } from './props';
 
 Buttons express what action will occur when the user clicks or touches it.
 Buttons are used to initialize an action, either in the background or foreground of an experience.
@@ -26,3 +26,13 @@ Buttons are used to initialize an action, either in the background or foreground
 
 ## Floating Button Props
 <Props props={floatingButtonProps} />
+
+# Toggle Button Component
+<Example
+  title="Toggle Button Example"
+  scope={{ ToggleButton, Button, Fragment }}
+  code={require('../examples/2-toggle-example.raw')}
+/>
+
+## Toggle Button Props
+<Props props={toggleButtonProps} />
