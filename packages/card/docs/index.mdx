@@ -7,18 +7,32 @@ import { variables } from '../../theme/src/index';
 
 This document is a stub. Please help [expand it](https://github.com/kata-ai/kata-kit).
 
+## Card
+
+This is the base card component in use for all card-based UI elements.
+
 <Example title="Basic Example" scope={{ Card, Fragment, variables }} code={require('../examples/0-basic-example.raw')} />
 
-## Dashboard Cards
+We have a special `<DashboardCard />` component for card elements in dashboard. It will force the card into a fixed height.
 
-We have a special `<DashboardCard />` component for card elements in dashboard. It will be displayed in a grid fashion.
+<Example title="Dashboard Card" scope={{ Card, CardGrid, DashboardCard, Fragment }} code={require('../examples/1-dashboard-cards.raw')} />
 
-<Example title="Dashboard Cards" scope={{ Card, CardGrid, DashboardCard, Fragment }} code={require('../examples/1-dashboard-cards.raw')} />
-
-## With Action
+You can specify an `action` prop to add an icon button with any action.
 
 <Example title="With Action" scope={{ Card, CardGrid, Button, DashboardCard, Fragment }} code={require('../examples/2-with-action.raw')} />
 
-## Card Props
+### Card Props
+
+These props apply to both `Card` and `DashboardCard` components.
+
+TODO
+
+## CardGrid
+
+Dashboard card are displayed in a gridded manner. The `CardGrid` component can help with that.
+
+<Example title="Card Grid" scope={{ Card, CardGrid, DashboardCard, Fragment }} code={require('../examples/3-card-grid.raw')} />
+
+### CardGrid Props
 
 TODO

@@ -18,15 +18,21 @@ const Root = styled('div')`
     h1,
     .h1,
     .title {
-      &:first-child {
-        font-size: 36px;
-        line-height: 54px;
-        margin-bottom: ${variables.spaces.space3};
-      }
+      font-size: 36px;
+      line-height: 52px;
+      margin-bottom: ${variables.spaces.space3};
     }
 
     > h2,
     > .h2 {
+      margin-top: 1.5rem;
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    > h3,
+    > .h3 {
+      margin-top: 1.5rem;
       font-size: 20px;
       line-height: 28px;
     }
