@@ -16,7 +16,7 @@ const Props: React.SFC<PropsProps> = ({ props }) => (
       const prop = props[p];
 
       return (
-        <Prop>
+        <Prop key={p}>
           <Header>
             <PropName>
               {p}
