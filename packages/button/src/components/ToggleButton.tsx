@@ -15,15 +15,9 @@ class ToggleButton extends React.Component<
   ToggleButtonProps,
   ToggleButtonStates
 > {
-  static defaultProps = {
-    active: false
+  state = {
+    active: this.props.active || false
   };
-
-  static getDerivedStateFromProps(props: ToggleButtonProps) {
-    return {
-      active: props.active
-    };
-  }
 
   constructor(props: ToggleButtonProps) {
     super(props);
@@ -34,9 +28,9 @@ class ToggleButton extends React.Component<
 
   handleToggle() {
     this.setState(
-      {
-        active: !this.state.active
-      },
+      state => ({
+        active: !state.active
+      }),
       () => {
         if (this.props.onToggle) {
           this.props.onToggle(this.state.active);
