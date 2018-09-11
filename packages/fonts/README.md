@@ -25,7 +25,7 @@ import '@kata-kit/fonts/museo-sans-rounded.css';
 
 ### Icon fonts.
 
-We also provided some icon sets. To them, import as follows:
+We also provided some icon sets. To use them, import as follows:
 
 ```jsx
 import '@kata-kit/fonts/kata-icons.css';

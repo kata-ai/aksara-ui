@@ -1,5 +1,5 @@
 import React from 'react';
-import Loadable from 'react-loadable';
+import universal from 'react-universal-component';
 import { RouteComponentProps } from 'react-router';
 
 import DocsDashboard from '../components/DocsDashboard';
@@ -11,10 +11,12 @@ interface RouteParams {
 }
 
 const DocsPage: React.SFC<RouteComponentProps<RouteParams>> = ({ match }) => {
-  const LazyloadedPage = Loadable({
-    loader: () => import(`../../../../../docs/${match.params.page}.mdx`),
-    loading: Loading
-  });
+  const LazyloadedPage = universal(
+    () => import(`../../../../../docs/${match.params.page}.mdx`),
+    {
+      loading: Loading
+    }
+  );
 
   return match.params.page ? (
     <DocsDashboard>

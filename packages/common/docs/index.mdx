@@ -1,1 +1,29 @@
-This document is a stub. Please help [expand it](https://github.com/kata-ai/kata-kit).
+import { Fragment } from 'react'
+import { Example, Props } from '@kata-kit/doc-utils';
+
+import { Board, EmptyMessage } from '../src/index';
+import { boardProps, emptyMessageProps } from './props';
+
+This package contains common components used in multiple places throughout a project.
+
+## Board
+
+Boards are cards without hover states.
+
+<Example title="Board Example" scope={{ Board, Fragment }} code={require('../examples/0-board.raw')} />
+
+<Example title="Board w/ Header + Footer" scope={{ Board, Fragment }} code={require('../examples/1-board-with-header-footer.raw')} />
+
+### Board Props
+
+<Props props={boardProps} />
+
+## Empty Message
+
+This component is displayed when a list item is empty.
+
+<Example title="Empty Message" scope={{ EmptyMessage, Fragment }} code={require('../examples/2-empty-message.raw')} />
+
+### EmptyMessage Props
+
+<Props props={emptyMessageProps} />

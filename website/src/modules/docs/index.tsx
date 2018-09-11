@@ -1,13 +1,13 @@
 import React from 'react';
-import Loadable from 'react-loadable';
+import universal from 'react-universal-component';
+
 import { RouteComponentProps, Switch, Route } from 'react-router-dom';
 
 import DocsPage from './pages/page';
 import DocsReset from '../core/components/DocsReset';
 import Loading from '../core/components/Loading';
 
-const DocsHome = Loadable({
-  loader: () => import('./pages/home'),
+const DocsHome = universal(() => import('./pages/home'), {
   loading: Loading
 });
 

@@ -8,7 +8,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Loadable from 'react-loadable';
+import universal from 'react-universal-component';
 
 import {
   Wrapper,
@@ -19,28 +19,28 @@ import {
   SidebarMainMenu
 } from '@kata-kit/layout';
 
-import Loading from './components/Loading';
 import * as sidebar from './sidebar';
+import Loading from './components/Loading';
 import SidebarLoading from './components/SidebarLoading';
-import Home from '../home';
 
 import { RootStore, PackageMetadata } from '../../types/app';
 import { populatePackages, populateError } from '../../store/packages/actions';
 
 const Logo = require('@kata-kit/assets/images/logo-white.svg');
 
-const Demo = Loadable({
-  loader: () => import('../demo'),
+const Home = universal(() => import('../home'), {
   loading: Loading
 });
 
-const Docs = Loadable({
-  loader: () => import('../docs'),
+const Demo = universal(() => import('../demo'), {
   loading: Loading
 });
 
-const ComponentLibrary = Loadable({
-  loader: () => import('../components'),
+const Docs = universal(() => import('../docs'), {
+  loading: Loading
+});
+
+const ComponentLibrary = universal(() => import('../components'), {
   loading: Loading
 });
 
@@ -69,15 +69,16 @@ class App extends React.Component<Props> {
   }
 
   getSidebarSub(location: string) {
-    const DocsSidebar = Loadable({
-      loader: () => import('../docs/sidebar'),
+    const DocsSidebar = universal(() => import('../docs/sidebar'), {
       loading: SidebarLoading
     });
 
-    const ComponentLibrarySidebar = Loadable({
-      loader: () => import('../components/sidebar'),
-      loading: SidebarLoading
-    });
+    const ComponentLibrarySidebar = universal(
+      () => import('../components/sidebar'),
+      {
+        loading: SidebarLoading
+      }
+    );
 
     switch (location) {
       case 'docs': {

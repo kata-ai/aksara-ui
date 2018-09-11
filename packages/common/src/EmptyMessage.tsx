@@ -36,7 +36,6 @@ const FadeIn = keyframes`
 
 const Title = styled('h3')`
   margin: 24px 0 8px;
-  font-weight: 500;
   text-align: center;
   color: #24282d;
 `;
@@ -44,7 +43,6 @@ const Title = styled('h3')`
 const Description = styled('p')`
   margin-top: 8px;
   margin-bottom: 0;
-  font-weight: 300;
   text-align: center;
   color: #484c4f;
 `;
@@ -54,4 +52,12 @@ const Wrapper = styled('div')`
   max-width: 320px;
   margin: 48px auto;
   text-align: center;
+
+  ${Title} {
+    font-weight: 500;
+  }
+
+  ${Description} {
+    font-weight: 300;
+  }
 `;
