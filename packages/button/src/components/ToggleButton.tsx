@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import ThemedComponent from '@kata-kit/theme';
 
@@ -47,13 +48,13 @@ class ToggleButton extends React.Component<
     return (
       <ThemedComponent themes={themes.button}>
         {themeAttributes => (
-          <div
+          <Root
             className="kata-toggle-button"
             onClick={this.handleToggle}
             {...themeAttributes}
           >
             {this.renderState()}
-          </div>
+          </Root>
         )}
       </ThemedComponent>
     );
@@ -67,5 +68,7 @@ class ToggleButton extends React.Component<
     return this.props.renderInactive();
   }
 }
+
+const Root = styled('div')``;
 
 export default ToggleButton;
