@@ -6,6 +6,7 @@
 lib/
 storybook-static/
 dist/
+tsc-out/
 
 # Lockfiles
 /package-lock.json
