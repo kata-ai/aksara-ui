@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import ThemedComponent from '@kata-kit/theme';
+
+import themes from '../theme';
 
 interface ButtonGroupProps extends React.AllHTMLAttributes<HTMLDivElement> {}
 
@@ -7,7 +10,15 @@ export default class ButtonGroup extends React.Component<ButtonGroupProps> {
   render() {
     const { children, ...rest } = this.props;
 
-    return <Root {...rest}>{children}</Root>;
+    return (
+      <ThemedComponent themes={themes.button}>
+        {themeAttributes => (
+          <Root {...rest} {...themeAttributes}>
+            {children}
+          </Root>
+        )}
+      </ThemedComponent>
+    );
   }
 }
 
