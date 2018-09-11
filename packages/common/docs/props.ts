@@ -17,3 +17,16 @@ export const boardProps: PropAttributesMap = {
     defaultValue: 'undefined'
   }
 };
+
+export const emptyMessageProps: PropAttributesMap = {
+  image: {
+    type: 'any',
+    description:
+      'Import the image you want to use to replace the default one here.'
+  },
+  title: {
+    type: 'string | React.ReactNode',
+    description: 'The title of the empty message.',
+    defaultValue: "'Empty'"
+  }
+};
