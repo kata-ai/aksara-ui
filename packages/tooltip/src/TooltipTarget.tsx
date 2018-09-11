@@ -25,8 +25,8 @@ const composeFunctions = (...funcs) => {
 };
 
 export interface TooltipTargetProps {
-  component: any;
-  children: any;
+  component: React.ReactNode;
+  children: React.ReactNode;
   placement?: 'top' | 'right' | 'bottom' | 'left';
   className?: string;
   defaultShow?: boolean;

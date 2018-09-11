@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import Loadable from 'react-loadable';
+import universal from 'react-universal-component';
 
 import DocsDashboard from '../../docs/components/DocsDashboard';
 import DocsDashboardHeading from '../../docs/components/DocsDashboardHeading';
@@ -11,13 +11,8 @@ import Loading from '../../core/components/Loading';
 import { PackageMetadata, RootStore } from '../../../types/app';
 
 const generateDocs = (params: RouteParams) =>
-  Loadable({
-    loader: () => import(`@kata-kit/${params.package}/docs/index.mdx`),
-    loading: Loading,
-    render: (loaded, props) => {
-      const Component = loaded.default;
-      return <Component {...props} />;
-    }
+  universal(() => import(`@kata-kit/${params.package}/docs/index.mdx`), {
+    loading: Loading
   });
 
 interface PropsFromState {

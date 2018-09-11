@@ -1,1 +1,67 @@
-This document is a stub. Please help [expand it](https://github.com/kata-ai/kata-kit).
+import { Fragment } from 'react'
+import { Example, Props } from '@kata-kit/doc-utils';
+
+import ThemedComponent, { KataReset, Theme, variables } from '../src/index';
+import { themeProps, themedComponentProps } from './props'
+
+`@kata-kit/theme` contains source code for the kata-kit theming framework.
+
+We use `styled-components` for styling our components, which combines the power of CSS-in-JS, as well as the familiarity of regular SCSS, through the power of tagged template literals. This package provides top-level and inner-level style resets, as well as abstractions on top of styled-components, which allows for simpler component theming.
+
+## How Theming Works in `kata-kit`
+
+`styled-components` has its own theming support with the `ThemeProvider` component, however it's quite convoluted when you try to solve global/local theming hierarches.
+
+Therefore, we borrowed some ideas from [Atlaskit](https://atlaskit.atlassian.com/packages/core/theme) and provided a minimal theming API which is based on React's [Context API](https://reactjs.org/docs/context.html).
+
+## Resetting Styles
+
+The `KataReset` component applies CSS resets to all of its descendant nodes.
+
+<Example title="Reset" scope={{ KataReset }} code={require('../examples/0-reset.raw')} />
+
+Inside the `KataReset` component is the `Consumer` of `ThemeContext`. Here we can easily override the default theme with a `Theme` component. The default values that can be overridden are as follows:
+
+```typescript
+export type ThemeAttributes = {
+  backgroundColor: string;
+  backgroundColorHover?: string;
+  backgroundColorActive?: string;
+  textColor: string;
+  linkColor?: string;
+  linkColorHover?: string;
+  linkColorActive?: string;
+  linkColorOutline?: string;
+  borderColor?: string;
+  borderColorHover?: string;
+  borderColorActive?: string;
+  focusOutlineColor?: string;
+  headingColor?: string;
+  mutedHeadingColor?: string;
+  mutedTextColor?: string;
+};
+```
+
+<Example title="Themed Reset" scope={{ Theme, KataReset, variables }} code={require('../examples/1-themed-reset.raw')} />
+
+## Using `<ThemedComponent />`
+
+A component can have multiple color states. To make switching between them easier to manage, we provided a `ThemedComponent` component which resolves a theme string with its respective `ThemeAttributes` map.
+
+You can see this theming method in action either the `Button` or `Badge` component.
+
+<Example title="ThemedComponent" scope={{ ThemedComponent, variables, Fragment }} code={require('../examples/2-themedcomponent.raw')} />
+
+## Props
+
+### Reset Props
+
+All `KataReset` props are extended from the default `HTMLDivElement` attributes.
+
+### `Theme` Props
+
+<Props props={themeProps} />
+
+### `ThemedComponent` Props
+
+<Props props={themedComponentProps} />

@@ -4,9 +4,9 @@
 /**
  * Base Babel config generated for our webpack config.
  *
- * @param {boolean} prod true if webpack is running in production mode.
+ * @param {boolean} [prod] true if webpack is running in production mode.
  */
-const babelPreset = prod => ({
+const babelPreset = (prod = false) => ({
   presets: ['@babel/preset-react', '@babel/preset-env'],
   plugins: [
     '@babel/plugin-syntax-dynamic-import',
@@ -14,7 +14,7 @@ const babelPreset = prod => ({
     ['@babel/plugin-proposal-class-properties', { loose: false }],
     '@babel/plugin-proposal-json-strings',
     ['babel-plugin-styled-components', { displayName: !prod, minify: prod }],
-    'react-loadable/babel',
+    'babel-plugin-universal-import',
     'react-hot-loader/babel'
   ]
 });

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { variables } from '@kata-kit/theme';
+import hljsTheme from '../hljs-theme';
 
 const DocsDashboardContent: React.SFC = ({ children }) => (
   <Root>{children}</Root>
@@ -14,21 +15,26 @@ const Root = styled('div')`
    * Direct child selector required because @mdx-js/mdx wraps content inside div
    */
   > div {
-    > h1,
-    > .h1,
-    > .title {
+    h1,
+    .h1,
+    .title {
       font-size: 36px;
-      line-height: 54px;
-
-      &:first-child {
-        margin-bottom: ${variables.spaces.space3};
-      }
+      line-height: 52px;
+      margin-bottom: ${variables.spaces.space3};
     }
 
     > h2,
     > .h2 {
+      margin-top: 1.5rem;
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    > h3,
+    > .h3 {
+      margin-top: 1.5rem;
       font-size: 20px;
-      line-height: 30px;
+      line-height: 28px;
     }
 
     > p {
@@ -43,5 +49,12 @@ const Root = styled('div')`
       border-radius: 4px;
       font-size: 90%;
     }
+
+    .hljs {
+      /* Override default .hljs padding below */
+      padding: 8px 16px !important;
+    }
+
+    ${hljsTheme};
   }
 `;
