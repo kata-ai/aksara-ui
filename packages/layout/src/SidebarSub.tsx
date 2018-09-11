@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import Scrollbars from 'react-custom-scrollbars';
 import { variables } from '@kata-kit/theme';
