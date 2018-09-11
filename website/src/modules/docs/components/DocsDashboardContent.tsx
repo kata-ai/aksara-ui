@@ -15,13 +15,12 @@ const Root = styled('div')`
    * Direct child selector required because @mdx-js/mdx wraps content inside div
    */
   > div {
-    > h1,
-    > .h1,
-    > .title {
-      font-size: 36px;
-      line-height: 54px;
-
+    h1,
+    .h1,
+    .title {
       &:first-child {
+        font-size: 36px;
+        line-height: 54px;
         margin-bottom: ${variables.spaces.space3};
       }
     }
@@ -29,7 +28,7 @@ const Root = styled('div')`
     > h2,
     > .h2 {
       font-size: 20px;
-      line-height: 30px;
+      line-height: 28px;
     }
 
     > p {
