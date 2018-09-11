@@ -1,11 +1,13 @@
 import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 
+import { Theme, variables } from '@kata-kit/theme';
+
 export interface CardProps {
   /** Card title. */
   title?: string;
   /** An action button. Can be a dropdown, or anything. */
-  action?: any;
+  action?: React.ReactElement<HTMLAllCollection>;
   asButton?: boolean;
   noWrap?: boolean;
   disabled?: boolean;
@@ -23,37 +25,50 @@ export class Card extends React.Component<CardProps> {
   render() {
     const { className, noWrap, onClick, style, children } = this.props;
 
-    return noWrap ? (
-      <CardRoot onClick={onClick} style={style} className={className}>
-        {children}
-      </CardRoot>
-    ) : (
-      <CardRoot onClick={onClick} style={style} className={className}>
-        {!this.props.asButton && this.props.title ? (
-          <CardHeading>
-            <CardHeadingTitle>
-              {this.props.avatar && (
-                <img
-                  src={this.props.avatar}
-                  className="kata-card__avatar mr-1"
-                />
-              )}
-              <span>{this.props.title}</span>
-            </CardHeadingTitle>
-            {this.props.action && (
-              <CardHeadingAction
-                onClick={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                }}
-              >
-                {this.props.action}
-              </CardHeadingAction>
-            )}
-          </CardHeading>
-        ) : null}
-        <CardBody asButton={this.props.asButton}>{children}</CardBody>
-      </CardRoot>
+    return (
+      <Theme>
+        {themeAttributes =>
+          noWrap ? (
+            <CardRoot
+              onClick={onClick}
+              style={style}
+              className={className}
+              {...themeAttributes}
+            >
+              {children}
+            </CardRoot>
+          ) : (
+            <CardRoot
+              onClick={onClick}
+              style={style}
+              className={className}
+              {...themeAttributes}
+            >
+              {!this.props.asButton && this.props.title ? (
+                <CardHeading>
+                  <CardHeadingTitle>
+                    {this.props.avatar && (
+                      <CardAvatar src={this.props.avatar} />
+                    )}
+                    <span>{this.props.title}</span>
+                  </CardHeadingTitle>
+                  {this.props.action && (
+                    <CardHeadingAction
+                      onClick={e => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                      }}
+                    >
+                      {this.props.action}
+                    </CardHeadingAction>
+                  )}
+                </CardHeading>
+              ) : null}
+              <CardBody asButton={this.props.asButton}>{children}</CardBody>
+            </CardRoot>
+          )
+        }
+      </Theme>
     );
   }
 }
@@ -103,4 +118,13 @@ const CardBody = styled<CardBodyProps, 'div'>('div')`
   padding: 8px 24px;
   font-size: 13px;
   line-height: 20px;
+`;
+
+const CardAvatar = styled('img')`
+  width: 40px;
+  height: 40px;
+  border: solid 1px ${variables.colors.gray30};
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
 `;
