@@ -11,24 +11,29 @@ const postcssConfig = require('./config/postcss');
 const pathRegex = /^.*[\\/]/;
 const packageList = {};
 
-glob.sync('../packages/*').forEach(path => {
-  const packageName = path.replace(pathRegex, '');
-  const {
-    name,
-    version,
-    description,
-    dependencies,
-    peerDependencies
-  } = require(`../packages/${packageName}/package.json`);
+glob
+  .sync('../packages/*', {
+    // ignore variables package since it doesn't have package.json
+    ignore: '../packages/variables'
+  })
+  .forEach(path => {
+    const packageName = path.replace(pathRegex, '');
+    const {
+      name,
+      version,
+      description,
+      dependencies,
+      peerDependencies
+    } = require(`../packages/${packageName}/package.json`);
 
-  packageList[packageName] = {
-    name,
-    version,
-    description,
-    dependencies,
-    peerDependencies
-  };
-});
+    packageList[packageName] = {
+      name,
+      version,
+      description,
+      dependencies,
+      peerDependencies
+    };
+  });
 
 module.exports = (env, argv) => {
   // I know there's a lot going on here, but listen.
