@@ -25,7 +25,6 @@ class Example extends React.Component<ExampleProps, ExampleState> {
   }
 
   toggleCodePreview = (state: boolean) => {
-    console.log('onToggle', state);
     this.setState({ codeIsVisible: state });
   };
 
