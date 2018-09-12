@@ -9,13 +9,13 @@ export const ContentH1 = styled('h1')`
 `;
 
 export const ContentH2 = styled('h2')`
-  margin-top: 1.5rem !important;
+  margin-top: 1.5em !important;
   font-size: 28px !important;
   line-height: 36px !important;
 `;
 
 export const ContentH3 = styled('h3')`
-  margin-top: 1.5rem !important;
+  margin-top: 1.5em !important;
   font-size: 20px !important;
   line-height: 28px !important;
 `;
