@@ -1,10 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
     "declaration": true,
     "declarationDir": "./lib",
-    "outDir": "./lib"
+    "outDir": "./tsc-out"
   },
   "include": ["./src/**/*", "../../types/**/*.d.ts"],
   "exclude": ["./lib", "./**/__stories__", "./scripts"]
