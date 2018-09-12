@@ -10,7 +10,6 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "removeComments": true,
-    "declaration": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,

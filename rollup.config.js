@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import filesize from 'rollup-plugin-filesize';
 import autoExternal from 'rollup-plugin-auto-external';
 
 export default {
@@ -16,5 +17,5 @@ export default {
       sourcemap: true
     }
   ],
-  plugins: [resolve(), commonjs(), autoExternal()]
+  plugins: [resolve(), commonjs(), autoExternal(), filesize()]
 };
