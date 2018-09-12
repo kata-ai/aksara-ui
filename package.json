@@ -1,6 +1,6 @@
 {
-  "name": "kata-kit",
-  "version": "0.1.0",
+  "name": "@kata-kit/monorepo",
+  "version": "0.5.0",
   "description": "The component library powering the Kata.ai platform.",
   "main": "N/A",
   "repository": "https://github.com/kata-ai/kata-kit.git",
