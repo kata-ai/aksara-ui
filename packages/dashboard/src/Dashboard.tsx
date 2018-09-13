@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
 import { Container } from '@kata-kit/layout';
 import { Tooltip, TooltipTarget } from '@kata-kit/tooltip';
+import { variables } from '@kata-kit/theme';
 
 export interface DashboardProps {
   title?: string;
@@ -42,7 +43,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
     return (
       <Root className={classNames(className, isStarter && 'is-starter')}>
         <DashboardStarterHeading>
-          <Container>
+          <DashboardContainer>
             <DashboardStarterInner>
               <DashboardStarterLeft>
                 <DashboardHeader>
@@ -68,7 +69,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
                 </DashboardStarterImage>
               )}
             </DashboardStarterInner>
-          </Container>
+          </DashboardContainer>
         </DashboardStarterHeading>
 
         <DashboardContent>
@@ -96,33 +97,31 @@ export default class Dashboard extends React.Component<DashboardProps> {
 
     return (
       <Root className={className}>
-        <Container>
-          <DashboardHeader>
-            {headerContent || (
-              <Fragment>
-                <DashboardTitle>{title}</DashboardTitle>
-                {tooltip && (
-                  <TooltipTarget
-                    trigger="hover"
-                    component={<Tooltip>{tooltip}</Tooltip>}
-                  >
-                    <DashboardTooltip className="icon-info" />
-                  </TooltipTarget>
-                )}
-              </Fragment>
-            )}
-          </DashboardHeader>
-          {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
-          {paragraph && (
-            <DashboardParagraph
-              className={classNames(isStarter && 'is-starter')}
-            >
-              {paragraph}
-            </DashboardParagraph>
+        <DashboardHeader>
+          {headerContent || (
+            <DashboardContainer>
+              <DashboardTitle>{title}</DashboardTitle>
+              {tooltip && (
+                <TooltipTarget
+                  trigger="hover"
+                  component={<Tooltip>{tooltip}</Tooltip>}
+                >
+                  <DashboardTooltip className="icon-info" />
+                </TooltipTarget>
+              )}
+            </DashboardContainer>
           )}
+        </DashboardHeader>
+        {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
+        {paragraph && (
+          <DashboardParagraph className={classNames(isStarter && 'is-starter')}>
+            {paragraph}
+          </DashboardParagraph>
+        )}
 
-          <DashboardContent>{children}</DashboardContent>
-        </Container>
+        <DashboardContent>
+          <DashboardContainer>{children}</DashboardContainer>
+        </DashboardContent>
       </Root>
     );
   }
@@ -137,8 +136,12 @@ const DashboardIn = keyframes`
   }
 `;
 
+const DashboardContainer = styled(Container)``;
+
 const DashboardHeader = styled('div')`
-  display: flex;
+  ${DashboardContainer} {
+    display: flex;
+  }
 `;
 
 const DashboardTooltip = styled('i')`
@@ -221,15 +224,7 @@ const DashboardHeaderContent = styled('div')`
 `;
 
 const DashboardContent = styled('div')`
-  padding: 1.846153846rem /* $space-3 */ 20px;
-
-  @media (min-width: 1280px /* $break-medium */) {
-    padding: 1.846153846rem /* $space-3 */ 40px;
-  }
-
-  @media (min-width: 1366px /* $break-large */) {
-    padding: 1.846153846rem /* $space-3 */ 48px;
-  }
+  padding-top: ${variables.spaces.space3};
 `;
 
 const DashboardStarterHeading = styled('div')`
