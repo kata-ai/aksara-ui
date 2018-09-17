@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import DocsDashboard from '../components/DocsDashboard';
 import DocsDashboardContent from '../components/DocsDashboardContent';
 

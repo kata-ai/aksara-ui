@@ -23,7 +23,7 @@ import '@kata-kit/reset';
 ```jsx
 // Example for `<Button />` component.
 
-import React from 'react';
+import * as React from 'react';
 import { Button } from '@kata-kit/button';
 
 export default () => <Button>Push Me</Button>;

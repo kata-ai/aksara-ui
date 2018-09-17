@@ -3,6 +3,7 @@
   "version": "0.5.0",
   "description": "modal component for kata-kit.",
   "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",
   "kata-kit:src": "./src/index.ts",
   "repository": "https://github.com/kata-ai/kata-kit.git",
@@ -12,8 +13,8 @@
     "./lib"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc -p tsconfig.build.json",
-    "clean": "rimraf lib"
+    "build": "npm run clean && tsc -p tsconfig.build.json && rollup -c ../../rollup.config.js",
+    "clean": "rimraf lib && rimraf tsc-out"
   },
   "dependencies": {
     "@kata-kit/button": "^0.5.0",
@@ -23,7 +24,8 @@
     "styled-components": "^3.4.0"
   },
   "peerDependencies": {
-    "react": "^16.3.0"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.3"

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import universal from 'react-universal-component';
 
 import { RouteComponentProps, Switch, Route } from 'react-router-dom';

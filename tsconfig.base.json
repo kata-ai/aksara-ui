@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "lib": ["esnext", "dom"],
     "jsx": "react",
@@ -9,10 +9,11 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "declaration": true,
+    "removeComments": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   }
 }
