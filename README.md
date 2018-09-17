@@ -6,6 +6,8 @@
 
 `kata-kit` is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
 
+**Note: kata-kit v0.5.0 is still in beta. The latest stable version is [here](https://github.com/kata-ai/kata-kit/tree/v0.2.4).**
+
 ## Usage
 
 ### Prerequisites
