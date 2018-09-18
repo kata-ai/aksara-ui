@@ -41,7 +41,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
               <TitleWrapper>
                 {title && <Title>{title}</Title>}
                 <ToggleButton
-                  active={!codeIsVisible}
+                  active={codeIsVisible}
                   onToggle={state => this.toggleCodePreview(state)}
                   renderActive={() => (
                     <Button size="sm" isIcon>
