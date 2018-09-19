@@ -11,7 +11,8 @@ import {
   ContentH3,
   ContentParagraph,
   ContentCode,
-  ContentInlineCode
+  ContentInlineCode,
+  ContentTable
 } from '../components/DocsElements';
 
 interface RouteParams {
@@ -35,6 +36,7 @@ const DocsPage: React.SFC<RouteComponentProps<RouteParams>> = ({ match }) => {
             h2: props => <ContentH2 {...props} />,
             h3: props => <ContentH3 {...props} />,
             p: props => <ContentParagraph {...props} />,
+            table: props => <ContentTable {...props} />,
             code: props => <ContentCode {...props} />,
             inlineCode: props => <ContentInlineCode {...props} />
           }}

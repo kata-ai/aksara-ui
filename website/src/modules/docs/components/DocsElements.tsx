@@ -1,3 +1,5 @@
+import * as React from 'react';
+import classnames from 'classnames';
 import styled from 'styled-components';
 import { variables } from '@kata-kit/theme';
 import hljsTheme from './hljs-theme';
@@ -36,3 +38,9 @@ export const ContentInlineCode = styled('code')`
   border-radius: 4px;
   font-size: 90%;
 `;
+
+export const ContentTable = ({ children, className, ...rest }) => (
+  <table className={classnames('table', className)} {...rest}>
+    {children}
+  </table>
+);
