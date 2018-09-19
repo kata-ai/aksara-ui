@@ -95,7 +95,12 @@ export default () => (
     </Board>
     <DashboardContentHeader isSecondary>Tables</DashboardContentHeader>
     <Board>
-      <table className="striped hover">
+      <p>
+        Just like Bootstrap tables, table styles are <strong>opt-in</strong> by
+        adding the <code>.table</code> class. This allows it to not override any
+        custom widgets that might use tables.
+      </p>
+      <table className="table striped hover">
         <thead>
           <tr>
             <th>Name</th>
