@@ -8,6 +8,12 @@
 
 **Note: kata-kit v0.5.0 is still in beta. The latest stable version is [here](https://github.com/kata-ai/kata-kit/tree/v0.2.4).**
 
+## Contributing
+
+kata-kit is developed by the help of developers like you! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started on developing kata-kit.
+
+This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Usage
 
 ### Prerequisites
