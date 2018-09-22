@@ -6,6 +6,14 @@
 
 `kata-kit` is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
 
+**Note: kata-kit v0.5.0 is still in beta. The latest stable version is [here](https://github.com/kata-ai/kata-kit/tree/v0.2.4).**
+
+## Contributing
+
+kata-kit is developed by the help of developers like you! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started on developing kata-kit.
+
+This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Usage
 
 ### Prerequisites
@@ -23,7 +31,7 @@ import '@kata-kit/reset';
 ```jsx
 // Example for `<Button />` component.
 
-import React from 'react';
+import * as React from 'react';
 import { Button } from '@kata-kit/button';
 
 export default () => <Button>Push Me</Button>;

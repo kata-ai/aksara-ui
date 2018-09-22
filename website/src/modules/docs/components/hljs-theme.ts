@@ -21,12 +21,15 @@ hue-6-2: #e6c07b
 import { css } from 'styled-components';
 
 const hljsTheme = css`
-  .hljs {
+  &.hljs {
     display: block;
     overflow-x: auto;
-    padding: 0.5em;
+    margin: 0;
+    padding: 8px 16px !important;
     color: #abb2bf;
     background: #282c34;
+    border-radius: 4px;
+    font-size: 90%;
   }
 
   .hljs-comment,

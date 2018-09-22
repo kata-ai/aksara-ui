@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Provider, Consumer } from './ThemeContext';
 import { ThemeAttributes } from '../types';
 

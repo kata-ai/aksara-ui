@@ -1,7 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-const Container: React.SFC = ({ children }) => <Wrapper>{children}</Wrapper>;
+interface ContainerProps {
+  className?: string;
+}
+
+const Container: React.SFC<ContainerProps> = ({ children, className }) => (
+  <Wrapper className={className}>{children}</Wrapper>
+);
 
 export default Container;
 

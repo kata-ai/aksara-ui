@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
@@ -40,7 +40,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
               <TitleWrapper>
                 {title && <Title>{title}</Title>}
                 <ToggleButton
-                  active={!codeIsVisible}
+                  active={codeIsVisible}
                   onToggle={state => this.toggleCodePreview(state)}
                   renderActive={() => (
                     <Button size="sm" isIcon>

@@ -2,7 +2,6 @@
   "recommendations": [
     "eg2.tslint",
     "EditorConfig.EditorConfig",
-    "esbenp.prettier-vscode",
-    "wix.stylable-intelligence"
+    "esbenp.prettier-vscode"
   ]
 }

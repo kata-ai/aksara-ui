@@ -71,10 +71,6 @@ const PropDefault = styled('code')`
 
 const PropBody = styled('div')`
   padding: ${variables.spaces.space1} ${variables.spaces.space2};
-
-  code {
-    background-color: ${variables.colors.gray10};
-  }
 `;
 
 const PropDeprecated = styled('div')`
@@ -90,6 +86,13 @@ const Prop = styled('div')`
   border: 1px solid ${variables.colors.gray30};
   border-radius: ${variables.borderRadiuses.borderRadiusMedium};
   overflow: hidden;
+
+  code {
+    background-color: ${variables.colors.gray10};
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 90%;
+  }
 `;
 
 const Root = styled('div')`

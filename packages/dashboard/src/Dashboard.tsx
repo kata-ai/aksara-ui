@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
 import { Container } from '@kata-kit/layout';
 import { Theme } from '@kata-kit/theme';
 import { Tooltip, TooltipTarget } from '@kata-kit/tooltip';
+import { variables } from '@kata-kit/theme';
 
 export interface DashboardProps {
   title?: string;
@@ -112,7 +113,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
             <Container>
               <DashboardHeader>
                 {headerContent || (
-                  <Fragment>
+                  <React.Fragment>
                     <DashboardTitle>{title}</DashboardTitle>
                     {tooltip && (
                       <TooltipTarget
@@ -122,7 +123,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
                         <DashboardTooltip className="icon-info" />
                       </TooltipTarget>
                     )}
-                  </Fragment>
+                  </React.Fragment>
                 )}
               </DashboardHeader>
               {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
@@ -152,8 +153,12 @@ const DashboardIn = keyframes`
   }
 `;
 
+const DashboardContainer = styled(Container)``;
+
 const DashboardHeader = styled('div')`
-  display: flex;
+  ${DashboardContainer} {
+    display: flex;
+  }
 `;
 
 const DashboardTooltip = styled('i')`
@@ -236,15 +241,7 @@ const DashboardHeaderContent = styled('div')`
 `;
 
 const DashboardContent = styled('div')`
-  padding: 1.846153846rem /* $space-3 */ 20px;
-
-  @media (min-width: 1280px /* $break-medium */) {
-    padding: 1.846153846rem /* $space-3 */ 40px;
-  }
-
-  @media (min-width: 1366px /* $break-large */) {
-    padding: 1.846153846rem /* $space-3 */ 48px;
-  }
+  padding-top: ${variables.spaces.space3};
 `;
 
 const DashboardStarterHeading = styled('div')`
