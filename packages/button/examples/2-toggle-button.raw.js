@@ -15,7 +15,9 @@ class ToggleButtonExample extends React.Component {
         <div style={{ marginBottom: '8px' }}>
           <ToggleButton
             active={activated}
-            onToggle={state => this.setState({ activated: state })}
+            onToggle={state => {
+              this.setState({ activated: state });
+            }}
             renderActive={() => <Button>Deactivate</Button>}
             renderInactive={() => <Button color="primary">Activate</Button>}
           />

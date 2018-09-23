@@ -2,7 +2,9 @@ import { Fragment } from 'react';
 import { Example, Props } from '@kata-kit/doc-utils';
 
 import { Card, CardGrid, DashboardCard } from '../src/index';
+import { cardProps, cardGridProps } from './props';
 import { Button } from '../../button/src/index';
+import { Dropdown, DropdownMenu, DropdownItem, DropdownToggle } from '../../dropdown/src/index';
 import { variables } from '../../theme/src/index';
 
 ## Card
@@ -17,13 +19,27 @@ We have a special `<DashboardCard />` component for card elements in dashboard. 
 
 You can specify an `action` prop to add an icon button with any action.
 
-<Example title="With Action" scope={{ Card, CardGrid, Button, DashboardCard, Fragment }} code={require('../examples/2-with-action.raw')} />
+<Example
+  title="With Action"
+  scope={{
+    Card,
+    CardGrid,
+    Button,
+    DashboardCard,
+    Dropdown,
+    DropdownMenu,
+    DropdownItem,
+    DropdownToggle,
+    Fragment
+  }}
+  code={require('../examples/2-with-action.raw')}
+/>
 
 ### Card Props
 
 These props apply to both `Card` and `DashboardCard` components.
 
-TODO
+<Props props={cardProps} />
 
 ## CardGrid
 
@@ -31,6 +47,8 @@ Dashboard card are displayed in a gridded manner. The `CardGrid` component can h
 
 <Example title="Card Grid" scope={{ Card, CardGrid, DashboardCard, Fragment }} code={require('../examples/3-card-grid.raw')} />
 
+<Example title="Card Grid with 2 row and centered" scope={{ Card, CardGrid, DashboardCard, Fragment }} code={require('../examples/4-card-grid-centered.raw')} />
+
 ### CardGrid Props
 
-TODO
+<Props props={cardGridProps} />

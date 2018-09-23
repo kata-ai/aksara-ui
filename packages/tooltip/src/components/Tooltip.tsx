@@ -2,6 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import omit from 'lodash-es/omit';
 
+import { Theme } from '@kata-kit/theme';
+
 export interface TooltipProps {
   placement?: 'top' | 'right' | 'bottom' | 'left';
   className?: string;
@@ -54,9 +56,13 @@ export default class Tooltip extends React.Component<TooltipProps> {
     }
 
     return (
-      <Root role="tooltip" show={show} {...props}>
-        <Inner>{children}</Inner>
-      </Root>
+      <Theme>
+        {themeAttributes => (
+          <Root role="tooltip" show={show} {...props}>
+            <Inner>{children}</Inner>
+          </Root>
+        )}
+      </Theme>
     );
   }
 }

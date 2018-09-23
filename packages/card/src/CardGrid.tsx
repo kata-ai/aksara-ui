@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import styled from 'styled-components';
-import { variables } from '@kata-kit/theme';
+
+import { Theme, variables } from '@kata-kit/theme';
 
 export interface CardGridProps {
   className?: string;
@@ -11,19 +12,27 @@ export interface CardGridProps {
 
 class CardGrid extends React.Component<CardGridProps> {
   render() {
-    const { className, cardsPerRow = 3 } = this.props;
+    const { className, cardsPerRow = 3, ...rest } = this.props;
     return (
-      <Wrapper className={classnames(className)}>
-        {React.Children.map(
-          this.props.children,
-          Item =>
-            Item ? (
-              <CardWrapper cardsPerRow={cardsPerRow}>{Item}</CardWrapper>
-            ) : (
-              Item
-            )
+      <Theme>
+        {themeAttributes => (
+          <Wrapper
+            className={classnames(className)}
+            {...rest}
+            {...themeAttributes}
+          >
+            {React.Children.map(
+              this.props.children,
+              Item =>
+                Item ? (
+                  <CardWrapper cardsPerRow={cardsPerRow}>{Item}</CardWrapper>
+                ) : (
+                  Item
+                )
+            )}
+          </Wrapper>
         )}
-      </Wrapper>
+      </Theme>
     );
   }
 }

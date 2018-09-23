@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import isNumber from 'lodash-es/isNumber';
 import classnames from 'classnames';
 
+import { Theme } from '@kata-kit/theme';
 import { Button } from '@kata-kit/button';
 
 interface PaginationProps {
@@ -68,39 +69,45 @@ class Pagination extends Component<PaginationProps, PaginationState> {
     const pages = this.generatePages();
 
     return (
-      <PaginationBase className={className}>
-        <PaginationButton
-          isIcon
-          color="white"
-          disabled={current === 1}
-          onClick={() => this.props.onSelect(current - 1)}
-        >
-          &laquo;
-        </PaginationButton>
-        {pages.map((page, index) => (
-          <PaginationButton
-            key={index}
-            isIcon
-            color="white"
-            className={classnames(
-              'pagination',
-              page === current && 'is-active'
-            )}
-            onClick={() => (isNumber(page) ? this.props.onSelect(page) : null)}
-            disabled={!isNumber(page)}
-          >
-            {page}
-          </PaginationButton>
-        ))}
-        <PaginationButton
-          isIcon
-          color="white"
-          disabled={current === this.props.total}
-          onClick={() => this.props.onSelect(current + 1)}
-        >
-          &raquo;
-        </PaginationButton>
-      </PaginationBase>
+      <Theme>
+        {themeAttributes => (
+          <PaginationBase className={className} {...themeAttributes}>
+            <PaginationButton
+              isIcon
+              color="white"
+              disabled={current === 1}
+              onClick={() => this.props.onSelect(current - 1)}
+            >
+              &laquo;
+            </PaginationButton>
+            {pages.map((page, index) => (
+              <PaginationButton
+                key={index}
+                isIcon
+                color="white"
+                className={classnames(
+                  'pagination',
+                  page === current && 'is-active'
+                )}
+                onClick={() =>
+                  isNumber(page) ? this.props.onSelect(page) : null
+                }
+                disabled={!isNumber(page)}
+              >
+                {page}
+              </PaginationButton>
+            ))}
+            <PaginationButton
+              isIcon
+              color="white"
+              disabled={current === this.props.total}
+              onClick={() => this.props.onSelect(current + 1)}
+            >
+              &raquo;
+            </PaginationButton>
+          </PaginationBase>
+        )}
+      </Theme>
     );
   }
 }

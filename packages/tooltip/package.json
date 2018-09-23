@@ -17,6 +17,7 @@
     "clean": "rimraf lib && rimraf tsc-out"
   },
   "dependencies": {
+    "@kata-kit/theme": "^0.5.0",
     "classnames": "^2.2.6",
     "dom-helpers": "^3.3.1",
     "lodash-es": "^4.17.10",

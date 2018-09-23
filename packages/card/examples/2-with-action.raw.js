@@ -4,9 +4,18 @@
       <DashboardCard
         title="First Card"
         action={
-          <Button color="secondary" isIcon>
-            <i className="icon-more" />
-          </Button>
+          <Dropdown>
+            <DropdownToggle caret={false}>
+              <Button isIcon>
+                <i className="icon-more" />
+              </Button>
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem onClick={() => console.log('Item')}>
+                Menu item
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         }
       >
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -14,6 +23,7 @@
       </DashboardCard>
       <DashboardCard
         title="Second Card"
+        avatar={'https://via.placeholder.com/350x150'}
         action={
           <Button color="secondary" isIcon>
             <i className="icon-more" />
