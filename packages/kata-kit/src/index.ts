@@ -40,6 +40,44 @@ import {
   FormError
 } from './form';
 
+import {
+  variables as ThemeVariables,
+  ThemeAttributesMap,
+  ThemeAttributes,
+  Theme,
+  Provider as ThemeProvider,
+  KataReset,
+  Consumer as ThemeConsumer
+} from './theme';
+
+import { TooltipTarget, Tooltip } from './tooltip';
+
+import {
+  ModalProps,
+  ModalHeaderProps,
+  ModalHeader,
+  ModalFooter,
+  ModalBodyProps,
+  ModalBody,
+  Modal
+} from './modal';
+
+import { Pagination } from './pagination';
+
+import {
+  Wrapper,
+  SidebarSubMenu,
+  SidebarSub,
+  SidebarMainMenu,
+  SidebarMain,
+  SidebarAndContent,
+  Sidebar,
+  Content,
+  Container
+} from './layout';
+
+import { Robot, InfiniteScrollSpinner, Circle } from './loading';
+
 export {
   Button,
   ButtonColors,
@@ -71,5 +109,34 @@ export {
   InputText,
   FormLabel,
   FormGroup,
-  FormError
+  FormError,
+  Robot,
+  InfiniteScrollSpinner,
+  Circle,
+  Wrapper,
+  SidebarSubMenu,
+  SidebarSub,
+  SidebarMainMenu,
+  SidebarMain,
+  SidebarAndContent,
+  Sidebar,
+  Content,
+  Container,
+  ModalProps,
+  ModalHeaderProps,
+  ModalHeader,
+  ModalFooter,
+  ModalBodyProps,
+  ModalBody,
+  Modal,
+  Pagination,
+  ThemeVariables,
+  ThemeAttributesMap,
+  ThemeAttributes,
+  Theme,
+  ThemeProvider,
+  KataReset,
+  ThemeConsumer,
+  TooltipTarget,
+  Tooltip
 };

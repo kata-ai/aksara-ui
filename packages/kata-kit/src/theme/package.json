@@ -1,0 +1,4 @@
+{
+  "name": "kata-kit/theme",
+  "main": "./lib/index.js"
+}
