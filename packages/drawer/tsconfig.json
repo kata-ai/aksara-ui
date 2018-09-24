@@ -3,6 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./lib",
+    "rootDir": "./src",
     "outDir": "./tsc-out"
   },
   "references": [{ "path": "../button" }, { "path": "../theme" }],

@@ -3,9 +3,14 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./lib",
+    "rootDir": "./src",
     "outDir": "./tsc-out"
   },
-  "references": [{ "path": "../layout" }, { "path": "../tooltip" }],
+  "references": [
+    { "path": "../layout" },
+    { "path": "../theme" },
+    { "path": "../tooltip" }
+  ],
   "include": ["./src/**/*", "../../types/**/*.d.ts"],
   "exclude": ["./lib", "./**/__stories__", "./scripts"]
 }

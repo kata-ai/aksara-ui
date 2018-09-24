@@ -2,10 +2,16 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "lib",
-    "rootDir": "src",
-    "outDir": "tsc-out"
+    "declarationDir": "./lib",
+    "rootDir": "./src",
+    "outDir": "./tsc-out"
   },
+  "references": [
+    { "path": "../packages/badge" },
+    { "path": "../packages/button" },
+    { "path": "../packages/loading" },
+    { "path": "../packages/theme" }
+  ],
   "include": ["./**/*", "../types/**/*.d.ts"],
   "exclude": ["./lib", "./**/__stories__", "./scripts"]
 }

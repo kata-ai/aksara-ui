@@ -1,11 +1,12 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./lib",
+    "rootDir": "./src",
     "outDir": "./tsc-out"
   },
-  "references": [{ "path": "../button" }],
+  "references": [{ "path": "../button" }, { "path": "../theme" }],
   "include": ["./src/**/*", "../../types/**/*.d.ts"],
   "exclude": ["./lib", "./**/__stories__", "./scripts"]
 }
