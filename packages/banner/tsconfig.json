@@ -1,3 +1,10 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./lib",
+    "outDir": "./tsc-out"
+  },
+  "include": ["./src/**/*", "../../types/**/*.d.ts"],
+  "exclude": ["./lib", "./**/__stories__", "./scripts"]
 }

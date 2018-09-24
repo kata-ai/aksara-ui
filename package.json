@@ -26,7 +26,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
+    "build": "yarn clean && lerna run build",
     "clean": "lerna run clean",
     "lerna": "lerna"
   },

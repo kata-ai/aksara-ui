@@ -14,8 +14,9 @@
     "./images"
   ],
   "scripts": {
-    "build": "npm run clean && tsc -p tsconfig.build.json && rollup -c ../../rollup.config.js",
-    "clean": "rimraf lib && rimraf tsc-out"
+    "build": "yarn clean && yarn tsc && rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "tsc": "tsc -b"
   },
   "dependencies": {
     "classnames": "^2.2.6",

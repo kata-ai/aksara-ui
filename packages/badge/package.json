@@ -11,8 +11,9 @@
     "./lib"
   ],
   "scripts": {
-    "build": "npm run clean && tsc -p tsconfig.build.json && rollup -c ../../rollup.config.js",
-    "clean": "rimraf lib && rimraf tsc-out"
+    "build": "yarn clean && yarn tsc && rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "tsc": "tsc -b"
   },
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
