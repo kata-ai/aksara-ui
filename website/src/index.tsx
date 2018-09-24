@@ -1,6 +1,3 @@
-// `@babel/polyfill` is needed for some features to work (e.g. )
-import '@babel/polyfill';
-
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';

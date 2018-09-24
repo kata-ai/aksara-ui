@@ -14,19 +14,20 @@
     "./images"
   ],
   "scripts": {
-    "build": "npm run clean && tsc -p tsconfig.build.json && rollup -c ../../rollup.config.js",
-    "clean": "rimraf lib && rimraf tsc-out"
+    "build": "yarn clean && yarn tsc && rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "tsc": "tsc -b"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "shortid": "^2.2.12",
-    "styled-components": "^3.4.0"
+    "shortid": "^2.2.13",
+    "styled-components": "^3.4.9"
   },
   "peerDependencies": {
     "react": "^16.3.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.3",
+    "@types/classnames": "^2.2.6",
     "@types/shortid": "^0.0.29"
   }
 }
