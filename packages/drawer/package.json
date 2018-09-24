@@ -21,13 +21,13 @@
     "@kata-kit/theme": "^0.5.0",
     "classnames": "^2.2.6",
     "react-custom-scrollbars": "^4.2.1",
-    "styled-components": "^3.4.0"
+    "styled-components": "^3.4.9"
   },
   "peerDependencies": {
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.3"
+    "@types/classnames": "^2.2.6"
   }
 }

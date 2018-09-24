@@ -19,14 +19,14 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "shortid": "^2.2.12",
-    "styled-components": "^3.4.0"
+    "shortid": "^2.2.13",
+    "styled-components": "^3.4.9"
   },
   "peerDependencies": {
     "react": "^16.3.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.3",
+    "@types/classnames": "^2.2.6",
     "@types/shortid": "^0.0.29"
   }
 }
