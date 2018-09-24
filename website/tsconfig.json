@@ -1,8 +1,23 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "noEmit": true
+    "composite": true
   },
-  "include": ["./src/**/*", "../types/**/*.d.ts"],
-  "exclude": ["./lib", "./**/__stories__"]
+  "references": [
+    { "path": "../packages/badge" },
+    { "path": "../packages/banner" },
+    { "path": "../packages/button" },
+    { "path": "../packages/card" },
+    { "path": "../packages/common" },
+    { "path": "../packages/dashboard" },
+    { "path": "../doc-utils" },
+    { "path": "../packages/dropdown" },
+    { "path": "../packages/form" },
+    { "path": "../packages/layout" },
+    { "path": "../packages/loading" },
+    { "path": "../packages/pagination" },
+    { "path": "../packages/split-button" },
+    { "path": "../packages/theme" },
+    { "path": "../packages/tooltip" }
+  ]
 }
