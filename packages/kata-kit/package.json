@@ -1,0 +1,54 @@
+{
+  "name": "kata-kit",
+  "version": "0.5.0",
+  "description": "Bundled Kata-kit",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "**/lib/*"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc -p tsconfig.build.json && rollup -c ../../rollup.config.js",
+    "clean": "rimraf lib && rimraf tsc-out"
+  },
+  "dependencies": {
+    "@kata-kit/assets": "^0.5.0",
+    "@kata-kit/badge": "^0.5.0",
+    "@kata-kit/banner": "^0.5.0",
+    "@kata-kit/button": "^0.5.0",
+    "@kata-kit/card": "^0.5.0",
+    "@kata-kit/common": "^0.5.0",
+    "@kata-kit/dashboard": "^0.5.0",
+    "@kata-kit/drawer": "^0.5.0",
+    "@kata-kit/dropdown": "^0.5.0",
+    "@kata-kit/fonts": "^0.5.0",
+    "@kata-kit/form": "^0.5.0",
+    "@kata-kit/layout": "^0.5.0",
+    "@kata-kit/loading": "^0.5.0",
+    "@kata-kit/modal": "^0.5.0",
+    "@kata-kit/pagination": "^0.5.0",
+    "@kata-kit/reset": "^0.5.0",
+    "@kata-kit/split-button": "^0.5.0",
+    "@kata-kit/theme": "^0.5.0",
+    "@kata-kit/tooltip": "^0.5.0",
+    "classnames": "^2.2.6",
+    "dom-helpers": "^3.3.1",
+    "lodash-es": "^4.17.10",
+    "react-overlays": "^0.8.3",
+    "styled-components": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/lodash-es": "^4.17.1",
+    "@types/react-overlays": "^0.8.4"
+  }
+}
