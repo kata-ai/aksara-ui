@@ -35,8 +35,8 @@
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
     "@types/chalk": "^2.2.0",
     "@types/node": "^10.10.3",
     "@types/react": "^16.4.14",
