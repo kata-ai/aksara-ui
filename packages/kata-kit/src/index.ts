@@ -1,3 +1,5 @@
+import { Reset } from './reset';
+
 import {
   Button,
   ButtonColors,
@@ -41,12 +43,10 @@ import {
 } from './form';
 
 import {
-  variables as ThemeVariables,
   ThemeAttributesMap,
   ThemeAttributes,
   Theme,
   Provider as ThemeProvider,
-  KataReset,
   Consumer as ThemeConsumer
 } from './theme';
 
@@ -130,13 +130,12 @@ export {
   ModalBody,
   Modal,
   Pagination,
-  ThemeVariables,
   ThemeAttributesMap,
   ThemeAttributes,
   Theme,
   ThemeProvider,
-  KataReset,
   ThemeConsumer,
   TooltipTarget,
-  Tooltip
+  Tooltip,
+  Reset
 };

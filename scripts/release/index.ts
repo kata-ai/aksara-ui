@@ -1,7 +1,7 @@
 import debug from 'debug';
 
 import { getAllPackages, mapPkgNameToPkgJson } from '../utils/workspaces';
-import { reinstallDeps, publish } from '../utils/packages';
+import { reinstallDeps, publish, buildPackages } from '../utils/packages';
 
 const log = debug('RELEASE');
 
@@ -16,9 +16,10 @@ const log = debug('RELEASE');
     return map;
   }, {});
 
-  log(versions);
-
   await reinstallDeps();
+  const buildLog = await buildPackages();
+
+  console.log(buildLog);
 
   await publish(pkgJsons);
 })();
