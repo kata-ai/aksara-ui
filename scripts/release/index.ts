@@ -10,16 +10,26 @@ const log = debug('RELEASE');
   const pkgJsons = await Promise.all(
     updates.map(pkg => mapPkgNameToPkgJson(pkg))
   );
+
+  log('pkgJsons', pkgJsons);
+
   const versions = updates.reduce((map, pkg, idx) => {
     const { version } = pkgJsons[idx];
     map[pkg] = `${version}`;
     return map;
   }, {});
 
-  await reinstallDeps();
-  const buildLog = await buildPackages();
+  log('versions', versions);
 
-  console.log(buildLog);
+  await reinstallDeps();
+
+  log('Done reinstalling dependencies');
+
+  await buildPackages();
+
+  log('Done build packages');
 
   await publish(pkgJsons);
+
+  log('Done publish packages');
 })();

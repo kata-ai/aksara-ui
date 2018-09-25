@@ -3,6 +3,7 @@ import ora from 'ora';
 import Listr from 'listr';
 import { readFileSync } from 'fs';
 import debug from 'debug';
+import getStream from 'get-stream';
 
 import { ROOT } from './constants';
 import { mapPkgNameToPkgPath } from './workspaces';
@@ -28,7 +29,11 @@ export const reinstallDeps = async () => {
 export const publish = async pkgs => {
   try {
     // don't publish demo package for now
-    const filteredPkgs = pkgs.filter(pkg => pkg.name !== 'demo');
+    const filteredPkgs = pkgs.filter(pkg => {
+      log('filteredPkgs', pkg);
+
+      return pkg.name !== '@kata-kit/demo';
+    });
     const taskArray = (await Promise.all(
       filteredPkgs.map(async pkg => {
         const path = await mapPkgNameToPkgPath(pkg);
@@ -37,10 +42,10 @@ export const publish = async pkgs => {
           readFileSync(`${path}/package.json`, 'utf8')
         );
 
-        log(pkgDescriptor);
+        log('taskArray', pkgDescriptor);
 
         return {
-          title: `📦  ${pkg.name}@${pkg.version}`,
+          title: `📦  ${pkg.name}@${pkgDescriptor.version}`,
           task: () => publishPackage(pkg, 'staging')
         };
       })
@@ -58,16 +63,23 @@ export const publish = async pkgs => {
   }
 };
 
+// @ts-ignore
 export const buildPackages = async () => {
   try {
-    const loader = ora('Building packages...').start();
-    const { stdout } = await execa('lerna', ['run', 'build'], { cwd: ROOT });
+    const loader = ora('Building packages...\n').start();
+    const { stdout } = execa('lerna', ['run', 'build'], { cwd: ROOT });
+
+    // pipe the execa stdout to process stdout
+    stdout.pipe(process.stdout);
+
+    // print out the build process since it will be swallowed by execa
+    console.log(await getStream(stdout));
 
     loader.stopAndPersist({
       symbol: '✅ '
     });
 
-    return stdout;
+    return await stdout;
   } catch (error) {
     console.error(error);
     process.exit(1);
@@ -77,9 +89,6 @@ export const buildPackages = async () => {
 async function publishPackage(pkg, releaseType) {
   try {
     const path = await mapPkgNameToPkgPath(pkg);
-
-    log(path);
-
     const npmArgs = ['publish', '--registry', 'http://localhost:4873', '-f'];
 
     return execa('npm', npmArgs, { cwd: path });

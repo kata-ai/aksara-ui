@@ -1,14 +1,12 @@
 import glob from 'glob';
 import { DepGraph } from 'dependency-graph';
-import debug from 'debug';
+// import debug from 'debug';
 
 import { ROOT } from './constants';
-import { readFileSync } from 'fs';
 
-// tslint:disable-next-line
 console.log('Current root project is on', `'${ROOT}'`);
 
-const log = debug('WORKSPACES');
+// const log = debug('WORKSPACES');
 const { workspaces: rootWorkspaces } = require(`${ROOT}/package.json`);
 const workspaces = rootWorkspaces.packages.map(
   workspace => `${ROOT}/${workspace}`
