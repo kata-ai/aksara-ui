@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
 
+import { Theme } from '@kata-kit/theme';
+
 import ModalDialog from './ModalDialog';
 import ModalContext from './ModalContext';
 import { ModalOverlayStyles, ModalBase, WithThemeProps } from '../styles';
@@ -104,17 +106,22 @@ class Modal extends React.Component<ModalProps, ModalState> {
             onClick={this.onCloseDrawer}
           />
         )}
-        <ModalWrapper
-          className={classnames(
-            this.state.show ? 'is-open' : 'is-closed',
-            this.props.className
+        <Theme>
+          {themeAttributes => (
+            <ModalWrapper
+              className={classnames(
+                this.state.show ? 'is-open' : 'is-closed',
+                this.props.className
+              )}
+              onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
+              {...themeAttributes}
+            >
+              <ModalContext.Provider value={this.getContextAPI()}>
+                <ModalDialog>{this.props.children}</ModalDialog>
+              </ModalContext.Provider>
+            </ModalWrapper>
           )}
-          onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
-        >
-          <ModalContext.Provider value={this.getContextAPI()}>
-            <ModalDialog>{this.props.children}</ModalDialog>
-          </ModalContext.Provider>
-        </ModalWrapper>
+        </Theme>
       </Fragment>
     );
     return createPortal(wrapper, this.el);

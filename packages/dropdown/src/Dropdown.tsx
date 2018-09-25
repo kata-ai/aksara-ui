@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import omit from 'lodash-es/omit';
 import styled from 'styled-components';
 
+import { Theme } from '@kata-kit/theme';
+
 import { DropdownBase } from './styles';
 
 interface DropdownProps {
@@ -101,23 +103,27 @@ class Dropdown extends React.Component<DropdownProps> {
 
     // TODO: use new React context instead of cloneElement
     return (
-      <DropdownWrapper className={classes} {...props}>
-        {React.Children.map(children, (Item: ReactElement<any>) => {
-          return Item &&
-            Item.type &&
-            ['DropdownMenu', 'DropdownToggle'].some(
-              type => type === (Item.type as any).displayName
-            )
-            ? React.cloneElement(Item, {
-                ...props,
-                isOpen: this.state.isOpen,
-                toggle: this.toggle,
-                direction,
-                onSelect: this.onSelect
-              })
-            : Item;
-        })}
-      </DropdownWrapper>
+      <Theme>
+        {themeAttributes => (
+          <DropdownWrapper className={classes} {...themeAttributes} {...props}>
+            {React.Children.map(children, (Item: ReactElement<any>) => {
+              return Item &&
+                Item.type &&
+                ['DropdownMenu', 'DropdownToggle'].some(
+                  type => type === (Item.type as any).displayName
+                )
+                ? React.cloneElement(Item, {
+                    ...props,
+                    isOpen: this.state.isOpen,
+                    toggle: this.toggle,
+                    direction,
+                    onSelect: this.onSelect
+                  })
+                : Item;
+            })}
+          </DropdownWrapper>
+        )}
+      </Theme>
     );
   }
 }

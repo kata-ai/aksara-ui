@@ -1,9 +1,10 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "jsx": "preserve",
     "target": "es2016",
-    "module": "esnext"
+    "module": "esnext",
+    "composite": false
   },
   "include": ["./src/**/*", "../types/**/*.d.ts"],
   "exclude": ["./build", "./**/__stories__"]

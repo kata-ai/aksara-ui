@@ -3,9 +3,10 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 
 import { Circle } from '@kata-kit/loading';
-import { variables } from '@kata-kit/theme';
+import ThemedComponent, { variables } from '@kata-kit/theme';
 
 import ButtonBase from '../styles';
+import themes from '../theme';
 
 export interface SupportButtonProps
   extends React.HTMLAttributes<HTMLButtonElement> {
@@ -70,23 +71,28 @@ class Button extends React.Component<SupportButtonProps> {
     );
 
     return (
-      <SupportButtonWrapper
-        type="button"
-        className={classes}
-        onClick={this.onClick}
-        disabled={disabled}
-        loading={loading}
-        {...props}
-      >
-        {loading ? (
-          <Fragment>
-            <LoaderCircle size={30} />
-            <InvisibleText>{this.props.children}</InvisibleText>
-          </Fragment>
-        ) : (
-          this.props.children
+      <ThemedComponent themes={themes.button}>
+        {themeAttributes => (
+          <SupportButtonWrapper
+            type="button"
+            className={classes}
+            onClick={this.onClick}
+            disabled={disabled}
+            loading={loading}
+            {...props}
+            {...themeAttributes}
+          >
+            {loading ? (
+              <Fragment>
+                <LoaderCircle size={30} />
+                <InvisibleText>{this.props.children}</InvisibleText>
+              </Fragment>
+            ) : (
+              this.props.children
+            )}
+          </SupportButtonWrapper>
         )}
-      </SupportButtonWrapper>
+      </ThemedComponent>
     );
   }
 }

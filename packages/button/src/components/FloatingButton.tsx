@@ -2,9 +2,11 @@ import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
+import ThemedComponent from '@kata-kit/theme';
 import { Circle } from '@kata-kit/loading';
 import { variables } from '@kata-kit/theme';
 
+import themes from '../theme';
 import ButtonBase from '../styles';
 
 export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
@@ -63,21 +65,26 @@ class FloatingButton extends React.Component<FloatingButtonProps> {
     const classes = classNames(color, active, className);
 
     return (
-      <FloatingButtonWrapper
-        type={type}
-        className={classes}
-        onClick={this.onClick}
-        disabled={disabled}
-        {...props}
-      >
-        {isLoading ? (
-          <Fragment>
-            <LoaderCircle size={40} />
-          </Fragment>
-        ) : (
-          <i className={`icon-${icon}`} />
+      <ThemedComponent themes={themes.button}>
+        {themeAttributes => (
+          <FloatingButtonWrapper
+            type={type}
+            className={classes}
+            onClick={this.onClick}
+            disabled={disabled}
+            {...props}
+            {...themeAttributes}
+          >
+            {isLoading ? (
+              <Fragment>
+                <LoaderCircle size={40} />
+              </Fragment>
+            ) : (
+              <i className={`icon-${icon}`} />
+            )}
+          </FloatingButtonWrapper>
         )}
-      </FloatingButtonWrapper>
+      </ThemedComponent>
     );
   }
 }

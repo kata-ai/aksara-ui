@@ -13,18 +13,19 @@
     "./lib"
   ],
   "scripts": {
-    "build": "npm run clean && tsc -p tsconfig.build.json && rollup -c ../../rollup.config.js",
-    "clean": "rimraf lib && rimraf tsc-out"
+    "build": "yarn clean && yarn tsc && rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "tsc": "tsc -b"
   },
   "dependencies": {
     "@kata-kit/theme": "^0.5.0",
     "classnames": "^2.2.6",
-    "styled-components": "^3.4.0"
+    "styled-components": "^3.4.9"
   },
   "peerDependencies": {
     "react": "^16.3.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.3"
+    "@types/classnames": "^2.2.6"
   }
 }

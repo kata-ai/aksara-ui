@@ -1,10 +1,25 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "dom"],
+    "jsx": "react",
     "baseUrl": "./packages",
     "paths": {
       "@kata-kit/*": ["./*/src"],
       "@kata-kit/doc-utils": ["../doc-utils/src"]
-    }
+    },
+    "composite": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "removeComments": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
 }

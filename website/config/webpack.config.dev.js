@@ -203,6 +203,7 @@ const config = {
       }
     ]
   },
+  // @ts-ignore
   plugins: [
     new HtmlWebpackPlugin({
       title: 'kata-kit',
