@@ -10,11 +10,14 @@ import { mapPkgNameToPkgPath } from './workspaces';
 
 const log = debug('PACKAGES');
 
+/**
+ * Run `lerna bootstrap` behind the scene.
+ */
 export const reinstallDeps = async () => {
   try {
     const loader = ora('Reinstall dependencies...').start();
 
-    await execa('yarn', {
+    await execa('yarn', ['bootstrap'], {
       cwd: ROOT
     });
 
@@ -26,14 +29,18 @@ export const reinstallDeps = async () => {
   }
 };
 
+/**
+ * Publish all packages to NPM.
+ *
+ * @param {*} pkgs respective package.json object
+ * @returns
+ */
 export const publish = async pkgs => {
   try {
     // don't publish demo package for now
-    const filteredPkgs = pkgs.filter(pkg => {
-      log('filteredPkgs', pkg);
+    const filteredPkgs = pkgs.filter(pkg => pkg.name !== '@kata-kit/demo');
 
-      return pkg.name !== '@kata-kit/demo';
-    });
+    // build tasks as array for Listr
     const taskArray = (await Promise.all(
       filteredPkgs.map(async pkg => {
         const path = await mapPkgNameToPkgPath(pkg);
@@ -63,11 +70,18 @@ export const publish = async pkgs => {
   }
 };
 
+/**
+ * Run build for all packages.
+ *
+ * @returns any
+ */
 // @ts-ignore
-export const buildPackages = async () => {
+const buildPackages = async () => {
   try {
     const loader = ora('Building packages...\n').start();
-    const { stdout } = execa('lerna', ['run', 'build'], { cwd: ROOT });
+    const { stdout } = execa('lerna', ['run', 'build', '--scope', 'kata-kit'], {
+      cwd: ROOT
+    });
 
     // pipe the execa stdout to process stdout
     stdout.pipe(process.stdout);

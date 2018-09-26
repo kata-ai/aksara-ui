@@ -8,6 +8,9 @@ console.log('Current root project is on', `'${ROOT}'`);
 
 // const log = debug('WORKSPACES');
 const { workspaces: rootWorkspaces } = require(`${ROOT}/package.json`);
+
+// we have `doc-utils`, `website`, and `packages` on our workspaces.
+// we only need the `packages` from workspace for now
 const workspaces = rootWorkspaces.packages.map(
   workspace => `${ROOT}/${workspace}`
 );
@@ -60,6 +63,7 @@ function mapPackagesToDepGraph(packagePaths) {
   const graph = new DepGraph();
   const packages = mapPackagestoPkgJson(packagePaths);
 
+  // add package to graph node
   packages.forEach(pkg => graph.addNode(pkg.name));
   packages.forEach(({ name, dependencies, devDependencies }) => {
     const allDeps = Object.assign({}, dependencies, devDependencies);
