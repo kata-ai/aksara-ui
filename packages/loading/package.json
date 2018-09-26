@@ -10,7 +10,7 @@
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "files": [
-    "**/lib/*",
+    "lib",
     "**/images/*"
   ],
   "scripts": {

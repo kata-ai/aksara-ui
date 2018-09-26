@@ -8,7 +8,7 @@
   "kata-kit:src": "./src/index.ts",
   "repository": "https://github.com/kata-ai/kata-kit.git",
   "files": [
-    "**/lib/*"
+    "lib"
   ],
   "scripts": {
     "build": "yarn clean && yarn tsc && rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
