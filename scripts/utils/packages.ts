@@ -76,7 +76,7 @@ export const publish = async pkgs => {
  * @returns any
  */
 // @ts-ignore
-const buildPackages = async () => {
+export const buildPackages = async () => {
   try {
     const loader = ora('Building packages...\n').start();
     const { stdout } = execa('lerna', ['run', 'build', '--scope', 'kata-kit'], {
