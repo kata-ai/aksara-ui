@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./lib",
+    "rootDir": "./src",
+    "outDir": "./tsc-out"
+  },
+  "references": [
+    { "path": "../button" },
+    { "path": "../card" },
+    { "path": "../drawer" },
+    { "path": "../common" },
+    { "path": "../dashboard" },
+    { "path": "../dropdown" },
+    { "path": "../form" },
+    { "path": "../theme" },
+    { "path": "../tooltip" },
+    { "path": "../modal" },
+    { "path": "../pagination" },
+    { "path": "../layout" },
+    { "path": "../loading" }
+  ],
+  "include": ["./src/**/*", "../../types/**/*.d.ts"],
+  "exclude": ["./lib", "./**/__stories__", "./scripts"]
+}

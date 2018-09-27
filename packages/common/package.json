@@ -10,7 +10,7 @@
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "files": [
-    "./lib"
+    "lib"
   ],
   "scripts": {
     "build": "yarn clean && yarn tsc && rollup -i ./tsc-out/index.js -c ../../rollup.config.js",

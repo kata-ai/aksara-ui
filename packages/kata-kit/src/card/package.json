@@ -1,0 +1,4 @@
+{
+  "name": "kata-kit/card",
+  "main": "./lib/index.js"
+}

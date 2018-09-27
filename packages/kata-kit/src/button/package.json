@@ -1,0 +1,4 @@
+{
+  "name": "kata-kit/button",
+  "main": "./lib/index.js"
+}

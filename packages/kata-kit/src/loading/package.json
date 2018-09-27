@@ -1,0 +1,4 @@
+{
+  "name": "kata-kit/loading",
+  "main": "./lib/index.js"
+}
