@@ -29,7 +29,6 @@ export default Logo;
 const Root = styled('div')`
   width: 64px;
   height: 100%;
-  margin-right: 12px;
   text-align: center;
 
   img {
