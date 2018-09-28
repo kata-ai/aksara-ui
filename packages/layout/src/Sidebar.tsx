@@ -4,13 +4,14 @@ import { variables } from '@kata-kit/theme';
 
 export interface SidebarProps {
   collapsed?: boolean;
+  hasTop?: boolean;
 }
 
-const Sidebar: React.SFC<SidebarProps> = ({ collapsed, children }) => {
+const Sidebar: React.SFC<SidebarProps> = ({ collapsed, hasTop, children }) => {
   return (
-    <Wrapper>
+    <Wrapper hasTop={hasTop}>
       <Inner collapsed={collapsed}>
-        <FixedContainer>{children}</FixedContainer>
+        <FixedContainer hasTop={hasTop}>{children}</FixedContainer>
       </Inner>
     </Wrapper>
   );
@@ -27,12 +28,12 @@ const Inner = styled<SidebarProps, 'div'>('div')`
   width: ${props => (props.collapsed ? variables.spaces.space8 : '280px')};
 `;
 
-const FixedContainer = styled('div')`
+const FixedContainer = styled<SidebarProps, 'div'>('div')`
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: ${props => (props.hasTop ? 'calc(100vh - 64px)' : '100vh')};
   position: fixed;
-  top: 0;
+  top: ${props => (props.hasTop ? '64px' : 0)};
   left: 0;
   width: inherit;
   z-index: 50;

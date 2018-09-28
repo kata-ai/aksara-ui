@@ -12,6 +12,7 @@ import universal from 'react-universal-component';
 
 import {
   Wrapper,
+  Topbar,
   SidebarAndContent,
   Content,
   Sidebar,
@@ -25,8 +26,7 @@ import SidebarLoading from './components/SidebarLoading';
 
 import { RootStore, PackageMetadata } from '../../types/app';
 import { populatePackages, populateError } from '../../store/packages/actions';
-
-const Logo = require('@kata-kit/assets/images/logo-white.svg');
+import Logo from './components/Logo';
 
 const Home = universal(() => import('../home'), {
   loading: Loading
@@ -105,9 +105,10 @@ class App extends React.Component<Props> {
 
     return (
       <Wrapper>
-        <SidebarAndContent>
-          <Sidebar collapsed={this.isSidebarCollapsed()}>
-            <SidebarMain logo={Logo}>
+        <Topbar leftContent={<Logo />} />
+        <SidebarAndContent hasTop>
+          <Sidebar hasTop collapsed={this.isSidebarCollapsed()}>
+            <SidebarMain>
               {Object.keys(sidebar.menus).map(menu => (
                 <Fragment key={menu}>
                   <SidebarMainMenu

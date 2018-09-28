@@ -4,7 +4,7 @@ import Scrollbars from 'react-custom-scrollbars';
 import { variables } from '@kata-kit/theme';
 
 export interface SidebarMainProps {
-  logo: string;
+  logo?: string;
 }
 
 const SidebarMain: React.SFC<SidebarMainProps> = ({ logo, children }) => (
