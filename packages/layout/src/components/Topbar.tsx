@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-import ThemedComponent, { ThemeAttributes } from '@kata-kit/theme';
+import { ThemeAttributes, Theme } from '@kata-kit/theme';
 
-import themes from '../theme';
+import themes from '../themes/Topbar';
 
 export interface TopbarProps {
   /** Left-side content of the topbar */
@@ -21,14 +21,14 @@ const Topbar: React.SFC<TopbarProps> = ({
   flexChildren,
   children
 }) => (
-  <ThemedComponent themes={themes.topbar}>
+  <Theme values={themes}>
     {themeAttributes => (
       <Root {...themeAttributes}>
         {leftContent && <TopbarLeft>{leftContent}</TopbarLeft>}
         {children && <TopbarRight flex={flexChildren}>{children}</TopbarRight>}
       </Root>
     )}
-  </ThemedComponent>
+  </Theme>
 );
 
 export default Topbar;
