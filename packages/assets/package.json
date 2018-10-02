@@ -5,7 +5,7 @@
   "main": "N/A",
   "repository": "https://github.com/kata-ai/kata-kit.git",
   "author": "Kata.ai <info@kata.ai>",
-  "license": "see license in LICENSE",
+  "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
     "react": "^16.3.0"
   }
