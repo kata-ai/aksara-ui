@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/dashboard",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Dashboard component for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
