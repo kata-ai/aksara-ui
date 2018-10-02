@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/demo",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "kata-kit development environment",
   "main": "index.js",
   "repository": "https://github.com/kata-ai/kata-kit.git",
@@ -24,7 +24,7 @@
     "@kata-kit/banner": "^0.5.0",
     "@kata-kit/button": "^0.5.0",
     "@kata-kit/card": "^0.5.0",
-    "@kata-kit/common": "^0.5.0",
+    "@kata-kit/common": "^0.5.1",
     "@kata-kit/dashboard": "^0.5.0",
     "@kata-kit/doc-utils": "^0.5.0",
     "@kata-kit/dropdown": "^0.5.0",

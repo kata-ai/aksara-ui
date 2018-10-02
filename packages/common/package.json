@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/common",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Common components, toolkits, and methods for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -21,7 +21,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/assets": "^0.5.0",
+    "@kata-kit/assets": "^0.5.1",
     "classnames": "^2.2.6",
     "styled-components": "^3.4.9"
   },
