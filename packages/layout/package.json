@@ -13,9 +13,12 @@
     "lib"
   ],
   "scripts": {
-    "build": "yarn clean && yarn tsc && rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "build": "yarn clean && yarn tsc && yarn rollup",
     "clean": "rimraf lib && rimraf tsc-out",
-    "tsc": "tsc -b"
+    "rollup": "rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "tsc": "tsc -b",
+    "watch": "yarn rollup -w",
+    "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
     "@kata-kit/theme": "^0.5.0",

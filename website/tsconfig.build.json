@@ -4,7 +4,11 @@
     "jsx": "preserve",
     "target": "es2016",
     "module": "esnext",
-    "composite": false
+    "composite": false,
+    "paths": {
+      "@kata-kit/*": ["./*/lib"],
+      "@kata-kit/doc-utils": ["../doc-utils/lib"]
+    },
   },
   "include": ["./src/**/*", "../types/**/*.d.ts"],
   "exclude": ["./build", "./**/__stories__"]

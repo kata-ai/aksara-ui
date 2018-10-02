@@ -31,7 +31,9 @@
     "commitmsg": "commitlint -E GIT_PARAMS",
     "prepare": "tsc -p scripts/tsconfig.json",
     "release": "npm run prepare && node scripts/dist/release/index.js",
-    "lerna": "lerna"
+    "lerna": "lerna",
+    "watch": "lerna run watch --stream --parallel",
+    "watch:tsc": "lerna run watch:tsc --stream --parallel"
   },
   "dependencies": {
     "react": "^16.5.2",
@@ -68,6 +70,7 @@
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^6.0.0",
+    "tsc-watch": "^1.0.29",
     "tslint": "^5.10.0",
     "tslint-config-kata": "^1.0.5",
     "tslint-config-prettier": "^1.15.0",

@@ -11,8 +11,10 @@
     "lib"
   ],
   "scripts": {
-    "build": "rimraf lib && node-sass src/index.scss lib/index.css --output-style compressed",
-    "clean": "rimraf lib"
+    "build": "rimraf lib && yarn sass",
+    "clean": "rimraf lib",
+    "sass": "node-sass src/index.scss lib/index.css --output-style compressed",
+    "watch": "yarn sass --watch"
   },
   "dependencies": {},
   "peerDependencies": {},

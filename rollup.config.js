@@ -17,5 +17,5 @@ export default {
       sourcemap: true
     }
   ],
-  plugins: [autoExternal(), resolve(), commonjs(), filesize()]
+  plugins: [autoExternal(), resolve(), commonjs()]
 };

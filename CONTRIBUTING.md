@@ -72,6 +72,24 @@ $ yarn
 
 ## Developing
 
+### Developing Components
+
+To start developing components, you have to run the incremental build pipeline. These commands should be run in the repository's root directory. You need at least two terminal tabs.
+
+First, run the TypeScript compiler watcher on the first tab by running:
+
+```sh-session
+$ yarn watch:tsc
+```
+
+Then, run the Rollup watcher by opening a new terminal tab and running:
+
+```sh-session
+$ yarn watch
+```
+
+### Demo Page
+
 The kata-kit website (located on the `website/` folder) also serves as a development environment for our components. Run the following command to start it locally:
 
 ```sh-session
