@@ -54,12 +54,16 @@ export default class Dashboard extends React.Component<DashboardProps> {
                 <DashboardStarterInner>
                   <DashboardStarterLeft>
                     <DashboardHeader>
-                      <DashboardTitle isStarter>{title}</DashboardTitle>
-                      {tooltip && (
-                        <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
-                          <DashboardTooltip className="icon-info" />
-                        </TooltipTarget>
-                      )}
+                      <DashboardContainer>
+                        <DashboardTitle isStarter>{title}</DashboardTitle>
+                        {tooltip && (
+                          <TooltipTarget
+                            component={<Tooltip>{tooltip}</Tooltip>}
+                          >
+                            <DashboardTooltip className="icon-info" />
+                          </TooltipTarget>
+                        )}
+                      </DashboardContainer>
                     </DashboardHeader>
                     {subTitle && (
                       <DashboardSubtitle isStarter>
@@ -113,7 +117,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
             <Container>
               <DashboardHeader>
                 {headerContent || (
-                  <React.Fragment>
+                  <DashboardContainer>
                     <DashboardTitle>{title}</DashboardTitle>
                     {tooltip && (
                       <TooltipTarget
@@ -123,7 +127,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
                         <DashboardTooltip className="icon-info" />
                       </TooltipTarget>
                     )}
-                  </React.Fragment>
+                  </DashboardContainer>
                 )}
               </DashboardHeader>
               {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
