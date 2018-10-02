@@ -16,8 +16,6 @@
     "sass": "node-sass src/index.scss lib/index.css --output-style compressed",
     "watch": "yarn sass --watch"
   },
-  "dependencies": {},
-  "peerDependencies": {},
   "devDependencies": {
     "node-sass": "^4.9.3"
   }
