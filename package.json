@@ -75,7 +75,8 @@
     "tslint-config-kata": "^1.0.5",
     "tslint-config-prettier": "^1.15.0",
     "tslint-plugin-prettier": "^2.0.0",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "typescript-styled-plugin": "^0.11.0"
   },
   "husky": {
     "hooks": {
