@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/dashboard",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Dashboard component for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -21,9 +21,9 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/layout": "^0.5.0",
-    "@kata-kit/theme": "^0.5.0",
-    "@kata-kit/tooltip": "^0.5.0",
+    "@kata-kit/layout": "^0.5.1",
+    "@kata-kit/theme": "^0.5.1",
+    "@kata-kit/tooltip": "^0.5.1",
     "classnames": "^2.2.6",
     "styled-components": "^3.4.9"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/drawer",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Drawer component for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -21,8 +21,8 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/button": "^0.5.0",
-    "@kata-kit/theme": "^0.5.0",
+    "@kata-kit/button": "^0.5.1",
+    "@kata-kit/theme": "^0.5.1",
     "classnames": "^2.2.6",
     "react-custom-scrollbars": "^4.2.1",
     "styled-components": "^3.4.9"
