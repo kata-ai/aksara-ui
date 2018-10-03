@@ -1,11 +1,11 @@
-import React, { SFC } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 const Loader = require('../images/loader.svg');
 
 export interface RobotLoadingProps {}
 
-const Robot: SFC<RobotLoadingProps> = props => {
+const Robot: React.SFC<RobotLoadingProps> = props => {
   return (
     <LoadingContainer>
       <img src={Loader} alt="" />

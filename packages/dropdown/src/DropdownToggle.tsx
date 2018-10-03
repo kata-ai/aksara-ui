@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import omit from 'lodash-es/omit';
 import classNames from 'classnames';
 
@@ -53,17 +53,17 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
 
     if (direction === 'left') {
       return (
-        <Fragment>
+        <>
           <Caret /> {children}
-        </Fragment>
+        </>
       );
     }
 
     return (
-      <Fragment>
+      <>
         {children}
         <Caret />
-      </Fragment>
+      </>
     );
   }
 

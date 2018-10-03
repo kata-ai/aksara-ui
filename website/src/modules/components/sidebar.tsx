@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { SidebarSub, SidebarSubMenu } from '@kata-kit/layout';
 import SidebarSubTitle from '../core/components/SidebarSubTitle';
@@ -29,14 +29,14 @@ class ComponentLibrarySidebar extends React.Component<Props, State> {
           Index
         </SidebarSubMenu>
         {packagesList && (
-          <Fragment>
+          <>
             <SidebarSubHeading>Components</SidebarSubHeading>
             {Object.keys(packagesList).map(p => (
               <SidebarSubMenu key={p} to={`/components/${p}`}>
                 {p}
               </SidebarSubMenu>
             ))}
-          </Fragment>
+          </>
         )}
       </SidebarSub>
     );

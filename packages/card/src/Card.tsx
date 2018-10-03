@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 import { Theme, variables } from '@kata-kit/theme';
@@ -13,7 +13,7 @@ export interface CardProps {
   disabled?: boolean;
   className?: string;
   onClick?: any;
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   /** Space for the avatar. */
   avatar?: any;
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import styled, { css } from 'styled-components';
 import classnames from 'classnames';
 import { darken } from 'polished';
@@ -66,7 +66,7 @@ class Button extends React.Component<ButtonProps> {
     if (this.props.onClick) {
       this.props.onClick(e);
     }
-  };
+  }
 
   render() {
     const {
@@ -94,13 +94,13 @@ class Button extends React.Component<ButtonProps> {
             {...themeAttributes}
           >
             {loading ? (
-              <Fragment>
+              <>
                 <LoaderCircle
                   className={classnames(color, className)}
                   size={30}
                 />
                 <InvisibleText>{children}</InvisibleText>
-              </Fragment>
+              </>
             ) : (
               children
             )}

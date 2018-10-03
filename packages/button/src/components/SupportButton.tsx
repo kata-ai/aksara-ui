@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 
@@ -83,10 +83,10 @@ class Button extends React.Component<SupportButtonProps> {
             {...themeAttributes}
           >
             {loading ? (
-              <Fragment>
+              <>
                 <LoaderCircle size={30} />
                 <InvisibleText>{this.props.children}</InvisibleText>
-              </Fragment>
+              </>
             ) : (
               this.props.children
             )}

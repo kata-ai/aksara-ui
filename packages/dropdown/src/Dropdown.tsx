@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import omit from 'lodash-es/omit';
 import styled from 'styled-components';
@@ -106,7 +106,7 @@ class Dropdown extends React.Component<DropdownProps> {
       <Theme>
         {themeAttributes => (
           <DropdownWrapper className={classes} {...themeAttributes} {...props}>
-            {React.Children.map(children, (Item: ReactElement<any>) => {
+            {React.Children.map(children, (Item: React.ReactElement<any>) => {
               return Item &&
                 Item.type &&
                 ['DropdownMenu', 'DropdownToggle'].some(

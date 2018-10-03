@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import {
@@ -110,7 +110,7 @@ class App extends React.Component<Props> {
           <Sidebar hasTop collapsed={this.isSidebarCollapsed()}>
             <SidebarMain>
               {Object.keys(sidebar.menus).map(menu => (
-                <Fragment key={menu}>
+                <React.Fragment key={menu}>
                   <SidebarMainMenu
                     exact={sidebar.menus[menu].isExact}
                     to={sidebar.menus[menu].path}
@@ -118,13 +118,11 @@ class App extends React.Component<Props> {
                   >
                     {sidebar.menus[menu].title}
                   </SidebarMainMenu>
-                </Fragment>
+                </React.Fragment>
               ))}
             </SidebarMain>
             {!this.isSidebarCollapsed() && (
-              <Fragment>
-                {currLoc ? this.getSidebarSub(currLoc) : null}
-              </Fragment>
+              <>{currLoc ? this.getSidebarSub(currLoc) : null}</>
             )}
           </Sidebar>
           <Content>

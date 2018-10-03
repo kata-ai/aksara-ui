@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import isNumber from 'lodash-es/isNumber';
 import classnames from 'classnames';
@@ -15,7 +15,7 @@ interface PaginationProps {
 
 interface PaginationState {}
 
-class Pagination extends Component<PaginationProps, PaginationState> {
+class Pagination extends React.Component<PaginationProps, PaginationState> {
   constructor(props: PaginationProps) {
     super(props);
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { defaultTheme } from '../constants';
 import { Consumer } from './ThemeContext';
@@ -128,7 +128,7 @@ const Div = styled('div')`
 
 interface ResetProps extends React.AllHTMLAttributes<HTMLDivElement> {}
 
-export default class Reset extends Component<ResetProps> {
+export default class Reset extends React.Component<ResetProps> {
   render() {
     const { children, ...rest } = this.props;
 

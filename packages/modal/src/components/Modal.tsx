@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
@@ -99,7 +99,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const wrapper = (
-      <Fragment>
+      <>
         {!this.props.noBackdrop && (
           <ModalOverlay
             className={classnames(this.state.show ? 'is-open' : 'is-closed')}
@@ -122,7 +122,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
             </ModalWrapper>
           )}
         </Theme>
-      </Fragment>
+      </>
     );
     return createPortal(wrapper, this.el);
   }

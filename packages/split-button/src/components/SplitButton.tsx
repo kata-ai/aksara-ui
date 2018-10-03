@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 import {
@@ -23,7 +23,7 @@ interface Props {
   onClick?(e: any): void;
 }
 
-export default class SplitButton extends Component<Props> {
+export default class SplitButton extends React.Component<Props> {
   render() {
     return (
       <Theme>

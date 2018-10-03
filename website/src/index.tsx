@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import '@kata-kit/fonts/museo-sans-rounded.css';

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
@@ -76,9 +76,9 @@ class FloatingButton extends React.Component<FloatingButtonProps> {
             {...themeAttributes}
           >
             {isLoading ? (
-              <Fragment>
+              <>
                 <LoaderCircle size={40} />
-              </Fragment>
+              </>
             ) : (
               <i className={`icon-${icon}`} />
             )}

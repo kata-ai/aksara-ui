@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 import { variables } from '@kata-kit/theme';
@@ -24,10 +24,10 @@ const Props: React.SFC<PropsProps> = ({ props }) => (
             </PropName>{' '}
             <PropType>{prop.type}</PropType>
             {prop.defaultValue && (
-              <Fragment>
+              <>
                 {' '}
                 <PropDefault>= {prop.defaultValue}</PropDefault>
-              </Fragment>
+              </>
             )}
           </Header>
           <PropBody>

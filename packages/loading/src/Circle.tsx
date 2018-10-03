@@ -1,13 +1,13 @@
-import React, { SFC } from 'react';
+import * as React from 'react';
+import * as shortid from 'shortid';
 import styled from 'styled-components';
-import shortid from 'shortid';
 
 export interface LoadingCircleProps {
   size?: number;
   className?: string;
 }
 
-const Circle: SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
+const Circle: React.SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
   return (
     <Root className={props.className} title="0">
       <svg

@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 
 interface DropdownItemProps {
@@ -9,7 +9,7 @@ interface DropdownItemProps {
   divider?: boolean;
   active?: boolean;
   disabled?: boolean;
-  onClick?(event: SyntheticEvent<any>): void;
+  onClick?(event: React.SyntheticEvent<any>): void;
 
   // private
   onSelect?(value?: string | number | boolean): void;
@@ -27,7 +27,7 @@ class DropdownItem extends React.Component<DropdownItemProps> {
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick(event: SyntheticEvent<any>) {
+  onClick(event: React.SyntheticEvent<any>) {
     const { value, onClick, onSelect } = this.props;
 
     if (onClick) {

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 
 type DropdownDirection = 'up' | 'down' | 'left' | 'right';
@@ -35,7 +35,7 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
       <div className={classes}>
         {React.Children.map(
           this.props.children,
-          (Item: ReactElement<any>) =>
+          (Item: React.ReactElement<any>) =>
             Item
               ? React.cloneElement(Item, {
                   onSelect

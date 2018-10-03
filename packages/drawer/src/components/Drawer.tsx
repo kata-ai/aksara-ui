@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
@@ -101,7 +101,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
   render() {
     const wrapper = (
-      <Fragment>
+      <>
         {this.props.backdrop && (
           <DrawerOverlay
             className={classnames(this.state.isOpen && 'is-open')}
@@ -125,7 +125,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
             </DrawerWrapper>
           )}
         </Theme>
-      </Fragment>
+      </>
     );
     return createPortal(wrapper, this.el);
   }

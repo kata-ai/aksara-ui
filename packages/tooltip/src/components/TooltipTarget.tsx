@@ -1,8 +1,8 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 
 import contains from 'dom-helpers/query/contains';
-import Overlay from 'react-overlays/lib/Overlay';
+import { Overlay } from 'react-overlays';
 import omit from 'lodash-es/omit';
 import filter from 'lodash-es/filter';
 import compose from 'lodash-es/flowRight';
