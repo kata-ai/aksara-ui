@@ -113,7 +113,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
                 this.state.show ? 'is-open' : 'is-closed',
                 this.props.className
               )}
-              onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
+                onClick={
+                  !this.props.noBackdrop ? this.onCloseDrawer : undefined
+                }
               {...themeAttributes}
             >
               <ModalContext.Provider value={this.getContextAPI()}>
