@@ -4727,6 +4727,11 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
 
+focus-lock@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.4.2.tgz#3e91141ac911352d4831215fba300d02b9faa6b4"
+  integrity sha512-jqjj49iZEVT/X8yidEMmP8oWmDKJlJy/um7OyYP42CZ0y4icCp6Fm2lTkZVcFVpt4mZ/hPtbs9ikqId7YhUelw==
+
 follow-redirects@^1.0.0:
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.8.tgz#1dbfe13e45ad969f813e86c00e5296f525c885a1"
@@ -8756,6 +8761,13 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-clientside-effect@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.0.0.tgz#81c4f91bd4ec0f8792ba76fe29c1d09e37fff062"
+  integrity sha512-XYOjooNlAEos60o4ha9zDb1R9h3LMJUdXJOjFH6fNUwFxXu2k+Wq4Cd0JWmurgeY0DWTzGvpNJ0cY6eHyfhL1Q==
+  dependencies:
+    shallowequal "^1.1.0"
+
 react-custom-scrollbars@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/react-custom-scrollbars/-/react-custom-scrollbars-4.2.1.tgz#830fd9502927e97e8a78c2086813899b2a8b66db"
@@ -8803,6 +8815,15 @@ react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
   integrity sha512-xXUbDAZkU08aAkjtUvldqbvI04ogv+a1XdHxvYuHPYKIVk/42BIOD0zSKTHAWV4+gDy3yGm283z2072rA2gdtw==
+
+react-focus-lock@^1.14.1:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-1.14.1.tgz#58a259443a03fcca6817cb05b8239d6aa756e1ac"
+  integrity sha512-hcZ/ZxLiQyVsUFzTVB692xQy7BKgs/XksDC4rw6Z9vDE/joXADWTLZ5jHt8FNixnClOM6882b6iKXH14fnAWzQ==
+  dependencies:
+    focus-lock "^0.4.2"
+    prop-types "^15.6.2"
+    react-clientside-effect "^1.0.0"
 
 react-hot-loader@^4.3.11:
   version "4.3.11"
@@ -9825,7 +9846,7 @@ shallow-clone@^1.0.0:
     kind-of "^5.0.0"
     mixin-object "^2.0.1"
 
-shallowequal@^1.0.2:
+shallowequal@^1.0.2, shallowequal@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
