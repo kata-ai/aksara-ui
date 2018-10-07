@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
+import FocusLock from 'react-focus-lock';
 
 import { Theme } from '@kata-kit/theme';
 
@@ -108,18 +109,22 @@ class Modal extends React.Component<ModalProps, ModalState> {
         )}
         <Theme>
           {themeAttributes => (
-            <ModalWrapper
-              className={classnames(
-                this.state.show ? 'is-open' : 'is-closed',
-                this.props.className
-              )}
-              onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
-              {...themeAttributes}
-            >
-              <ModalContext.Provider value={this.getContextAPI()}>
-                <ModalDialog>{this.props.children}</ModalDialog>
-              </ModalContext.Provider>
-            </ModalWrapper>
+            <FocusLock disabled={!this.state.show}>
+              <ModalWrapper
+                className={classnames(
+                  this.state.show ? 'is-open' : 'is-closed',
+                  this.props.className
+                )}
+                onClick={
+                  !this.props.noBackdrop ? this.onCloseDrawer : undefined
+                }
+                {...themeAttributes}
+              >
+                <ModalContext.Provider value={this.getContextAPI()}>
+                  <ModalDialog>{this.props.children}</ModalDialog>
+                </ModalContext.Provider>
+              </ModalWrapper>
+            </FocusLock>
           )}
         </Theme>
       </>

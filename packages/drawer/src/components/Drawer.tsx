@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
+import FocusLock from 'react-focus-lock';
 
 import { Theme } from '@kata-kit/theme';
 
@@ -112,17 +113,19 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         )}
         <Theme values={theme}>
           {themeAttributes => (
-            <DrawerWrapper
-              theme={themeAttributes}
-              className={classnames(
-                this.state.isOpen ? 'is-open' : 'is-closed',
-                this.props.className
-              )}
-            >
-              <DrawerContext.Provider value={this.getContextAPI()}>
-                {this.state.isOpen && this.props.children}
-              </DrawerContext.Provider>
-            </DrawerWrapper>
+            <FocusLock disabled={!this.state.isOpen}>
+              <DrawerWrapper
+                theme={themeAttributes}
+                className={classnames(
+                  this.state.isOpen ? 'is-open' : 'is-closed',
+                  this.props.className
+                )}
+              >
+                <DrawerContext.Provider value={this.getContextAPI()}>
+                  {this.state.isOpen && this.props.children}
+                </DrawerContext.Provider>
+              </DrawerWrapper>
+            </FocusLock>
           )}
         </Theme>
       </>
