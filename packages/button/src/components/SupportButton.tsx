@@ -110,7 +110,7 @@ export class SupportButton extends React.Component<SupportButtonProps> {
   }
 }
 
-export default Button;
+export default SupportButton;
 
 const LoaderCircle = styled(Circle)`
   position: absolute;
