@@ -25,19 +25,33 @@ const composeFunctions = (...funcs) => {
 };
 
 export interface TooltipTargetProps {
+  /** Insert the `Tooltip` component here. */
   component: React.ReactNode;
+  /** The children node as a target for the tooltip item. */
   children: React.ReactNode;
+  /** Placement of the tooltip. */
   placement?: 'top' | 'right' | 'bottom' | 'left';
+  /** Additional CSS classes to give to the component. */
   className?: string;
+  /** Set to `true` to make tooltip visible by default */
   defaultShow?: boolean;
+  /** Event(s) where the tooltip gets triggered. */
   trigger?: string | string[];
+  /** Amount of delay before the tooltip shows and hides (in milliseconds). */
   delay?: number;
+  /** Amount of delay before the tooltip hides (in milliseconds). */
   delayHide?: number;
+  /** Amount of delay before the tooltip shows (in milliseconds). */
   delayShow?: number;
+  /** onClick event handler. */
   onClick?(): void;
+  /** onMouseOver event handler. */
   onMouseOver?(): void;
+  /** onMouseOut event handler. */
   onMouseOut?(): void;
+  /** onFocus event handler. */
   onFocus?(): void;
+  /** onBlur event handler. */
   onBlur?(): void;
 }
 

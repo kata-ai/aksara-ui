@@ -3,7 +3,12 @@ import { Provider, Consumer } from './ThemeContext';
 import { ThemeAttributes } from '../types';
 
 interface ThemeProps {
+  /** A `ThemeAttributes` object with the attributes you want to override. */
   values?: ThemeAttributes;
+  /**
+   * Either a render prop with the the `ThemeAttributes` object passed, or a
+   * plain component which consumes the theme context (e.g. `KataReset`).
+   */
   children?: ((theme: ThemeAttributes) => JSX.Element) | React.ReactNode;
 }
 
@@ -17,7 +22,7 @@ export default class Theme extends React.Component<ThemeProps> {
           const merged = { ...parentTheme, ...values };
 
           if (typeof children === 'function') {
-            return children(merged);
+            return (children as any)(merged);
           } else {
             return <Provider value={merged}>{children}</Provider>;
           }

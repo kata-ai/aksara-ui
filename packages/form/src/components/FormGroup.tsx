@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { variables } from '@kata-kit/theme';
 
 export interface FormGroupProps {
+  /** Additional CSS classes to give to the component. */
   className?: string;
 }
 

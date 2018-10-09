@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 export interface ModalBodyProps {
+  /** Additional CSS classes to give to the modal body. */
   className?: string;
 }
 

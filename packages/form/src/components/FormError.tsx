@@ -6,6 +6,7 @@ import { FormErrorBase } from '../styles';
 import themes from '../theme';
 
 export interface FormGroupProps {
+  /** Additional CSS classes to give to the component. */
   className?: string;
 }
 

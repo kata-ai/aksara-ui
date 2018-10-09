@@ -7,9 +7,16 @@ import { Theme } from '@kata-kit/theme';
 import { Button } from '@kata-kit/button';
 
 interface PaginationProps {
+  /** Additional CSS classes to give to the pagination. */
   className?: string;
+  /** The current page number. */
   current: number;
+  /** Total number of pages. */
   total: number;
+  /**
+   * Callback to run when a page number is selected. You can use this to e.g.
+   * run setState on your component's page state.
+   */
   onSelect(page: number): void;
 }
 

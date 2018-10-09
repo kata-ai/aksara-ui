@@ -14,6 +14,7 @@ import { ModalProps } from './Modal';
 import ModalContext from './ModalContext';
 
 export interface DrawerBodyProps {
+  /** Additional CSS classes to give to the modal dialog. */
   className?: string;
 }
 
