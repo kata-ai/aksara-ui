@@ -7,13 +7,18 @@ import ThemedComponent, { ThemeAttributes } from '@kata-kit/theme';
 export type BannerState = 'error' | 'success' | 'warning' | 'info';
 
 export interface BannerProps {
+  /** The color state of the banner. */
   state: BannerState;
+  /** Banner message. Could be a string or a `ReactNode`. */
   message: any;
+  /** Additional CSS classes to give to the banner. */
   className?: string;
+  /** Triggers when the Close button is clicked. */
   onClose?(e: any): void;
 }
 
-class Banner extends React.Component<BannerProps> {
+/** Banners are used to convey important information to users. */
+export class Banner extends React.Component<BannerProps> {
   static defaultProps = {
     state: 'error'
   };

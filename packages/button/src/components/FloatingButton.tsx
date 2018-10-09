@@ -13,18 +13,31 @@ export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
 
 export interface FloatingButtonProps
   extends React.HTMLAttributes<HTMLButtonElement> {
+  /** Whether the button is disabled or not. */
   disabled?: boolean;
+  /** The color of the button. */
   color?: FloatingButtonColor;
+  /** Icon of the button */
   icon?: string;
+  /** The size of the button. */
   size?: 'lg' | 'sm' | '';
+  /** Additional CSS classes to give to the button. */
   className?: string;
+  /** `onClick` event handler. */
   onClick?: any;
+  /** The HTML type of the button. */
   type?: 'button' | 'submit';
+  /** (Deprecated) Whether the button is active or not. */
   active?: boolean;
+  /** Triggers the loading state of the button. */
   isLoading?: boolean;
 }
 
-class FloatingButton extends React.Component<FloatingButtonProps> {
+/**
+ * Floating buttons are buttons with styles similar to that of cards, hence
+ * "floating".
+ */
+export class FloatingButton extends React.Component<FloatingButtonProps> {
   static defaultProps = {
     color: 'primary',
     type: 'button',

@@ -6,13 +6,19 @@ import { Theme, variables } from '@kata-kit/theme';
 export interface CardProps {
   /** Card title. */
   title?: string;
-  /** An action button. Can be a dropdown, or anything. */
+  /** Card action element. Can be any valid React element. */
   action?: React.ReactElement<HTMLAllCollection>;
+  /** Whether render the card as button. */
   asButton?: boolean;
+  /** Whether render the card without header. */
   noWrap?: boolean;
+  /** Whether the card disabled or not. */
   disabled?: boolean;
+  /** Additional component CSS class. */
   className?: string;
+  /** Card onClick event handler. */
   onClick?: any;
+  /** Card additional CSS styles. */
   style?: React.CSSProperties;
   /** Space for the avatar. */
   avatar?: any;

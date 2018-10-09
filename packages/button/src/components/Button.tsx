@@ -28,19 +28,36 @@ export type ButtonSizes = 'lg' | 'sm';
 export interface ButtonProps
   extends ButtonBaseProps,
     React.HTMLAttributes<HTMLButtonElement> {
+  /** Whether the button is disabled or not. */
   disabled?: boolean;
+  /** The color of the button. */
   color?: ButtonColors;
+  /** The size of the button. */
   size?: ButtonSizes;
+  /** Whether the button is an icon button or not. */
   isIcon?: boolean;
+  /** Additional CSS classes to give to the button. */
   className?: string;
+  /** Event handler triggered during `onClick`. */
   onClick?: any;
+  /** The HTML type of the button. */
   type?: string;
+  /**
+   * (Deprecated) Whether the button is active or not.
+   */
   active?: boolean;
+  /** Triggers the loading state of the button. */
   loading?: boolean;
+  /** (Deprecated) If the button is an outline button, define it here. */
   outline?: boolean;
 }
 
-class Button extends React.Component<ButtonProps> {
+/**
+ * Buttons express what action will occur when the user clicks or touches it.
+ * Buttons are used to initialize an action, either in the background or
+ * foreground of an experience.
+ */
+export class Button extends React.Component<ButtonProps> {
   static defaultProps = {
     color: 'secondary' as ButtonColors,
     type: 'button',

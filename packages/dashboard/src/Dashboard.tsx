@@ -8,14 +8,23 @@ import { Tooltip, TooltipTarget } from '@kata-kit/tooltip';
 import { variables } from '@kata-kit/theme';
 
 export interface DashboardProps {
+  /** Dashboard title element. */
   title?: string;
+  /** Dashboard tooltip element. */
   tooltip?: string;
+  /** Dashboard subtitle element. */
   subTitle?: string;
+  /** Dashboard description. */
   paragraph?: string;
+  /** Additional dashboard CSS class. */
   className?: string;
+  /** Whether dashboard is starter or not. */
   isStarter?: boolean;
+  /** Dashboard header content element. */
   headerContent?: any;
+  /** Dashboard image element. */
   image?: any;
+  /** Whether dashboard header centered or not. */
   isHeadingCentered?: boolean;
 }
 

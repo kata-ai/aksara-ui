@@ -2,6 +2,7 @@ import { css } from 'styled-components';
 import { variables } from '@kata-kit/theme';
 
 export interface ButtonBaseProps {
+  /** Is a block button. */
   block?: boolean;
 }
 

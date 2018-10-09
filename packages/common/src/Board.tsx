@@ -2,8 +2,11 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 export interface BoardProps {
+  /** Additional CSS classes to give to the component. */
   className?: string;
+  /** Additional content as a header. */
   headingChildren?: React.ReactNode;
+  /** Additional content as a footer. */
   footerChildren?: React.ReactNode;
 }
 
