@@ -3,8 +3,11 @@ import classnames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
 export interface InfiniteScrollSpinnerProps {
+  /** (Deprecated) Bootstrap color class. */
   bsStyle?: 'primary' | 'gray' | 'white';
+  /** Small loading icon. */
   sm?: boolean;
+  /** Large loading icon. */
   lg?: boolean;
 }
 
@@ -26,7 +29,9 @@ const InfiniteScrollSpinner: React.SFC<InfiniteScrollSpinnerProps> = props => {
 };
 
 InfiniteScrollSpinner.defaultProps = {
-  bsStyle: 'gray'
+  bsStyle: 'gray',
+  sm: false,
+  lg: false
 };
 
 export default InfiniteScrollSpinner;

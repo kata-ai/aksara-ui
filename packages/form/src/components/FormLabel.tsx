@@ -7,6 +7,7 @@ import themes from '../theme';
 
 export interface FormLabelProps
   extends React.AllHTMLAttributes<HTMLLabelElement> {
+  /** Alternate form state for input with errors. */
   errors?: boolean;
 }
 

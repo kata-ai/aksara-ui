@@ -11,9 +11,13 @@ import ModalContext from './ModalContext';
 import { ModalOverlayStyles, ModalBase, WithThemeProps } from '../styles';
 
 export interface ModalProps {
+  /** Whether the modal is open or not. */
   show: boolean;
+  /** Hide the dark overlay behind the modal. */
   noBackdrop?: boolean;
+  /** Additional CSS classes to give to the modal. */
   className?: string;
+  /** Callback method run when the Close button is clicked. */
   onClose(): void;
 }
 

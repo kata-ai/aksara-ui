@@ -10,19 +10,32 @@ import themes from '../theme';
 
 export interface SupportButtonProps
   extends React.HTMLAttributes<HTMLButtonElement> {
+  /** Whether the button is disabled or not. */
   disabled?: boolean;
+  /** The size of the button. */
   size?: 'lg' | 'sm' | '';
+  /** Whether the button is an icon button or not. */
   isIcon?: boolean;
+  /** Additional CSS classes to give to the button. */
   className?: string;
+  /** `onClick` event handler. */
   onClick?: any;
+  /** Is a block button. */
   block?: boolean;
+  /** Whether the button is active or not. */
   active?: boolean;
+  /** (Deprecated) If the button is an outline button, define it here. */
   outline?: boolean;
+  /** Triggers the loading state of the button. */
   loading?: boolean;
   children?: any;
 }
 
-class Button extends React.Component<SupportButtonProps> {
+/**
+ * Support buttons are subtle buttons, used for secondary actions on a form,
+ * card, etc.
+ */
+export class SupportButton extends React.Component<SupportButtonProps> {
   static defaultProps = {
     block: false,
     active: false,
@@ -97,7 +110,7 @@ class Button extends React.Component<SupportButtonProps> {
   }
 }
 
-export default Button;
+export default SupportButton;
 
 const LoaderCircle = styled(Circle)`
   position: absolute;

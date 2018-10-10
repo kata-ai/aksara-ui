@@ -5,6 +5,7 @@ import DrawerContext from './DrawerContext';
 import styled from 'styled-components';
 
 export interface DrawerBodyProps {
+  /** Additional CSS classes to give to the drawer body. */
   className?: string;
 }
 

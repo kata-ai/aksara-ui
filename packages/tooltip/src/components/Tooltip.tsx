@@ -5,10 +5,15 @@ import omit from 'lodash-es/omit';
 import { Theme } from '@kata-kit/theme';
 
 export interface TooltipProps {
+  /** Placement of the tooltip. */
   placement?: 'top' | 'right' | 'bottom' | 'left';
+  /** Additional CSS classes to give to the component. */
   className?: string;
+  /** Is the tooltip visible? */
   show?: boolean;
+  /** @todo Document this. */
   targetNodePosition?: any;
+  /** Additional CSS Properties for the component. */
   style?: any;
 }
 

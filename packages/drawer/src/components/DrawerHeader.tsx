@@ -7,7 +7,9 @@ import { Button } from '@kata-kit/button';
 import DrawerContext from './DrawerContext';
 
 export interface DrawerHeaderProps {
+  /** Drawer title. */
   title: string;
+  /** Additional CSS classes to give to the drawer header. */
   className?: string;
 }
 

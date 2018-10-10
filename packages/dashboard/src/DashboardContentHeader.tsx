@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import { Theme } from '@kata-kit/theme';
 
 export interface DashboardContentHeaderProps {
+  /** Additional dashboard content header CSS class. */
   className?: string;
+  /** Whether dashboard content header is secondary or not. */
   isSecondary?: boolean;
 }
 

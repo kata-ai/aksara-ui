@@ -7,6 +7,7 @@ import { InputTextBase } from '../styles';
 
 export interface InputTextProps
   extends React.AllHTMLAttributes<HTMLTextAreaElement> {
+  /** Alternate form state for input with errors. */
   errors?: boolean;
 }
 

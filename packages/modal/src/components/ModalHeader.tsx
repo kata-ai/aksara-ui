@@ -7,7 +7,9 @@ import { Button } from '@kata-kit/button';
 import ModalContext from './ModalContext';
 
 export interface ModalHeaderProps {
+  /** Modal title. */
   title: string;
+  /** Additional CSS classes to give to the modal header. */
   className?: string;
 }
 

@@ -5,14 +5,21 @@ import styled from 'styled-components';
 import { Theme, variables } from '@kata-kit/theme';
 
 export interface CardGridProps {
+  /** Additional card CSS class. */
   className?: string;
+  /** Whether the content inside card grid centered or not. */
   centered?: boolean;
+  /** How many card will be rendered in a row. */
   cardsPerRow?: 2 | 3;
 }
 
 class CardGrid extends React.Component<CardGridProps> {
+  static defaultProps = {
+    cardsPerRow: 3
+  };
+
   render() {
-    const { className, cardsPerRow = 3, ...rest } = this.props;
+    const { className, cardsPerRow, ...rest } = this.props;
     return (
       <Theme>
         {themeAttributes => (

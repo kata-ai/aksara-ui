@@ -2,7 +2,9 @@ import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 interface Props {
+  /** Import the image you want to use to replace the default one here. */
   image?: string;
+  /** The title of the empty message. */
   title?: string | React.ReactElement<any>;
 }
 

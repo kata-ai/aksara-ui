@@ -3,13 +3,15 @@ import * as shortid from 'shortid';
 import styled from 'styled-components';
 
 export interface LoadingCircleProps {
+  /** Loading icon size. */
   size?: number;
+  /** Additional CSS classes to give to the icon. */
   className?: string;
 }
 
-const Circle: React.SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
+const Circle: React.SFC<LoadingCircleProps> = ({ className, size }) => {
   return (
-    <Root className={props.className} title="0">
+    <Root className={className} title="0">
       <svg
         version="1.1"
         id={shortid.generate()}
@@ -17,8 +19,8 @@ const Circle: React.SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
-        width={`${props.size || 40}px`}
-        height={`${props.size || 40}px`}
+        width={`${size}px`}
+        height={`${size}px`}
         viewBox="0 0 40 40"
         enableBackground="new 0 0 40 40"
         xmlSpace="preserve"
@@ -47,6 +49,10 @@ const Circle: React.SFC<LoadingCircleProps> = (props: LoadingCircleProps) => {
       </svg>
     </Root>
   );
+};
+
+Circle.defaultProps = {
+  size: 40
 };
 
 export default Circle;

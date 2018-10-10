@@ -13,7 +13,10 @@ export type BadgeColors =
   | 'danger';
 
 export interface BadgeProps {
+  /** The color of the badge. */
   color?: BadgeColors;
+  /** Additional CSS classes to give to the component. */
+  className?: string;
 }
 
 export default class Badge extends React.Component<BadgeProps> {

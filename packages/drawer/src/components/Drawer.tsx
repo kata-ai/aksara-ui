@@ -16,9 +16,16 @@ import {
 import theme from '../theme';
 
 export interface DrawerProps {
+  /** Whether the modal is open or not. */
   isOpen: boolean;
+  /**
+   * Set to `true` if you want the drawer to feature an overlay backdrop.
+   * Set to `'static'` to make the overlay backdrop unclickable.
+   */
   backdrop?: true | false | 'static';
+  /** Additional CSS classes to give to the drawer. */
   className?: string;
+  /** Callback method run when the "Close Drawer" button is clicked. */
   onClose(): void;
 }
 
