@@ -64,6 +64,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   }
 
   componentDidUpdate(prevProps: DrawerProps, prevState: DrawerState) {
+    // https://github.com/kata-ai/kata-kit/issues/41#issuecomment-428330899
     if (this.state.isOpen && prevState.isOpen !== this.state.isOpen) {
       const modalWrapperElement = this.drawerWrapperRef.current;
 

@@ -80,6 +80,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   componentDidUpdate(prevProps: ModalProps, prevState: ModalState) {
+    // https://github.com/kata-ai/kata-kit/issues/41#issuecomment-428330899
     if (this.state.show && prevState.show !== this.state.show) {
       const modalWrapperElement = this.modalWrapperRef.current;
 
