@@ -127,6 +127,8 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
                   this.state.isOpen ? 'is-open' : 'is-closed',
                   this.props.className
                 )}
+                role="dialog"
+                aria-modal="true"
               >
                 <DrawerContext.Provider value={this.getContextAPI()}>
                   {this.state.isOpen && this.props.children}
