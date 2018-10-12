@@ -32,6 +32,7 @@ export interface ModalState {
 
 class Modal extends React.Component<ModalProps, ModalState> {
   el: HTMLDivElement;
+  private modalWrapperRef = React.createRef<HTMLDivElement>();
 
   state = {
     show: false,
@@ -63,6 +64,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
     this.watchOverflow = this.watchOverflow.bind(this);
     this.getContextAPI = this.getContextAPI.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -78,6 +80,25 @@ class Modal extends React.Component<ModalProps, ModalState> {
       document.body.removeChild(this.el);
     } catch (error) {
       // do nothing
+    }
+  }
+
+  componentDidUpdate(prevProps: ModalProps, prevState: ModalState) {
+    // https://github.com/kata-ai/kata-kit/issues/41#issuecomment-428330899
+    if (this.state.show && prevState.show !== this.state.show) {
+      const modalWrapperElement = this.modalWrapperRef.current;
+
+      if (modalWrapperElement) {
+        modalWrapperElement.focus();
+      }
+    }
+  }
+
+  handleKeyDown(event: React.KeyboardEvent) {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+
+      this.onCloseDrawer();
     }
   }
 
@@ -115,6 +136,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {themeAttributes => (
             <FocusLock disabled={!this.state.show}>
               <ModalWrapper
+                innerRef={this.modalWrapperRef}
+                tabIndex={-1}
                 className={classnames(
                   this.state.show ? 'is-open' : 'is-closed',
                   this.props.className
@@ -122,6 +145,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                 onClick={
                   !this.props.noBackdrop ? this.onCloseDrawer : undefined
                 }
+                onKeyDown={this.handleKeyDown}
                 {...themeAttributes}
               >
                 <ModalContext.Provider value={this.getContextAPI()}>

@@ -46,6 +46,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   }
 
   el: HTMLDivElement;
+  private drawerWrapperRef = React.createRef<HTMLDivElement>();
 
   constructor(props: DrawerProps) {
     super(props);
@@ -57,6 +58,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
     this.watchOverflow = this.watchOverflow.bind(this);
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -68,8 +70,17 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     document.body.removeChild(this.el);
   }
 
-  componentDidUpdate(prev: DrawerProps) {
-    if (prev.isOpen !== this.props.isOpen) {
+  componentDidUpdate(prevProps: DrawerProps, prevState: DrawerState) {
+    // https://github.com/kata-ai/kata-kit/issues/41#issuecomment-428330899
+    if (this.state.isOpen && prevState.isOpen !== this.state.isOpen) {
+      const modalWrapperElement = this.drawerWrapperRef.current;
+
+      if (modalWrapperElement) {
+        modalWrapperElement.focus();
+      }
+    }
+
+    if (prevProps.isOpen !== this.props.isOpen) {
       if (this.props.isOpen) {
         document.body.classList.add('noscroll');
       } else {
@@ -84,6 +95,14 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
       this.watchOverflow(0);
     } catch (err) {
       // do nothing
+    }
+  }
+
+  handleKeyDown(event: React.KeyboardEvent) {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+
+      this.onCloseDrawer();
     }
   }
 
@@ -122,11 +141,14 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
           {themeAttributes => (
             <FocusLock disabled={!this.state.isOpen}>
               <DrawerWrapper
+                innerRef={this.drawerWrapperRef}
+                tabIndex={-1}
                 theme={themeAttributes}
                 className={classnames(
                   this.state.isOpen ? 'is-open' : 'is-closed',
                   this.props.className
                 )}
+                onKeyDown={this.handleKeyDown}
               >
                 <DrawerContext.Provider value={this.getContextAPI()}>
                   {this.state.isOpen && this.props.children}
