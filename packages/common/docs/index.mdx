@@ -1,8 +1,9 @@
 import { Fragment } from 'react'
 import { Example, Props } from '@kata-kit/doc-utils';
 
-import { Board, EmptyMessage } from '../src/index';
-import { boardProps, emptyMessageProps } from './props';
+import { Board, EmptyMessage, FocusTrap } from '../src/index';
+import { boardProps, emptyMessageProps, focusTrapProps } from './props';
+import { Button } from '../../button/src/index';
 
 This package contains common components used in multiple places throughout a project.
 
@@ -27,3 +28,13 @@ This component is displayed when a list item is empty.
 ### EmptyMessage Props
 
 <Props props={emptyMessageProps} />
+
+## Focus Trap
+
+Locks the focus to the content.
+
+<Example title="Focus trap" scope={{ FocusTrap, Button }} code={require('../examples/3-focus-trap.raw')} />
+
+### FocusTrap Props
+
+<Props props={focusTrapProps} />
