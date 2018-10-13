@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
-import FocusLock from 'react-focus-lock';
 
 import { Theme } from '@kata-kit/theme';
+import { FocusTrap } from '@kata-kit/common';
 
 import DrawerContext from './DrawerContext';
 import {
@@ -109,7 +109,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
   render() {
     const wrapper = (
-      <>
+      <FocusTrap active={this.state.isOpen}>
         {this.props.backdrop && (
           <DrawerOverlay
             className={classnames(this.state.isOpen && 'is-open')}
@@ -120,22 +120,20 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         )}
         <Theme values={theme}>
           {themeAttributes => (
-            <FocusLock disabled={!this.state.isOpen}>
-              <DrawerWrapper
-                theme={themeAttributes}
-                className={classnames(
-                  this.state.isOpen ? 'is-open' : 'is-closed',
-                  this.props.className
-                )}
-              >
-                <DrawerContext.Provider value={this.getContextAPI()}>
-                  {this.state.isOpen && this.props.children}
-                </DrawerContext.Provider>
-              </DrawerWrapper>
-            </FocusLock>
+            <DrawerWrapper
+              theme={themeAttributes}
+              className={classnames(
+                this.state.isOpen ? 'is-open' : 'is-closed',
+                this.props.className
+              )}
+            >
+              <DrawerContext.Provider value={this.getContextAPI()}>
+                {this.state.isOpen && this.props.children}
+              </DrawerContext.Provider>
+            </DrawerWrapper>
           )}
         </Theme>
-      </>
+      </FocusTrap>
     );
     return createPortal(wrapper, this.el);
   }
