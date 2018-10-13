@@ -57,6 +57,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
     this.watchOverflow = this.watchOverflow.bind(this);
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -87,6 +88,12 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     }
   }
 
+  handleKeyDown(event: React.KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.onCloseDrawer();
+    }
+  }
+
   onCloseDrawer() {
     this.props.onClose();
   }
@@ -109,7 +116,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
   render() {
     const wrapper = (
-      <FocusTrap active={this.state.isOpen}>
+      <FocusTrap active={this.state.isOpen} onKeyDown={this.handleKeyDown}>
         {this.props.backdrop && (
           <DrawerOverlay
             className={classnames(this.state.isOpen && 'is-open')}

@@ -63,6 +63,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
     this.watchOverflow = this.watchOverflow.bind(this);
     this.getContextAPI = this.getContextAPI.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -78,6 +79,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
       document.body.removeChild(this.el);
     } catch (error) {
       // do nothing
+    }
+  }
+
+  handleKeyDown(event: React.KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.onCloseDrawer();
     }
   }
 
@@ -104,7 +111,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const wrapper = (
-      <FocusTrap active={this.state.show}>
+      <FocusTrap active={this.state.show} onKeyDown={this.handleKeyDown}>
         {!this.props.noBackdrop && (
           <ModalOverlay
             className={classnames(this.state.show ? 'is-open' : 'is-closed')}
