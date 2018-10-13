@@ -29,8 +29,6 @@
     "build": "yarn clean && lerna run build",
     "clean": "lerna run clean",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "docz:build": "docz build",
-    "docz:dev": "docz dev",
     "release": "npm run prepare && node scripts/dist/release/index.js",
     "lerna": "lerna",
     "prepare": "yarn build",
