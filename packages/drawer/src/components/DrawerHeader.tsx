@@ -20,7 +20,7 @@ const DrawerHeader: React.SFC<DrawerHeaderProps> = ({ className, title }) => (
         className={classnames(api.overflow && 'is-overflow', className)}
       >
         <DrawerHeadingWrapper>
-          <DrawerTitle>{title}</DrawerTitle>
+          <DrawerTitle id={api.ids.labelledBy}>{title}</DrawerTitle>
           <Button isIcon onClick={api.onClose}>
             <i className="icon-close" />
           </Button>

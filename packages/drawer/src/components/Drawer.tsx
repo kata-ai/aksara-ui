@@ -35,6 +35,12 @@ export interface DrawerState {
 }
 
 class Drawer extends React.Component<DrawerProps, DrawerState> {
+  private identifier = performance.now().toString(); // Generates unique values
+  private ids = {
+    labelledBy: this.identifier + '-label',
+    describedBy: this.identifier + '-body'
+  };
+
   static defaultProps = {
     backdrop: 'static'
   };
@@ -102,6 +108,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   getContextAPI() {
     return {
       overflow: this.state.overflow,
+      ids: this.ids,
       watchOverflow: this.watchOverflow,
       onClose: this.onCloseDrawer
     };
@@ -129,6 +136,8 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
                 )}
                 role="dialog"
                 aria-modal="true"
+                aria-labelledby={this.ids.labelledBy}
+                aria-describedby={this.ids.describedBy}
               >
                 <DrawerContext.Provider value={this.getContextAPI()}>
                   {this.state.isOpen && this.props.children}
