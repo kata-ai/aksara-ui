@@ -5,31 +5,31 @@ import { H1, H2, P, H3, H4, H5, H6 } from '../components/Markdown';
 const wInfoStyle = {
   header: {
     h1: {
-      fontSize: variables.fontSizes.peta,
-      lineHeight: variables.lineHeights.peta,
       marginRight: '20px',
       display: 'inline',
-      color: variables.colors.gray80
+      color: variables.colors.gray80,
+      fontSize: variables.fontProps.h1FontSize,
+      lineHeight: variables.fontProps.h1LineHeight
     },
     body: {
       paddingTop: 0,
-      paddingBottom: variables.spacing.spacingXs,
+      paddingBottom: '10px',
       borderColor: variables.colors.gray30,
-      fontSize: variables.fontSizes.kilo,
-      lineHeight: variables.lineHeights.kilo
+      fontSize: variables.fontProps.rootFontSize,
+      lineHeights: variables.fontProps.rootLineHeight
     },
     h2: {
-      fontSize: variables.fontSizes.tera,
-      lineHeight: variables.lineHeights.tera,
       display: 'inline',
-      color: variables.colors.gray50
+      color: variables.colors.gray50,
+      fontSize: variables.fontProps.titleFontSize,
+      lineHeight: variables.fontProps.titleLineHeight
     }
   },
   infoBody: {
     padding: 0,
     border: 'none',
-    fontSize: variables.fontSizes.kilo,
-    lineHeight: variables.lineHeights.kilo
+    fontSize: variables.fontProps.rootFontSize,
+    lineHeights: variables.fontProps.rootLineHeight
   }
 };
 

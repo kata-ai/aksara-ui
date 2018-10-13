@@ -17,7 +17,7 @@ const theme: ThemeAttributes = {
 
 const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, noReset }) => {
   const style: React.CSSProperties = {
-    padding: noPadding ? 0 : variables.spacing.spacingMd,
+    padding: noPadding ? 0 : '16px',
     minHeight: '100%'
   };
 
