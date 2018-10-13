@@ -74,19 +74,14 @@ $ yarn
 
 ### Developing Components
 
-To start developing components, you have to run the incremental build pipeline. These commands should be run in the repository's root directory. You need at least two terminal tabs.
-
-First, run the TypeScript compiler watcher on the first tab by running:
+To start developing components, you have to run the Storybook server.
 
 ```sh-session
-$ yarn watch:tsc
+$ yarn storybook
+info Storybook started on => http://localhost:9001/
 ```
 
-Then, run the Rollup watcher by opening a new terminal tab and running:
-
-```sh-session
-$ yarn watch
-```
+The storybook server is available at `http://localhost:9001`. Note that any new component needs to have at least one story as a demo.
 
 ### Demo Page
 
