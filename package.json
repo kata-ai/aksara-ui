@@ -29,13 +29,12 @@
     "build": "yarn clean && lerna run build",
     "clean": "lerna run clean",
     "commitmsg": "commitlint -E GIT_PARAMS",
+    "generate-docs": "node build/generateDocs.js",
     "release": "npm run prepare && node scripts/dist/release/index.js",
     "lerna": "lerna",
     "prepare": "yarn build",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "build-storybook",
-    "watch": "lerna run watch --stream --parallel",
-    "watch:tsc": "lerna run watch:tsc --stream --parallel"
+    "storybook:build": "build-storybook"
   },
   "dependencies": {
     "react": "^16.5.2",
