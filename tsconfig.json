@@ -10,6 +10,7 @@
       "@kata-kit/*": ["./*/src"],
       "@kata-kit/doc-utils": ["../doc-utils/src"]
     },
+    "importHelpers": true,
     "composite": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
