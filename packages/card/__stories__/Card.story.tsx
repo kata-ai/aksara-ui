@@ -10,7 +10,9 @@ import CardGrid from '../src/CardGrid';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Card', module).addDecorator(StoryWrapper);
+const story = storiesOf('Components/Card', module)
+  .addDecorator(StoryWrapper)
+  .addDecorator(wInfo({ propTables: [Card, CardGrid, DashboardCard] }));
 
 const info = `
 ## Install
@@ -33,53 +35,35 @@ import { Card } from 'kata-kit/card';
 
 story.add(
   'Documentation',
-  wInfo(info, { propTables: [Card] })(() => (
+  () => (
     <Card title="Sample Card">Cards are used for UI elements with text.</Card>
-  ))
+  ),
+  { info }
 );
 
 story.add(
   'DashboardCard',
-  wInfo(
-    `
-## Usage
-
-~~~javascript
-<DashboardCard title="Title">Card content</DashboardCard>
-~~~
-`,
-    { propTables: [DashboardCard] }
-  )(() => (
+  () => (
     <DashboardCard title="Second Card">
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
       make a type specimen book.
     </DashboardCard>
-  ))
+  ),
+  {
+    info: `
+  ## Usage
+
+  ~~~javascript
+  <DashboardCard title="Title">Card content</DashboardCard>
+  ~~~
+  `
+  }
 );
 
-story.add(
+story.addDecorator(wInfo({ propTables: [CardGrid] })).add(
   'CardGrid',
-  wInfo(
-    `
-## Usage
-
-~~~javascript
-<CardGrid>
-  <DashboardCard title="First Card">
-    Card content
-  </DashboardCard>
-  <DashboardCard title="Second Card">
-    Card content
-  </DashboardCard>
-  <DashboardCard title="Third Card">
-    Card content
-  </DashboardCard>
-</CardGrid>
-~~~
-`,
-    { propTables: [CardGrid] }
-  )(() => (
+  () => (
     <CardGrid>
       <DashboardCard title="First Card">
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -95,5 +79,24 @@ story.add(
         electronic typesetting, remaining essentially unchanged.
       </DashboardCard>
     </CardGrid>
-  ))
+  ),
+  {
+    info: `
+  ## Usage
+
+  ~~~javascript
+  <CardGrid>
+  <DashboardCard title="First Card">
+    Card content
+  </DashboardCard>
+  <DashboardCard title="Second Card">
+    Card content
+  </DashboardCard>
+  <DashboardCard title="Third Card">
+    Card content
+  </DashboardCard>
+  </CardGrid>
+  ~~~
+  `
+  }
 );

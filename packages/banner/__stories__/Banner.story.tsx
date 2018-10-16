@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { withKnobs, text, selectV2 } from '@storybook/addon-knobs/react';
-import { withState } from '@dump247/storybook-state';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
+import WithState from '../../../.storybook/components/WithState';
 
-import Banner, { BannerState } from '../src/components/Banner';
+import Banner from '../src/components/Banner';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -34,9 +34,10 @@ import { Banner } from '@kata-kit/banner';
 
 const story = storiesOf('Components/Banner', module)
   .addDecorator(StoryWrapper)
+  .addDecorator(wInfo({ propTables: [Banner] }))
   .addDecorator(withKnobs);
 
-const bannerStateOptions: Record<string, BannerState | BannerState[]> = {
+const bannerStateOptions = {
   Success: 'success',
   Error: 'error',
   Warning: 'warning',
@@ -45,7 +46,7 @@ const bannerStateOptions: Record<string, BannerState | BannerState[]> = {
 
 story.add(
   'Documentation',
-  wInfo(info, { propTables: [Banner] })(() => (
+  () => (
     <div>
       <div style={{ marginBottom: '8px' }}>
         <Banner
@@ -72,39 +73,46 @@ story.add(
         />
       </div>
     </div>
-  ))
+  ),
+  { info }
 );
 
-story.add('Basic', () => (
-  <Banner
-    state={selectV2('State', bannerStateOptions, 'info')}
-    message={text('Message', 'Hello! This is a banner.')}
-  />
-));
+story.add(
+  'Basic',
+  () => (
+    <Banner
+      state={select('State', bannerStateOptions, 'info')}
+      message={text('Message', 'Hello! This is a banner.')}
+    />
+  ),
+  { info: { disable: true } }
+);
 
 story.add(
   'Closable',
-  withState({
-    active: true
-  })(({ store }) => (
-    <div>
-      <h1>Closable Banners</h1>
-      <p>Banners can also be closable.</p>
-      {store.state.active ? (
-        <Banner
-          state={selectV2('State', bannerStateOptions, 'warning')}
-          message={text(
-            'Message',
-            'Hey, no peeking! Close this banner by clicking that X button.'
+  () => (
+    <WithState initialState={{ active: false }}>
+      {({ active }, { setState }) => (
+        <div>
+          <h1>Closable Banners</h1>
+          <p>Banners can also be closable.</p>
+          {active ? (
+            <Banner
+              state={select('State', bannerStateOptions, 'warning')}
+              message={text(
+                'Message',
+                'Hey, no peeking! Close this banner by clicking that X button.'
+              )}
+              onClose={() => setState({ active: !active })}
+            />
+          ) : (
+            <button onClick={() => setState({ active: !active })}>
+              Open banner
+            </button>
           )}
-          {...store.state}
-          onClose={() => store.set({ active: !store.state.active })}
-        />
-      ) : (
-        <button onClick={() => store.set({ active: !store.state.active })}>
-          Open banner
-        </button>
+        </div>
       )}
-    </div>
-  ))
+    </WithState>
+  ),
+  { info: { disable: true } }
 );

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { withState } from '@dump247/storybook-state';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
+import WithState from '../../../.storybook/components/WithState';
 
 import Button from '../../button/src/components/Button';
 
@@ -14,7 +14,13 @@ import DrawerFooter from '../src/components/DrawerFooter';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Drawer', module).addDecorator(StoryWrapper);
+const story = storiesOf('Components/Drawer', module)
+  .addDecorator(StoryWrapper)
+  .addDecorator(
+    wInfo({
+      propTables: [Drawer, DrawerHeader, DrawerBody, DrawerFooter]
+    })
+  );
 
 const info = `
 ## Install
@@ -54,31 +60,31 @@ import { Drawer, DrawerHeader, DrawerBody, DrawerFooter } from '@kata-kit/drawer
 `;
 
 story.add(
-  'basic',
-  wInfo(info, { propTables: [Drawer, DrawerHeader, DrawerBody, DrawerFooter] })(
-    withState({ isOpen: false })(({ store }) => (
-      <>
-        <Drawer
-          isOpen={store.state.isOpen}
-          onClose={() => store.set({ isOpen: false })}
-        >
-          <DrawerHeader title="Drawer" />
-          <DrawerBody>
-            <p>Drawer Body</p>
-          </DrawerBody>
-          <DrawerFooter>
-            <Button
-              color="primary"
-              onClick={() => store.set({ isOpen: false })}
-            >
-              Close Drawer
-            </Button>
-          </DrawerFooter>
-        </Drawer>
-        <Button color="primary" onClick={() => store.set({ isOpen: true })}>
-          Open drawer
-        </Button>
-      </>
-    ))
-  )
+  'Documentation',
+  () => (
+    <WithState initialState={{ isOpen: false }}>
+      {({ isOpen }, { setState }) => (
+        <div>
+          <Drawer isOpen={isOpen} onClose={() => setState({ isOpen: false })}>
+            <DrawerHeader title="Drawer" />
+            <DrawerBody>
+              <p>Drawer Body</p>
+            </DrawerBody>
+            <DrawerFooter>
+              <Button
+                color="primary"
+                onClick={() => setState({ isOpen: false })}
+              >
+                Close Drawer
+              </Button>
+            </DrawerFooter>
+          </Drawer>
+          <Button color="primary" onClick={() => setState({ isOpen: true })}>
+            Open drawer
+          </Button>
+        </div>
+      )}
+    </WithState>
+  ),
+  { info }
 );

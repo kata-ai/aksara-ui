@@ -8,7 +8,9 @@ import Badge from '../src/components/Badge';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Badge', module).addDecorator(StoryWrapper);
+const story = storiesOf('Components/Badge', module)
+  .addDecorator(StoryWrapper)
+  .addDecorator(wInfo({ propTables: [Badge] }));
 
 const info = `
 ## Install
@@ -31,7 +33,7 @@ import { Badge } from '@kata-kit/badge';
 
 story.add(
   'Documentation',
-  wInfo(info, { propTables: [Badge] })(() => (
+  () => (
     <div>
       <Badge>entity</Badge> <Badge color="primary">primary</Badge>{' '}
       <Badge color="secondary">secondary</Badge>{' '}
@@ -39,5 +41,6 @@ story.add(
       <Badge color="warning">warning</Badge>{' '}
       <Badge color="danger">danger</Badge>{' '}
     </div>
-  ))
+  ),
+  { info }
 );

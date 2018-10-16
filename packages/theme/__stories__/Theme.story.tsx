@@ -11,7 +11,11 @@ const StoryWrapper: StoryDecorator = storyFn => (
 
 const story = storiesOf('Components/Theme', module).addDecorator(StoryWrapper);
 
-story.add('Reset', () => <KataReset>This is the default reset.</KataReset>);
+story.add('Reset', () => (
+  <KataReset style={{ padding: '8px 16px' }}>
+    This is the default reset.
+  </KataReset>
+));
 
 story.add('Themed Reset', () => (
   <Theme

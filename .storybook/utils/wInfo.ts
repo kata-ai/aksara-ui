@@ -1,6 +1,12 @@
 import { withInfo, Options } from '@storybook/addon-info';
+import { StoryDecorator } from '@storybook/react';
+import { StoryState } from '@dump247/storybook-state';
+
 import { variables } from '@kata-kit/theme';
+
 import { H1, H2, P, H3, H4, H5, H6 } from '../components/Markdown';
+import Wrapper from '../components/Wrapper';
+import WithState from '../components/WithState';
 
 const wInfoStyle = {
   header: {
@@ -14,6 +20,7 @@ const wInfoStyle = {
     body: {
       paddingTop: 0,
       paddingBottom: '10px',
+      marginBottom: 0,
       borderColor: variables.colors.gray30,
       fontSize: variables.fontProps.rootFontSize,
       lineHeights: variables.fontProps.rootLineHeight
@@ -25,8 +32,12 @@ const wInfoStyle = {
       lineHeight: variables.fontProps.titleLineHeight
     }
   },
+  info: {
+    backgroundColor: variables.colors.white
+  },
   infoBody: {
-    padding: 0,
+    padding: '32px 16px',
+    margin: 0,
     border: 'none',
     fontSize: variables.fontProps.rootFontSize,
     lineHeights: variables.fontProps.rootLineHeight
@@ -43,15 +54,23 @@ const wInfoComponents = {
   p: P
 };
 
-const wInfo = (text, config?: Options) =>
-  withInfo(Object.assign(
-    {},
-    {
-      styles: wInfoStyle,
-      components: wInfoComponents,
-      text: text
-    },
-    config
-  ) as any);
+const wInfo = (config?: Options) => {
+  // The new pattern for `withInfo()` is a decorator, however the typings
+  // haven't caught up yet, so we have to cast this whole function as
+  // `StoryDecorator` here.
+  return withInfo(
+    Object.assign(
+      {},
+      {
+        inline: true,
+        source: false,
+        propTablesExclude: [WithState, StoryState, Wrapper],
+        styles: wInfoStyle,
+        components: wInfoComponents
+      },
+      config
+    )
+  ) as StoryDecorator;
+};
 
 export default wInfo;

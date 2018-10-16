@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { withState } from '@dump247/storybook-state';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
+import WithState from '../../../.storybook/components/WithState';
 
 import Pagination from '../src/Pagination';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Pagination', module).addDecorator(
-  StoryWrapper
-);
+const story = storiesOf('Components/Pagination', module)
+  .addDecorator(StoryWrapper)
+  .addDecorator(wInfo({ propTables: [Pagination] }));
 
 const info = `
 ## Install
@@ -36,29 +36,39 @@ npm install @kata-kit/pagination
 
 story.add(
   'Basic',
-  wInfo(info, { propTables: [Pagination] })(
-    withState({ current: 1, total: 5 })(({ store }) => (
-      <Pagination
-        {...store.state}
-        onSelect={select => store.set({ current: select })}
-      />
-    ))
-  )
+  () => (
+    <WithState initialState={{ current: 1, total: 5 }}>
+      {({ current, total }, { setState }) => (
+        <Pagination
+          current={current}
+          total={total}
+          onSelect={select => setState({ current: select })}
+        />
+      )}
+    </WithState>
+  ),
+  { info }
 );
 
 story.add(
   'Large page numbers',
-  withState({ current: 10, total: 50 })(({ store }) => (
-    <div>
-      <h1>Large page numbers</h1>
-      <p>
-        Paginations will also automatically truncate itself in the most
-        convenient manner when the number of pages get too large.
-      </p>
-      <Pagination
-        {...store.state}
-        onSelect={select => store.set({ current: select })}
-      />
-    </div>
-  ))
+  () => (
+    <WithState initialState={{ current: 10, total: 50 }}>
+      {({ current, total }, { setState }) => (
+        <div>
+          <h1>Large page numbers</h1>
+          <p>
+            Paginations will also automatically truncate itself in the most
+            convenient manner when the number of pages get too large.
+          </p>
+          <Pagination
+            current={current}
+            total={total}
+            onSelect={select => setState({ current: select })}
+          />
+        </div>
+      )}
+    </WithState>
+  ),
+  { info: { disable: true } }
 );
