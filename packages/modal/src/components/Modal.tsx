@@ -17,6 +17,8 @@ export interface ModalProps {
   noBackdrop?: boolean;
   /** Additional CSS classes to give to the modal. */
   className?: string;
+  /** Used to reference the ID of the title element in the modal */
+  labelledBy?: string;
   /** Callback method run when the Close button is clicked. */
   onClose(): void;
 }
@@ -124,6 +126,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                 }
                 role="dialog"
                 aria-modal="true"
+                aria-labelledby={this.props.labelledBy || null}
                 {...themeAttributes}
               >
                 <ModalContext.Provider value={this.getContextAPI()}>
