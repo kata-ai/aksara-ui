@@ -7,7 +7,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper>{storyFn()}</RootWrapper>
 );
 
-const story = storiesOf('Reset', module).addDecorator(StoryWrapper);
+const story = storiesOf('Foundations|Reset', module).addDecorator(StoryWrapper);
 
 story.add('Headings', () => (
   <div>

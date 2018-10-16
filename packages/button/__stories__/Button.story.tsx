@@ -13,7 +13,7 @@ import ToggleButton from '../src/components/ToggleButton';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Button', module)
+const story = storiesOf('Components|Button', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo());
 

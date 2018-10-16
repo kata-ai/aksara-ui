@@ -8,7 +8,7 @@ import EmptyMessage from '../src/EmptyMessage';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Common/EmptyMessage', module)
+const story = storiesOf('Components|Common/EmptyMessage', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo());
 

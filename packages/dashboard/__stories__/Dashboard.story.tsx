@@ -9,7 +9,9 @@ const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding>{storyFn()}</RootWrapper>
 );
 
-const story = storiesOf('Layout/Dashboard', module).addDecorator(StoryWrapper);
+const story = storiesOf('Foundations|Dashboard', module).addDecorator(
+  StoryWrapper
+);
 
 story.add('default', () => (
   <Dashboard title="kata-kit Demo">DashboardContent</Dashboard>

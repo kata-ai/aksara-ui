@@ -10,7 +10,7 @@ import { Button } from '../../button/src';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Common/FocusTrap', module)
+const story = storiesOf('Components|Common/FocusTrap', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo());
 

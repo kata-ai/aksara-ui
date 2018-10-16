@@ -14,7 +14,7 @@ import DrawerFooter from '../src/components/DrawerFooter';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Drawer', module)
+const story = storiesOf('Components|Drawer', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({

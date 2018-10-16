@@ -8,7 +8,7 @@ import Board from '../src/Board';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Common/Board', module).addDecorator(
+const story = storiesOf('Components|Common/Board', module).addDecorator(
   StoryWrapper
 );
 

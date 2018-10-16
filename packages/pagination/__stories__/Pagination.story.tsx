@@ -9,7 +9,7 @@ import Pagination from '../src/Pagination';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components/Pagination', module)
+const story = storiesOf('Components|Pagination', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo({ propTables: [Pagination] }));
 
