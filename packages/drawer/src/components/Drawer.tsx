@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
-import FocusLock from 'react-focus-lock';
 
 import { Theme } from '@kata-kit/theme';
+import { FocusTrap } from '@kata-kit/common';
 
 import DrawerContext from './DrawerContext';
 import {
@@ -59,6 +59,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
     this.watchOverflow = this.watchOverflow.bind(this);
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -89,6 +90,12 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     }
   }
 
+  handleKeyDown(event: React.KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.onCloseDrawer();
+    }
+  }
+
   onCloseDrawer() {
     this.props.onClose();
   }
@@ -111,7 +118,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
   render() {
     const wrapper = (
-      <>
+      <FocusTrap active={this.state.isOpen} onKeyDown={this.handleKeyDown}>
         {this.props.backdrop && (
           <DrawerOverlay
             className={classnames(this.state.isOpen && 'is-open')}
@@ -122,25 +129,23 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         )}
         <Theme values={theme}>
           {themeAttributes => (
-            <FocusLock disabled={!this.state.isOpen}>
-              <DrawerWrapper
-                theme={themeAttributes}
-                className={classnames(
-                  this.state.isOpen ? 'is-open' : 'is-closed',
-                  this.props.className
-                )}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby={this.props.labelledBy || null}
-              >
-                <DrawerContext.Provider value={this.getContextAPI()}>
-                  {this.state.isOpen && this.props.children}
-                </DrawerContext.Provider>
-              </DrawerWrapper>
-            </FocusLock>
+            <DrawerWrapper
+              theme={themeAttributes}
+              className={classnames(
+                this.state.isOpen ? 'is-open' : 'is-closed',
+                this.props.className
+              )}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={this.props.labelledBy || null}
+            >
+              <DrawerContext.Provider value={this.getContextAPI()}>
+                {this.state.isOpen && this.props.children}
+              </DrawerContext.Provider>
+            </DrawerWrapper>
           )}
         </Theme>
-      </>
+      </FocusTrap>
     );
     return createPortal(wrapper, this.el);
   }

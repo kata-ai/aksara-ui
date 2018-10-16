@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
-import FocusLock from 'react-focus-lock';
 
 import { Theme } from '@kata-kit/theme';
+import { FocusTrap } from '@kata-kit/common';
 
 import ModalDialog from './ModalDialog';
 import ModalContext from './ModalContext';
@@ -65,6 +65,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
     this.watchOverflow = this.watchOverflow.bind(this);
     this.getContextAPI = this.getContextAPI.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -80,6 +81,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
       document.body.removeChild(this.el);
     } catch (error) {
       // do nothing
+    }
+  }
+
+  handleKeyDown(event: React.KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.onCloseDrawer();
     }
   }
 
@@ -106,7 +113,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const wrapper = (
-      <>
+      <FocusTrap active={this.state.show} onKeyDown={this.handleKeyDown}>
         {!this.props.noBackdrop && (
           <ModalOverlay
             className={classnames(this.state.show ? 'is-open' : 'is-closed')}
@@ -115,28 +122,24 @@ class Modal extends React.Component<ModalProps, ModalState> {
         )}
         <Theme>
           {themeAttributes => (
-            <FocusLock disabled={!this.state.show}>
-              <ModalWrapper
-                className={classnames(
-                  this.state.show ? 'is-open' : 'is-closed',
-                  this.props.className
-                )}
-                onClick={
-                  !this.props.noBackdrop ? this.onCloseDrawer : undefined
-                }
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby={this.props.labelledBy || null}
-                {...themeAttributes}
-              >
-                <ModalContext.Provider value={this.getContextAPI()}>
-                  <ModalDialog>{this.props.children}</ModalDialog>
-                </ModalContext.Provider>
-              </ModalWrapper>
-            </FocusLock>
+            <ModalWrapper
+              className={classnames(
+                this.state.show ? 'is-open' : 'is-closed',
+                this.props.className
+              )}
+              onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={this.props.labelledBy || null}
+              {...themeAttributes}
+            >
+              <ModalContext.Provider value={this.getContextAPI()}>
+                <ModalDialog>{this.props.children}</ModalDialog>
+              </ModalContext.Provider>
+            </ModalWrapper>
           )}
         </Theme>
-      </>
+      </FocusTrap>
     );
     return createPortal(wrapper, this.el);
   }
