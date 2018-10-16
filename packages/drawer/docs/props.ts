@@ -17,7 +17,7 @@ export const drawerProps: PropAttributesMap = {
     description: 'Additional CSS classes to give to the drawer.',
     defaultValue: 'undefined'
   },
-  labelledBy: {
+  labelledById: {
     type: 'string',
     description: 'Used to reference the ID of the title element in the drawer',
     defaultValue: 'undefined'
