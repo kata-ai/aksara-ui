@@ -38,7 +38,12 @@ story.add(
   () => (
     <Card title="Sample Card">Cards are used for UI elements with text.</Card>
   ),
-  { info }
+  {
+    info: {
+      text: info,
+      propTables: [Card]
+    }
+  }
 );
 
 story.add(
@@ -51,17 +56,20 @@ story.add(
     </DashboardCard>
   ),
   {
-    info: `
-  ## Usage
+    info: {
+      text: `
+      ## Usage
 
-  ~~~javascript
-  <DashboardCard title="Title">Card content</DashboardCard>
-  ~~~
-  `
+      ~~~javascript
+      <DashboardCard title="Title">Card content</DashboardCard>
+      ~~~
+      `,
+      propTables: [DashboardCard]
+    }
   }
 );
 
-story.addDecorator(wInfo({ propTables: [CardGrid] })).add(
+story.add(
   'CardGrid',
   () => (
     <CardGrid>
@@ -81,22 +89,25 @@ story.addDecorator(wInfo({ propTables: [CardGrid] })).add(
     </CardGrid>
   ),
   {
-    info: `
-  ## Usage
+    info: {
+      text: `
+      ## Usage
 
-  ~~~javascript
-  <CardGrid>
-  <DashboardCard title="First Card">
-    Card content
-  </DashboardCard>
-  <DashboardCard title="Second Card">
-    Card content
-  </DashboardCard>
-  <DashboardCard title="Third Card">
-    Card content
-  </DashboardCard>
-  </CardGrid>
-  ~~~
-  `
+      ~~~javascript
+      <CardGrid>
+      <DashboardCard title="First Card">
+        Card content
+      </DashboardCard>
+      <DashboardCard title="Second Card">
+        Card content
+      </DashboardCard>
+      <DashboardCard title="Third Card">
+        Card content
+      </DashboardCard>
+      </CardGrid>
+      ~~~
+      `,
+      propTables: [CardGrid]
+    }
   }
 );
