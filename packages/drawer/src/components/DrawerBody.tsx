@@ -13,9 +13,7 @@ const DrawerBody: React.SFC<DrawerBodyProps> = ({ className, children }) => (
   <DrawerContext.Consumer>
     {api => (
       <Scrollbars onScrollFrame={scroll => api.watchOverflow(scroll.top)}>
-        <Root className={className} id={api.ids.describedBy}>
-          {children}
-        </Root>
+        <Root className={className}>{children}</Root>
       </Scrollbars>
     )}
   </DrawerContext.Consumer>
