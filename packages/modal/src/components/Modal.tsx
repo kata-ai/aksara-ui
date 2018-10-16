@@ -130,7 +130,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
               onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
               role="dialog"
               aria-modal="true"
-              aria-labelledby={this.props.labelledBy || null}
+              aria-labelledby={this.props.labelledBy}
               {...themeAttributes}
             >
               <ModalContext.Provider value={this.getContextAPI()}>
