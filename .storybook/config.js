@@ -9,7 +9,11 @@ setOptions({
   url: 'https://github.com/kata-ai/kata-kit'
 });
 
-const req = require.context('../', true, /\/__stories__\/.+\.story\.tsx?$/);
+const req = require.context(
+  '../packages',
+  true,
+  /\/__stories__\/.+\.story\.tsx?$/
+);
 
 setDefaults({
   inline: true,
