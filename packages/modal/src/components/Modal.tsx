@@ -33,12 +33,6 @@ export interface ModalState {
 class Modal extends React.Component<ModalProps, ModalState> {
   el: HTMLDivElement;
 
-  private identifier = performance.now().toString(); // Generates unique values
-  private ids = {
-    labelledBy: this.identifier + '-label',
-    describedBy: this.identifier + '-body'
-  };
-
   state = {
     show: false,
     visible: false
@@ -103,7 +97,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
     return {
       show: this.state.show,
       overflow: this.state.visible,
-      ids: this.ids,
       watchOverflow: this.watchOverflow,
       onClose: this.onCloseDrawer
     };
@@ -131,8 +124,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
                 }
                 role="dialog"
                 aria-modal="true"
-                aria-labelledby={this.ids.labelledBy}
-                aria-describedby={this.ids.describedBy}
                 {...themeAttributes}
               >
                 <ModalContext.Provider value={this.getContextAPI()}>
