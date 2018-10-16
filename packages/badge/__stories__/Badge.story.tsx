@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
-import JSXAddon from 'storybook-addon-jsx';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
 
 import Badge from '../src/components/Badge';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -32,7 +29,7 @@ import { Badge } from '@kata-kit/badge';
 ~~~
 `;
 
-story.addWithJSX(
+story.add(
   'Documentation',
   wInfo(info, { propTables: [Badge] })(() => (
     <div>
@@ -42,6 +39,5 @@ story.addWithJSX(
       <Badge color="warning">warning</Badge>{' '}
       <Badge color="danger">danger</Badge>{' '}
     </div>
-  )),
-  { skip: 2 }
+  ))
 );

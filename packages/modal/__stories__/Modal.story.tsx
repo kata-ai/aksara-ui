@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withState } from '@dump247/storybook-state';
-import JSXAddon from 'storybook-addon-jsx';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
@@ -12,8 +11,6 @@ import Modal from '../src/components/Modal';
 import ModalHeader from '../src/components/ModalHeader';
 import ModalBody from '../src/components/ModalBody';
 import ModalFooter from '../src/components/ModalFooter';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 

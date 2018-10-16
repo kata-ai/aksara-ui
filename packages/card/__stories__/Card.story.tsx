@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
-import JSXAddon from 'storybook-addon-jsx';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
@@ -8,8 +7,6 @@ import Wrapper from '../../../.storybook/components/Wrapper';
 import Card from '../src/Card';
 import DashboardCard from '../src/DashboardCard';
 import CardGrid from '../src/CardGrid';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -34,15 +31,14 @@ import { Card } from 'kata-kit/card';
 ~~~
 `;
 
-story.addWithJSX(
+story.add(
   'Documentation',
   wInfo(info, { propTables: [Card] })(() => (
     <Card title="Sample Card">Cards are used for UI elements with text.</Card>
-  )),
-  { skip: 1 }
+  ))
 );
 
-story.addWithJSX(
+story.add(
   'DashboardCard',
   wInfo(
     `
@@ -59,11 +55,10 @@ story.addWithJSX(
       1500s, when an unknown printer took a galley of type and scrambled it to
       make a type specimen book.
     </DashboardCard>
-  )),
-  { skip: 1 }
+  ))
 );
 
-story.addWithJSX(
+story.add(
   'CardGrid',
   wInfo(
     `
@@ -100,6 +95,5 @@ story.addWithJSX(
         electronic typesetting, remaining essentially unchanged.
       </DashboardCard>
     </CardGrid>
-  )),
-  { skip: 1 }
+  ))
 );

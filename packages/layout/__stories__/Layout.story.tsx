@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
-import JSXAddon from 'storybook-addon-jsx';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import RootWrapper from '../../../.storybook/components/Wrapper';
 
@@ -14,15 +13,13 @@ import {
   SidebarSub
 } from '../src';
 
-setAddon(JSXAddon);
-
 const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding>{storyFn()}</RootWrapper>
 );
 
 const story = storiesOf('Layout', module).addDecorator(StoryWrapper);
 
-story.addWithJSX('default', () => (
+story.add('default', () => (
   <Wrapper>
     <Topbar
       leftContent={
@@ -38,7 +35,7 @@ story.addWithJSX('default', () => (
   </Wrapper>
 ));
 
-story.addWithJSX('with SidebarSub', () => (
+story.add('with SidebarSub', () => (
   <Wrapper>
     <Topbar
       leftContent={

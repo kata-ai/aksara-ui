@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withState } from '@dump247/storybook-state';
-import JSXAddon from 'storybook-addon-jsx';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
@@ -12,8 +11,6 @@ import Drawer from '../src/components/Drawer';
 import DrawerHeader from '../src/components/DrawerHeader';
 import DrawerBody from '../src/components/DrawerBody';
 import DrawerFooter from '../src/components/DrawerFooter';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 

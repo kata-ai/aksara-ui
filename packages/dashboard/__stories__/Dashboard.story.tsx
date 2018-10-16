@@ -1,12 +1,9 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
-import JSXAddon from 'storybook-addon-jsx';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import RootWrapper from '../../../.storybook/components/Wrapper';
 
 import { Dashboard } from '../src';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding>{storyFn()}</RootWrapper>
@@ -14,11 +11,11 @@ const StoryWrapper: StoryDecorator = storyFn => (
 
 const story = storiesOf('Layout/Dashboard', module).addDecorator(StoryWrapper);
 
-story.addWithJSX('default', () => (
+story.add('default', () => (
   <Dashboard title="kata-kit Demo">DashboardContent</Dashboard>
 ));
 
-story.addWithJSX('starter', () => (
+story.add('starter', () => (
   <Dashboard
     isStarter
     title="kata-kit Demo"

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withState } from '@dump247/storybook-state';
 import { action } from '@storybook/addon-actions';
-import JSXAddon from 'storybook-addon-jsx';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
@@ -11,8 +10,6 @@ import Button from '../src/components/Button';
 import FloatingButton from '../src/components/FloatingButton';
 import SupportButton from '../src/components/SupportButton';
 import ToggleButton from '../src/components/ToggleButton';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -37,7 +34,7 @@ import { Button } from 'kata-kit/button';
 ~~~
 `;
 
-story.addWithJSX(
+story.add(
   'Documentation',
   wInfo(info)(() => (
     <div>
@@ -51,11 +48,10 @@ story.addWithJSX(
         Loading...
       </Button>
     </div>
-  )),
-  { skip: 2 }
+  ))
 );
 
-story.addWithJSX(
+story.add(
   'FloatingButton',
   wInfo(`
 ## Usage
@@ -69,11 +65,10 @@ story.addWithJSX(
       <FloatingButton icon="bot" disabled />{' '}
       <FloatingButton icon="bot" isLoading />{' '}
     </div>
-  )),
-  { skip: 2 }
+  ))
 );
 
-story.addWithJSX(
+story.add(
   'SupportButton',
   wInfo(`
 ## Usage
@@ -93,31 +88,26 @@ story.addWithJSX(
         Support Button
       </SupportButton>{' '}
     </div>
-  )),
-  { skip: 2 }
+  ))
 );
 
-story.addWithJSX(
-  'Button Styles',
-  () => (
-    <div>
-      <div style={{ marginBottom: '8px' }}>
-        <Button color="primary">Primary</Button>{' '}
-        <Button color="secondary">Secondary</Button>{' '}
-        <Button color="success">Success</Button>{' '}
-        <Button color="warning">Warning</Button>{' '}
-        <Button color="danger">Danger</Button>{' '}
-        <Button color="white">White</Button>
-      </div>
-      <div>
-        <Button color="primary" block>
-          Block button
-        </Button>
-      </div>
+story.add('Button Styles', () => (
+  <div>
+    <div style={{ marginBottom: '8px' }}>
+      <Button color="primary">Primary</Button>{' '}
+      <Button color="secondary">Secondary</Button>{' '}
+      <Button color="success">Success</Button>{' '}
+      <Button color="warning">Warning</Button>{' '}
+      <Button color="danger">Danger</Button>{' '}
+      <Button color="white">White</Button>
     </div>
-  ),
-  { skip: 1 }
-);
+    <div>
+      <Button color="primary" block>
+        Block button
+      </Button>
+    </div>
+  </div>
+));
 
 story.add(
   'ToggleButton',

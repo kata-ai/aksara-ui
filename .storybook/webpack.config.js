@@ -3,6 +3,17 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = (baseConfig, env, config) => {
   config.module.rules.push({
+    test: /\.mdx?$/,
+    use: [
+      {
+        loader: require.resolve('babel-loader')
+      },
+      {
+        loader: require.resolve('@mdx-js/loader')
+      }
+    ]
+  });
+  config.module.rules.push({
     test: /\.tsx?$/,
     use: [
       {

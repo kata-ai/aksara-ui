@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
-import JSXAddon from 'storybook-addon-jsx';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import RootWrapper from '../../../.storybook/components/Wrapper';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper>{storyFn()}</RootWrapper>
@@ -12,7 +9,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
 
 const story = storiesOf('Reset', module).addDecorator(StoryWrapper);
 
-story.addWithJSX('Headings', () => (
+story.add('Headings', () => (
   <div>
     <h1>h1. Heading</h1>
     <h2>h2. Heading</h2>
@@ -23,7 +20,7 @@ story.addWithJSX('Headings', () => (
   </div>
 ));
 
-story.addWithJSX('Text helper classes', () => (
+story.add('Text helper classes', () => (
   <div>
     <h4 className="subtitle">h4. Heading with subtitle</h4>
     <h5 className="text-label">h5. Heading with text-label</h5>
@@ -31,7 +28,7 @@ story.addWithJSX('Text helper classes', () => (
   </div>
 ));
 
-story.addWithJSX('Body and links', () => (
+story.add('Body and links', () => (
   <div>
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.

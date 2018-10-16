@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { setAddon, storiesOf, StoryDecorator } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withKnobs, text, selectV2 } from '@storybook/addon-knobs/react';
 import { withState } from '@dump247/storybook-state';
-import JSXAddon from 'storybook-addon-jsx';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
 
 import Banner, { BannerState } from '../src/components/Banner';
-
-setAddon(JSXAddon);
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -46,7 +43,7 @@ const bannerStateOptions: Record<string, BannerState | BannerState[]> = {
   Info: 'info'
 };
 
-story.addWithJSX(
+story.add(
   'Documentation',
   wInfo(info, { propTables: [Banner] })(() => (
     <div>
@@ -75,11 +72,10 @@ story.addWithJSX(
         />
       </div>
     </div>
-  )),
-  { skip: 2 }
+  ))
 );
 
-story.addWithJSX('Basic', () => (
+story.add('Basic', () => (
   <Banner
     state={selectV2('State', bannerStateOptions, 'info')}
     message={text('Message', 'Hello! This is a banner.')}
