@@ -30,3 +30,11 @@ export const emptyMessageProps: PropAttributesMap = {
     defaultValue: "'Empty'"
   }
 };
+
+export const focusTrapProps: PropAttributesMap = {
+  active: {
+    description: 'Whether or not the focus lock is active',
+    type: 'boolean',
+    required: true
+  }
+};
