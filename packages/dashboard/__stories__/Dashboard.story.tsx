@@ -9,7 +9,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding>{storyFn()}</RootWrapper>
 );
 
-const story = storiesOf('Foundations|Dashboard', module).addDecorator(
+const story: any = storiesOf('Foundations|Dashboard', module).addDecorator(
   StoryWrapper
 );
 

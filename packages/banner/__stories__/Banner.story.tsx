@@ -32,7 +32,7 @@ import { Banner } from '@kata-kit/banner';
 ~~~
 `;
 
-const story = storiesOf('Components|Banner', module)
+const story: any = storiesOf('Components|Banner', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo({ propTables: [Banner] }))
   .addDecorator(withKnobs);
@@ -91,7 +91,7 @@ story.add(
 story.add(
   'Closable',
   () => (
-    <WithState initialState={{ active: false }}>
+    <WithState initialState={{ active: true }}>
       {({ active }, { setState }) => (
         <div>
           <h1>Closable Banners</h1>

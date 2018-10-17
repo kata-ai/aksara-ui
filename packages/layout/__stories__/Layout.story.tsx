@@ -17,7 +17,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding>{storyFn()}</RootWrapper>
 );
 
-const story = storiesOf('Foundations|Layout', module).addDecorator(
+const story: any = storiesOf('Foundations|Layout', module).addDecorator(
   StoryWrapper
 );
 

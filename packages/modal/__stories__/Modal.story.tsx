@@ -14,7 +14,7 @@ import ModalFooter from '../src/components/ModalFooter';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components|Modal', module)
+const story: any = storiesOf('Components|Modal', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({ propTables: [Modal, ModalHeader, ModalBody, ModalFooter] })
