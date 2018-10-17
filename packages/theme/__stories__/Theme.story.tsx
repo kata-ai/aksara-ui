@@ -9,9 +9,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding>{storyFn()}</RootWrapper>
 );
 
-const story: any = storiesOf('Components|Theme', module).addDecorator(
-  StoryWrapper
-);
+const story = storiesOf('Components|Theme', module).addDecorator(StoryWrapper);
 
 story.add('Reset', () => (
   <KataReset style={{ padding: '8px 16px' }}>
