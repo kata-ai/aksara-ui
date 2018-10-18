@@ -29,7 +29,6 @@
     "build": "lerna run build --stream --scope '@kata-kit/*'",
     "clean": "lerna run clean --stream --scope '@kata-kit/*'",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "generate-docs": "node build/generateDocs.js",
     "release": "npm run prepare && node scripts/dist/release/index.js",
     "lerna": "lerna",
     "prepare": "yarn build",
