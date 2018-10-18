@@ -25,6 +25,8 @@ export interface DrawerProps {
   backdrop?: true | false | 'static';
   /** Additional CSS classes to give to the drawer. */
   className?: string;
+  /** Used to reference the ID of the title element in the drawer */
+  labelledById?: string;
   /** Callback method run when the "Close Drawer" button is clicked. */
   onClose(): void;
 }
@@ -109,6 +111,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   getContextAPI() {
     return {
       overflow: this.state.overflow,
+      labelledById: this.props.labelledById,
       watchOverflow: this.watchOverflow,
       onClose: this.onCloseDrawer
     };
@@ -133,6 +136,9 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
                 this.state.isOpen ? 'is-open' : 'is-closed',
                 this.props.className
               )}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={this.props.labelledById}
             >
               <DrawerContext.Provider value={this.getContextAPI()}>
                 {this.state.isOpen && this.props.children}

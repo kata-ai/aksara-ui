@@ -20,7 +20,7 @@ const ModalHeader: React.SFC<ModalHeaderProps> = ({ className, title }) => (
         className={classnames(api.overflow && 'is-overflow', className)}
       >
         <ModalHeadingWrapper>
-          <ModalTitle>{title}</ModalTitle>
+          <ModalTitle id={api.labelledById}>{title}</ModalTitle>
           <Button isIcon onClick={api.onClose}>
             <i className="icon-close" />
           </Button>
