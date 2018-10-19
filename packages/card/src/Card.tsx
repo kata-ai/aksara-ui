@@ -20,8 +20,14 @@ export interface CardProps {
   onClick?: any;
   /** Card additional CSS styles. */
   style?: React.CSSProperties;
-  /** Space for the avatar. */
+  /**
+   * Space for the avatar.
+   *
+   * @deprecated use `avatarComponent` instead.
+   */
   avatar?: any;
+  /** Space for the avatar component. */
+  avatarComponent?: React.ReactNode;
 }
 
 /**
@@ -53,8 +59,14 @@ export class Card extends React.Component<CardProps> {
               {!this.props.asButton && this.props.title ? (
                 <CardHeading>
                   <CardHeadingTitle>
-                    {this.props.avatar && (
-                      <CardAvatar src={this.props.avatar} />
+                    {this.props.avatarComponent ? (
+                      <CardAvatarWrapper>
+                        {this.props.avatarComponent}
+                      </CardAvatarWrapper>
+                    ) : (
+                      this.props.avatar && (
+                        <CardAvatar src={this.props.avatar} />
+                      )
                     )}
                     <span>{this.props.title}</span>
                   </CardHeadingTitle>
@@ -132,5 +144,10 @@ const CardAvatar = styled('img')`
   border: solid 1px ${variables.colors.gray30};
   border-radius: 50%;
   object-fit: cover;
+  margin-right: 8px;
+`;
+
+const CardAvatarWrapper = styled('div')`
+  display: inline-block;
   margin-right: 8px;
 `;

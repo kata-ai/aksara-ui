@@ -16,7 +16,9 @@ const styles = (
   border: 1px solid ${props.theme.borderColor};
   border-radius: 50%;
   background: ${props.theme.backgroundColor};
-  object-fit: cover;
+  font-size: 1rem;
+  line-height: 1;
+  vertical-align: middle;
   overflow: hidden;
 
   img {

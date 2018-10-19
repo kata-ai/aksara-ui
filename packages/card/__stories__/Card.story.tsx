@@ -5,6 +5,7 @@ import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
 
 import Card from '../src/Card';
+import Avatar from '../../avatar/src/components/Avatar';
 import Button from '../../button/src/components/Button';
 import DashboardCard from '../src/DashboardCard';
 import CardGrid from '../src/CardGrid';
@@ -80,7 +81,9 @@ story.add(
       </DashboardCard>
       <DashboardCard
         title="Second Card"
-        avatar={'https://picsum.photos/350/150/?image=821'}
+        avatarComponent={
+          <Avatar src="https://picsum.photos/350/150/?image=821" />
+        }
         action={
           <Button color="secondary" isIcon>
             <i className="icon-more" />
