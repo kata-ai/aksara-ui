@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/theme",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "kata-kit theming framework.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
