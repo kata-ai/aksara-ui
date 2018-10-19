@@ -31,7 +31,7 @@ import { Board } from '@kata-kit/common';
 ~~~
 `;
 
-story.addDecorator(wInfo({ source: true })).add(
+story.addDecorator(wInfo()).add(
   'Documentation',
   () => (
     <Board>

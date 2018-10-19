@@ -42,8 +42,6 @@
     "@babel/core": "^7.1.2",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
-    "@dump247/storybook-state": "^1.5.0",
-    "@mdx-js/loader": "^0.15.3",
     "@storybook/addon-actions": "4.0.0-rc.0",
     "@storybook/addon-info": "4.0.0-rc.0",
     "@storybook/addon-knobs": "4.0.0-rc.0",

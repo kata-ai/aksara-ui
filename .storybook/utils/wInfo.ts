@@ -1,6 +1,5 @@
 import { withInfo, Options } from '@storybook/addon-info';
 import { StoryDecorator } from '@storybook/react';
-import { StoryState } from '@dump247/storybook-state';
 
 import { variables } from '@kata-kit/theme';
 
@@ -64,7 +63,7 @@ const wInfo = (config?: Options) => {
       {
         inline: true,
         source: false,
-        propTablesExclude: [WithState, StoryState, Wrapper],
+        propTablesExclude: [WithState, Wrapper],
         styles: wInfoStyle,
         components: wInfoComponents
       },
