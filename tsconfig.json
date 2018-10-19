@@ -7,6 +7,8 @@
     "jsx": "react",
     "baseUrl": "./packages",
     "paths": {
+      "@doc-utils": ["../.storybook"],
+      "@docs": ["../docs"],
       "@kata-kit/*": ["./*/src"],
       "@kata-kit/doc-utils": ["../doc-utils/src"]
     },
@@ -20,11 +22,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
-    "esModuleInterop": true,
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin"
-      }
-    ]
-  }
+    "esModuleInterop": true
+  },
+  "include": ["./", "./types/**/*.d.ts"]
 }

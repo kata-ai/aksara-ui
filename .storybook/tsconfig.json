@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "removeComments": false,
+    "composite": false,
+    "paths": {
+      "@doc-utils": ["../.storybook"],
+      "@docs": ["../docs"],
+      "@kata-kit/*": ["./*/src"],
+      "@kata-kit/doc-utils": ["../doc-utils/src"]
+    }
+  },
+  "include": ["../", "../types/**/*.d.ts"],
+  "exclude": ["../node_modules", "../scripts", "../build", "../website"]
+}
