@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./lib",
+    "rootDir": "./src",
+    "outDir": "./tsc-out"
+  },
+  "references": [{ "path": "../theme" }],
+  "include": ["./src/**/*", "./**/types/**/*.d.ts"]
+}

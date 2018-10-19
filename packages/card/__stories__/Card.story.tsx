@@ -5,6 +5,7 @@ import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
 
 import Card from '../src/Card';
+import Button from '../../button/src/components/Button';
 import DashboardCard from '../src/DashboardCard';
 import CardGrid from '../src/CardGrid';
 
@@ -77,7 +78,15 @@ story.add(
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </DashboardCard>
-      <DashboardCard title="Second Card">
+      <DashboardCard
+        title="Second Card"
+        avatar={'https://picsum.photos/350/150/?image=821'}
+        action={
+          <Button color="secondary" isIcon>
+            <i className="icon-more" />
+          </Button>
+        }
+      >
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s, when an unknown printer took a galley of type and scrambled it to
         make a type specimen book.

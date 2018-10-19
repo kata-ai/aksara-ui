@@ -1,0 +1,30 @@
+{
+  "name": "@kata-kit/avatar",
+  "version": "0.5.0",
+  "description": "Avatar component for kata-kit.",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn tsc && yarn rollup",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "rollup": "rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "tsc": "tsc -b",
+    "watch": "yarn rollup -w",
+    "watch:tsc": "tsc-watch -b --preserveWatchOutput"
+  },
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@kata-kit/theme": "^0.5.2",
+    "styled-components": "^3.4.9"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  }
+}
