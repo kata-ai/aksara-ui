@@ -6,6 +6,5 @@
     "rootDir": "./src",
     "outDir": "./tsc-out"
   },
-  "include": ["./src/**/*", "../../types/**/*.d.ts"],
-  "exclude": ["./lib", "./**/__stories__", "./scripts"]
+  "include": ["./src/**/*", "./**/types/**/*.d.ts"]
 }
