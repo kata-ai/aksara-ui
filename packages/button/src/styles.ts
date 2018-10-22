@@ -1,20 +1,25 @@
 import { css } from 'styled-components';
 import { variables } from '@kata-kit/theme';
+import { ButtonColors, ButtonSizes } from './components/Button';
 
 export interface ButtonBaseProps {
   /** Is a block button. */
   block?: boolean;
+  /** The color of the button. */
+  color?: ButtonColors;
+  /** The size of the button. */
+  size?: ButtonSizes;
 }
 
 const ButtonBase = (props: ButtonBaseProps) => css`
   display: ${props.block ? 'block' : 'inline-block'};
   position: relative;
   width: ${props.block ? '100%' : 'auto'};
-  border: none;
   background: none;
   letter-spacing: 0.2px;
   border: 1px solid transparent;
-  font-size: 1rem;
+  font-size: ${props.size === 'sm' ? '11px' : '13px'};
+  line-height: ${props.size === 'sm' ? '16px' : '20px'};
   text-decoration: none;
   text-align: center;
   white-space: nowrap;

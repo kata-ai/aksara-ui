@@ -7,11 +7,14 @@ import ThemedComponent, { variables } from '@kata-kit/theme';
 
 import ButtonBase from '../styles';
 import themes from '../theme';
+import { ButtonColors } from './Button';
 
 export interface SupportButtonProps
   extends React.HTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
+  /** The color of the button. */
+  color?: ButtonColors;
   /** The size of the button. */
   size?: 'lg' | 'sm' | '';
   /** Whether the button is an icon button or not. */
