@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/doc-utils",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Utilities to help with building the kata-kit documentation.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@kata-kit/badge": "^0.6.0",
-    "@kata-kit/button": "^0.6.0",
+    "@kata-kit/button": "^0.6.1",
     "@kata-kit/loading": "^0.6.0",
     "@kata-kit/theme": "^0.6.0",
     "polished": "^2.1.1",

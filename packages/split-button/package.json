@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/split-button",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Split Button component for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -21,8 +21,8 @@
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@kata-kit/button": "^0.6.0",
-    "@kata-kit/dropdown": "^0.6.0",
+    "@kata-kit/button": "^0.6.1",
+    "@kata-kit/dropdown": "^0.6.1",
     "@kata-kit/theme": "^0.6.0",
     "classnames": "^2.2.6",
     "styled-components": "^3.4.9"
