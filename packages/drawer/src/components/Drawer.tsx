@@ -41,12 +41,6 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     backdrop: 'static'
   };
 
-  static getDerivedStateFromProps(props: DrawerProps, state: DrawerState) {
-    return {
-      isOpen: props.isOpen
-    };
-  }
-
   el: HTMLDivElement;
 
   constructor(props: DrawerProps) {
@@ -60,6 +54,12 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     this.watchOverflow = this.watchOverflow.bind(this);
     this.onCloseDrawer = this.onCloseDrawer.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  static getDerivedStateFromProps(props: DrawerProps, state: DrawerState) {
+    return {
+      isOpen: props.isOpen
+    };
   }
 
   componentDidMount() {

@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import styled from 'styled-components';
 
 import { Button } from '@kata-kit/button';
+import { variables } from '@kata-kit/theme';
 
 import DrawerContext from './DrawerContext';
 
@@ -35,6 +36,8 @@ export default DrawerHeader;
 const DrawerTitle = styled('h2')`
   flex: 1 0 auto;
   margin-bottom: 0;
+  font-size: 20px;
+  line-height: 28px;
 `;
 
 const DrawerHeadingWrapper = styled('div')`
@@ -50,6 +53,6 @@ const DrawerHeading = styled('div')`
   z-index: 1;
 
   &.is-overflow {
-    box-shadow: $layer-100-shadow;
+    box-shadow: ${variables.layerShadows.layer100Shadow};
   }
 `;
