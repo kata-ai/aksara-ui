@@ -7,7 +7,7 @@ import { Circle } from '@kata-kit/loading';
 import ThemedComponent, { ThemeAttributes, variables } from '@kata-kit/theme';
 import themes from '../theme';
 
-import ButtonBase, { ButtonBaseProps } from '../styles';
+import ButtonBase from '../styles';
 
 // TODO items:
 // - Cannot extend button below in other packages using `styled-components`, so
@@ -25,15 +25,15 @@ export type ButtonColors =
 
 export type ButtonSizes = 'lg' | 'sm';
 
-export interface ButtonProps
-  extends ButtonBaseProps,
-    React.HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */
   color?: ButtonColors;
   /** The size of the button. */
   size?: ButtonSizes;
+  /** Is a block button. */
+  block?: boolean;
   /** Whether the button is an icon button or not. */
   isIcon?: boolean;
   /** Additional CSS classes to give to the button. */
@@ -180,11 +180,8 @@ const ButtonWrapper = styled<ButtonProps & ThemeAttributes, 'button'>('button')`
   ${props => ButtonBase(props)};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};
-  font-size: ${props => (props.size === 'sm' ? '11px' : '1rem')};
   font-weight: ${props => (props.size === 'sm' ? '700' : '500')};
-  line-height: ${props => (props.size === 'sm' ? '16px !important' : '20px')};
   border-radius: 4px;
-  line-height: 1.538rem;
 
   &:not(:disabled):not(.disabled) {
     color: ${props => props.textColor};

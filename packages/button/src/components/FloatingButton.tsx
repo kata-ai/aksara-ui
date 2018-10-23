@@ -113,6 +113,8 @@ const popIn = keyframes`
   }
 `;
 
+const { transitionFast, transitionEasing } = variables.transitions;
+
 const FloatingButtonWrapper = styled('button')`
   ${ButtonBase} height: 40px;
   width: 40px;
@@ -128,8 +130,7 @@ const FloatingButtonWrapper = styled('button')`
   justify-content: center;
   position: relative;
 
-  animation: ${popIn} ${variables.transitions.transitionFast}
-    ${variables.transitions.transitionEasing};
+  animation: ${popIn} ${transitionFast} ${transitionEasing};
 
   &:focus {
     box-shadow: ${variables.layerShadows.layer200Shadow};

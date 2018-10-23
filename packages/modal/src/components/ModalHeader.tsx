@@ -35,6 +35,8 @@ export default ModalHeader;
 const ModalTitle = styled('h2')`
   flex: 1 0 auto;
   margin-bottom: 0;
+  font-size: 20px;
+  line-height: 28px;
 `;
 
 const ModalHeadingWrapper = styled('div')`
