@@ -1,8 +1,8 @@
 import * as React from 'react';
-import classnames from 'classnames';
 import styled from 'styled-components';
 
 import { Button } from '@kata-kit/button';
+import { variables } from '@kata-kit/theme';
 
 import ModalContext from './ModalContext';
 
@@ -16,9 +16,7 @@ export interface ModalHeaderProps {
 const ModalHeader: React.SFC<ModalHeaderProps> = ({ className, title }) => (
   <ModalContext.Consumer>
     {api => (
-      <ModalHeading
-        className={classnames(api.overflow && 'is-overflow', className)}
-      >
+      <ModalHeading className={className}>
         <ModalHeadingWrapper>
           <ModalTitle id={api.labelledById}>{title}</ModalTitle>
           <Button isIcon onClick={api.onClose}>
@@ -51,6 +49,6 @@ const ModalHeading = styled('div')`
   z-index: 1;
 
   &.is-overflow {
-    box-shadow: $layer-100-shadow;
+    box-shadow: ${variables.layerShadows.layer100Shadow};
   }
 `;

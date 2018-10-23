@@ -14,6 +14,43 @@ import ModalFooter from '../src/components/ModalFooter';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
+const infoText = `
+## Install
+
+~~~sh
+# yarn
+yarn add @kata-kit/modal
+# npm
+npm install @kata-kit/modal
+~~~
+
+## Usage
+
+~~~jsx
+import { Modal, ModalHeader, ModalBody, ModalFooter } from '@kata-kit/modal';
+
+<>
+<Modal show={isOpen} onClose={() => setState({ isOpen: false })}>
+  <ModalHeader title="Modal" />
+  <ModalBody>
+    <p>Modal Body</p>
+  </ModalBody>
+  <ModalFooter>
+    <Button
+      color="primary"
+      onClick={() => setState({ isOpen: false })}
+    >
+      Close modal
+    </Button>
+  </ModalFooter>
+</Modal>
+<Button color="primary" onClick={() => setState({ isOpen: true })}>
+  Open modal
+</Button>
+</>
+~~~
+`;
+
 const story: any = storiesOf('Components|Modal', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
@@ -48,41 +85,42 @@ story.add(
     </WithState>
   ),
   {
-    info: `
-  ## Install
+    info: {
+      text: infoText
+    }
+  }
+);
 
-  ~~~sh
-  # yarn
-  yarn add @kata-kit/modal
-  # npm
-  npm install @kata-kit/modal
-  ~~~
-
-  ## Usage
-
-  ~~~jsx
-  import { Modal, ModalHeader, ModalBody, ModalFooter } from '@kata-kit/modal';
-
-  <>
-  <Modal show={isOpen} onClose={() => setState({ isOpen: false })}>
-    <ModalHeader title="Modal" />
-    <ModalBody>
-      <p>Modal Body</p>
-    </ModalBody>
-    <ModalFooter>
-      <Button
-        color="primary"
-        onClick={() => setState({ isOpen: false })}
-      >
-        Close modal
-      </Button>
-    </ModalFooter>
-  </Modal>
-  <Button color="primary" onClick={() => setState({ isOpen: true })}>
-    Open modal
-  </Button>
-  </>
-  ~~~
-  `
+story.add(
+  'Example',
+  () => (
+    <WithState initialState={{ isOpen: false }}>
+      {({ isOpen }, { setState }) => (
+        <>
+          <Modal show={isOpen} onClose={() => setState({ isOpen: false })}>
+            <ModalHeader title="Modal" />
+            <ModalBody>
+              <p>Modal Body</p>
+            </ModalBody>
+            <ModalFooter>
+              <Button
+                color="primary"
+                onClick={() => setState({ isOpen: false })}
+              >
+                Close modal
+              </Button>
+            </ModalFooter>
+          </Modal>
+          <Button color="primary" onClick={() => setState({ isOpen: true })}>
+            Open modal
+          </Button>
+        </>
+      )}
+    </WithState>
+  ),
+  {
+    info: {
+      disable: true
+    }
   }
 );
