@@ -66,3 +66,9 @@ export const InputTextBase = (
     }
   }
 `;
+
+export const InputAddonBase = (
+  props: ThemedStyledProps<{}, ThemeAttributes>
+) => css`
+  display: flex;
+`;

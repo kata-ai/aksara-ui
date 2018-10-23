@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ThemedComponent from '@kata-kit/theme';
 
 import themes from '../theme';
@@ -9,6 +9,7 @@ export interface InputTextProps
   extends React.AllHTMLAttributes<HTMLInputElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
+  addon?: boolean;
 }
 
 const InputText: React.SFC<InputTextProps> = ({
@@ -28,7 +29,20 @@ const InputText: React.SFC<InputTextProps> = ({
 
 export default InputText;
 
-const Input = styled('input')`
+const WithAddonStyles = css`
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+
+  /* TODO: prepend/append */
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+`;
+
+const Input = styled<InputTextProps, 'input'>('input')`
   ${props => InputTextBase(props)};
   height: 40px;
+
+  ${props => props.addon && WithAddonStyles};
 `;

@@ -8,7 +8,9 @@ import FormGroup from '../src/components/FormGroup';
 import FormLabel from '../src/components/FormLabel';
 import FormError from '../src/components/FormError';
 import InputText from '../src/components/InputText';
+import InputAddon from '../src/components/InputAddon';
 import InputTextarea from '../src/components/InputTextarea';
+import InputGroup from 'form/src/components/InputGroup';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -146,6 +148,29 @@ story.add(
           placeholder="Type here..."
         />
         <FormError>Please enter an email address.</FormError>
+      </FormGroup>
+    </div>
+  ),
+  { info: { disable: true } }
+);
+
+story.add(
+  'Input Addon',
+  () => (
+    <div>
+      <FormGroup>
+        <FormLabel htmlFor="firstName">First Name</FormLabel>
+        <InputGroup>
+          <InputAddon isIcon>
+            <i className="icon-account" />
+          </InputAddon>
+          <InputText
+            id="firstName"
+            name="firstName"
+            placeholder="Type here..."
+            addon
+          />
+        </InputGroup>
       </FormGroup>
     </div>
   ),
