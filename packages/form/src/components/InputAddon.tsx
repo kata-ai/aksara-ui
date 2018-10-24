@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { InputAddonBase } from '../styles';
 
-interface InputAddonProps {
+interface InputAddonProps extends React.AllHTMLAttributes<HTMLSpanElement> {
   className?: string;
   isIcon?: boolean;
 }
@@ -11,10 +11,13 @@ interface InputAddonProps {
 const InputAddon: React.SFC<InputAddonProps> = ({
   className,
   isIcon,
-  children
+  children,
+  ...rest
 }) => (
   <Div className={className}>
-    <Inner isIcon={isIcon}>{children}</Inner>
+    <Inner isIcon={isIcon} className={className} {...rest}>
+      {children}
+    </Inner>
   </Div>
 );
 
