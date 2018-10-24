@@ -26,6 +26,8 @@ const InputAddon: React.SFC<InputAddonProps> = ({
 export default InputAddon;
 
 const IsIconStyles = css`
+  width: 38px;
+
   i:before {
     font-size: 20px;
     line-height: 30px;
@@ -40,8 +42,7 @@ const Inner = styled<InputAddonProps, 'span'>('span')`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  padding: 0;
+  padding: 4px 8px;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;

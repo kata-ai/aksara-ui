@@ -78,6 +78,17 @@ story.add(
       </FormGroup>
       <FormGroup>
         <InputGroup>
+          <InputAddon>dashboard.kata.ai/</InputAddon>
+          <InputText
+            id="firstName_dummy"
+            name="firstName_dummy"
+            placeholder="Type here..."
+            addon
+          />
+        </InputGroup>
+      </FormGroup>
+      <FormGroup>
+        <InputGroup>
           <InputAddon isIcon>
             <i className="icon-account" />
           </InputAddon>
