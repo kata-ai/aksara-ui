@@ -25,8 +25,8 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build --stream --scope '@kata-kit/*'",
-    "clean": "lerna run clean --stream --scope '@kata-kit/*'",
+    "build": "lerna run build --stream",
+    "clean": "lerna run clean --stream",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "release": "npm run prepare && node scripts/dist/release/index.js",
     "lerna": "lerna",

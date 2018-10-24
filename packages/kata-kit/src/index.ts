@@ -35,11 +35,13 @@ import {
 } from './dropdown';
 
 import {
-  InputTextarea,
+  InputGroup,
   InputText,
-  FormLabel,
+  InputTextarea,
   FormGroup,
-  FormError
+  FormLabel,
+  FormError,
+  InputAddon
 } from './form';
 
 import {
@@ -105,8 +107,10 @@ export {
   DropdownMenu,
   DropdownItem,
   Dropdown,
+  InputGroup,
   InputTextarea,
   InputText,
+  InputAddon,
   FormLabel,
   FormGroup,
   FormError,
