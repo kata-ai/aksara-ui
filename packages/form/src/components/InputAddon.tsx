@@ -4,7 +4,9 @@ import styled, { css } from 'styled-components';
 import { InputAddonBase } from '../styles';
 
 interface InputAddonProps extends React.AllHTMLAttributes<HTMLSpanElement> {
+  /** Additional CSS classes to give to the component. */
   className?: string;
+  /** True if an icon is used as addon instead of text. */
   isIcon?: boolean;
 }
 

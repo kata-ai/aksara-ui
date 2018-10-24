@@ -9,6 +9,7 @@ export interface InputTextProps
   extends React.AllHTMLAttributes<HTMLInputElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
+  /** True if this text input has an addon style */
   addon?: boolean;
 }
 
