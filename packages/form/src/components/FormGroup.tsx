@@ -14,6 +14,6 @@ const FormGroup: React.SFC<FormGroupProps> = ({ className, children }) => (
 
 export default FormGroup;
 
-const Div = styled('div')`
+const Div = styled<FormGroupProps, 'div'>('div')`
   margin-bottom: ${variables.spaces.space2};
 `;
