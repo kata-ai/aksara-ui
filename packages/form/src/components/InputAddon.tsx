@@ -51,6 +51,7 @@ const Inner = styled<InputAddonProps, 'span'>('span')`
   border: 1px solid #e2e6e8;
   background-color: #f6f7f8;
   border-radius: 6px;
+  user-select: none;
 
   /* TODO: prepend/append */
   margin-right: -1px;
