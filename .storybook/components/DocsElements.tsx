@@ -1,5 +1,4 @@
 import * as React from 'react';
-import classnames from 'classnames';
 import styled from 'styled-components';
 import { NodeType } from 'react-markdown';
 
@@ -88,11 +87,37 @@ export const ContentBlockquote = styled('blockquote')`
   }
 `;
 
-export const ContentTable = ({ children, className, ...rest }) => (
-  <table className={classnames('table', className)} {...rest}>
-    {children}
-  </table>
-);
+export const ContentTable = styled('table')`
+  width: 100%;
+
+  thead {
+    border-bottom: solid 1px ${variables.colors.kataBlue};
+
+    th {
+      padding: 4px 8px;
+      font-style: normal;
+      font-stretch: normal;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      text-align: left;
+      color: ${variables.colors.gray80};
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 8px;
+        vertical-align: top;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        color: inherit;
+      }
+    }
+  }
+`;
 
 export const markdownRenderers: { [nodeType in NodeType]?: React.ReactType } = {
   root: ContentRoot,
