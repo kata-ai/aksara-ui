@@ -51,6 +51,7 @@ export const Pre = styled('pre')`
   padding: 16px;
   color: #abb2bf;
   background: #282c34;
+  font-size: 90%;
 
   code {
     color: #abb2bf;
