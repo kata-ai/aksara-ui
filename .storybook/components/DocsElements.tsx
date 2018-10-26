@@ -8,6 +8,10 @@ import { variables } from '@kata-kit/theme';
 import CodeBlock from './CodeBlock';
 
 export const ContentRoot = styled('div')`
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
   h1 {
     margin-bottom: 1rem;
     padding-bottom: ${variables.spaces.space1};
@@ -42,6 +46,12 @@ export const ContentRoot = styled('div')`
   }
 `;
 
+export const ContentHr = styled('hr')`
+  margin: 1.5rem 0;
+  border: none;
+  border-bottom: 0.25em solid ${variables.colors.gray30};
+`;
+
 export const ContentInlineCode = styled('code')`
   background-color: ${variables.colors.gray10};
   padding: 2px 4px;
@@ -72,6 +82,7 @@ export const ContentTable = ({ children, className, ...rest }) => (
 
 export const markdownRenderers: { [nodeType in NodeType]?: React.ReactType } = {
   root: ContentRoot,
+  thematicBreak: ContentHr,
   code: CodeBlock,
   inlineCode: ContentInlineCode,
   blockquote: ContentBlockquote
