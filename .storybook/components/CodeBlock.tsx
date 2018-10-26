@@ -1,6 +1,7 @@
 import React from 'react';
 import hljs from 'highlight.js';
 import styled from 'styled-components';
+import hljsTheme from './hljs-theme';
 
 interface Props {
   value: string;
@@ -33,11 +34,11 @@ class CodeBlock extends React.PureComponent<Props> {
 
   render() {
     return (
-      <pre>
+      <Pre>
         <code ref={this.setRef} className={`language-${this.props.language}`}>
           {this.props.value}
         </code>
-      </pre>
+      </Pre>
     );
   }
 }
@@ -47,4 +48,14 @@ export default CodeBlock;
 export const Pre = styled('pre')`
   margin-top: 1rem;
   margin-bottom: 1rem;
+  padding: 16px;
+  color: #abb2bf;
+  background: #282c34;
+
+  code {
+    color: #abb2bf;
+    background: #282c34;
+
+    ${hljsTheme};
+  }
 `;
