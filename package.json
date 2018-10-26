@@ -35,6 +35,7 @@
     "storybook:build": "build-storybook"
   },
   "dependencies": {
+    "highlight.js": "^9.13.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   },
@@ -84,6 +85,7 @@
     "prettier": "^1.14.3",
     "react-docgen-typescript-loader": "^3.0.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-markdown": "^4.0.3",
     "rimraf": "^2.6.2",
     "rollup": "^0.66.2",
     "rollup-plugin-auto-external": "^2.0.0",
