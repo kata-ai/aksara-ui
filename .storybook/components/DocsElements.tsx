@@ -8,32 +8,47 @@ import { variables } from '@kata-kit/theme';
 import CodeBlock from './CodeBlock';
 
 export const ContentRoot = styled('div')`
+  font-size: 16px;
+  line-height: 1.5;
+
   > *:last-child {
     margin-bottom: 0 !important;
   }
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 1rem;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+
+  h1 {
     padding-bottom: ${variables.spaces.space1};
     border-bottom: 1px solid ${variables.colors.gray30};
     font-size: 36px;
-    line-height: 44px;
   }
 
   h2 {
     margin-top: 1.5rem;
-    margin-bottom: 1rem;
     padding-bottom: ${variables.spaces.space1};
     border-bottom: 1px solid ${variables.colors.gray30};
     font-size: 28px;
-    line-height: 36px;
   }
 
   h3 {
     margin-top: 1.25rem;
-    margin-bottom: 1rem;
     font-size: 20px;
-    line-height: 28px;
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.25rem;
+    font-size: 20px;
   }
 
   p,
@@ -41,7 +56,6 @@ export const ContentRoot = styled('div')`
   ul,
   dl {
     font-size: 16px;
-    line-height: 24px;
     font-weight: 300;
   }
 `;
@@ -85,5 +99,6 @@ export const markdownRenderers: { [nodeType in NodeType]?: React.ReactType } = {
   thematicBreak: ContentHr,
   code: CodeBlock,
   inlineCode: ContentInlineCode,
-  blockquote: ContentBlockquote
+  blockquote: ContentBlockquote,
+  table: ContentTable
 };
