@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./lib",
+    "rootDir": "./src",
+    "outDir": "./tsc-out"
+  },
+  "references": [
+    { "path": "../badge" },
+    { "path": "../button" },
+    { "path": "../loading" },
+    { "path": "../theme" }
+  ],
+  "include": ["./**/*", "./types/**/*.d.ts"],
+  "exclude": ["./lib", "./**/__stories__", "./scripts"]
+}
