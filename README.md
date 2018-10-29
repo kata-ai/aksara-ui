@@ -12,6 +12,8 @@
   <a href="https://lernajs.io/"><img alt="Build Status" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
 </p>
 
+---
+
 **Wicara** (previously kata-kit)is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
 
 **Note: Wicara is still in beta.**
