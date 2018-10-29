@@ -18,8 +18,5 @@
     "clean": "rimraf lib",
     "sass": "node-sass src/index.scss lib/index.css --output-style compressed",
     "watch": "yarn sass --watch"
-  },
-  "devDependencies": {
-    "node-sass": "^4.9.3"
   }
 }

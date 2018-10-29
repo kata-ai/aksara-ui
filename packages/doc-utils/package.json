@@ -1,7 +1,7 @@
 {
-  "name": "@kata-kit/dropdown",
+  "name": "@kata-kit/doc-utils",
   "version": "0.6.1",
-  "description": "Dropdown component for kata-kit.",
+  "description": "Utilities to help with building the kata-kit documentation.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",
@@ -12,9 +12,6 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "yarn clean && yarn tsc && yarn rollup",
     "clean": "rimraf lib && rimraf tsc-out",
@@ -25,19 +22,18 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
+    "@kata-kit/badge": "^0.6.0",
     "@kata-kit/button": "^0.6.1",
     "@kata-kit/loading": "^0.6.0",
     "@kata-kit/theme": "^0.6.0",
-    "classnames": "^2.2.6",
-    "lodash-es": "^4.17.11",
+    "polished": "^2.3.0",
+    "react-live": "^1.12.0",
     "styled-components": "^3.4.9"
   },
   "peerDependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react": "^16.3.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.6",
-    "@types/lodash-es": "^4.17.1"
+    "@types/classnames": "^2.2.6"
   }
 }

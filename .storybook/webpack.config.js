@@ -43,9 +43,17 @@ module.exports = (baseConfig, env, config) => {
 
   // Workaround for webpack v4.
   if (config.resolve.plugins) {
-    config.resolve.plugins.push(new TsconfigPathsPlugin());
+    config.resolve.plugins.push(
+      new TsconfigPathsPlugin({
+        configFile: '.storybook/tsconfig.json'
+      })
+    );
   } else {
-    config.resolve.plugins = [new TsconfigPathsPlugin()];
+    config.resolve.plugins = [
+      new TsconfigPathsPlugin({
+        configFile: '.storybook/tsconfig.json'
+      })
+    ];
   }
 
   return config;
