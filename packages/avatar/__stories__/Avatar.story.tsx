@@ -32,7 +32,7 @@ npm install @kata-kit/avatar
 ## Usage
 
 ~~~jsx
-import { Badge } from '@kata-kit/badge';
+import { Avatar } from '@kata-kit/avatar';
 
 <Avatar src="" />
 ~~~
