@@ -1,0 +1,13 @@
+{
+  // This file is only necessary until tslint has TS3 references support
+  // See also https://github.com/palantir/tslint/issues/4137
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "./packages/*/src/**/*.ts",
+    "./packages/*/src/**/*.tsx",
+    "./packages/*/__tests__/**/*.ts",
+    "./packages/*/__tests__/**/*.tsx",
+    "./.storybook/**/*.ts",
+    "./.storybook/**/*.tsx"
+  ]
+}

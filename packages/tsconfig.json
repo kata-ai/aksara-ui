@@ -1,0 +1,27 @@
+{
+  "files": [],
+  "references": [
+    { "path": "assets" },
+    { "path": "avatar" },
+    { "path": "badge" },
+    { "path": "banner" },
+    { "path": "button" },
+    { "path": "card" },
+    { "path": "common" },
+    { "path": "dashboard" },
+    { "path": "doc-utils" },
+    { "path": "drawer" },
+    { "path": "dropdown" },
+    { "path": "fonts" },
+    { "path": "form" },
+    { "path": "kata-kit" },
+    { "path": "layout" },
+    { "path": "loading" },
+    { "path": "modal" },
+    { "path": "pagination" },
+    { "path": "reset" },
+    { "path": "split-button" },
+    { "path": "theme" },
+    { "path": "tooltip" }
+  ]
+}

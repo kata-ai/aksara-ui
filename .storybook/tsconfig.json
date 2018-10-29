@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "module": "commonjs",
     "removeComments": false,
@@ -7,10 +7,8 @@
     "paths": {
       "@doc-utils": ["../.storybook"],
       "@docs": ["../docs"],
-      "@kata-kit/*": ["./*/src"],
-      "@kata-kit/doc-utils": ["../doc-utils/src"]
+      "@kata-kit/*": ["../packages/*/src"]
     }
   },
-  "include": ["../", "../types/**/*.d.ts"],
-  "exclude": ["../node_modules", "../scripts", "../build", "../website"]
+  "include": ["../packages/*/__stories__/**/*.ts", "./**/*.d.ts"]
 }

@@ -29,6 +29,7 @@
     "commitmsg": "commitlint -E GIT_PARAMS",
     "release": "npm run prepare && node scripts/dist/release/index.js",
     "lerna": "lerna",
+    "lint": "tslint -p tsconfig.lint.json",
     "prepare": "yarn build",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "build-storybook"

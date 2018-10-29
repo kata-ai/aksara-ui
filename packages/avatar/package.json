@@ -17,7 +17,7 @@
     "build": "yarn clean && yarn tsc && yarn rollup",
     "clean": "rimraf lib && rimraf tsc-out",
     "rollup": "rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
-    "tsc": "tsc -b",
+    "tsc": "tsc -b .",
     "watch": "yarn rollup -w",
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
