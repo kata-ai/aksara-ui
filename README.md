@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Wicara" src="assets/wicara-logo.png" />
+  <img alt="Wicara" src="assets/wicara-banner.png" />
 </p>
 
 <p align="center">
