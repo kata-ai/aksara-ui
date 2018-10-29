@@ -1,26 +1,28 @@
-# kata-kit
+<p align="center">
+  <img alt="Wicara" src="assets/wicara-logo.png" />
+</p>
 
-[![build Status)](https://img.shields.io/travis/kata-ai/kata-kit.svg)](https://travis-ci.org/kata-ai/kata-kit) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+<p align="center">
+  <strong>wicara /wi·ca·ra/ (noun)</strong><br>
+  a series of voices in a language used to communicate words and sentences.
+</p>
 
-> The component library powering the Kata.ai platform.
+<p align="center">
+  <a href="https://travis-ci.org/kata-ai/kata-kit"><img alt="Build Status" src="https://img.shields.io/travis/kata-ai/kata-kit.svg" /></a>
+  <a href="https://lernajs.io/"><img alt="Build Status" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
+</p>
 
-`kata-kit` is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
+**Wicara** (previously kata-kit)is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
 
-**Note: kata-kit is still in beta.**
+**Note: Wicara is still in beta.**
 
 ---
-
-## Contributing
-
-kata-kit is developed by the help of developers like you! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started on developing kata-kit.
-
-This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Usage
 
 ### Prerequisites
 
-At the bare minimum, you should at least import the global CSS reset provided by `kata-kit`.
+At the bare minimum, you should at least import the global CSS reset provided by Wicara.
 
 ```js
 import '@kata-kit/reset';
@@ -28,7 +30,7 @@ import '@kata-kit/reset';
 
 ### Example
 
-`kata-kit` is built in React, with styling done in styled-components. To use these components, import them as follows:
+Wicara is built in React, with styling done in styled-components. To use these components, import them as follows:
 
 ```jsx
 // Example for `<Button />` component.
