@@ -8,6 +8,7 @@ import IntroHeader from 'components/IntroHeader';
 
 import Introduction from '@docs/introduction.md';
 import GettingStarted from '@docs/getting-started.md';
+import UsingAssets from '@docs/using-assets.md';
 import Theming from '@docs/theming.md';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
@@ -46,6 +47,9 @@ story.add('Introduction', () => (
 ));
 story.add('Getting Started', () => (
   <Markdown source={GettingStarted} renderers={markdownRenderers} />
+));
+story.add('Using Assets', () => (
+  <Markdown source={UsingAssets} renderers={markdownRenderers} />
 ));
 story.add('Theming', () => (
   <Markdown source={Theming} renderers={markdownRenderers} />
