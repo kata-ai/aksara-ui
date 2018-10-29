@@ -14,7 +14,34 @@ Therefore, we borrowed some ideas from [Atlaskit](https://atlaskit.atlassian.com
 
 The `KataReset` component applies CSS resets to all of its descendant nodes.
 
-Inside the `KataReset` component is the `Consumer` of `ThemeContext`. Here we can easily override the default theme with a `Theme` component. The default values that can be overridden are as follows:
+```jsx
+import { KataReset } from '@kata-kit/theme';
+
+export default () => <KataReset>This is the default reset.</KataReset>;
+```
+
+Inside the `KataReset` component is the `Consumer` of `ThemeContext`. Here we can easily override the default theme with a `Theme` component.
+
+```jsx
+import { Theme, KataReset } from '@kata-kit/theme';
+
+export default () => (
+  <Theme
+    values={{
+      backgroundColor: variables.colors.gray80,
+      textColor: variables.colors.gray20
+    }}
+  >
+    {innerTheme => (
+      <KataReset {...innerTheme} style={{ padding: '8px 16px' }}>
+        A reset can be themed.
+      </KataReset>
+    )}
+  </Theme>
+);
+```
+
+The default values that can be overridden are as follows:
 
 ```ts
 export type ThemeAttributes = {
