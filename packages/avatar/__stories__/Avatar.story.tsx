@@ -42,7 +42,7 @@ import { Avatar } from '@kata-kit/avatar';
   'Documentation',
   () => (
     <div>
-      <Avatar size={24} src="https://picsum.photos/400/400/?image=225" />
+      <Avatar size={24} src="https://picsum.photos/400/400/?image=225" />{' '}
       <Avatar size={40} src="https://picsum.photos/600/400/?image=777" />
     </div>
   ),
