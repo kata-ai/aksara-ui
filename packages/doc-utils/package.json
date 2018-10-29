@@ -15,6 +15,7 @@
   "scripts": {
     "build": "yarn clean && yarn tsc && yarn rollup",
     "clean": "rimraf lib && rimraf tsc-out",
+    "prepublishOnly": "yarn build",
     "rollup": "rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
     "tsc": "tsc -b .",
     "watch": "yarn rollup -w",
