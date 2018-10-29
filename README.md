@@ -14,7 +14,7 @@
 
 ---
 
-**Wicara** (previously kata-kit)is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
+**Wicara** (previously kata-kit) is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
 
 **Note: Wicara is still in beta.**
 

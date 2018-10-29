@@ -4,11 +4,11 @@
     "module": "commonjs",
     "removeComments": false,
     "composite": false,
+    "baseUrl": "./",
     "paths": {
-      "@doc-utils": ["../.storybook"],
+      "@doc-utils": ["./"],
       "@docs": ["../docs"],
       "@kata-kit/*": ["../packages/*/src"]
     }
-  },
-  "include": ["../packages/*/__stories__/**/*.ts", "./**/*.d.ts"]
+  }
 }

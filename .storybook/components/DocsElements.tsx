@@ -28,14 +28,14 @@ export const ContentRoot = styled('div')`
   h1 {
     padding-bottom: ${variables.spaces.space1};
     border-bottom: 1px solid ${variables.colors.gray30};
-    font-size: 36px;
+    font-size: 32px;
   }
 
   h2 {
     margin-top: 1.5rem;
     padding-bottom: ${variables.spaces.space1};
     border-bottom: 1px solid ${variables.colors.gray30};
-    font-size: 28px;
+    font-size: 24px;
   }
 
   h3 {
@@ -47,7 +47,7 @@ export const ContentRoot = styled('div')`
   h5,
   h6 {
     margin-top: 1.25rem;
-    font-size: 20px;
+    font-size: 28px;
   }
 
   p,
