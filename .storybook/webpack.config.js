@@ -34,7 +34,7 @@ module.exports = (baseConfig, env, config) => {
     include: path.resolve(__dirname, '../')
   });
 
-  config.resolve.extensions.push('.ts', '.tsx');
+  config.resolve.extensions.push('.ts', '.tsx', '.md', '.mdx');
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
     '@kata-kit': path.resolve(__dirname, '../', 'packages'),
     '@docs': path.resolve(__dirname, '../', 'docs')
