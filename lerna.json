@@ -3,8 +3,5 @@
   "packages": ["packages/*", "doc-utils"],
   "version": "independent",
   "npmClient": "yarn",
-  "publishConfig": {
-    "access": "public"
-  },
   "useWorkspaces": true
 }

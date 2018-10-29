@@ -6,6 +6,9 @@
   "repository": "https://github.com/kata-ai/kata-kit.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": "^16.3.0"
   }

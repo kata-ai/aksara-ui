@@ -20,6 +20,9 @@
     "watch": "yarn rollup -w",
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@kata-kit/button": "^0.6.1",
     "@kata-kit/common": "^0.6.0",

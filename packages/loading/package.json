@@ -13,6 +13,9 @@
     "lib",
     "**/images/*"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "yarn clean && yarn tsc && yarn rollup",
     "clean": "rimraf lib && rimraf tsc-out",
