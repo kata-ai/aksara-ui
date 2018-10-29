@@ -8,6 +8,7 @@ import IntroHeader from 'components/IntroHeader';
 
 import Introduction from '@docs/introduction.md';
 import GettingStarted from '@docs/getting-started.md';
+import Contributing from '@docs/contributing.md';
 import UsingAssets from '@docs/using-assets.md';
 import Fonts from '@docs/fonts.md';
 import Theming from '@docs/theming.md';
@@ -48,6 +49,9 @@ story.add('Introduction', () => (
 ));
 story.add('Getting Started', () => (
   <Markdown source={GettingStarted} renderers={markdownRenderers} />
+));
+story.add('Contributing', () => (
+  <Markdown source={Contributing} renderers={markdownRenderers} />
 ));
 story.add('Using Assets', () => (
   <Markdown source={UsingAssets} renderers={markdownRenderers} />

@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-kata-kit is open source, so every component in kata-kit is developed by your help. You too can help contribute to this project! This page describes how to setup the project on your computer for local development.
+Wicara is open source, so every component in Wicara is developed by your help. You too can help contribute to this project! This page describes how to setup the project on your computer for local development.
 
 This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -82,12 +82,3 @@ info Storybook started on => http://localhost:9001/
 ```
 
 The storybook server is available at `http://localhost:9001`. Note that any new component needs to have at least one story as a demo.
-
-### Demo Page
-
-The kata-kit website (located on the `website/` folder) also serves as a development environment for our components. Run the following command to start it locally:
-
-```sh-session
-$ cd website
-$ yarn dev
-```

@@ -20,6 +20,12 @@
 
 ---
 
+## Contributing
+
+Wicara is developed by the help of developers like you! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started on developing Wicara.
+
+This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Usage
 
 ### Prerequisites
