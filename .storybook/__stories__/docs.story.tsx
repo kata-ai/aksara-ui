@@ -9,6 +9,7 @@ import IntroHeader from 'components/IntroHeader';
 import Introduction from '@docs/introduction.md';
 import GettingStarted from '@docs/getting-started.md';
 import UsingAssets from '@docs/using-assets.md';
+import Fonts from '@docs/fonts.md';
 import Theming from '@docs/theming.md';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
@@ -50,6 +51,9 @@ story.add('Getting Started', () => (
 ));
 story.add('Using Assets', () => (
   <Markdown source={UsingAssets} renderers={markdownRenderers} />
+));
+story.add('Fonts', () => (
+  <Markdown source={Fonts} renderers={markdownRenderers} />
 ));
 story.add('Theming', () => (
   <Markdown source={Theming} renderers={markdownRenderers} />
