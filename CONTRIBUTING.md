@@ -70,6 +70,12 @@ Install the project's dependencies. Note that we use Yarn, not npm:
 $ yarn
 ```
 
+Note that TypeScript's project references sometimes fail to load cross-module declarations. When that happens, run this command once.
+
+```sh-session
+$ yarn tsc
+```
+
 ## Developing
 
 ### Developing Components

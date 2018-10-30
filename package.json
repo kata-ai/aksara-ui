@@ -27,12 +27,14 @@
     "build": "lerna run build --stream",
     "clean": "lerna run clean --stream",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "prepare": "yarn build",
-    "release": "yarn prepare && node scripts/dist/release/index.js",
+    "prepare": "yarn tsc",
+    "release": "yarn build && node scripts/dist/release/index.js",
     "lerna": "lerna",
     "lint": "tslint -p tsconfig.lint.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "tsc": "tsc -b packages",
+    "watch": "tsc-watch -b --preserveWatchOutput packages"
   },
   "dependencies": {
     "highlight.js": "^9.13.1",
