@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/tooltip",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Tooltip component for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,7 +25,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/theme": "^0.6.0",
+    "@kata-kit/theme": "^0.6.1",
     "classnames": "^2.2.6",
     "dom-helpers": "^3.3.1",
     "lodash-es": "^4.17.11",
