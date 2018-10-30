@@ -6,7 +6,7 @@
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",
   "kata-kit:src": "./src/index.ts",
-  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "repository": "https://github.com/kata-ai/wicara.git",
   "files": [
     "lib"
   ],

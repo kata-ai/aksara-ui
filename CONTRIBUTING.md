@@ -8,11 +8,11 @@ This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
 
 The simple steps of contributing to any GitHub project are as follows:
 
-1. [Fork the repository](https://github.com/kata-ai/kata-kit/fork)
+1. [Fork the repository](https://github.com/kata-ai/wicara/fork)
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push -u origin my-new-feature`
-5. Create a [Pull Request](https://github.com/kata-ai/kata-kit/pulls)!
+5. Create a [Pull Request](https://github.com/kata-ai/wicara/pulls)!
 
 To keep your fork of in sync with this repository, [follow this guide](https://help.github.com/articles/syncing-a-fork/).
 
@@ -55,7 +55,7 @@ $ yarn -v
 First, you should clone the repository.
 
 ```sh-session
-$ git clone https://github.com/kata-ai/kata-kit.git
+$ git clone https://github.com/kata-ai/wicara.git
 ```
 
 After these repository has been cloned, `cd` into the repository:

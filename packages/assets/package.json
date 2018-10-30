@@ -3,7 +3,7 @@
   "version": "0.5.2",
   "description": "kata-kit asset package.",
   "main": "N/A",
-  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {

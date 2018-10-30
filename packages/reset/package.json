@@ -4,7 +4,7 @@
   "description": "Provides necessary CSS resets to use kata-kit.",
   "main": "./lib/index.css",
   "kata-kit:src": "./src/index.scss",
-  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "files": [

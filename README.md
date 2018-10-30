@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/kata-ai/kata-kit"><img alt="Build Status" src="https://img.shields.io/travis/kata-ai/kata-kit.svg" /></a>
+  <a href="https://travis-ci.org/kata-ai/wicara"><img alt="Build Status" src="https://img.shields.io/travis/kata-ai/wicara.svg" /></a>
   <a href="https://lernajs.io/"><img alt="Build Status" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
 </p>
 
