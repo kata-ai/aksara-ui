@@ -3,7 +3,7 @@
   "version": "0.5.1",
   "description": "Font-stack used for kata-kit.",
   "main": "N/A",
-  "repository": "https://github.com/kata-ai/kata-kit.git",
+  "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "publishConfig": {

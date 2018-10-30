@@ -29,10 +29,10 @@ story.add('Introduction', () => (
         </p>
 
         <p>
-          <a href="https://travis-ci.org/kata-ai/kata-kit">
+          <a href="https://travis-ci.org/kata-ai/wicara">
             <img
               alt="Build Status"
-              src="https://img.shields.io/travis/kata-ai/kata-kit.svg"
+              src="https://img.shields.io/travis/kata-ai/wicara.svg"
             />
           </a>{' '}
           <a href="https://lernajs.io/">
