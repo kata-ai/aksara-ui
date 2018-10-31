@@ -100,7 +100,10 @@ export class SupportButton extends React.Component<SupportButtonProps> {
           >
             {loading ? (
               <>
-                <LoaderCircle size={30} />
+                <LoaderCircle
+                  data-testid="SupportButton-loaderCircle"
+                  size={30}
+                />
                 <InvisibleText>{this.props.children}</InvisibleText>
               </>
             ) : (
