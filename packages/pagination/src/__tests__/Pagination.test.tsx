@@ -20,11 +20,11 @@ describe('Pagination', () => {
   });
 
   test('correctly calls function w/ selected page', () => {
-    const { getByText } = render(
+    const { getByTestId } = render(
       <Pagination current={1} total={5} onSelect={handleSelect} />
     );
 
-    const button = getByText('2');
+    const button = getByTestId('Pagination-selectButton-page2');
     fireEvent.click(button);
 
     expect(handleSelect).toBeCalledTimes(1);

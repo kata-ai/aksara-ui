@@ -96,7 +96,7 @@ class Pagination extends React.Component<PaginationProps, PaginationState> {
               <PaginationButton
                 key={index}
                 isIcon
-                data-testid="Pagination-selectButton"
+                data-testid={`Pagination-selectButton-page${page}`}
                 color="white"
                 className={classnames(
                   'pagination',
