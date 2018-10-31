@@ -21,4 +21,4 @@ script:
 
 # Upload coverage reports
 after_script:
-  - npm run report-coverage
+  - yarn report-coverage
