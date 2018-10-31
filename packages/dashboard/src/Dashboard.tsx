@@ -64,7 +64,9 @@ export default class Dashboard extends React.Component<DashboardProps> {
                   <DashboardStarterLeft>
                     <DashboardHeader>
                       <DashboardContainer>
-                        <DashboardTitle isStarter>{title}</DashboardTitle>
+                        <DashboardTitle isStarter data-testid="Dashboard-title">
+                          {title}
+                        </DashboardTitle>
                         {tooltip && (
                           <TooltipTarget
                             component={<Tooltip>{tooltip}</Tooltip>}
@@ -95,7 +97,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
             </DashboardStarterHeading>
 
             <DashboardContent>
-              <Container>{children}</Container>
+              <Container data-testid="Dashboard-content">{children}</Container>
             </DashboardContent>
           </Root>
         )}
@@ -127,7 +129,9 @@ export default class Dashboard extends React.Component<DashboardProps> {
               <DashboardHeader>
                 {headerContent || (
                   <DashboardContainer>
-                    <DashboardTitle>{title}</DashboardTitle>
+                    <DashboardTitle data-testid="Dashboard-title">
+                      {title}
+                    </DashboardTitle>
                     {tooltip && (
                       <TooltipTarget
                         trigger="hover"
@@ -148,7 +152,9 @@ export default class Dashboard extends React.Component<DashboardProps> {
                 </DashboardParagraph>
               )}
 
-              <DashboardContent>{children}</DashboardContent>
+              <DashboardContent data-testid="Dashboard-content">
+                {children}
+              </DashboardContent>
             </Container>
           </Root>
         )}
