@@ -32,7 +32,12 @@ class CardGrid extends React.Component<CardGridProps> {
               this.props.children,
               Item =>
                 Item ? (
-                  <CardWrapper cardsPerRow={cardsPerRow}>{Item}</CardWrapper>
+                  <CardWrapper
+                    data-testid="CardGrid-wrapper"
+                    cardsPerRow={cardsPerRow}
+                  >
+                    {Item}
+                  </CardWrapper>
                 ) : (
                   Item
                 )
