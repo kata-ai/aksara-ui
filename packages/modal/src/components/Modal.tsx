@@ -124,6 +124,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         <Theme>
           {themeAttributes => (
             <ModalWrapper
+              data-testid="Modal-wrapper"
               className={classnames(
                 this.state.show ? 'is-open' : 'is-closed',
                 this.props.className

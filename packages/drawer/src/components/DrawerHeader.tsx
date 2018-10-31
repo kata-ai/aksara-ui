@@ -22,7 +22,11 @@ const DrawerHeader: React.SFC<DrawerHeaderProps> = ({ className, title }) => (
       >
         <DrawerHeadingWrapper>
           <DrawerTitle id={api.labelledById}>{title}</DrawerTitle>
-          <Button isIcon onClick={api.onClose}>
+          <Button
+            data-testid="DrawerHeader-closeButton"
+            isIcon
+            onClick={api.onClose}
+          >
             <i className="icon-close" />
           </Button>
         </DrawerHeadingWrapper>

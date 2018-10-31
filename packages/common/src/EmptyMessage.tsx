@@ -18,7 +18,7 @@ export default class EmptyMessage extends React.Component<Props> {
     return (
       <Wrapper>
         <img src={this.props.image} alt="Empty Message" />
-        <Title>{this.props.title}</Title>
+        <Title data-testid="EmptyMessage-title">{this.props.title}</Title>
         <Description>{this.props.children}</Description>
       </Wrapper>
     );

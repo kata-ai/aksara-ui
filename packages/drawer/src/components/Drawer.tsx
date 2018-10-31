@@ -131,6 +131,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         <Theme values={theme}>
           {themeAttributes => (
             <DrawerWrapper
+              data-testid="Drawer-wrapper"
               theme={themeAttributes}
               className={classnames(
                 this.state.isOpen ? 'is-open' : 'is-closed',
