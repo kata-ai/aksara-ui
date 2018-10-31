@@ -10,6 +10,5 @@
     { "path": "../button" },
     { "path": "../theme" },
     { "path": "../common" }
-  ],
-  "exclude": ["__stories__", "lib", "docs"]
+  ]
 }

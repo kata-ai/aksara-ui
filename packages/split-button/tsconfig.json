@@ -10,6 +10,5 @@
     { "path": "../button" },
     { "path": "../dropdown" },
     { "path": "../theme" }
-  ],
-  "exclude": ["__stories__", "lib", "docs"]
+  ]
 }

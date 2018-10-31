@@ -5,6 +5,5 @@
     "declarationDir": "lib",
     "rootDir": "src",
     "outDir": "tsc-out"
-  },
-  "exclude": ["__stories__", "lib", "docs"]
+  }
 }
