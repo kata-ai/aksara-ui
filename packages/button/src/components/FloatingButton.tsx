@@ -125,7 +125,7 @@ const FloatingButtonWrapper = styled('button')`
   font-size: 16px;
   vertical-align: middle;
   color: ${variables.colors.gray60};
-  background: ${variables.colors.white};
+  background-color: ${variables.colors.white};
   align-items: center;
   justify-content: center;
   position: relative;

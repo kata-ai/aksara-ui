@@ -6,6 +6,8 @@ import { Banner } from '..';
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
 
+const handleClose = jest.fn();
+
 describe('Banner', () => {
   test('renders with custom state', () => {
     const { container } = render(
@@ -23,7 +25,6 @@ describe('Banner', () => {
   });
 
   test('renders close button with onClose', () => {
-    const handleClose = jest.fn();
     const { getByTestId } = render(
       <Banner state="success" message="test banner" onClose={handleClose} />
     );
@@ -33,7 +34,6 @@ describe('Banner', () => {
   });
 
   test('fires the onClose event', () => {
-    const handleClose = jest.fn();
     const { getByTestId } = render(
       <Banner state="success" message="test banner" onClose={handleClose} />
     );
