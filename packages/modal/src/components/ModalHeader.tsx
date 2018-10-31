@@ -19,7 +19,11 @@ const ModalHeader: React.SFC<ModalHeaderProps> = ({ className, title }) => (
       <ModalHeading className={className}>
         <ModalHeadingWrapper>
           <ModalTitle id={api.labelledById}>{title}</ModalTitle>
-          <Button isIcon onClick={api.onClose}>
+          <Button
+            data-testid="ModalHeader-closeButton"
+            isIcon
+            onClick={api.onClose}
+          >
             <i className="icon-close" />
           </Button>
         </ModalHeadingWrapper>
