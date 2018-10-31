@@ -6,7 +6,7 @@ import { SupportButton } from '..';
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
 
-describe('Button', () => {
+describe('SupportButton', () => {
   test('renders with correct colors', () => {
     const { container } = render(<SupportButton>test button</SupportButton>);
 
