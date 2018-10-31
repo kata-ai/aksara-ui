@@ -78,10 +78,15 @@ class Pagination extends React.Component<PaginationProps, PaginationState> {
     return (
       <Theme>
         {themeAttributes => (
-          <PaginationBase className={className} {...themeAttributes}>
+          <PaginationBase
+            data-testid="Pagination-root"
+            className={className}
+            {...themeAttributes}
+          >
             <PaginationButton
               isIcon
               color="white"
+              data-testid="Pagination-previousButton"
               disabled={current === 1}
               onClick={() => this.props.onSelect(current - 1)}
             >
@@ -91,6 +96,7 @@ class Pagination extends React.Component<PaginationProps, PaginationState> {
               <PaginationButton
                 key={index}
                 isIcon
+                data-testid="Pagination-selectButton"
                 color="white"
                 className={classnames(
                   'pagination',
@@ -106,6 +112,7 @@ class Pagination extends React.Component<PaginationProps, PaginationState> {
             ))}
             <PaginationButton
               isIcon
+              data-testid="Pagination-nextButton"
               color="white"
               disabled={current === this.props.total}
               onClick={() => this.props.onSelect(current + 1)}
@@ -126,7 +133,7 @@ const PaginationBase = styled('div')`
 `;
 
 const PaginationButton = styled(Button)`
-  background: #fff /* $white */;
+  background-color: #fff /* $white */;
   margin-left: 4px;
   line-height: 1;
   min-width: 32px;
