@@ -37,6 +37,7 @@ export class Banner extends React.Component<BannerProps> {
             {this.props.onClose && (
               <CloseButton
                 aria-label="Close"
+                data-testid="Banner-closeButton"
                 onClick={this.props.onClose}
                 {...themeAttributes}
               >

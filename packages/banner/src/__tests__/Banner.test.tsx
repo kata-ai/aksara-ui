@@ -6,7 +6,7 @@ import { Banner } from '..';
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
 
-describe('Badge', () => {
+describe('Banner', () => {
   test('renders with custom state', () => {
     const { container } = render(
       <Banner state="success" message="test banner" />
@@ -24,21 +24,21 @@ describe('Badge', () => {
 
   test('renders close button with onClose', () => {
     const handleClose = jest.fn();
-    const { getByLabelText } = render(
+    const { getByTestId } = render(
       <Banner state="success" message="test banner" onClose={handleClose} />
     );
 
-    const closeButton = getByLabelText('Close', { selector: 'button' });
+    const closeButton = getByTestId('Banner-closeButton');
     expect(closeButton).toBeInTheDocument();
   });
 
   test('fires the onClose event', () => {
     const handleClose = jest.fn();
-    const { getByLabelText } = render(
+    const { getByTestId } = render(
       <Banner state="success" message="test banner" onClose={handleClose} />
     );
 
-    const closeButton = getByLabelText('Close', { selector: 'button' });
+    const closeButton = getByTestId('Banner-closeButton');
     fireEvent.click(closeButton);
     expect(handleClose).toBeCalledTimes(1);
   });
