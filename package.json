@@ -128,7 +128,7 @@
     "collectCoverageFrom": [
       "packages/*/src/**/*.{ts,tsx}",
       "!packages/*/src/index.{ts,tsx}",
-      "!packages/kata-kit/**/*.{ts,tsx}"
+      "!packages/{kata-kit,doc-utils}/**/*.{ts,tsx}"
     ],
     "coverageReporters": [
       "json",
