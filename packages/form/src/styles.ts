@@ -36,7 +36,7 @@ export const InputTextBase = (
   box-sizing: border-box;
   border-radius: 6px;
   background-color: ${props.theme.backgroundColor};
-  border: solid 1px ${props.theme.borderColor};
+  border: 1px solid ${props.theme.borderColor};
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
   outline: none;
