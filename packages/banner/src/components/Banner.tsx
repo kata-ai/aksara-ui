@@ -35,7 +35,11 @@ export class Banner extends React.Component<BannerProps> {
             </Icon>
             <Message>{this.props.message}</Message>
             {this.props.onClose && (
-              <CloseButton onClick={this.props.onClose} {...themeAttributes}>
+              <CloseButton
+                aria-label="Close"
+                onClick={this.props.onClose}
+                {...themeAttributes}
+              >
                 <i className="icon-close" />
               </CloseButton>
             )}
