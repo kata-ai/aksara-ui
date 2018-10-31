@@ -10,6 +10,5 @@
     { "path": "../layout" },
     { "path": "../theme" },
     { "path": "../tooltip" }
-  ],
-  "exclude": ["__stories__", "lib", "docs"]
+  ]
 }
