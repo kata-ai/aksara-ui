@@ -127,7 +127,8 @@
   "jest": {
     "collectCoverageFrom": [
       "packages/*/src/**/*.{ts,tsx}",
-      "!packages/*/src/index.{ts,tsx}"
+      "!packages/*/src/index.{ts,tsx}",
+      "!packages/kata-kit/**/*.{ts,tsx}"
     ],
     "coverageReporters": [
       "json",
