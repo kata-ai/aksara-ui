@@ -1,6 +1,13 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs"
+    "module": "commonjs",
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "baseUrl": "./",
+    "paths": {
+      "@kata-kit/*": ["../packages/*/src"]
+    }
   }
 }
