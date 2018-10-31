@@ -20,6 +20,5 @@
     { "path": "../pagination" },
     { "path": "../layout" },
     { "path": "../loading" }
-  ],
-  "exclude": ["__stories__", "lib", "docs"]
+  ]
 }

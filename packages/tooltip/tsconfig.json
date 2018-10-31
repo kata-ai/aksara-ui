@@ -6,6 +6,5 @@
     "rootDir": "src",
     "outDir": "tsc-out"
   },
-  "references": [{ "path": "../theme" }],
-  "exclude": ["__stories__", "lib", "docs"]
+  "references": [{ "path": "../theme" }]
 }

@@ -11,6 +11,5 @@
     { "path": "../button" },
     { "path": "../loading" },
     { "path": "../theme" }
-  ],
-  "exclude": ["__stories__", "lib", "docs"]
+  ]
 }
