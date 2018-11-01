@@ -35,9 +35,15 @@ story.add('Introduction', () => (
               src="https://img.shields.io/travis/kata-ai/wicara.svg"
             />
           </a>{' '}
+          <a href="https://codecov.io/gh/kata-ai/wicara">
+            <img
+              alt="codecov"
+              src="https://codecov.io/gh/kata-ai/wicara/branch/master/graph/badge.svg"
+            />
+          </a>{' '}
           <a href="https://lernajs.io/">
             <img
-              alt="Build Status"
+              alt="Maintained with Lerna"
               src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg"
             />
           </a>
