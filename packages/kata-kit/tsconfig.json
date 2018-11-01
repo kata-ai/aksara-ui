@@ -20,5 +20,6 @@
     { "path": "../pagination" },
     { "path": "../layout" },
     { "path": "../loading" }
-  ]
+  ],
+  "exclude": ["**/__stories__", "**/__tests__", "**/__mocks__", "**/lib"]
 }

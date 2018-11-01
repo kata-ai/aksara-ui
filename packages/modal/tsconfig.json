@@ -10,5 +10,6 @@
     { "path": "../button" },
     { "path": "../theme" },
     { "path": "../common" }
-  ]
+  ],
+  "exclude": ["**/__stories__", "**/__tests__", "**/__mocks__", "**/lib"]
 }

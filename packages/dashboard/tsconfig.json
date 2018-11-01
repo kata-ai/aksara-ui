@@ -10,5 +10,6 @@
     { "path": "../layout" },
     { "path": "../theme" },
     { "path": "../tooltip" }
-  ]
+  ],
+  "exclude": ["**/__stories__", "**/__tests__", "**/__mocks__", "**/lib"]
 }

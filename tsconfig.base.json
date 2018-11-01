@@ -18,6 +18,5 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "esModuleInterop": true
-  },
-  "exclude": ["**/__stories__", "**/__tests__", "**/__mocks__", "**/lib"]
+  }
 }
