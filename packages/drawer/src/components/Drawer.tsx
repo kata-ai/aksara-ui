@@ -149,7 +149,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         </Theme>
       </FocusTrap>
     );
-    return createPortal(wrapper, this.el);
+    return createPortal(wrapper, this.el) as React.ReactPortal;
   }
 }
 

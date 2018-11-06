@@ -65,7 +65,7 @@
     "@types/node": "^10.12.0",
     "@types/ora": "^1.3.4",
     "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.7",
+    "@types/react-dom": "^16.0.9",
     "@types/storybook-addon-jsx": "^5.4.0",
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-info": "^3.4.2",
