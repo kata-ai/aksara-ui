@@ -16,6 +16,7 @@
   "scripts": {
     "build": "rimraf lib && yarn sass",
     "clean": "rimraf lib",
+    "prepublishOnly": "yarn build",
     "sass": "node-sass src/index.scss lib/index.css --output-style compressed",
     "watch": "yarn sass --watch"
   }
