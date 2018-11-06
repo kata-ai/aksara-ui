@@ -1,6 +1,6 @@
 {
   "name": "kata-kit",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "description": "Bundled Kata-kit",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -38,7 +38,7 @@
     "@kata-kit/form": "^0.6.3",
     "@kata-kit/layout": "^0.6.2",
     "@kata-kit/loading": "^0.6.2",
-    "@kata-kit/modal": "^0.6.3",
+    "@kata-kit/modal": "^0.6.4",
     "@kata-kit/pagination": "^0.6.3",
     "@kata-kit/reset": "^0.6.2",
     "@kata-kit/split-button": "^0.6.3",

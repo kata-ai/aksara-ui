@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/modal",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "modal component for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
