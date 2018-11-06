@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/reset",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Provides necessary CSS resets to use kata-kit.",
   "main": "./lib/index.css",
   "kata-kit:src": "./src/index.scss",

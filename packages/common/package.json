@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/common",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Common components, toolkits, and methods for kata-kit.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
