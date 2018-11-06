@@ -143,7 +143,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         </Theme>
       </FocusTrap>
     );
-    return createPortal(wrapper, this.el);
+    return createPortal(wrapper, this.el) as React.ReactPortal;
   }
 }
 
