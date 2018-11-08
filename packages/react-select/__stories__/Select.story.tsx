@@ -31,7 +31,7 @@ const story: any = storiesOf('Components|React Select', module)
 const infoText = `
 ## Install
 
-This is a wrapper over \`react-select\` v2. You will need to install \`react-select\` alongside this package.
+This package a wrapper over \`react-select\` v2. You will need to install \`react-select\` alongside this package.
 
 ~~~sh
 # yarn
