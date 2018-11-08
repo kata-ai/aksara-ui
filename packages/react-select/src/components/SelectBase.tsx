@@ -86,7 +86,6 @@ class SelectBase<TOptions = DefaultSelectOptions> extends React.Component<
           LoadingIndicator: () => <Circle size={24} />,
           ...components
         }}
-        isClearable
         {...rest}
       />
     );

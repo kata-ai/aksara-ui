@@ -96,6 +96,7 @@ story.add(
               onChange={value => setState({ selected: value })}
               onInputChange={value => setState({ inputValue: value })}
               options={options}
+              isClearable
             />
           </FormGroup>
           <p>
