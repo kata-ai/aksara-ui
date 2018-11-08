@@ -101,6 +101,7 @@
     "react-docgen-typescript-loader": "^3.0.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-markdown": "^4.0.3",
+    "react-select": "^2.1.1",
     "react-testing-library": "^5.2.3",
     "rimraf": "^2.6.2",
     "rollup": "^0.66.2",
