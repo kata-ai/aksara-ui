@@ -1,5 +1,6 @@
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = (baseConfig, env, config) => {
   config.module.rules.push({
@@ -8,7 +9,8 @@ module.exports = (baseConfig, env, config) => {
       {
         loader: require.resolve('awesome-typescript-loader'),
         options: {
-          configFileName: '.storybook/tsconfig.json'
+          configFileName: '.storybook/tsconfig.json',
+          transpileOnly: true
         }
       },
       {
@@ -40,6 +42,13 @@ module.exports = (baseConfig, env, config) => {
     '@docs': path.resolve(__dirname, '../', 'docs')
   });
   config.resolve.mainFields = ['kata-kit:src', 'main'];
+
+  config.plugins.push(
+    new ForkTsCheckerWebpackPlugin({
+      tsconfig: '.storybook/tsconfig.json',
+      tslint: 'tslint.json'
+    })
+  );
 
   // Workaround for webpack v4.
   if (config.resolve.plugins) {
