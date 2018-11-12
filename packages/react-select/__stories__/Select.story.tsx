@@ -10,7 +10,6 @@ import FormLabel from '../../form/src/components/FormLabel';
 import InputText from '../../form/src/components/InputText';
 import SelectBase from '../src/components/SelectBase';
 import { ValueType } from 'react-select/lib/types';
-import { isArray } from 'lodash-es';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
@@ -100,10 +99,7 @@ story.add(
             />
           </FormGroup>
           <p>
-            Selected:{' '}
-            <code>
-              {selected && !isArray(selected) ? selected.value : 'N/A'}
-            </code>
+            Selected: <code>{JSON.stringify(selected)}</code>
           </p>
         </div>
       )}
