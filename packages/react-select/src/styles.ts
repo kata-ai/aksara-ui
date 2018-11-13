@@ -59,4 +59,4 @@ const defaultStyle: Styles = {
   })
 };
 
-export default defaultStyle;
+export { defaultStyle };

@@ -9,6 +9,7 @@ import FormGroup from '../../form/src/components/FormGroup';
 import FormLabel from '../../form/src/components/FormLabel';
 import InputText from '../../form/src/components/InputText';
 import SelectBase from '../src/components/SelectBase';
+import SelectAsync from '../src/components/SelectAsync';
 import { ValueType } from 'react-select/lib/types';
 
 const options = [
@@ -16,6 +17,30 @@ const options = [
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' }
 ];
+
+const asyncOptions = [
+  { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
+  { value: 'blue', label: 'Blue', color: '#0052CC', disabled: true },
+  { value: 'purple', label: 'Purple', color: '#5243AA' },
+  { value: 'red', label: 'Red', color: '#FF5630', isFixed: true },
+  { value: 'orange', label: 'Orange', color: '#FF8B00' },
+  { value: 'yellow', label: 'Yellow', color: '#FFC400' },
+  { value: 'green', label: 'Green', color: '#36B37E' },
+  { value: 'forest', label: 'Forest', color: '#00875A' },
+  { value: 'slate', label: 'Slate', color: '#253858' },
+  { value: 'silver', label: 'Silver', color: '#666666' }
+];
+
+const filterColors = (inputValue: string) =>
+  asyncOptions.filter(i =>
+    i.label.toLowerCase().includes(inputValue.toLowerCase())
+  );
+
+const loadOptions = (inputValue, callback) => {
+  setTimeout(() => {
+    callback(filterColors(inputValue));
+  }, 1000);
+};
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -130,6 +155,42 @@ story.add(
       <FormLabel>Loading Select</FormLabel>
       <SelectBase isLoading />
     </FormGroup>
+  ),
+  {
+    info: { disable: true }
+  }
+);
+
+story.add(
+  'Async Select',
+  () => (
+    <WithState<{
+      selected?: ValueType<{ label: string; value: string }>;
+      inputValue?: string;
+    }>
+      initialState={{ selected: undefined, inputValue: undefined }}
+    >
+      {({ selected, inputValue }, { setState }) => (
+        <div>
+          <FormGroup>
+            <FormLabel>Async Select</FormLabel>
+            <SelectAsync
+              isLoading
+              cacheOptions
+              defaultOptions
+              loadOptions={loadOptions}
+              value={selected}
+              inputValue={inputValue}
+              onChange={value => setState({ selected: value })}
+              onInputChange={value => setState({ inputValue: value })}
+            />
+          </FormGroup>
+          <p>
+            Selected: <code>{JSON.stringify(selected)}</code>
+          </p>
+        </div>
+      )}
+    </WithState>
   ),
   {
     info: { disable: true }

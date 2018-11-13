@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Circle } from '@kata-kit/loading';
-import Select, { Props } from 'react-select/lib/Select';
+import Select, { Props } from 'react-select/lib/Async';
 import { ValueType, ActionMeta, InputActionMeta } from 'react-select/lib/types';
 import { defaultStyle } from '../styles';
 
@@ -15,7 +15,7 @@ interface State<TOptions = DefaultSelectOptions> {
   selectedValue?: string;
 }
 
-class SelectBase<TOptions = DefaultSelectOptions> extends React.Component<
+class SelectAsync<TOptions = DefaultSelectOptions> extends React.Component<
   Props<TOptions>,
   State<TOptions>
 > {
@@ -92,4 +92,4 @@ class SelectBase<TOptions = DefaultSelectOptions> extends React.Component<
   }
 }
 
-export default SelectBase;
+export default SelectAsync;

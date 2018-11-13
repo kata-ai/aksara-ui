@@ -1,3 +1,5 @@
 import SelectBase from './components/SelectBase';
 
-export { SelectBase };
+import { defaultStyle } from './styles';
+
+export { SelectBase, defaultStyle };
