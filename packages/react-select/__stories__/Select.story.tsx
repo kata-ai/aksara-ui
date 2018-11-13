@@ -55,7 +55,7 @@ const story: any = storiesOf('Components|React Select', module)
 const infoText = `
 ## Install
 
-This package a wrapper over \`react-select\` v2. You will need to install \`react-select\` alongside this package.
+This package is a wrapper over \`react-select\` v2. You will need to install \`react-select\` alongside this package.
 
 ~~~sh
 # yarn
@@ -67,10 +67,11 @@ npm install @kata-kit/react-select react-select
 ## Usage
 
 ~~~jsx
-import { BaseSelect } from '@kata-kit/react-select';
+import { SelectBase } from '@kata-kit/react-select';
+import options from './options';
 
 const Component = ({ children }) => (
-  <InputText name="username" placeholder="Username" />
+  <SelectBase options={options} isClearable />
 );
 ~~~
 `;

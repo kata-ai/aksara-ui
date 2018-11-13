@@ -18,9 +18,10 @@ npm install @kata-kit/react-select react-select
 To use this component within your React app, import as follows:
 
 ```jsx
-import { InputText } from '@kata-kit/react-select';
+import { SelectBase } from '@kata-kit/react-select';
+import options from './options';
 
 const Component = ({ children }) => (
-  <InputText name="username" placeholder="Username" />
+  <SelectBase options={options} isClearable />
 );
 ```
