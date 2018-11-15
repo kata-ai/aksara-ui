@@ -134,9 +134,9 @@ story.add(
               isClearable
             />
           </FormGroup>
-          <p>
-            Selected: <code>{JSON.stringify(selected)}</code>
-          </p>
+          <pre>
+            <code>{JSON.stringify(selected, null, 2)}</code>
+          </pre>
         </div>
       )}
     </WithState>
@@ -196,9 +196,9 @@ story.add(
               onInputChange={value => setState({ inputValue: value })}
             />
           </FormGroup>
-          <p>
-            Selected: <code>{JSON.stringify(selected)}</code>
-          </p>
+          <pre>
+            <code>{JSON.stringify(selected, null, 2)}</code>
+          </pre>
         </div>
       )}
     </WithState>
@@ -236,7 +236,7 @@ story.add(
       {({ selected, inputValue }, { setState }) => (
         <div>
           <FormGroup>
-            <FormLabel>Async Select</FormLabel>
+            <FormLabel>Creatable Select</FormLabel>
             <SelectCreatable
               isClearable
               options={options}
@@ -250,9 +250,9 @@ story.add(
               }}
             />
           </FormGroup>
-          <p>
-            Selected: <code>{JSON.stringify(selected)}</code>
-          </p>
+          <pre>
+            <code>{JSON.stringify(selected, null, 2)}</code>
+          </pre>
         </div>
       )}
     </WithState>
@@ -274,7 +274,7 @@ story.add(
       {({ selected, inputValue }, { setState }) => (
         <div>
           <FormGroup>
-            <FormLabel>Async Select</FormLabel>
+            <FormLabel>Tags Input</FormLabel>
             <SelectCreatable
               isClearable
               isMulti
@@ -317,9 +317,9 @@ story.add(
               components={components}
             />
           </FormGroup>
-          <p>
-            Selected: <code>{JSON.stringify(selected)}</code>
-          </p>
+          <pre>
+            <code>{JSON.stringify(selected, null, 2)}</code>
+          </pre>
         </div>
       )}
     </WithState>
