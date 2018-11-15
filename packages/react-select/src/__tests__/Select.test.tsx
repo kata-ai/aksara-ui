@@ -3,6 +3,7 @@ import { render } from 'react-testing-library';
 
 import SelectBase from '../components/SelectBase';
 import SelectAsync from '../components/SelectAsync';
+import SelectCreatable from '../components/SelectCreatable';
 
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
@@ -23,14 +24,6 @@ describe('SelectBase', () => {
   });
 });
 
-describe('SelectBase', () => {
-  test('renders correctly', () => {
-    const { container } = render(<SelectBase options={options} />);
-
-    expect(container.firstChild).toBeInTheDocument();
-  });
-});
-
 describe('SelectAsync', () => {
   test('renders correctly', () => {
     const { container } = render(
@@ -41,6 +34,16 @@ describe('SelectAsync', () => {
         loadOptions={loadOptions}
         options={options}
       />
+    );
+
+    expect(container.firstChild).toBeInTheDocument();
+  });
+});
+
+describe('SelectCreatable', () => {
+  test('renders correctly', () => {
+    const { container } = render(
+      <SelectCreatable isLoading options={options} />
     );
 
     expect(container.firstChild).toBeInTheDocument();
