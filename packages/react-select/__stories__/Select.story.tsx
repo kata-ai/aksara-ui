@@ -65,13 +65,11 @@ const story: any = storiesOf('Components|React Select', module)
 const infoText = `
 ## Install
 
-This package is a wrapper over \`react-select\` v2. You will need to install \`react-select\` alongside this package.
-
 ~~~sh
 # yarn
-yarn add @kata-kit/react-select react-select
+yarn add @kata-kit/react-select
 # npm
-npm install @kata-kit/react-select react-select
+npm install @kata-kit/react-select
 ~~~
 
 ## Usage
