@@ -8,6 +8,7 @@ import WithState from '../../../.storybook/components/WithState';
 import FormGroup from '../../form/src/components/FormGroup';
 import FormLabel from '../../form/src/components/FormLabel';
 import InputText from '../../form/src/components/InputText';
+import SelectCreatable from '../src/components/SelectCreatable';
 import SelectBase from '../src/components/SelectBase';
 import SelectAsync from '../src/components/SelectAsync';
 import { ValueType } from 'react-select/lib/types';
@@ -40,6 +41,15 @@ const loadOptions = (inputValue, callback) => {
   setTimeout(() => {
     callback(filterColors(inputValue));
   }, 1000);
+};
+
+const createOption = (label: string) => ({
+  label,
+  value: label
+});
+
+const components = {
+  DropdownIndicator: null
 };
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
@@ -184,6 +194,127 @@ story.add(
               inputValue={inputValue}
               onChange={value => setState({ selected: value })}
               onInputChange={value => setState({ inputValue: value })}
+            />
+          </FormGroup>
+          <p>
+            Selected: <code>{JSON.stringify(selected)}</code>
+          </p>
+        </div>
+      )}
+    </WithState>
+  ),
+  {
+    info: { disable: true }
+  }
+);
+
+// tslint:disable:no-console
+const handleChange = (newValue: any, actionMeta: any) => {
+  console.group('Value Changed');
+  console.log(newValue);
+  console.log(`action: ${actionMeta.action}`);
+  console.groupEnd();
+};
+
+const handleInputChange = (inputValue: any, actionMeta: any) => {
+  console.group('Input Changed');
+  console.log(inputValue);
+  console.log(`action: ${actionMeta.action}`);
+  console.groupEnd();
+};
+// tslint:enable:no-console
+
+story.add(
+  'Creatable Select',
+  () => (
+    <WithState<{
+      selected?: ValueType<{ label: string; value: string }>;
+      inputValue?: string;
+    }>
+      initialState={{ selected: undefined, inputValue: undefined }}
+    >
+      {({ selected, inputValue }, { setState }) => (
+        <div>
+          <FormGroup>
+            <FormLabel>Async Select</FormLabel>
+            <SelectCreatable
+              isClearable
+              options={options}
+              onChange={(value, actionMeta) => {
+                handleChange(value, actionMeta);
+                setState({ selected: value });
+              }}
+              onInputChange={(value, actionMeta) => {
+                handleInputChange(value, actionMeta);
+                setState({ inputValue: value });
+              }}
+            />
+          </FormGroup>
+          <p>
+            Selected: <code>{JSON.stringify(selected)}</code>
+          </p>
+        </div>
+      )}
+    </WithState>
+  ),
+  {
+    info: { disable: true }
+  }
+);
+
+story.add(
+  'Tags Input',
+  () => (
+    <WithState<{
+      selected?: ValueType<{ label: string; value: string }>;
+      inputValue?: string;
+    }>
+      initialState={{ selected: [], inputValue: '' }}
+    >
+      {({ selected, inputValue }, { setState }) => (
+        <div>
+          <FormGroup>
+            <FormLabel>Async Select</FormLabel>
+            <SelectCreatable
+              isClearable
+              isMulti
+              value={selected}
+              inputValue={inputValue}
+              menuIsOpen={false}
+              placeholder="Type something and press enter..."
+              onChange={(value, actionMeta) => {
+                // tslint:disable:no-console
+                console.group('Value Changed');
+                console.log(value);
+                console.log(`action: ${actionMeta.action}`);
+                console.groupEnd();
+                setState({ selected: value });
+              }}
+              onInputChange={value => {
+                setState({ inputValue: value });
+              }}
+              onKeyDown={event => {
+                console.log('onKeyDown');
+                if (!inputValue) {
+                  return;
+                }
+
+                // tslint:disable:switch-default
+                switch (event.key) {
+                  case 'Enter':
+                  case 'Tab':
+                  case ',':
+                    setState({
+                      inputValue: '',
+                      // @ts-ignore - value type can be of any type other than array, thus
+                      // requires `--downlevelIteration`.
+                      selected: [...selected, createOption(inputValue)]
+                    });
+                    event.preventDefault();
+                }
+                // tslint:enable:switch-default
+              }}
+              components={components}
             />
           </FormGroup>
           <p>

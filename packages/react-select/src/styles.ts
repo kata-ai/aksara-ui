@@ -56,6 +56,25 @@ const defaultStyle: Styles = {
   indicatorSeparator: (provided, state) => ({
     ...provided,
     backgroundColor: 'transparent'
+  }),
+  multiValue: styles => {
+    return {
+      ...styles,
+      backgroundColor: variables.colors.gray80,
+      color: variables.colors.white
+    };
+  },
+  multiValueLabel: styles => ({
+    ...styles,
+    padding: 0,
+    color: variables.colors.white
+  }),
+  multiValueRemove: styles => ({
+    ...styles,
+    ':hover': {
+      backgroundColor: 'none',
+      color: 'white'
+    }
   })
 };
 
