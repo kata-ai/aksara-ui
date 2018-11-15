@@ -37,6 +37,8 @@ class SelectCreatable<TOptions = DefaultSelectOptions> extends React.Component<
     this.handleBlur = this.handleBlur.bind(this);
     this.handleMenuOpen = this.handleMenuOpen.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleMenuOpen() {
@@ -47,19 +49,19 @@ class SelectCreatable<TOptions = DefaultSelectOptions> extends React.Component<
     this.setState({ menuIsOpen: false });
   }
 
-  handleInputChange = (value: string, actionMeta: InputActionMeta) => {
+  handleInputChange(value: string, actionMeta: InputActionMeta) {
     if (this.props.onInputChange) {
       this.props.onInputChange(value, actionMeta);
     }
     this.setState({ selectedValue: value });
-  };
+  }
 
-  handleChange = (value: ValueType<TOptions>, action: ActionMeta) => {
+  handleChange(value: ValueType<TOptions>, action: ActionMeta) {
     if (this.props.onChange) {
       this.props.onChange(value, action);
     }
     this.setState({ selected: value });
-  };
+  }
 
   handleBlur(e: React.FocusEvent<HTMLElement>) {
     if (this.props.onBlur) {
