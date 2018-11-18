@@ -1,0 +1,42 @@
+{
+  "name": "@kata-kit/react-select",
+  "version": "0.5.0",
+  "description": "kata-kit wrapper for react-select.",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/wicara.git",
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn tsc && yarn rollup",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "prepublishOnly": "yarn build",
+    "rollup": "rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "tsc": "tsc -b .",
+    "watch": "yarn rollup -w",
+    "watch:tsc": "tsc-watch -b --preserveWatchOutput"
+  },
+  "dependencies": {
+    "@kata-kit/loading": "^0.6.2",
+    "@kata-kit/theme": "^0.6.2",
+    "classnames": "^2.2.6",
+    "polished": "^2.3.0",
+    "react-select": "^2.1.1",
+    "styled-components": "^3.4.9"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.6",
+    "@types/react-select": "^2.0.6"
+  }
+}
