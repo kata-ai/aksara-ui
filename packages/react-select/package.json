@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/react-select",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "kata-kit wrapper for react-select.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
