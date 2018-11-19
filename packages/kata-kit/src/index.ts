@@ -80,6 +80,14 @@ import {
 
 import { Robot, InfiniteScrollSpinner, Circle } from './loading';
 
+import {
+  SelectAsync,
+  SelectBase,
+  SelectCreatable,
+  defaultStyle,
+  createOption
+} from '@kata-kit/react-select';
+
 export {
   Button,
   ButtonColors,
@@ -141,5 +149,10 @@ export {
   ThemeConsumer,
   TooltipTarget,
   Tooltip,
-  Reset
+  Reset,
+  SelectAsync,
+  SelectBase,
+  SelectCreatable,
+  defaultStyle,
+  createOption
 };
