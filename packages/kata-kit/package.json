@@ -1,6 +1,6 @@
 {
   "name": "kata-kit",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "Bundled Kata-kit",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
