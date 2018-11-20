@@ -42,7 +42,8 @@
   "dependencies": {
     "highlight.js": "^9.13.1",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "styled-components": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -72,6 +73,7 @@
     "@types/storybook__addon-knobs": "^3.4.1",
     "@types/storybook__addon-options": "^3.2.2",
     "@types/storybook__react": "^3.0.9",
+    "@types/styled-components": "^4.1.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",

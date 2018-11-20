@@ -25,10 +25,10 @@
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@kata-kit/theme": "^0.6.2",
-    "styled-components": "^3.4.9"
+    "@kata-kit/theme": "^0.6.2"
   },
   "peerDependencies": {
-    "react": "^16.3.0"
+    "react": "^16.3.0",
+    "styled-components": "^4.0.0"
   }
 }
