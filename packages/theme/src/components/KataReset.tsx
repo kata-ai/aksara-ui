@@ -126,7 +126,10 @@ const Div = styled('div')`
   `};
 `;
 
-interface ResetProps extends React.AllHTMLAttributes<HTMLDivElement> {}
+interface ResetProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
 
 export default class Reset extends React.Component<ResetProps> {
   render() {
@@ -135,7 +138,7 @@ export default class Reset extends React.Component<ResetProps> {
     return (
       <Consumer>
         {theme => (
-          <Div {...defaultTheme} {...theme} {...rest}>
+          <Div {...defaultTheme} theme={theme} {...rest}>
             {children}
           </Div>
         )}
