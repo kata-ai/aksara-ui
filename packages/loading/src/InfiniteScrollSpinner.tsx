@@ -47,13 +47,13 @@ const bounceDelay = keyframes`
   }
 `;
 
-interface WrapperProps {
-  bsStyle?: string;
-  sm?: boolean;
-  lg?: boolean;
-}
+// interface WrapperProps {
+//   bsStyle?: string;
+//   sm?: boolean;
+//   lg?: boolean;
+// }
 
-const Wrapper = styled<WrapperProps, 'div'>('div')`
+const Wrapper = styled('div')`
   width: auto;
   display: inline-block;
   text-align: center;

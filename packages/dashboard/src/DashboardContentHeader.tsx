@@ -30,7 +30,7 @@ const DashboardContentHeader: React.SFC<DashboardContentHeaderProps> = ({
 
 export default DashboardContentHeader;
 
-const Root = styled<DashboardContentHeaderProps, 'h1'>('h1')`
+const Root = styled('h1')`
   margin-top: ${props => (props.isSecondary ? '2.461538462rem' : 0)};
   margin-bottom: 24px;
   color: ${props =>

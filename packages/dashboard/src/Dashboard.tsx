@@ -196,13 +196,13 @@ const DashboardTooltip = styled('i')`
   }
 `;
 
-const DashboardTitle = styled<DashboardProps, 'h1'>('h1')`
+const DashboardTitle = styled('h1')`
   margin-bottom: 0;
   flex: 0 0 auto;
   color: ${props => props.isStarter && 'white'};
 `;
 
-const DashboardSubtitle = styled<DashboardProps, 'h2'>('h2')`
+const DashboardSubtitle = styled('h2')`
   color: ${props => props.isStarter && 'white'};
 `;
 
@@ -277,7 +277,7 @@ const DashboardStarterHeading = styled('div')`
   }
 `;
 
-const Root = styled<DashboardProps, 'div'>('div')`
+const Root = styled('div')`
   animation: ${DashboardIn} 0.5s ease;
 
   &:not(.is-starter) {

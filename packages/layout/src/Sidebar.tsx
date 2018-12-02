@@ -19,16 +19,16 @@ const Sidebar: React.SFC<SidebarProps> = ({ collapsed, hasTop, children }) => {
 
 export default Sidebar;
 
-const Wrapper = styled<SidebarProps, 'div'>('div')`
+const Wrapper = styled('div')`
   position: relative;
   z-index: 2;
 `;
 
-const Inner = styled<SidebarProps, 'div'>('div')`
+const Inner = styled('div')`
   width: ${props => (props.collapsed ? variables.spaces.space8 : '280px')};
 `;
 
-const FixedContainer = styled<SidebarProps, 'div'>('div')`
+const FixedContainer = styled('div')`
   display: flex;
   flex-direction: row;
   height: ${props => (props.hasTop ? 'calc(100vh - 64px)' : '100vh')};

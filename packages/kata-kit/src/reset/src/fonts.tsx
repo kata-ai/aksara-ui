@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, SimpleInterpolation } from 'styled-components';
 
 export default css`
   h1,
@@ -81,4 +81,4 @@ export default css`
   .text-danger {
     color: #e53935 !important;
   }
-`;
+` as SimpleInterpolation;

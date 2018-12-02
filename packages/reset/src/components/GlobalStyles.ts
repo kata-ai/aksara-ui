@@ -1,6 +1,14 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
+import { variables } from '@kata-kit/theme';
 
-export default css`
+const reboot = css`
+  /*!
+   * Bootstrap Reboot v4.1.2 (https://getbootstrap.com/)
+   * Copyright 2011-2018 The Bootstrap Authors
+   * Copyright 2011-2018 Twitter, Inc.
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
+   */
   *,
   *::before,
   *::after {
@@ -16,20 +24,20 @@ export default css`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-  @-ms-viewport {
-    width: device-width;
-  }
-
-  article,
-  aside,
-  figcaption,
-  figure,
-  footer,
-  header,
-  hgroup,
-  main,
-  nav,
-  section {
+  ${css`
+    @-ms-viewport {
+      width: device-width;
+    }
+  `} article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
     display: block;
   }
 
@@ -342,4 +350,99 @@ export default css`
   [hidden] {
     display: none !important;
   }
-` as SimpleInterpolation;
+`;
+
+const GlobalStyles = createGlobalStyle`
+${reboot}
+
+:root {
+  font-size: ${variables.fontProps.rootFontSize};
+  line-height: ${variables.fontProps.rootLineHeight};
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Museo Sans Rounded', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: ${variables.colors.gray10};
+  color: ${variables.colors.gray80};
+  font-weight: 500;
+}
+
+a {
+  color: #006fe6;
+  text-decoration: none;
+
+  &:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: #0056b3;
+  }
+
+  &:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+  }
+}
+
+#root {
+  transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
+
+  &.pushed-legend-right {
+    transform: translateX(-280px);
+  }
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.full-size {
+  height: 100%;
+  width: 100%;
+}
+
+.icon-middle {
+  &::before {
+    vertical-align: middle;
+  }
+}
+
+.drag-handle {
+  cursor: move;
+  display: inline-block;
+
+  &::before {
+    content: '......';
+    display: inline-block;
+    width: 10px;
+    word-break: break-word;
+    white-space: normal;
+    letter-spacing: 2px;
+    line-height: 4.5px;
+    text-align: center;
+    height: 18px;
+  }
+}
+`;
+
+export default GlobalStyles;

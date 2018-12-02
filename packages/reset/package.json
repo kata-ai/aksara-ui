@@ -2,8 +2,10 @@
   "name": "@kata-kit/reset",
   "version": "0.6.2",
   "description": "Provides necessary CSS resets to use kata-kit.",
-  "main": "./lib/index.css",
-  "kata-kit:src": "./src/index.scss",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
@@ -14,10 +16,19 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rimraf lib && yarn sass",
-    "clean": "rimraf lib",
+    "build": "yarn clean && yarn tsc && yarn rollup",
+    "clean": "rimraf lib && rimraf tsc-out",
     "prepublishOnly": "yarn build",
-    "sass": "node-sass src/index.scss lib/index.css --output-style compressed",
-    "watch": "yarn sass --watch"
+    "rollup": "rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "tsc": "tsc -b .",
+    "watch": "yarn rollup -w",
+    "watch:tsc": "tsc-watch -b --preserveWatchOutput"
+  },
+  "dependencies": {
+    "@kata-kit/theme": "^0.6.2"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "styled-components": "^4.1.2"
   }
 }

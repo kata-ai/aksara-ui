@@ -5,8 +5,7 @@ import ThemedComponent from '@kata-kit/theme';
 import { FormLabelBase } from '../styles';
 import themes from '../theme';
 
-export interface FormLabelProps
-  extends React.AllHTMLAttributes<HTMLLabelElement> {
+export interface FormLabelProps extends React.HTMLAttributes<HTMLLabelElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
 }

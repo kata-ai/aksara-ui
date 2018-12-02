@@ -129,7 +129,7 @@ const InvisibleText = styled('span')`
   visibility: hidden;
 `;
 
-const SupportButtonWrapper = styled<SupportButtonProps, 'button'>('button')`
+const SupportButtonWrapper = styled('button')`
   ${ButtonBase} padding: 8px 16px;
   border-radius: 4px;
   font-weight: 700;

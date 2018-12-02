@@ -12,9 +12,10 @@ const SidebarAndContent: React.SFC<SidebarAndContentProps> = ({
 
 export default SidebarAndContent;
 
-const Root = styled<SidebarAndContentProps, 'div'>('div')`
+const Root = styled('div')`
   display: flex;
   flex: 1 1 auto;
 
-  padding-top: ${props => (props.hasTop ? '64px' : 0)};
+  padding-top: ${(props: SidebarAndContentProps) =>
+    props.hasTop ? '64px' : 0};
 `;

@@ -59,9 +59,9 @@ class Example extends React.Component<ExampleProps, ExampleState> {
               </CodeWrapper>
               <LiveError />
               <Theme values={innerTheme}>
-                {innerTheme => (
-                  <Inner theme={innerTheme}>
-                    <PreviewReset theme={innerTheme}>
+                {innerThemeAttributes => (
+                  <Inner theme={innerThemeAttributes}>
+                    <PreviewReset theme={innerThemeAttributes}>
                       <LivePreview />
                     </PreviewReset>
                   </Inner>
@@ -112,7 +112,7 @@ const PreviewReset = styled(KataReset)`
   }
 `;
 
-const CodeWrapper = styled<ExampleState, 'div'>('div')`
+const CodeWrapper = styled('div')`
   display: ${props => (props.codeIsVisible ? 'block' : 'none')};
   height: 100%;
   max-height: 300px;
@@ -128,7 +128,7 @@ const CodeWrapper = styled<ExampleState, 'div'>('div')`
   }
 `;
 
-const Wrapper = styled<ThemeAttributes & ExampleState, 'div'>('div')`
+const Wrapper = styled('div')`
   margin: ${variables.spaces.space3} 0;
   padding: ${variables.spaces.space1};
   background-color: ${props =>

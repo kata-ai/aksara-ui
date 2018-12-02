@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { InputAddonBase } from '../styles';
 
-interface InputAddonProps extends React.AllHTMLAttributes<HTMLSpanElement> {
+interface InputAddonProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** True if an icon is used as addon instead of text. */
@@ -38,7 +38,7 @@ const Div = styled('div')`
   ${props => InputAddonBase(props)};
 `;
 
-const Inner = styled<InputAddonProps, 'span'>('span')`
+const Inner = styled('span')`
   display: flex;
   align-items: center;
   justify-content: center;

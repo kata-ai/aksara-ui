@@ -3,7 +3,7 @@ import { KataReset, Theme, ThemeAttributes, variables } from '@kata-kit/theme';
 
 import '@kata-kit/fonts/museo-sans-rounded.css';
 import '@kata-kit/fonts/kata-icons.css';
-import '@kata-kit/reset';
+import { Reboot, GlobalStyles } from '@kata-kit/reset';
 
 interface WrapperProps {
   noPadding?: boolean;
@@ -32,6 +32,8 @@ const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, noReset }) => {
               backgroundColor: themeAttributes.backgroundColor
             }}
           >
+            <Reboot />
+            <GlobalStyles />
             {children}
           </div>
         )}
@@ -43,6 +45,8 @@ const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, noReset }) => {
     <Theme values={theme}>
       {themeAttributes => (
         <KataReset style={style} {...themeAttributes}>
+          <Reboot />
+          <GlobalStyles />
           {children}
         </KataReset>
       )}

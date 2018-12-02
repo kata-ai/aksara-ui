@@ -5,8 +5,7 @@ import ThemedComponent from '@kata-kit/theme';
 import themes from '../theme';
 import { InputTextBase } from '../styles';
 
-export interface InputTextProps
-  extends React.AllHTMLAttributes<HTMLInputElement> {
+export interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
   /** True if this text input has an addon style */
@@ -41,7 +40,7 @@ const WithAddonStyles = css`
   border-bottom-left-radius: 0;
 `;
 
-const Input = styled<InputTextProps, 'input'>('input')`
+const Input = styled('input')`
   ${props => InputTextBase(props)};
   height: 40px;
 

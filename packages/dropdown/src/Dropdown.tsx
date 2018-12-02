@@ -130,7 +130,7 @@ class Dropdown extends React.Component<DropdownProps> {
 
 export default Dropdown;
 
-const DropdownWrapper = styled<DropdownProps, any>('div')`
+const DropdownWrapper = styled('div')`
   ${DropdownBase}
   display: ${(props: DropdownProps) =>
     props.block ? 'block' : 'inline-block'};
