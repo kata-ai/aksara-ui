@@ -177,7 +177,7 @@ const InvisibleText = styled('span')`
   visibility: hidden;
 `;
 
-const ButtonWrapper = styled('button')`
+export const ButtonWrapper = styled('button')`
   ${props => ButtonBase(props)};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};

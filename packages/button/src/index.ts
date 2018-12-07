@@ -1,4 +1,5 @@
 import Button, {
+  ButtonWrapper,
   ButtonProps,
   ButtonColors,
   ButtonSizes
@@ -10,6 +11,7 @@ import ToggleButton from './components/ToggleButton';
 
 export {
   Button,
+  ButtonWrapper,
   ButtonGroup,
   ButtonProps,
   ButtonColors,

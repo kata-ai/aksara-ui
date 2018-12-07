@@ -1,5 +1,6 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import styled, { css, SimpleInterpolation } from 'styled-components';
 
+import { ButtonWrapper } from '@kata-kit/button';
 import { variables } from '@kata-kit/theme';
 import DropdownStyles from './DropdownStyles';
 
@@ -8,20 +9,72 @@ export const dropdownMenu = css`
   box-shadow: ${variables.layerShadows.layer200Shadow};
 ` as SimpleInterpolation;
 
+const Block = css`
+  display: block;
+  width: 100%;
+`;
+
+export const DropdownToggleButton = styled(ButtonWrapper)`
+  ${props => props.block && Block};
+  position: relative;
+  text-align: left;
+  background: ${variables.colors.white};
+  border-radius: 6px;
+  border: 1px solid ${variables.colors.gray30};
+  padding: 10px 36px 10px 16px;
+  height: 40px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.538rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: ${variables.colors.gray50};
+    background-color: ${variables.colors.gray20};
+    border-color: ${variables.colors.kataBlue};
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &.is-open {
+    color: ${variables.colors.white};
+    background-color: ${variables.colors.gray70};
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: ${variables.colors.white};
+      background-color: ${variables.colors.gray70};
+      border-color: transparent;
+    }
+  }
+`;
+
+export const DropdownToggleIcon = styled('i')`
+  display: inline-block;
+  position: absolute;
+  right: 8px;
+  top: 9px;
+  margin-left: 8px;
+  font-size: 20px;
+
+  &::before {
+    vertical-align: middle;
+  }
+`;
+
 export const DropdownBase = () =>
   css`
     ${DropdownStyles};
-
-    .kata-drop-toggle {
-      position: relative;
-      display: inline-block;
-      top: 2px;
-      margin-left: 8px;
-      font-size: 20px;
-      &::before {
-        vertical-align: middle;
-      }
-    }
 
     .kata {
       &-dropdown {
@@ -106,8 +159,10 @@ export const DropdownBase = () =>
       &-dropleft {
         &__menu {
           top: 0 !important;
-          // We need to use transform for dropleft because the dropdown menu
-          // can't goes over the parent container
+          /*
+           * We need to use transform for dropleft because the dropdown menu
+           * can't goes over the parent container
+           */
           transform: translate3d(calc(-100% - 0.125rem), 0, 0);
 
           ${dropdownMenu};

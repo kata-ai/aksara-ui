@@ -105,7 +105,14 @@ class Dropdown extends React.Component<DropdownProps> {
     return (
       <Theme>
         {themeAttributes => (
-          <DropdownWrapper className={classes} {...themeAttributes} {...props}>
+          <DropdownWrapper
+            className={classes}
+            block={block}
+            direction={direction}
+            disabled={disabled}
+            {...themeAttributes}
+            {...props}
+          >
             {React.Children.map(children, (Item: React.ReactElement<any>) => {
               return Item &&
                 Item.type &&
@@ -135,4 +142,5 @@ const DropdownWrapper = styled('div')`
   display: ${(props: DropdownProps) =>
     props.block ? 'block' : 'inline-block'};
   position: relative;
+  ${(props: DropdownProps) => (props.block ? 'width: 100%' : '')};
 `;
