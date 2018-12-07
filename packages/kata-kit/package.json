@@ -40,6 +40,7 @@
     "@kata-kit/loading": "^0.6.2",
     "@kata-kit/modal": "^0.6.4",
     "@kata-kit/pagination": "^0.6.3",
+    "@kata-kit/react-select": "^0.6.0",
     "@kata-kit/reset": "^0.6.2",
     "@kata-kit/split-button": "^0.6.3",
     "@kata-kit/theme": "^0.6.2",
