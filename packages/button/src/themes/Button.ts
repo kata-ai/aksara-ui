@@ -63,14 +63,14 @@ const white: ThemeAttributes = {
 };
 
 const buttonThemes: ThemeAttributesMap = {
-  defaultTheme: secondary,
   primary,
   secondary,
   success,
   warning,
   danger,
+  white,
   info: primary,
-  white
+  defaultTheme: secondary
 };
 
 export default buttonThemes;

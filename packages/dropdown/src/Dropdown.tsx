@@ -121,9 +121,9 @@ class Dropdown extends React.Component<DropdownProps> {
                 )
                 ? React.cloneElement(Item, {
                     ...props,
+                    direction,
                     isOpen: this.state.isOpen,
                     toggle: this.toggle,
-                    direction,
                     onSelect: this.onSelect
                   })
                 : Item;

@@ -28,19 +28,17 @@ class CardGrid extends React.Component<CardGridProps> {
             {...rest}
             {...themeAttributes}
           >
-            {React.Children.map(
-              this.props.children,
-              Item =>
-                Item ? (
-                  <CardWrapper
-                    data-testid="CardGrid-wrapper"
-                    cardsPerRow={cardsPerRow}
-                  >
-                    {Item}
-                  </CardWrapper>
-                ) : (
-                  Item
-                )
+            {React.Children.map(this.props.children, Item =>
+              Item ? (
+                <CardWrapper
+                  data-testid="CardGrid-wrapper"
+                  cardsPerRow={cardsPerRow}
+                >
+                  {Item}
+                </CardWrapper>
+              ) : (
+                Item
+              )
             )}
           </Wrapper>
         )}

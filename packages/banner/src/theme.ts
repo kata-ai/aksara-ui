@@ -21,11 +21,11 @@ const error: ThemeAttributes = {
 };
 
 const themes = {
-  defaultTheme: error,
   success,
   info,
   warning,
-  error
+  error,
+  defaultTheme: error
 };
 
 export default themes;

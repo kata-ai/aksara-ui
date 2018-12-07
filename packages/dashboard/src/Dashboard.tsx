@@ -3,9 +3,8 @@ import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
 import { Container } from '@kata-kit/layout';
-import { Theme } from '@kata-kit/theme';
+import { Theme, variables } from '@kata-kit/theme';
 import { Tooltip, TooltipTarget } from '@kata-kit/tooltip';
-import { variables } from '@kata-kit/theme';
 
 export interface DashboardProps {
   /** Dashboard title element. */

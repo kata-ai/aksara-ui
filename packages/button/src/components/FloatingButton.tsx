@@ -2,9 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import styled, { keyframes } from 'styled-components';
 
-import ThemedComponent from '@kata-kit/theme';
+import ThemedComponent, { variables } from '@kata-kit/theme';
 import { Circle } from '@kata-kit/loading';
-import { variables } from '@kata-kit/theme';
 
 import themes from '../theme';
 import ButtonBase from '../styles';

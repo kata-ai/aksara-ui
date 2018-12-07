@@ -48,6 +48,7 @@ class Pagination extends React.Component<PaginationProps, PaginationState> {
       endPage = total;
     }
 
+    // tslint:disable-next-line:no-increment-decrement
     for (let page = startPage; page <= endPage; ++page) {
       pageButtons.push(page);
     }
