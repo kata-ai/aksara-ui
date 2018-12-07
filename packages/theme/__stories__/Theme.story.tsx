@@ -3,7 +3,8 @@ import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import RootWrapper from '../../../.storybook/components/Wrapper';
 
-import ThemedComponent, { KataReset, Theme, variables } from '../src';
+import ThemedComponent, { Theme, variables } from '../src';
+import { KataReset } from '../../reset/src';
 
 const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding>{storyFn()}</RootWrapper>
@@ -17,7 +18,7 @@ story.add('Reset', () => (
   </KataReset>
 ));
 
-story.add('Themed Reset', () => (
+story.add('<Theme />', () => (
   <Theme
     values={{
       backgroundColor: variables.colors.gray80,
@@ -25,9 +26,15 @@ story.add('Themed Reset', () => (
     }}
   >
     {innerTheme => (
-      <KataReset {...innerTheme} style={{ padding: '8px 16px' }}>
-        A reset can be themed.
-      </KataReset>
+      <div
+        style={{
+          padding: '8px 16px',
+          backgroundColor: innerTheme.backgroundColor,
+          color: innerTheme.textColor
+        }}
+      >
+        You can use <code>&lt;Theme /&gt;</code> to modify the theme context.
+      </div>
     )}
   </Theme>
 ));
