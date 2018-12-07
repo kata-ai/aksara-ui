@@ -19,6 +19,7 @@
     { "path": "../modal" },
     { "path": "../pagination" },
     { "path": "../react-select" },
+    { "path": "../reset" },
     { "path": "../theme" },
     { "path": "../tooltip" }
   ],
