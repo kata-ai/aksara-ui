@@ -72,7 +72,7 @@ export default class Tooltip extends React.Component<TooltipProps> {
   }
 }
 
-const Root = styled<TooltipProps, 'div'>('div')`
+const Root = styled('div')`
   position: absolute;
   z-index: 1070;
   display: block;
@@ -95,7 +95,7 @@ const Root = styled<TooltipProps, 'div'>('div')`
   line-break: auto;
   font-size: 0.875rem;
   word-wrap: break-word;
-  opacity: ${props => (props.show ? 1 : 0)};
+  opacity: ${(props: TooltipProps) => (props.show ? 1 : 0)};
 `;
 
 const Inner = styled('div')`

@@ -1,6 +1,9 @@
 {
   "rulesDirectory": ["tslint-plugin-prettier"],
-  "extends": ["tslint-config-kata", "tslint-config-prettier"],
+  "extends": ["tslint-config-kata/react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  },
   "rules": {
     "prettier": true,
     "interface-name": [true, "never-prefix"]

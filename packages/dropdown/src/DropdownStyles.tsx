@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, SimpleInterpolation } from 'styled-components';
 
 export default css`
   .dropup,
@@ -210,4 +210,4 @@ export default css`
     padding: 0.25rem 1.5rem;
     color: #212529;
   }
-`;
+` as SimpleInterpolation;

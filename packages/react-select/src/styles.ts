@@ -21,8 +21,8 @@ const defaultStyle: Styles = {
     backgroundColor: state.isFocused
       ? variables.colors.white
       : state.isDisabled
-        ? variables.colors.gray10
-        : variables.colors.white,
+      ? variables.colors.gray10
+      : variables.colors.white,
     boxShadow: state.isFocused
       ? `0 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 0 4px ${
           variables.colors.softKataBlue

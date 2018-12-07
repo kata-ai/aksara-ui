@@ -120,10 +120,10 @@ export const ContentTable = styled('table')`
 `;
 
 export const markdownRenderers: { [nodeType in NodeType]?: React.ReactType } = {
-  root: ContentRoot,
-  thematicBreak: ContentHr,
-  code: CodeBlock,
-  inlineCode: ContentInlineCode,
-  blockquote: ContentBlockquote,
-  table: ContentTable
+  root: props => <ContentRoot {...props} />,
+  thematicBreak: props => <ContentHr {...props} />,
+  code: props => <CodeBlock {...props} />,
+  inlineCode: props => <ContentInlineCode {...props} />,
+  blockquote: props => <ContentBlockquote {...props} />,
+  table: props => <ContentTable {...props} />
 };

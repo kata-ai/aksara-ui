@@ -48,8 +48,8 @@ import {
   ThemeAttributesMap,
   ThemeAttributes,
   Theme,
-  Provider as ThemeProvider,
-  Consumer as ThemeConsumer
+  KataThemeProvider,
+  KataThemeConsumer
 } from './theme';
 
 import { TooltipTarget, Tooltip } from './tooltip';
@@ -145,8 +145,8 @@ export {
   ThemeAttributesMap,
   ThemeAttributes,
   Theme,
-  ThemeProvider,
-  ThemeConsumer,
+  KataThemeProvider,
+  KataThemeConsumer,
   TooltipTarget,
   Tooltip,
   Reset,

@@ -10,7 +10,7 @@ import themes from '../theme';
 import { ButtonColors } from './Button';
 
 export interface SupportButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */
@@ -129,7 +129,7 @@ const InvisibleText = styled('span')`
   visibility: hidden;
 `;
 
-const SupportButtonWrapper = styled<SupportButtonProps, 'button'>('button')`
+const SupportButtonWrapper = styled('button')`
   ${ButtonBase} padding: 8px 16px;
   border-radius: 4px;
   font-weight: 700;

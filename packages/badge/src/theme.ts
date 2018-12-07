@@ -31,12 +31,12 @@ export const danger: ThemeAttributes = {
 };
 
 const themes = {
-  defaultTheme: entity,
   primary,
   secondary,
   success,
   warning,
-  danger
+  danger,
+  defaultTheme: entity
 };
 
 export default themes;

@@ -27,11 +27,11 @@
   "dependencies": {
     "@kata-kit/loading": "^0.6.2",
     "@kata-kit/theme": "^0.6.2",
-    "polished": "^2.3.0",
-    "styled-components": "^3.4.9"
+    "polished": "^2.3.1"
   },
   "peerDependencies": {
-    "react": "^16.3.0"
+    "react": "^16.3.0",
+    "styled-components": "^4.1.2"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.6"

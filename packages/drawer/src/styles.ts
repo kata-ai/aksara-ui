@@ -1,4 +1,4 @@
-import { css, ThemedStyledProps } from 'styled-components';
+import { css, ThemedStyledProps, SimpleInterpolation } from 'styled-components';
 
 import { ThemeAttributes } from '@kata-kit/theme';
 import { DrawerProps } from './components/Drawer';
@@ -7,30 +7,31 @@ export type WithThemeProps<P = {}> = ThemedStyledProps<P, ThemeAttributes>;
 
 const drawerBoxShadow = '0 4px 6px 2px rgba(0, 0, 0, 0.15)';
 
-export const DrawerBase = (props: WithThemeProps<DrawerProps>) => css`
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  min-height: 1px;
-  width: 480px;
-  padding-bottom: 170px;
-  z-index: 1035;
-  box-shadow: ${drawerBoxShadow};
-  background-color: ${props.theme.backgroundColor};
-  color: ${props.theme.textColor};
-  transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
+export const DrawerBase = (props: WithThemeProps<DrawerProps>) =>
+  css`
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-height: 1px;
+    width: 480px;
+    padding-bottom: 170px;
+    z-index: 1035;
+    box-shadow: ${drawerBoxShadow};
+    background-color: ${props.theme.backgroundColor};
+    color: ${props.theme.textColor};
+    transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
 
-  &.is-open {
-    visibility: visible;
-  }
+    &.is-open {
+      visibility: visible;
+    }
 
-  &.is-closed {
-    visibility: hidden;
-    transform: translateX(100%);
-  }
-`;
+    &.is-closed {
+      visibility: hidden;
+      transform: translateX(100%);
+    }
+  ` as SimpleInterpolation;
 
 export const DrawerRight = css`
   left: auto;
@@ -45,7 +46,7 @@ export const DrawerRight = css`
   &.folding {
     transition-property: margin-right;
   }
-`;
+` as SimpleInterpolation;
 
 export const DrawerOverlayStyles = css`
   &.is-open {
@@ -58,4 +59,4 @@ export const DrawerOverlayStyles = css`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.65);
   }
-`;
+` as SimpleInterpolation;

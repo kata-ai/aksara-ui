@@ -28,19 +28,17 @@ class CardGrid extends React.Component<CardGridProps> {
             {...rest}
             {...themeAttributes}
           >
-            {React.Children.map(
-              this.props.children,
-              Item =>
-                Item ? (
-                  <CardWrapper
-                    data-testid="CardGrid-wrapper"
-                    cardsPerRow={cardsPerRow}
-                  >
-                    {Item}
-                  </CardWrapper>
-                ) : (
-                  Item
-                )
+            {React.Children.map(this.props.children, Item =>
+              Item ? (
+                <CardWrapper
+                  data-testid="CardGrid-wrapper"
+                  cardsPerRow={cardsPerRow}
+                >
+                  {Item}
+                </CardWrapper>
+              ) : (
+                Item
+              )
             )}
           </Wrapper>
         )}
@@ -51,14 +49,14 @@ class CardGrid extends React.Component<CardGridProps> {
 
 export default CardGrid;
 
-const Wrapper = styled<CardGridProps, 'div'>('div')`
+const Wrapper = styled('div')`
   display: flex;
   flex-wrap: wrap;
   margin: 0 -0.615384615rem;
   justify-content: ${props => props.centered && 'center'};
 `;
 
-const CardWrapper = styled<CardGridProps, 'div'>('div')`
+const CardWrapper = styled('div')`
   flex: 0 1 100%;
   padding: 0 0.615384615rem;
   margin-bottom: 1.230769231rem;

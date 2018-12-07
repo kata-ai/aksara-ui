@@ -10,36 +10,7 @@ We use `styled-components` for styling our components, which combines the power 
 
 Therefore, we borrowed some ideas from [Atlaskit](https://atlaskit.atlassian.com/packages/core/theme) and provided a minimal theming API which is based on React's [Context API](https://reactjs.org/docs/context.html).
 
-## Resetting Styles
-
-The `KataReset` component applies CSS resets to all of its descendant nodes.
-
-```jsx
-import { KataReset } from '@kata-kit/theme';
-
-export default () => <KataReset>This is the default reset.</KataReset>;
-```
-
-Inside the `KataReset` component is the `Consumer` of `ThemeContext`. Here we can easily override the default theme with a `Theme` component.
-
-```jsx
-import { Theme, KataReset } from '@kata-kit/theme';
-
-export default () => (
-  <Theme
-    values={{
-      backgroundColor: variables.colors.gray80,
-      textColor: variables.colors.gray20
-    }}
-  >
-    {innerTheme => (
-      <KataReset {...innerTheme} style={{ padding: '8px 16px' }}>
-        A reset can be themed.
-      </KataReset>
-    )}
-  </Theme>
-);
-```
+## Theme Attributes
 
 The default values that can be overridden are as follows:
 
@@ -63,8 +34,84 @@ export type ThemeAttributes = {
 };
 ```
 
+## Using `<Theme />`
+
+You can easily override the default theme context with a `Theme` component.
+
+```jsx
+function ExampleTheme() {
+  return (
+    <Theme
+      values={{
+        backgroundColor: variables.colors.gray80,
+        textColor: variables.colors.gray20
+      }}
+    >
+      {innerTheme => (
+        <div
+          style={{
+            padding: '8px 16px',
+            backgroundColor: innerTheme.backgroundColor,
+            color: innerTheme.textColor
+          }}
+        >
+          You can use <code>&lt;Theme /&gt;</code> to modify the theme context.
+        </div>
+      )}
+    </Theme>
+  );
+}
+```
+
 ## Using `<ThemedComponent />`
 
 A component can have multiple color states. To make switching between them easier to manage, we provided a `ThemedComponent` component which resolves a theme string with its respective `ThemeAttributes` map.
 
-You can see this theming method in action either the `Button` or `Badge` component.
+```jsx
+function ExampleThemedComponent() {
+  const themes = {
+    defaultTheme: {
+      backgroundColor: variables.colors.softKataBlue,
+      textColor: variables.colors.gray70
+    },
+    red: {
+      backgroundColor: variables.colors.red,
+      textColor: variables.colors.white
+    }
+  };
+
+  return (
+    <div>
+      <ThemedComponent color="defaultTheme" themes={themes}>
+        {innerTheme => (
+          <div
+            style={{
+              marginBottom: '8px',
+              padding: '8px 16px',
+              color: innerTheme.textColor,
+              backgroundColor: innerTheme.backgroundColor
+            }}
+          >
+            This example shows application of ThemedComponent on a `style` prop
+            inside a div.
+          </div>
+        )}
+      </ThemedComponent>
+      <ThemedComponent color="red" themes={themes}>
+        {innerTheme => (
+          <div
+            style={{
+              padding: '8px 16px',
+              color: innerTheme.textColor,
+              backgroundColor: innerTheme.backgroundColor
+            }}
+          >
+            You can, of course, include these as a theme prop in your
+            `styled-components`.
+          </div>
+        )}
+      </ThemedComponent>
+    </div>
+  );
+}
+```

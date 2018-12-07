@@ -6,7 +6,7 @@ import { FormLabelBase } from '../styles';
 import themes from '../theme';
 
 export interface FormLabelProps
-  extends React.AllHTMLAttributes<HTMLLabelElement> {
+  extends React.LabelHTMLAttributes<HTMLLabelElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
 }

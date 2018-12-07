@@ -6,7 +6,7 @@ import themes from '../theme';
 import { InputTextBase } from '../styles';
 
 export interface InputTextProps
-  extends React.AllHTMLAttributes<HTMLTextAreaElement> {
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
 }

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { darken } from 'polished';
 
 import { Circle } from '@kata-kit/loading';
-import ThemedComponent, { ThemeAttributes, variables } from '@kata-kit/theme';
+import ThemedComponent, { variables } from '@kata-kit/theme';
 import themes from '../theme';
 
 import ButtonBase from '../styles';
@@ -25,7 +25,8 @@ export type ButtonColors =
 
 export type ButtonSizes = 'lg' | 'sm';
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */
@@ -176,7 +177,7 @@ const InvisibleText = styled('span')`
   visibility: hidden;
 `;
 
-const ButtonWrapper = styled<ButtonProps & ThemeAttributes, 'button'>('button')`
+export const ButtonWrapper = styled('button')`
   ${props => ButtonBase(props)};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};

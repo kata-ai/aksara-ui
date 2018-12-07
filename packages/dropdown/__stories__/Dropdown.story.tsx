@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
@@ -16,7 +17,8 @@ const story: any = storiesOf('Components|Dropdown', module)
     wInfo({
       propTables: [DropdownSelector, DropdownItem]
     })
-  );
+  )
+  .addDecorator(withKnobs);
 
 const infoText = `
 ## Install
@@ -42,6 +44,13 @@ const Component = ({ onSelect, value }) => (
 ~~~
 `;
 
+const dropdownPositionOptions = {
+  Down: 'down',
+  Right: 'right',
+  Up: 'up',
+  Left: 'left'
+};
+
 story.add(
   'Documentation',
   () => (
@@ -52,16 +61,19 @@ story.add(
       }}
     >
       {({ values, selected }, { setState }) => (
-        <DropdownSelector
-          value={selected}
-          onSelect={value => setState({ selected: value })}
-        >
-          {values.map(v => (
-            <DropdownItem key={v} value={v}>
-              {v}
-            </DropdownItem>
-          ))}
-        </DropdownSelector>
+        <div style={{ width: 250 }}>
+          <DropdownSelector
+            value={selected}
+            block
+            onSelect={value => setState({ selected: value })}
+          >
+            {values.map(v => (
+              <DropdownItem key={v} value={v}>
+                {v}
+              </DropdownItem>
+            ))}
+          </DropdownSelector>
+        </div>
       )}
     </WithState>
   ),

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import styled, { ThemedStyledProps } from 'styled-components';
+import styled from 'styled-components';
 
 import themes from '../theme';
-import styles, { AvatarBaseProps } from '../styles';
-import ThemedComponent, { ThemeAttributes } from '@kata-kit/theme';
+import styles from '../styles';
+import ThemedComponent from '@kata-kit/theme';
 
 export interface AvatarProps {
   src: any;
@@ -42,8 +42,6 @@ export default class Avatar extends React.Component<AvatarProps> {
 
 const Image = styled('img')``;
 
-const Root = styled<ThemedStyledProps<AvatarBaseProps, ThemeAttributes>, 'div'>(
-  'div'
-)`
+const Root = styled('div')`
   ${styles};
 `;

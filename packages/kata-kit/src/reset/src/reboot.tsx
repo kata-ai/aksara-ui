@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, SimpleInterpolation } from 'styled-components';
 
 export default css`
   *,
@@ -342,4 +342,4 @@ export default css`
   [hidden] {
     display: none !important;
   }
-`;
+` as SimpleInterpolation;

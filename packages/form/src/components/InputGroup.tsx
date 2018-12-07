@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-interface InputGroupProps extends React.AllHTMLAttributes<HTMLDivElement> {
+interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Additional CSS classes to give to the component. */
   className?: string;
 }

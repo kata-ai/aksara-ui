@@ -1,7 +1,7 @@
 import * as React from 'react';
 import createFocusTrap, { FocusTrap as FocusTrapInstance } from 'focus-trap';
 
-interface FocusTrapProps extends React.AllHTMLAttributes<HTMLDivElement> {
+interface FocusTrapProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Whether or not the focus lock is active */
   active: boolean;
 }

@@ -23,9 +23,9 @@ export default class Theme extends React.Component<ThemeProps> {
 
           if (typeof children === 'function') {
             return (children as any)(merged);
-          } else {
-            return <Provider value={merged}>{children}</Provider>;
           }
+
+          return <Provider value={merged}>{children}</Provider>;
         }}
       </Consumer>
     );

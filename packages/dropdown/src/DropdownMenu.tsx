@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import styled from 'styled-components';
 
 type DropdownDirection = 'up' | 'down' | 'left' | 'right';
 
@@ -23,7 +24,6 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
   render() {
     const { isOpen, right, direction, className, onSelect } = this.props;
     const classes = classNames(
-      'dropdown-menu',
       className,
       right ? 'dropdown-menu-right' : false,
       `kata-drop${direction}__menu`,
@@ -32,7 +32,7 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
     );
 
     return (
-      <div className={classes}>
+      <Wrapper className={classes}>
         {React.Children.map(
           this.props.children,
           (Item: React.ReactElement<any>) =>
@@ -42,9 +42,34 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
                 })
               : Item
         )}
-      </div>
+      </Wrapper>
     );
   }
 }
+
+const Wrapper = styled('div')`
+  display: none;
+  position: absolute;
+  float: left;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 2px 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0.25rem;
+  z-index: 1000;
+
+  &.show {
+    display: block;
+  }
+`;
 
 export default DropdownMenu;

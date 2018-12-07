@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 import { Button, ToggleButton } from '@kata-kit/button';
-import { variables, Theme, KataReset, ThemeAttributes } from '@kata-kit/theme';
+import { variables, Theme, ThemeAttributes } from '@kata-kit/theme';
 
 interface ExampleProps {
   title?: string;
@@ -59,9 +59,9 @@ class Example extends React.Component<ExampleProps, ExampleState> {
               </CodeWrapper>
               <LiveError />
               <Theme values={innerTheme}>
-                {innerTheme => (
-                  <Inner theme={innerTheme}>
-                    <PreviewReset theme={innerTheme}>
+                {innerThemeAttributes => (
+                  <Inner theme={innerThemeAttributes}>
+                    <PreviewReset theme={innerThemeAttributes}>
                       <LivePreview />
                     </PreviewReset>
                   </Inner>
@@ -79,7 +79,7 @@ export default Example;
 
 const Title = styled('h3')`
   margin-top: 0;
-  margin-bottom: ${variables.spaces.space1}};
+  margin-bottom: ${variables.spaces.space1};
 `;
 
 const TitleWrapper = styled('div')`
@@ -87,7 +87,7 @@ const TitleWrapper = styled('div')`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${variables.spaces.space1}};
+  margin-bottom: ${variables.spaces.space1};
 
   ${Title} {
     margin: 0;
@@ -103,7 +103,7 @@ const Inner = styled('div')`
   overflow: hidden;
 `;
 
-const PreviewReset = styled(KataReset)`
+const PreviewReset = styled('div')`
   background-color: ${props => props.theme.backgroundColor};
   color: ${props => props.theme.textColor};
 
@@ -112,7 +112,7 @@ const PreviewReset = styled(KataReset)`
   }
 `;
 
-const CodeWrapper = styled<ExampleState, 'div'>('div')`
+const CodeWrapper = styled('div')`
   display: ${props => (props.codeIsVisible ? 'block' : 'none')};
   height: 100%;
   max-height: 300px;
@@ -128,7 +128,7 @@ const CodeWrapper = styled<ExampleState, 'div'>('div')`
   }
 `;
 
-const Wrapper = styled<ThemeAttributes & ExampleState, 'div'>('div')`
+const Wrapper = styled('div')`
   margin: ${variables.spaces.space3} 0;
   padding: ${variables.spaces.space1};
   background-color: ${props =>

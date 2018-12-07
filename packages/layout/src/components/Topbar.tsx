@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-import { ThemeAttributes, Theme } from '@kata-kit/theme';
+import { Theme } from '@kata-kit/theme';
 
 import themes from '../themes/Topbar';
 
@@ -43,14 +43,14 @@ const TopbarLeft = styled('div')`
   flex: 0 0 auto;
 `;
 
-const TopbarRight = styled<TopbarRightProps, 'div'>('div')`
+const TopbarRight = styled('div')`
   flex: 1 1 auto;
   margin-left: 24px;
 
-  ${props => props.flex && topbarIsFlex};
+  ${(props: TopbarRightProps) => props.flex && topbarIsFlex};
 `;
 
-const Root = styled<ThemeAttributes, 'header'>('header')`
+const Root = styled('header')`
   display: flex;
   flex-direction: row;
   align-items: center;

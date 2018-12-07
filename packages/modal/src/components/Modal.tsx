@@ -60,12 +60,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
         show: props.show,
         visible: false
       };
-    } else {
-      return {
-        show: props.show,
-        visible: true
-      };
     }
+
+    return {
+      show: props.show,
+      visible: true
+    };
   }
 
   componentDidMount() {

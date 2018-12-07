@@ -17,6 +17,7 @@ const InfiniteScrollSpinner: React.SFC<InfiniteScrollSpinnerProps> = props => {
   return (
     <Wrapper
       bsStyle={props.bsStyle}
+      data-testid="infinite-scroll-icon"
       sm={props.sm}
       lg={props.lg}
       className={classname}
@@ -47,13 +48,13 @@ const bounceDelay = keyframes`
   }
 `;
 
-interface WrapperProps {
-  bsStyle?: string;
-  sm?: boolean;
-  lg?: boolean;
-}
+// interface WrapperProps {
+//   bsStyle?: string;
+//   sm?: boolean;
+//   lg?: boolean;
+// }
 
-const Wrapper = styled<WrapperProps, 'div'>('div')`
+const Wrapper = styled('div')`
   width: auto;
   display: inline-block;
   text-align: center;

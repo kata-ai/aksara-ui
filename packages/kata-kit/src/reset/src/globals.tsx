@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, SimpleInterpolation } from 'styled-components';
 
 import { fontProps } from './utils/variables';
 
@@ -91,4 +91,4 @@ export default css`
       height: 18px;
     }
   }
-`;
+` as SimpleInterpolation;

@@ -128,11 +128,7 @@ const CardHeadingAction = styled('div')`
   flex: 0 1 auto;
 `;
 
-interface CardBodyProps {
-  asButton?: boolean;
-}
-
-const CardBody = styled<CardBodyProps, 'div'>('div')`
+const CardBody = styled('div')`
   padding: 8px 24px;
   font-size: 13px;
   line-height: 20px;

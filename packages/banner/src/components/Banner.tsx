@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import BannerBase from '../styles';
 import themes from '../theme';
-import ThemedComponent, { ThemeAttributes } from '@kata-kit/theme';
+import ThemedComponent from '@kata-kit/theme';
 
 export type BannerState = 'error' | 'success' | 'warning' | 'info';
 
@@ -68,7 +68,7 @@ const Message = styled('div')`
   margin-right: 16px;
 `;
 
-const CloseButton = styled<ThemeAttributes, 'button'>('button')`
+const CloseButton = styled('button')`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,7 +92,7 @@ const CloseButton = styled<ThemeAttributes, 'button'>('button')`
   }
 `;
 
-const Root = styled<ThemeAttributes, 'div'>('div')`
+const Root = styled('div')`
   ${BannerBase} background-color: ${props => props.backgroundColor};
   color: ${props => props.textColor};
 

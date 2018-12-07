@@ -105,7 +105,14 @@ class Dropdown extends React.Component<DropdownProps> {
     return (
       <Theme>
         {themeAttributes => (
-          <DropdownWrapper className={classes} {...themeAttributes} {...props}>
+          <DropdownWrapper
+            className={classes}
+            block={block}
+            direction={direction}
+            disabled={disabled}
+            {...themeAttributes}
+            {...props}
+          >
             {React.Children.map(children, (Item: React.ReactElement<any>) => {
               return Item &&
                 Item.type &&
@@ -114,9 +121,9 @@ class Dropdown extends React.Component<DropdownProps> {
                 )
                 ? React.cloneElement(Item, {
                     ...props,
+                    direction,
                     isOpen: this.state.isOpen,
                     toggle: this.toggle,
-                    direction,
                     onSelect: this.onSelect
                   })
                 : Item;
@@ -130,9 +137,10 @@ class Dropdown extends React.Component<DropdownProps> {
 
 export default Dropdown;
 
-const DropdownWrapper = styled<DropdownProps, any>('div')`
+const DropdownWrapper = styled('div')`
   ${DropdownBase}
   display: ${(props: DropdownProps) =>
     props.block ? 'block' : 'inline-block'};
   position: relative;
+  ${(props: DropdownProps) => (props.block ? 'width: 100%' : '')};
 `;
