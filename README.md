@@ -31,10 +31,22 @@ This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Prerequisites
 
+Wicara requires `styled-components` v4+. First, install the core Wicara theme/reset package and `styled-components`.
+
+```bash
+# yarn
+$ yarn add styled-components @kata-kit/theme @kata-kit/reset
+
+# npm
+$ npm install --save styled-components @kata-kit/theme @kata-kit/reset
+```
+
 At the bare minimum, you should at least import the global CSS reset provided by Wicara.
 
-```js
-import '@kata-kit/reset';
+```jsx
+import { KataReset } from '@kata-kit/reset';
+
+const App = ({ children }) => <KataReset>{children}</KataReset>;
 ```
 
 ### Example

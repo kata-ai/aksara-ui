@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { KataReset, Theme, ThemeAttributes, variables } from '@kata-kit/theme';
+import { Theme, ThemeAttributes, variables } from '@kata-kit/theme';
+import { KataReset } from '@kata-kit/reset';
 
 import '@kata-kit/fonts/museo-sans-rounded.css';
 import '@kata-kit/fonts/kata-icons.css';
-import { Reboot, GlobalStyles } from '@kata-kit/reset';
 
 interface WrapperProps {
   noPadding?: boolean;
@@ -18,7 +18,8 @@ const theme: ThemeAttributes = {
 const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, noReset }) => {
   const style: React.CSSProperties = {
     padding: noPadding ? 0 : '16px',
-    minHeight: '100%'
+    minHeight: '100%',
+    backgroundColor: variables.colors.white
   };
 
   if (noReset) {
@@ -32,8 +33,6 @@ const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, noReset }) => {
               backgroundColor: themeAttributes.backgroundColor
             }}
           >
-            <Reboot />
-            <GlobalStyles />
             {children}
           </div>
         )}
@@ -43,13 +42,9 @@ const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, noReset }) => {
 
   return (
     <Theme values={theme}>
-      {themeAttributes => (
-        <KataReset style={style} {...themeAttributes}>
-          <Reboot />
-          <GlobalStyles />
-          {children}
-        </KataReset>
-      )}
+      <KataReset>
+        <div style={style}>{children}</div>
+      </KataReset>
     </Theme>
   );
 };

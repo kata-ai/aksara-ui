@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 import { Button, ToggleButton } from '@kata-kit/button';
-import { variables, Theme, KataReset, ThemeAttributes } from '@kata-kit/theme';
+import { variables, Theme, ThemeAttributes } from '@kata-kit/theme';
 
 interface ExampleProps {
   title?: string;
@@ -79,7 +79,7 @@ export default Example;
 
 const Title = styled('h3')`
   margin-top: 0;
-  margin-bottom: ${variables.spaces.space1}};
+  margin-bottom: ${variables.spaces.space1};
 `;
 
 const TitleWrapper = styled('div')`
@@ -87,7 +87,7 @@ const TitleWrapper = styled('div')`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${variables.spaces.space1}};
+  margin-bottom: ${variables.spaces.space1};
 
   ${Title} {
     margin: 0;
@@ -103,7 +103,7 @@ const Inner = styled('div')`
   overflow: hidden;
 `;
 
-const PreviewReset = styled(KataReset)`
+const PreviewReset = styled('div')`
   background-color: ${props => props.theme.backgroundColor};
   color: ${props => props.theme.textColor};
 

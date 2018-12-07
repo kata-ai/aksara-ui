@@ -1,4 +1,4 @@
-import Reboot from './components/GlobalStyles';
 import GlobalStyles from './components/GlobalStyles';
+import KataReset from './components/KataReset';
 
-export { Reboot, GlobalStyles };
+export { GlobalStyles, KataReset };
