@@ -12,6 +12,7 @@ import SidebarSubMenu from './components/SidebarSubMenu';
 
 export {
   AppRoot,
+  AppRoot as Wrapper,
   Topbar,
   Container,
   Content,
