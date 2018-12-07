@@ -17,6 +17,7 @@ const InfiniteScrollSpinner: React.SFC<InfiniteScrollSpinnerProps> = props => {
   return (
     <Wrapper
       bsStyle={props.bsStyle}
+      data-testid="infinite-scroll-icon"
       sm={props.sm}
       lg={props.lg}
       className={classname}
