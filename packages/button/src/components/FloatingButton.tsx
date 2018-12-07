@@ -12,7 +12,7 @@ import ButtonBase from '../styles';
 export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
 
 export interface FloatingButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */

@@ -10,7 +10,7 @@ import themes from '../theme';
 import { ButtonColors } from './Button';
 
 export interface SupportButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */

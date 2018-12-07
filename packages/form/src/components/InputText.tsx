@@ -5,7 +5,8 @@ import ThemedComponent from '@kata-kit/theme';
 import themes from '../theme';
 import { InputTextBase } from '../styles';
 
-export interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
+export interface InputTextProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
   /** True if this text input has an addon style */
