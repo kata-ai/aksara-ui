@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import { Theme, ThemeAttributes, variables } from '@kata-kit/theme';
 import { KataReset } from '@kata-kit/reset';
 
@@ -7,43 +8,29 @@ import '@kata-kit/fonts/kata-icons.css';
 
 interface WrapperProps {
   noPadding?: boolean;
-  noReset?: boolean;
+  layout?: boolean;
 }
 
-const theme: ThemeAttributes = {
+const baseTheme: ThemeAttributes = {
   backgroundColor: variables.colors.white,
   textColor: variables.colors.gray70
 };
 
-const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, noReset }) => {
-  const style: React.CSSProperties = {
-    padding: noPadding ? 0 : '16px',
-    minHeight: '100%',
-    backgroundColor: variables.colors.white
-  };
+const layoutTheme: ThemeAttributes = {
+  backgroundColor: variables.colors.gray10,
+  textColor: variables.colors.gray70
+};
 
-  if (noReset) {
-    return (
-      <Theme values={theme}>
-        {themeAttributes => (
-          <div
-            style={{
-              ...style,
-              color: themeAttributes.textColor,
-              backgroundColor: themeAttributes.backgroundColor
-            }}
-          >
-            {children}
-          </div>
-        )}
-      </Theme>
-    );
-  }
+const WrapperInner = styled('div')`
+  padding: ${props => (props.noPadding ? 0 : '16px')};
+  min-height: 100%;
+`;
 
+const Wrapper: React.SFC<WrapperProps> = ({ children, noPadding, layout }) => {
   return (
-    <Theme values={theme}>
+    <Theme values={layout ? layoutTheme : baseTheme}>
       <KataReset>
-        <div style={style}>{children}</div>
+        <WrapperInner noPadding={noPadding}>{children}</WrapperInner>
       </KataReset>
     </Theme>
   );

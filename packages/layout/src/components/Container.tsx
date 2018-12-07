@@ -1,17 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-interface ContainerProps {
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const Container: React.SFC<ContainerProps> = ({ children, className }) => (
-  <Wrapper className={className}>{children}</Wrapper>
+const Container: React.SFC<ContainerProps> = ({
+  children,
+  className,
+  style,
+  ...rest
+}) => (
+  <div className={className} style={style} {...rest}>
+    {children}
+  </div>
 );
 
-export default Container;
-
-const Wrapper = styled('div')`
+export default styled(Container)`
   width: 100%;
   max-width: 704px;
   margin: 0 auto;
