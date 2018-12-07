@@ -95,7 +95,6 @@
     "lerna": "^3.5.1",
     "listr": "^0.14.3",
     "moment": "^2.22.2",
-    "node-sass": "^4.10.0",
     "object-assign": "^4.1.1",
     "ora": "^3.0.0",
     "prettier": "^1.15.3",
