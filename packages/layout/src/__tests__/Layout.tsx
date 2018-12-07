@@ -3,16 +3,16 @@ import { render } from 'react-testing-library';
 
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
-import { Wrapper, Topbar, SidebarSub } from '..';
-import SidebarAndContent from '../SidebarAndContent';
-import Sidebar from '../Sidebar';
-import SidebarMain from '../SidebarMain';
-import Content from '../Content';
+import { AppRoot, Topbar, SidebarSub } from '..';
+import SidebarAndContent from '../components/SidebarAndContent';
+import Sidebar from '../components/Sidebar';
+import SidebarMain from '../components/SidebarMain';
+import Content from '../components/Content';
 
 describe('Layout', () => {
   test('renders correctly', () => {
     const { container } = render(
-      <Wrapper>
+      <AppRoot>
         <Topbar
           leftContent={
             <div style={{ width: '64px', textAlign: 'center' }}>Logo</div>
@@ -27,7 +27,7 @@ describe('Layout', () => {
           </Sidebar>
           <Content>Content</Content>
         </SidebarAndContent>
-      </Wrapper>
+      </AppRoot>
     );
 
     expect(container.firstChild).toBeInTheDocument();
