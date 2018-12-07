@@ -9,17 +9,19 @@
   "references": [
     { "path": "../button" },
     { "path": "../card" },
-    { "path": "../drawer" },
     { "path": "../common" },
     { "path": "../dashboard" },
+    { "path": "../drawer" },
     { "path": "../dropdown" },
     { "path": "../form" },
-    { "path": "../theme" },
-    { "path": "../tooltip" },
+    { "path": "../layout" },
+    { "path": "../loading" },
     { "path": "../modal" },
     { "path": "../pagination" },
-    { "path": "../layout" },
-    { "path": "../loading" }
+    { "path": "../react-select" },
+    { "path": "../reset" },
+    { "path": "../theme" },
+    { "path": "../tooltip" }
   ],
   "exclude": ["**/__stories__", "**/__tests__", "**/__mocks__", "**/lib"]
 }
