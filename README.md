@@ -29,6 +29,10 @@ This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Usage
 
+### Quickstart
+
+Check out [kata-ai/wicara-starter](https://github.com/kata-ai/wicara-starter).
+
 ### Prerequisites
 
 At the bare minimum, you should at least import the global CSS reset provided by Wicara.
