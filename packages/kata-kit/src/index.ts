@@ -86,7 +86,7 @@ import {
   SelectCreatable,
   defaultStyle,
   createOption
-} from '@kata-kit/react-select';
+} from './react-select';
 
 export {
   Button,
