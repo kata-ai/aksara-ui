@@ -27,7 +27,7 @@
   "dependencies": {
     "@kata-kit/loading": "^0.6.2",
     "@kata-kit/theme": "^0.6.2",
-    "polished": "^2.3.0"
+    "polished": "^2.3.1"
   },
   "peerDependencies": {
     "react": "^16.3.0",

@@ -28,8 +28,8 @@
     "@kata-kit/loading": "^0.6.2",
     "@kata-kit/theme": "^0.6.2",
     "classnames": "^2.2.6",
-    "polished": "^2.3.0",
-    "react-select": "^2.1.1"
+    "polished": "^2.3.1",
+    "react-select": "^2.1.2"
   },
   "peerDependencies": {
     "react": "^16.3.0",
@@ -37,6 +37,6 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.6",
-    "@types/react-select": "^2.0.6"
+    "@types/react-select": "^2.0.10"
   }
 }

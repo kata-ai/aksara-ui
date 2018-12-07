@@ -27,7 +27,7 @@
   "dependencies": {
     "@kata-kit/theme": "^0.6.2",
     "classnames": "^2.2.6",
-    "polished": "^2.3.0"
+    "polished": "^2.3.1"
   },
   "peerDependencies": {
     "react": "^16.3.0",

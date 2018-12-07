@@ -46,7 +46,7 @@
     "@kata-kit/theme": "^0.6.2",
     "@kata-kit/tooltip": "^0.6.2",
     "classnames": "^2.2.6",
-    "dom-helpers": "^3.3.1",
+    "dom-helpers": "^3.4.0",
     "lodash-es": "^4.17.10",
     "react-overlays": "^0.8.3"
   },
