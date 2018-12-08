@@ -1,4 +1,4 @@
-import AppRoot from './components/AppRoot';
+import Wrapper from './components/Wrapper';
 import Container from './components/Container';
 import Content from './components/Content';
 import Sidebar from './components/Sidebar';
@@ -11,8 +11,8 @@ import SidebarSub from './components/SidebarSub';
 import SidebarSubMenu from './components/SidebarSubMenu';
 
 export {
-  AppRoot,
-  AppRoot as Wrapper,
+  Wrapper,
+  Wrapper as AppRoot,
   Topbar,
   Container,
   Content,

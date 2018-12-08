@@ -1,12 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-interface AppRootProps extends React.HTMLAttributes<HTMLDivElement> {
+interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const AppRoot: React.SFC<AppRootProps> = ({
+const Wrapper: React.SFC<WrapperProps> = ({
   className,
   children,
   style,
@@ -17,7 +17,7 @@ const AppRoot: React.SFC<AppRootProps> = ({
   </div>
 );
 
-export default styled(AppRoot)`
+export default styled(Wrapper)`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
