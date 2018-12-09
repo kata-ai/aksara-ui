@@ -1,34 +1,34 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import classnames from 'classnames';
-import { NavLink, NavLinkProps } from 'react-router-dom';
+import { variables } from '@kata-kit/theme';
 
-export interface SidebarMainMenuProps extends NavLinkProps {
+export interface SidebarMainMenuProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
+  style?: React.CSSProperties;
   icon: string;
 }
 
 const SidebarMainMenu: React.SFC<SidebarMainMenuProps> = ({
   className,
+  style,
   icon,
   children,
   ...rest
 }) => (
-  <Root className={classnames(className)} activeClassName="is-active" {...rest}>
+  <a className={className} style={style} {...rest}>
     <Icon>
       <i className={`icon-${icon}`} />
     </Icon>
     <Span>{children}</Span>
-  </Root>
+  </a>
 );
-
-export default SidebarMainMenu;
 
 const Icon = styled('div')`
   width: 40px;
   height: 40px;
   margin: 0 auto;
-  margin-bottom: calc(0.615384615rem /* $space-1 */ / 2);
+  margin-bottom: calc(${variables.spaces.space1} / 2);
   padding: 10px;
   font-size: 20px;
   color: #676b6d;
@@ -39,7 +39,7 @@ const Span = styled('span')`
   color: #676b6d;
 `;
 
-const Root = styled(NavLink)`
+export default styled(SidebarMainMenu)`
   margin: 0 0 16px;
   padding: 4px 0;
   font-size: 12px;
@@ -48,25 +48,16 @@ const Root = styled(NavLink)`
   text-overflow: ellipsis;
   overflow: hidden;
   transition: all 0.3s ease;
-
-  & .main-menu-icon {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    margin-bottom: calc(0.615384615rem /* $space-1 */ / 2);
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 4px /* $border-radius-small */;
-  }
+  cursor: pointer;
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: #676b6d /* $gray-60 */;
+    color: ${variables.colors.gray60};
 
     & ${Icon} {
-      background: #484c4f /* $gray-70 */;
-      color: #949a9d /* $gray-50 */;
+      background-color: ${variables.colors.gray70};
+      color: ${variables.colors.gray50};
     }
   }
 
@@ -76,12 +67,12 @@ const Root = styled(NavLink)`
 
   &.is-active {
     ${Span} {
-      color: #fff /* $white */;
+      color: ${variables.colors.white};
     }
 
     ${Icon} {
-      background: #006fe6 /* $kata-blue */;
-      color: #fff /* $white */;
+      background-color: ${variables.colors.kataBlue};
+      color: ${variables.colors.white};
     }
   }
 `;

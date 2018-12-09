@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { NavLink, NavLinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { variables } from '@kata-kit/theme';
 
-export interface SidebarSubMenuProps extends NavLinkProps {
+export interface SidebarSubMenuProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   to: string;
   exact?: boolean;
@@ -17,7 +17,7 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
   children,
   ...rest
 }) => (
-  <Root className={className} activeClassName="is-active" {...rest}>
+  <a className={className} {...rest}>
     {icon ? (
       <Span>
         <SubMenuIcon className={`icon-${icon}`} /> {children}
@@ -25,41 +25,46 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
     ) : (
       <Span>{children}</Span>
     )}
-  </Root>
+  </a>
 );
 
-export default SidebarSubMenu;
+const SubMenuIcon = styled('i')`
+  margin-right: 1.230769231rem /* $space-2 */;
+  font-size: 20px;
+  line-height: 1em;
+  vertical-align: middle;
+`;
 
 const Span = styled('span')`
   font-size: 1rem;
   color: ${variables.colors.gray70};
 `;
 
-const Root = styled(NavLink)`
+export default styled(SidebarSubMenu)`
   display: block;
   min-height: 35px;
   padding: 6px 8px;
   color: ${variables.colors.gray70};
   text-decoration: none;
-  margin-bottom: 0.615384615rem /* $space-1 */;
+  margin-bottom: ${variables.spaces.space1};
   border: 1px solid transparent;
   border-radius: 6px /* $border-radius-medium */;
   transition: all 0.3s ease;
 
   &:hover {
     text-decoration: none;
-    background-color: #f6f7f8 /* $gray-10 */;
+    background-color: ${variables.colors.gray10};
 
     ${Span} {
-      color: #484c4f /* $gray-70 */;
+      color: ${variables.colors.gray70};
     }
   }
 
   &:active {
-    background: #484c4f /* $gray-70 */;
+    color: ${variables.colors.gray70};
 
     ${Span} {
-      color: #fff /* $white */;
+      color: ${variables.colors.white};
     }
   }
 
@@ -70,22 +75,15 @@ const Root = styled(NavLink)`
 
   &.is-active {
     ${Span} {
-      color: #006fe6 /* $kata-blue */;
+      color: ${variables.colors.kataBlue};
     }
 
     &:hover {
       background: none;
 
       ${Span} {
-        color: #006fe6 /* $kata-blue */;
+        color: ${variables.colors.kataBlue};
       }
     }
   }
-`;
-
-const SubMenuIcon = styled('i')`
-  margin-right: 1.230769231rem /* $space-2 */;
-  font-size: 20px;
-  line-height: 1em;
-  vertical-align: middle;
 `;
