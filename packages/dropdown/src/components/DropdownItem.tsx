@@ -60,11 +60,15 @@ class DropdownItem extends React.Component<DropdownItemProps> {
     );
 
     if (header) {
-      return <DropdownHeader>{children}</DropdownHeader>;
+      return (
+        <DropdownHeader data-testid="dropdown-header">
+          {children}
+        </DropdownHeader>
+      );
     }
 
     if (divider) {
-      return <DropdownDivider />;
+      return <DropdownDivider data-testid="dropdown-divider" />;
     }
 
     if (React.isValidElement(children)) {

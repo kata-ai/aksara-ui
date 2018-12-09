@@ -53,10 +53,15 @@ class DropdownSelector extends React.PureComponent<
         <DropdownToggleButton
           as="div"
           block={block}
-          className={`kata-dropdown-selector__button ${className}`}
+          className={className}
+          data-testid="dropdown-toggle-loading"
         >
           Loading...
-          <Circle size={25} className="loading-icon" />
+          <Circle
+            size={25}
+            className="loading-icon"
+            data-testid="dropdown-toggle-loading-icon"
+          />
         </DropdownToggleButton>
       );
     }
