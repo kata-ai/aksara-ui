@@ -6,8 +6,8 @@ import wInfo from '../../../.storybook/utils/wInfo';
 import Wrapper from '../../../.storybook/components/Wrapper';
 import WithState from '../../../.storybook/components/WithState';
 
-import DropdownSelector from '../src/DropdownSelector';
-import DropdownItem from '../src/DropdownItem';
+import DropdownSelector from '../src/components/DropdownSelector';
+import DropdownItem from '../src/components/DropdownItem';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -57,7 +57,7 @@ story.add(
     <WithState
       initialState={{
         values: ['Apple', 'Banana', 'Cherry'],
-        selected: 'Apple'
+        selected: undefined
       }}
     >
       {({ values, selected }, { setState }) => (

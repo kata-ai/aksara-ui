@@ -6,14 +6,14 @@ import styled from 'styled-components';
 
 import { Theme } from '@kata-kit/theme';
 
-import { DropdownBase } from './styles';
+import { DropdownDirection } from '../types';
 
 interface DropdownProps {
   isOpen?: boolean;
   className?: string;
   disabled?: boolean;
   block?: boolean;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  dropDirection?: DropdownDirection;
 
   onSelect?(value?: string | number | boolean): void;
 }
@@ -22,7 +22,7 @@ class Dropdown extends React.Component<DropdownProps> {
   static defaultProps = {
     isOpen: false,
     block: false,
-    direction: 'down'
+    dropDirection: 'down'
   };
 
   state = {
@@ -90,16 +90,16 @@ class Dropdown extends React.Component<DropdownProps> {
   }
 
   render() {
-    const { className, children, block, direction, disabled, ...props } = omit(
-      this.props,
-      ['isOpen']
-    );
+    const {
+      className,
+      children,
+      block,
+      dropDirection,
+      disabled,
+      ...props
+    } = omit(this.props, ['isOpen']);
 
-    const classes = classNames(
-      `kata-drop${direction}`,
-      `drop${direction}`,
-      className
-    );
+    const classes = classNames(className);
 
     // TODO: use new React context instead of cloneElement
     return (
@@ -108,7 +108,7 @@ class Dropdown extends React.Component<DropdownProps> {
           <DropdownWrapper
             className={classes}
             block={block}
-            direction={direction}
+            dropDirection={dropDirection}
             disabled={disabled}
             {...themeAttributes}
             {...props}
@@ -121,7 +121,7 @@ class Dropdown extends React.Component<DropdownProps> {
                 )
                 ? React.cloneElement(Item, {
                     ...props,
-                    direction,
+                    dropDirection,
                     isOpen: this.state.isOpen,
                     toggle: this.toggle,
                     onSelect: this.onSelect
@@ -138,7 +138,6 @@ class Dropdown extends React.Component<DropdownProps> {
 export default Dropdown;
 
 const DropdownWrapper = styled('div')`
-  ${DropdownBase}
   display: ${(props: DropdownProps) =>
     props.block ? 'block' : 'inline-block'};
   position: relative;

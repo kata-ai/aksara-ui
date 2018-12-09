@@ -5,6 +5,8 @@ import DropdownToggle from './DropdownToggle';
 import DropdownMenu from './DropdownMenu';
 
 import { Circle } from '@kata-kit/loading';
+import { DropdownDirection } from '../types';
+import { DropdownToggleButton } from '../styles';
 
 interface DropdownSelectorProps {
   value?: string | number | boolean;
@@ -12,7 +14,9 @@ interface DropdownSelectorProps {
   block?: boolean;
   loading?: boolean;
   children?: any;
+  disabled?: boolean;
   className?: string;
+  dropDirection?: DropdownDirection;
   onSelect?(value: string): void;
 }
 
@@ -25,7 +29,8 @@ class DropdownSelector extends React.PureComponent<
   static defaultProps = {
     placeholder: 'Select...',
     loading: false,
-    block: false
+    block: false,
+    direction: 'down'
   };
 
   state: States = {};
@@ -38,27 +43,35 @@ class DropdownSelector extends React.PureComponent<
       loading,
       block,
       children,
-      onSelect
+      disabled,
+      onSelect,
+      dropDirection
     } = this.props;
 
     if (loading) {
       return (
-        <div className={`kata-dropdown-selector__button ${className}`}>
+        <DropdownToggleButton
+          as="div"
+          block={block}
+          className={`kata-dropdown-selector__button ${className}`}
+        >
           Loading...
-          <Circle size={25} className="kata-dropdown-selector__loading" />
-        </div>
+          <Circle size={25} className="loading-icon" />
+        </DropdownToggleButton>
       );
     }
     return (
-      <Dropdown block={block} onSelect={onSelect} className={className}>
-        <DropdownToggle
-          className={`kata-dropdown-selector__button ${
-            value ? 'kata-dropdown-selector__button--filled' : ''
-          }`}
-        >
+      <Dropdown
+        block={block}
+        onSelect={onSelect}
+        className={className}
+        dropDirection={dropDirection}
+        disabled={disabled}
+      >
+        <DropdownToggle filled={!!value} disabled={disabled}>
           {(value ? value : placeholder) as string}
         </DropdownToggle>
-        <DropdownMenu className="kata-dropdown-selector__menu">
+        <DropdownMenu dropDirection={dropDirection} disabled={disabled}>
           {children}
         </DropdownMenu>
       </Dropdown>

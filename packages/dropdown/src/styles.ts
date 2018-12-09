@@ -2,12 +2,8 @@ import styled, { css, SimpleInterpolation } from 'styled-components';
 
 import { ButtonWrapper } from '@kata-kit/button';
 import { variables } from '@kata-kit/theme';
-import DropdownStyles from './DropdownStyles';
 
-export const dropdownMenu = css`
-  border-radius: ${variables.borderRadiuses.borderRadiusSmall};
-  box-shadow: ${variables.layerShadows.layer200Shadow};
-` as SimpleInterpolation;
+export const dropdownMenu = css`` as SimpleInterpolation;
 
 const Block = css`
   display: block;
@@ -20,6 +16,7 @@ export const DropdownToggleButton = styled(ButtonWrapper)`
   text-align: left;
   background: ${variables.colors.white};
   border-radius: 6px;
+  color: ${variables.colors.gray50};
   border: 1px solid ${variables.colors.gray30};
   padding: 10px 36px 10px 16px;
   height: 40px;
@@ -45,6 +42,10 @@ export const DropdownToggleButton = styled(ButtonWrapper)`
     box-shadow: none;
   }
 
+  &.is-filled {
+    color: ${variables.colors.gray80};
+  }
+
   &.is-open {
     color: ${variables.colors.white};
     background-color: ${variables.colors.gray70};
@@ -57,126 +58,10 @@ export const DropdownToggleButton = styled(ButtonWrapper)`
       border-color: transparent;
     }
   }
-`;
 
-export const DropdownToggleIcon = styled('i')`
-  display: inline-block;
-  position: absolute;
-  right: 8px;
-  top: 9px;
-  margin-left: 8px;
-  font-size: 20px;
-
-  &::before {
-    vertical-align: middle;
+  .loading-icon {
+    position: absolute;
+    top: 7px;
+    right: 10px;
   }
 `;
-
-export const DropdownBase = () =>
-  css`
-    ${DropdownStyles};
-
-    .kata {
-      &-dropdown {
-        &__header {
-          font-weight: 700;
-          font-size: 12px;
-          letter-spacing: 0.2px;
-          color: ${variables.colors.gray50};
-          padding: 0 16px;
-        }
-
-        &__item {
-          padding: 10px 16px;
-          color: ${variables.colors.gray70} !important;
-          cursor: pointer;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-
-          &--selected {
-            color: ${variables.colors.kataBlue};
-          }
-
-          &:hover:not(.disabled) {
-            background: ${variables.colors.gray10};
-          }
-
-          &:focus:not(.disabled),
-          &:active:not(.disabled) {
-            background: ${variables.colors.gray10};
-            color: ${variables.colors.kataBlue} !important;
-          }
-        }
-
-        &__menu {
-          ${dropdownMenu};
-
-          &--open {
-            button {
-              color: ${variables.colors.white};
-              background-color: ${variables.colors.gray70} !important;
-            }
-          }
-
-          &--right {
-            right: 0;
-            left: auto;
-          }
-        }
-      }
-
-      &-dropup {
-        &__menu {
-          top: unset !important;
-          bottom: 100%;
-
-          ${dropdownMenu};
-
-          &--right {
-            left: unset !important;
-            right: 0;
-          }
-        }
-        .kata-drop-toggle {
-          transform: rotate(180deg);
-        }
-      }
-
-      &-dropright {
-        &__menu {
-          left: 100% !important;
-          top: 0 !important;
-
-          ${dropdownMenu};
-        }
-        .kata-drop-toggle {
-          top: 1px;
-          transform: rotate(-90deg);
-        }
-      }
-
-      &-dropleft {
-        &__menu {
-          top: 0 !important;
-          /*
-           * We need to use transform for dropleft because the dropdown menu
-           * can't goes over the parent container
-           */
-          transform: translate3d(calc(-100% - 0.125rem), 0, 0);
-
-          ${dropdownMenu};
-        }
-        .kata-drop-toggle {
-          top: 1px;
-          transform: rotate(90deg);
-          margin-left: -5px;
-          margin-right: 8px;
-        }
-      }
-    }
-
-    .dropdown-menu {
-      border: none;
-    }
-  ` as SimpleInterpolation;

@@ -3,8 +3,9 @@ import { render } from 'react-testing-library';
 
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
-import DropdownSelector from '../DropdownSelector';
-import DropdownItem from '../DropdownItem';
+
+import DropdownSelector from '../components/DropdownSelector';
+import DropdownItem from '../components/DropdownItem';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },

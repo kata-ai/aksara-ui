@@ -1,11 +1,11 @@
 import * as React from 'react';
+import styled, { css } from 'styled-components';
 import omit from 'lodash-es/omit';
 import classNames from 'classnames';
 
 import { ButtonColors, ButtonSizes } from '@kata-kit/button';
-import { DropdownToggleIcon, DropdownToggleButton } from './styles';
-
-type DropdownDirection = 'up' | 'down' | 'left' | 'right';
+import { DropdownToggleButton } from '../styles';
+import { DropdownDirection } from '../types';
 
 export interface DropdownToggleProps {
   tag?: any;
@@ -13,16 +13,52 @@ export interface DropdownToggleProps {
   className?: string;
   color?: ButtonColors;
   size?: ButtonSizes;
+  filled?: boolean;
 
   // Private properties, should not be used publicly
   block?: boolean;
   isOpen?: boolean;
-  direction?: DropdownDirection;
+  dropDirection?: DropdownDirection;
+  disabled?: boolean;
   toggle?: (e: React.SyntheticEvent<any>) => void;
 }
 
-const Caret = () => (
-  <DropdownToggleIcon className="kata-drop-toggle icon-arrow" />
+const directionUp = css`
+  transform: rotate(180deg);
+`;
+
+const directionRight = css`
+  transform: rotate(-90deg);
+`;
+
+const directionLeft = css`
+  transform: rotate(90deg);
+  margin-left: -5px;
+  margin-right: 8px;
+`;
+
+export const DropdownToggleIcon = styled('i')`
+  display: inline-block;
+  position: absolute;
+  right: 8px;
+  top: 9px;
+  margin-left: 8px;
+  font-size: 20px;
+
+  &::before {
+    vertical-align: middle;
+  }
+
+  ${props => props.dropDirection === 'up' && directionUp}
+  ${props => props.dropDirection === 'right' && directionRight}
+  ${props => props.dropDirection === 'left' && directionLeft}
+`;
+
+const Caret = (props: { dropDirection?: DropdownDirection }) => (
+  <DropdownToggleIcon
+    className="icon-arrow"
+    dropDirection={props.dropDirection}
+  />
 );
 
 class DropdownToggle extends React.Component<DropdownToggleProps> {
@@ -49,10 +85,16 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
   }
 
   render() {
-    const { tag, children, caret, className, block, isOpen, ...props } = omit(
-      this.props,
-      ['direction', 'toggle']
-    );
+    const {
+      tag,
+      children,
+      caret,
+      className,
+      block,
+      isOpen,
+      filled,
+      ...props
+    } = omit(this.props, ['direction', 'toggle']);
 
     if (!React.isValidElement(children)) {
       return (
@@ -60,7 +102,11 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
           {...props}
           block
           isOpen={isOpen}
-          className={classNames(isOpen && 'is-open', className)}
+          className={classNames(
+            isOpen && 'is-open',
+            filled && 'is-filled',
+            className
+          )}
           color={this.props.color}
           onClick={this.onClick}
         >
@@ -77,15 +123,15 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
   }
 
   private renderChildren() {
-    const { caret, direction, children } = this.props;
+    const { caret, dropDirection, children } = this.props;
     if (!caret) {
       return children;
     }
 
-    if (direction === 'left') {
+    if (dropDirection === 'left') {
       return (
         <>
-          <Caret /> {children}
+          <Caret dropDirection={dropDirection} /> {children}
         </>
       );
     }
@@ -93,7 +139,7 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
     return (
       <>
         {children}
-        <Caret />
+        <Caret dropDirection={dropDirection} />
       </>
     );
   }
