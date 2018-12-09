@@ -64,6 +64,12 @@ const base: SimpleInterpolation = css`
     width: 100%;
   }
 
+  .full-size-layout {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+  }
+
   .icon-middle {
     &::before {
       vertical-align: middle;
