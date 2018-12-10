@@ -24,8 +24,9 @@ story.add('Introduction', () => (
       <div>
         <p>
           <strong>wicara /wi·ca·ra/ (noun)</strong>
-          <br />a series of voices in a language used to communicate words and
-          sentences.
+          <br />
+          the expression of or the ability to express thoughts and feelings by
+          articulate sounds.
         </p>
 
         <p>

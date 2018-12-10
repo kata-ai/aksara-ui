@@ -4,7 +4,7 @@
 
 <p align="center">
   <strong>wicara /wi·ca·ra/ (noun)</strong><br>
-  a series of voices in a language used to communicate words and sentences.
+  the expression of or the ability to express thoughts and feelings by articulate sounds.
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@
 
 ---
 
-**Wicara** (previously kata-kit) is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
+**Wicara** (previously kata-kit) is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
 
 **Note: Wicara is still in beta.**
 

@@ -1,12 +1,12 @@
 # Introduction
 
-**Wicara** (previously kata-kit) is the React implementation of the Kata Design System (KDS). Developing apps according to KDS is now easy thanks to this library of modular, reusable components.
+**Wicara** (previously kata-kit) is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
 
 **Note: Wicara is still in beta.**
 
-## Principles
+## Leading Design Goals (North Star)
 
-These principles guide us on what to strive for when building components for Wicara.
+These goals guide us on what to strive for when building components for Wicara.
 
 ### Clear and transparent.
 
