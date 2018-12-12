@@ -9,7 +9,7 @@ module.exports = (baseConfig, env, config) => {
       {
         loader: require.resolve('awesome-typescript-loader'),
         options: {
-          configFileName: '.storybook/tsconfig.json',
+          configFileName: './tsconfig.json',
           transpileOnly: true
         }
       },
