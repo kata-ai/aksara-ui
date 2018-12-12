@@ -48,8 +48,8 @@ describe('DropdownSelector', () => {
       </DropdownSelector>
     );
 
-    const dropdownHeader = getByTestId('dropdown-divider');
-    expect(dropdownHeader).toBeInTheDocument();
+    const dropdownDivider = getByTestId('dropdown-divider');
+    expect(dropdownDivider).toBeInTheDocument();
   });
 
   test('displays loading component when dropdown selector is loading', () => {
