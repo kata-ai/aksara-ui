@@ -9,7 +9,7 @@ import Pagination from '@kata-kit/pagination/src/Pagination';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Pagination', module)
+const story = storiesOf('Components|Pagination', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo({ propTables: [Pagination] }));
 

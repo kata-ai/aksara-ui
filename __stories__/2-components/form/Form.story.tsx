@@ -14,7 +14,7 @@ import InputGroup from '@kata-kit/form/src/components/InputGroup';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Form', module)
+const story = storiesOf('Components|Form', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({

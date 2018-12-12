@@ -9,7 +9,7 @@ import TooltipTarget from '@kata-kit/tooltip/src/components/TooltipTarget';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Tooltip', module)
+const story = storiesOf('Components|Tooltip', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({

@@ -32,7 +32,7 @@ import { Banner } from '@kata-kit/banner';
 ~~~
 `;
 
-const story: any = storiesOf('Components|Banner', module)
+const story = storiesOf('Components|Banner', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo({ propTables: [Banner] }))
   .addDecorator(withKnobs);

@@ -51,7 +51,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@kata-kit/modal';
 ~~~
 `;
 
-const story: any = storiesOf('Components|Modal', module)
+const story = storiesOf('Components|Modal', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({ propTables: [Modal, ModalHeader, ModalBody, ModalFooter] })

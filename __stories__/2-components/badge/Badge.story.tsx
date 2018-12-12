@@ -8,7 +8,7 @@ import Badge from '@kata-kit/badge/src/components/Badge';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Badge', module)
+const story = storiesOf('Components|Badge', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo({ propTables: [Badge] }));
 

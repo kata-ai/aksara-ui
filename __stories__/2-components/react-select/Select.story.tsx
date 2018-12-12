@@ -54,7 +54,7 @@ const components = {
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|React Select', module)
+const story = storiesOf('Components|React Select', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({

@@ -21,7 +21,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
   </RootWrapper>
 );
 
-const story: any = storiesOf('Foundations|Layout', module).addDecorator(
+const story = storiesOf('Foundations|Layout', module).addDecorator(
   StoryWrapper
 );
 

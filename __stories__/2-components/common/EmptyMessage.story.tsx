@@ -8,7 +8,7 @@ import EmptyMessage from '@kata-kit/common/src/EmptyMessage';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Common/EmptyMessage', module)
+const story = storiesOf('Components|Common/EmptyMessage', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo());
 

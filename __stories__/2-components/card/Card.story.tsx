@@ -12,7 +12,7 @@ import CardGrid from '@kata-kit/card/src/CardGrid';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Card', module)
+const story = storiesOf('Components|Card', module)
   .addDecorator(StoryWrapper)
   .addDecorator(wInfo({ propTables: [Card, CardGrid, DashboardCard] }));
 

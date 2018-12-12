@@ -16,7 +16,7 @@ type DropdownStoryState = {
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Dropdown', module)
+const story = storiesOf('Components|Dropdown', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({

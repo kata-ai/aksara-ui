@@ -14,7 +14,7 @@ import DrawerFooter from '@kata-kit/drawer/src/components/DrawerFooter';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story: any = storiesOf('Components|Drawer', module)
+const story = storiesOf('Components|Drawer', module)
   .addDecorator(StoryWrapper)
   .addDecorator(
     wInfo({
