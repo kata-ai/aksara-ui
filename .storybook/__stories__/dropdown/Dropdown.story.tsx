@@ -2,12 +2,17 @@ import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import wInfo from '../../../.storybook/utils/wInfo';
-import Wrapper from '../../../.storybook/components/Wrapper';
-import WithState from '../../../.storybook/components/WithState';
+import wInfo from '@doc-utils/utils/wInfo';
+import Wrapper from '@doc-utils/components/Wrapper';
+import WithState from '@doc-utils/components/WithState';
 
-import DropdownSelector from '../src/components/DropdownSelector';
-import DropdownItem from '../src/components/DropdownItem';
+import DropdownSelector from '@kata-kit/dropdown/src/components/DropdownSelector';
+import DropdownItem from '@kata-kit/dropdown/src/components/DropdownItem';
+
+type DropdownStoryState = {
+  values: string[];
+  selected?: string;
+};
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -44,17 +49,17 @@ const Component = ({ onSelect, value }) => (
 ~~~
 `;
 
-const dropdownPositionOptions = {
-  Down: 'down',
-  Right: 'right',
-  Up: 'up',
-  Left: 'left'
-};
+// const dropdownPositionOptions = {
+//   Down: 'down',
+//   Right: 'right',
+//   Up: 'up',
+//   Left: 'left'
+// };
 
 story.add(
   'Documentation',
   () => (
-    <WithState
+    <WithState<DropdownStoryState>
       initialState={{
         values: ['Apple', 'Banana', 'Cherry'],
         selected: undefined

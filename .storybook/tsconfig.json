@@ -7,9 +7,10 @@
     "declaration": false,
     "declarationMap": false,
     "baseUrl": "./",
+    "rootDir": "./",
     "paths": {
-      "@doc-utils": ["./"],
-      "@docs": ["../docs"],
+      "@doc-utils/*": ["./*"],
+      "@docs/*": ["../docs/*"],
       "@kata-kit/*": ["../packages/*/src"]
     }
   }
