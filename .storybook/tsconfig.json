@@ -1,17 +1,3 @@
 {
-  "extends": "../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "removeComments": false,
-    "composite": false,
-    "declaration": false,
-    "declarationMap": false,
-    "baseUrl": "./",
-    "rootDir": "./",
-    "paths": {
-      "@storybook-utils/*": ["./*"],
-      "@docs/*": ["../docs/*"],
-      "@kata-kit/*": ["../packages/*/src"]
-    }
-  }
+  "extends": "../tsconfig.json"
 }
