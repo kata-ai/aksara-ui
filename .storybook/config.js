@@ -10,15 +10,9 @@ addDecorator(
   })
 );
 
-const docs = require.context('./', true, /\/__stories__\/.+\.story\.tsx?$/);
-const stories = require.context(
-  '../packages',
-  true,
-  /\/__stories__\/.+\.story\.tsx?$/
-);
+const stories = require.context('../', true, /\/__stories__\/.+\.story\.tsx?$/);
 
 function loadStories() {
-  docs.keys().forEach(filename => docs(filename));
   stories.keys().forEach(filename => stories(filename));
 }
 

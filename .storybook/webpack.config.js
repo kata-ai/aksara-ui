@@ -38,6 +38,7 @@ module.exports = (baseConfig, env, config) => {
 
   config.resolve.extensions.push('.ts', '.tsx', '.md', '.mdx');
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
+    '@storybook-utils': path.resolve(__dirname, './'),
     '@kata-kit': path.resolve(__dirname, '../', 'packages'),
     '@docs': path.resolve(__dirname, '../', 'docs')
   });
@@ -45,7 +46,7 @@ module.exports = (baseConfig, env, config) => {
 
   config.plugins.push(
     new ForkTsCheckerWebpackPlugin({
-      tsconfig: '.storybook/tsconfig.json',
+      tsconfig: './tsconfig.json',
       tslint: 'tslint.json'
     })
   );
@@ -54,13 +55,13 @@ module.exports = (baseConfig, env, config) => {
   if (config.resolve.plugins) {
     config.resolve.plugins.push(
       new TsconfigPathsPlugin({
-        configFile: '.storybook/tsconfig.json'
+        configFile: './tsconfig.json'
       })
     );
   } else {
     config.resolve.plugins = [
       new TsconfigPathsPlugin({
-        configFile: '.storybook/tsconfig.json'
+        configFile: './tsconfig.json'
       })
     ];
   }

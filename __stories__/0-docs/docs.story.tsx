@@ -2,9 +2,9 @@ import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 import Markdown from 'react-markdown';
 
-import Wrapper from 'components/Wrapper';
-import { markdownRenderers } from 'components/DocsElements';
-import IntroHeader from 'components/IntroHeader';
+import Wrapper from '@storybook-utils/components/Wrapper';
+import { markdownRenderers } from '@storybook-utils/components/DocsElements';
+import IntroHeader from '@storybook-utils/components/IntroHeader';
 
 import Introduction from '@docs/introduction.md';
 import GettingStarted from '@docs/getting-started.md';

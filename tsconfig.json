@@ -9,9 +9,10 @@
     "baseUrl": "./",
     "rootDir": "./",
     "paths": {
-      "@storybook-utils/*": ["./*"],
-      "@docs/*": ["../docs/*"],
-      "@kata-kit/*": ["../packages/*/src"]
+      "@storybook-utils/*": ["./.storybook/*"],
+      "@docs/*": ["./docs/*"],
+      "@kata-kit/*": ["./packages/*/src"]
     }
-  }
+  },
+  "exclude": ["build-scripts", "scripts"]
 }
