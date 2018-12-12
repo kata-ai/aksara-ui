@@ -9,7 +9,7 @@
     "baseUrl": "./",
     "rootDir": "./",
     "paths": {
-      "@doc-utils/*": ["./*"],
+      "@storybook-utils/*": ["./*"],
       "@docs/*": ["../docs/*"],
       "@kata-kit/*": ["../packages/*/src"]
     }

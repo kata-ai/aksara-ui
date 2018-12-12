@@ -2,9 +2,9 @@ import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import wInfo from '@doc-utils/utils/wInfo';
-import Wrapper from '@doc-utils/components/Wrapper';
-import WithState from '@doc-utils/components/WithState';
+import wInfo from '@storybook-utils/utils/wInfo';
+import Wrapper from '@storybook-utils/components/Wrapper';
+import WithState from '@storybook-utils/components/WithState';
 
 import DropdownSelector from '@kata-kit/dropdown/src/components/DropdownSelector';
 import DropdownItem from '@kata-kit/dropdown/src/components/DropdownItem';
