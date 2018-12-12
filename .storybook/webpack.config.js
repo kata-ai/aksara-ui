@@ -30,11 +30,6 @@ module.exports = (baseConfig, env, config) => {
       }
     ]
   });
-  config.module.rules.push({
-    test: /\.s(a|c)ss$/,
-    loaders: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../')
-  });
 
   config.resolve.extensions.push('.ts', '.tsx', '.md', '.mdx');
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
