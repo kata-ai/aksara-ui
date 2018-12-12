@@ -1,6 +1,6 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
-const reboot: SimpleInterpolation = css`
+const reboot = css`
   /*!
    * Bootstrap Reboot v4.1.2 (https://getbootstrap.com/)
    * Copyright 2011-2018 The Bootstrap Authors
@@ -27,16 +27,18 @@ const reboot: SimpleInterpolation = css`
     @-ms-viewport {
       width: device-width;
     }
-  `} article,
-aside,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section {
+  `}
+
+  article,
+  aside,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  nav,
+  section {
     display: block;
   }
 

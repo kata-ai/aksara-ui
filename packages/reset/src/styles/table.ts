@@ -1,7 +1,7 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 import { variables } from '@kata-kit/theme';
 
-const table: SimpleInterpolation = css`
+const table = css`
   .table {
     width: 100%;
 

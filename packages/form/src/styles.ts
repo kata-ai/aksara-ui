@@ -1,4 +1,4 @@
-import { css, ThemedStyledProps, SimpleInterpolation } from 'styled-components';
+import { css, ThemedStyledProps } from 'styled-components';
 import { ThemeAttributes, variables } from '@kata-kit/theme';
 
 export const FormErrorBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
@@ -9,7 +9,7 @@ export const FormErrorBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
     font-size: 11px;
     font-weight: bold;
     line-height: 1;
-  ` as SimpleInterpolation;
+  `;
 
 export const FormLabelBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
   css`
@@ -23,7 +23,7 @@ export const FormLabelBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
     letter-spacing: 0.2px;
     text-align: left;
     color: ${props.theme.textColor};
-  ` as SimpleInterpolation;
+  `;
 
 export const InputTextBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
   css`
@@ -62,9 +62,9 @@ export const InputTextBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
           0 0 0 4px ${props.theme.focusOutlineColor};
       }
     }
-  ` as SimpleInterpolation;
+  `;
 
 export const InputAddonBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
   css`
     display: flex;
-  ` as SimpleInterpolation;
+  `;

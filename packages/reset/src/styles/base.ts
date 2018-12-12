@@ -1,8 +1,8 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 import { variables } from '@kata-kit/theme';
 import resolveColor from '../utils/resolveColor';
 
-const base: SimpleInterpolation = css`
+const base = css`
   :root {
     font-size: ${variables.fontProps.rootFontSize};
     line-height: ${variables.fontProps.rootLineHeight};

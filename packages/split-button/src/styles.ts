@@ -1,4 +1,4 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 export const SplitButtonBase = () =>
   css`
@@ -49,4 +49,4 @@ export const SplitButtonBase = () =>
         margin-top: -3px;
       }
     }
-  ` as SimpleInterpolation;
+  `;

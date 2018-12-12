@@ -1,7 +1,7 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 export default css`
-  @charset "UTF-8";
+  ${'@charset "UTF-8";'}
 
   @font-face {
     font-family: 'kata';
@@ -381,4 +381,4 @@ export default css`
     font-style: italic;
     font-weight: 900;
   }
-` as SimpleInterpolation;
+`;

@@ -1,8 +1,8 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 import resolveColor from '../utils/resolveColor';
 import { variables } from '@kata-kit/theme';
 
-const typography: SimpleInterpolation = css`
+const typography = css`
   h1,
   .h1 {
     font-size: 1.85rem;
