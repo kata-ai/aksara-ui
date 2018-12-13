@@ -10,6 +10,7 @@ import Button from '@kata-kit/button/src/components/Button';
 import FloatingButton from '@kata-kit/button/src/components/FloatingButton';
 import SupportButton from '@kata-kit/button/src/components/SupportButton';
 import ToggleButton from '@kata-kit/button/src/components/ToggleButton';
+import HollowButton from '@kata-kit/button/src/components/HollowButton';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -161,6 +162,30 @@ story.add(
         </div>
       )}
     </WithState>
+  ),
+  { info: { disable: true } }
+);
+
+story.add(
+  'HollowButton',
+  () => (
+    <div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton>Push Me</HollowButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton disabled>I'm Disabled</HollowButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton loading>Loading...</HollowButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton>
+          <i className="icon-arrow-left mr-1" />
+          Back
+        </HollowButton>
+      </div>
+    </div>
   ),
   { info: { disable: true } }
 );
