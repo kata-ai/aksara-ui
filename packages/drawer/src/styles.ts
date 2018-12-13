@@ -1,4 +1,4 @@
-import { css, ThemedStyledProps, SimpleInterpolation } from 'styled-components';
+import { css, ThemedStyledProps } from 'styled-components';
 
 import { ThemeAttributes } from '@kata-kit/theme';
 import { DrawerProps } from './components/Drawer';
@@ -31,7 +31,7 @@ export const DrawerBase = (props: WithThemeProps<DrawerProps>) =>
       visibility: hidden;
       transform: translateX(100%);
     }
-  ` as SimpleInterpolation;
+  `;
 
 export const DrawerRight = css`
   left: auto;
@@ -46,7 +46,7 @@ export const DrawerRight = css`
   &.folding {
     transition-property: margin-right;
   }
-` as SimpleInterpolation;
+`;
 
 export const DrawerOverlayStyles = css`
   &.is-open {
@@ -59,4 +59,4 @@ export const DrawerOverlayStyles = css`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.65);
   }
-` as SimpleInterpolation;
+`;

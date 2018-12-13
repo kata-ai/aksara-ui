@@ -1,7 +1,7 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 import { variables } from '@kata-kit/theme';
 
-const spacing: SimpleInterpolation = css`
+const spacing = css`
   ${[1, 2, 3, 4, 5].map(
     val => css`
       .m-${val} {

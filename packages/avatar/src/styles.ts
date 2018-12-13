@@ -1,5 +1,5 @@
 import { ThemeAttributes } from '@kata-kit/theme';
-import { css, ThemedStyledProps, SimpleInterpolation } from 'styled-components';
+import { css, ThemedStyledProps } from 'styled-components';
 
 export interface AvatarBaseProps {
   /** Size of the avatar. */
@@ -26,6 +26,6 @@ const styles = (props: ThemedStyledProps<AvatarBaseProps, ThemeAttributes>) =>
       height: 100%;
       object-fit: cover;
     }
-  ` as SimpleInterpolation;
+  `;
 
 export default styles;

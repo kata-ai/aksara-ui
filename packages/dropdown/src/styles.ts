@@ -1,9 +1,9 @@
-import styled, { css, SimpleInterpolation } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { ButtonWrapper } from '@kata-kit/button';
 import { variables } from '@kata-kit/theme';
 
-export const dropdownMenu = css`` as SimpleInterpolation;
+export const dropdownMenu = css``;
 
 const Block = css`
   display: block;

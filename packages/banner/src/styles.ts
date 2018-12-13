@@ -1,4 +1,4 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 const BannerBase = () =>
   css`
@@ -8,6 +8,6 @@ const BannerBase = () =>
     padding: 12px 16px;
     border-radius: 4px;
     line-height: 1;
-  ` as SimpleInterpolation;
+  `;
 
 export default BannerBase;

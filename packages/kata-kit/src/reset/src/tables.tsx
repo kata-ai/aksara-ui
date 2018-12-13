@@ -1,4 +1,4 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 import { colors } from './utils/variables';
 
@@ -57,4 +57,4 @@ export default css`
       }
     }
   }
-` as SimpleInterpolation;
+`;

@@ -1,4 +1,4 @@
-import { css, ThemedStyledProps, SimpleInterpolation } from 'styled-components';
+import { css, ThemedStyledProps } from 'styled-components';
 
 import { ThemeAttributes } from '@kata-kit/theme';
 import { ModalProps } from './components/Modal';
@@ -23,7 +23,7 @@ export const ModalBase = (props: WithThemeProps<ModalProps>) =>
     &.is-open {
       visibility: visible;
     }
-  ` as SimpleInterpolation;
+  `;
 
 export const ModalContentStyles = (props: WithThemeProps<ModalProps>) =>
   css`
@@ -36,7 +36,7 @@ export const ModalContentStyles = (props: WithThemeProps<ModalProps>) =>
     box-shadow: ${modalBoxShadow};
     background-color: ${props.theme.backgroundColor};
     color: ${props.theme.textColor};
-  ` as SimpleInterpolation;
+  `;
 
 export const ModalDialogStyles = (props: WithThemeProps<ModalProps>) =>
   css`
@@ -52,7 +52,7 @@ export const ModalDialogStyles = (props: WithThemeProps<ModalProps>) =>
       transform: translate(0, 0);
       opacity: 1;
     }
-  ` as SimpleInterpolation;
+  `;
 
 export const ModalOverlayStyles = css`
   position: fixed;
@@ -70,4 +70,4 @@ export const ModalOverlayStyles = css`
     opacity: 0.65;
     visibility: visible;
   }
-` as SimpleInterpolation;
+`;

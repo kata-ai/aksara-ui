@@ -8,7 +8,6 @@ import DropdownSelector from '../components/DropdownSelector';
 import DropdownItem from '../components/DropdownItem';
 
 const options = [
-  { label: 'Flavours', header: true },
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' }
@@ -20,8 +19,8 @@ describe('DropdownSelector', () => {
   test('renders correctly', () => {
     const { container } = render(
       <DropdownSelector onSelect={onSelect}>
-        {options.map(({ label, value, header }, i) => (
-          <DropdownItem key={i} value={value} header={header}>
+        {options.map(({ label, value }, i) => (
+          <DropdownItem key={i} value={value}>
             {label}
           </DropdownItem>
         ))}
@@ -34,16 +33,23 @@ describe('DropdownSelector', () => {
   test('renders heading correctly', () => {
     const { getByTestId } = render(
       <DropdownSelector onSelect={onSelect}>
-        {options.map(({ label, value, header }, i) => (
-          <DropdownItem key={i} value={value} header={header}>
-            {label}
-          </DropdownItem>
-        ))}
+        <DropdownItem header>Header</DropdownItem>
       </DropdownSelector>
     );
 
     const dropdownHeader = getByTestId('dropdown-header');
-    expect(dropdownHeader.firstChild).toBeInTheDocument();
+    expect(dropdownHeader).toBeInTheDocument();
+  });
+
+  test('renders divider correctly', () => {
+    const { getByTestId } = render(
+      <DropdownSelector onSelect={onSelect}>
+        <DropdownItem divider />
+      </DropdownSelector>
+    );
+
+    const dropdownDivider = getByTestId('dropdown-divider');
+    expect(dropdownDivider).toBeInTheDocument();
   });
 
   test('displays loading component when dropdown selector is loading', () => {
@@ -58,6 +64,6 @@ describe('DropdownSelector', () => {
     );
 
     const loading = getByTestId('dropdown-toggle-loading');
-    expect(loading.firstChild).toBeInTheDocument();
+    expect(loading).toBeInTheDocument();
   });
 });

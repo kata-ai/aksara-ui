@@ -1,4 +1,4 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 import { variables } from '@kata-kit/theme';
 import { ButtonColors, ButtonSizes } from './components/Button';
 
@@ -82,6 +82,6 @@ const ButtonBase = (props: ButtonBaseProps) =>
         font-size: 16px;
       }
     }
-  ` as SimpleInterpolation;
+  `;
 
 export default ButtonBase;

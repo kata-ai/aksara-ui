@@ -1,4 +1,4 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 export default css`
   .mt-auto {
@@ -13,4 +13,4 @@ export default css`
   .mr-auto {
     margin-right: auto;
   }
-` as SimpleInterpolation;
+`;

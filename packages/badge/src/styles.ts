@@ -1,4 +1,4 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 const styles = () =>
   css`
@@ -10,6 +10,6 @@ const styles = () =>
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-  ` as SimpleInterpolation;
+  `;
 
 export default styles;

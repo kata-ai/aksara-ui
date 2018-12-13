@@ -1,4 +1,4 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 export default css`
   *,
@@ -16,9 +16,11 @@ export default css`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-  @-ms-viewport {
-    width: device-width;
-  }
+  ${css`
+    @-ms-viewport {
+      width: device-width;
+    }
+  `}
 
   article,
   aside,
@@ -342,4 +344,4 @@ export default css`
   [hidden] {
     display: none !important;
   }
-` as SimpleInterpolation;
+`;
