@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/theme",
-  "version": "0.6.2",
+  "version": "0.7.0-beta.0",
   "description": "kata-kit theming framework.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -24,7 +24,6 @@
   },
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
-  "dependencies": {},
   "peerDependencies": {
     "react": "^16.3.0",
     "styled-components": "^4.1.2"
