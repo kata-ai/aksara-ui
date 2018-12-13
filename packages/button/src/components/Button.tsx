@@ -8,6 +8,7 @@ import ThemedComponent, { variables } from '@kata-kit/theme';
 import themes from '../theme';
 
 import ButtonBase from '../styles';
+import { InvisibleText } from '../helpers';
 
 // TODO items:
 // - Cannot extend button below in other packages using `styled-components`, so
@@ -171,10 +172,6 @@ const isIconStyles = css`
       fill: ${variables.colors.kataBlue};
     }
   }
-`;
-
-const InvisibleText = styled('span')`
-  visibility: hidden;
 `;
 
 export const ButtonWrapper = styled('button')`
