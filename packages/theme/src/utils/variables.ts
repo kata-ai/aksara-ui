@@ -1,204 +1,240 @@
-const white = '#ffffff';
-const red = '#e53935';
-const green = '#00c853';
-const yellow = '#ffc400';
-const softKataBlue = '#d8ebff';
-const lightKataBlue = '#7fbcff';
-const kataBlue = '#006fe6';
-const darkKataBlue = '#0056b3';
-const lightCobalt = '#6386c7';
-const semiCobalt = '#2662cf';
-const cobalt = '#2053af';
-const darkCobalt = '#19428c';
-const gray10 = '#f6f7f8';
-const gray20 = '#edf1f2';
-const gray30 = '#e2e6e8';
-const gray40 = '#c2c7c8';
-const gray50 = '#949a9d';
-const gray60 = '#676b6d';
-const gray70 = '#484c4f';
-const gray80 = '#24282d';
-const special01 = '#f8bbd0';
-const special02 = '#e8bbf8';
-const special03 = '#bbcaf8';
-const special04 = '#bbe7f8';
-const special05 = '#bbf8ee';
-const special06 = '#bbf8c4';
-const special07 = '#d6f8bb';
-const special08 = '#f5f8bb';
-const special09 = '#f8e5bb';
-const special10 = '#f8cebb';
-
-// Spacer widths in rem units, counted from the base font size 13px.
-const space1 = '0.615384615rem'; // 8px
-const space2 = '1.230769231rem'; // 16px
-const space3 = '1.846153846rem'; // 24px
-const space4 = '2.461538462rem'; // 32px
-const space5 = '3.076923077rem'; // 40px
-const space6 = '3.692307692rem'; // 48px
-const space7 = '4.307692308rem'; // 56px
-const space8 = '4.923076923rem'; // 64px
-const space9 = '5.538461538rem'; // 72px
-const space10 = '6.153846154rem'; // 80px
-
-const borderRadiusXs = '2px';
-const borderRadiusSmall = '4px';
-const borderRadiusMedium = '6px';
-const borderRadiusLarge = '8px';
-
-const rootFontSize = '13px';
-const rootLineHeight = '20px';
-const h1FontSize = '1.85rem';
-const h1FontWeight = '500';
-const h1LineHeight = '2.461rem';
-const h2FontSize = '1.5rem';
-const h2FontWeight = '500';
-const h2LineHeight = '2.153rem';
-const titleFontSize = '1.25rem';
-const titleFontWeight = '500';
-const titleLineHeight = '1.846rem';
-const subtitleFontSize = '1.075rem';
-const subtitleFontWeight = '700';
-const subtitleLineHeight = '1.538rem';
-const labelFontSize = '0.925rem';
-const labelFontWeight = '700';
-const labelLineHeight = '1.384rem';
-const labelLetterSpacing = '0.2px';
-const smallFontSize = '0.85rem';
-const smallFontWeight = '700';
-const smallLineHeight = '1.23rem';
-const bodyFontSize = '1rem';
-const bodyFontWeight = 'normal';
-const bodyLineHeight = '2';
-const tooltipFontSize = '1rem';
-const tooltipFontWeight = 'normal';
-const tooltipLetterSpacing = '0.2px';
-
-const layer100Shadow = '0 1px 1px 0 rgba(0, 0, 0, 0.25)';
-const layer200Shadow = '0 2px 4px 1px rgba(0, 0, 0, 0.15)';
-const layer300Shadow = '0 4px 6px 2px rgba(0, 0, 0, 0.15)';
-const layer400Shadow = '0 6px 10px 2px rgba(0, 0, 0, 0.15)';
-
-const transitionFast = '0.3s';
-const transitionNormal = '0.5s';
-const transitionSlow = '0.75s';
-const transitionEasing = 'ease';
-
-const breakSmall = '1024px';
-const breakMedium = '1280px';
-const breakLarge = '1366px';
-
+/** Color pallette. Contains old Kata Platform colors and new KDS 1.0 colors. */
 export const colors = {
-  white,
-  red,
-  green,
-  yellow,
-  softKataBlue,
-  lightKataBlue,
-  kataBlue,
-  darkKataBlue,
-  lightCobalt,
-  semiCobalt,
-  cobalt,
-  darkCobalt,
-  gray10,
-  gray20,
-  gray30,
-  gray40,
-  gray50,
-  gray60,
-  gray70,
-  gray80,
-  special01,
-  special02,
-  special03,
-  special04,
-  special05,
-  special06,
-  special07,
-  special08,
-  special09,
-  special10
+  // (DEPRECATED) old color variables
+  white: '#ffffff',
+  red: '#e53935',
+  green: '#00c853',
+  yellow: '#ffc400',
+  softKataBlue: '#d8ebff',
+  lightKataBlue: '#7fbcff',
+  kataBlue: '#006fe6',
+  darkKataBlue: '#0056b3',
+  lightCobalt: '#6386c7',
+  semiCobalt: '#2662cf',
+  cobalt: '#2053af',
+  darkCobalt: '#19428c',
+  gray10: '#f6f7f8',
+  gray20: '#edf1f2',
+  gray30: '#e2e6e8',
+  gray40: '#c2c7c8',
+  gray50: '#949a9d',
+  gray60: '#676b6d',
+  gray70: '#484c4f',
+  gray80: '#24282d',
+  special01: '#f8bbd0',
+  special02: '#e8bbf8',
+  special03: '#bbcaf8',
+  special04: '#bbe7f8',
+  special05: '#bbf8ee',
+  special06: '#bbf8c4',
+  special07: '#d6f8bb',
+  special08: '#f5f8bb',
+  special09: '#f8e5bb',
+  special10: '#f8cebb',
+
+  // KDS 1.0 brand colors.
+  neutral01: '#fff',
+  neutral02: '#f6f7f8',
+  neutral03: '#edf1f2',
+  neutral04: '#e2e6e8',
+  neutral05: '#c2c7c8',
+  neutral06: '#949a9d',
+  neutral07: '#676b6d',
+  neutral08: '#484c4f',
+  neutral09: '#2b2f33',
+  cobalt01: '#5597e0',
+  cobalt02: '#2053af',
+  cobalt03: '#102a59',
+  kata01: '#4da3ff',
+  kata02: '#006fe6',
+  kata03: '#003e80',
+  green01: '#00ea61',
+  green02: '#59a444',
+  green03: '#658f3d',
+  red01: '#fc6627',
+  red02: '#dc211c',
+  red03: '#af1a16',
+  yellow01: '#feef99',
+  yellow02: '#fde034',
+  yellow03: '#ebc902'
 };
 
-export const spaces = {
-  space1,
-  space2,
-  space3,
-  space4,
-  space5,
-  space6,
-  space7,
-  space8,
-  space9,
-  space10
+/** Type scales in px units */
+export const fontSizes = {
+  deka: 12,
+  hecto: 14,
+  kilo: 16,
+  mega: 18,
+  giga: 20,
+  tera: 24,
+  peta: 28
 };
 
-export const fontProps = {
-  rootFontSize,
-  rootLineHeight,
-  h1FontSize,
-  h1FontWeight,
-  h1LineHeight,
-  h2FontSize,
-  h2FontWeight,
-  h2LineHeight,
-  titleFontSize,
-  titleFontWeight,
-  titleLineHeight,
-  subtitleFontSize,
-  subtitleFontWeight,
-  subtitleLineHeight,
-  labelFontSize,
-  labelFontWeight,
-  labelLineHeight,
-  labelLetterSpacing,
-  smallFontSize,
-  smallFontWeight,
-  smallLineHeight,
-  bodyFontSize,
-  bodyFontWeight,
-  bodyLineHeight,
-  tooltipFontSize,
-  tooltipFontWeight,
-  tooltipLetterSpacing
+/** Line heights in em units */
+export const lineHeights = {
+  deka: 1.25,
+  hecto: 1.5,
+  kilo: 1.5,
+  mega: 1.25,
+  giga: 1.25,
+  tera: 1.125,
+  peta: 1.125
 };
 
-export const layerShadows = {
-  layer100Shadow,
-  layer200Shadow,
-  layer300Shadow,
-  layer400Shadow
+/** Breakpoints in px units */
+export const breakpoints = {
+  /** 1024px (enable to 1279px) */
+  sm: 1024,
+  /** 1280px (enable to 1439px) */
+  md: 1280,
+  /** 1440px (enable to 1599px) */
+  lg: 1440,
+  /** 1600px (and more) */
+  xl: 1600
 };
 
-export const borderRadiuses = {
-  borderRadiusXs,
-  borderRadiusSmall,
-  borderRadiusMedium,
-  borderRadiusLarge
-};
-
-export const transitions = {
-  transitionFast,
-  transitionNormal,
-  transitionSlow,
-  transitionEasing
-};
-
+/**
+ * (pre-KDS) Breakpoints in px units
+ * @deprecated to be deprecated when we fully move to kds 1.0
+ */
 export const breaks = {
-  breakSmall,
-  breakMedium,
-  breakLarge
+  breakSmall: '1024px',
+  breakMedium: '1280px',
+  breakLarge: '1366px'
+};
+
+/** Elevation shadow elements, separated by UI layers. */
+export const elevationShadow = {
+  elevationZ100: '0 1px 2px 0 rgba(0, 0, 0, 0.25)',
+  elevationZ200: '0 2px 4px 0 rgba(0, 0, 0, 0.25)',
+  elevationZ300: '0 4px 8px 0 rgba(0, 0, 0, 0.25)',
+  elevationZ400: '0 8px 16px 0 rgba(0, 0, 0, 0.25)',
+  elevationZ500: '0 12px 24px 0 rgba(0, 0, 0, 0.25)'
+};
+
+/**
+ * (pre-KDS) Box shadow elements, separated by UI layers.
+ * @deprecated to be deprecated when we fully move to kds 1.0
+ */
+export const layerShadows = {
+  layer100Shadow: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
+  layer200Shadow: '0 2px 4px 1px rgba(0, 0, 0, 0.15)',
+  layer300Shadow: '0 4px 6px 2px rgba(0, 0, 0, 0.15)',
+  layer400Shadow: '0 6px 10px 2px rgba(0, 0, 0, 0.15)'
+};
+
+/** Space margins in px units */
+export const spacing = {
+  spacing2Xs: 2,
+  spacingXs: 4,
+  spacingSm: 8,
+  spacingSmMd: 12,
+  spacingMd: 16,
+  spacingLg: 24,
+  spacingXl: 40,
+  spacing2Xl: 64,
+  spacing3Xl: 80
+};
+
+/**
+ * (pre-KDS) Spacer widths in rem units, counted from the base font size 13px.
+ * @deprecated to be deprecated when we fully move to kds 1.0
+ */
+export const spaces = {
+  /** Equivalent to 8px */
+  space1: '0.615384615rem',
+  /** Equivalent to 16px */
+  space2: '1.230769231rem',
+  /** Equivalent to 24px */
+  space3: '1.846153846rem',
+  /** Equivalent to 32px */
+  space4: '2.461538462rem',
+  /** Equivalent to 40px */
+  space5: '3.076923077rem',
+  /** Equivalent to 48px */
+  space6: '3.692307692rem',
+  /** Equivalent to 56px */
+  space7: '4.307692308rem',
+  /** Equivalent to 64px */
+  space8: '4.923076923rem',
+  /** Equivalent to 72px */
+  space9: '5.538461538rem',
+  /** Equivalent to 80px */
+  space10: '6.153846154rem'
+};
+
+/** Border radius sizes */
+export const borderRadiuses = {
+  borderRadiusXs: '2px',
+  borderRadiusSmall: '4px',
+  borderRadiusMedium: '6px',
+  borderRadiusLarge: '8px',
+
+  // KDS 1.0 properties
+  xs: 2,
+  sm: 4,
+  md: 6,
+  lg: 8
+};
+
+/** Transition duration + effects */
+export const transitions = {
+  transitionFast: '0.3s',
+  transitionNormal: '0.5s',
+  transitionSlow: '0.75s',
+  transitionEasing: 'ease'
+};
+
+/**
+ * pre-KDS font properties
+ * @deprecated to be deprecated when we fully move to kds 1.0
+ */
+export const fontProps = {
+  rootFontSize: '13px',
+  rootLineHeight: '20px',
+  h1FontSize: '1.85rem',
+  h1FontWeight: '500',
+  h1LineHeight: '2.461rem',
+  h2FontSize: '1.5rem',
+  h2FontWeight: '500',
+  h2LineHeight: '2.153rem',
+  titleFontSize: '1.25rem',
+  titleFontWeight: '500',
+  titleLineHeight: '1.846rem',
+  subtitleFontSize: '1.075rem',
+  subtitleFontWeight: '700',
+  subtitleLineHeight: '1.538rem',
+  labelFontSize: '0.925rem',
+  labelFontWeight: '700',
+  labelLineHeight: '1.384rem',
+  labelLetterSpacing: '0.2px',
+  smallFontSize: '0.85rem',
+  smallFontWeight: '700',
+  smallLineHeight: '1.23rem',
+  bodyFontSize: '1rem',
+  bodyFontWeight: 'normal',
+  bodyLineHeight: '2',
+  tooltipFontSize: '1rem',
+  tooltipFontWeight: 'normal',
+  tooltipLetterSpacing: '0.2px'
 };
 
 export const variables = {
+  // deprecated properties
   breaks,
   colors,
   spaces,
   borderRadiuses,
   layerShadows,
   transitions,
-  fontProps
+  fontProps,
+
+  // new KDS 1.0 properties
+  spacing,
+  breakpoints,
+  fontSizes,
+  lineHeights,
+  elevationShadow
 };
 
 export default variables;
