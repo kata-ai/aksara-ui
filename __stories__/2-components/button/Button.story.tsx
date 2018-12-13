@@ -11,6 +11,7 @@ import FloatingButton from '@kata-kit/button/src/components/FloatingButton';
 import SupportButton from '@kata-kit/button/src/components/SupportButton';
 import ToggleButton from '@kata-kit/button/src/components/ToggleButton';
 import HollowButton from '@kata-kit/button/src/components/HollowButton';
+import IconicButton from '@kata-kit/button/src/components/IconicButton';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -113,6 +114,87 @@ story.add(
 );
 
 story.add(
+  'HollowButton',
+  () => (
+    <div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton>Push Me</HollowButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton disabled>I'm Disabled</HollowButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton loading>Loading...</HollowButton>
+      </div>
+      <div style={{ marginBottom: '8px' }}>
+        <HollowButton>
+          <i className="icon-arrow-left mr-1" />
+          Back
+        </HollowButton>
+      </div>
+    </div>
+  ),
+  { info: { disable: true } }
+);
+
+story.add(
+  'IconicButton',
+  () => (
+    <div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          marginBottom: '8px'
+        }}
+      >
+        <IconicButton style={{ marginRight: '8px' }}>
+          <i className="icon icon-arrow-left mr-1" />
+          Back
+        </IconicButton>
+        <IconicButton disabled>
+          <i className="icon icon-arrow-left mr-1" />
+          Back
+        </IconicButton>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          marginBottom: '8px'
+        }}
+      >
+        <IconicButton variant="primary" style={{ marginRight: '8px' }}>
+          <i className="icon icon-view mr-1" />
+          View
+        </IconicButton>
+        <IconicButton variant="primary" disabled>
+          <i className="icon icon-view mr-1" />
+          View
+        </IconicButton>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          marginBottom: '8px'
+        }}
+      >
+        <IconicButton variant="danger" style={{ marginRight: '8px' }}>
+          <i className="icon icon-trash mr-1" />
+          Delete
+        </IconicButton>
+        <IconicButton variant="danger" disabled>
+          <i className="icon icon-trash mr-1" />
+          Delete
+        </IconicButton>
+      </div>
+    </div>
+  ),
+  { info: { disable: true } }
+);
+
+story.add(
   'Button Styles',
   () => (
     <div>
@@ -162,30 +244,6 @@ story.add(
         </div>
       )}
     </WithState>
-  ),
-  { info: { disable: true } }
-);
-
-story.add(
-  'HollowButton',
-  () => (
-    <div>
-      <div style={{ marginBottom: '8px' }}>
-        <HollowButton>Push Me</HollowButton>
-      </div>
-      <div style={{ marginBottom: '8px' }}>
-        <HollowButton disabled>I'm Disabled</HollowButton>
-      </div>
-      <div style={{ marginBottom: '8px' }}>
-        <HollowButton loading>Loading...</HollowButton>
-      </div>
-      <div style={{ marginBottom: '8px' }}>
-        <HollowButton>
-          <i className="icon-arrow-left mr-1" />
-          Back
-        </HollowButton>
-      </div>
-    </div>
   ),
   { info: { disable: true } }
 );

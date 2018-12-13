@@ -2,14 +2,17 @@ import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 
-import { Circle } from '@kata-kit/loading';
 import { variables } from '@kata-kit/theme';
 
 import ButtonBase from '../styles';
-import { InvisibleText } from '../helpers';
+import { darken } from 'polished';
 
-export interface HollowButtonProps {
+export interface IconicButtonProps {
+  /** Whether the button is disabled or not. */
   disabled?: boolean;
+  /** The color variant of the button. */
+  variant?: 'default' | 'primary' | 'danger';
+  /** The button size. */
   size?: 'md' | 'sm';
   /** Additional CSS classes to give to the button. */
   className?: string;
@@ -23,12 +26,14 @@ export interface HollowButtonProps {
   loading?: boolean;
 }
 
-class HollowButton extends React.Component<HollowButtonProps> {
+class IconicButton extends React.Component<IconicButtonProps> {
   static defaultProps = {
     block: false,
     active: false,
     disabled: false,
-    outline: false
+    outline: false,
+    size: 'md',
+    variant: 'default'
   };
 
   onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -43,32 +48,39 @@ class HollowButton extends React.Component<HollowButtonProps> {
   };
 
   render() {
-    const { className, size, block, disabled, loading, ...props } = this.props;
+    const {
+      className,
+      size,
+      block,
+      disabled,
+      loading,
+      variant,
+      ...props
+    } = this.props;
 
-    const classes = classNames(className);
+    const classes = classNames(variant, className);
 
     return (
-      <HollowButtonWrapper
+      <IconicButtonWrapper
         type="button"
         {...props}
         className={classes}
         onClick={this.onClick}
-        disabled={disabled || loading}
+        disabled={disabled}
       >
         {loading ? (
           <Fragment>
-            <LoaderCircle size={30} />
-            <InvisibleText>{this.props.children}</InvisibleText>
+            <span className="invisible">{this.props.children}</span>
           </Fragment>
         ) : (
           this.props.children
         )}
-      </HollowButtonWrapper>
+      </IconicButtonWrapper>
     );
   }
 }
 
-const HollowButtonWrapper = styled('button')`
+const IconicButtonWrapper = styled('button')`
   ${ButtonBase}
   display: flex;
   justify-content: center;
@@ -82,10 +94,41 @@ const HollowButtonWrapper = styled('button')`
 
   color: ${variables.colors.gray70};
   border: 1px solid ${variables.colors.gray30};
-  background: #fff;
+  background: ${variables.colors.white};
+
+  &.primary {
+    color: ${variables.colors.kataBlue};
+
+    &:not(:disabled):not(.disabled) {
+      &:hover {
+        color: ${variables.colors.darkKataBlue};
+      }
+
+      &:focus {
+        color: ${variables.colors.white};
+        background-color: ${variables.colors.gray70};
+      }
+    }
+  }
+
+  &.danger {
+    color: ${variables.colors.red};
+
+    &:not(:disabled):not(.disabled) {
+      &:hover {
+        color: ${darken(0.15, variables.colors.red)};
+      }
+
+      &:focus {
+        color: ${variables.colors.white};
+        background-color: ${variables.colors.gray70};
+      }
+    }
+  }
 
   &:disabled,
   &.disabled {
+    background: ${variables.colors.gray10};
     color: ${variables.colors.gray50};
   }
 
@@ -109,10 +152,4 @@ const HollowButtonWrapper = styled('button')`
   }
 `;
 
-const LoaderCircle = styled(Circle)`
-  position: absolute;
-  left: 50%;
-  margin-left: -16px;
-`;
-
-export default HollowButton;
+export default IconicButton;

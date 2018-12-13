@@ -9,6 +9,7 @@ import FloatingButton from './components/FloatingButton';
 import SupportButton from './components/SupportButton';
 import ToggleButton from './components/ToggleButton';
 import HollowButton, { HollowButtonProps } from './components/HollowButton';
+import IconicButton, { IconicButtonProps } from './components/IconicButton';
 
 import ButtonBase from './styles';
 
@@ -24,5 +25,7 @@ export {
   ToggleButton,
   HollowButton,
   HollowButtonProps,
+  IconicButton,
+  IconicButtonProps,
   ButtonBase
 };
