@@ -30,6 +30,7 @@ const SidebarMainMenu: React.SFC<SidebarMainMenuProps> = ({
         style={style}
         to={to}
         exact={exact}
+        activeClassName="is-active"
         {...rest}
       >
         <Icon>
