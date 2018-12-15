@@ -4,7 +4,7 @@ import { variables } from '@kata-kit/theme';
 
 export interface SidebarSubProps
   extends React.AnchorHTMLAttributes<HTMLDivElement> {
-  titleElement?: React.ReactElement<any> | null;
+  titleElement?: React.ReactNode;
   hasTop?: boolean;
   collapsed?: boolean;
 }

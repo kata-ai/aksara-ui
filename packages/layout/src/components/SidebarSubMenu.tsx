@@ -1,32 +1,61 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { NavLinkProps, NavLink } from 'react-router-dom';
 
 import { variables } from '@kata-kit/theme';
 
 export interface SidebarSubMenuProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
-  to: string;
-  exact?: boolean;
-  icon?: string;
+  style?: React.CSSProperties;
+  asNavLink?: boolean;
+  to?: NavLinkProps['to'];
+  exact?: NavLinkProps['exact'];
+  icon: string;
 }
 
 const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
   className,
+  style,
   icon,
+  asNavLink,
+  to,
+  exact,
   children,
   ...rest
-}) => (
-  <a className={className} {...rest}>
-    {icon ? (
-      <Span>
-        <SubMenuIcon className={`icon-${icon}`} /> {children}
-      </Span>
-    ) : (
-      <Span>{children}</Span>
-    )}
-  </a>
-);
+}) => {
+  if (asNavLink && to) {
+    return (
+      <StyledNavLink
+        className={className}
+        style={style}
+        to={to}
+        exact={exact}
+        {...rest}
+      >
+        {icon ? (
+          <Span>
+            <SubMenuIcon className={`icon-${icon}`} /> {children}
+          </Span>
+        ) : (
+          <Span>{children}</Span>
+        )}
+      </StyledNavLink>
+    );
+  }
+
+  return (
+    <StyledAnchor className={className} style={style} {...rest}>
+      {icon ? (
+        <Span>
+          <SubMenuIcon className={`icon-${icon}`} /> {children}
+        </Span>
+      ) : (
+        <Span>{children}</Span>
+      )}
+    </StyledAnchor>
+  );
+};
 
 const SubMenuIcon = styled('i')`
   margin-right: 1.230769231rem /* $space-2 */;
@@ -40,7 +69,7 @@ const Span = styled('span')`
   color: ${variables.colors.gray70};
 `;
 
-export default styled(SidebarSubMenu)`
+const BaseStyles = css`
   display: block;
   min-height: 35px;
   padding: 6px 8px;
@@ -87,3 +116,13 @@ export default styled(SidebarSubMenu)`
     }
   }
 `;
+
+const StyledNavLink = styled(NavLink)`
+  ${BaseStyles}
+`;
+
+const StyledAnchor = styled('a')`
+  ${BaseStyles}
+`;
+
+export default SidebarSubMenu;

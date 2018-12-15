@@ -4,11 +4,13 @@
 
 ## Install
 
+`@kata-kit/layout` requires `react-router`. To install, use:
+
 ```sh
 # yarn
-yarn add @kata-kit/layout
+yarn add @kata-kit/layout react-router-dom
 # npm
-npm install @kata-kit/layout
+npm install @kata-kit/layout react-router-dom
 ```
 
 ## Usage

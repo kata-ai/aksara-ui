@@ -1,11 +1,15 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { NavLinkProps, NavLink } from 'react-router-dom';
 import { variables } from '@kata-kit/theme';
 
 export interface SidebarMainMenuProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   style?: React.CSSProperties;
+  asNavLink?: boolean;
+  to?: NavLinkProps['to'];
+  exact?: NavLinkProps['exact'];
   icon: string;
 }
 
@@ -13,16 +17,38 @@ const SidebarMainMenu: React.SFC<SidebarMainMenuProps> = ({
   className,
   style,
   icon,
+  asNavLink,
+  to,
+  exact,
   children,
   ...rest
-}) => (
-  <a className={className} style={style} {...rest}>
-    <Icon>
-      <i className={`icon-${icon}`} />
-    </Icon>
-    <Span>{children}</Span>
-  </a>
-);
+}) => {
+  if (asNavLink && to) {
+    return (
+      <RootNavLink
+        className={className}
+        style={style}
+        to={to}
+        exact={exact}
+        {...rest}
+      >
+        <Icon>
+          <i className={`icon-${icon}`} />
+        </Icon>
+        <Span>{children}</Span>
+      </RootNavLink>
+    );
+  }
+
+  return (
+    <RootAnchor className={className} style={style} {...rest}>
+      <Icon>
+        <i className={`icon-${icon}`} />
+      </Icon>
+      <Span>{children}</Span>
+    </RootAnchor>
+  );
+};
 
 const Icon = styled('div')`
   width: 40px;
@@ -39,7 +65,7 @@ const Span = styled('span')`
   color: #676b6d;
 `;
 
-export default styled(SidebarMainMenu)`
+const BaseStyles = css`
   margin: 0 0 16px;
   padding: 4px 0;
   font-size: 12px;
@@ -76,3 +102,13 @@ export default styled(SidebarMainMenu)`
     }
   }
 `;
+
+const RootAnchor = styled('a')`
+  ${BaseStyles}
+`;
+
+const RootNavLink = styled(NavLink)`
+  ${BaseStyles}
+`;
+
+export default SidebarMainMenu;
