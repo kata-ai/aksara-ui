@@ -10,7 +10,7 @@ import {
   SupportButton
 } from './button';
 
-import { Card, CardGrid, DashboardCard } from './card';
+import { Card, CardButton, CardGrid } from './card';
 
 import {
   Drawer,
@@ -97,8 +97,8 @@ export {
   ToggleButton,
   SupportButton,
   Card,
+  CardButton,
   CardGrid,
-  DashboardCard,
   Drawer,
   DrawerBody,
   DrawerBodyProps,

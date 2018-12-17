@@ -9,6 +9,6 @@ describe('Card', () => {
   test('renders correctly', () => {
     const { container } = render(<Card title="Sample Card">Card test</Card>);
 
-    expect(container.firstChild).toHaveStyleRule('background', '#fff');
+    expect(container.firstChild).toHaveStyleRule('background', '#ffffff');
   });
 });
