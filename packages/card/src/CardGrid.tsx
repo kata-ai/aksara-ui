@@ -34,7 +34,9 @@ class CardGrid extends React.Component<CardGridProps> {
                   data-testid="CardGrid-wrapper"
                   cardsPerRow={cardsPerRow}
                 >
-                  {Item}
+                  {React.cloneElement(Item as React.ReactElement<any>, {
+                    dashboardCard: true
+                  })}
                 </CardWrapper>
               ) : (
                 Item

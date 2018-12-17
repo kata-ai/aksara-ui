@@ -7,14 +7,14 @@ import Wrapper from '@storybook-utils/components/Wrapper';
 import Card from '@kata-kit/card/src/Card';
 import Avatar from '@kata-kit/avatar/src/components/Avatar';
 import Button from '@kata-kit/button/src/components/Button';
-import DashboardCard from '@kata-kit/card/src/DashboardCard';
 import CardGrid from '@kata-kit/card/src/CardGrid';
+import CardButton from '@kata-kit/card/src/CardButton';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
 const story = storiesOf('Components|Card', module)
   .addDecorator(StoryWrapper)
-  .addDecorator(wInfo({ propTables: [Card, CardGrid, DashboardCard] }));
+  .addDecorator(wInfo({ propTables: [Card, CardGrid] }));
 
 const info = `
 ## Install
@@ -49,37 +49,13 @@ story.add(
 );
 
 story.add(
-  'DashboardCard',
-  () => (
-    <DashboardCard title="Second Card">
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book.
-    </DashboardCard>
-  ),
-  {
-    info: {
-      text: `
-      ## Usage
-
-      ~~~javascript
-      <DashboardCard title="Title">Card content</DashboardCard>
-      ~~~
-      `,
-      propTables: [DashboardCard]
-    }
-  }
-);
-
-story.add(
-  'CardGrid',
+  'DashboardCards',
   () => (
     <CardGrid>
-      <DashboardCard title="First Card">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </DashboardCard>
-      <DashboardCard
+      <Card asButton>
+        <CardButton label={'Create'} icon="add" />
+      </Card>
+      <Card
         title="Second Card"
         avatarComponent={
           <Avatar src="https://picsum.photos/350/150/?image=821" />
@@ -93,11 +69,11 @@ story.add(
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s, when an unknown printer took a galley of type and scrambled it to
         make a type specimen book.
-      </DashboardCard>
-      <DashboardCard title="Third Card">
+      </Card>
+      <Card title="Third Card">
         It has survived not only five centuries, but also the leap into
         electronic typesetting, remaining essentially unchanged.
-      </DashboardCard>
+      </Card>
     </CardGrid>
   ),
   {

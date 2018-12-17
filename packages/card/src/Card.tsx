@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { Theme, variables } from '@kata-kit/theme';
+import { variables } from '@kata-kit/theme';
 
 export interface CardProps {
   /** Card title. */
@@ -10,6 +10,8 @@ export interface CardProps {
   action?: React.ReactElement<HTMLAllCollection>;
   /** Whether render the card as button. */
   asButton?: boolean;
+  /** Whether or not the card is a dashboard card. */
+  dashboardCard?: boolean;
   /** Whether render the card without header. */
   noWrap?: boolean;
   /** Whether the card disabled or not. */
@@ -35,78 +37,95 @@ export interface CardProps {
  */
 export class Card extends React.Component<CardProps> {
   render() {
-    const { className, noWrap, onClick, style, children } = this.props;
+    const {
+      className,
+      asButton,
+      dashboardCard,
+      noWrap,
+      onClick,
+      style,
+      children
+    } = this.props;
 
-    return (
-      <Theme>
-        {themeAttributes =>
-          noWrap ? (
-            <CardRoot
-              onClick={onClick}
-              style={style}
-              className={className}
-              {...themeAttributes}
-            >
-              {children}
-            </CardRoot>
-          ) : (
-            <CardRoot
-              onClick={onClick}
-              style={style}
-              className={className}
-              {...themeAttributes}
-            >
-              {!this.props.asButton && this.props.title ? (
-                <CardHeading>
-                  <CardHeadingTitle>
-                    {this.props.avatarComponent ? (
-                      <CardAvatarWrapper>
-                        {this.props.avatarComponent}
-                      </CardAvatarWrapper>
-                    ) : (
-                      this.props.avatar && (
-                        <CardAvatar src={this.props.avatar} />
-                      )
-                    )}
-                    <span>{this.props.title}</span>
-                  </CardHeadingTitle>
-                  {this.props.action && (
-                    <CardHeadingAction
-                      onClick={e => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                      }}
-                    >
-                      {this.props.action}
-                    </CardHeadingAction>
-                  )}
-                </CardHeading>
-              ) : null}
-              <CardBody asButton={this.props.asButton}>{children}</CardBody>
-            </CardRoot>
-          )
-        }
-      </Theme>
+    return noWrap ? (
+      <CardRoot
+        asButton={asButton}
+        dashboardCard={dashboardCard}
+        onClick={onClick}
+        style={style}
+        className={className}
+      >
+        {children}
+      </CardRoot>
+    ) : (
+      <CardRoot
+        asButton={asButton}
+        dashboardCard={dashboardCard}
+        onClick={onClick}
+        style={style}
+        className={className}
+      >
+        {!this.props.asButton && this.props.title ? (
+          <CardHeading>
+            <CardHeadingTitle>
+              {this.props.avatarComponent ? (
+                <CardAvatarWrapper>
+                  {this.props.avatarComponent}
+                </CardAvatarWrapper>
+              ) : (
+                this.props.avatar && <CardAvatar src={this.props.avatar} />
+              )}
+              <span>{this.props.title}</span>
+            </CardHeadingTitle>
+            {this.props.action && (
+              <CardHeadingAction
+                onClick={e => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
+              >
+                {this.props.action}
+              </CardHeadingAction>
+            )}
+          </CardHeading>
+        ) : null}
+        <CardBody asButton={this.props.asButton}>{children}</CardBody>
+      </CardRoot>
     );
   }
 }
 
 export default Card;
 
-interface CardRootProps {
-  disabled?: boolean;
-}
+const PointerCursor = css`
+  cursor: pointer;
+`;
+
+const AsButton = css`
+  justify-content: center;
+`;
+
+const AsDashboard = css`
+  height: 100%;
+  min-height: 200px;
+
+  @media (min-width: ${variables.breaks.breakSmall}) {
+    max-height: 200px;
+  }
+`;
 
 const CardRoot = styled('div')`
   display: flex;
   flex-direction: column;
-  background: ${(props: CardRootProps) =>
-    props.disabled ? '#f6f7f8' : '#fff'};
+  background: ${(props: CardProps) =>
+    props.disabled ? variables.colors.gray10 : variables.colors.white};
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   transition: all 0.3s ease;
-  cursor: pointer;
   word-wrap: break-word;
+  ${(props: CardProps) => props.asButton && PointerCursor};
+  ${(props: CardProps) => props.dashboardCard && AsDashboard};
+  ${(props: CardProps) => props.asButton && AsButton};
 
   &:hover {
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);
@@ -128,10 +147,17 @@ const CardHeadingAction = styled('div')`
   flex: 0 1 auto;
 `;
 
+const CardAsButton = css`
+  align-self: center;
+  padding-bottom: 24px;
+`;
+
 const CardBody = styled('div')`
   padding: 8px 24px;
   font-size: 13px;
   line-height: 20px;
+
+  ${(props: CardProps) => props.asButton && CardAsButton}
 `;
 
 const CardAvatar = styled('img')`

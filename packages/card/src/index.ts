@@ -1,5 +1,5 @@
 import Card from './Card';
+import CardButton from './CardButton';
 import CardGrid from './CardGrid';
-import DashboardCard from './DashboardCard';
 
-export { Card, CardGrid, DashboardCard };
+export { Card, CardButton, CardGrid };
