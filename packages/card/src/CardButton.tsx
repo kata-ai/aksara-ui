@@ -11,30 +11,21 @@ export interface CardButtonProps {
   className?: string;
   /** Additional CSS properties to give to the component. */
   style?: React.CSSProperties;
-  /** Additonal event handler. */
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export class CardButton extends React.Component<CardButtonProps> {
-  triggerOnClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (this.props.onClick) {
-      this.props.onClick(e);
-    }
-  };
-
-  render() {
-    const { className, style, icon, label } = this.props;
-
-    return (
-      <Root className={className} style={style} onClick={this.triggerOnClick}>
-        <Icon className="kata-card__button-icon">
-          <i className={`icon-${icon}`} />
-        </Icon>
-        <Label className="kata-card__button-label">{label}</Label>
-      </Root>
-    );
-  }
-}
+const CardButton: React.SFC<CardButtonProps> = ({
+  className,
+  style,
+  icon,
+  label
+}) => (
+  <Root className={className} style={style}>
+    <Icon className="kata-card__button-icon">
+      <i className={`icon-${icon}`} />
+    </Icon>
+    <Label className="kata-card__button-label">{label}</Label>
+  </Root>
+);
 
 const Label = styled('span')`
   display: block;
