@@ -18,7 +18,7 @@ interface DropdownMenuProps {
 
 class DropdownMenu extends React.Component<DropdownMenuProps> {
   static defaultProps = {
-    right: false
+    floatRight: false
   };
 
   static displayName = 'DropdownMenu';
