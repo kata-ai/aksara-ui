@@ -91,7 +91,8 @@ const BaseStyles = css`
   }
 
   &:active {
-    color: ${variables.colors.gray70};
+    background-color: ${variables.colors.gray70};
+    color: ${variables.colors.white};
 
     ${Span} {
       color: ${variables.colors.white};
