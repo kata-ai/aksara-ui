@@ -14,7 +14,7 @@ const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
 const story = storiesOf('Components|Card', module)
   .addDecorator(StoryWrapper)
-  .addDecorator(wInfo({ propTables: [Card, CardGrid] }));
+  .addDecorator(wInfo({ propTables: [Card, CardButton, CardGrid] }));
 
 const info = `
 ## Install
@@ -95,7 +95,7 @@ story.add(
       </CardGrid>
       ~~~
       `,
-      propTables: [CardGrid]
+      propTables: [CardButton, CardGrid]
     }
   }
 );
