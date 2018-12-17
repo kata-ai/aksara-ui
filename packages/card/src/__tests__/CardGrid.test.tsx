@@ -1,12 +1,26 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
 import { variables } from '@kata-kit/theme';
-import { Card, CardGrid } from '..';
+import { Card, CardGrid, CardButton } from '..';
 
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
 
 describe('CardGrid', () => {
+  test('renders correctly', () => {
+    const { container } = render(
+      <CardGrid>
+        <Card title="Sample Card">
+          <CardButton label="Create" icon="add" />
+        </Card>
+        <Card title="Sample Card">Card test</Card>
+        <Card title="Sample Card">Card test</Card>
+      </CardGrid>
+    );
+
+    expect(container.firstChild).toBeInTheDocument();
+  });
+
   test('renders with correct centered style', () => {
     const { container } = render(
       <CardGrid centered>
