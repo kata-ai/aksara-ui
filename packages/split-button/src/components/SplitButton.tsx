@@ -19,7 +19,7 @@ interface Props {
   subtitle?: string;
   className?: string;
   menuClassName?: string;
-  right?: boolean;
+  floatRight?: boolean;
   onClick?(e: any): void;
 }
 
@@ -55,7 +55,7 @@ export default class SplitButton extends React.Component<Props> {
               </DropdownToggle>
               <DropdownMenu
                 className={this.props.menuClassName}
-                right={this.props.right}
+                floatRight={this.props.floatRight}
               >
                 {this.props.children}
               </DropdownMenu>
