@@ -109,8 +109,8 @@ const Wrapper = styled('div')`
 
   ${props =>
     props.floatRight &&
-    props.dropDirection !== 'up' &&
-    props.dropDirection !== 'down' &&
+    props.dropDirection !== 'right' &&
+    props.dropDirection !== 'left' &&
     floatRightMenu}
   ${props => props.dropDirection === 'up' && directionUp}
   ${props => props.dropDirection === 'right' && directionRight}
