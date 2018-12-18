@@ -29,7 +29,7 @@ export const CardButton: React.SFC<CardButtonProps> = ({
 
 const Label = styled('span')`
   display: block;
-  margin-top: 8px;
+  margin-top: 16px;
   font-size: 13px;
   font-weight: bold;
   line-height: 1.54;

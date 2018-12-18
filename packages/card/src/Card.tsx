@@ -137,7 +137,7 @@ const CardHeading = styled('div')`
   display: flex;
   align-items: center;
   padding: 16px 16px 8px 24px;
-  min-height: 64px;
+  min-height: 56px;
 `;
 
 const CardHeadingTitle = styled('h2')`
