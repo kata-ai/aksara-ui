@@ -2,18 +2,23 @@ import * as React from 'react';
 import classnames from 'classnames';
 import styled from 'styled-components';
 
-import { Theme, variables } from '@kata-kit/theme';
+import { variables } from '@kata-kit/theme';
 
-export interface CardGridProps {
+export interface DashboardCardsProps {
   /** Additional card CSS class. */
   className?: string;
   /** Whether the content inside card grid centered or not. */
   centered?: boolean;
-  /** How many card will be rendered in a row. */
+  /**
+   * How many card will be rendered in a row.
+   *
+   * @deprecated in the future, this will be automatically determined based on
+   * breakpoint.
+   */
   cardsPerRow?: 2 | 3;
 }
 
-class CardGrid extends React.Component<CardGridProps> {
+export class DashboardCards extends React.Component<DashboardCardsProps> {
   static defaultProps = {
     cardsPerRow: 3
   };
@@ -21,35 +26,27 @@ class CardGrid extends React.Component<CardGridProps> {
   render() {
     const { className, cardsPerRow, ...rest } = this.props;
     return (
-      <Theme>
-        {themeAttributes => (
-          <Wrapper
-            className={classnames(className)}
-            {...rest}
-            {...themeAttributes}
-          >
-            {React.Children.map(this.props.children, Item =>
-              Item ? (
-                <CardWrapper
-                  data-testid="CardGrid-wrapper"
-                  cardsPerRow={cardsPerRow}
-                >
-                  {React.cloneElement(Item as React.ReactElement<any>, {
-                    dashboardCard: true
-                  })}
-                </CardWrapper>
-              ) : (
-                Item
-              )
-            )}
-          </Wrapper>
+      <Wrapper className={classnames(className)} {...rest}>
+        {React.Children.map(this.props.children, Item =>
+          Item ? (
+            <CardWrapper
+              data-testid="CardGrid-wrapper"
+              cardsPerRow={cardsPerRow}
+            >
+              {React.cloneElement(Item as React.ReactElement<any>, {
+                dashboardCard: true
+              })}
+            </CardWrapper>
+          ) : (
+            Item
+          )
         )}
-      </Theme>
+      </Wrapper>
     );
   }
 }
 
-export default CardGrid;
+export default DashboardCards;
 
 const Wrapper = styled('div')`
   display: flex;

@@ -10,7 +10,7 @@ import {
   SupportButton
 } from './button';
 
-import { Card, CardButton, CardGrid } from './card';
+import { Card, CardButton } from './card';
 
 import {
   Drawer,
@@ -24,7 +24,7 @@ import {
 
 import { EmptyMessage, Board } from './common';
 
-import { DashboardContentHeader, Dashboard } from './dashboard';
+import { DashboardContentHeader, DashboardCards, Dashboard } from './dashboard';
 
 import {
   DropdownToggle,
@@ -98,7 +98,6 @@ export {
   SupportButton,
   Card,
   CardButton,
-  CardGrid,
   Drawer,
   DrawerBody,
   DrawerBodyProps,
@@ -109,6 +108,7 @@ export {
   EmptyMessage,
   Board,
   DashboardContentHeader,
+  DashboardCards,
   Dashboard,
   DropdownToggle,
   DropdownSelector,

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
 import { variables } from '@kata-kit/theme';
-import { Card, CardGrid, CardButton } from '..';
+import { DashboardCards } from '..';
+import { Card, CardButton } from '@kata-kit/card';
 
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
@@ -9,13 +10,13 @@ import 'jest-styled-components';
 describe('CardGrid', () => {
   test('renders correctly', () => {
     const { container } = render(
-      <CardGrid>
+      <DashboardCards>
         <Card title="Sample Card">
           <CardButton label="Create" icon="add" />
         </Card>
         <Card title="Sample Card">Card test</Card>
         <Card title="Sample Card">Card test</Card>
-      </CardGrid>
+      </DashboardCards>
     );
 
     expect(container.firstChild).toBeInTheDocument();
@@ -23,11 +24,11 @@ describe('CardGrid', () => {
 
   test('renders with correct centered style', () => {
     const { container } = render(
-      <CardGrid centered>
+      <DashboardCards centered>
         <Card title="Sample Card">Card test</Card>
         <Card title="Sample Card">Card test</Card>
         <Card title="Sample Card">Card test</Card>
-      </CardGrid>
+      </DashboardCards>
     );
 
     expect(container.firstChild).toHaveStyleRule('justify-content', 'center');
@@ -35,11 +36,11 @@ describe('CardGrid', () => {
 
   test('renders with correct cardsPerRow styles', () => {
     const { getByTestId } = render(
-      <CardGrid cardsPerRow={2}>
+      <DashboardCards cardsPerRow={2}>
         <Card title="Sample Card">Card test</Card>
         <Card title="Sample Card">Card test</Card>
         <Card title="Sample Card">Card test</Card>
-      </CardGrid>
+      </DashboardCards>
     );
 
     const wrapper = getByTestId('CardGrid-wrapper');
