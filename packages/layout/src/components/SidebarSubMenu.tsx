@@ -11,7 +11,7 @@ export interface SidebarSubMenuProps
   asNavLink?: boolean;
   to?: NavLinkProps['to'];
   exact?: NavLinkProps['exact'];
-  icon: string;
+  icon?: string;
 }
 
 const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
