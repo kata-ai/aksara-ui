@@ -1,6 +1,6 @@
 {
   "name": "kata-kit",
-  "version": "0.7.0-beta.4",
+  "version": "0.7.0-beta.5",
   "description": "Bundled Kata-kit",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -34,7 +34,7 @@
     "@kata-kit/dashboard": "^0.7.0-beta.2",
     "@kata-kit/drawer": "^0.7.0-beta.0",
     "@kata-kit/dropdown": "^0.7.0-beta.1",
-    "@kata-kit/fonts": "^0.7.0-beta.0",
+    "@kata-kit/fonts": "^0.7.0-beta.1",
     "@kata-kit/form": "^0.7.0-beta.0",
     "@kata-kit/layout": "^0.7.0-beta.2",
     "@kata-kit/loading": "^0.7.0-beta.0",
