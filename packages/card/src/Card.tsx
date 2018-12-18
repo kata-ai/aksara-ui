@@ -151,7 +151,6 @@ const CardHeadingAction = styled('div')`
 
 const CardAsButton = css`
   align-self: center;
-  padding-bottom: 24px;
 `;
 
 const CardBody = styled('div')`
