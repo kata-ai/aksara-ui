@@ -2,6 +2,7 @@
   font-family: 'Museo Sans Rounded';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-100.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 100;
 }
 
@@ -9,6 +10,7 @@
   font-family: 'Museo Sans Rounded';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-300.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 300;
 }
 
@@ -16,6 +18,7 @@
   font-family: 'Museo Sans Rounded';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-500.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 500;
 }
 
@@ -23,6 +26,7 @@
   font-family: 'Museo Sans Rounded';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-700.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
 }
 
@@ -30,6 +34,7 @@
   font-family: 'Museo Sans Rounded';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-900.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 900;
 }
 
@@ -37,5 +42,6 @@
   font-family: 'Museo Sans Rounded';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSansRounded-1000.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 1000;
 }

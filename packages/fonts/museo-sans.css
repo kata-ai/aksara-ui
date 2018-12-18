@@ -2,6 +2,7 @@
   font-family: 'Museo Sans';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSans-100.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 100;
 }
 
@@ -9,6 +10,7 @@
   font-family: 'Museo Sans';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSans-100Italic.otf');
   font-style: italic;
+  font-display: swap;
   font-weight: 100;
 }
 
@@ -16,6 +18,7 @@
   font-family: 'Museo Sans';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSans-300.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 300;
 }
 
@@ -23,6 +26,7 @@
   font-family: 'Museo Sans';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSans-300Italic.otf');
   font-style: italic;
+  font-display: swap;
   font-weight: 300;
 }
 
@@ -30,6 +34,7 @@
   font-family: 'Museo Sans';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSans-500.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 500;
 }
 
@@ -37,6 +42,7 @@
   font-family: 'Museo Sans';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSans-500Italic.otf');
   font-style: italic;
+  font-display: swap;
   font-weight: 500;
 }
 
@@ -44,6 +50,7 @@
   font-family: 'Museo Sans';
   src: url('https://kata.blob.core.windows.net/static/museo-sans/files/MuseoSans-700.otf');
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
 }
 
