@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { Theme } from '@kata-kit/theme';
+import { Theme, variables } from '@kata-kit/theme';
 
 import themes from '../themes/Topbar';
 
@@ -10,10 +10,6 @@ export interface TopbarProps {
   logoContent?: React.ReactNode;
   /** Left-side content of the topbar */
   leftContent?: React.ReactNode;
-}
-
-interface TopbarRightProps {
-  flex?: boolean;
 }
 
 const Topbar: React.SFC<TopbarProps> = ({
@@ -34,24 +30,27 @@ const Topbar: React.SFC<TopbarProps> = ({
 
 export default Topbar;
 
-const topbarIsFlex = css`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
 const TopbarLogo = styled('div')`
   flex: 0 0 auto;
 `;
 
 const TopbarLeft = styled('div')`
   flex: 1 1 auto;
+  padding-left: 12px;
 `;
 
 const TopbarRight = styled('div')`
+  flex: 0 0 auto;
   margin-left: 24px;
+  padding-right: 24px;
 
-  ${(props: TopbarRightProps) => props.flex && topbarIsFlex};
+  @media (min-width: ${variables.breaks.breakMedium}) {
+    padding-right: 40px;
+  }
+
+  @media (min-width: ${variables.breaks.breakLarge}) {
+    padding-right: 48px;
+  }
 `;
 
 const Root = styled('header')`
