@@ -134,8 +134,10 @@ const CardRoot = styled('div')`
 `;
 
 const CardHeading = styled('div')`
-  padding: 16px 16px 8px 24px;
   display: flex;
+  align-items: center;
+  padding: 16px 16px 8px 24px;
+  min-height: 64px;
 `;
 
 const CardHeadingTitle = styled('h2')`
