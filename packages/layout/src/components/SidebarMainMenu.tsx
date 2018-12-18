@@ -67,8 +67,7 @@ const Span = styled('span')`
 `;
 
 const BaseStyles = css`
-  margin: 0 0 16px;
-  padding: 4px 0;
+  padding: ${variables.spaces.space1} 0;
   font-size: 12px;
   display: block;
   text-decoration: none;

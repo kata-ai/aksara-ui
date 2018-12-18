@@ -13,7 +13,7 @@ export interface CardButtonProps {
   style?: React.CSSProperties;
 }
 
-const CardButton: React.SFC<CardButtonProps> = ({
+export const CardButton: React.SFC<CardButtonProps> = ({
   className,
   style,
   icon,

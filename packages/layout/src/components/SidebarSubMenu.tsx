@@ -79,7 +79,7 @@ const BaseStyles = css`
   margin-bottom: ${variables.spaces.space1};
   border: 1px solid transparent;
   border-radius: 6px /* $border-radius-medium */;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 
   &:hover {
     text-decoration: none;
