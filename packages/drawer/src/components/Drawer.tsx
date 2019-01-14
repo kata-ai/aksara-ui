@@ -119,7 +119,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
   render() {
     const wrapper = (
-      <FocusTrap active={this.state.isOpen} onKeyDown={this.handleKeyDown}>
+      <>
         {this.props.backdrop && (
           <DrawerOverlay
             className={classnames(this.state.isOpen && 'is-open')}
@@ -141,13 +141,18 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
               aria-modal="true"
               aria-labelledby={this.props.labelledById}
             >
-              <DrawerContext.Provider value={this.getContextAPI()}>
-                {this.state.isOpen && this.props.children}
-              </DrawerContext.Provider>
+              <FocusTrap
+                active={this.state.isOpen}
+                onKeyDown={this.handleKeyDown}
+              >
+                <DrawerContext.Provider value={this.getContextAPI()}>
+                  {this.state.isOpen && this.props.children}
+                </DrawerContext.Provider>
+              </FocusTrap>
             </DrawerWrapper>
           )}
         </Theme>
-      </FocusTrap>
+      </>
     );
     return createPortal(wrapper, this.el) as React.ReactPortal;
   }
