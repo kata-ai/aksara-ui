@@ -6,8 +6,12 @@ export interface BoardProps {
   className?: string;
   /** Additional content as a header. */
   headingChildren?: React.ReactNode;
+  /** Additional styles for board header */
+  headingStyles?: React.CSSProperties;
   /** Additional content as a footer. */
   footerChildren?: React.ReactNode;
+  /** Additional styles for board footer */
+  footerStyles?: React.CSSProperties;
 }
 
 export default class Board extends React.Component<BoardProps> {
@@ -24,14 +28,22 @@ export default class Board extends React.Component<BoardProps> {
 
   renderHeading() {
     if (this.props.headingChildren) {
-      return <Heading>{this.props.headingChildren}</Heading>;
+      return (
+        <Heading style={this.props.headingStyles}>
+          {this.props.headingChildren}
+        </Heading>
+      );
     }
     return null;
   }
 
   renderFooter() {
     if (this.props.footerChildren) {
-      return <Footer>{this.props.footerChildren}</Footer>;
+      return (
+        <Footer style={this.props.footerStyles}>
+          {this.props.footerChildren}
+        </Footer>
+      );
     }
     return null;
   }
