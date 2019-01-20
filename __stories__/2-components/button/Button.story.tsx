@@ -32,7 +32,7 @@ npm install @kata-kit/button
 ## Usage
 
 ~~~jsx
-import { Button } from 'kata-kit/button';
+import { Button } from '@kata-kit/button';
 
 <Button>Push Me</Button>
 ~~~
