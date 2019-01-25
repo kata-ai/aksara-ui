@@ -1,5 +1,4 @@
-import Board from './Board';
-import EmptyMessage from './EmptyMessage';
-import FocusTrap from './FocusTrap';
-
-export { Board, EmptyMessage, FocusTrap };
+export * from './components/Board';
+export * from './components/EmptyMessage';
+export * from './components/FocusTrap';
+export * from './components/Skeleton';

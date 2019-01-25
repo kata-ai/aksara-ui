@@ -4,7 +4,7 @@ import { storiesOf, StoryDecorator } from '@storybook/react';
 import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 
-import Board from '@kata-kit/common/src/Board';
+import { Board } from '@kata-kit/common/src/components/Board';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 

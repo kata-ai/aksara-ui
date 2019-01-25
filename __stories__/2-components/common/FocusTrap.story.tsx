@@ -5,7 +5,7 @@ import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 import WithState from '@storybook-utils/components/WithState';
 
-import FocusTrap from '@kata-kit/common/src/FocusTrap';
+import { FocusTrap } from '@kata-kit/common/src/components/FocusTrap';
 import { Button } from '@kata-kit/button/src';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;

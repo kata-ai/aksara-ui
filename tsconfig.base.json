@@ -16,6 +16,7 @@
     "removeComments": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
     "noUnusedLocals": true,
     "esModuleInterop": true
   }
