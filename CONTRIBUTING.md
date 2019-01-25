@@ -16,6 +16,8 @@ The simple steps of contributing to any GitHub project are as follows:
 
 To keep your fork of in sync with this repository, [follow this guide](https://help.github.com/articles/syncing-a-fork/).
 
+For members of the Kata.ai organisation, or if you have push access to this repository, just clone directly from the repo and push your branches here. It's fine.
+
 ## Prerequisites
 
 ### Windows, macOS and Linux
@@ -87,4 +89,4 @@ $ yarn storybook
 info Storybook started on => http://localhost:9001/
 ```
 
-The storybook server is available at `http://localhost:9001`. Note that any new component needs to have at least one story as a demo.
+The storybook server is available at `http://localhost:9001`. Note that any new component needs to have at least one story as a demo, and _some_ tests.
