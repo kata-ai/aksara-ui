@@ -22,18 +22,24 @@ const Skeleton: React.FC<SkeletonProps> = ({
 }) => {
   if (numberOfLines && numberOfLines > 1) {
     return (
-      <MultilineWrapper>
+      <MultilineWrapper data-testid="Skeleton-multiline">
         {[...Array(numberOfLines)].map((_, i) => (
           <Root
             key={i}
             className={classnames(small && 'is-small', className)}
+            data-testid="Skeleton-root"
           />
         ))}
       </MultilineWrapper>
     );
   }
 
-  return <Root className={classnames(small && 'is-small', className)} />;
+  return (
+    <Root
+      className={classnames(small && 'is-small', className)}
+      data-testid="Skeleton-root"
+    />
+  );
 };
 
 Skeleton.defaultProps = {
