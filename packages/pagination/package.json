@@ -35,7 +35,7 @@
     "styled-components": "^4.1.2"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.6",
+    "@types/classnames": "^2.2.7",
     "@types/lodash-es": "^4.17.1"
   }
 }
