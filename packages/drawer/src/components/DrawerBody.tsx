@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
+import styled from 'styled-components';
 
 import DrawerContext from './DrawerContext';
-import styled from 'styled-components';
 
 export interface DrawerBodyProps {
   /** Additional CSS classes to give to the drawer body. */

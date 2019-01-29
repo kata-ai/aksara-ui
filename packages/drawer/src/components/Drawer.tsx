@@ -4,7 +4,6 @@ import { createPortal } from 'react-dom';
 import classnames from 'classnames';
 
 import { Theme } from '@kata-kit/theme';
-import { FocusTrap } from '@kata-kit/common';
 
 import DrawerContext from './DrawerContext';
 import {
@@ -130,26 +129,21 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         )}
         <Theme values={theme}>
           {themeAttributes => (
-            <FocusTrap
-              active={this.state.isOpen}
-              onKeyDown={this.handleKeyDown}
+            <DrawerWrapper
+              data-testid="Drawer-wrapper"
+              theme={themeAttributes}
+              className={classnames(
+                this.state.isOpen ? 'is-open' : 'is-closed',
+                this.props.className
+              )}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={this.props.labelledById}
             >
-              <DrawerWrapper
-                data-testid="Drawer-wrapper"
-                theme={themeAttributes}
-                className={classnames(
-                  this.state.isOpen ? 'is-open' : 'is-closed',
-                  this.props.className
-                )}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby={this.props.labelledById}
-              >
-                <DrawerContext.Provider value={this.getContextAPI()}>
-                  {this.state.isOpen && this.props.children}
-                </DrawerContext.Provider>
-              </DrawerWrapper>
-            </FocusTrap>
+              <DrawerContext.Provider value={this.getContextAPI()}>
+                {this.state.isOpen && this.props.children}
+              </DrawerContext.Provider>
+            </DrawerWrapper>
           )}
         </Theme>
       </>
