@@ -130,26 +130,26 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         )}
         <Theme values={theme}>
           {themeAttributes => (
-            <DrawerWrapper
-              data-testid="Drawer-wrapper"
-              theme={themeAttributes}
-              className={classnames(
-                this.state.isOpen ? 'is-open' : 'is-closed',
-                this.props.className
-              )}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby={this.props.labelledById}
+            <FocusTrap
+              active={this.state.isOpen}
+              onKeyDown={this.handleKeyDown}
             >
-              <FocusTrap
-                active={this.state.isOpen}
-                onKeyDown={this.handleKeyDown}
+              <DrawerWrapper
+                data-testid="Drawer-wrapper"
+                theme={themeAttributes}
+                className={classnames(
+                  this.state.isOpen ? 'is-open' : 'is-closed',
+                  this.props.className
+                )}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={this.props.labelledById}
               >
                 <DrawerContext.Provider value={this.getContextAPI()}>
                   {this.state.isOpen && this.props.children}
                 </DrawerContext.Provider>
-              </FocusTrap>
-            </DrawerWrapper>
+              </DrawerWrapper>
+            </FocusTrap>
           )}
         </Theme>
       </>

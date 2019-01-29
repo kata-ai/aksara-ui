@@ -12,6 +12,13 @@ import DrawerHeader from '@kata-kit/drawer/src/components/DrawerHeader';
 import DrawerBody from '@kata-kit/drawer/src/components/DrawerBody';
 import DrawerFooter from '@kata-kit/drawer/src/components/DrawerFooter';
 
+import FormGroup from '@kata-kit/form/src/components/FormGroup';
+import FormLabel from '@kata-kit/form/src/components/FormLabel';
+import InputText from '@kata-kit/form/src/components/InputText';
+import InputAddon from '@kata-kit/form/src/components/InputAddon';
+import InputTextarea from '@kata-kit/form/src/components/InputTextarea';
+import InputGroup from '@kata-kit/form/src/components/InputGroup';
+
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
 const story = storiesOf('Components|Drawer', module)
@@ -149,6 +156,96 @@ story.add(
                 Close Drawer
               </Button>
             </DrawerFooter>
+          </Drawer>
+          <Button color="primary" onClick={() => setState({ isOpen: true })}>
+            Open drawer
+          </Button>
+        </div>
+      )}
+    </WithState>
+  ),
+  { info: { disable: true } }
+);
+
+story.add(
+  'With Form',
+  () => (
+    <WithState initialState={{ isOpen: false }}>
+      {({ isOpen }, { setState }) => (
+        <div>
+          <Drawer isOpen={isOpen} onClose={() => setState({ isOpen: false })}>
+            <form
+              className="full-size"
+              onSubmit={e => {
+                e.preventDefault();
+                setState({ isOpen: false });
+              }}
+            >
+              <DrawerHeader title="Drawer" />
+              <DrawerBody>
+                <FormGroup>
+                  <FormLabel htmlFor="textDummy">Text input</FormLabel>
+                  <InputText
+                    id="textDummy"
+                    name="textDummy"
+                    placeholder="Type here..."
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel htmlFor="disabled">Disabled input</FormLabel>
+                  <InputText
+                    id="disabled"
+                    name="disabled"
+                    disabled
+                    placeholder="Can't touch this"
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel htmlFor="textarea">Text area</FormLabel>
+                  <InputTextarea
+                    id="textarea"
+                    name="textarea"
+                    rows={4}
+                    placeholder="Type here..."
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
+                    <InputAddon>dashboard.kata.ai/</InputAddon>
+                    <InputText
+                      id="firstName_dummy"
+                      name="firstName_dummy"
+                      placeholder="Type here..."
+                      addon
+                    />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
+                    <InputAddon isIcon>
+                      <i className="icon-account" />
+                    </InputAddon>
+                    <InputText
+                      id="firstName_dummy"
+                      name="firstName_dummy"
+                      placeholder="Type here..."
+                      addon
+                    />
+                  </InputGroup>
+                </FormGroup>
+              </DrawerBody>
+              <DrawerFooter>
+                <Button type="submit" color="primary">
+                  Submit form
+                </Button>{' '}
+                <Button
+                  type="button"
+                  onClick={() => setState({ isOpen: false })}
+                >
+                  Close Drawer
+                </Button>
+              </DrawerFooter>
+            </form>
           </Drawer>
           <Button color="primary" onClick={() => setState({ isOpen: true })}>
             Open drawer
