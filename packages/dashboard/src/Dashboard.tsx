@@ -9,6 +9,11 @@ import { Tooltip, TooltipTarget } from '@kata-kit/tooltip';
 export interface DashboardProps {
   /** Dashboard title element. */
   title?: string;
+  /**
+   * Add an element which floats to the right in the dashboard header.
+   * Does not work in starter dashboards.
+   */
+  floatingElements?: React.ReactNode;
   /** Dashboard tooltip element. */
   tooltip?: string;
   /** Dashboard subtitle element. */
@@ -108,6 +113,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
     const {
       className,
       title,
+      floatingElements,
       tooltip,
       subTitle,
       paragraph,
@@ -140,6 +146,9 @@ export default class Dashboard extends React.Component<DashboardProps> {
                       </TooltipTarget>
                     )}
                   </DashboardContainer>
+                )}
+                {floatingElements && (
+                  <DashboardFloating>{floatingElements}</DashboardFloating>
                 )}
               </DashboardHeader>
               {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
@@ -174,9 +183,18 @@ const DashboardIn = keyframes`
 const DashboardContainer = styled(Container)``;
 
 const DashboardHeader = styled('div')`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
   ${DashboardContainer} {
     display: flex;
   }
+`;
+
+const DashboardFloating = styled('div')`
+  margin-left: 24px;
 `;
 
 const DashboardTooltip = styled('i')`

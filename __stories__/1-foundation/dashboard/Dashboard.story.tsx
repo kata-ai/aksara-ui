@@ -15,7 +15,7 @@ const story = storiesOf('Foundations|Dashboard', module);
 story
   .addDecorator(storyFn => <RootWrapper noPadding>{storyFn()}</RootWrapper>)
   .add('default', () => (
-    <Dashboard title="kata-kit Demo">DashboardContent</Dashboard>
+    <Dashboard title="Wicara Demo">DashboardContent</Dashboard>
   ));
 
 story
@@ -23,13 +23,25 @@ story
   .add('starter', () => (
     <Dashboard
       isStarter
-      title="kata-kit Demo"
+      title="Wicara Demo"
       headerContent={
         <p>
-          This project is intended to test the look and feel of the kata-kit
-          component, as well as a development environment.
+          This project is intended to test the look and feel of Wicara, as well
+          as a development environment.
         </p>
       }
+    >
+      DashboardContent
+    </Dashboard>
+  ));
+
+story
+  .addDecorator(storyFn => <RootWrapper noPadding>{storyFn()}</RootWrapper>)
+  .add('with button', () => (
+    <Dashboard
+      title="Wicara Demo"
+      tooltip="This project is intended to test the look and feel of Wicara, as well as a development environment."
+      floatingElements={<Button color="primary">Publish</Button>}
     >
       DashboardContent
     </Dashboard>
