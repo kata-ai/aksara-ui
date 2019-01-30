@@ -18,9 +18,24 @@ describe('Dashboard', () => {
     expect(content).toHaveTextContent('DashboardContent');
   });
 
+  test('renders with floating element', () => {
+    const { getByTestId } = render(
+      <Dashboard
+        title="Dashboard Title"
+        floatingElements={<div>I'm floating!</div>}
+      >
+        DashboardContent
+      </Dashboard>
+    );
+
+    const floating = getByTestId('Dashboard-floating');
+
+    expect(floating).toBeInTheDocument();
+  });
+
   test('renders starter layout', () => {
     const { container } = render(
-      <Dashboard isStarter title="kata-kit Demo">
+      <Dashboard isStarter title="Wicara Demo">
         DashboardContent
       </Dashboard>
     );

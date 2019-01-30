@@ -148,7 +148,9 @@ export default class Dashboard extends React.Component<DashboardProps> {
                   </DashboardContainer>
                 )}
                 {floatingElements && (
-                  <DashboardFloating>{floatingElements}</DashboardFloating>
+                  <DashboardFloating data-testid="Dashboard-floating">
+                    {floatingElements}
+                  </DashboardFloating>
                 )}
               </DashboardHeader>
               {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
