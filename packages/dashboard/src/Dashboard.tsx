@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 import { Container } from '@kata-kit/layout';
 import { Theme, variables } from '@kata-kit/theme';
@@ -24,6 +24,8 @@ export interface DashboardProps {
   className?: string;
   /** Whether dashboard is starter or not. */
   isStarter?: boolean;
+  /** Toggle small-width mode for settings pages. */
+  isSettings?: boolean;
   /** Dashboard header content element. */
   headerContent?: any;
   /** Dashboard image element. */
@@ -116,6 +118,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
       floatingElements,
       tooltip,
       subTitle,
+      isSettings,
       paragraph,
       headerContent,
       children,
@@ -130,7 +133,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
       <Theme>
         {themeAttributes => (
           <Root className={className} {...themeAttributes}>
-            <Container>
+            <DashboardRootContainer isSettings={isSettings}>
               <DashboardHeader>
                 {headerContent || (
                   <DashboardContainer>
@@ -165,7 +168,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
               <DashboardContent data-testid="Dashboard-content">
                 {children}
               </DashboardContent>
-            </Container>
+            </DashboardRootContainer>
           </Root>
         )}
       </Theme>
@@ -180,6 +183,29 @@ const DashboardIn = keyframes`
   to {
     opacity: 1;
   }
+`;
+
+const DashboardRootContainer = styled('div')`
+  width: 100%;
+  max-width: ${(props: { isSettings?: boolean }) =>
+    props.isSettings ? '560px' : '704px'};
+  margin: 0 auto;
+
+  ${(props: { isSettings?: boolean }) =>
+    !props.isSettings &&
+    css`
+      @media (min-width: 1280px) {
+        max-width: 920px;
+      }
+
+      @media (min-width: 1366px) {
+        max-width: 990px;
+      }
+
+      @media (min-width: 1440px) {
+        max-width: 1160px;
+      }
+    `}
 `;
 
 const DashboardContainer = styled(Container)``;
