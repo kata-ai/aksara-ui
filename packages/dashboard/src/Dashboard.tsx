@@ -69,7 +69,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
                 <DashboardStarterInner>
                   <DashboardStarterLeft>
                     <DashboardHeader>
-                      <DashboardContainer>
+                      <Container>
                         <DashboardTitle isStarter data-testid="Dashboard-title">
                           {title}
                         </DashboardTitle>
@@ -80,7 +80,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
                             <DashboardTooltip className="icon-info" />
                           </TooltipTarget>
                         )}
-                      </DashboardContainer>
+                      </Container>
                     </DashboardHeader>
                     {subTitle && (
                       <DashboardSubtitle isStarter>
@@ -136,7 +136,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
             <DashboardRootContainer isSettings={isSettings}>
               <DashboardHeader>
                 {headerContent || (
-                  <DashboardContainer>
+                  <DashboardHeaderInner>
                     <DashboardTitle data-testid="Dashboard-title">
                       {title}
                     </DashboardTitle>
@@ -148,7 +148,7 @@ export default class Dashboard extends React.Component<DashboardProps> {
                         <DashboardTooltip className="icon-info" />
                       </TooltipTarget>
                     )}
-                  </DashboardContainer>
+                  </DashboardHeaderInner>
                 )}
                 {floatingElements && (
                   <DashboardFloating data-testid="Dashboard-floating">
@@ -208,17 +208,15 @@ const DashboardRootContainer = styled('div')`
     `}
 `;
 
-const DashboardContainer = styled(Container)``;
+const DashboardHeaderInner = styled('div')`
+  display: flex;
+`;
 
 const DashboardHeader = styled('div')`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  ${DashboardContainer} {
-    display: flex;
-  }
 `;
 
 const DashboardFloating = styled('div')`
