@@ -20,6 +20,8 @@ export interface CardProps {
   className?: string;
   /** Card onClick event handler. */
   onClick?: any;
+  /** `true` if the card body has a flex container. */
+  flex?: boolean;
   /** Card additional CSS styles. */
   style?: React.CSSProperties;
   /**
@@ -89,7 +91,9 @@ export class Card extends React.Component<CardProps> {
             )}
           </CardHeading>
         ) : null}
-        <CardBody asButton={this.props.asButton}>{children}</CardBody>
+        <CardBody asButton={this.props.asButton} flex={this.props.flex}>
+          {children}
+        </CardBody>
       </CardRoot>
     );
   }
@@ -153,12 +157,19 @@ const CardAsButton = css`
   align-self: center;
 `;
 
+const CardAsFlex = css`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 const CardBody = styled('div')`
   padding: 8px 24px;
   font-size: 13px;
   line-height: 20px;
 
   ${(props: CardProps) => props.asButton && CardAsButton}
+  ${(props: CardProps) => props.flex && CardAsFlex}
 `;
 
 const CardAvatar = styled('img')`
