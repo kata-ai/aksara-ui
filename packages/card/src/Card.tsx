@@ -161,6 +161,7 @@ const CardAsFlex = css`
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding-bottom: 24px;
 `;
 
 const CardBody = styled('div')`
