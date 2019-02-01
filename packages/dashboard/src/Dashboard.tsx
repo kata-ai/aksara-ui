@@ -309,7 +309,13 @@ const DashboardContent = styled('div')`
 const DashboardStarterHeading = styled('div')`
   display: flex;
   padding: 40px 20px 136px;
-  background-color: #006fe6 /* $kata-blue */;
+  background: linear-gradient(
+    75deg,
+    #0044aa,
+    ${variables.colors.cobalt} 55%,
+    ${variables.colors.kataBlue} 82%,
+    #00cce9
+  );
 
   @media (min-width: 1280px /* $break-medium */) {
     padding: 40px 40px 136px;
