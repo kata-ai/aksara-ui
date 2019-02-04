@@ -34,21 +34,21 @@ const Component = ({ children, isSidebarCollapsed }) => (
     <SidebarAndContent>
       <Sidebar collapsed={isSidebarCollapsed}>
         <SidebarMain logo={Logo}>
-          <SidebarMainMenu exact to="/" icon="bot">
+          <SidebarMainMenu asNavLink exact to="/" icon="bot">
             Demo
           </SidebarMainMenu>
-          <SidebarMainMenu to="/docs" icon="docs">
+          <SidebarMainMenu asNavLink to="/docs" icon="docs">
             Docs
           </SidebarMainMenu>
-          <SidebarMainMenu to="/components" icon="method">
+          <SidebarMainMenu asNavLink to="/components" icon="method">
             Components
           </SidebarMainMenu>
         </SidebarMain>
         <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
-          <SidebarSubMenu exact to="/docs">
+          <SidebarSubMenu asNavLink exact to="/docs">
             Index
           </SidebarSubMenu>
-          <SidebarSubMenu exact to="/docs/page">
+          <SidebarSubMenu asNavLink exact to="/docs/page">
             Page
           </SidebarSubMenu>
         </SidebarSub>
