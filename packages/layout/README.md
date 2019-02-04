@@ -20,6 +20,7 @@ To use this component within your React app, import as follows:
 ```jsx
 import {
   Wrapper,
+  SidebarAndContent,
   Content,
   Sidebar,
   SidebarMain,
@@ -28,30 +29,32 @@ import {
   SidebarSubMenu
 } from '@kata-kit/layout';
 
-const Component = ({ children }) => (
+const Component = ({ children, isSidebarCollapsed }) => (
   <Wrapper>
-    <Sidebar collapsed={this.isSidebarCollapsed()}>
-      <SidebarMain logo={Logo}>
-        <SidebarMainMenu exact to="/" icon="bot">
-          Demo
-        </SidebarMainMenu>
-        <SidebarMainMenu to="/docs" icon="docs">
-          Docs
-        </SidebarMainMenu>
-        <SidebarMainMenu to="/components" icon="method">
-          Components
-        </SidebarMainMenu>
-      </SidebarMain>
-      <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
-        <SidebarSubMenu exact to="/docs">
-          Index
-        </SidebarSubMenu>
-        <SidebarSubMenu exact to="/docs/page">
-          Page
-        </SidebarSubMenu>
-      </SidebarSub>
-    </Sidebar>
-    <Content>{children}</Content>
+    <SidebarAndContent>
+      <Sidebar collapsed={isSidebarCollapsed}>
+        <SidebarMain logo={Logo}>
+          <SidebarMainMenu exact to="/" icon="bot">
+            Demo
+          </SidebarMainMenu>
+          <SidebarMainMenu to="/docs" icon="docs">
+            Docs
+          </SidebarMainMenu>
+          <SidebarMainMenu to="/components" icon="method">
+            Components
+          </SidebarMainMenu>
+        </SidebarMain>
+        <SidebarSub titleElement={<SidebarSubTitle>Docs</SidebarSubTitle>}>
+          <SidebarSubMenu exact to="/docs">
+            Index
+          </SidebarSubMenu>
+          <SidebarSubMenu exact to="/docs/page">
+            Page
+          </SidebarSubMenu>
+        </SidebarSub>
+      </Sidebar>
+      <Content>{children}</Content>
+    </SidebarAndContent>
   </Wrapper>
 );
 ```
