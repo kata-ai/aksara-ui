@@ -73,6 +73,10 @@ const typography = css`
     color: ${variables.colors.kataBlue} !important;
   }
 
+  .text-muted {
+    color: #6c757d !important;
+  }
+
   .text-success {
     color: ${variables.colors.green} !important;
   }
