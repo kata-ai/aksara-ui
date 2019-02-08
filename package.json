@@ -28,7 +28,6 @@
     "clean": "lerna run clean --stream",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "prepare": "yarn tsc",
-    "release": "yarn build && node build-scripts/dist/release/index.js",
     "lerna": "lerna",
     "lint": "tslint -p tsconfig.lint.json",
     "report-coverage": "codecov -f ./coverage/*.json",
