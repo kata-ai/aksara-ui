@@ -12,7 +12,6 @@
     { "path": "drawer" },
     { "path": "dropdown" },
     { "path": "form" },
-    { "path": "kata-kit" },
     { "path": "layout" },
     { "path": "loading" },
     { "path": "modal" },
