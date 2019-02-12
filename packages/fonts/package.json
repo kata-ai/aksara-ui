@@ -4,6 +4,7 @@
   "description": "Font-stack used for kata-kit.",
   "main": "N/A",
   "files": [
+    "fonts",
     "kata-icons.css",
     "museo-sans-rounded.css",
     "museo-sans.css"
