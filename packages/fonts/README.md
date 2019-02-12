@@ -30,3 +30,7 @@ We also provided some icon sets. To use them, import as follows:
 ```jsx
 import '@kata-kit/fonts/kata-icons.css';
 ```
+
+## License
+
+Please note that `@kata-kit/fonts` has a different license from the rest. While most Wicara packages are released under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html), the assets in this package remain under our copyright.

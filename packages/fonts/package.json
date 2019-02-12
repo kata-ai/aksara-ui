@@ -3,9 +3,14 @@
   "version": "0.7.0-beta.1",
   "description": "Font-stack used for kata-kit.",
   "main": "N/A",
+  "files": [
+    "kata-icons.css",
+    "museo-sans-rounded.css",
+    "museo-sans.css"
+  ],
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <info@kata.ai>",
-  "license": "Apache-2.0",
+  "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {
     "access": "public"
   }
