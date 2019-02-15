@@ -21,7 +21,7 @@ import { Dashboard } from '@kata-kit/dashboard';
 const Component = () => (
   <Dashboard
     isStarter
-    title="kata-kit Demo"
+    title="Wicara Demo"
     headerContent={
       <p>
         This project is intended to test the look and feel of the kata-kit

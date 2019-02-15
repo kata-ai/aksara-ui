@@ -1,7 +1,7 @@
 {
   "name": "@kata-kit/form",
   "version": "0.7.0-beta.1",
-  "description": "kata-kit form components.",
+  "description": "Wicara form components.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",
