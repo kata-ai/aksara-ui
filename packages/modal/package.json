@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/modal",
-  "version": "0.7.0-beta.2",
+  "version": "0.7.0",
   "description": "modal component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,9 +25,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@kata-kit/button": "^0.7.0-beta.1",
-    "@kata-kit/common": "^0.7.0-beta.2",
-    "@kata-kit/theme": "^0.7.0-beta.0",
+    "@kata-kit/button": "^0.7.0",
+    "@kata-kit/common": "^0.7.0",
+    "@kata-kit/theme": "^0.7.0",
     "classnames": "^2.2.6",
     "react-custom-scrollbars": "^4.2.1"
   },

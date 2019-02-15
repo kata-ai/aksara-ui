@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/assets",
-  "version": "0.7.0-beta.1",
+  "version": "0.7.0",
   "description": "Wicara asset package.",
   "main": "N/A",
   "repository": "https://github.com/kata-ai/wicara.git",

@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/badge",
-  "version": "0.7.0-beta.1",
+  "version": "0.7.0",
   "description": "Badge component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,7 +25,7 @@
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@kata-kit/theme": "^0.7.0-beta.0",
+    "@kata-kit/theme": "^0.7.0",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/common",
-  "version": "0.7.0-beta.2",
+  "version": "0.7.0",
   "description": "Common components, toolkits, and methods for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,8 +25,8 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/assets": "^0.7.0-beta.1",
-    "@kata-kit/theme": "^0.7.0-beta.0",
+    "@kata-kit/assets": "^0.7.0",
+    "@kata-kit/theme": "^0.7.0",
     "classnames": "^2.2.6",
     "focus-trap": "^3.0.0"
   },
