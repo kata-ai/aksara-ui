@@ -1,6 +1,6 @@
 # @kata-kit/badge
 
-> Badge component for kata-kit.
+> Badge component for Wicara.
 
 ## Install
 

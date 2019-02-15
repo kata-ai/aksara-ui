@@ -1,6 +1,6 @@
 # @kata-kit/common
 
-> Common components, toolkits, and methods for kata-kit.
+> Common components, toolkits, and methods for Wicara.
 
 ## Install
 

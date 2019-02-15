@@ -1,6 +1,6 @@
 # @kata-kit/banner
 
-> Banner component for kata-kit.
+> Banner component for Wicara.
 
 ## Install
 

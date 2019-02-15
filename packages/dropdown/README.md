@@ -1,6 +1,6 @@
 # @kata-kit/dropdown
 
-> Dropdown component for kata-kit.
+> Dropdown component for Wicara.
 
 ## Install
 

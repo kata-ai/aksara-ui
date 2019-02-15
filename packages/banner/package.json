@@ -1,7 +1,7 @@
 {
   "name": "@kata-kit/banner",
   "version": "0.7.0-beta.1",
-  "description": "Banner component for kata-kit.",
+  "description": "Banner component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",

@@ -1,7 +1,7 @@
 {
   "name": "@kata-kit/pagination",
   "version": "0.7.0-beta.1",
-  "description": "Pagination component for kata-kit.",
+  "description": "Pagination component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",

@@ -1,6 +1,6 @@
 # @kata-kit/split-button
 
-> Split Button component for kata-kit.
+> Split Button component for Wicara.
 
 ## Install
 

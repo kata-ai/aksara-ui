@@ -1,7 +1,7 @@
 {
   "name": "@kata-kit/doc-utils",
   "version": "0.7.0-beta.1",
-  "description": "Utilities to help with building the kata-kit documentation.",
+  "description": "Utilities to help with building the Wicara documentation.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",

@@ -1,6 +1,6 @@
 # @kata-kit/card
 
-> Card component for kata-kit.
+> Card component for Wicara.
 
 ## Install
 

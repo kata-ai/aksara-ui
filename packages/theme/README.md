@@ -1,6 +1,6 @@
 # @kata-kit/theme
 
-> kata-kit theming framework.
+> Wicara theming framework.
 
 ## Install
 

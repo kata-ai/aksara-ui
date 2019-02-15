@@ -1,6 +1,6 @@
 # @kata-kit/loading
 
-> Loading component for kata-kit.
+> Loading component for Wicara.
 
 ## Install
 

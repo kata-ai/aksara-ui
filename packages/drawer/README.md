@@ -1,6 +1,6 @@
 # @kata-kit/drawer
 
-> Drawer component for kata-kit.
+> Drawer component for Wicara.
 
 ## Install
 

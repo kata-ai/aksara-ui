@@ -1,6 +1,6 @@
 # @kata-kit/fonts
 
-> Font-stack used for kata-kit.
+> Font-stack used for Wicara.
 
 ## Install
 

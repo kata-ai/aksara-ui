@@ -1,6 +1,6 @@
 # @kata-kit/button
 
-> Button component for kata-kit.
+> Button component for Wicara.
 
 ## Install
 

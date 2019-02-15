@@ -1,6 +1,6 @@
 # @kata-kit/form
 
-> kata-kit form components.
+> Wicara form components.
 
 ## Install
 

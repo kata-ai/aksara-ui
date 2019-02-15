@@ -1,6 +1,6 @@
 # @kata-kit/layout
 
-> Layout components for kata-kit.
+> Layout components for Wicara.
 
 ## Install
 

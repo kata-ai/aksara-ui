@@ -1,6 +1,6 @@
 # @kata-kit/reset
 
-> Provides necessary CSS resets to use kata-kit.
+> Provides necessary CSS resets to use Wicara.
 
 ## Install
 

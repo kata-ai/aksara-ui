@@ -1,6 +1,6 @@
 # @kata-kit/react-select
 
-> kata-kit wrapper for react-select.
+> Wicara wrapper for react-select.
 
 ## Install
 

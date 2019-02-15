@@ -1,6 +1,6 @@
 # @kata-kit/modal
 
-> Modal component for kata-kit.
+> Modal component for Wicara.
 
 ## Install
 

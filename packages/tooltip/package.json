@@ -1,7 +1,7 @@
 {
   "name": "@kata-kit/tooltip",
   "version": "0.7.0-beta.1",
-  "description": "Tooltip component for kata-kit.",
+  "description": "Tooltip component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",

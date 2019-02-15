@@ -1,6 +1,6 @@
 # @kata-kit/dashboard
 
-> Tooltip component for kata-kit.
+> Tooltip component for Wicara.
 
 ## Install
 

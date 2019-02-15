@@ -1,7 +1,7 @@
 {
   "name": "@kata-kit/card",
   "version": "0.7.0-beta.6",
-  "description": "Card component for kata-kit.",
+  "description": "Card component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",

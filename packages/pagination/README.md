@@ -1,6 +1,6 @@
 # @kata-kit/pagination
 
-> Pagination component for kata-kit.
+> Pagination component for Wicara.
 
 ## Install
 

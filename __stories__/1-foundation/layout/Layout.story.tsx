@@ -50,8 +50,8 @@ story.add('default', () => (
           title="Wicara Demo"
           headerContent={
             <p>
-              This project is intended to test the look and feel of the kata-kit
-              component, as well as a development environment.
+              This project is intended to test the look and feel of Wicara, as
+              well as a development environment.
             </p>
           }
         >
@@ -88,8 +88,7 @@ story.add('with SidebarSub', () => (
       <Content>
         <Dashboard
           title="Wicara Demo"
-          tooltip="This project is intended to test the look and feel of the kata-kit
-          component, as well as a development environment."
+          tooltip="This project is intended to test the look and feel of Wicara, as well as a development environment."
         >
           DashboardContent
         </Dashboard>

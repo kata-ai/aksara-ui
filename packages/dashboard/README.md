@@ -1,6 +1,6 @@
 # @kata-kit/dashboard
 
-> Dashboard component for kata-kit.
+> Dashboard component for Wicara.
 
 ## Install
 
