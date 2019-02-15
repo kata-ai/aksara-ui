@@ -317,12 +317,17 @@ const DashboardStarterHeading = styled('div')`
     #00cce9
   );
 
+  @media (min-width: 1024px) {
+    min-height: 360px;
+  }
+
   @media (min-width: 1280px /* $break-medium */) {
     padding: 40px 40px 136px;
   }
 
   @media (min-width: 1366px /* $break-large */) {
     padding: 48px 48px 136px;
+    min-height: 368px;
   }
 `;
 
