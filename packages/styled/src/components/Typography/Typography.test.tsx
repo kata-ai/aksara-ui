@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-testing-library';
+
 import {
   Text,
   Heading1,
@@ -8,6 +9,7 @@ import {
   Heading4,
   Paragraph
 } from './Typography';
+import { WicaraThemeProvider } from '../../Theme';
 
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
@@ -17,6 +19,16 @@ describe('Layout', () => {
     const { container } = render(<Text>hello</Text>);
 
     expect(container.firstChild).toBeInTheDocument();
+  });
+
+  test('generates color', () => {
+    const { container } = render(
+      <WicaraThemeProvider>
+        <Text color="kata02">hello</Text>
+      </WicaraThemeProvider>
+    );
+
+    expect(container.firstChild).toHaveStyleRule('color', '#006fe6');
   });
 
   test('generates margin', () => {
