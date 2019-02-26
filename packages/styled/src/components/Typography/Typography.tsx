@@ -35,7 +35,7 @@ export interface TypographyProps
   style?: React.CSSProperties;
 }
 
-export const Typography = styled.Text<TypographyProps>`
+export const Text = styled.Text<TypographyProps>`
   ${display};
   ${maxWidth};
   ${space};
@@ -46,9 +46,12 @@ export const Typography = styled.Text<TypographyProps>`
   ${verticalAlign};
 `;
 
-export const Heading1 = Typography.withComponent('h1');
-export const Heading2 = Typography.withComponent('h2');
-export const Heading3 = Typography.withComponent('h3');
-export const Heading4 = Typography.withComponent('h4');
-export const Heading5 = Typography.withComponent('h5');
-export const Heading6 = Typography.withComponent('h6');
+Text.displayName = 'Text';
+
+export const Heading1 = Text.withComponent('h1');
+export const Heading2 = Text.withComponent('h2');
+export const Heading3 = Text.withComponent('h3');
+export const Heading4 = Text.withComponent('h4');
+export const Heading5 = Text.withComponent('h5');
+export const Heading6 = Text.withComponent('h6');
+export const Paragraph = Text.withComponent('p');
