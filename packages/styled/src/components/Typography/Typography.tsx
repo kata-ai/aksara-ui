@@ -45,3 +45,10 @@ export const Typography = styled.Text<TypographyProps>`
   ${textAlign};
   ${verticalAlign};
 `;
+
+export const Heading1 = Typography.withComponent('h1');
+export const Heading2 = Typography.withComponent('h2');
+export const Heading3 = Typography.withComponent('h3');
+export const Heading4 = Typography.withComponent('h4');
+export const Heading5 = Typography.withComponent('h5');
+export const Heading6 = Typography.withComponent('h6');
