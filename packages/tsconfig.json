@@ -19,6 +19,7 @@
     { "path": "react-select" },
     { "path": "reset" },
     { "path": "split-button" },
+    { "path": "styled" },
     { "path": "theme" },
     { "path": "tooltip" }
   ]

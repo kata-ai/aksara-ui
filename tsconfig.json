@@ -11,7 +11,8 @@
     "paths": {
       "@storybook-utils/*": ["./.storybook/*"],
       "@docs/*": ["./docs/*"],
-      "@kata-kit/*": ["./packages/*/src"]
+      "@kata-kit/*": ["./packages/*/src"],
+      "@wicara/*": ["./packages/*/src"]
     }
   },
   "exclude": ["build-scripts", "scripts"]

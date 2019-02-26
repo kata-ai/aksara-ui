@@ -1,0 +1,39 @@
+{
+  "name": "@wicara/styled",
+  "version": "0.7.0",
+  "description": "Classes and utility functions for Wicara themes.",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "kata-kit:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/wicara.git",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn tsc && yarn rollup",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "prepublishOnly": "yarn build",
+    "rollup": "rollup -i ./tsc-out/index.js -c ../../rollup.config.js",
+    "tsc": "tsc -b .",
+    "watch": "yarn rollup -w",
+    "watch:tsc": "tsc-watch -b --preserveWatchOutput"
+  },
+  "author": "Kata.ai <info@kata.ai>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "styled-components": "^4.1.2"
+  },
+  "dependencies": {
+    "styled-system": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.13",
+    "@types/styled-components": "~4.0.2",
+    "@types/styled-system": "^3.2.2"
+  }
+}

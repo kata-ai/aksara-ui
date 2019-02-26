@@ -34,6 +34,7 @@ module.exports = (baseConfig, env, config) => {
   config.resolve.extensions.push('.ts', '.tsx', '.md', '.mdx');
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
     '@storybook-utils': path.resolve(__dirname, './'),
+    '@wicara': path.resolve(__dirname, '../', 'packages'),
     '@kata-kit': path.resolve(__dirname, '../', 'packages'),
     '@docs': path.resolve(__dirname, '../', 'docs')
   });
