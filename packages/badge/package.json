@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/badge",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Badge component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
