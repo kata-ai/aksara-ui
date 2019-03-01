@@ -17,15 +17,21 @@ export interface BadgeProps {
   color?: BadgeColors;
   /** Additional CSS classes to give to the component. */
   className?: string;
+  /** Additional CSS properties to give to the component. */
+  style?: React.CSSProperties;
 }
 
 export default class Badge extends React.Component<BadgeProps> {
   render() {
-    const { children, color } = this.props;
+    const { children, color, className, style } = this.props;
 
     return (
       <ThemedComponent color={color} themes={themes}>
-        {themeAttributes => <Root {...themeAttributes}>{children}</Root>}
+        {themeAttributes => (
+          <Root {...themeAttributes} className={className} style={style}>
+            {children}
+          </Root>
+        )}
       </ThemedComponent>
     );
   }
