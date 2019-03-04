@@ -3,6 +3,7 @@ import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import RootWrapper from '@storybook-utils/components/Wrapper';
 import {
+  Box,
   Text,
   WicaraThemeProvider,
   Heading1,
@@ -20,41 +21,41 @@ const story = storiesOf('Utilities|Typography', module).addDecorator(
 );
 
 story.add('Text', () => (
-  <div>
+  <Box>
     <Text>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, quam nostrum
       veritatis delectus harum accusantium commodi in itaque illo, vitae ratione
       deleniti dolores necessitatibus temporibus dolorem doloribus aperiam aut
       esse?
     </Text>
-  </div>
+  </Box>
 ));
 
 story.add('Headings', () => (
-  <div>
+  <Box>
     <Text as="h1">h1. Heading</Text>
     <Text as="h2">h2. Heading</Text>
     <Text as="h3">h3. Heading</Text>
     <Text as="h4">h4. Heading</Text>
     <Text as="h5">h5. Heading</Text>
     <Text as="h6">h6. Heading</Text>
-  </div>
+  </Box>
 ));
 
 story.add('Paragraph', () => (
-  <div>
+  <Box>
     <Paragraph>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, quam nostrum
       veritatis delectus harum accusantium commodi in itaque illo, vitae ratione
       deleniti dolores necessitatibus temporibus dolorem doloribus aperiam aut
       esse?
     </Paragraph>
-  </div>
+  </Box>
 ));
 
 story.add('Text Colors', () => (
-  <div>
+  <Box>
     <Heading1 color="kata02">h1. Heading with kata02</Heading1>
     <Text color="red">Text with red</Text>
-  </div>
+  </Box>
 ));
