@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { breakpoints, spacing, colors, fontSizes } from './utils/variables';
+import { breakpoints, spacing, colors, fontSizes } from '../../utils';
 
 export const themeProps = {
   colors,

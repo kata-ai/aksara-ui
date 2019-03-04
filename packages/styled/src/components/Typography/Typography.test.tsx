@@ -7,9 +7,9 @@ import {
   Heading2,
   Heading3,
   Heading4,
-  Paragraph
-} from './Typography';
-import { WicaraThemeProvider } from '../../Theme';
+  Paragraph,
+  WicaraThemeProvider
+} from '../..';
 
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
