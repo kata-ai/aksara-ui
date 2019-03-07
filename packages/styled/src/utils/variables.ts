@@ -124,16 +124,16 @@ export const layerShadows = {
 };
 
 /** Space margins in px units */
-export const spacing = {
-  spacing2Xs: 2,
-  spacingXs: 4,
-  spacingSm: 8,
-  spacingSmMd: 12,
-  spacingMd: 16,
-  spacingLg: 24,
-  spacingXl: 40,
-  spacing2Xl: 64,
-  spacing3Xl: 80
+export const space = {
+  2: 2,
+  4: 4,
+  8: 8,
+  12: 12,
+  16: 16,
+  24: 24,
+  40: 40,
+  64: 64,
+  80: 80
 };
 
 /**

@@ -1,6 +1,6 @@
 # @wicara/styled
 
-> Classes and utility functions for Wicara themes.
+> Theming, primitived, and base styled-components theming interface for Wicara.
 
 ## Install
 
@@ -13,4 +13,16 @@ npm install @wicara/styled
 
 ## Usage
 
-TODO!
+### WicaraThemeProvider
+
+`WicaraThemeProvider` injects default themes for the `styled-system` style props.
+
+```tsx
+import { WicaraThemeProvider, Text } from '@wicara/styled';
+
+const Component = () => (
+  <WicaraThemeProvider>
+    <Text color="kata02">I can now have the `kata02` color!</Text>
+  </WicaraThemeProvider>
+);
+```
