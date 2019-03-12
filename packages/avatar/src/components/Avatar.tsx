@@ -8,7 +8,7 @@ import ThemedComponent from '@kata-kit/theme';
 export interface AvatarProps {
   src: any;
   /** Size of the avatar. */
-  size?: 24 | 40;
+  size?: number;
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Additional CSS styles to give to the component. */
