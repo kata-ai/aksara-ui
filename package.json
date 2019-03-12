@@ -143,6 +143,11 @@
       "jsx",
       "json"
     ],
+    "modulePathIgnorePatterns": ["lib"],
+    "moduleNameMapper": {
+      "@kata-kit/[^\/]$": "<rootDir>packages/$1/src",
+      "@wicara/[^\/]$": "<rootDir>packages/$1/src"
+    },
     "testMatch": [
       "<rootDir>/packages/*/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/packages/*/src/**/?(*.)(spec|test).ts?(x)"
