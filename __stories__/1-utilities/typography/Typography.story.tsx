@@ -3,9 +3,9 @@ import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import RootWrapper from '@storybook-utils/components/Wrapper';
 import {
+  WicaraThemeProvider,
   Box,
   Text,
-  WicaraThemeProvider,
   Heading1,
   Paragraph
 } from 'packages/styled/src';

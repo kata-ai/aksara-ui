@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
 import RootWrapper from '@storybook-utils/components/Wrapper';
-import { Box, Text, WicaraThemeProvider } from 'packages/styled/src';
+import { WicaraThemeProvider, Box, Text } from 'packages/styled/src';
 
 const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper>
