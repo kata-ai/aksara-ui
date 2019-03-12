@@ -3,7 +3,7 @@ import { css, ThemedStyledProps } from 'styled-components';
 
 export interface AvatarBaseProps {
   /** Size of the avatar. */
-  size?: 24 | 40;
+  size?: number;
 }
 
 const styles = (props: ThemedStyledProps<AvatarBaseProps, ThemeAttributes>) =>
