@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/avatar",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Avatar component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
