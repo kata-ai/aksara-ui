@@ -7,6 +7,7 @@ import {
   InputTextarea,
   InputGroup,
   InputAddon,
+  FormHelp,
   FormError
 } from '..';
 
@@ -22,6 +23,7 @@ describe('Form', () => {
       <FormGroup>
         <FormLabel htmlFor="textDummy">Text input</FormLabel>
         <InputText data-testid="text-input" placeholder="Type here..." />
+        <FormHelp>Some help text.</FormHelp>
       </FormGroup>
     );
 

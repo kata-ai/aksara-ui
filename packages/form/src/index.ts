@@ -5,6 +5,7 @@ import InputAddon from './components/InputAddon';
 
 import FormGroup from './components/FormGroup';
 import FormLabel from './components/FormLabel';
+import FormHelp from './components/FormHelp';
 import FormError from './components/FormError';
 
 export {
@@ -13,6 +14,7 @@ export {
   InputTextarea,
   FormGroup,
   FormLabel,
+  FormHelp,
   FormError,
   InputAddon
 };

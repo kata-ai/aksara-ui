@@ -3,7 +3,7 @@ import { ThemeAttributes, variables } from '@kata-kit/theme';
 
 export const FormErrorBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
   css`
-    margin: ${variables.spaces.space1} 0;
+    margin: 4px 0;
     color: ${props.theme.textColor};
     display: block;
     font-size: 11px;
@@ -14,7 +14,7 @@ export const FormErrorBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
 export const FormLabelBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
   css`
     display: block;
-    margin-bottom: ${variables.spaces.space1};
+    margin-bottom: 4px;
     font-size: 12px;
     font-weight: bold;
     font-style: normal;
@@ -24,6 +24,14 @@ export const FormLabelBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
     text-align: left;
     color: ${props.theme.textColor};
   `;
+
+export const FormHelpBase = css`
+  display: inline-block;
+  margin-top: 4px;
+  font-size: ${variables.fontSizes.deka}px;
+  line-height: ${variables.lineHeights.deka};
+  color: ${variables.colors.neutral07};
+`;
 
 export const InputTextBase = (props: ThemedStyledProps<{}, ThemeAttributes>) =>
   css`
