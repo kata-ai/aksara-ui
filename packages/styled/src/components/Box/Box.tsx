@@ -57,7 +57,8 @@ export interface BoxProps
 }
 
 /**
- * Box is a view with all styled-system hooks added to it. You can use it as
+ * Box is a view with all styled-system hooks added to it. You can use it as a
+ * base component for all display elements.
  */
 export const Box = styled.View<BoxProps>`
   ${background};
