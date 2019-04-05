@@ -1,9 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import themes from '../theme';
 import styles from '../styles';
-import ThemedComponent from '@kata-kit/theme';
 
 export interface AvatarProps {
   src: any;
@@ -15,32 +13,19 @@ export interface AvatarProps {
   style?: React.CSSProperties;
 }
 
-export default class Avatar extends React.Component<AvatarProps> {
-  static defaultProps = {
-    size: 40
-  };
+const Avatar: React.SFC<AvatarProps> = ({ className, style, size, src }) => (
+  <Root className={className} style={style} size={size}>
+    <img src={src} />
+  </Root>
+);
 
-  render() {
-    const { src, size, className, style } = this.props;
+Avatar.defaultProps = {
+  size: 40,
+  className: undefined,
+  style: undefined
+};
 
-    return (
-      <ThemedComponent themes={themes}>
-        {themeAttributes => (
-          <Root
-            className={className}
-            style={style}
-            theme={themeAttributes}
-            size={size}
-          >
-            <Image src={src} />
-          </Root>
-        )}
-      </ThemedComponent>
-    );
-  }
-}
-
-const Image = styled('img')``;
+export default Avatar;
 
 const Root = styled('div')`
   ${styles};

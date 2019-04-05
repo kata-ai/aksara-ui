@@ -1,9 +1,9 @@
-import { ThemeAttributes, variables } from '@kata-kit/theme';
+import { colors } from '@wicara/styled';
 
-export const defaultTheme: ThemeAttributes = {
-  backgroundColor: variables.colors.gray10,
-  textColor: variables.colors.gray80,
-  borderColor: variables.colors.gray30
+export const defaultTheme = {
+  backgroundColor: colors.gray10,
+  textColor: colors.gray80,
+  borderColor: colors.gray30
 };
 
 const themes = {
