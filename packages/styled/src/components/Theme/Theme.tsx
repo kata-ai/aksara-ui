@@ -11,7 +11,11 @@ export const themeProps = {
 
 /** ThemeProvider wrapper. */
 export const WicaraThemeProvider: React.FC = props => {
-  return <ThemeProvider theme={themeProps}>{props.children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={themeProps}>
+      <>{props.children}</>
+    </ThemeProvider>
+  );
 };
 
 /** Spacing units as union type. */

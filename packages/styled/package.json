@@ -32,7 +32,6 @@
     "styled-system": "^3.2.1"
   },
   "devDependencies": {
-    "@types/react": "^16.7.13",
     "@types/styled-system": "^3.2.2"
   }
 }

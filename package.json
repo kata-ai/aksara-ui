@@ -71,7 +71,7 @@
     "@types/storybook__addon-knobs": "^3.4.1",
     "@types/storybook__addon-options": "^4.0.0",
     "@types/storybook__react": "^4.0.0",
-    "@types/styled-components": "^4.1.6",
+    "@types/styled-components": "^4.1.12",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
@@ -121,6 +121,10 @@
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.3.3333",
     "url-loader": "^1.1.1"
+  },
+  "resolutions": {
+    "@types/react": "16.7.22",
+    "@types/react-dom": "16.0.11"
   },
   "jest": {
     "collectCoverageFrom": [
