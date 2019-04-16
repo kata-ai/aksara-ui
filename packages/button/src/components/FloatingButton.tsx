@@ -40,6 +40,7 @@ export class FloatingButton extends React.Component<FloatingButtonProps> {
   static defaultProps = {
     color: 'primary',
     type: 'button',
+    size: 40,
     active: false,
     disabled: false
   };
@@ -81,6 +82,7 @@ export class FloatingButton extends React.Component<FloatingButtonProps> {
         {themeAttributes => (
           <FloatingButtonWrapper
             type={type}
+            size={size}
             className={classes}
             onClick={this.onClick}
             disabled={disabled}
@@ -89,7 +91,7 @@ export class FloatingButton extends React.Component<FloatingButtonProps> {
           >
             {isLoading ? (
               <>
-                <LoaderCircle size={40} />
+                <LoaderCircle size={size} />
               </>
             ) : (
               <i className={`icon-${icon}`} />
@@ -115,8 +117,9 @@ const popIn = keyframes`
 const { transitionFast, transitionEasing } = variables.transitions;
 
 const FloatingButtonWrapper = styled('button')`
-  ${ButtonBase} height: 40px;
-  width: 40px;
+  ${ButtonBase}
+  height: ${props => (props.size === 'sm' ? '32px' : '40px')};
+  width: ${props => (props.size === 'sm' ? '32px' : '40px')};
   font-weight: 500;
   border-radius: 50%;
   line-height: 1;

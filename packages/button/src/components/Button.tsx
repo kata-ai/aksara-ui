@@ -176,6 +176,7 @@ const isIconStyles = css`
 
 export const ButtonWrapper = styled('button')`
   ${props => ButtonBase(props)};
+  width: ${props => (props.block ? '100%' : 'auto')};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};
   font-weight: ${props => (props.size === 'sm' ? '700' : '500')};

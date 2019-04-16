@@ -130,7 +130,9 @@ const InvisibleText = styled('span')`
 `;
 
 const SupportButtonWrapper = styled('button')`
-  ${ButtonBase} padding: 8px 16px;
+  ${ButtonBase}
+  width: ${props => (props.block ? '100%' : 'auto')};
+  padding: 8px 16px;
   border-radius: 4px;
   font-weight: 700;
   font-size: 11px;

@@ -64,11 +64,17 @@ story.add(
 story.add(
   'FloatingButton',
   () => (
-    <div>
-      <FloatingButton icon="bot" />
-      <FloatingButton icon="bot" disabled />{' '}
-      <FloatingButton icon="bot" isLoading />{' '}
-    </div>
+    <>
+      <div style={{ marginBottom: 8 }}>
+        <FloatingButton icon="bot" /> <FloatingButton icon="bot" disabled />{' '}
+        <FloatingButton icon="bot" isLoading />{' '}
+      </div>
+      <div>
+        <FloatingButton icon="bot" size="sm" />{' '}
+        <FloatingButton icon="bot" size="sm" disabled />{' '}
+        <FloatingButton icon="bot" size="sm" isLoading />{' '}
+      </div>
+    </>
   ),
   {
     info: {
