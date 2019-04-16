@@ -208,6 +208,8 @@ export const ButtonWrapper = styled('button')`
       props.isIcon ? props.backgroundColorHover : '#c2c7c8'};
     border-color: ${props =>
       props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8')};
+    color: ${variables.colors.white};
+    opacity: 0.65;
 
     &:hover {
       background-color: ${props =>

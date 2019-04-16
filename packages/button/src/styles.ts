@@ -46,11 +46,6 @@ const ButtonBase = (props: ButtonBaseProps) =>
       cursor: pointer;
     }
 
-    &.disabled,
-    &:disabled {
-      opacity: 0.65;
-    }
-
     &.icon {
       height: 32px;
       width: 32px;

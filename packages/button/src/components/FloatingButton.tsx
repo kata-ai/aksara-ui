@@ -85,13 +85,13 @@ export class FloatingButton extends React.Component<FloatingButtonProps> {
             size={size}
             className={classes}
             onClick={this.onClick}
-            disabled={disabled}
+            disabled={disabled || isLoading}
             {...props}
             {...themeAttributes}
           >
             {isLoading ? (
               <>
-                <LoaderCircle size={size} />
+                <LoaderCircle size={size === 'sm' ? 32 : 40} />
               </>
             ) : (
               <i className={`icon-${icon}`} />
