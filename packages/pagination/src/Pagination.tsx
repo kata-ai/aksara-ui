@@ -33,8 +33,8 @@ class Pagination extends React.Component<PaginationProps, PaginationState> {
     const maxButtons = 5;
     const pageButtons: React.ReactText[] = [];
 
-    let startPage;
-    let endPage;
+    let startPage: number;
+    let endPage: number;
 
     if (maxButtons && maxButtons < total) {
       startPage = Math.max(
