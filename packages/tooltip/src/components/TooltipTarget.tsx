@@ -1,11 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import contains from 'dom-helpers/query/contains';
+import { flowRight as compose } from 'lodash-es';
 import { Overlay } from 'react-overlays';
-import omit from 'lodash-es/omit';
-import filter from 'lodash-es/filter';
-import compose from 'lodash-es/flowRight';
+import contains from 'dom-helpers/query/contains';
 
 const isExists = (needle: string, haystack: string | string[]): boolean => {
   if (Array.isArray(haystack)) {
@@ -17,9 +15,9 @@ const isExists = (needle: string, haystack: string | string[]): boolean => {
 
 const composeFunctions = (...funcs) => {
   // filter valid functions
-  const validFuncs = filter(funcs, f => f !== null || f === 'function').filter(
-    f => f
-  );
+  const validFuncs = funcs
+    .filter(f => f !== null || f === 'function')
+    .filter(f => f);
 
   return compose(validFuncs);
 };
@@ -59,25 +57,11 @@ interface TooltipTargetState {
   show: boolean;
 }
 
-/**
- * Handle default props using interface.
- * @see https://github.com/DefinitelyTyped/DefinitelyTyped/issues/11640#issuecomment-295155472
- */
-interface DefaultProps {
-  defaultShow: boolean;
-  placement: string;
-  trigger: string | string[];
-  delay: number;
-  onClick(): void;
-}
-
-type PropsWithDefault = TooltipTargetProps & DefaultProps;
-
 export default class TooltipTarget extends React.Component<
   TooltipTargetProps,
   TooltipTargetState
 > {
-  static defaultProps: Partial<TooltipTargetProps> = {
+  static defaultProps = {
     defaultShow: false,
     placement: 'right',
     trigger: ['click', 'hover', 'focus'],
@@ -229,6 +213,7 @@ export default class TooltipTarget extends React.Component<
   }
 
   render() {
+    const { defaultShow, ...props } = this.props;
     const {
       children,
       component,
@@ -238,9 +223,9 @@ export default class TooltipTarget extends React.Component<
       onMouseOut,
       onFocus,
       onBlur,
-      ...props
-    } = omit(this.props as PropsWithDefault, ['defaultShow']);
-    this.overlay = this.createOverlay(component, props);
+      ...rest
+    } = props;
+    this.overlay = this.createOverlay(component, rest);
 
     // Check if children only has ONE child. It will throw error if it has more than one child.
     // Ref: https://reactjs.org/docs/react-api.html#reactchildrenonly
@@ -250,14 +235,14 @@ export default class TooltipTarget extends React.Component<
 
     childTrigger.onClick = composeFunctions(childProps.onClick, onClick);
 
-    if (isExists('click', trigger)) {
+    if (trigger && isExists('click', trigger)) {
       childTrigger.onClick = composeFunctions(
         childTrigger.onClick,
         this.handleToggle
       );
     }
 
-    if (isExists('hover', trigger)) {
+    if (trigger && isExists('hover', trigger)) {
       childTrigger.onMouseOver = composeFunctions(
         childProps.onMouseOver,
         onMouseOver,
@@ -271,7 +256,7 @@ export default class TooltipTarget extends React.Component<
       );
     }
 
-    if (isExists('focus', trigger)) {
+    if (trigger && isExists('focus', trigger)) {
       childTrigger.onFocus = composeFunctions(
         childProps.onFocus,
         onFocus,
