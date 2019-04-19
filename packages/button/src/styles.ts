@@ -15,7 +15,6 @@ const ButtonBase = (props: ButtonBaseProps) =>
   css`
     display: ${props.block ? 'block' : 'inline-block'};
     position: relative;
-    width: ${props.block ? '100%' : 'auto'};
     background: none;
     letter-spacing: 0.2px;
     border: 1px solid transparent;
@@ -45,12 +44,6 @@ const ButtonBase = (props: ButtonBaseProps) =>
 
     &:not(:disabled):not(.disabled) {
       cursor: pointer;
-    }
-
-    &.disabled,
-    &:disabled {
-      opacity: 0.65;
-      color: ${variables.colors.white};
     }
 
     &.icon {

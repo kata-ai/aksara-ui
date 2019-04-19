@@ -176,6 +176,7 @@ const isIconStyles = css`
 
 export const ButtonWrapper = styled('button')`
   ${props => ButtonBase(props)};
+  width: ${props => (props.block ? '100%' : 'auto')};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};
   font-weight: ${props => (props.size === 'sm' ? '700' : '500')};
@@ -207,6 +208,8 @@ export const ButtonWrapper = styled('button')`
       props.isIcon ? props.backgroundColorHover : '#c2c7c8'};
     border-color: ${props =>
       props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8')};
+    color: ${variables.colors.white};
+    opacity: 0.65;
 
     &:hover {
       background-color: ${props =>

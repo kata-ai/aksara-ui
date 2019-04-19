@@ -74,6 +74,7 @@ const HollowButtonWrapper = styled('button')`
   justify-content: center;
   align-items: center;
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};
+  width: ${props => (props.block ? '100%' : 'auto')};
   height: ${props => (props.size === 'sm' ? '32px' : '40px')};
   border-radius: 6px;
   font-weight: 700;
