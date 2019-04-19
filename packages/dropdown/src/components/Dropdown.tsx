@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import omit from 'lodash-es/omit';
 import styled from 'styled-components';
 
 import { Theme } from '@kata-kit/theme';
@@ -90,14 +89,17 @@ class Dropdown extends React.Component<DropdownProps> {
   }
 
   render() {
+    // Omit these properties from `this.props`
+    const { isOpen: _, ...props } = this.props;
+
     const {
       className,
       children,
       block,
       dropDirection,
       disabled,
-      ...props
-    } = omit(this.props, ['isOpen']);
+      ...rest
+    } = props;
 
     const classes = classNames(className);
 
@@ -111,7 +113,7 @@ class Dropdown extends React.Component<DropdownProps> {
             dropDirection={dropDirection}
             disabled={disabled}
             {...themeAttributes}
-            {...props}
+            {...rest}
           >
             {React.Children.map(children, (Item: React.ReactElement<any>) => {
               return Item &&
@@ -120,7 +122,7 @@ class Dropdown extends React.Component<DropdownProps> {
                   type => type === (Item.type as any).displayName
                 )
                 ? React.cloneElement(Item, {
-                    ...props,
+                    ...rest,
                     dropDirection,
                     isOpen: this.state.isOpen,
                     toggle: this.toggle,

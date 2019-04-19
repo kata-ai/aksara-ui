@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
-import omit from 'lodash-es/omit';
 import classNames from 'classnames';
 
 import { ButtonColors, ButtonSizes } from '@kata-kit/button';
@@ -85,6 +84,13 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
   }
 
   render() {
+    // Omit these properties from `this.props`
+    const {
+      dropDirection: _dropDirection,
+      toggle: _toggle,
+      ...props
+    } = this.props;
+
     const {
       tag,
       children,
@@ -93,13 +99,13 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
       block,
       isOpen,
       filled,
-      ...props
-    } = omit(this.props, ['direction', 'toggle']);
+      ...rest
+    } = props;
 
     if (!React.isValidElement(children)) {
       return (
         <DropdownToggleButton
-          {...props}
+          {...rest}
           block
           isOpen={isOpen}
           className={classNames(
@@ -116,7 +122,7 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
     }
 
     return (
-      <div {...props} className={className} onClick={this.onClick}>
+      <div {...rest} className={className} onClick={this.onClick}>
         {this.renderChildren()}
       </div>
     );

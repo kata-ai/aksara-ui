@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import isNumber from 'lodash-es/isNumber';
 import classnames from 'classnames';
 
 import { Theme } from '@kata-kit/theme';
@@ -104,9 +103,9 @@ class Pagination extends React.Component<PaginationProps, PaginationState> {
                   page === current && 'is-active'
                 )}
                 onClick={() =>
-                  isNumber(page) ? this.props.onSelect(page) : null
+                  typeof page === 'number' ? this.props.onSelect(page) : null
                 }
-                disabled={!isNumber(page)}
+                disabled={typeof page !== 'number'}
               >
                 {page}
               </PaginationButton>

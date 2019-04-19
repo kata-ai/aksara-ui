@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import omit from 'lodash-es/omit';
 
 import { Theme } from '@kata-kit/theme';
 
@@ -29,14 +28,8 @@ export default class Tooltip extends React.Component<TooltipProps> {
       show,
       children,
       targetNodePosition,
-      ...props
-    } = omit(this.props, [
-      'delay',
-      'positionTop',
-      'positionLeft',
-      'arrowOffsetTop',
-      'arrowOffsetLeft'
-    ]);
+      ...rest
+    } = this.props;
 
     const arrowStyles: any = {};
 
@@ -45,7 +38,7 @@ export default class Tooltip extends React.Component<TooltipProps> {
       targetNodePosition.top
     ) {
       arrowStyles.top = `${Math.ceil(
-        targetNodePosition.top - props.style.top
+        targetNodePosition.top - rest.style.top
       )}px`;
     }
 
@@ -54,16 +47,14 @@ export default class Tooltip extends React.Component<TooltipProps> {
       targetNodePosition.left
     ) {
       arrowStyles.left = `${Math.ceil(
-        targetNodePosition.left -
-          props.style.left -
-          targetNodePosition.width / 2
+        targetNodePosition.left - rest.style.left - targetNodePosition.width / 2
       )}px`;
     }
 
     return (
       <Theme>
         {themeAttributes => (
-          <Root role="tooltip" show={show} {...props}>
+          <Root role="tooltip" show={show} {...rest}>
             <Inner>{children}</Inner>
           </Root>
         )}
