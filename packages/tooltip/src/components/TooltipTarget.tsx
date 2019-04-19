@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { flowRight as compose } from 'lodash-es';
 import { Overlay } from 'react-overlays';
+import compose from 'lodash-es/flowRight';
 import contains from 'dom-helpers/query/contains';
 
 const isExists = (needle: string, haystack: string | string[]): boolean => {
