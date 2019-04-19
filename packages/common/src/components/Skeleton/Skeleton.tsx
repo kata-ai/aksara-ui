@@ -15,7 +15,7 @@ interface SkeletonProps {
   small?: boolean;
 }
 
-const Skeleton: React.FC<SkeletonProps> = ({
+const Skeleton: React.SFC<SkeletonProps> = ({
   className,
   numberOfLines,
   small

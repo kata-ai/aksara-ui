@@ -27,15 +27,13 @@
   "dependencies": {
     "@kata-kit/button": "^0.7.2",
     "@kata-kit/theme": "^0.7.0",
-    "classnames": "^2.2.6",
-    "lodash-es": "^4.17.11"
+    "classnames": "^2.2.6"
   },
   "peerDependencies": {
     "react": "^16.3.0",
     "styled-components": "^4.1.2"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.7",
-    "@types/lodash-es": "^4.17.1"
+    "@types/classnames": "^2.2.7"
   }
 }
