@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/dropdown",
-  "version": "0.7.2",
+  "version": "0.7.3-canary.0",
   "description": "Dropdown component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
