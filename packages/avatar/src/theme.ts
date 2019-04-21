@@ -1,6 +1,6 @@
-import { ThemeAttributes, variables } from '@kata-kit/theme';
+import { variables } from '@kata-kit/theme';
 
-export const defaultTheme: ThemeAttributes = {
+export const defaultTheme = {
   backgroundColor: variables.colors.gray10,
   textColor: variables.colors.gray80,
   borderColor: variables.colors.gray30

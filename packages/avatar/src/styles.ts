@@ -1,12 +1,13 @@
 import { ThemeAttributes } from '@kata-kit/theme';
-import { css, ThemedStyledProps } from 'styled-components';
+import { css } from 'styled-components';
 
 export interface AvatarBaseProps {
   /** Size of the avatar. */
   size?: number;
+  theme: ThemeAttributes;
 }
 
-const styles = (props: ThemedStyledProps<AvatarBaseProps, ThemeAttributes>) =>
+export const AvatarBase = (props: AvatarBaseProps) =>
   css`
     display: inline-block;
     position: relative;
@@ -27,5 +28,3 @@ const styles = (props: ThemedStyledProps<AvatarBaseProps, ThemeAttributes>) =>
       object-fit: cover;
     }
   `;
-
-export default styles;
