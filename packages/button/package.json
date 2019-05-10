@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/button",
-  "version": "0.7.2",
+  "version": "0.7.3-canary.0",
   "description": "Button component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,8 +25,8 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/loading": "^0.7.0",
-    "@kata-kit/theme": "^0.7.0",
+    "@kata-kit/loading": "^0.7.1-canary.0",
+    "@kata-kit/theme": "^0.7.1-canary.0",
     "classnames": "^2.2.6",
     "polished": "^2.3.3"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/doc-utils",
-  "version": "0.7.3",
+  "version": "0.7.4-canary.0",
   "description": "Utilities to help with building the Wicara documentation.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -22,10 +22,10 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/badge": "^0.7.1",
-    "@kata-kit/button": "^0.7.2",
-    "@kata-kit/loading": "^0.7.0",
-    "@kata-kit/theme": "^0.7.0",
+    "@kata-kit/badge": "^0.7.2-canary.0",
+    "@kata-kit/button": "^0.7.3-canary.0",
+    "@kata-kit/loading": "^0.7.1-canary.0",
+    "@kata-kit/theme": "^0.7.1-canary.0",
     "polished": "^2.3.3",
     "react-live": "^1.12.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/dropdown",
-  "version": "0.7.3-canary.0",
+  "version": "0.7.3-canary.1",
   "description": "Dropdown component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,9 +25,9 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/button": "^0.7.2",
-    "@kata-kit/loading": "^0.7.0",
-    "@kata-kit/theme": "^0.7.0",
+    "@kata-kit/button": "^0.7.3-canary.0",
+    "@kata-kit/loading": "^0.7.1-canary.0",
+    "@kata-kit/theme": "^0.7.1-canary.0",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {
