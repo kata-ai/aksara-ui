@@ -20,7 +20,8 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ]
+    ],
+    "nohoist": []
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
