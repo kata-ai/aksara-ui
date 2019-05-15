@@ -28,7 +28,7 @@
     "build": "lerna run build --stream",
     "clean": "lerna run clean --stream",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "prepare": "yarn tsc",
+    "prepare": "yarn build",
     "lerna": "lerna",
     "lint": "tslint -p tsconfig.lint.json",
     "report-coverage": "codecov -f ./coverage/*.json",
