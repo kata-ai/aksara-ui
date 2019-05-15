@@ -3,15 +3,15 @@ export const colors = {
   // Blue
   /** Blue01 - Glitter */
   blue01: '#e7f1fc',
-  /** Blue02 - Glitter */
-  blue02: '#e7f1fc',
-  /** Blue03 - Glitter */
-  blue03: '#e7f1fc',
-  /** Blue04 - Glitter */
-  blue04: '#e7f1fc',
+  /** Blue02 - Pale Aqua */
+  blue02: '#b9d7f8',
+  /** Blue03 - Jordy Blue */
+  blue03: '#8bbdf3',
+  /** Blue04 - Blue Jeans */
+  blue04: '#5ca3ef',
   /** Blue05 - Bleu de France */
   blue05: '#2e89ea',
-  /** Blue06 - Brandeis Blus */
+  /** Blue06 - Brandeis Blue */
   blue06: '#006fe6',
   /** Blue07 - Absolute Zero */
   blue07: '#005bbd',
@@ -20,9 +20,30 @@ export const colors = {
   /** Blue09 - Dark Midnight Blue */
   blue09: '#003369',
   /** blue10 - Maastricht Blue */
-  blue10: '#001f3f'
+  blue10: '#001f3f',
 
   // Indigo
+  /** Indigo01 - Soap */
+  indigo01: '#e7eaf4',
+  /** Indigo02 - Light Steel Blue */
+  indigo02: '#b9c0df',
+  /** Indigo03 - Ceil */
+  indigo03: '#8b97c9',
+  /** Indigo04 - Glaucous */
+  indigo04: '#5c6db4',
+  /** Indigo05 - Pigment Blue */
+  indigo05: '#2e89ea',
+  /** Indigo06 - Indigo */
+  indigo06: '#006fe6',
+  /** Indigo07 - Dark Imperial Blue */
+  indigo07: '#005bbd',
+  /** Indigo08 - Royal Blue */
+  indigo08: '#004793',
+  /** Indigo09 - Maastricht Blue */
+  indigo09: '#003369',
+  /** Indigo10 - Black Indigo */
+  indigo10: '#001f3f'
+
   // Turquoise
   // Green
   // Yellow

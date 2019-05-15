@@ -1,11 +1,10 @@
 import { css } from 'styled-components';
-import { variables } from '@kata-kit/theme';
-import resolveColor from '../utils/resolveColor';
+import { textSizes, colors } from '../../../../utils';
 
 const base = css`
   :root {
-    font-size: ${variables.fontProps.rootFontSize};
-    line-height: ${variables.fontProps.rootLineHeight};
+    font-size: ${textSizes[300].fontSize};
+    line-height: ${textSizes[300].lineHeight};
   }
 
   html,
@@ -15,26 +14,14 @@ const base = css`
     height: 100%;
   }
 
-  body {
-    font-family: 'Museo Sans Rounded', -apple-system, BlinkMacSystemFont,
-      'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-      'Segoe UI Emoji', 'Segoe UI Symbol';
-    background-color: ${resolveColor('backgroundColor')};
-    color: ${resolveColor('textColor')};
-    font-weight: 500;
-  }
-
   a {
-    color: ${variables.colors.kataBlue};
+    color: ${colors.blue05};
     text-decoration: none;
 
-    &:hover {
-      color: ${variables.colors.darkKataBlue};
+    &:hover,
+    &:focus {
+      color: ${colors.indigo04};
       text-decoration: underline;
-    }
-
-    &:active {
-      color: ${variables.colors.darkKataBlue};
     }
   }
 
@@ -52,10 +39,6 @@ const base = css`
   }
 
   .noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
 
