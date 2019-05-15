@@ -17,7 +17,6 @@
     { "path": "modal" },
     { "path": "pagination" },
     { "path": "react-select" },
-    { "path": "reset" },
     { "path": "split-button" },
     { "path": "theme" },
     { "path": "tooltip" }
