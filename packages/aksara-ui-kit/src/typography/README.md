@@ -1,0 +1,46 @@
+# Typography
+
+Typography primitives for Aksara UI Kit.
+
+## Usage
+
+### `Heading` component
+
+The heading component is used for all headings.
+
+```jsx
+import { AksaraReset, Heading } from '@aksara/ui-kit';
+
+export default function MyApp({ children }) {
+  return (
+    <KataReset>
+      <Heading size={200}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={300}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={400}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={500}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={600}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={700}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={800}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={900}>We are making AI technology accessible to everyone</Heading>
+    </KataReset>
+  );
+}
+```
+
+Heading renders a `h2` by default. If you would like to determine which HTML element it renders, you can use the `as` prop.
+
+```jsx
+<KataReset>
+  <Heading size={700} as="h3">
+    We are making AI technology accessible to everyone
+  </Heading>
+</KataReset>
+```
+
+### `Text` component
+
+[TODO]
+
+### `Paragraph` component
+
+[TODO]

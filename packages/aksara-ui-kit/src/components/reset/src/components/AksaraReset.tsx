@@ -1,5 +1,6 @@
 import * as React from 'react';
 import GlobalStyles from './GlobalStyles';
+import { Theme } from '../../../../Theme';
 
 interface ResetProps {
   className?: string;
@@ -11,10 +12,10 @@ export default class AksaraReset extends React.Component<ResetProps> {
     const { children } = this.props;
 
     return (
-      <>
+      <Theme>
         <GlobalStyles />
         {children}
-      </>
+      </Theme>
     );
   }
 }

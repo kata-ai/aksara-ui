@@ -1,11 +1,55 @@
 import * as React from 'react';
-
 import {
-  determineFontDimensions,
-  StyledText,
-  TypographyProps
-} from './StyledText';
+  display,
+  maxWidth,
+  space,
+  fontSize,
+  fontWeight,
+  lineHeight,
+  color,
+  textAlign,
+  verticalAlign,
+  ColorProps,
+  FontSizeProps,
+  FontWeightProps,
+  LineHeightProps,
+  MaxWidthProps,
+  SpaceProps,
+  DisplayProps,
+  TextAlignProps,
+  VerticalAlignProps
+} from 'styled-system';
+
+import { determineFontDimensions } from './utils';
+import { styled } from '../utils/elements';
 import { TextSizes } from '../Theme';
+
+interface TypographyProps
+  extends DisplayProps,
+    MaxWidthProps,
+    SpaceProps,
+    FontSizeProps,
+    FontWeightProps,
+    ColorProps,
+    LineHeightProps,
+    TextAlignProps,
+    VerticalAlignProps {}
+
+/**
+ * This is a base `Text` element to handle typography elements.
+ */
+const StyledText = styled.Text<TypographyProps>`
+  ${display};
+  ${maxWidth};
+  ${space};
+  ${fontSize};
+  ${fontWeight}
+  ${lineHeight};
+  ${color};
+  ${textAlign};
+  ${verticalAlign};
+  letter-spacing: -0.05px;
+`;
 
 interface TextProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
@@ -28,7 +72,7 @@ export const Text: React.SFC<TextProps> = ({ children, size, ...rest }) => (
 );
 
 Text.defaultProps = {
-  as: 'p',
+  as: 'span',
   size: 300,
   margin: 0
 };

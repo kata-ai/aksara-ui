@@ -7,10 +7,7 @@ import { TypographyProps } from './StyledText';
  * @param textType Either `text` or `heading`.
  * @param size The size key.
  */
-export function determineFontDimensions(
-  textType: keyof FontSizes,
-  size: number = 400
-): TypographyProps {
+export function determineFontDimensions(textType: keyof FontSizes, size: number = 400): TypographyProps {
   const match = themeProps.fontSizes[textType][size];
 
   if (textType === 'heading') {

@@ -22,7 +22,7 @@ import {
 
 import { determineFontDimensions } from './utils';
 import { styled } from '../utils/elements';
-import { HeadingSizes } from '../Theme';
+import { TextSizes } from '../Theme';
 
 interface TypographyProps
   extends DisplayProps,
@@ -48,33 +48,33 @@ const StyledText = styled.Text<TypographyProps>`
   ${color};
   ${textAlign};
   ${verticalAlign};
-  letter-spacing: -0.24px;
+  letter-spacing: -0.05px;
 `;
 
-interface Heading extends TypographyProps {
+interface ParagraphProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
   style?: React.CSSProperties;
   /** What HTML element to render the text as. */
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
-  /** Size value of the heading. */
-  size?: keyof HeadingSizes;
+  /** Size value of the text. */
+  size?: keyof TextSizes;
 }
 
 /**
- * Heading component provided as a styled component primitive.
+ * Text component provided as a styled component primitive.
  */
-export const Heading: React.SFC<Heading> = ({ children, as, size, ...rest }) => (
-  <StyledText as={as} {...determineFontDimensions('heading', size)} {...rest}>
+export const Paragraph: React.SFC<ParagraphProps> = ({ children, size, ...rest }) => (
+  <StyledText {...determineFontDimensions('text', size)} {...rest}>
     {children}
   </StyledText>
 );
 
-Heading.defaultProps = {
-  as: 'h2',
-  size: 800,
+Paragraph.defaultProps = {
+  as: 'p',
+  size: 300,
   margin: 0
 };
 
-Heading.displayName = 'Heading';
+Paragraph.displayName = 'Paragraph';
