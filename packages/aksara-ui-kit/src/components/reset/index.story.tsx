@@ -5,7 +5,7 @@ import { AksaraReset } from '.';
 
 const readme = require('./README.md');
 
-storiesOf('Reset', module).add(
+storiesOf('Foundations/Reset', module).add(
   'default',
   () => (
     <AksaraReset>
@@ -23,5 +23,10 @@ storiesOf('Reset', module).add(
       <button>Do Something</button>
     </AksaraReset>
   ),
-  { notes: { markdown: readme } }
+  {
+    notes: { markdown: readme },
+    props: {
+      propTablesExclude: ['Theme', 'AksaraReset']
+    }
+  }
 );

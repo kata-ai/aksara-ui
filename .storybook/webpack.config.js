@@ -7,6 +7,21 @@ module.exports = ({ config, mode }) => {
         options: {
           presets: [require.resolve('babel-preset-react-app')]
         }
+      },
+      {
+        loader: require.resolve('react-docgen-typescript-loader'),
+        options: {
+          propFilter: prop => {
+            if (prop.parent == null) {
+              return true;
+            }
+
+            // Don't include extended React classes in props table.
+            return (
+              prop.parent.fileName.indexOf('node_modules/@types/react') < 0
+            );
+          }
+        }
       }
     ]
   });

@@ -1,15 +1,16 @@
-import * as React from 'react';
 import {
   display,
   maxWidth,
   space,
   fontSize,
+  fontWeight,
   lineHeight,
   color,
   textAlign,
   verticalAlign,
   ColorProps,
   FontSizeProps,
+  FontWeightProps,
   LineHeightProps,
   MaxWidthProps,
   SpaceProps,
@@ -25,15 +26,11 @@ export interface TypographyProps
     MaxWidthProps,
     SpaceProps,
     FontSizeProps,
+    FontWeightProps,
     ColorProps,
     LineHeightProps,
     TextAlignProps,
-    VerticalAlignProps {
-  /** Additional CSS classes to add to the component. */
-  className?: string;
-  /** Additional CSS properties to add to the component. */
-  style?: React.CSSProperties;
-}
+    VerticalAlignProps {}
 
 /**
  * This is a base `Text` element to handle typography elements.
@@ -43,6 +40,7 @@ export const StyledText = styled.Text<TypographyProps>`
   ${maxWidth};
   ${space};
   ${fontSize};
+  ${fontWeight}
   ${lineHeight};
   ${color};
   ${textAlign};

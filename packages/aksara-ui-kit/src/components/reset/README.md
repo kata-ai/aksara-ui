@@ -21,10 +21,10 @@ import { GlobalStyles } from '@aksara/ui-kit';
 
 export default function MyApp({ children }) {
   return (
-    <>
+    <React.Fragment>
       <GlobalStyles />
       {children}
-    </>
+    </React.Fragment>
   );
 }
 ```

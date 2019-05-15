@@ -104,7 +104,7 @@ export const textSizes = {
 };
 
 /** Space values (in px) mapped by size designators */
-export const spaces = {
+export const space = {
   /** Equivalent to 2px */
   xxxs: 2,
   /** Equivalent to 4px */

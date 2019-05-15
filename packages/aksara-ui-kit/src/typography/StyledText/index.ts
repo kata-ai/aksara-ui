@@ -1,2 +1,2 @@
 export * from './StyledText';
-export * from './determineFontSize';
+export * from './determineFontDimensions';

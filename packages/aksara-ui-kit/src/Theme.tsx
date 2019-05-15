@@ -1,8 +1,16 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { breakpoints, headingSizes, textSizes } from './utils/variables';
+import {
+  breakpoints,
+  headingSizes,
+  textSizes,
+  colors,
+  space
+} from './utils/variables';
 
 export const themeProps = {
+  colors,
+  space,
   breakpoints: [breakpoints.sm, breakpoints.md, breakpoints.lg, breakpoints.xl],
   fontSizes: {
     heading: headingSizes,
