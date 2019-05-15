@@ -39,7 +39,31 @@ Heading renders a `h2` by default. If you would like to determine which HTML ele
 
 ### `Text` component
 
-[TODO]
+The text component is used for single line text.
+
+```jsx
+import { AksaraReset, Text } from '@aksara/ui-kit';
+
+export default function MyApp({ children }) {
+  return (
+    <KataReset>
+      <Text size={200}>We are making AI technology accessible to everyone</Text>
+      <Text size={300}>We are making AI technology accessible to everyone</Text>
+      <Text size={400}>We are making AI technology accessible to everyone</Text>
+    </KataReset>
+  );
+}
+```
+
+Text renders a `span` by default. If you would like to determine which HTML element it renders, you can use the `as` prop.
+
+```jsx
+<KataReset>
+  <Text size={300} as="p">
+    We are making AI technology accessible to everyone
+  </Heading>
+</KataReset>
+```
 
 ### `Paragraph` component
 

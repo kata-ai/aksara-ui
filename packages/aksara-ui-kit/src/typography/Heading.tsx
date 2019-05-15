@@ -73,6 +73,7 @@ export const Heading: React.SFC<Heading> = ({ children, as, size, ...rest }) => 
 
 Heading.defaultProps = {
   as: 'h2',
+  color: '#2b2f33',
   size: 800,
   margin: 0
 };

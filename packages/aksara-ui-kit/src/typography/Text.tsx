@@ -73,6 +73,7 @@ export const Text: React.SFC<TextProps> = ({ children, size, ...rest }) => (
 
 Text.defaultProps = {
   as: 'span',
+  color: '#293232',
   size: 300,
   margin: 0
 };

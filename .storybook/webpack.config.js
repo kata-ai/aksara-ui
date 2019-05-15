@@ -18,7 +18,8 @@ module.exports = ({ config, mode }) => {
 
             // Don't include extended React classes in props table.
             return (
-              prop.parent.fileName.indexOf('node_modules/@types/react') < 0
+              prop.parent.fileName.indexOf('node_modules/@types/react') < 0 ||
+              prop.parent.fileName.indexOf('node_modules/@types/styled-system') < 0
             );
           }
         }

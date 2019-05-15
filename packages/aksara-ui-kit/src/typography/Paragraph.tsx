@@ -73,6 +73,7 @@ export const Paragraph: React.SFC<ParagraphProps> = ({ children, size, ...rest }
 
 Paragraph.defaultProps = {
   as: 'p',
+  color: '#293232',
   size: 300,
   margin: 0
 };
