@@ -1,4 +1,3 @@
-export * from './components';
-export * from './typography';
+export * from './foundations';
 export * from './utils';
 export * from './Theme';

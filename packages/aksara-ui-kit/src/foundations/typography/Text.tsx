@@ -20,9 +20,9 @@ import {
 } from 'styled-system';
 
 import { determineFontDimensions } from './utils';
-import { primitives } from '../utils/primitives';
-import { TextSizes } from '../Theme';
-import { Omit } from '../utils/types';
+import { primitives } from '../../utils/primitives';
+import { TextSizes } from '../../Theme';
+import { Omit } from '../../utils/types';
 
 interface TypographyProps
   extends DisplayProps,

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { AksaraReset } from '.';
+import { AksaraReset } from '../reset';
 
 const readme = require('./README.md');
 

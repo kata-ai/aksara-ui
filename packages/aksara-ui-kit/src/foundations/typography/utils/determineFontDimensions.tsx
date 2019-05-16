@@ -1,4 +1,4 @@
-import { themeProps, FontSizes } from '../../Theme';
+import { themeProps, FontSizes } from '../../../Theme';
 
 /**
  * Determines font sizes based on the text type and size index.

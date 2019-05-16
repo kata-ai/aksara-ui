@@ -20,8 +20,8 @@ import {
 } from 'styled-system';
 
 import { determineFontDimensions } from './utils';
-import { primitives } from '../utils/primitives';
-import { TextSizes } from '../Theme';
+import { primitives } from '../../utils/primitives';
+import { TextSizes } from '../../Theme';
 
 interface TypographyProps
   extends DisplayProps,
@@ -64,7 +64,7 @@ interface ParagraphProps extends TypographyProps {
 }
 
 /**
- * Text component provided as a styled component primitive.
+ * Paragraph component provided as a styled component primitive.
  */
 export const Paragraph: React.SFC<ParagraphProps> = ({ children, as, size, ...rest }) => (
   <StyledText as={as} {...determineFontDimensions('text', size)} {...rest}>

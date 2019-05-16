@@ -1,9 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { Heading, Text, Paragraph } from '.';
-import { AksaraReset } from '../components';
-import { Link } from './Text';
+import { Heading, Text, Paragraph, Link } from '.';
+import { AksaraReset } from '..';
 
 const readme = require('./README.md');
 
