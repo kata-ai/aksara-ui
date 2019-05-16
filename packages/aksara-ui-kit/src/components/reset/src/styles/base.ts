@@ -3,8 +3,8 @@ import { textSizes, colors } from '../../../../utils';
 
 const base = css`
   :root {
-    font-size: ${textSizes[300].fontSize};
-    line-height: ${textSizes[300].lineHeight};
+    font-size: ${textSizes[300].fontSize}px;
+    line-height: ${textSizes[300].lineHeight}px;
   }
 
   html,

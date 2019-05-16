@@ -20,8 +20,9 @@ import {
 } from 'styled-system';
 
 import { determineFontDimensions } from './utils';
-import { styled } from '../utils/elements';
+import { primitives } from '../utils/primitives';
 import { TextSizes } from '../Theme';
+import { Omit } from '../utils/types';
 
 interface TypographyProps
   extends DisplayProps,
@@ -39,7 +40,7 @@ interface TypographyProps
 /**
  * This is a base `Text` element to handle typography elements.
  */
-const StyledText = styled.Text<TypographyProps>`
+const StyledText = primitives.Text<TypographyProps>`
   ${display};
   ${maxWidth};
   ${space};
@@ -66,8 +67,8 @@ interface TextProps extends TypographyProps {
 /**
  * Text component provided as a styled component primitive.
  */
-export const Text: React.SFC<TextProps> = ({ children, size, ...rest }) => (
-  <StyledText {...determineFontDimensions('text', size)} {...rest}>
+export const Text: React.SFC<TextProps> = ({ children, as, size, ...rest }) => (
+  <StyledText as={as} {...determineFontDimensions('text', size)} {...rest}>
     {children}
   </StyledText>
 );
@@ -80,3 +81,17 @@ Text.defaultProps = {
 };
 
 Text.displayName = 'Text';
+
+interface LinkProps extends Omit<TextProps, 'as'>, React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+
+/**
+ * Link component provided as a styled component primitive.
+ */
+export const Link: React.SFC<LinkProps> = ({ children, size, ...rest }) => {
+  const Component = StyledText.withComponent('a');
+  return (
+    <Component {...determineFontDimensions('text', size)} {...rest}>
+      {children}
+    </Component>
+  );
+};

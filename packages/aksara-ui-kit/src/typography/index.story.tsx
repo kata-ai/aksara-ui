@@ -1,10 +1,9 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { Heading } from '.';
+import { Heading, Text, Paragraph } from '.';
 import { AksaraReset } from '../components';
-import { Text } from './Text';
-import { Paragraph } from './Paragraph';
+import { Link } from './Text';
 
 const readme = require('./README.md');
 
@@ -58,6 +57,11 @@ storiesOf('Foundations/Typography', module)
         </div>
         <div>
           <Text size={200}>We are making AI technology accessible to everyone</Text>
+        </div>
+        <div>
+          <Link size={300} href="https://www.youtube.com/watch?v=lAReYN4aMow">
+            We are making AI technology accessible to everyone
+          </Link>
         </div>
       </AksaraReset>
     ),

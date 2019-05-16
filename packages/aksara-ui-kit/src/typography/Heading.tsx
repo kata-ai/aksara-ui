@@ -20,7 +20,7 @@ import {
 } from 'styled-system';
 
 import { determineFontDimensions } from './utils';
-import { styled } from '../utils/elements';
+import { primitives } from '../utils/primitives';
 import { HeadingSizes } from '../Theme';
 
 interface TypographyProps
@@ -39,7 +39,7 @@ interface TypographyProps
 /**
  * This is a base `Text` element to handle typography elements.
  */
-const StyledText = styled.Text<TypographyProps>`
+const StyledText = primitives.Text<TypographyProps>`
   ${display};
   ${maxWidth};
   ${space};

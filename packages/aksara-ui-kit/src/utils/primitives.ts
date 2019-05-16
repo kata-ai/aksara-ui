@@ -1,6 +1,6 @@
 import styledBase from 'styled-components';
 
-export const styled = {
+export const primitives = {
   Image: styledBase.img,
   Text: styledBase.div,
   View: styledBase.div
