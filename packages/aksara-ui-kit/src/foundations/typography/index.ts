@@ -1,3 +1,3 @@
-export * from './Heading';
-export * from './Paragraph';
-export * from './Text';
+export * from './components/Heading';
+export * from './components/Paragraph';
+export * from './components/Text';

@@ -19,9 +19,9 @@ import {
   VerticalAlignProps
 } from 'styled-system';
 
-import { determineFontDimensions } from './utils';
-import { primitives } from '../../utils/primitives';
-import { TextSizes } from '../../Theme';
+import { determineFontDimensions } from '../utils';
+import { primitives } from '../../../utils/primitives';
+import { TextSizes } from '../../../Theme';
 
 interface TypographyProps
   extends DisplayProps,

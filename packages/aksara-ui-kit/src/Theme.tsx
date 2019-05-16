@@ -26,3 +26,5 @@ export const Theme = (props: { children: React.ReactNode }) => {
 export type FontSizes = typeof themeProps.fontSizes;
 export type HeadingSizes = typeof headingSizes;
 export type TextSizes = typeof textSizes;
+export type Color = keyof typeof themeProps['colors'];
+export type Space = keyof typeof themeProps['space'];

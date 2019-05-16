@@ -1,6 +1,6 @@
 import * as React from 'react';
 import GlobalStyles from './GlobalStyles';
-import { Theme } from '../../../../Theme';
+import { Theme } from '../../../Theme';
 
 interface ResetProps {
   className?: string;

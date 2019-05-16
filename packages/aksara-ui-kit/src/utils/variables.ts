@@ -42,13 +42,27 @@ export const colors = {
   /** Indigo09 - Maastricht Blue */
   indigo09: '#003369',
   /** Indigo10 - Black Indigo */
-  indigo10: '#001f3f'
+  indigo10: '#001f3f',
 
   // Turquoise
   // Green
   // Yellow
   // Red
   // Grey
+  grey01: '#fafafa',
+  grey02: '#edeeee',
+  grey03: '#cacece',
+  grey04: '#858e8d',
+  grey05: '#626e6d',
+  grey06: '#404e4d',
+  grey07: '#293232',
+  grey08: '#1e2423',
+  grey09: '#121615',
+  grey10: '#060807',
+
+  // Helper colors
+  white: '#fff',
+  black: '#000'
 };
 
 /** Heading size values mapped by size number. */
