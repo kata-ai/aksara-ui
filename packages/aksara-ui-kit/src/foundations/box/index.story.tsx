@@ -43,8 +43,13 @@ storiesOf('Foundations/Box', module)
     () => (
       <AksaraReset>
         <Box padding="sm" height="100%" width="100%" bg="grey01">
-          <BorderBox borderRadius={8} width={[1, 1, 1 / 2, 1 / 3]} bg="white">
-            <Box padding="sm">
+          <BorderBox borderRadius={8} width={[null, null, 1, 1 / 2, 1 / 3]} noOverflow>
+            <img
+              src="https://picsum.photos/id/873/1072/708"
+              alt="Example image"
+              style={{ width: '100%', height: 248, objectFit: 'cover' }}
+            />
+            <Box padding="sm" bg="white">
               <Heading size={500}>Lorem Ipsum</Heading>
               <Paragraph marginTop="xs">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis doloremque quisquam

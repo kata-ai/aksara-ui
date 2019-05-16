@@ -25,6 +25,11 @@ const base = css`
     }
   }
 
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
   #root {
     transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
     -webkit-transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);

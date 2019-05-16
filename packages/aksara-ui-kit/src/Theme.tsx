@@ -5,7 +5,7 @@ import { breakpoints, headingSizes, textSizes, colors, space } from './utils/var
 export const themeProps = {
   colors,
   space,
-  breakpoints: [breakpoints.sm, breakpoints.md, breakpoints.lg, breakpoints.xl],
+  breakpoints: [`${breakpoints.sm}px`, `${breakpoints.md}px`, `${breakpoints.lg}px`, `${breakpoints.xl}px`],
   fontSizes: {
     heading: headingSizes,
     text: textSizes
