@@ -52,7 +52,7 @@ const StyledText = styled.Text<TypographyProps>`
   letter-spacing: -0.24px;
 `;
 
-interface Heading extends TypographyProps {
+interface HeadingProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
@@ -66,7 +66,7 @@ interface Heading extends TypographyProps {
 /**
  * Heading component provided as a styled component primitive.
  */
-export const Heading: React.SFC<Heading> = ({ children, as, size, ...rest }) => (
+export const Heading: React.SFC<HeadingProps> = ({ children, as, size, ...rest }) => (
   <StyledText as={as} {...determineFontDimensions('heading', size)} {...rest}>
     {children}
   </StyledText>
