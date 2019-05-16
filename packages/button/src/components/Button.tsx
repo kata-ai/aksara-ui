@@ -15,19 +15,11 @@ import { InvisibleText } from '../helpers';
 //   styles specific to `@kata-kit/pagination` is still extended here.
 //   Possible solution: upgrade to `styled-components@^3.4.0`.
 
-export type ButtonColors =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'danger'
-  | 'warning'
-  | 'info'
-  | 'white';
+export type ButtonColors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'white';
 
 export type ButtonSizes = 'lg' | 'sm';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */
@@ -88,16 +80,7 @@ export class Button extends React.Component<ButtonProps> {
   }
 
   render() {
-    const {
-      className,
-      color,
-      type,
-      loading,
-      disabled,
-      isIcon,
-      children,
-      ...props
-    } = this.props;
+    const { className, color, type, loading, disabled, isIcon, children, ...props } = this.props;
 
     return (
       <ThemedComponent color={color} themes={themes.button}>
@@ -114,10 +97,7 @@ export class Button extends React.Component<ButtonProps> {
           >
             {loading ? (
               <>
-                <LoaderCircle
-                  className={classnames(color, className)}
-                  size={30}
-                />
+                <LoaderCircle className={classnames(color, className)} size={30} />
                 <InvisibleText>{children}</InvisibleText>
               </>
             ) : (
@@ -185,8 +165,7 @@ export const ButtonWrapper = styled('button')`
   &:not(:disabled):not(.disabled) {
     color: ${props => props.textColor};
     border-color: ${props => props.borderColor};
-    background-color: ${props =>
-      props.isIcon ? 'transparent' : props.backgroundColor};
+    background-color: ${props => (props.isIcon ? 'transparent' : props.backgroundColor)};
 
     &:hover {
       color: ${props => props.linkColorHover};
@@ -204,18 +183,14 @@ export const ButtonWrapper = styled('button')`
 
   &:disabled,
   &.disabled {
-    background-color: ${props =>
-      props.isIcon ? props.backgroundColorHover : '#c2c7c8'};
-    border-color: ${props =>
-      props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8')};
+    background-color: ${props => (props.isIcon ? props.backgroundColorHover : '#c2c7c8')};
+    border-color: ${props => (props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8'))};
     color: ${variables.colors.white};
     opacity: 0.65;
 
     &:hover {
-      background-color: ${props =>
-        props.isIcon ? props.backgroundColorHover : '#c2c7c8'};
-      border-color: ${props =>
-        props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8')};
+      background-color: ${props => (props.isIcon ? props.backgroundColorHover : '#c2c7c8')};
+      border-color: ${props => (props.isIcon ? 'transparent' : darken(0.1, '#c2c7c8'))};
     }
   }
 

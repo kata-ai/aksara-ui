@@ -19,7 +19,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/aksara-ui-kit"
     ],
     "nohoist": []
   },
@@ -64,10 +64,10 @@
     "@types/jest": "^23.3.13",
     "@types/listr": "^0.13.0",
     "@types/node": "^10.12.18",
-    "@types/react": "^16.7.13",
-    "@types/react-dom": "^16.0.11",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
     "@types/storybook__react": "^4.0.1",
-    "@types/styled-components": "^4.1.6",
+    "@types/styled-components": "^4.1.15",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
     "codecov": "^3.1.0",
@@ -115,6 +115,11 @@
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.3.3333",
     "url-loader": "^1.1.1"
+  },
+  "resolutions": {
+    "@types/react": "16.8.17",
+    "@types/react-dom": "16.8.4",
+    "@types/styled-components": "4.1.15"
   },
   "jest": {
     "collectCoverageFrom": [

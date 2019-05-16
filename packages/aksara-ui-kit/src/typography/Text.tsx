@@ -9,7 +9,6 @@ import {
   color,
   textAlign,
   verticalAlign,
-  ColorProps,
   FontSizeProps,
   FontWeightProps,
   LineHeightProps,
@@ -30,10 +29,12 @@ interface TypographyProps
     SpaceProps,
     FontSizeProps,
     FontWeightProps,
-    ColorProps,
     LineHeightProps,
     TextAlignProps,
-    VerticalAlignProps {}
+    VerticalAlignProps {
+  /** Extended color props. */
+  color?: string;
+}
 
 /**
  * This is a base `Text` element to handle typography elements.
@@ -45,7 +46,7 @@ const StyledText = styled.Text<TypographyProps>`
   ${fontSize};
   ${fontWeight}
   ${lineHeight};
-  ${color};
+  ${color}
   ${textAlign};
   ${verticalAlign};
   letter-spacing: -0.05px;
