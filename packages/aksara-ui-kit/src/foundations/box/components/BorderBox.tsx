@@ -1,15 +1,10 @@
 import {
-  background,
   BackgroundProps,
-  height,
   HeightProps,
-  maxWidth,
   MaxWidthProps,
-  space as styledSpace,
   SpaceProps,
   borderRadius,
   BorderRadiusProps,
-  width,
   WidthProps
 } from 'styled-system';
 
@@ -26,7 +21,9 @@ export interface BorderBoxProps
     BorderRadiusProps,
     WidthProps,
     BoxProps {
+  /** Set to `true` to enable `overflow: hidden;`. */
   noOverflow?: boolean;
+  /** The color key for the border. */
   borderColor?: Color;
 }
 
@@ -36,11 +33,6 @@ export interface BorderBoxProps
 export const BorderBox = styledWrapper(Box)<BorderBoxProps>`
   border: 1px solid ${props => getColor(props.borderColor ? props.borderColor : 'grey02')};
   ${borderRadius};
-  ${background};
-  ${height};
-  ${maxWidth};
-  ${styledSpace};
-  ${width};
   ${props => props.noOverflow && 'overflow: hidden;'}
 `;
 

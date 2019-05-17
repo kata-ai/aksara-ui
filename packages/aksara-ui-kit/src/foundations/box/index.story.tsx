@@ -50,7 +50,7 @@ storiesOf('Foundations/Box', module)
               style={{ width: '100%', height: 248, objectFit: 'cover' }}
             />
             <Box padding="sm" bg="white">
-              <Heading size={500}>Lorem Ipsum</Heading>
+              <Heading size={500}>An Example Card</Heading>
               <Paragraph marginTop="xs">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis doloremque quisquam
                 sequi vel eaque aperiam vitae facere quia atque, hic, unde animi asperiores repudiandae quis ab enim
