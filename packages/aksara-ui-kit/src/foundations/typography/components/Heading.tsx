@@ -1,58 +1,18 @@
 import * as React from 'react';
-import {
-  display,
-  maxWidth,
-  space,
-  fontSize,
-  fontWeight,
-  lineHeight,
-  color,
-  textAlign,
-  verticalAlign,
-  FontSizeProps,
-  FontWeightProps,
-  LineHeightProps,
-  MaxWidthProps,
-  SpaceProps,
-  DisplayProps,
-  TextAlignProps,
-  VerticalAlignProps
-} from 'styled-system';
 
+import { Typography, TypographyProps } from './Typography';
 import { determineFontDimensions } from '../utils';
-import { primitives } from '../../../utils/primitives';
+import { styledWrapper as styled } from '../../../utils/primitives';
 import { HeadingSizes } from '../../../Theme';
-
-interface TypographyProps
-  extends DisplayProps,
-    MaxWidthProps,
-    SpaceProps,
-    FontSizeProps,
-    FontWeightProps,
-    LineHeightProps,
-    TextAlignProps,
-    VerticalAlignProps {
-  /** Extended color props. */
-  color?: string;
-}
 
 /**
  * This is a base `Text` element to handle typography elements.
  */
-const StyledText = primitives.Text<TypographyProps>`
-  ${display};
-  ${maxWidth};
-  ${space};
-  ${fontSize};
-  ${fontWeight}
-  ${lineHeight};
-  ${color};
-  ${textAlign};
-  ${verticalAlign};
+const StyledText = styled(Typography)`
   letter-spacing: -0.24px;
 `;
 
-interface HeadingProps extends TypographyProps {
+export interface HeadingProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */

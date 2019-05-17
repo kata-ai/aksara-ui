@@ -26,8 +26,8 @@ storiesOf('Foundations/Reset', module).add(
       <br />
 
       <div>
-        <label>Test input</label>
-        <input type="text" placeholder="Type something..." />
+        <label htmlFor="test">Test input</label>
+        <input id="test" name="test" type="text" placeholder="Type something..." />
       </div>
 
       <br />

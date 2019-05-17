@@ -105,6 +105,22 @@ export const headingSizes = {
 export const textSizes = {
   400: {
     fontSize: 16,
+    lineHeight: 20
+  },
+  300: {
+    fontSize: 14,
+    lineHeight: 20
+  },
+  200: {
+    fontSize: 12,
+    lineHeight: 16
+  }
+};
+
+/** Text size values mapped by size number. */
+export const paragraphSizes = {
+  400: {
+    fontSize: 16,
     lineHeight: 24
   },
   300: {

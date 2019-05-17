@@ -57,6 +57,19 @@ storiesOf('Foundations/Typography', module)
         <div>
           <Text size={200}>We are making AI technology accessible to everyone</Text>
         </div>
+      </AksaraReset>
+    ),
+    {
+      notes: { markdown: readme },
+      props: {
+        propTablesExclude: ['Theme', 'AksaraReset']
+      }
+    }
+  )
+  .add(
+    'link',
+    () => (
+      <AksaraReset>
         <div>
           <Link size={300} href="https://www.youtube.com/watch?v=lAReYN4aMow">
             We are making AI technology accessible to everyone
