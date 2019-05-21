@@ -40,8 +40,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
   el: HTMLDivElement;
 
   state = {
-    show: false,
-    visible: false
+    show: this.props.show,
+    visible: this.props.show
   };
 
   constructor(props: ModalProps) {
