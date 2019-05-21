@@ -10,8 +10,7 @@ import ButtonBase from '../styles';
 
 export type FloatingButtonColor = 'primary' | 'success' | 'danger' | 'warning';
 
-export interface FloatingButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface FloatingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */
@@ -19,7 +18,7 @@ export interface FloatingButtonProps
   /** Icon of the button */
   icon?: string;
   /** The size of the button. */
-  size?: 'lg' | 'sm' | '';
+  size?: 'lg' | 'sm';
   /** Additional CSS classes to give to the button. */
   className?: string;
   /** `onClick` event handler. */
@@ -63,17 +62,7 @@ export class FloatingButton extends React.Component<FloatingButtonProps> {
   }
 
   render() {
-    const {
-      className,
-      icon,
-      size,
-      color,
-      type,
-      active,
-      disabled,
-      isLoading,
-      ...props
-    } = this.props;
+    const { className, icon, size, color, type, active, disabled, isLoading, ...props } = this.props;
 
     const classes = classNames(color, active, className);
 

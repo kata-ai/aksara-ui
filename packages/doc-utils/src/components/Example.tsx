@@ -112,7 +112,7 @@ const PreviewReset = styled('div')`
   }
 `;
 
-const CodeWrapper = styled('div')`
+const CodeWrapper = styled('div')<ExampleState>`
   display: ${props => (props.codeIsVisible ? 'block' : 'none')};
   height: 100%;
   max-height: 300px;
@@ -128,19 +128,16 @@ const CodeWrapper = styled('div')`
   }
 `;
 
-const Wrapper = styled('div')`
+const Wrapper = styled('div')<ExampleState & ThemeAttributes>`
   margin: ${variables.spaces.space3} 0;
   padding: ${variables.spaces.space1};
-  background-color: ${props =>
-    props.codeIsVisible ? props.textColor : props.backgroundColor};
-  color: ${props =>
-    props.codeIsVisible ? props.backgroundColor : props.textColor};
+  background-color: ${props => (props.codeIsVisible ? props.textColor : props.backgroundColor)};
+  color: ${props => (props.codeIsVisible ? props.backgroundColor : props.textColor)};
   border-radius: ${variables.borderRadiuses.borderRadiusMedium};
   overflow: hidden;
 
   ${Title} {
-    color: ${props =>
-      props.codeIsVisible ? props.backgroundColor : props.textColor};
+    color: ${props => (props.codeIsVisible ? props.backgroundColor : props.textColor)};
   }
 `;
 

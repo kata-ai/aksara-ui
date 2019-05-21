@@ -54,7 +54,7 @@ const bounceDelay = keyframes`
 //   lg?: boolean;
 // }
 
-const Wrapper = styled('div')`
+const Wrapper = styled('div')<InfiniteScrollSpinnerProps>`
   width: auto;
   display: inline-block;
   text-align: center;

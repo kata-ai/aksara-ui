@@ -36,7 +36,11 @@ const directionLeft = css`
   margin-right: 8px;
 `;
 
-export const DropdownToggleIcon = styled('i')`
+interface CaretProps {
+  dropDirection?: DropdownDirection;
+}
+
+export const DropdownToggleIcon = styled('i')<CaretProps>`
   display: inline-block;
   position: absolute;
   right: 8px;
@@ -53,12 +57,7 @@ export const DropdownToggleIcon = styled('i')`
   ${props => props.dropDirection === 'left' && directionLeft}
 `;
 
-const Caret = (props: { dropDirection?: DropdownDirection }) => (
-  <DropdownToggleIcon
-    className="icon-arrow"
-    dropDirection={props.dropDirection}
-  />
-);
+const Caret = (props: CaretProps) => <DropdownToggleIcon className="icon-arrow" dropDirection={props.dropDirection} />;
 
 class DropdownToggle extends React.Component<DropdownToggleProps> {
   static defaultProps = {
@@ -85,22 +84,9 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
 
   render() {
     // Omit these properties from `this.props`
-    const {
-      dropDirection: _dropDirection,
-      toggle: _toggle,
-      ...props
-    } = this.props;
+    const { dropDirection: _dropDirection, toggle: _toggle, ...props } = this.props;
 
-    const {
-      tag,
-      children,
-      caret,
-      className,
-      block,
-      isOpen,
-      filled,
-      ...rest
-    } = props;
+    const { tag, children, caret, className, block, isOpen, filled, ...rest } = props;
 
     if (!React.isValidElement(children)) {
       return (
@@ -108,11 +94,7 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
           {...rest}
           block
           isOpen={isOpen}
-          className={classNames(
-            isOpen && 'is-open',
-            filled && 'is-filled',
-            className
-          )}
+          className={classNames(isOpen && 'is-open', filled && 'is-filled', className)}
           color={this.props.color}
           onClick={this.onClick}
         >
@@ -130,24 +112,24 @@ class DropdownToggle extends React.Component<DropdownToggleProps> {
 
   private renderChildren() {
     const { caret, dropDirection, children } = this.props;
-    if (!caret) {
-      return children;
+    if (caret) {
+      return (
+        <>
+          {children}
+          <Caret dropDirection={dropDirection} />
+        </>
+      ) as React.ReactNode;
     }
 
-    if (dropDirection === 'left') {
+    if (caret && dropDirection === 'left') {
       return (
         <>
           <Caret dropDirection={dropDirection} /> {children}
         </>
-      );
+      ) as React.ReactNode;
     }
 
-    return (
-      <>
-        {children}
-        <Caret dropDirection={dropDirection} />
-      </>
-    );
+    return children as React.ReactNode;
   }
 }
 

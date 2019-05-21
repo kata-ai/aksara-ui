@@ -9,14 +9,13 @@ import ButtonBase from '../styles';
 import themes from '../theme';
 import { ButtonColors } from './Button';
 
-export interface SupportButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface SupportButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Whether the button is disabled or not. */
   disabled?: boolean;
   /** The color of the button. */
   color?: ButtonColors;
   /** The size of the button. */
-  size?: 'lg' | 'sm' | '';
+  size?: 'lg' | 'sm';
   /** Whether the button is an icon button or not. */
   isIcon?: boolean;
   /** Additional CSS classes to give to the button. */
@@ -64,17 +63,7 @@ export class SupportButton extends React.Component<SupportButtonProps> {
   }
 
   render() {
-    const {
-      className,
-      size,
-      block,
-      active,
-      disabled,
-      isIcon,
-      outline,
-      loading,
-      ...props
-    } = this.props;
+    const { className, size, block, active, disabled, isIcon, outline, loading, ...props } = this.props;
 
     const classes = classNames(
       size ? `btn-${size}` : false,
@@ -100,10 +89,7 @@ export class SupportButton extends React.Component<SupportButtonProps> {
           >
             {loading ? (
               <>
-                <LoaderCircle
-                  data-testid="SupportButton-loaderCircle"
-                  size={30}
-                />
+                <LoaderCircle data-testid="SupportButton-loaderCircle" size={30} />
                 <InvisibleText>{this.props.children}</InvisibleText>
               </>
             ) : (
@@ -129,7 +115,7 @@ const InvisibleText = styled('span')`
   visibility: hidden;
 `;
 
-const SupportButtonWrapper = styled('button')`
+const SupportButtonWrapper = styled('button')<SupportButtonProps>`
   ${ButtonBase}
   width: ${props => (props.block ? '100%' : 'auto')};
   padding: 8px 16px;

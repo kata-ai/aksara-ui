@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import styled from 'styled-components';
 
-import { Theme } from '@kata-kit/theme';
+import { Theme, ThemeAttributes } from '@kata-kit/theme';
 
 import { DropdownDirection } from '../types';
 
@@ -61,11 +61,7 @@ class Dropdown extends React.Component<DropdownProps> {
       document.addEventListener('click', this.handleClickOutside as any, false);
     } else {
       // if dropdown will close then remove event listener handleClickOutside
-      document.removeEventListener(
-        'click',
-        this.handleClickOutside as any,
-        false
-      );
+      document.removeEventListener('click', this.handleClickOutside as any, false);
     }
 
     this.setState({ isOpen: !this.state.isOpen });
@@ -90,16 +86,9 @@ class Dropdown extends React.Component<DropdownProps> {
 
   render() {
     // Omit these properties from `this.props`
-    const { isOpen: _, ...props } = this.props;
+    const { isOpen: _, onSelect: _onSelect, ...props } = this.props;
 
-    const {
-      className,
-      children,
-      block,
-      dropDirection,
-      disabled,
-      ...rest
-    } = props;
+    const { className, children, block, dropDirection, disabled, ...rest } = props;
 
     const classes = classNames(className);
 
@@ -118,9 +107,7 @@ class Dropdown extends React.Component<DropdownProps> {
             {React.Children.map(children, (Item: React.ReactElement<any>) => {
               return Item &&
                 Item.type &&
-                ['DropdownMenu', 'DropdownToggle'].some(
-                  type => type === (Item.type as any).displayName
-                )
+                ['DropdownMenu', 'DropdownToggle'].some(type => type === (Item.type as any).displayName)
                 ? React.cloneElement(Item, {
                     ...rest,
                     dropDirection,
@@ -139,9 +126,8 @@ class Dropdown extends React.Component<DropdownProps> {
 
 export default Dropdown;
 
-const DropdownWrapper = styled('div')`
-  display: ${(props: DropdownProps) =>
-    props.block ? 'block' : 'inline-block'};
+const DropdownWrapper = styled('div')<DropdownProps & ThemeAttributes>`
+  display: ${(props: DropdownProps) => (props.block ? 'block' : 'inline-block')};
   position: relative;
   ${(props: DropdownProps) => (props.block ? 'width: 100%' : '')};
 `;

@@ -15,9 +15,7 @@ const isExists = (needle: string, haystack: string | string[]): boolean => {
 
 const composeFunctions = (...funcs) => {
   // filter valid functions
-  const validFuncs = funcs
-    .filter(f => f !== null || f === 'function')
-    .filter(f => f);
+  const validFuncs = funcs.filter(f => f !== null || f === 'function').filter(f => f);
 
   return compose(validFuncs);
 };
@@ -57,10 +55,7 @@ interface TooltipTargetState {
   show: boolean;
 }
 
-export default class TooltipTarget extends React.Component<
-  TooltipTargetProps,
-  TooltipTargetState
-> {
+export default class TooltipTarget extends React.Component<TooltipTargetProps, TooltipTargetState> {
   static defaultProps = {
     defaultShow: false,
     placement: 'right',
@@ -89,17 +84,13 @@ export default class TooltipTarget extends React.Component<
     this.hide = this.hide.bind(this);
     this.createOverlay = this.createOverlay.bind(this);
 
-    this.handleMouseOver = e =>
-      this.handleMouseOverOut(this.handleDelayedShow, e, 'fromElement');
-    this.handleMouseOut = e =>
-      this.handleMouseOverOut(this.handleDelayedHide, e, 'toElement');
+    this.handleMouseOver = e => this.handleMouseOverOut(this.handleDelayedShow, e, 'fromElement');
+    this.handleMouseOut = e => this.handleMouseOverOut(this.handleDelayedHide, e, 'toElement');
   }
 
   componentDidMount() {
     this.node = document.createElement('div');
-    this.targetNodePosition = (ReactDOM.findDOMNode(
-      this
-    ) as any).getBoundingClientRect();
+    this.targetNodePosition = (ReactDOM.findDOMNode(this) as any).getBoundingClientRect();
 
     this.renderOverlay();
   }
@@ -144,8 +135,7 @@ export default class TooltipTarget extends React.Component<
       return;
     }
 
-    const delay =
-      this.props.delayHide != null ? this.props.delayHide : this.props.delay;
+    const delay = this.props.delayHide != null ? this.props.delayHide : this.props.delay;
 
     if (!delay) {
       this.hide();
@@ -169,8 +159,7 @@ export default class TooltipTarget extends React.Component<
       return;
     }
 
-    const delay =
-      this.props.delayShow != null ? this.props.delayShow : this.props.delay;
+    const delay = this.props.delayShow != null ? this.props.delayShow : this.props.delay;
 
     if (!delay) {
       this.show();
@@ -198,11 +187,7 @@ export default class TooltipTarget extends React.Component<
 
   createOverlay(component: any, overlayProps: any) {
     return (
-      <Overlay
-        show={this.state.show}
-        target={this}
-        placement={overlayProps.placement}
-      >
+      <Overlay show={this.state.show} target={this} placement={overlayProps.placement}>
         {React.cloneElement(component, {
           ...overlayProps,
           show: this.state.show,
@@ -214,59 +199,30 @@ export default class TooltipTarget extends React.Component<
 
   render() {
     const { defaultShow, ...props } = this.props;
-    const {
-      children,
-      component,
-      trigger,
-      onClick,
-      onMouseOver,
-      onMouseOut,
-      onFocus,
-      onBlur,
-      ...rest
-    } = props;
+    const { children, component, trigger, onClick, onMouseOver, onMouseOut, onFocus, onBlur, ...rest } = props;
     this.overlay = this.createOverlay(component, rest);
 
     // Check if children only has ONE child. It will throw error if it has more than one child.
     // Ref: https://reactjs.org/docs/react-api.html#reactchildrenonly
-    const childElement = React.Children.only(children);
-    const childProps = childElement.props;
+    const childElement: any = React.Children.only(children);
+    const childProps: any = childElement.props;
     const childTrigger: any = {};
 
     childTrigger.onClick = composeFunctions(childProps.onClick, onClick);
 
     if (trigger && isExists('click', trigger)) {
-      childTrigger.onClick = composeFunctions(
-        childTrigger.onClick,
-        this.handleToggle
-      );
+      childTrigger.onClick = composeFunctions(childTrigger.onClick, this.handleToggle);
     }
 
     if (trigger && isExists('hover', trigger)) {
-      childTrigger.onMouseOver = composeFunctions(
-        childProps.onMouseOver,
-        onMouseOver,
-        this.handleMouseOver
-      );
+      childTrigger.onMouseOver = composeFunctions(childProps.onMouseOver, onMouseOver, this.handleMouseOver);
 
-      childTrigger.onMouseOut = composeFunctions(
-        childProps.onMouseOut,
-        onMouseOut,
-        this.handleMouseOut
-      );
+      childTrigger.onMouseOut = composeFunctions(childProps.onMouseOut, onMouseOut, this.handleMouseOut);
     }
 
     if (trigger && isExists('focus', trigger)) {
-      childTrigger.onFocus = composeFunctions(
-        childProps.onFocus,
-        onFocus,
-        this.handleDelayedShow
-      );
-      childTrigger.onBlur = composeFunctions(
-        childProps.onBlur,
-        onBlur,
-        this.handleDelayedHide
-      );
+      childTrigger.onFocus = composeFunctions(childProps.onFocus, onFocus, this.handleDelayedShow);
+      childTrigger.onBlur = composeFunctions(childProps.onBlur, onBlur, this.handleDelayedHide);
     }
 
     return React.cloneElement(childElement, childTrigger);

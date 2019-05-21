@@ -11,14 +11,7 @@ export interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
   hasTop?: boolean;
 }
 
-const Sidebar: React.SFC<SidebarProps> = ({
-  className,
-  style,
-  collapsed,
-  hasTop,
-  children,
-  ...rest
-}) => {
+const Sidebar: React.SFC<SidebarProps> = ({ className, style, collapsed, hasTop, children, ...rest }) => {
   return (
     <div className={className} style={style} {...rest}>
       <Inner collapsed={collapsed} hasTop={hasTop}>
@@ -26,9 +19,7 @@ const Sidebar: React.SFC<SidebarProps> = ({
           {React.Children.map(children, (Item: React.ReactElement<any>) => {
             return Item &&
               Item.type &&
-              ['SidebarMain', 'SidebarSub'].some(
-                type => type === (Item.type as React.SFC).displayName
-              )
+              ['SidebarMain', 'SidebarSub'].some(type => type === (Item.type as React.SFC).displayName)
               ? React.cloneElement(Item, {
                   hasTop,
                   collapsed
@@ -48,7 +39,7 @@ export default styled(Sidebar)`
   background: #ffffff;
 `;
 
-const Inner = styled('div')`
+const Inner = styled('div')<SidebarProps>`
   display: flex;
   flex-direction: row;
   position: fixed;

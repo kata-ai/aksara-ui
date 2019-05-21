@@ -5,26 +5,16 @@ import ThemedComponent from '@kata-kit/theme';
 import themes from '../theme';
 import { InputTextBase } from '../styles';
 
-export interface InputTextProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /** Alternate form state for input with errors. */
   errors?: boolean;
   /** True if this text input has an addon style */
   addon?: boolean;
 }
 
-const InputText: React.SFC<InputTextProps> = ({
-  className,
-  errors,
-  ...rest
-}) => (
-  <ThemedComponent
-    color={errors ? 'withError' : 'defaultTheme'}
-    themes={themes.input}
-  >
-    {themeAttributes => (
-      <Input className={className} theme={themeAttributes} {...rest} />
-    )}
+const InputText: React.SFC<InputTextProps> = ({ className, errors, ...rest }) => (
+  <ThemedComponent color={errors ? 'withError' : 'defaultTheme'} themes={themes.input}>
+    {themeAttributes => <Input className={className} theme={themeAttributes} {...rest} />}
   </ThemedComponent>
 );
 
@@ -41,7 +31,7 @@ const WithAddonStyles = css`
   border-bottom-left-radius: 0;
 `;
 
-const Input = styled('input')`
+const Input = styled('input')<InputTextProps>`
   ${props => InputTextBase(props)};
   height: 40px;
 

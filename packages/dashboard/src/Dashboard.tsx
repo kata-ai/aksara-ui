@@ -46,24 +46,12 @@ export default class Dashboard extends React.Component<DashboardProps> {
   }
 
   renderStarter() {
-    const {
-      className,
-      title,
-      tooltip,
-      subTitle,
-      headerContent,
-      image,
-      children,
-      isStarter
-    } = this.props;
+    const { className, title, tooltip, subTitle, headerContent, image, children, isStarter } = this.props;
 
     return (
       <Theme>
         {themeAttributes => (
-          <Root
-            className={classNames(className, isStarter && 'is-starter')}
-            {...themeAttributes}
-          >
+          <Root className={classNames(className, isStarter && 'is-starter')} {...themeAttributes}>
             <DashboardStarterHeading>
               <Container>
                 <DashboardStarterInner>
@@ -74,24 +62,14 @@ export default class Dashboard extends React.Component<DashboardProps> {
                           {title}
                         </DashboardTitle>
                         {tooltip && (
-                          <TooltipTarget
-                            component={<Tooltip>{tooltip}</Tooltip>}
-                          >
+                          <TooltipTarget component={<Tooltip>{tooltip}</Tooltip>}>
                             <DashboardTooltip className="icon-info" />
                           </TooltipTarget>
                         )}
                       </Container>
                     </DashboardHeader>
-                    {subTitle && (
-                      <DashboardSubtitle isStarter>
-                        {subTitle}
-                      </DashboardSubtitle>
-                    )}
-                    {headerContent && (
-                      <DashboardHeaderContent>
-                        {headerContent}
-                      </DashboardHeaderContent>
-                    )}
+                    {subTitle && <DashboardSubtitle isStarter>{subTitle}</DashboardSubtitle>}
+                    {headerContent && <DashboardHeaderContent>{headerContent}</DashboardHeaderContent>}
                   </DashboardStarterLeft>
                   {image && (
                     <DashboardStarterImage>
@@ -137,37 +115,24 @@ export default class Dashboard extends React.Component<DashboardProps> {
               <DashboardHeader>
                 {headerContent || (
                   <DashboardHeaderInner>
-                    <DashboardTitle data-testid="Dashboard-title">
-                      {title}
-                    </DashboardTitle>
+                    <DashboardTitle data-testid="Dashboard-title">{title}</DashboardTitle>
                     {tooltip && (
-                      <TooltipTarget
-                        trigger="hover"
-                        component={<Tooltip>{tooltip}</Tooltip>}
-                      >
+                      <TooltipTarget trigger="hover" component={<Tooltip>{tooltip}</Tooltip>}>
                         <DashboardTooltip className="icon-info" />
                       </TooltipTarget>
                     )}
                   </DashboardHeaderInner>
                 )}
                 {floatingElements && (
-                  <DashboardFloating data-testid="Dashboard-floating">
-                    {floatingElements}
-                  </DashboardFloating>
+                  <DashboardFloating data-testid="Dashboard-floating">{floatingElements}</DashboardFloating>
                 )}
               </DashboardHeader>
               {subTitle && <DashboardSubtitle>{subTitle}</DashboardSubtitle>}
               {paragraph && (
-                <DashboardParagraph
-                  className={classNames(isStarter && 'is-starter')}
-                >
-                  {paragraph}
-                </DashboardParagraph>
+                <DashboardParagraph className={classNames(isStarter && 'is-starter')}>{paragraph}</DashboardParagraph>
               )}
 
-              <DashboardContent data-testid="Dashboard-content">
-                {children}
-              </DashboardContent>
+              <DashboardContent data-testid="Dashboard-content">{children}</DashboardContent>
             </DashboardRootContainer>
           </Root>
         )}
@@ -187,8 +152,7 @@ const DashboardIn = keyframes`
 
 const DashboardRootContainer = styled('div')`
   width: 100%;
-  max-width: ${(props: { isSettings?: boolean }) =>
-    props.isSettings ? '560px' : '704px'};
+  max-width: ${(props: { isSettings?: boolean }) => (props.isSettings ? '560px' : '704px')};
   margin: 0 auto;
 
   ${(props: { isSettings?: boolean }) =>
@@ -239,13 +203,13 @@ const DashboardTooltip = styled('i')`
   }
 `;
 
-const DashboardTitle = styled('h1')`
+const DashboardTitle = styled('h1')<DashboardProps>`
   margin-bottom: 0;
   flex: 0 0 auto;
   color: ${props => props.isStarter && 'white'};
 `;
 
-const DashboardSubtitle = styled('h2')`
+const DashboardSubtitle = styled('h2')<DashboardProps>`
   color: ${props => props.isStarter && 'white'};
 `;
 

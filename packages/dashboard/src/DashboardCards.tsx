@@ -29,10 +29,7 @@ export class DashboardCards extends React.Component<DashboardCardsProps> {
       <Wrapper className={classnames(className)} {...rest}>
         {React.Children.map(this.props.children, Item =>
           Item ? (
-            <CardWrapper
-              data-testid="CardGrid-wrapper"
-              cardsPerRow={cardsPerRow}
-            >
+            <CardWrapper data-testid="CardGrid-wrapper" cardsPerRow={cardsPerRow}>
               {React.cloneElement(Item as React.ReactElement<any>, {
                 dashboardCard: true
               })}
@@ -48,14 +45,14 @@ export class DashboardCards extends React.Component<DashboardCardsProps> {
 
 export default DashboardCards;
 
-const Wrapper = styled('div')`
+const Wrapper = styled('div')<DashboardCardsProps>`
   display: flex;
   flex-wrap: wrap;
   margin: 0 -0.615384615rem;
   justify-content: ${props => props.centered && 'center'};
 `;
 
-const CardWrapper = styled('div')`
+const CardWrapper = styled('div')<DashboardCardsProps>`
   flex: 0 1 100%;
   padding: 0 0.615384615rem;
   margin-bottom: 1.230769231rem;

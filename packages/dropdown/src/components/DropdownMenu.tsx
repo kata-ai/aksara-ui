@@ -24,31 +24,18 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
   static displayName = 'DropdownMenu';
 
   render() {
-    const {
-      isOpen,
-      floatRight,
-      dropDirection,
-      className,
-      onSelect,
-      disabled
-    } = this.props;
+    const { isOpen, floatRight, dropDirection, className, onSelect, disabled } = this.props;
     const classes = classNames(className, isOpen ? 'show' : false);
 
     return (
-      <Wrapper
-        className={classes}
-        dropDirection={dropDirection}
-        floatRight={floatRight}
-      >
-        {React.Children.map(
-          this.props.children,
-          (Item: React.ReactElement<any>) =>
-            Item
-              ? React.cloneElement(Item, {
-                  onSelect,
-                  disabled
-                })
-              : Item
+      <Wrapper className={classes} dropDirection={dropDirection} floatRight={floatRight}>
+        {React.Children.map(this.props.children, (Item: React.ReactElement<any>) =>
+          Item
+            ? React.cloneElement(Item, {
+                onSelect,
+                disabled
+              })
+            : Item
         )}
       </Wrapper>
     );
@@ -81,7 +68,7 @@ const directionLeft = css`
   transform: translate3d(calc(-100% - 0.125rem), 0, 0);
 `;
 
-const Wrapper = styled('div')`
+const Wrapper = styled('div')<DropdownMenuProps>`
   display: none;
   position: absolute;
   float: left;
@@ -107,11 +94,7 @@ const Wrapper = styled('div')`
     display: block;
   }
 
-  ${props =>
-    props.floatRight &&
-    props.dropDirection !== 'right' &&
-    props.dropDirection !== 'left' &&
-    floatRightMenu}
+  ${props => props.floatRight && props.dropDirection !== 'right' && props.dropDirection !== 'left' && floatRightMenu}
   ${props => props.dropDirection === 'up' && directionUp}
   ${props => props.dropDirection === 'right' && directionRight}
   ${props => props.dropDirection === 'left' && directionLeft}

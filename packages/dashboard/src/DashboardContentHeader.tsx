@@ -10,18 +10,10 @@ export interface DashboardContentHeaderProps {
   isSecondary?: boolean;
 }
 
-const DashboardContentHeader: React.SFC<DashboardContentHeaderProps> = ({
-  children,
-  className,
-  isSecondary
-}) => (
+const DashboardContentHeader: React.SFC<DashboardContentHeaderProps> = ({ children, className, isSecondary }) => (
   <Theme>
     {themeAttributes => (
-      <Root
-        className={className}
-        isSecondary={isSecondary}
-        {...themeAttributes}
-      >
+      <Root className={className} isSecondary={isSecondary} {...themeAttributes}>
         {children}
       </Root>
     )}
@@ -30,11 +22,10 @@ const DashboardContentHeader: React.SFC<DashboardContentHeaderProps> = ({
 
 export default DashboardContentHeader;
 
-const Root = styled('h1')`
+const Root = styled('h1')<DashboardContentHeaderProps>`
   margin-top: ${props => (props.isSecondary ? '2.461538462rem' : 0)};
   margin-bottom: 24px;
-  color: ${props =>
-    props.isSecondary ? '#24282d !important' : '#ffffff !important'};
+  color: ${props => (props.isSecondary ? '#24282d !important' : '#ffffff !important')};
   font-size: 1.85rem;
   font-weight: 500;
 `;

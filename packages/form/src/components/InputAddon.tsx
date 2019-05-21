@@ -10,12 +10,7 @@ interface InputAddonProps extends React.HTMLAttributes<HTMLSpanElement> {
   isIcon?: boolean;
 }
 
-const InputAddon: React.SFC<InputAddonProps> = ({
-  className,
-  isIcon,
-  children,
-  ...rest
-}) => (
+const InputAddon: React.SFC<InputAddonProps> = ({ className, isIcon, children, ...rest }) => (
   <Div className={className}>
     <Inner isIcon={isIcon} className={className} {...rest}>
       {children}
@@ -38,7 +33,7 @@ const Div = styled('div')`
   ${props => InputAddonBase(props)};
 `;
 
-const Inner = styled('span')`
+const Inner = styled('span')<InputAddonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
