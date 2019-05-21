@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/split-button",
-  "version": "0.7.3-canary.1",
+  "version": "0.7.3",
   "description": "Split Button component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,9 +25,9 @@
   "author": "Kata.ai <info@kata.ai>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@kata-kit/button": "^0.7.3-canary.0",
-    "@kata-kit/dropdown": "^0.7.3-canary.1",
-    "@kata-kit/theme": "^0.7.1-canary.0",
+    "@kata-kit/button": "^0.7.3",
+    "@kata-kit/dropdown": "^0.7.3",
+    "@kata-kit/theme": "^0.7.1",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {
