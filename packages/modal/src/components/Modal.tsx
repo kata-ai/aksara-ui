@@ -54,7 +54,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  static getDerivedStateFromProps(props: ModalProps, state: ModalState) {
+  static componentDidUpdate(props: ModalProps, state: ModalState) {
     if (!props.show) {
       return {
         show: props.show,
