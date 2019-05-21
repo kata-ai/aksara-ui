@@ -2,6 +2,10 @@ import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 interface Props {
+  /** Additional CSS classes to give to the component. */
+  className?: string;
+  /** Additional CSS styles to give to the component. */
+  style?: React.CSSProperties;
   /** Import the image you want to use to replace the default one here. */
   image?: string;
   /** The title of the empty message. */
@@ -16,7 +20,7 @@ export default class EmptyMessage extends React.Component<Props> {
 
   render() {
     return (
-      <Wrapper>
+      <Wrapper className={this.props.className} style={this.props.style}>
         <img src={this.props.image} alt="Empty Message" />
         <Title data-testid="EmptyMessage-title">{this.props.title}</Title>
         <Description>{this.props.children}</Description>

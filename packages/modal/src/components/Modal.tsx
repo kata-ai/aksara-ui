@@ -40,8 +40,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
   el: HTMLDivElement;
 
   state = {
-    show: false,
-    visible: false
+    show: this.props.show,
+    visible: this.props.show
   };
 
   constructor(props: ModalProps) {
@@ -54,18 +54,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  static getDerivedStateFromProps(props: ModalProps, state: ModalState) {
-    if (!props.show) {
-      return {
-        show: props.show,
-        visible: false
-      };
+  componentDidUpdate(prevProps: ModalProps, state: ModalState) {
+    if (this.props.show !== prevProps.show) {
+      this.setState({ show: this.props.show, visible: this.props.show });
     }
-
-    return {
-      show: props.show,
-      visible: true
-    };
   }
 
   componentDidMount() {
