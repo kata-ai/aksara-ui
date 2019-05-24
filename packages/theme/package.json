@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/theme",
-  "version": "0.7.1-canary.0",
+  "version": "0.7.1",
   "description": "Wicara theming framework.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",

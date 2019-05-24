@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/loading",
-  "version": "0.7.1-canary.0",
+  "version": "0.7.1",
   "description": "Loading component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",

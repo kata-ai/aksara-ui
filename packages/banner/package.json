@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/banner",
-  "version": "0.7.1-canary.0",
+  "version": "0.7.1",
   "description": "Banner component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,7 +25,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/theme": "^0.7.1-canary.0",
+    "@kata-kit/theme": "^0.7.1",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {

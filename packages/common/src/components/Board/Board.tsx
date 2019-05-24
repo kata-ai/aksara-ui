@@ -4,6 +4,8 @@ import styled from 'styled-components';
 export interface BoardProps {
   /** Additional CSS classes to give to the component. */
   className?: string;
+  /** Additional CSS styles to give to the component. */
+  style?: React.CSSProperties;
   /** Additional content as a header. */
   headingChildren?: React.ReactNode;
   /** Additional styles for board header */
@@ -16,9 +18,9 @@ export interface BoardProps {
 
 export default class Board extends React.Component<BoardProps> {
   render() {
-    const { className, children } = this.props;
+    const { className, style, children } = this.props;
     return (
-      <Root className={className}>
+      <Root className={className} style={style}>
         {this.renderHeading()}
         <Body>{children}</Body>
         {this.renderFooter()}
@@ -28,22 +30,14 @@ export default class Board extends React.Component<BoardProps> {
 
   renderHeading() {
     if (this.props.headingChildren) {
-      return (
-        <Heading style={this.props.headingStyles}>
-          {this.props.headingChildren}
-        </Heading>
-      );
+      return <Heading style={this.props.headingStyles}>{this.props.headingChildren}</Heading>;
     }
     return null;
   }
 
   renderFooter() {
     if (this.props.footerChildren) {
-      return (
-        <Footer style={this.props.footerStyles}>
-          {this.props.footerChildren}
-        </Footer>
-      );
+      return <Footer style={this.props.footerStyles}>{this.props.footerChildren}</Footer>;
     }
     return null;
   }
