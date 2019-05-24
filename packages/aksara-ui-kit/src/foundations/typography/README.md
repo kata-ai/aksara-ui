@@ -14,14 +14,14 @@ import { AksaraReset, Heading } from '@aksara/ui-kit';
 export default function MyApp({ children }) {
   return (
     <AksaraReset>
-      <Heading size={200}>We are making AI technology accessible to everyone</Heading>
-      <Heading size={300}>We are making AI technology accessible to everyone</Heading>
-      <Heading size={400}>We are making AI technology accessible to everyone</Heading>
-      <Heading size={500}>We are making AI technology accessible to everyone</Heading>
-      <Heading size={600}>We are making AI technology accessible to everyone</Heading>
-      <Heading size={700}>We are making AI technology accessible to everyone</Heading>
-      <Heading size={800}>We are making AI technology accessible to everyone</Heading>
       <Heading size={900}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={800}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={700}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={600}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={500}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={400}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={300}>We are making AI technology accessible to everyone</Heading>
+      <Heading size={200}>We are making AI technology accessible to everyone</Heading>
     </AksaraReset>
   );
 }
@@ -47,9 +47,9 @@ import { AksaraReset, Text } from '@aksara/ui-kit';
 export default function MyApp({ children }) {
   return (
     <AksaraReset>
-      <Text size={200}>We are making AI technology accessible to everyone</Text>
-      <Text size={300}>We are making AI technology accessible to everyone</Text>
       <Text size={400}>We are making AI technology accessible to everyone</Text>
+      <Text size={300}>We are making AI technology accessible to everyone</Text>
+      <Text size={200}>We are making AI technology accessible to everyone</Text>
     </AksaraReset>
   );
 }
