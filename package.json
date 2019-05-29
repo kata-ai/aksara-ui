@@ -66,6 +66,7 @@
     "@types/node": "^10.12.18",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
+    "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__react": "^4.0.1",
     "@types/styled-components": "^4.1.15",
     "babel-jest": "^23.6.0",

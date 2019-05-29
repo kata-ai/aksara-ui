@@ -124,6 +124,34 @@ const LinkButton = css`
   }
 `;
 
+const DestructiveButton = css`
+  background-color: ${colors.red05};
+  color: ${colors.white};
+
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: ${colors.red06};
+      color: ${colors.white};
+    }
+
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      box-shadow: 0px 0px 2px ${colors.blue05};
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: ${colors.grey03};
+    color: ${colors.grey04};
+  }
+`;
+
 const GhostButton = css`
   color: ${colors.blue05};
 
@@ -156,7 +184,7 @@ const Root = styled('button')<ButtonProps>`
   ${props => props.variant === 'default' && DefaultButton}
   ${props => props.variant === 'primary' && PrimaryButton}
   ${props => props.variant === 'outline' && OutlineButton}
-  ${props => props.variant === 'destructive' && DefaultButton}
+  ${props => props.variant === 'destructive' && DestructiveButton}
   ${props => props.variant === 'link' && LinkButton}
   ${props => props.variant === 'ghost' && GhostButton}
 

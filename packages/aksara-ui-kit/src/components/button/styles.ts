@@ -17,7 +17,7 @@ export const SizeSmall = css`
   height: 32px;
   padding: 0 12px;
   font-size: ${textSizes[200].fontSize}px;
-  line-height: 32px;
+  line-height: 30px;
   border-radius: 4px;
 `;
 
@@ -25,7 +25,7 @@ export const SizeMedium = css`
   height: 40px;
   padding: 0 16px;
   font-size: ${textSizes[300].fontSize}px;
-  line-height: 40px;
+  line-height: 38px;
   border-radius: 4px;
 `;
 
@@ -33,7 +33,7 @@ export const SizeLarge = css`
   height: 56px;
   padding: 0 24px;
   font-size: ${textSizes[400].fontSize}px;
-  line-height: 56px;
+  line-height: 54px;
   border-radius: 4px;
 `;
 
