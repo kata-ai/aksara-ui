@@ -35,7 +35,7 @@ export const TypographyBlock: React.FC<TypographyBlockProps> = ({ children, titl
   <Box mb="lg">
     {children}
     <Box mt="sm">
-      <Text size={200} fontFamily="monospace" color="grey04" m={0}>
+      <Text size={200} fontFamily="monospace" color="grey05" m={0}>
         {title}
       </Text>
     </Box>
