@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { ButtonBaseProps, ButtonBase, SizeSmall, SizeMedium, SizeLarge } from '../styles';
 import { colors } from '../../../utils';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonBaseProps {
+export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -124,6 +124,32 @@ const LinkButton = css`
   }
 `;
 
+const GhostButton = css`
+  color: ${colors.blue05};
+
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: ${colors.grey02};
+      color: ${colors.blue05};
+    }
+
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      box-shadow: 0px 0px 2px ${colors.blue05};
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    color: ${colors.grey04};
+  }
+`;
+
 const Root = styled('button')<ButtonProps>`
   ${ButtonBase}
 
@@ -132,7 +158,7 @@ const Root = styled('button')<ButtonProps>`
   ${props => props.variant === 'outline' && OutlineButton}
   ${props => props.variant === 'destructive' && DefaultButton}
   ${props => props.variant === 'link' && LinkButton}
-  ${props => props.variant === 'ghost' && DefaultButton}
+  ${props => props.variant === 'ghost' && GhostButton}
 
   ${props => props.size === 'sm' && SizeSmall}
   ${props => props.size === 'md' && SizeMedium}

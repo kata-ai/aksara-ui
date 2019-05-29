@@ -49,7 +49,6 @@ export const ButtonBase = (props: ButtonBaseProps) => css`
   background: none;
   text-decoration: none;
   letter-spacing: -0.05px;
-  transition: all 0.3s ease;
   border: 1px solid transparent;
 
   &:not(:disabled):not(.disabled) {

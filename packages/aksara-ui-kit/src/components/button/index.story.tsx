@@ -3,7 +3,13 @@ import * as React from 'react';
 
 import { Button } from '.';
 import { AksaraReset } from '../../foundations';
-import { StoryWrapper, StoryContainer, globalPropTablesExclude, ComponentBlock } from '../../utils/storybook';
+import {
+  StoryWrapper,
+  StoryContainer,
+  globalPropTablesExclude,
+  ComponentBlock,
+  StoryHeader
+} from '../../utils/storybook';
 
 const readme = require('./README.md');
 
@@ -17,6 +23,7 @@ storiesOf('Components/Button', module)
     'basic',
     () => (
       <StoryContainer>
+        <StoryHeader title="Button" subtitle="It's a button. What more do you expect?" />
         <ComponentBlock title="Default Button">
           <Button type="button" style={{ margin: '0 8px' }} size="sm">
             Push Me
@@ -41,6 +48,7 @@ storiesOf('Components/Button', module)
     'button states',
     () => (
       <StoryContainer>
+        <StoryHeader title="Button States" subtitle="Left to right: default, hover, focus, disabled" />
         <ComponentBlock title="Default Button">
           <Button type="button" style={{ margin: '0 8px' }}>
             Push Me
@@ -52,7 +60,7 @@ storiesOf('Components/Button', module)
             Push Me
           </Button>
           <Button type="button" disabled style={{ margin: '0 8px' }}>
-            Push Me
+            I'm disabled
           </Button>
         </ComponentBlock>
         <ComponentBlock title="Primary Button">
@@ -66,7 +74,7 @@ storiesOf('Components/Button', module)
             Push Me
           </Button>
           <Button type="button" variant="primary" disabled style={{ margin: '0 8px' }}>
-            Push Me
+            I'm disabled
           </Button>
         </ComponentBlock>
         <ComponentBlock title="Outline Button">
@@ -80,7 +88,7 @@ storiesOf('Components/Button', module)
             Push Me
           </Button>
           <Button type="button" variant="outline" disabled style={{ margin: '0 8px' }}>
-            Push Me
+            I'm disabled
           </Button>
         </ComponentBlock>
         <ComponentBlock title="Link Button">
@@ -94,7 +102,21 @@ storiesOf('Components/Button', module)
             Push Me
           </Button>
           <Button type="button" variant="link" disabled style={{ margin: '0 8px' }}>
+            I'm disabled
+          </Button>
+        </ComponentBlock>
+        <ComponentBlock title="Ghost Button">
+          <Button type="button" variant="ghost" style={{ margin: '0 8px' }}>
             Push Me
+          </Button>
+          <Button type="button" variant="ghost" className="hover" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="ghost" className="focus" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="ghost" disabled style={{ margin: '0 8px' }}>
+            I'm disabled
           </Button>
         </ComponentBlock>
       </StoryContainer>
@@ -102,7 +124,7 @@ storiesOf('Components/Button', module)
     {
       notes: { markdown: readme },
       props: {
-        propTablesExclude: [...globalPropTablesExclude, 'Box']
+        propTablesExclude: [...globalPropTablesExclude, 'Box', 'Heading', 'Text']
       }
     }
   );

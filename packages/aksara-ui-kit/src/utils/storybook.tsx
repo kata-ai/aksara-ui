@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { space } from './variables';
-import { Box, Text } from '../foundations';
+import { Box, Text, Heading } from '../foundations';
 
 /** These components are always excluded from Prop Tables */
 export const globalPropTablesExclude = [
@@ -10,6 +10,7 @@ export const globalPropTablesExclude = [
   'ComponentBlock',
   'StoryWrapper',
   'StoryContainer',
+  'StoryHeader',
   'AksaraReset'
 ];
 
@@ -26,6 +27,22 @@ const StoryContainerRoot = styled('div')`
 `;
 
 export const StoryContainer: React.FC = ({ children }) => <StoryContainerRoot>{children}</StoryContainerRoot>;
+
+interface StoryHeaderProps {
+  title: string;
+  subtitle?: string;
+}
+
+export const StoryHeader: React.FC<StoryHeaderProps> = ({ title, subtitle }) => (
+  <Box mb="lg">
+    <Heading size={600}>{title}</Heading>
+    {subtitle ? (
+      <Text as="p" size={400}>
+        {subtitle}
+      </Text>
+    ) : null}
+  </Box>
+);
 
 interface TypographyBlockProps {
   title: string;
