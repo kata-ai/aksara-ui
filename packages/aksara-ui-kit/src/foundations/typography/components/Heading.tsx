@@ -5,13 +5,6 @@ import { determineFontDimensions } from '../utils';
 import { styledWrapper as styled } from '../../../utils/primitives';
 import { HeadingSizes } from '../../../Theme';
 
-/**
- * This is a base `Text` element to handle typography elements.
- */
-const StyledText = styled(Typography)`
-  letter-spacing: -0.24px;
-`;
-
 export interface HeadingProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
@@ -24,17 +17,30 @@ export interface HeadingProps extends TypographyProps {
 }
 
 /**
+ * This is a base `Text` element to handle typography elements.
+ */
+const StyledText = styled(Typography)<HeadingProps>`
+  ${props => props.size === 100 && 'text-transform: uppercase;'}
+`;
+
+/**
  * Heading component provided as a styled component primitive.
  */
-export const Heading: React.SFC<HeadingProps> = ({ children, as, size, ...rest }) => (
-  <StyledText as={as} {...determineFontDimensions('heading', size)} {...rest}>
+export const Heading: React.SFC<HeadingProps> = ({ children, as, size, color, ...rest }) => (
+  <StyledText
+    as={as}
+    color={size === 100 ? 'grey05' : color}
+    {...determineFontDimensions('heading', size)}
+    size={size}
+    {...rest}
+  >
     {children}
   </StyledText>
 );
 
 Heading.defaultProps = {
   as: 'h2',
-  color: '#2b2f33',
+  color: 'grey09',
   size: 800,
   margin: 0
 };

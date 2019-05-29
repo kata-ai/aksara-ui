@@ -10,10 +10,16 @@ export function determineFontDimensions(textType: keyof FontSizes, size: number 
   const match = themeProps.fontSizes[textType][size];
 
   if (textType === 'heading') {
-    return {
+    const styleProps = {
       fontSize: `${match.fontSize}px`,
       lineHeight: `${match.lineHeight}px`,
-      fontWeight: size <= 400 ? 600 : 400
+      letterSpacing: `${match.letterSpacing}px`,
+      fontWeight: size <= 400 ? 600 : 500
+    };
+
+    return {
+      ...styleProps,
+      ...(size === 100 ? { textTransform: 'uppercase' } : {})
     };
   }
 

@@ -2,12 +2,15 @@ import {
   display,
   maxWidth,
   space,
+  fontFamily,
   fontSize,
   fontWeight,
   lineHeight,
   color,
   textAlign,
   verticalAlign,
+  letterSpacing,
+  FontFamilyProps,
   FontSizeProps,
   FontWeightProps,
   LineHeightProps,
@@ -15,7 +18,8 @@ import {
   SpaceProps,
   DisplayProps,
   TextAlignProps,
-  VerticalAlignProps
+  VerticalAlignProps,
+  LetterSpacingProps
 } from 'styled-system';
 
 import { primitives } from '../../../utils/primitives';
@@ -24,11 +28,13 @@ export interface TypographyProps
   extends DisplayProps,
     MaxWidthProps,
     SpaceProps,
+    FontFamilyProps,
     FontSizeProps,
     FontWeightProps,
     LineHeightProps,
     TextAlignProps,
-    VerticalAlignProps {
+    VerticalAlignProps,
+    LetterSpacingProps {
   /** Extended color props. */
   color?: string;
 }
@@ -40,12 +46,14 @@ export const Typography = primitives.Text<TypographyProps>`
   ${display};
   ${maxWidth};
   ${space};
+  ${fontFamily}
   ${fontSize};
   ${fontWeight}
   ${lineHeight};
   ${color};
   ${textAlign};
   ${verticalAlign};
+  ${letterSpacing};
 `;
 
 Typography.displayName = 'Typography';

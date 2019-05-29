@@ -65,44 +65,70 @@ export const colors = {
   black: '#000'
 };
 
+export const systemFonts =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+
+export const fonts = {
+  system: systemFonts,
+  sansSerif: `Barlow, ${systemFonts}`,
+  monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;"
+};
+
 /** Heading size values mapped by size number. */
 export const headingSizes = {
   900: {
     fontSize: 42,
-    lineHeight: 48
+    lineHeight: 48,
+    letterSpacing: -0.2
   },
   800: {
     fontSize: 35,
-    lineHeight: 40
+    lineHeight: 40,
+    letterSpacing: -0.2
   },
   700: {
     fontSize: 29,
-    lineHeight: 32
+    lineHeight: 32,
+    letterSpacing: -0.2
   },
   600: {
     fontSize: 24,
-    lineHeight: 28
+    lineHeight: 28,
+    letterSpacing: -0.05
   },
   500: {
     fontSize: 20,
-    lineHeight: 24
+    lineHeight: 24,
+    letterSpacing: -0.05
   },
   400: {
     fontSize: 16,
-    lineHeight: 20
+    lineHeight: 20,
+    letterSpacing: -0.05
   },
   300: {
     fontSize: 14,
-    lineHeight: 20
+    lineHeight: 20,
+    letterSpacing: -0.05
   },
   200: {
     fontSize: 12,
-    lineHeight: 16
+    lineHeight: 16,
+    letterSpacing: 0
+  },
+  100: {
+    fontSize: 12,
+    lineHeight: 16,
+    letterSpacing: 0.5
   }
 };
 
 /** Text size values mapped by size number. */
 export const textSizes = {
+  500: {
+    fontSize: 20,
+    lineHeight: 24
+  },
   400: {
     fontSize: 16,
     lineHeight: 20
@@ -125,11 +151,7 @@ export const paragraphSizes = {
   },
   300: {
     fontSize: 14,
-    lineHeight: 21
-  },
-  200: {
-    fontSize: 12,
-    lineHeight: 16
+    lineHeight: 24
   }
 };
 
