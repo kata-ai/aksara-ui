@@ -2,8 +2,8 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import { Button } from '.';
-import { AksaraReset, Box } from '../../foundations';
-import { StoryWrapper, StoryContainer, globalPropTablesExclude } from '../../utils/storybook';
+import { AksaraReset } from '../../foundations';
+import { StoryWrapper, StoryContainer, globalPropTablesExclude, ComponentBlock } from '../../utils/storybook';
 
 const readme = require('./README.md');
 
@@ -17,21 +17,23 @@ storiesOf('Components/Button', module)
     'basic',
     () => (
       <StoryContainer>
-        <div>
-          <Button style={{ margin: '0 8px' }} size="sm">
+        <ComponentBlock title="Default Button">
+          <Button type="button" style={{ margin: '0 8px' }} size="sm">
             Push Me
           </Button>
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-          <Button style={{ margin: '0 8px' }} size="lg">
+          <Button type="button" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-        </div>
+          <Button type="button" style={{ margin: '0 8px' }} size="lg">
+            Push Me
+          </Button>
+        </ComponentBlock>
       </StoryContainer>
     ),
     {
       notes: { markdown: readme },
       props: {
-        propTablesExclude: [...globalPropTablesExclude]
+        propTablesExclude: [...globalPropTablesExclude, 'Box']
       }
     }
   )
@@ -39,18 +41,62 @@ storiesOf('Components/Button', module)
     'button states',
     () => (
       <StoryContainer>
-        <Box mb="lg">
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-        </Box>
-        <Box mb="lg">
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-          <Button style={{ margin: '0 8px' }}>Push Me</Button>
-        </Box>
+        <ComponentBlock title="Default Button">
+          <Button type="button" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" className="hover" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" className="focus" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" disabled style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+        </ComponentBlock>
+        <ComponentBlock title="Primary Button">
+          <Button type="button" variant="primary" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="primary" className="hover" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="primary" className="focus" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="primary" disabled style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+        </ComponentBlock>
+        <ComponentBlock title="Outline Button">
+          <Button type="button" variant="outline" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="outline" className="hover" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="outline" className="focus" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="outline" disabled style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+        </ComponentBlock>
+        <ComponentBlock title="Link Button">
+          <Button type="button" variant="link" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="link" className="hover" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="link" className="focus" style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="link" disabled style={{ margin: '0 8px' }}>
+            Push Me
+          </Button>
+        </ComponentBlock>
       </StoryContainer>
     ),
     {

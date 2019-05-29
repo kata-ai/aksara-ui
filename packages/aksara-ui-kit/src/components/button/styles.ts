@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { textSizes } from '../../utils';
 
-export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'link';
+export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'link' | 'ghost';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
 
 export interface ButtonBaseProps {

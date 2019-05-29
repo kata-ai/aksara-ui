@@ -7,7 +7,7 @@ import { Box, Text } from '../foundations';
 export const globalPropTablesExclude = [
   'Theme',
   'StoryWrapper',
-  'TypographyBlock',
+  'ComponentBlock',
   'StoryWrapper',
   'StoryContainer',
   'AksaraReset'
@@ -31,9 +31,9 @@ interface TypographyBlockProps {
   title: string;
 }
 
-export const TypographyBlock: React.FC<TypographyBlockProps> = ({ children, title }) => (
+export const ComponentBlock: React.FC<TypographyBlockProps> = ({ children, title }) => (
   <Box mb="lg">
-    {children}
+    <Box>{children}</Box>
     <Box mt="sm">
       <Text size={200} fontFamily="monospace" color="grey05" m={0}>
         {title}
@@ -41,3 +41,5 @@ export const TypographyBlock: React.FC<TypographyBlockProps> = ({ children, titl
     </Box>
   </Box>
 );
+
+ComponentBlock.displayName = 'ComponentBlock';
