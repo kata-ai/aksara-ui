@@ -4,7 +4,7 @@ import base from '../styles/base';
 import 'jest-dom/extend-expect';
 import 'jest-styled-components';
 
-describe('Reset', () => {
+describe('foundations/Reset', () => {
   test('has correct styles', () => {
     // dummy test.
     expect(reboot).toBeDefined();
