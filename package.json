@@ -34,6 +34,7 @@
     "lint": "tslint -p tsconfig.lint.json",
     "report-coverage": "codecov -f ./coverage/*.json",
     "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
     "test": "node scripts/test.js --env=jsdom",
     "test:coverage": "node scripts/test.js --env=jsdom --coverage",
     "tsc": "tsc -b packages",
