@@ -5,8 +5,7 @@
   "main": "N/A",
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <dev@kata.ai>",
-  "contributors": [
-    {
+  "contributors": [{
       "name": "Reyhan Sofian Haqqi",
       "email": "reyhan@kata.ai"
     },
@@ -76,6 +75,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
+    "clsx": "^1.0.4",
     "codecov": "^3.1.0",
     "cross-env": "^5.2.0",
     "debug": "^4.0.1",
