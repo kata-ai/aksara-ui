@@ -73,8 +73,9 @@ const SubMenuIcon = styled('span')<IconType>`
   vertical-align: middle;
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
 
     path {
       fill: ${variables.colors.gray70};
