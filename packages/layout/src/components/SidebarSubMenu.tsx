@@ -4,6 +4,8 @@ import { NavLinkProps, NavLink } from 'react-router-dom';
 
 import { variables } from '@kata-kit/theme';
 
+import renderIcon from '../utils/renderIcon';
+
 export interface SidebarSubMenuProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
@@ -11,7 +13,11 @@ export interface SidebarSubMenuProps
   asNavLink?: boolean;
   to?: NavLinkProps['to'];
   exact?: NavLinkProps['exact'];
-  icon?: string;
+  icon?: string | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+}
+
+export interface IconType {
+  iconType: string | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
@@ -36,7 +42,8 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
       >
         {icon ? (
           <Span>
-            <SubMenuIcon className={`icon-${icon}`} /> {children}
+            <SubMenuIcon iconType={typeof icon}>{renderIcon(icon)}</SubMenuIcon>
+            {children}
           </Span>
         ) : (
           <Span>{children}</Span>
@@ -49,7 +56,8 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
     <StyledAnchor className={className} style={style} {...rest}>
       {icon ? (
         <Span>
-          <SubMenuIcon className={`icon-${icon}`} /> {children}
+          <SubMenuIcon iconType={typeof icon}>{renderIcon(icon)}</SubMenuIcon>{' '}
+          {children}
         </Span>
       ) : (
         <Span>{children}</Span>
@@ -58,11 +66,20 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
   );
 };
 
-const SubMenuIcon = styled('i')`
+const SubMenuIcon = styled('span')<IconType>`
+  ${props => (props.iconType === 'string' ? 'font-size: 20px' : undefined)};
   margin-right: 1.230769231rem /* $space-2 */;
-  font-size: 20px;
   line-height: 1em;
   vertical-align: middle;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path {
+      fill: ${variables.colors.gray70};
+    }
+  }
 `;
 
 const Span = styled('span')`
@@ -97,6 +114,12 @@ const BaseStyles = css`
     ${Span} {
       color: ${variables.colors.white};
     }
+
+    svg {
+      path {
+        fill: ${variables.colors.white};
+      }
+    }
   }
 
   &:focus {
@@ -114,6 +137,12 @@ const BaseStyles = css`
 
       ${Span} {
         color: ${variables.colors.kataBlue};
+      }
+    }
+
+    svg {
+      path {
+        fill: ${variables.colors.kataBlue};
       }
     }
   }

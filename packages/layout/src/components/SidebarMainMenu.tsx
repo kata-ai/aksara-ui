@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { NavLinkProps, NavLink } from 'react-router-dom';
 import { variables } from '@kata-kit/theme';
+import renderIcon from '../utils/renderIcon';
 
 export interface SidebarMainMenuProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -10,7 +11,11 @@ export interface SidebarMainMenuProps
   asNavLink?: boolean;
   to?: NavLinkProps['to'];
   exact?: NavLinkProps['exact'];
-  icon: string;
+  icon: string | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+}
+
+export interface IconType {
+  iconType: string | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 const SidebarMainMenu: React.SFC<SidebarMainMenuProps> = ({
@@ -33,9 +38,7 @@ const SidebarMainMenu: React.SFC<SidebarMainMenuProps> = ({
         activeClassName="is-active"
         {...rest}
       >
-        <Icon>
-          <i className={`icon-${icon}`} />
-        </Icon>
+        <IconWrapper iconType={typeof icon}>{renderIcon(icon)}</IconWrapper>
         <Span>{children}</Span>
       </RootNavLink>
     );
@@ -43,27 +46,34 @@ const SidebarMainMenu: React.SFC<SidebarMainMenuProps> = ({
 
   return (
     <RootAnchor className={className} style={style} {...rest}>
-      <Icon>
-        <i className={`icon-${icon}`} />
-      </Icon>
+      <IconWrapper iconType={typeof icon}>{renderIcon(icon)}</IconWrapper>
       <Span>{children}</Span>
     </RootAnchor>
   );
 };
 
-const Icon = styled('div')`
+const IconWrapper = styled('div')<IconType>`
   width: 40px;
   height: 40px;
   margin: 0 auto;
   margin-bottom: calc(${variables.spaces.space1} / 2);
-  padding: 10px;
+  padding: ${props => (props.iconType === 'string' ? '10px' : '4px')};
   font-size: 20px;
-  color: #676b6d;
+  color: ${variables.colors.gray60};
   border-radius: 4px /* $border-radius-small */;
+
+  svg {
+    width: 20px;
+    height: 24px;
+
+    path {
+      fill: ${variables.colors.gray60};
+    }
+  }
 `;
 
 const Span = styled('span')`
-  color: #676b6d;
+  color: ${variables.colors.gray60};
 `;
 
 const BaseStyles = css`
@@ -81,7 +91,13 @@ const BaseStyles = css`
     text-decoration: none;
     color: ${variables.colors.gray60};
 
-    & ${Icon} {
+    & ${IconWrapper} {
+      svg {
+        path {
+          fill: ${variables.colors.gray50};
+        }
+      }
+
       background-color: ${variables.colors.gray70};
       color: ${variables.colors.gray50};
     }
@@ -96,7 +112,13 @@ const BaseStyles = css`
       color: ${variables.colors.white};
     }
 
-    ${Icon} {
+    ${IconWrapper} {
+      svg {
+        path {
+          fill: ${variables.colors.white};
+        }
+      }
+
       background-color: ${variables.colors.kataBlue};
       color: ${variables.colors.white};
     }
