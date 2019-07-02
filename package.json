@@ -5,7 +5,8 @@
   "main": "N/A",
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <dev@kata.ai>",
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Reyhan Sofian Haqqi",
       "email": "reyhan@kata.ai"
     },
