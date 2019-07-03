@@ -68,14 +68,14 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
 
 const SubMenuIcon = styled('span')<IconType>`
   ${props => (props.iconType === 'string' ? 'font-size: 20px' : undefined)};
-  margin-right: 1.230769231rem /* $space-2 */;
+  margin-right: 1.290769231rem /* $space-2 */;
   line-height: 1em;
   vertical-align: middle;
 
   svg {
     width: 18px;
     height: 18px;
-    margin-left: 2px;
+    margin-left: 1px;
 
     path {
       fill: ${variables.colors.gray70};
