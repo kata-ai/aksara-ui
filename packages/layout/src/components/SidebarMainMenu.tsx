@@ -63,8 +63,8 @@ const IconWrapper = styled('div')<IconType>`
   border-radius: 4px /* $border-radius-small */;
 
   svg {
-    width: 20px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
 
     path {
       fill: ${variables.colors.gray60};
