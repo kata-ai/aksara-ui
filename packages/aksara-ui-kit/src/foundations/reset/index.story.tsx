@@ -5,7 +5,7 @@ import { AksaraReset } from '../reset';
 
 const readme = require('./README.md');
 
-storiesOf('Aksara UI Kit|Foundations/Reset', module).add(
+storiesOf('Foundations/Reset', module).add(
   'default',
   () => (
     <AksaraReset>

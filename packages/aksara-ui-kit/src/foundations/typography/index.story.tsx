@@ -7,7 +7,7 @@ import { StoryWrapper, StoryContainer, ComponentBlock } from '../../utils/storyb
 
 const readme = require('./README.md');
 
-storiesOf('Aksara UI Kit|Foundations/Typography', module)
+storiesOf('Foundations/Typography', module)
   .addDecorator(storyFn => (
     <AksaraReset>
       <StoryWrapper>{storyFn()}</StoryWrapper>

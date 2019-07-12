@@ -8,7 +8,7 @@ import { StoryWrapper, StoryContainer, ComponentBlock, StoryHeader } from '../..
 
 const readme = require('./README.md');
 
-storiesOf('Aksara UI Kit|Components/Button', module)
+storiesOf('Components/Button', module)
   .addDecorator(storyFn => (
     <AksaraReset>
       <StoryWrapper>{storyFn()}</StoryWrapper>

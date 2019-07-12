@@ -7,7 +7,7 @@ import { Heading, Paragraph } from '../typography';
 
 const readme = require('./README.md');
 
-storiesOf('Aksara UI Kit|Foundations/Box', module)
+storiesOf('Foundations/Box', module)
   .add(
     'default',
     () => (
