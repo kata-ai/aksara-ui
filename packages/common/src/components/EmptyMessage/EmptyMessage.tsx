@@ -14,16 +14,17 @@ interface Props {
 
 export default class EmptyMessage extends React.Component<Props> {
   static defaultProps = {
-    image: require('@kata-kit/assets/images/form-empty.svg'),
+    image: undefined,
     title: 'Empty'
   };
 
   render() {
+    const { className, style, image, title, children } = this.props;
     return (
-      <Wrapper className={this.props.className} style={this.props.style}>
-        <img src={this.props.image} alt="Empty Message" />
-        <Title data-testid="EmptyMessage-title">{this.props.title}</Title>
-        <Description>{this.props.children}</Description>
+      <Wrapper className={className} style={style}>
+        {image && <img src={image} alt="Empty Message" />}
+        <Title data-testid="EmptyMessage-title">{title}</Title>
+        <Description>{children}</Description>
       </Wrapper>
     );
   }
