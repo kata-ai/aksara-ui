@@ -3,11 +3,11 @@ import * as React from 'react';
 
 import { Heading, Text, Paragraph, Link } from '.';
 import { AksaraReset } from '..';
-import { StoryWrapper, StoryContainer, ComponentBlock, globalPropTablesExclude } from '../../utils/storybook';
+import { StoryWrapper, StoryContainer, ComponentBlock } from '../../utils/storybook';
 
 const readme = require('./README.md');
 
-storiesOf('Foundations/Typography', module)
+storiesOf('Aksara UI Kit|Foundations/Typography', module)
   .addDecorator(storyFn => (
     <AksaraReset>
       <StoryWrapper>{storyFn()}</StoryWrapper>
@@ -47,10 +47,7 @@ storiesOf('Foundations/Typography', module)
       </StoryContainer>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: [...globalPropTablesExclude]
-      }
+      notes: { markdown: readme }
     }
   )
   .add(
@@ -72,10 +69,7 @@ storiesOf('Foundations/Typography', module)
       </StoryContainer>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: [...globalPropTablesExclude]
-      }
+      notes: { markdown: readme }
     }
   )
   .add(
@@ -105,10 +99,7 @@ storiesOf('Foundations/Typography', module)
       </StoryContainer>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: [...globalPropTablesExclude]
-      }
+      notes: { markdown: readme }
     }
   )
   .add(
@@ -136,9 +127,6 @@ storiesOf('Foundations/Typography', module)
       </StoryContainer>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: [...globalPropTablesExclude]
-      }
+      notes: { markdown: readme }
     }
   );

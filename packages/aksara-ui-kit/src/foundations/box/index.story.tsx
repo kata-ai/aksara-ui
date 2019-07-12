@@ -7,7 +7,7 @@ import { Heading, Paragraph } from '../typography';
 
 const readme = require('./README.md');
 
-storiesOf('Foundations/Box', module)
+storiesOf('Aksara UI Kit|Foundations/Box', module)
   .add(
     'default',
     () => (
@@ -16,10 +16,7 @@ storiesOf('Foundations/Box', module)
       </AksaraReset>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: ['Theme', 'AksaraReset']
-      }
+      notes: { markdown: readme }
     }
   )
   .add(
@@ -32,10 +29,7 @@ storiesOf('Foundations/Box', module)
       </AksaraReset>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: ['Theme', 'AksaraReset']
-      }
+      notes: { markdown: readme }
     }
   )
   .add(
@@ -62,9 +56,6 @@ storiesOf('Foundations/Box', module)
       </AksaraReset>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: ['Heading', 'Paragraph', 'Box', 'Theme', 'AksaraReset']
-      }
+      notes: { markdown: readme }
     }
   );

@@ -4,17 +4,11 @@ import * as React from 'react';
 
 import { Button } from '.';
 import { AksaraReset } from '../../foundations';
-import {
-  StoryWrapper,
-  StoryContainer,
-  globalPropTablesExclude,
-  ComponentBlock,
-  StoryHeader
-} from '../../utils/storybook';
+import { StoryWrapper, StoryContainer, ComponentBlock, StoryHeader } from '../../utils/storybook';
 
 const readme = require('./README.md');
 
-storiesOf('Components/Button', module)
+storiesOf('Aksara UI Kit|Components/Button', module)
   .addDecorator(storyFn => (
     <AksaraReset>
       <StoryWrapper>{storyFn()}</StoryWrapper>
@@ -130,10 +124,7 @@ storiesOf('Components/Button', module)
       </StoryContainer>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: [...globalPropTablesExclude, 'Box']
-      }
+      notes: { markdown: readme }
     }
   )
   .add(
@@ -282,9 +273,6 @@ storiesOf('Components/Button', module)
       </StoryContainer>
     ),
     {
-      notes: { markdown: readme },
-      props: {
-        propTablesExclude: [...globalPropTablesExclude, 'Box', 'Heading', 'Text']
-      }
+      notes: { markdown: readme }
     }
   );

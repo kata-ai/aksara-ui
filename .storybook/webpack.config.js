@@ -5,23 +5,19 @@ module.exports = ({ config, mode }) => {
       {
         loader: require.resolve('babel-loader'),
         options: {
-          presets: [require.resolve('babel-preset-react-app')]
-        }
-      },
-      {
-        loader: require.resolve('react-docgen-typescript-loader'),
-        options: {
-          propFilter: prop => {
-            if (prop.parent == null) {
-              return true;
-            }
-
-            // Don't include extended React classes in props table.
-            return (
-              prop.parent.fileName.indexOf('node_modules/@types/react') < 0 ||
-              prop.parent.fileName.indexOf('node_modules/@types/styled-system') < 0
-            );
-          }
+          presets: [
+            require.resolve('@babel/preset-typescript'),
+            require.resolve('@babel/preset-react'),
+            [
+              require.resolve('@babel/preset-env'),
+              {
+                targets: {
+                  browsers: ['last 2 chrome versions', 'last 2 firefox versions']
+                }
+              }
+            ]
+          ],
+          plugins: [require.resolve('@babel/plugin-proposal-class-properties')]
         }
       }
     ]
