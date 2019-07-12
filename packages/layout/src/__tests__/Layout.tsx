@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import { AppRoot, Topbar, SidebarSub } from '..';
 import SidebarAndContent from '../components/SidebarAndContent';
@@ -15,11 +15,7 @@ describe('Layout', () => {
   test('renders correctly', () => {
     const { container } = render(
       <AppRoot>
-        <Topbar
-          leftContent={
-            <div style={{ width: '64px', textAlign: 'center' }}>Logo</div>
-          }
-        />
+        <Topbar leftContent={<div style={{ width: '64px', textAlign: 'center' }}>Logo</div>} />
         <SidebarAndContent hasTop>
           <Sidebar hasTop>
             <SidebarMain>
@@ -44,11 +40,7 @@ describe('Layout', () => {
   test('renders correctly (with menu as NavLink)', () => {
     const { container } = render(
       <AppRoot>
-        <Topbar
-          leftContent={
-            <div style={{ width: '64px', textAlign: 'center' }}>Logo</div>
-          }
-        />
+        <Topbar leftContent={<div style={{ width: '64px', textAlign: 'center' }}>Logo</div>} />
         <SidebarAndContent hasTop>
           <Sidebar hasTop>
             <SidebarMain>

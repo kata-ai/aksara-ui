@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { variables } from '@kata-kit/theme';
 import { DashboardCards } from '..';
 import { Card, CardButton } from '@kata-kit/card';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 describe('CardGrid', () => {
@@ -35,7 +35,7 @@ describe('CardGrid', () => {
   });
 
   test('renders with correct cardsPerRow styles', () => {
-    const { getByTestId } = render(
+    const { getAllByTestId } = render(
       <DashboardCards cardsPerRow={2}>
         <Card title="Sample Card">Card test</Card>
         <Card title="Sample Card">Card test</Card>
@@ -43,8 +43,8 @@ describe('CardGrid', () => {
       </DashboardCards>
     );
 
-    const wrapper = getByTestId('CardGrid-wrapper');
-    expect(wrapper).toHaveStyleRule('flex', '0 1 50%', {
+    const wrapper = getAllByTestId('CardGrid-wrapper');
+    expect(wrapper[0]).toHaveStyleRule('flex', '0 1 50%', {
       media: `(min-width: ${variables.breaks.breakMedium})`
     });
   });

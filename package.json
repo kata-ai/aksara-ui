@@ -47,16 +47,21 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
-    "@storybook/addon-a11y": "^5.0.11",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addon-notes": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "@storybook/react": "^5.0.11",
-    "@storybook/theming": "^5.0.11",
+    "@storybook/addon-a11y": "^5.1.9",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-notes": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "@storybook/theming": "^5.1.9",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^8.0.4",
     "@types/chalk": "^2.2.0",
     "@types/debug": "^0.0.31",
     "@types/execa": "^0.9.0",
@@ -70,8 +75,9 @@
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__react": "^4.0.1",
     "@types/styled-components": "^4.1.15",
-    "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.5",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
     "clsx": "^1.0.4",
     "codecov": "^3.1.0",
     "cross-env": "^5.2.0",
@@ -83,10 +89,9 @@
     "get-stream": "^4.0.0",
     "glob": "^7.1.3",
     "husky": "^1.3.1",
-    "jest": "^23.6.0",
-    "jest-dom": "^3.0.0",
-    "jest-styled-components": "^6.3.1",
-    "lerna": "^3.10.7",
+    "jest": "^24.8.0",
+    "jest-styled-components": "^6.3.3",
+    "lerna": "^3.15.0",
     "lint-staged": "^8.1.0",
     "listr": "^0.14.3",
     "moment": "^2.22.2",
@@ -95,7 +100,6 @@
     "promise": "^8.0.2",
     "raf": "^3.4.1",
     "react-docgen-typescript-loader": "^3.1.0",
-    "react-testing-library": "^5.3.2",
     "rimraf": "^2.6.2",
     "rollup": "^1.11.3",
     "rollup-plugin-auto-external": "^2.0.0",
@@ -109,14 +113,14 @@
     "storybook-addon-jsx": "^7.1.2",
     "storybook-addon-react-docgen": "^1.2.2",
     "style-loader": "^0.23.1",
-    "ts-jest": "^23.10.5",
+    "ts-jest": "^24.0.2",
     "tsc-watch": "^1.0.31",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
-    "tslint": "^5.10.0",
-    "tslint-config-kata": "^1.1.2",
-    "tslint-config-prettier": "^1.17.0",
+    "tslint": "^5.18.0",
+    "tslint-config-kata": "^1.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.3.3333",
+    "typescript": "^3.5.3",
     "url-loader": "^1.1.1"
   },
   "resolutions": {
@@ -127,7 +131,7 @@
   "jest": {
     "collectCoverageFrom": [
       "packages/*/src/**/*.{ts,tsx}",
-      "!packages/*/src/index.{ts,tsx}",
+      "!packages/*/src/**/index.{ts,tsx}",
       "!packages/*/src/**/*.story.{ts,tsx}"
     ],
     "coverageReporters": [
@@ -137,7 +141,9 @@
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/setupTests.js",
+    "setupFilesAfterEnv": [
+      "@testing-library/react/cleanup-after-each"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

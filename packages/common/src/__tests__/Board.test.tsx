@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { Board } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 describe('Board', () => {
@@ -14,9 +14,7 @@ describe('Board', () => {
 
   test('renders correctly with title', () => {
     const { getByTestId } = render(
-      <Board headingChildren={<h1 data-testid="Board-heading">Heading</h1>}>
-        Board test
-      </Board>
+      <Board headingChildren={<h1 data-testid="Board-heading">Heading</h1>}>Board test</Board>
     );
 
     const heading = getByTestId('Board-heading');
@@ -25,9 +23,7 @@ describe('Board', () => {
 
   test('renders correctly with footer', () => {
     const { getByTestId } = render(
-      <Board footerChildren={<span data-testid="Board-footer">Footer</span>}>
-        Board test
-      </Board>
+      <Board footerChildren={<span data-testid="Board-footer">Footer</span>}>Board test</Board>
     );
 
     const footer = getByTestId('Board-footer');

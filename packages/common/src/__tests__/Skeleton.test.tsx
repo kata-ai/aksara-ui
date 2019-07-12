@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { Skeleton } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 describe('Skeleton', () => {
@@ -15,9 +15,7 @@ describe('Skeleton', () => {
 
   test('renders correct number of lines if numberOfLines is set', () => {
     const numberOfLines = 2;
-    const { getByTestId, getAllByTestId } = render(
-      <Skeleton numberOfLines={numberOfLines} />
-    );
+    const { getByTestId, getAllByTestId } = render(<Skeleton numberOfLines={numberOfLines} />);
 
     const roots = getAllByTestId('Skeleton-root');
     const multiline = getByTestId('Skeleton-multiline');

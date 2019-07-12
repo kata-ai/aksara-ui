@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 import SelectBase from '../components/SelectBase';
 import SelectAsync from '../components/SelectAsync';
 import SelectCreatable from '../components/SelectCreatable';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 const options = [
@@ -27,13 +27,7 @@ describe('SelectBase', () => {
 describe('SelectAsync', () => {
   test('renders correctly', () => {
     const { container } = render(
-      <SelectAsync
-        isLoading
-        cacheOptions
-        defaultOptions
-        loadOptions={loadOptions}
-        options={options}
-      />
+      <SelectAsync isLoading cacheOptions defaultOptions loadOptions={loadOptions} options={options} />
     );
 
     expect(container.firstChild).toBeInTheDocument();
@@ -42,9 +36,7 @@ describe('SelectAsync', () => {
 
 describe('SelectCreatable', () => {
   test('renders correctly', () => {
-    const { container } = render(
-      <SelectCreatable isLoading options={options} />
-    );
+    const { container } = render(<SelectCreatable isLoading options={options} />);
 
     expect(container.firstChild).toBeInTheDocument();
   });

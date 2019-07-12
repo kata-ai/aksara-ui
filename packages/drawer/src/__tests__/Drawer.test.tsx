@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 import { Drawer, DrawerHeader, DrawerBody, DrawerFooter } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 const handleClose = jest.fn();

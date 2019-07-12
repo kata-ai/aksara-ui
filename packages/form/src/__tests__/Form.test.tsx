@@ -1,17 +1,8 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
-import {
-  FormGroup,
-  FormLabel,
-  InputText,
-  InputTextarea,
-  InputGroup,
-  InputAddon,
-  FormHelp,
-  FormError
-} from '..';
+import { render } from '@testing-library/react';
+import { FormGroup, FormLabel, InputText, InputTextarea, InputGroup, InputAddon, FormHelp, FormError } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import { variables } from '@kata-kit/theme';
 
@@ -35,11 +26,7 @@ describe('Form', () => {
     const { getByTestId } = render(
       <FormGroup>
         <FormLabel htmlFor="textarea">Text area</FormLabel>
-        <InputTextarea
-          data-testid="text-input"
-          rows={4}
-          placeholder="Type here..."
-        />
+        <InputTextarea data-testid="text-input" rows={4} placeholder="Type here..." />
       </FormGroup>
     );
 
@@ -53,32 +40,21 @@ describe('Form', () => {
         <FormLabel data-testid="label-error" errors>
           Email Address
         </FormLabel>
-        <InputText
-          data-testid="input-error"
-          errors
-          placeholder="Type here..."
-        />
+        <InputText data-testid="input-error" errors placeholder="Type here..." />
         <FormError>Please enter an email address.</FormError>
       </FormGroup>
     );
 
     const input = getByTestId('input-error');
 
-    expect(input).toHaveStyleRule(
-      'border',
-      `1px solid ${variables.colors.red}`
-    );
+    expect(input).toHaveStyleRule('border', `1px solid ${variables.colors.red}`);
   });
 
   test('renders disabled input correctly', () => {
     const { getByTestId } = render(
       <FormGroup>
         <FormLabel htmlFor="disabled">Disabled input</FormLabel>
-        <InputText
-          data-testid="disabled-input"
-          disabled
-          placeholder="Can't touch this"
-        />
+        <InputText data-testid="disabled-input" disabled placeholder="Can't touch this" />
       </FormGroup>
     );
 

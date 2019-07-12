@@ -4,7 +4,7 @@ import base from '../styles/base';
 import table from '../styles/table';
 import spacing from '../styles/spacing';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 describe('Reset', () => {
