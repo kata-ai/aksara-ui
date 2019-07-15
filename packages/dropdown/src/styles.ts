@@ -10,7 +10,7 @@ const Block = css`
   width: 100%;
 `;
 
-export const DropdownToggleButton = styled(ButtonWrapper)`
+export const DropdownToggleButton: any = styled(ButtonWrapper)`
   ${props => props.block && Block};
   position: relative;
   text-align: left;

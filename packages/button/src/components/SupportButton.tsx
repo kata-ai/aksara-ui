@@ -16,7 +16,7 @@ export interface SupportButtonProps
   /** The color of the button. */
   color?: ButtonColors;
   /** The size of the button. */
-  size?: 'lg' | 'sm' | '';
+  size?: 'lg' | 'sm';
   /** Whether the button is an icon button or not. */
   isIcon?: boolean;
   /** Additional CSS classes to give to the button. */
@@ -129,7 +129,7 @@ const InvisibleText = styled('span')`
   visibility: hidden;
 `;
 
-const SupportButtonWrapper = styled('button')`
+const SupportButtonWrapper = styled('button')<SupportButtonProps>`
   ${ButtonBase}
   width: ${props => (props.block ? '100%' : 'auto')};
   padding: 8px 16px;

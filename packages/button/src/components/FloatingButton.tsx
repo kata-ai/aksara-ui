@@ -19,7 +19,7 @@ export interface FloatingButtonProps
   /** Icon of the button */
   icon?: string;
   /** The size of the button. */
-  size?: 'lg' | 'sm' | '';
+  size?: 'lg' | 'sm';
   /** Additional CSS classes to give to the button. */
   className?: string;
   /** `onClick` event handler. */

@@ -81,7 +81,7 @@ const directionLeft = css`
   transform: translate3d(calc(-100% - 0.125rem), 0, 0);
 `;
 
-const Wrapper = styled('div')`
+const Wrapper = styled('div')<DropdownMenuProps>`
   display: none;
   position: absolute;
   float: left;

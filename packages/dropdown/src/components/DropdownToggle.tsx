@@ -36,7 +36,11 @@ const directionLeft = css`
   margin-right: 8px;
 `;
 
-export const DropdownToggleIcon = styled('i')`
+interface CaretProps {
+  dropDirection?: DropdownDirection;
+}
+
+export const DropdownToggleIcon = styled('i')<CaretProps>`
   display: inline-block;
   position: absolute;
   right: 8px;
@@ -53,7 +57,7 @@ export const DropdownToggleIcon = styled('i')`
   ${props => props.dropDirection === 'left' && directionLeft}
 `;
 
-const Caret = (props: { dropDirection?: DropdownDirection }) => (
+const Caret = (props: CaretProps) => (
   <DropdownToggleIcon
     className="icon-arrow"
     dropDirection={props.dropDirection}

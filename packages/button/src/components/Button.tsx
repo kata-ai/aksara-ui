@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { darken } from 'polished';
 
 import { Circle } from '@kata-kit/loading';
-import ThemedComponent, { variables } from '@kata-kit/theme';
+import ThemedComponent, { variables, ThemeAttributes } from '@kata-kit/theme';
 import themes from '../theme';
 
 import ButtonBase from '../styles';
@@ -43,7 +43,7 @@ export interface ButtonProps
   /** Event handler triggered during `onClick`. */
   onClick?: any;
   /** The HTML type of the button. */
-  type?: string;
+  type?: 'submit' | 'reset' | 'button';
   /**
    * (Deprecated) Whether the button is active or not.
    */
@@ -174,7 +174,7 @@ const isIconStyles = css`
   }
 `;
 
-export const ButtonWrapper = styled('button')`
+export const ButtonWrapper = styled('button')<ButtonProps & ThemeAttributes>`
   ${props => ButtonBase(props)};
   width: ${props => (props.block ? '100%' : 'auto')};
   padding: ${props => (props.size === 'sm' ? '8px 16px' : '10px 24px')};

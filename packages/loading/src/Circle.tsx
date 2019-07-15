@@ -9,9 +9,19 @@ export interface LoadingCircleProps {
   className?: string;
 }
 
-const Circle: React.SFC<LoadingCircleProps> = ({ className, size }) => {
+const Root = styled('div')`
+  display: inline-block;
+  vertical-align: middle;
+
+  & svg path,
+  & svg rect {
+    fill: #006fe6 /* $kata-blue */;
+  }
+`;
+
+const Circle: React.FC<LoadingCircleProps> = ({ className, size = 40 }) => {
   return (
-    <Root className={className} title="0">
+    <Root className={className}>
       <svg
         version="1.1"
         id={shortid.generate()}
@@ -52,18 +62,4 @@ const Circle: React.SFC<LoadingCircleProps> = ({ className, size }) => {
   );
 };
 
-Circle.defaultProps = {
-  size: 40
-};
-
 export default Circle;
-
-const Root = styled('div')`
-  display: inline-block;
-  vertical-align: middle;
-
-  & svg path,
-  & svg rect {
-    fill: #006fe6 /* $kata-blue */;
-  }
-`;

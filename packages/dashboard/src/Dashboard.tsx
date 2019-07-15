@@ -239,13 +239,13 @@ const DashboardTooltip = styled('i')`
   }
 `;
 
-const DashboardTitle = styled('h1')`
+const DashboardTitle = styled('h1')<DashboardProps>`
   margin-bottom: 0;
   flex: 0 0 auto;
   color: ${props => props.isStarter && 'white'};
 `;
 
-const DashboardSubtitle = styled('h2')`
+const DashboardSubtitle = styled('h2')<DashboardProps>`
   color: ${props => props.isStarter && 'white'};
 `;
 

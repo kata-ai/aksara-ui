@@ -48,7 +48,7 @@ export default styled(Sidebar)`
   background: #ffffff;
 `;
 
-const Inner = styled('div')`
+const Inner = styled('div')<SidebarProps>`
   display: flex;
   flex-direction: row;
   position: fixed;
