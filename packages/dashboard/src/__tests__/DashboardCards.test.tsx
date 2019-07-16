@@ -35,7 +35,7 @@ describe('CardGrid', () => {
   });
 
   test('renders with correct cardsPerRow styles', () => {
-    const { getByTestId } = render(
+    const { getAllByTestId } = render(
       <DashboardCards cardsPerRow={2}>
         <Card title="Sample Card">Card test</Card>
         <Card title="Sample Card">Card test</Card>
@@ -43,7 +43,7 @@ describe('CardGrid', () => {
       </DashboardCards>
     );
 
-    const wrapper = getByTestId('CardGrid-wrapper');
+    const wrapper = getAllByTestId('CardGrid-wrapper')[0];
     expect(wrapper).toHaveStyleRule('flex', '0 1 50%', {
       media: `(min-width: ${variables.breaks.breakMedium})`
     });
