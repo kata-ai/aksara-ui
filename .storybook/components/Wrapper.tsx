@@ -21,7 +21,7 @@ const layoutTheme: ThemeAttributes = {
   textColor: variables.colors.gray70
 };
 
-const WrapperInner = styled('div')`
+const WrapperInner = styled('div')<WrapperProps>`
   padding: ${props => (props.noPadding ? 0 : '16px')};
   min-height: 100%;
 `;

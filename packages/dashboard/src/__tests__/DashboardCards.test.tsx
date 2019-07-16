@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { variables } from '@kata-kit/theme';
 import { DashboardCards } from '..';
 import { Card, CardButton } from '@kata-kit/card';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 describe('CardGrid', () => {

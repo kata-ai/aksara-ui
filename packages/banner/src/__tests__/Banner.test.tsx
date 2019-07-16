@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { variables } from '@kata-kit/theme';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 import { Banner } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 const handleClose = jest.fn();
