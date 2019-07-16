@@ -41,7 +41,7 @@ const WithAddonStyles = css`
   border-bottom-left-radius: 0;
 `;
 
-const Input = styled('input')`
+const Input = styled('input')<InputTextProps>`
   ${props => InputTextBase(props)};
   height: 40px;
 
