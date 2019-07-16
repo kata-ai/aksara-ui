@@ -38,7 +38,7 @@ const Div = styled('div')`
   ${props => InputAddonBase(props)};
 `;
 
-const Inner = styled('span')`
+const Inner = styled('span')<InputAddonProps>`
   display: flex;
   align-items: center;
   justify-content: center;

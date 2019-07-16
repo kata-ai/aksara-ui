@@ -229,8 +229,8 @@ export default class TooltipTarget extends React.Component<
 
     // Check if children only has ONE child. It will throw error if it has more than one child.
     // Ref: https://reactjs.org/docs/react-api.html#reactchildrenonly
-    const childElement = React.Children.only(children);
-    const childProps = childElement.props;
+    const childElement: any = React.Children.only(children);
+    const childProps: any = childElement!.props;
     const childTrigger: any = {};
 
     childTrigger.onClick = composeFunctions(childProps.onClick, onClick);

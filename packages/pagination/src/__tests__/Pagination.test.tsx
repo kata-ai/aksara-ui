@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 import { Pagination } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 jest.mock('lodash-es/isNumber');
 
-const handleSelect = jest.fn<number>(x => x);
+const handleSelect = jest.fn(x => x);
 
 describe('Pagination', () => {
   test('renders correctly', () => {

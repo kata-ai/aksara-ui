@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { variables } from '@kata-kit/theme';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { HollowButton } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 describe('SupportButton', () => {

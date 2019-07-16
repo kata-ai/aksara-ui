@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import styled from 'styled-components';
 
-import { Theme } from '@kata-kit/theme';
+import { Theme, ThemeAttributes } from '@kata-kit/theme';
 
 import { DropdownDirection } from '../types';
 
@@ -14,7 +14,7 @@ interface DropdownProps {
   block?: boolean;
   dropDirection?: DropdownDirection;
 
-  onSelect?(value?: string | number | boolean): void;
+  onSelect?: (value?: string | number | boolean) => void;
 }
 
 class Dropdown extends React.Component<DropdownProps> {
@@ -90,7 +90,7 @@ class Dropdown extends React.Component<DropdownProps> {
 
   render() {
     // Omit these properties from `this.props`
-    const { isOpen: _, ...props } = this.props;
+    const { isOpen: _, onSelect: _onSelect, ...props } = this.props;
 
     const {
       className,
@@ -139,7 +139,7 @@ class Dropdown extends React.Component<DropdownProps> {
 
 export default Dropdown;
 
-const DropdownWrapper = styled('div')`
+const DropdownWrapper = styled('div')<DropdownProps & ThemeAttributes>`
   display: ${(props: DropdownProps) =>
     props.block ? 'block' : 'inline-block'};
   position: relative;

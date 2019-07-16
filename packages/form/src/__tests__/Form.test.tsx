@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import {
   FormGroup,
   FormLabel,
@@ -11,7 +11,7 @@ import {
   FormError
 } from '..';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import { variables } from '@kata-kit/theme';
 
