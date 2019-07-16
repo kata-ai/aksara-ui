@@ -24,9 +24,7 @@ const defaultStyle: Styles = {
       ? variables.colors.gray10
       : variables.colors.white,
     boxShadow: state.isFocused
-      ? `0 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 0 4px ${
-          variables.colors.softKataBlue
-        }`
+      ? `0 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 0 4px ${variables.colors.softKataBlue}`
       : 'none',
     transition: `all ${variables.transitions.transitionFast} ease`,
     '&:hover': {
