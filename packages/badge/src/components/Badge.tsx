@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import themes from '../theme';
 import styles from '../styles';
-import ThemedComponent, { variables } from '@kata-kit/theme';
+import ThemedComponent, { variables, ThemeAttributes } from '@kata-kit/theme';
 
 export type BadgeColors =
   | 'primary'
@@ -37,7 +37,7 @@ export default class Badge extends React.Component<BadgeProps> {
   }
 }
 
-const Root = styled('span')`
+const Root = styled('span')<BadgeProps & ThemeAttributes>`
   ${styles}
   border-radius: ${variables.borderRadiuses.borderRadiusXs};
   color: ${props => props.textColor};
