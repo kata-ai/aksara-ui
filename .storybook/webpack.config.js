@@ -37,7 +37,7 @@ module.exports = (baseConfig, env, config) => {
     '@kata-kit': path.resolve(__dirname, '../', 'packages'),
     '@docs': path.resolve(__dirname, '../', 'docs')
   });
-  config.resolve.mainFields = ['kata-kit:src', 'main'];
+  config.resolve.mainFields = ['wicara:src', 'kata-kit:src', 'main'];
 
   config.plugins.push(
     new ForkTsCheckerWebpackPlugin({
