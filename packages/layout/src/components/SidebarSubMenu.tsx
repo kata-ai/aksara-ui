@@ -41,12 +41,14 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
         {...rest}
       >
         {icon ? (
-          <Span>
+          <SubMenuInner>
             <SubMenuIcon iconType={typeof icon}>{renderIcon(icon)}</SubMenuIcon>
-            {children}
-          </Span>
+            <span>{children}</span>
+          </SubMenuInner>
         ) : (
-          <Span>{children}</Span>
+          <SubMenuInner>
+            <span>{children}</span>
+          </SubMenuInner>
         )}
       </StyledNavLink>
     );
@@ -55,12 +57,14 @@ const SidebarSubMenu: React.SFC<SidebarSubMenuProps> = ({
   return (
     <StyledAnchor className={className} style={style} {...rest}>
       {icon ? (
-        <Span>
+        <SubMenuInner>
           <SubMenuIcon iconType={typeof icon}>{renderIcon(icon)}</SubMenuIcon>{' '}
-          {children}
-        </Span>
+          <span>{children}</span>
+        </SubMenuInner>
       ) : (
-        <Span>{children}</Span>
+        <SubMenuInner>
+          <span>{children}</span>
+        </SubMenuInner>
       )}
     </StyledAnchor>
   );
@@ -73,8 +77,8 @@ const SubMenuIcon = styled('span')<IconType>`
   vertical-align: middle;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     margin-left: 1px;
 
     path {
@@ -83,7 +87,10 @@ const SubMenuIcon = styled('span')<IconType>`
   }
 `;
 
-const Span = styled('span')`
+const SubMenuInner = styled('div')`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-size: 1rem;
   color: ${variables.colors.gray70};
 `;
@@ -103,7 +110,7 @@ const BaseStyles = css`
     text-decoration: none;
     background-color: ${variables.colors.gray10};
 
-    ${Span} {
+    ${SubMenuInner} {
       color: ${variables.colors.gray70};
     }
   }
@@ -112,7 +119,7 @@ const BaseStyles = css`
     background-color: ${variables.colors.gray70};
     color: ${variables.colors.white};
 
-    ${Span} {
+    ${SubMenuInner} {
       color: ${variables.colors.white};
     }
 
@@ -129,14 +136,14 @@ const BaseStyles = css`
   }
 
   &.is-active {
-    ${Span} {
+    ${SubMenuInner} {
       color: ${variables.colors.kataBlue};
     }
 
     &:hover {
       background: none;
 
-      ${Span} {
+      ${SubMenuInner} {
         color: ${variables.colors.kataBlue};
       }
     }
