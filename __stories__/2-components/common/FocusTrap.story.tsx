@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 import WithState from '@storybook-utils/components/WithState';
 
@@ -10,9 +9,9 @@ import { Button } from '@kata-kit/button/src';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components|Common/FocusTrap', module)
-  .addDecorator(StoryWrapper)
-  .addDecorator(wInfo());
+const story = storiesOf('Components|Common/FocusTrap', module).addDecorator(
+  StoryWrapper
+);
 
 const info = `
 ## Install

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 
 import { Skeleton } from '@kata-kit/common/src/components/Skeleton';

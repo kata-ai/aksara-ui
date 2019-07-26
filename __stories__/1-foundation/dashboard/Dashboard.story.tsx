@@ -10,16 +10,11 @@ import Avatar from '@kata-kit/avatar/src/components/Avatar';
 import Button from '@kata-kit/button/src/components/Button';
 import CardButton from '@kata-kit/card/src/CardButton';
 
-const story = storiesOf('Foundations|Dashboard', module);
-
-story
+storiesOf('Foundations|Dashboard', module)
   .addDecorator(storyFn => <RootWrapper noPadding>{storyFn()}</RootWrapper>)
   .add('default', () => (
     <Dashboard title="Wicara Demo">DashboardContent</Dashboard>
-  ));
-
-story
-  .addDecorator(storyFn => <RootWrapper noPadding>{storyFn()}</RootWrapper>)
+  ))
   .add('starter', () => (
     <Dashboard
       isStarter
@@ -33,10 +28,7 @@ story
     >
       DashboardContent
     </Dashboard>
-  ));
-
-story
-  .addDecorator(storyFn => <RootWrapper noPadding>{storyFn()}</RootWrapper>)
+  ))
   .add('with button', () => (
     <Dashboard
       title="Wicara Demo"
@@ -45,10 +37,7 @@ story
     >
       DashboardContent
     </Dashboard>
-  ));
-
-story
-  .addDecorator(storyFn => <RootWrapper>{storyFn()}</RootWrapper>)
+  ))
   .add('dashboard cards', () => (
     <Container>
       <DashboardCards>

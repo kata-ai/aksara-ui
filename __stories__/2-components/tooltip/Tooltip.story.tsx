@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 
 import Tooltip from '@kata-kit/tooltip/src/components/Tooltip';
@@ -9,13 +8,9 @@ import TooltipTarget from '@kata-kit/tooltip/src/components/TooltipTarget';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components|Tooltip', module)
-  .addDecorator(StoryWrapper)
-  .addDecorator(
-    wInfo({
-      propTables: [Tooltip, TooltipTarget]
-    })
-  );
+const story = storiesOf('Components|Tooltip', module).addDecorator(
+  StoryWrapper
+);
 
 const infoText = `
 ## Install

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 import WithState from '@storybook-utils/components/WithState';
 
@@ -51,11 +50,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@kata-kit/modal';
 ~~~
 `;
 
-const story = storiesOf('Components|Modal', module)
-  .addDecorator(StoryWrapper)
-  .addDecorator(
-    wInfo({ propTables: [Modal, ModalHeader, ModalBody, ModalFooter] })
-  );
+const story = storiesOf('Components|Modal', module).addDecorator(StoryWrapper);
 
 story.add(
   'Documentation',

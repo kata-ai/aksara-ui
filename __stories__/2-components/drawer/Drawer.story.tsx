@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 import WithState from '@storybook-utils/components/WithState';
 
@@ -21,13 +20,7 @@ import InputGroup from '@kata-kit/form/src/components/InputGroup';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components|Drawer', module)
-  .addDecorator(StoryWrapper)
-  .addDecorator(
-    wInfo({
-      propTables: [Drawer, DrawerHeader, DrawerBody, DrawerFooter]
-    })
-  );
+const story = storiesOf('Components|Drawer', module).addDecorator(StoryWrapper);
 
 const infoText = `
 ## Install

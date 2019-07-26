@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 
 import Card from '@kata-kit/card/src/Card';
@@ -9,9 +8,7 @@ import CardButton from '@kata-kit/card/src/CardButton';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components|Card', module)
-  .addDecorator(StoryWrapper)
-  .addDecorator(wInfo({ propTables: [Card, CardButton] }));
+const story = storiesOf('Components|Card', module).addDecorator(StoryWrapper);
 
 const info = `
 ## Install

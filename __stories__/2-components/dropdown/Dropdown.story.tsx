@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 import WithState from '@storybook-utils/components/WithState';
 
@@ -16,14 +14,9 @@ type DropdownStoryState = {
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components|Dropdown', module)
-  .addDecorator(StoryWrapper)
-  .addDecorator(
-    wInfo({
-      propTables: [DropdownSelector, DropdownItem]
-    })
-  )
-  .addDecorator(withKnobs);
+const story = storiesOf('Components|Dropdown', module).addDecorator(
+  StoryWrapper
+);
 
 const infoText = `
 ## Install

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import wInfo from '@storybook-utils/utils/wInfo';
 import Wrapper from '@storybook-utils/components/Wrapper';
 
 import FormGroup from '@kata-kit/form/src/components/FormGroup';
@@ -14,20 +13,7 @@ import InputGroup from '@kata-kit/form/src/components/InputGroup';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-const story = storiesOf('Components|Form', module)
-  .addDecorator(StoryWrapper)
-  .addDecorator(
-    wInfo({
-      propTables: [
-        FormGroup,
-        FormLabel,
-        FormError,
-        InputText,
-        InputTextarea,
-        InputAddon
-      ]
-    })
-  );
+const story = storiesOf('Components|Form', module).addDecorator(StoryWrapper);
 
 const infoText = `
 ## Install

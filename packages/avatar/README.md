@@ -1,14 +1,14 @@
-# @kata-kit/badge
+# @wicara/avatar
 
-> Badge component for Wicara.
+> Avatar component for Wicara.
 
 ## Install
 
 ```sh
 # yarn
-yarn add @kata-kit/badge
+yarn add @kata-kit/avatar
 # npm
-npm install @kata-kit/badge
+npm install @kata-kit/avatar
 ```
 
 ## Usage
@@ -16,7 +16,18 @@ npm install @kata-kit/badge
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Badge } from '@kata-kit/badge';
+import { Avatar } from '@kata-kit/avatar';
 
-const Component = () => <Badge color="default" message="text" />;
+const Component = () => <Avatar src="" />;
 ```
+
+See more usage in the JSX panel
+
+## Props
+
+| Property  | Type                  | Required | Default     |
+| --------- | --------------------- | -------- | ----------- |
+| src       | `any`                 | **Yes**  | -           |
+| size      | `number`              | -        | `24`        |
+| className | `string`              | -        | `undefined` |
+| style     | `React.CSSProperties` | -        | `undefined` |

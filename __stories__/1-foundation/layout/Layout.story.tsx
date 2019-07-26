@@ -21,78 +21,75 @@ const StoryWrapper: StoryDecorator = storyFn => (
   </RootWrapper>
 );
 
-const story = storiesOf('Foundations|Layout', module).addDecorator(
-  StoryWrapper
-);
-
-story.add('default', () => (
-  <AppRoot>
-    <Topbar
-      logoContent={
-        <a
-          style={{ display: 'block', width: '64px', textAlign: 'center' }}
-          href="/"
-        >
-          <img src="https://via.placeholder.com/24x36" />
-        </a>
-      }
-    />
-    <SidebarAndContent hasTop>
-      <Sidebar hasTop collapsed>
-        <SidebarMain hasTop>
-          <SidebarMainMenu icon="bot">Bot</SidebarMainMenu>
-          <SidebarMainMenu icon="nlu">NLU</SidebarMainMenu>
-        </SidebarMain>
-      </Sidebar>
-      <Content>
-        <Dashboard
-          isStarter
-          title="Wicara Demo"
-          headerContent={
-            <p>
-              This project is intended to test the look and feel of Wicara, as
-              well as a development environment.
-            </p>
-          }
-        >
-          DashboardContent
-        </Dashboard>
-      </Content>
-    </SidebarAndContent>
-  </AppRoot>
-));
-
-story.add('with SidebarSub', () => (
-  <AppRoot>
-    <Topbar
-      logoContent={
-        <a
-          style={{ display: 'block', width: '64px', textAlign: 'center' }}
-          href="/"
-        >
-          <img src="https://via.placeholder.com/24x36" />
-        </a>
-      }
-    />
-    <SidebarAndContent hasTop>
-      <Sidebar hasTop>
-        <SidebarMain hasTop>
-          <SidebarMainMenu icon="bot">Bot</SidebarMainMenu>
-          <SidebarMainMenu icon="nlu">NLU</SidebarMainMenu>
-        </SidebarMain>
-        <SidebarSub>
-          <h2 className="mb-2">SidebarSubTitle</h2>
-          <p>SidebarSubContent</p>
-        </SidebarSub>
-      </Sidebar>
-      <Content>
-        <Dashboard
-          title="Wicara Demo"
-          tooltip="This project is intended to test the look and feel of Wicara, as well as a development environment."
-        >
-          DashboardContent
-        </Dashboard>
-      </Content>
-    </SidebarAndContent>
-  </AppRoot>
-));
+storiesOf('Foundations|Layout', module)
+  .addDecorator(StoryWrapper)
+  .add('default', () => (
+    <AppRoot>
+      <Topbar
+        logoContent={
+          <a
+            style={{ display: 'block', width: '64px', textAlign: 'center' }}
+            href="/"
+          >
+            <img src="https://via.placeholder.com/24x36" />
+          </a>
+        }
+      />
+      <SidebarAndContent hasTop>
+        <Sidebar hasTop collapsed>
+          <SidebarMain hasTop>
+            <SidebarMainMenu icon="bot">Bot</SidebarMainMenu>
+            <SidebarMainMenu icon="nlu">NLU</SidebarMainMenu>
+          </SidebarMain>
+        </Sidebar>
+        <Content>
+          <Dashboard
+            isStarter
+            title="Wicara Demo"
+            headerContent={
+              <p>
+                This project is intended to test the look and feel of Wicara, as
+                well as a development environment.
+              </p>
+            }
+          >
+            DashboardContent
+          </Dashboard>
+        </Content>
+      </SidebarAndContent>
+    </AppRoot>
+  ))
+  .add('with SidebarSub', () => (
+    <AppRoot>
+      <Topbar
+        logoContent={
+          <a
+            style={{ display: 'block', width: '64px', textAlign: 'center' }}
+            href="/"
+          >
+            <img src="https://via.placeholder.com/24x36" />
+          </a>
+        }
+      />
+      <SidebarAndContent hasTop>
+        <Sidebar hasTop>
+          <SidebarMain hasTop>
+            <SidebarMainMenu icon="bot">Bot</SidebarMainMenu>
+            <SidebarMainMenu icon="nlu">NLU</SidebarMainMenu>
+          </SidebarMain>
+          <SidebarSub>
+            <h2 className="mb-2">SidebarSubTitle</h2>
+            <p>SidebarSubContent</p>
+          </SidebarSub>
+        </Sidebar>
+        <Content>
+          <Dashboard
+            title="Wicara Demo"
+            tooltip="This project is intended to test the look and feel of Wicara, as well as a development environment."
+          >
+            DashboardContent
+          </Dashboard>
+        </Content>
+      </SidebarAndContent>
+    </AppRoot>
+  ));
