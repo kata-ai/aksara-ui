@@ -11,7 +11,7 @@ const readme = require('../../README.md');
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
-storiesOf('Components|Button/SupportButton', module)
+storiesOf('Components|Button/ToggleButton', module)
   .addDecorator(StoryWrapper)
   .add(
     'default',
