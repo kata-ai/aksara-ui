@@ -1,4 +1,4 @@
-# @kata-kit/banner
+# @wicara/banner
 
 > Banner component for Wicara.
 
@@ -22,3 +22,14 @@ const Component = () => (
   <Banner state="success" message="An alert! - You've succesfully read it." />
 );
 ```
+
+See more usage in the _JSX_ panel
+
+## Props
+
+| Property  | Type                                          | Required | Default     |
+| --------- | --------------------------------------------- | -------- | ----------- |
+| color     | `'error'`, `'success'`, `'warning'`, `'info'` | **Yes**  | -           |
+| message   | `any`                                         | **Yes**  | -           |
+| className | `string`                                      | -        | `undefined` |
+| onClose   | `(e: any) => void`                            | -        | `undefined` |

@@ -5,7 +5,6 @@ import Wrapper from '@storybook-utils/components/Wrapper';
 import WithState from '@storybook-utils/components/WithState';
 
 import { FocusTrap } from '@kata-kit/common/src/components/FocusTrap';
-import { Button } from '@kata-kit/button/src';
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
@@ -52,12 +51,12 @@ story.add(
             <p>
               Focus Lock: <strong>{active ? 'On' : 'Off'}</strong>
             </p>
-            <Button
+            <button
               onClick={() => setState({ active: !active })}
               style={{ marginBottom: '16px' }}
             >
               Toggle focus trap
-            </Button>
+            </button>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid
               adiuvas? Illa tamen simplicia, vestra versuta.

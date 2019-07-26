@@ -5,7 +5,7 @@ import Wrapper from '../../../.storybook/components/Wrapper';
 
 import { Avatar } from '.';
 
-import readme from '../README.md';
+const readme = require('../README.md');
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 

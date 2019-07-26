@@ -21,7 +21,7 @@ import { Avatar } from '@kata-kit/avatar';
 const Component = () => <Avatar src="" />;
 ```
 
-See more usage in the JSX panel
+See more usage in the _JSX_ panel
 
 ## Props
 

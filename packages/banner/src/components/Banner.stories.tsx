@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import Wrapper from '@storybook-utils/components/Wrapper';
-import WithState from '@storybook-utils/components/WithState';
+import Wrapper from '../../../../.storybook/components/Wrapper';
+import WithState from '../../../../.storybook/components/WithState';
 
 import Banner from './Banner';
 
-import readme from '../../README.md';
+const readme = require('../../README.md');
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 

@@ -1,4 +1,4 @@
-# @kata-kit/button
+# @wicara/button
 
 > Button component for Wicara.
 

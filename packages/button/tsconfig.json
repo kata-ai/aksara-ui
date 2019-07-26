@@ -7,5 +7,11 @@
     "outDir": "tsc-out"
   },
   "references": [{ "path": "../loading" }, { "path": "../theme" }],
-  "exclude": ["**/__stories__", "**/__tests__", "**/__mocks__", "**/lib"]
+  "exclude": [
+    "**/*.stories.tsx",
+    "**/*.story.tsx",
+    "**/__tests__",
+    "**/__mocks__",
+    "**/lib"
+  ]
 }

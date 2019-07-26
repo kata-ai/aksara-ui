@@ -1,4 +1,4 @@
-# @kata-kit/badge
+# @wicara/badge
 
 > Badge component for Wicara.
 
@@ -20,3 +20,13 @@ import { Badge } from '@kata-kit/badge';
 
 const Component = () => <Badge color="default" message="text" />;
 ```
+
+See more usage in the _JSX_ panel
+
+## Props
+
+| Property  | Type                                                             | Required | Default     |
+| --------- | ---------------------------------------------------------------- | -------- | ----------- |
+| color     | `'primary'`, `'secondary'`, `'success'`, `'warning'`, `'danger'` | -        | -           |
+| className | `string`                                                         | -        | `undefined` |
+| style     | `React.CSSProperties`                                            | -        | `undefined` |
