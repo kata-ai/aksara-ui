@@ -18,3 +18,11 @@ To use this component within your React app, import as follows:
 ```jsx
 import { EmptyMessage } from '@kata-kit/common';
 ```
+
+## Components
+
+### `FocusTrap`
+
+```jsx
+import { FocusTrap } from '@kata-kit/common';
+```
