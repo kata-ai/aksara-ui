@@ -9,6 +9,8 @@ import DrawerHeader from './DrawerHeader';
 import DrawerBody from './DrawerBody';
 import DrawerFooter from './DrawerFooter';
 
+const readme = require('../../README.md');
+
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
 const story = storiesOf('Components|Drawer', module).addDecorator(StoryWrapper);
@@ -69,7 +71,11 @@ story.add(
       )}
     </WithState>
   ),
-  { info: { text: infoText } }
+  {
+    notes: {
+      markdown: readme
+    }
+  }
 );
 
 story.add(
@@ -133,7 +139,11 @@ story.add(
       )}
     </WithState>
   ),
-  { info: { disable: true } }
+  {
+    notes: {
+      markdown: readme
+    }
+  }
 );
 
 story.add(
@@ -200,5 +210,9 @@ story.add(
       )}
     </WithState>
   ),
-  { info: { disable: true } }
+  {
+    notes: {
+      markdown: readme
+    }
+  }
 );
