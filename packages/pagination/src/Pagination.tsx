@@ -142,7 +142,8 @@ const PaginationButton = styled(Button)`
 
   &:disabled,
   &[disabled] {
-    background: #f6f7f8 /* $gray-10 */ !important;
+    color: #949a9d;
+    background-color: #f6f7f8 /* $gray-10 */ !important;
   }
 
   &.is-active,
