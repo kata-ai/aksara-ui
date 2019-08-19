@@ -26,6 +26,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
+    "@kata-kit/theme": "^0.7.1",
     "classnames": "^2.2.6",
     "shortid": "^2.2.14"
   },
