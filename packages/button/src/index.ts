@@ -1,31 +1,16 @@
-import Button, {
-  ButtonWrapper,
-  ButtonProps,
-  ButtonColors,
-  ButtonSizes
-} from './components/Button';
-import ButtonGroup from './components/ButtonGroup';
-import FloatingButton from './components/FloatingButton';
-import SupportButton from './components/SupportButton';
-import ToggleButton from './components/ToggleButton';
-import HollowButton, { HollowButtonProps } from './components/HollowButton';
-import IconicButton, { IconicButtonProps } from './components/IconicButton';
+export { default as Button } from './components/Button';
+export * from './components/Button';
+export { default as ButtonGroup } from './components/ButtonGroup';
+export * from './components/ButtonGroup';
+export { default as FloatingButton } from './components/FloatingButton';
+export * from './components/FloatingButton';
+export { default as SupportButton } from './components/SupportButton';
+export * from './components/SupportButton';
+export { default as ToggleButton } from './components/ToggleButton';
+export * from './components/ToggleButton';
+export { default as HollowButton } from './components/HollowButton';
+export * from './components/HollowButton';
+export { default as IconicButton } from './components/IconicButton';
+export * from './components/HollowButton';
 
-import ButtonBase from './styles';
-
-export {
-  Button,
-  ButtonWrapper,
-  ButtonGroup,
-  ButtonProps,
-  ButtonColors,
-  ButtonSizes,
-  FloatingButton,
-  SupportButton,
-  ToggleButton,
-  HollowButton,
-  HollowButtonProps,
-  IconicButton,
-  IconicButtonProps,
-  ButtonBase
-};
+export { default as ButtonBase } from './styles';
