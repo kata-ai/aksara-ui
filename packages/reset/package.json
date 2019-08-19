@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/reset",
-  "version": "0.7.1",
+  "version": "0.7.2-canary.0",
   "description": "Provides necessary CSS resets to use Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",

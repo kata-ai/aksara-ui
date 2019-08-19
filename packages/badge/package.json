@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/badge",
-  "version": "0.7.2",
+  "version": "0.7.3-canary.0",
   "description": "Badge component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -31,6 +31,5 @@
   "peerDependencies": {
     "react": "^16.3.0",
     "styled-components": "^4.1.2"
-  },
-  "devDependencies": {}
+  }
 }

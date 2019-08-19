@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
 
 import RootWrapper from '../../../.storybook/components/Wrapper';
 
@@ -14,6 +15,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
 );
 
 storiesOf('Components|Loading', module)
+  .addDecorator(withKnobs)
   .addDecorator(StoryWrapper)
   .add('Circle', () => <Circle />, {
     notes: {
@@ -29,4 +31,11 @@ storiesOf('Components|Loading', module)
     notes: {
       markdown: readme
     }
-  });
+  })
+  .add(
+    'Examples',
+    () => <Circle size={number('Size', 40)} color={text('color', '#006fe6')} />,
+    {
+      info: { disable: true }
+    }
+  );
