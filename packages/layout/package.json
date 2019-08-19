@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/layout",
-  "version": "0.7.4",
+  "version": "0.7.5-canary.0",
   "description": "Layout components for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
