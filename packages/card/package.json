@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/card",
-  "version": "0.7.2-canary.0",
+  "version": "0.7.2-canary.1",
   "description": "Card component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,7 +25,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/theme": "^0.7.1",
+    "@kata-kit/theme": "^0.7.2-alpha.0",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {

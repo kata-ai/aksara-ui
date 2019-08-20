@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/drawer",
-  "version": "0.7.4-canary.0",
+  "version": "0.7.4-canary.1",
   "description": "Drawer component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -25,8 +25,8 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
-    "@kata-kit/button": "^0.7.4-canary.0",
-    "@kata-kit/theme": "^0.7.1",
+    "@kata-kit/button": "^0.7.4-canary.1",
+    "@kata-kit/theme": "^0.7.2-alpha.0",
     "classnames": "^2.2.6",
     "react-custom-scrollbars": "^4.2.1"
   },
