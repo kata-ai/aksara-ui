@@ -1,16 +1,29 @@
-import { configure, addDecorator } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { configure, addDecorator, addParameters } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y';
+import { jsxDecorator } from 'storybook-addon-jsx';
+import storybookTheme from './storybookTheme';
 
-addDecorator(
-  withOptions({
-    name: 'Wicara (kata-kit)',
-    url: 'https://github.com/kata-ai/wicara',
-    hierarchySeparator: /\/|\./,
-    hierarchyRootSeparator: /\|/
-  })
-);
+// Accessibility addon
+// https://github.com/storybooks/storybook/tree/master/addons/a11y
+addDecorator(withA11y);
 
-const stories = require.context('../', true, /\/__stories__\/.+\.story\.tsx?$/);
+// JSX addon
+// https://github.com/storybooks/addon-jsx
+addDecorator(jsxDecorator);
+addParameters({
+  jsx: {
+    showDefaultProps: false
+  }
+});
+
+// use custom theme
+addParameters({
+  options: {
+    theme: storybookTheme
+  }
+});
+
+const stories = require.context('../', true, /\.(story|stories)\.tsx?$/);
 
 function loadStories() {
   stories.keys().forEach(filename => stories(filename));

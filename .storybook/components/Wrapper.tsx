@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Theme, ThemeAttributes, variables } from '@kata-kit/theme';
-import { KataReset } from '@kata-kit/reset';
+import { Theme, ThemeAttributes, variables } from '../../packages/theme/src';
+import { KataReset } from '../../packages/reset/src';
 
 import '@kata-kit/fonts/museo-sans-rounded.css';
 import '@kata-kit/fonts/kata-icons.css';

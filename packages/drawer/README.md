@@ -24,12 +24,17 @@ import {
 } from '@kata-kit/drawer';
 
 const Component = () => (
-  <Drawer isOpen={open} onClose={() => this.toggleDrawer()}>
+  <Drawer isOpen={this.stateisOpen} onClose={() => this.setState({ isOpen: false })}>
     <DrawerHeader title="Drawer" />
-
-    <DrawerBody>...</DrawerBody>
-
-    <DrawerFooter>...</DrawerFooter>
+    <DrawerBody>
+      <p>Drawer Body</p>
+    </DrawerBody>
+    <DrawerFooter>
+      Drawer Footer
+    </DrawerFooter>
   </Drawer>
+  <button type="button" onClick={() => this.setState({ isOpen: true })}>
+    Open drawer
+  </button>
 );
 ```
