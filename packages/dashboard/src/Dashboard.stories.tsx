@@ -3,12 +3,13 @@ import { storiesOf } from '@storybook/react';
 
 import RootWrapper from '@storybook-utils/components/Wrapper';
 
-import { Dashboard, DashboardCards } from '@kata-kit/dashboard/src';
-import { Container } from '@kata-kit/layout/src';
-import Card from '@kata-kit/card/src/Card';
-import Avatar from '@kata-kit/avatar/src/components/Avatar';
-import Button from '@kata-kit/button/src/components/Button';
-import CardButton from '@kata-kit/card/src/CardButton';
+import Dashboard from './Dashboard';
+import DashboardCards from './DashboardCards';
+
+import { Container } from '../../layout/src';
+import { Card, CardButton } from '../../card/src';
+import { Avatar } from '../../avatar/src';
+import { Button } from '../../button/src';
 
 storiesOf('Foundations|Dashboard', module)
   .addDecorator(storyFn => <RootWrapper noPadding>{storyFn()}</RootWrapper>)

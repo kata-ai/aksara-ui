@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import RootWrapper from '@storybook-utils/components/Wrapper';
+import RootWrapper from '../../../../.storybook/components/Wrapper';
 
 const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper>{storyFn()}</RootWrapper>
@@ -9,7 +9,7 @@ const StoryWrapper: StoryDecorator = storyFn => (
 
 storiesOf('Foundations|Reset', module)
   .addDecorator(StoryWrapper)
-  .add('Headings', () => (
+  .add('headings', () => (
     <div>
       <h1>h1. Heading</h1>
       <h2>h2. Heading</h2>
@@ -19,14 +19,14 @@ storiesOf('Foundations|Reset', module)
       <h6>h6. Heading</h6>
     </div>
   ))
-  .add('Text helper classes', () => (
+  .add('text helper classes', () => (
     <div>
       <h4 className="subtitle">h4. Heading with subtitle</h4>
       <h5 className="text-label">h5. Heading with text-label</h5>
       <h6 className="text-small">h6. Heading with text-small</h6>
     </div>
   ))
-  .add('Body and links', () => (
+  .add('body and links', () => (
     <div>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting

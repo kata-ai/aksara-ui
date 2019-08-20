@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 
-import RootWrapper from '@storybook-utils/components/Wrapper';
+import RootWrapper from '../../../.storybook/components/Wrapper';
 
 import {
   AppRoot,
@@ -12,8 +12,8 @@ import {
   SidebarMain,
   SidebarMainMenu,
   SidebarSub
-} from '@kata-kit/layout/src';
-import { Dashboard } from '@kata-kit/dashboard/src';
+} from './';
+import { Dashboard } from '../../dashboard/src';
 
 const StoryWrapper: StoryDecorator = storyFn => (
   <RootWrapper noPadding layout>
