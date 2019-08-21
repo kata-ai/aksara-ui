@@ -1,5 +1,7 @@
 # Theming
 
+> _This section is a candidate for deprecation._
+
 `@kata-kit/theme` contains source code for the Wicara theming framework.
 
 We use `styled-components` for styling our components, which combines the power of CSS-in-JS, as well as the familiarity of regular SCSS, through the power of tagged template literals. This package provides top-level and inner-level style resets, as well as abstractions on top of styled-components, which allows for simpler component theming.

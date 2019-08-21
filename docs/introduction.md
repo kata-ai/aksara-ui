@@ -1,6 +1,6 @@
 # Introduction
 
-**Wicara** (previously kata-kit) is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
+**Wicara** is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
 
 **Note: Wicara is still in beta.**
 
@@ -16,13 +16,11 @@ These goals guide us on what to strive for when building components for Wicara.
 - Keep component/prop names concise without being clever.
 - When in doubt, look at other component libraries for inspiration.
 
-### Modular and reusable.
+### Extensible, yet simple.
 
-- Components should do one thing and do it well.
-- Strive for a modular component architecture. Prefer importing existing components with similar uses rather than reinventing the wheel.
-- Consider leveraging React features + patterns like render/children props for enhanced modularity + easy reuse of components.
-- Strive for a cleaner API. Don’t expose underlying internals in the API unless necessary.
-- Use the theming API to ensure components can be restyled outside of the library itself.
+- Provide primitive components (e.g. `Box` and `Text`) which provides full control of styling + theme.
+- Higher-level components should’t expose underlying internals in the API unless necessary.
+- Consider leveraging React features + patterns like [render props](https://reactjs.org/docs/render-props.html) and/or [Hooks](https://reactjs.org/docs/hooks-intro.html) for enhanced modularity + easy reuse of components.
 
 ### Accessibility comes first.
 
