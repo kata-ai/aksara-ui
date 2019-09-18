@@ -20,6 +20,7 @@
     { "path": "reset" },
     { "path": "split-button" },
     { "path": "theme" },
-    { "path": "tooltip" }
+    { "path": "tooltip" },
+    { "path": "wicara-core" }
   ]
 }

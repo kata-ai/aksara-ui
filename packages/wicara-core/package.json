@@ -1,0 +1,38 @@
+{
+  "name": "@wicara/core",
+  "version": "0.0.0",
+  "description": "Core components for Wicara.",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "wicara:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/wicara.git",
+  "author": "Kata.ai <dev@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn rollup",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "prepublishOnly": "yarn build",
+    "rollup": "rollup -i ./src/index.ts -c ../../rollup.config.js",
+    "tsc": "tsc -b .",
+    "watch": "yarn rollup -w",
+    "watch:tsc": "tsc-watch -b --preserveWatchOutput"
+  },
+  "dependencies": {
+    "styled-system": "^5.1.2"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/styled-system": "^5.1.1"
+  }
+}
