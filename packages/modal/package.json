@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/modal",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "modal component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
