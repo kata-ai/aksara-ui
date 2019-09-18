@@ -139,6 +139,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
               role="dialog"
               aria-modal="true"
               aria-labelledby={this.props.labelledById}
+              onKeyDown={this.handleKeyDown}
             >
               <DrawerContext.Provider value={this.getContextAPI()}>
                 {this.state.isOpen && this.props.children}

@@ -19,6 +19,8 @@ export interface ModalProps {
   className?: string;
   /** Used to reference the ID of the title element in the modal */
   labelledById?: string;
+  /** Disables focus trap mode. */
+  disableFocusTrap?: boolean;
   /** Callback method run when the Close button is clicked. */
   onClose(): void;
 }
@@ -34,7 +36,8 @@ export interface ModalState {
 
 class Modal extends React.Component<ModalProps, ModalState> {
   static defaultProps = {
-    noBackdrop: false
+    noBackdrop: false,
+    disableFocusTrap: false
   };
 
   el: HTMLDivElement;
@@ -105,36 +108,78 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   render() {
-    const wrapper = (
-      <FocusTrap active={this.state.show} onKeyDown={this.handleKeyDown}>
-        {!this.props.noBackdrop && (
-          <ModalOverlay
-            className={classnames(this.state.show ? 'is-open' : 'is-closed')}
-            onClick={this.onCloseDrawer}
-          />
-        )}
-        <Theme>
-          {themeAttributes => (
-            <ModalWrapper
-              data-testid="Modal-wrapper"
-              className={classnames(
-                this.state.show ? 'is-open' : 'is-closed',
-                this.props.className
-              )}
-              onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby={this.props.labelledById}
-              {...themeAttributes}
-            >
-              <ModalContext.Provider value={this.getContextAPI()}>
-                <ModalDialog>{this.props.children}</ModalDialog>
-              </ModalContext.Provider>
-            </ModalWrapper>
+    const { disableFocusTrap } = this.props;
+    let wrapper: JSX.Element;
+
+    if (disableFocusTrap) {
+      wrapper = (
+        <>
+          {!this.props.noBackdrop && (
+            <ModalOverlay
+              className={classnames(this.state.show ? 'is-open' : 'is-closed')}
+              onClick={this.onCloseDrawer}
+            />
           )}
-        </Theme>
-      </FocusTrap>
-    );
+          <Theme>
+            {themeAttributes => (
+              <ModalWrapper
+                data-testid="Modal-wrapper"
+                className={classnames(
+                  this.state.show ? 'is-open' : 'is-closed',
+                  this.props.className
+                )}
+                onClick={
+                  !this.props.noBackdrop ? this.onCloseDrawer : undefined
+                }
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={this.props.labelledById}
+                onKeyDown={this.handleKeyDown}
+                {...themeAttributes}
+              >
+                <ModalContext.Provider value={this.getContextAPI()}>
+                  <ModalDialog>{this.props.children}</ModalDialog>
+                </ModalContext.Provider>
+              </ModalWrapper>
+            )}
+          </Theme>
+        </>
+      );
+    } else {
+      wrapper = (
+        <FocusTrap active={this.state.show} onKeyDown={this.handleKeyDown}>
+          {!this.props.noBackdrop && (
+            <ModalOverlay
+              className={classnames(this.state.show ? 'is-open' : 'is-closed')}
+              onClick={this.onCloseDrawer}
+            />
+          )}
+          <Theme>
+            {themeAttributes => (
+              <ModalWrapper
+                data-testid="Modal-wrapper"
+                className={classnames(
+                  this.state.show ? 'is-open' : 'is-closed',
+                  this.props.className
+                )}
+                onClick={
+                  !this.props.noBackdrop ? this.onCloseDrawer : undefined
+                }
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={this.props.labelledById}
+                {...themeAttributes}
+              >
+                <ModalContext.Provider value={this.getContextAPI()}>
+                  <ModalDialog>{this.props.children}</ModalDialog>
+                </ModalContext.Provider>
+              </ModalWrapper>
+            )}
+          </Theme>
+        </FocusTrap>
+      );
+    }
+
     return createPortal(wrapper, this.el) as React.ReactPortal;
   }
 }
