@@ -51,7 +51,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     };
 
     this.watchOverflow = this.watchOverflow.bind(this);
-    this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.handleCloseDrawer = this.handleCloseDrawer.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
@@ -91,12 +91,21 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
   handleKeyDown(event: React.KeyboardEvent) {
     if (event.key === 'Escape') {
-      this.onCloseDrawer();
+      this.handleCloseDrawer();
     }
   }
 
-  onCloseDrawer() {
+  handleCloseDrawer() {
     this.props.onClose();
+  }
+
+  handleDrawerOverlayClick(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (this.props.backdrop) {
+      this.handleCloseDrawer();
+    }
   }
 
   watchOverflow(position: number) {
@@ -112,7 +121,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
       overflow: this.state.overflow,
       labelledById: this.props.labelledById,
       watchOverflow: this.watchOverflow,
-      onClose: this.onCloseDrawer
+      onClose: this.handleCloseDrawer
     };
   }
 
@@ -122,9 +131,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
         {this.props.backdrop && (
           <DrawerOverlay
             className={classnames(this.state.isOpen && 'is-open')}
-            onClick={
-              this.props.backdrop === true ? this.onCloseDrawer : undefined
-            }
+            onClick={this.handleDrawerOverlayClick}
           />
         )}
         <Theme values={theme}>
