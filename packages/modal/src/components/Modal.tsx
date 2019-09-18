@@ -51,7 +51,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
     super(props);
     this.el = document.createElement('div');
 
-    this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.handleCloseDrawer = this.handleCloseDrawer.bind(this);
+    this.handleDrawerOverlayClick = this.handleDrawerOverlayClick.bind(this);
     this.watchOverflow = this.watchOverflow.bind(this);
     this.getContextAPI = this.getContextAPI.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -79,13 +80,23 @@ class Modal extends React.Component<ModalProps, ModalState> {
     }
   }
 
-  handleKeyDown(event: React.KeyboardEvent) {
-    if (event.key === 'Escape') {
-      this.onCloseDrawer();
+  handleKeyDown(e: React.KeyboardEvent) {
+    e.preventDefault();
+    e.stopPropagation(); // just to be sure
+
+    if (e.key === 'Escape') {
+      this.handleCloseDrawer();
     }
   }
 
-  onCloseDrawer() {
+  handleDrawerOverlayClick(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.handleCloseDrawer();
+  }
+
+  handleCloseDrawer() {
     this.props.onClose();
   }
 
@@ -103,7 +114,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       overflow: this.state.visible,
       labelledById: this.props.labelledById,
       watchOverflow: this.watchOverflow,
-      onClose: this.onCloseDrawer
+      onClose: this.handleCloseDrawer
     };
   }
 
@@ -117,7 +128,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {!this.props.noBackdrop && (
             <ModalOverlay
               className={classnames(this.state.show ? 'is-open' : 'is-closed')}
-              onClick={this.onCloseDrawer}
+              onClick={this.handleDrawerOverlayClick}
             />
           )}
           <Theme>
@@ -128,9 +139,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
                   this.state.show ? 'is-open' : 'is-closed',
                   this.props.className
                 )}
-                onClick={
-                  !this.props.noBackdrop ? this.onCloseDrawer : undefined
-                }
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby={this.props.labelledById}
@@ -151,7 +159,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {!this.props.noBackdrop && (
             <ModalOverlay
               className={classnames(this.state.show ? 'is-open' : 'is-closed')}
-              onClick={this.onCloseDrawer}
+              onClick={this.handleCloseDrawer}
             />
           )}
           <Theme>
@@ -163,7 +171,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                   this.props.className
                 )}
                 onClick={
-                  !this.props.noBackdrop ? this.onCloseDrawer : undefined
+                  !this.props.noBackdrop ? this.handleCloseDrawer : undefined
                 }
                 role="dialog"
                 aria-modal="true"
