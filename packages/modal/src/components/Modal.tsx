@@ -81,18 +81,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   handleKeyDown(e: React.KeyboardEvent) {
-    e.preventDefault();
-    e.stopPropagation(); // just to be sure
-
     if (e.key === 'Escape') {
       this.handleCloseModal();
     }
   }
 
-  handleModalOverlayClick(e: React.MouseEvent) {
-    e.preventDefault();
-    e.stopPropagation();
-
+  handleModalOverlayClick() {
     this.handleCloseModal();
   }
 
