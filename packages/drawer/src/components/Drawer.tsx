@@ -19,9 +19,13 @@ export interface DrawerProps {
   isOpen: boolean;
   /**
    * Set to `true` if you want the drawer to feature an overlay backdrop.
-   * Set to `'static'` to make the overlay backdrop unclickable.
+   * Set to `'static'` to make the overlay backdrop unclickable. (deprecated)
    */
   backdrop?: true | false | 'static';
+  /**
+   * Set to `true` to enable closing the drawer by clicking the overlay.
+   */
+  isOverlayClickable?: boolean;
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Used to reference the ID of the title element in the drawer */
@@ -37,7 +41,8 @@ export interface DrawerState {
 
 class Drawer extends React.Component<DrawerProps, DrawerState> {
   static defaultProps = {
-    backdrop: 'static'
+    backdrop: 'static',
+    isOverlayClickable: false
   };
 
   el: HTMLDivElement;
@@ -52,6 +57,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
 
     this.watchOverflow = this.watchOverflow.bind(this);
     this.handleCloseDrawer = this.handleCloseDrawer.bind(this);
+    this.handleDrawerOverlayClick = this.handleDrawerOverlayClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
@@ -103,7 +109,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
     e.preventDefault();
     e.stopPropagation();
 
-    if (this.props.backdrop) {
+    if (this.props.backdrop !== 'static' || this.props.isOverlayClickable) {
       this.handleCloseDrawer();
     }
   }
@@ -143,6 +149,7 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
                 this.state.isOpen ? 'is-open' : 'is-closed',
                 this.props.className
               )}
+              tabIndex={-1}
               role="dialog"
               aria-modal="true"
               aria-labelledby={this.props.labelledById}
