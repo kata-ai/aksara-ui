@@ -18,11 +18,6 @@ export interface DrawerBodyProps {
   className?: string;
 }
 
-const preventEventPropagation = (event: React.MouseEvent<HTMLDivElement>) => {
-  event.preventDefault(); // Stop onClick from modal wrapper bubbling up.
-  event.stopPropagation(); // For real this time.
-};
-
 const ModalDialog: React.SFC<DrawerBodyProps> = ({ className, children }) => (
   <ModalContext.Consumer>
     {api => (
@@ -34,7 +29,6 @@ const ModalDialog: React.SFC<DrawerBodyProps> = ({ className, children }) => (
               className
             )}
             theme={themeAttributes}
-            onClick={preventEventPropagation}
           >
             <ModalContent theme={themeAttributes}>{children}</ModalContent>
           </Root>
