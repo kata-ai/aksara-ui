@@ -128,8 +128,21 @@ storiesOf('Components|Drawer', module)
                   <FormLabel htmlFor="password">Password</FormLabel>
                   <InputText id="password" name="password" type="password" />
                 </FormGroup>
+                <FormGroup>
+                  <button onClick={() => alert('hello')}>Click me</button>
+                </FormGroup>
+                <FormGroup>
+                  <input type="file" />
+                </FormGroup>
               </DrawerBody>
-              <DrawerFooter>This is drawer footer.</DrawerFooter>
+              <DrawerFooter>
+                <button
+                  type="button"
+                  onClick={() => setState({ isOpen: false })}
+                >
+                  Close drawer
+                </button>
+              </DrawerFooter>
             </Drawer>
             <button type="button" onClick={() => setState({ isOpen: true })}>
               Open drawer
