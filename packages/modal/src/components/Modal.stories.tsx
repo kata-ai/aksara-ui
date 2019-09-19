@@ -67,6 +67,12 @@ storiesOf('Components|Modal', module)
                   <FormLabel htmlFor="password">Password</FormLabel>
                   <InputText id="password" name="password" type="password" />
                 </FormGroup>
+                <FormGroup>
+                  <button onClick={() => alert('hello')}>Click me</button>
+                </FormGroup>
+                <FormGroup>
+                  <input type="file" />
+                </FormGroup>
               </ModalBody>
               <ModalFooter>
                 <button

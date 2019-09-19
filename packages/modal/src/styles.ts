@@ -16,7 +16,7 @@ export const ModalBase = (props: WithThemeProps<ModalProps>) =>
     left: 0;
     right: 0;
     min-height: 1px;
-    z-index: 1050;
+    z-index: 1020;
     transition: opacity 0.15s ease-out;
     visibility: hidden;
 
@@ -36,6 +36,7 @@ export const ModalContentStyles = (props: WithThemeProps<ModalProps>) =>
     box-shadow: ${modalBoxShadow};
     background-color: ${props.theme.backgroundColor};
     color: ${props.theme.textColor};
+    z-index: 1040;
   `;
 
 export const ModalDialogStyles = (props: WithThemeProps<ModalProps>) =>
@@ -47,6 +48,7 @@ export const ModalDialogStyles = (props: WithThemeProps<ModalProps>) =>
     transform: translate(0, -25%);
     transition: all 0.5s ${modalTransition};
     opacity: 0;
+    z-index: 1030;
 
     &.is-open {
       transform: translate(0, 0);
@@ -60,7 +62,7 @@ export const ModalOverlayStyles = css`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 1000;
   background-color: #000;
   opacity: 0;
   visibility: hidden;
