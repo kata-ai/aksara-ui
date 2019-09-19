@@ -40,7 +40,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     disableFocusTrap: false
   };
 
-  el: HTMLDivElement;
+  el: HTMLDivElement | undefined;
 
   state = {
     show: this.props.show,
@@ -65,18 +65,14 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   componentDidMount() {
-    try {
+    if (this.el) {
       document.body.appendChild(this.el);
-    } catch (error) {
-      // do nothing
     }
   }
 
   componentWillUnmount() {
-    try {
+    if (this.el) {
       document.body.removeChild(this.el);
-    } catch (error) {
-      // do nothing
     }
   }
 
@@ -86,7 +82,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
     }
   }
 
-  handleModalOverlayClick() {
+  handleModalOverlayClick(e: React.MouseEvent) {
+    e.preventDefault(); // Stop onClick from modal overlay bubbling up.
+    e.stopPropagation(); // For real this time.
+
     this.handleCloseModal();
   }
 
@@ -164,9 +163,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
                   this.state.show ? 'is-open' : 'is-closed',
                   this.props.className
                 )}
-                onClick={
-                  !this.props.noBackdrop ? this.handleCloseModal : undefined
-                }
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby={this.props.labelledById}
@@ -182,7 +178,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
       );
     }
 
-    return createPortal(wrapper, this.el) as React.ReactPortal;
+    if (this.el) {
+      return createPortal(wrapper, this.el);
+    }
+
+    return null;
   }
 }
 
