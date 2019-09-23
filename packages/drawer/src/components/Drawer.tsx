@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import classnames from 'classnames';
 
 import { Theme } from '@kata-kit/theme';
+import { FocusTrap } from '@kata-kit/common';
 
 import DrawerContext from './DrawerContext';
 import {
@@ -26,6 +27,8 @@ export interface DrawerProps {
    * Set to `true` to enable closing the drawer by clicking the overlay.
    */
   isOverlayClickable?: boolean;
+  /** Enables focus trap mode. */
+  enableFocusTrap?: boolean;
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Used to reference the ID of the title element in the drawer */
@@ -42,10 +45,11 @@ export interface DrawerState {
 class Drawer extends React.Component<DrawerProps, DrawerState> {
   static defaultProps = {
     backdrop: 'static',
-    isOverlayClickable: false
+    isOverlayClickable: false,
+    enableFocusTrap: false
   };
 
-  el: HTMLDivElement;
+  el: HTMLDivElement | undefined = undefined;
 
   constructor(props: DrawerProps) {
     super(props);
@@ -68,12 +72,17 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   }
 
   componentDidMount() {
-    document.body.appendChild(this.el);
+    if (this.el) {
+      document.body.appendChild(this.el);
+    }
   }
 
   componentWillUnmount() {
     this.reset();
-    document.body.removeChild(this.el);
+
+    if (this.el) {
+      document.body.removeChild(this.el);
+    }
   }
 
   componentDidUpdate(prev: DrawerProps) {
@@ -132,38 +141,86 @@ class Drawer extends React.Component<DrawerProps, DrawerState> {
   }
 
   render() {
-    const wrapper = (
-      <>
-        {this.props.backdrop && (
-          <DrawerOverlay
-            className={classnames(this.state.isOpen && 'is-open')}
-            onClick={this.handleDrawerOverlayClick}
-          />
-        )}
-        <Theme values={theme}>
-          {themeAttributes => (
-            <DrawerWrapper
-              data-testid="Drawer-wrapper"
-              theme={themeAttributes}
-              className={classnames(
-                this.state.isOpen ? 'is-open' : 'is-closed',
-                this.props.className
-              )}
-              tabIndex={-1}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby={this.props.labelledById}
-              onKeyDown={this.handleKeyDown}
-            >
-              <DrawerContext.Provider value={this.getContextAPI()}>
-                {this.state.isOpen && this.props.children}
-              </DrawerContext.Provider>
-            </DrawerWrapper>
+    const {
+      enableFocusTrap,
+      className,
+      backdrop,
+      labelledById,
+      children
+    } = this.props;
+    const { isOpen } = this.state;
+    let wrapper: JSX.Element;
+
+    if (enableFocusTrap) {
+      wrapper = (
+        <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
+          {backdrop && (
+            <DrawerOverlay
+              className={classnames(isOpen && 'is-open')}
+              onClick={this.handleDrawerOverlayClick}
+            />
           )}
-        </Theme>
-      </>
-    );
-    return createPortal(wrapper, this.el) as React.ReactPortal;
+          <Theme values={theme}>
+            {themeAttributes => (
+              <DrawerWrapper
+                data-testid="Drawer-wrapper"
+                theme={themeAttributes}
+                className={classnames(
+                  isOpen ? 'is-open' : 'is-closed',
+                  className
+                )}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={labelledById}
+                onKeyDown={this.handleKeyDown}
+              >
+                <DrawerContext.Provider value={this.getContextAPI()}>
+                  {isOpen && children}
+                </DrawerContext.Provider>
+              </DrawerWrapper>
+            )}
+          </Theme>
+        </FocusTrap>
+      );
+    } else {
+      wrapper = (
+        <>
+          {backdrop && (
+            <DrawerOverlay
+              className={classnames(isOpen && 'is-open')}
+              onClick={this.handleDrawerOverlayClick}
+            />
+          )}
+          <Theme values={theme}>
+            {themeAttributes => (
+              <DrawerWrapper
+                data-testid="Drawer-wrapper"
+                theme={themeAttributes}
+                className={classnames(
+                  isOpen ? 'is-open' : 'is-closed',
+                  className
+                )}
+                tabIndex={-1}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={labelledById}
+                onKeyDown={this.handleKeyDown}
+              >
+                <DrawerContext.Provider value={this.getContextAPI()}>
+                  {isOpen && children}
+                </DrawerContext.Provider>
+              </DrawerWrapper>
+            )}
+          </Theme>
+        </>
+      );
+    }
+
+    if (this.el) {
+      return createPortal(wrapper, this.el);
+    }
+
+    return null;
   }
 }
 
