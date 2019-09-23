@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/drawer",
-  "version": "0.7.7-beta.0",
+  "version": "0.7.7-beta.1",
   "description": "Drawer component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
