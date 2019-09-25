@@ -19,6 +19,8 @@ export interface ModalProps {
   className?: string;
   /** Used to reference the ID of the title element in the modal */
   labelledById?: string;
+  /** Disables focus trap mode. */
+  disableFocusTrap?: boolean;
   /** Callback method run when the Close button is clicked. */
   onClose(): void;
 }
@@ -34,10 +36,11 @@ export interface ModalState {
 
 class Modal extends React.Component<ModalProps, ModalState> {
   static defaultProps = {
-    noBackdrop: false
+    noBackdrop: false,
+    disableFocusTrap: false
   };
 
-  el: HTMLDivElement;
+  el: HTMLDivElement | undefined;
 
   state = {
     show: this.props.show,
@@ -48,7 +51,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
     super(props);
     this.el = document.createElement('div');
 
-    this.onCloseDrawer = this.onCloseDrawer.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleModalOverlayClick = this.handleModalOverlayClick.bind(this);
     this.watchOverflow = this.watchOverflow.bind(this);
     this.getContextAPI = this.getContextAPI.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -61,28 +65,31 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   componentDidMount() {
-    try {
+    if (this.el) {
       document.body.appendChild(this.el);
-    } catch (error) {
-      // do nothing
     }
   }
 
   componentWillUnmount() {
-    try {
+    if (this.el) {
       document.body.removeChild(this.el);
-    } catch (error) {
-      // do nothing
     }
   }
 
-  handleKeyDown(event: React.KeyboardEvent) {
-    if (event.key === 'Escape') {
-      this.onCloseDrawer();
+  handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'Escape') {
+      this.handleCloseModal();
     }
   }
 
-  onCloseDrawer() {
+  handleModalOverlayClick(e: React.MouseEvent) {
+    e.preventDefault(); // Stop onClick from modal overlay bubbling up.
+    e.stopPropagation(); // For real this time.
+
+    this.handleCloseModal();
+  }
+
+  handleCloseModal() {
     this.props.onClose();
   }
 
@@ -100,42 +107,82 @@ class Modal extends React.Component<ModalProps, ModalState> {
       overflow: this.state.visible,
       labelledById: this.props.labelledById,
       watchOverflow: this.watchOverflow,
-      onClose: this.onCloseDrawer
+      onClose: this.handleCloseModal
     };
   }
 
   render() {
-    const wrapper = (
-      <FocusTrap active={this.state.show} onKeyDown={this.handleKeyDown}>
-        {!this.props.noBackdrop && (
-          <ModalOverlay
-            className={classnames(this.state.show ? 'is-open' : 'is-closed')}
-            onClick={this.onCloseDrawer}
-          />
-        )}
-        <Theme>
-          {themeAttributes => (
-            <ModalWrapper
-              data-testid="Modal-wrapper"
-              className={classnames(
-                this.state.show ? 'is-open' : 'is-closed',
-                this.props.className
-              )}
-              onClick={!this.props.noBackdrop ? this.onCloseDrawer : undefined}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby={this.props.labelledById}
-              {...themeAttributes}
-            >
-              <ModalContext.Provider value={this.getContextAPI()}>
-                <ModalDialog>{this.props.children}</ModalDialog>
-              </ModalContext.Provider>
-            </ModalWrapper>
+    const { disableFocusTrap } = this.props;
+    let wrapper: JSX.Element;
+
+    if (disableFocusTrap) {
+      wrapper = (
+        <>
+          {!this.props.noBackdrop && (
+            <ModalOverlay
+              className={classnames(this.state.show ? 'is-open' : 'is-closed')}
+              onClick={this.handleModalOverlayClick}
+            />
           )}
-        </Theme>
-      </FocusTrap>
-    );
-    return createPortal(wrapper, this.el) as React.ReactPortal;
+          <Theme>
+            {themeAttributes => (
+              <ModalWrapper
+                data-testid="Modal-wrapper"
+                className={classnames(
+                  this.state.show ? 'is-open' : 'is-closed',
+                  this.props.className
+                )}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={this.props.labelledById}
+                onKeyDown={this.handleKeyDown}
+                {...themeAttributes}
+              >
+                <ModalContext.Provider value={this.getContextAPI()}>
+                  <ModalDialog>{this.props.children}</ModalDialog>
+                </ModalContext.Provider>
+              </ModalWrapper>
+            )}
+          </Theme>
+        </>
+      );
+    } else {
+      wrapper = (
+        <FocusTrap active={this.state.show} onKeyDown={this.handleKeyDown}>
+          {!this.props.noBackdrop && (
+            <ModalOverlay
+              className={classnames(this.state.show ? 'is-open' : 'is-closed')}
+              onClick={this.handleCloseModal}
+            />
+          )}
+          <Theme>
+            {themeAttributes => (
+              <ModalWrapper
+                data-testid="Modal-wrapper"
+                className={classnames(
+                  this.state.show ? 'is-open' : 'is-closed',
+                  this.props.className
+                )}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={this.props.labelledById}
+                {...themeAttributes}
+              >
+                <ModalContext.Provider value={this.getContextAPI()}>
+                  <ModalDialog>{this.props.children}</ModalDialog>
+                </ModalContext.Provider>
+              </ModalWrapper>
+            )}
+          </Theme>
+        </FocusTrap>
+      );
+    }
+
+    if (this.el) {
+      return createPortal(wrapper, this.el);
+    }
+
+    return null;
   }
 }
 

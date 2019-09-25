@@ -23,6 +23,21 @@ describe('Modal', () => {
     expect(wrapper).toHaveClass('is-open');
   });
 
+  test('renders correctly (no focus trap)', () => {
+    const { getByTestId } = render(
+      <Modal show disableFocusTrap onClose={handleClose}>
+        <ModalHeader title="Modal" />
+        <ModalBody>
+          <p>Modal Body</p>
+        </ModalBody>
+        <ModalFooter>Footer</ModalFooter>
+      </Modal>
+    );
+
+    const wrapper = getByTestId('Modal-wrapper');
+    expect(wrapper).toHaveClass('is-open');
+  });
+
   test('has visibility: hidden when show === false', () => {
     const { getByTestId } = render(
       <Modal show={false} onClose={handleClose}>

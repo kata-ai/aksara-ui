@@ -9,6 +9,8 @@ import DrawerHeader from './DrawerHeader';
 import DrawerBody from './DrawerBody';
 import DrawerFooter from './DrawerFooter';
 
+import { FormGroup, InputText, FormLabel } from '../../../form/src';
+
 const readme = require('../../README.md');
 
 const StoryWrapper: StoryDecorator = storyFn => <Wrapper>{storyFn()}</Wrapper>;
@@ -95,6 +97,52 @@ storiesOf('Components|Drawer', module)
                 </p>
               </DrawerBody>
               <DrawerFooter>This is drawer footer.</DrawerFooter>
+            </Drawer>
+            <button type="button" onClick={() => setState({ isOpen: true })}>
+              Open drawer
+            </button>
+          </div>
+        )}
+      </WithState>
+    ),
+    {
+      notes: {
+        markdown: readme
+      }
+    }
+  )
+  .add(
+    'with form',
+    () => (
+      <WithState initialState={{ isOpen: false }}>
+        {({ isOpen }, { setState }) => (
+          <div>
+            <Drawer isOpen={isOpen} onClose={() => setState({ isOpen: false })}>
+              <DrawerHeader title="Drawer" />
+              <DrawerBody>
+                <FormGroup>
+                  <FormLabel htmlFor="username">Username</FormLabel>
+                  <InputText id="username" name="username" type="text" />
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel htmlFor="password">Password</FormLabel>
+                  <InputText id="password" name="password" type="password" />
+                </FormGroup>
+                <FormGroup>
+                  <button onClick={() => alert('hello')}>Click me</button>
+                </FormGroup>
+                <FormGroup>
+                  <input type="file" />
+                </FormGroup>
+              </DrawerBody>
+              <DrawerFooter>
+                <button
+                  type="button"
+                  onClick={() => setState({ isOpen: false })}
+                >
+                  Close drawer
+                </button>
+              </DrawerFooter>
             </Drawer>
             <button type="button" onClick={() => setState({ isOpen: true })}>
               Open drawer

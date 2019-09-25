@@ -1,6 +1,6 @@
 {
   "name": "@kata-kit/drawer",
-  "version": "0.7.4",
+  "version": "0.7.7-beta.1",
   "description": "Drawer component for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@kata-kit/button": "^0.7.4",
+    "@kata-kit/common": "^0.7.2",
     "@kata-kit/theme": "^0.7.2",
     "classnames": "^2.2.6",
     "react-custom-scrollbars": "^4.2.1"
