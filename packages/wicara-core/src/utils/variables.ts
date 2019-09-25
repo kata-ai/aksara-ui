@@ -65,14 +65,13 @@ export const systemFonts =
 export const fonts = {
   system: systemFonts,
   sansSerif: `'Museo Sans Rounded', ${systemFonts}`,
-  monospace:
-    "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;"
+  monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;"
 };
 
 /**
- * Spacer widths in px units.
+ * Legacy spacer units (in px units).
  */
-export const space = {
+export const spaceLegacy = {
   /** Equivalent to 8px */
   space1: 8,
   /** Equivalent to 16px */
@@ -93,6 +92,28 @@ export const space = {
   space9: 72,
   /** Equivalent to 80px */
   space10: 80
+};
+
+/** Space values (in px) mapped by size designators */
+
+export const space = {
+  ...spaceLegacy,
+  /** Equivalent to 2px */
+  xxxs: 2,
+  /** Equivalent to 4px */
+  xxs: 4,
+  /** Equivalent to 8px */
+  xs: 8,
+  /** Equivalent to 12px */
+  sm: 12,
+  /** Equivalent to 16px */
+  md: 16,
+  /** Equivalent to 24px */
+  lg: 24,
+  /** Equivalent to 32px */
+  xl: 32,
+  /** Equivalent to 48px */
+  xxl: 48
 };
 
 /** Breakpoints in px units */
@@ -129,9 +150,21 @@ export const typeScale = {
     fontSize: 16,
     lineHeight: 24
   },
-  body: {
+  paragraph: {
     fontSize: 14,
     lineHeight: 20
+  },
+  large: {
+    fontSize: 16,
+    lineHeight: 24
+  },
+  body: {
+    fontSize: 13,
+    lineHeight: 20
+  },
+  label: {
+    fontSize: 12,
+    lineHeight: 16
   },
   small: {
     fontSize: 12,
