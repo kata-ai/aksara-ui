@@ -21,16 +21,13 @@ const StoryWrapper: StoryDecorator = storyFn => (
   </RootWrapper>
 );
 
-storiesOf('Foundations|Layout', module)
+storiesOf('Components|Foundations/Layout', module)
   .addDecorator(StoryWrapper)
   .add('default', () => (
     <AppRoot>
       <Topbar
         logoContent={
-          <a
-            style={{ display: 'block', width: '64px', textAlign: 'center' }}
-            href="/"
-          >
+          <a style={{ display: 'block', width: '64px', textAlign: 'center' }} href="/">
             <img src="https://via.placeholder.com/24x36" />
           </a>
         }
@@ -48,8 +45,8 @@ storiesOf('Foundations|Layout', module)
             title="Wicara Demo"
             headerContent={
               <p>
-                This project is intended to test the look and feel of Wicara, as
-                well as a development environment.
+                This project is intended to test the look and feel of Wicara, as well as a
+                development environment.
               </p>
             }
           >
@@ -63,10 +60,7 @@ storiesOf('Foundations|Layout', module)
     <AppRoot>
       <Topbar
         logoContent={
-          <a
-            style={{ display: 'block', width: '64px', textAlign: 'center' }}
-            href="/"
-          >
+          <a style={{ display: 'block', width: '64px', textAlign: 'center' }} href="/">
             <img src="https://via.placeholder.com/24x36" />
           </a>
         }
