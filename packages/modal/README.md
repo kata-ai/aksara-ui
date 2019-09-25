@@ -16,20 +16,19 @@ npm install @kata-kit/modal
 To use this component within your React app, import as follows:
 
 ```jsx
-import {
-  Drawer,
-  DrawerHeader,
-  DrawerBody,
-  DrawerFooter
-} from '@kata-kit/drawer';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from '@kata-kit/modal';
 
-const Component = () => (
-  <Drawer isOpen={open} onClose={() => this.toggleDrawer()}>
-    <DrawerHeader title="Drawer" />
+const Component = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
 
-    <DrawerBody>...</DrawerBody>
+  return (
+    <Modal show={isOpen} onClose={() => setIsOpen(false)}>
+      <ModalHeader title="Modal" />
 
-    <DrawerFooter>...</DrawerFooter>
-  </Drawer>
-);
+      <ModalBody>...</ModalBody>
+
+      <ModalFooter>...</ModalFooter>
+    </Modal>
+  );
+};
 ```
