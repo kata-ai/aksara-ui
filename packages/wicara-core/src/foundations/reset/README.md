@@ -4,20 +4,20 @@ Provides necessary CSS resets to use Aksara UI Kit.
 
 ## Usage
 
-Wrap your app inside the `AksaraReset` to use the resets and `ThemeProvider` component provided by Aksara UI Kit.
+Wrap your app inside the `WicaraReset` to use the resets and `ThemeProvider` component provided by Aksara UI Kit.
 
 ```jsx
-import { AksaraReset } from '@aksara/ui-kit';
+import { WicaraReset } from '@wicara/core';
 
 export default function MyApp({ children }) {
-  return <AksaraReset>{children}</AksaraReset>;
+  return <WicaraReset>{children}</WicaraReset>;
 }
 ```
 
 You can also use `GlobalStyles` as a standalone component which injects the base styles into the component.
 
 ```jsx
-import { GlobalStyles, Theme } from '@aksara/ui-kit';
+import { GlobalStyles, Theme } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (

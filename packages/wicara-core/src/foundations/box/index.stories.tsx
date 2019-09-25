@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { AksaraReset } from '../reset';
+import { WicaraReset } from '../reset';
 import { Box, BorderBox } from '../box';
 import { Heading, Paragraph } from '../typography';
 
@@ -11,9 +11,9 @@ storiesOf('Foundations/Box', module)
   .add(
     'default',
     () => (
-      <AksaraReset>
+      <WicaraReset>
         <Box>I'm inside a box!</Box>
-      </AksaraReset>
+      </WicaraReset>
     ),
     {
       notes: { markdown: readme }
@@ -22,11 +22,11 @@ storiesOf('Foundations/Box', module)
   .add(
     'with color/padding',
     () => (
-      <AksaraReset>
+      <WicaraReset>
         <Box padding="sm" color="grey01" bg="blue06">
           I'm inside a box!
         </Box>
-      </AksaraReset>
+      </WicaraReset>
     ),
     {
       notes: { markdown: readme }
@@ -35,7 +35,7 @@ storiesOf('Foundations/Box', module)
   .add(
     'border box',
     () => (
-      <AksaraReset>
+      <WicaraReset>
         <Box padding="sm" height="100%" width="100%" bg="grey01">
           <BorderBox
             borderRadius={8}
@@ -47,9 +47,9 @@ storiesOf('Foundations/Box', module)
               alt="Example image"
               style={{ width: '100%', height: 248, objectFit: 'cover' }}
             />
-            <Box padding="sm" bg="white">
+            <Box padding="space2" bg="white">
               <Heading scale={500}>An Example Card</Heading>
-              <Paragraph marginTop="xs" marginBottom={0}>
+              <Paragraph marginTop="space1" marginBottom={0}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                 omnis, reiciendis doloremque quisquam sequi vel eaque aperiam
                 vitae facere quia atque, hic, unde animi asperiores repudiandae
@@ -58,7 +58,7 @@ storiesOf('Foundations/Box', module)
             </Box>
           </BorderBox>
         </Box>
-      </AksaraReset>
+      </WicaraReset>
     ),
     {
       notes: { markdown: readme }

@@ -106,3 +106,35 @@ export const breakpoints = {
   /** 1600px (and more) */
   xl: 1600
 };
+
+/** Typography scale values (in pixels) mapped by style tokens. */
+export const typeScale = {
+  heading1: {
+    fontSize: 28,
+    lineHeight: 32
+  },
+  heading2: {
+    fontSize: 24,
+    lineHeight: 30
+  },
+  heading3: {
+    fontSize: 20,
+    lineHeight: 24
+  },
+  heading4: {
+    fontSize: 18,
+    lineHeight: 22
+  },
+  heading5: {
+    fontSize: 16,
+    lineHeight: 24
+  },
+  body: {
+    fontSize: 14,
+    lineHeight: 20
+  },
+  small: {
+    fontSize: 12,
+    lineHeight: 16
+  }
+};

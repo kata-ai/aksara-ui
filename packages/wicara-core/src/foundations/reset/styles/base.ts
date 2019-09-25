@@ -1,10 +1,10 @@
 import { css } from 'styled-components';
-import { textSizes, colors } from '../../../utils/variables';
+import { typeScale, colors, fonts } from '../../../utils/variables';
 
 const base = css`
   :root {
-    font-size: ${textSizes[300].fontSize}px;
-    line-height: ${textSizes[300].lineHeight}px;
+    font-size: ${typeScale.body.fontSize}px;
+    line-height: ${typeScale.body.lineHeight}px;
   }
 
   html,
@@ -14,14 +14,24 @@ const base = css`
     height: 100%;
   }
 
+  body {
+    font-family: ${fonts.sansSerif};
+    background-color: ${colors.gray10};
+    color: ${colors.gray70};
+    font-weight: 500;
+  }
+
   a {
-    color: ${colors.blue05};
+    color: ${colors.kataBlue};
     text-decoration: none;
 
-    &:hover,
-    &:focus {
-      color: ${colors.indigo04};
+    &:hover {
+      color: ${colors.darkKataBlue};
       text-decoration: underline;
+    }
+
+    &:active {
+      color: ${colors.darkKataBlue};
     }
   }
 
@@ -32,7 +42,6 @@ const base = css`
 
   #root {
     transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
-    -webkit-transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
 
     &.pushed-legend-right {
       transform: translateX(-280px);

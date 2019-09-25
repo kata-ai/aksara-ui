@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { AksaraReset } from '../reset';
+import { WicaraReset } from '../reset';
 
 const readme = require('./README.md');
 
 storiesOf('Foundations/Reset', module).add(
   'default',
   () => (
-    <AksaraReset>
+    <WicaraReset>
       <h1>h1. Heading</h1>
       <h2>h2. Heading</h2>
       <h3>h3. Heading</h3>
@@ -44,7 +44,7 @@ storiesOf('Foundations/Reset', module).add(
         dolore ea. Officia dolor soluta ut possimus non vero sint tenetur illo
         nulla, reiciendis quisquam fugiat. Est, quidem.
       </p>
-    </AksaraReset>
+    </WicaraReset>
   ),
   {
     notes: { markdown: readme }
