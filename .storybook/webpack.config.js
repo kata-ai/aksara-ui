@@ -10,14 +10,7 @@ module.exports = ({ config, mode }) => {
           presets: [
             [
               require.resolve('@babel/preset-env'),
-              {
-                targets: {
-                  browsers: [
-                    'last 2 chrome versions',
-                    'last 2 firefox versions'
-                  ]
-                }
-              }
+              { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }
             ],
             require.resolve('@babel/preset-react'),
             require.resolve('@babel/preset-typescript')
@@ -34,8 +27,7 @@ module.exports = ({ config, mode }) => {
   config.resolve.extensions.push('.ts', '.tsx');
   config.resolve.alias = Object.assign({}, config.resolve.alias, {
     '@storybook-utils': path.resolve(__dirname, './'),
-    '@kata-kit': path.resolve(__dirname, '../', 'packages'),
-    '@docs': path.resolve(__dirname, '../', 'docs')
+    '@kata-kit': path.resolve(__dirname, '../', 'packages')
   });
   config.resolve.mainFields = ['wicara:src', 'kata-kit:src', 'main'];
 

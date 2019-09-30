@@ -12,7 +12,7 @@ export const StoryHeader: React.FC<StoryHeaderProps> = ({ title, subtitle }) => 
       {title}
     </Heading>
     {subtitle ? (
-      <Text as="p" color="gray60">
+      <Text as="p" color="gray60" scale="large">
         {subtitle}
       </Text>
     ) : null}
