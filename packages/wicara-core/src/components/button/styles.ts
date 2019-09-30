@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { darken, lighten } from 'polished';
 import { typeScale, colors } from '../../utils/variables';
 
 export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'link' | 'ghost';
@@ -39,7 +38,7 @@ export const DefaultButton = css`
 
   &:disabled,
   &.disabled {
-    border-color: ${darken(0.1, '#c2c7c8')};
+    border-color: ${colors.gray40};
     background-color: #c2c7c8;
     color: ${colors.white};
   }
@@ -62,6 +61,7 @@ export const PrimaryButton = css`
     &.focus,
     &:active,
     &.active {
+      background-color: ${colors.darkCobalt};
       border-color: ${colors.darkCobalt};
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
@@ -69,7 +69,7 @@ export const PrimaryButton = css`
 
   &:disabled,
   &.disabled {
-    border-color: ${darken(0.1, '#c2c7c8')};
+    border-color: ${colors.gray40};
     background-color: #c2c7c8;
     color: ${colors.white};
   }
@@ -85,16 +85,16 @@ export const OutlineButton = css`
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      border-color: ${colors.gray70};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.gray10};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
+      background-color: ${colors.gray70};
+      color: ${colors.white};
+      border-color: ${colors.gray70};
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
   }
@@ -142,7 +142,7 @@ export const DestructiveButton = css`
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${lighten(0.05, colors.red)};
+      background-color: ${colors.red};
       color: ${colors.white};
     }
 
@@ -150,14 +150,14 @@ export const DestructiveButton = css`
     &.focus,
     &:active,
     &.active {
-      background-color: ${darken(0.05, colors.red)};
+      background-color: ${colors.red};
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
   }
 
   &:disabled,
   &.disabled {
-    border-color: ${darken(0.1, '#c2c7c8')};
+    border-color: ${colors.gray40};
     background-color: #c2c7c8;
     color: ${colors.white};
   }
@@ -191,26 +191,29 @@ export const GhostButton = css`
 
 export const SizeSmall = css`
   height: 32px;
-  padding: 0 12px;
+  padding: 0 16px;
   font-size: 11px;
-  line-height: 30px;
+  line-height: 32px;
   border-radius: 4px;
+  font-weight: 700;
 `;
 
 export const SizeMedium = css`
   height: 40px;
-  padding: 0 16px;
+  padding: 0 24px;
   font-size: 13px;
-  line-height: 38px;
+  line-height: 40px;
   border-radius: 4px;
+  font-weight: 500;
 `;
 
 export const SizeLarge = css`
   height: 56px;
   padding: 0 24px;
   font-size: ${typeScale.large.fontSize}px;
-  line-height: 54px;
+  line-height: 56px;
   border-radius: 4px;
+  font-weight: 500;
 `;
 
 export const ButtonBase = css`
@@ -224,7 +227,7 @@ export const ButtonBase = css`
   user-select: none;
   background: none;
   text-decoration: none;
-  letter-spacing: -0.05px;
+  letter-spacing: 0.2px;
   border: 1px solid transparent;
 
   &:not(:disabled):not(.disabled) {
