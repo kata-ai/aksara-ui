@@ -11,7 +11,7 @@ import { Button } from './Button';
 
 const readme = require('./README.md');
 
-storiesOf('Components/Button', module)
+storiesOf('Core|Components/Button', module)
   .addDecorator(StorybookWrapper)
   .add(
     'basic',
