@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { lighten, darken } from 'polished';
 import { typeScale, colors } from '../../utils/variables';
 
 export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'link' | 'ghost';
@@ -39,7 +40,7 @@ export const DefaultButton = css`
   &:disabled,
   &.disabled {
     border-color: ${colors.gray40};
-    background-color: #c2c7c8;
+    background-color: ${lighten(0.1, '#c2c7c8')};
     color: ${colors.white};
   }
 `;
@@ -70,7 +71,7 @@ export const PrimaryButton = css`
   &:disabled,
   &.disabled {
     border-color: ${colors.gray40};
-    background-color: #c2c7c8;
+    background-color: ${lighten(0.1, '#c2c7c8')};
     color: ${colors.white};
   }
 `;
@@ -142,7 +143,7 @@ export const DestructiveButton = css`
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.red};
+      background-color: ${lighten(0.05, colors.red)};
       color: ${colors.white};
     }
 
@@ -150,7 +151,7 @@ export const DestructiveButton = css`
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.red};
+      background-color: ${darken(0.05, colors.red)};
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
   }
@@ -158,7 +159,7 @@ export const DestructiveButton = css`
   &:disabled,
   &.disabled {
     border-color: ${colors.gray40};
-    background-color: #c2c7c8;
+    background-color: ${lighten(0.1, '#c2c7c8')};
     color: ${colors.white};
   }
 `;
