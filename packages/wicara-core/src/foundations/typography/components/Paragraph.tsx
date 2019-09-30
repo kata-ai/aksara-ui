@@ -40,7 +40,8 @@ export const Paragraph: React.SFC<ParagraphProps> = ({
 
 Paragraph.defaultProps = {
   as: 'p',
-  color: 'grey07'
+  color: 'grey07',
+  fontWeight: 300
 };
 
 Paragraph.displayName = 'Paragraph';
