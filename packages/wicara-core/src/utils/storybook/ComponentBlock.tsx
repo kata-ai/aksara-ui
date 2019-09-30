@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Box, Text } from '../../foundations';
 
-interface TypographyBlockProps {
+interface ComponentBlockProps {
   title: string;
 }
 
-export const ComponentBlock: React.FC<TypographyBlockProps> = ({ children, title }) => (
+export const ComponentBlock: React.FC<ComponentBlockProps> = ({ children, title }) => (
   <Box mb="lg">
     <Box>{children}</Box>
     <Box mt="sm">
@@ -15,5 +15,3 @@ export const ComponentBlock: React.FC<TypographyBlockProps> = ({ children, title
     </Box>
   </Box>
 );
-
-ComponentBlock.displayName = 'ComponentBlock';

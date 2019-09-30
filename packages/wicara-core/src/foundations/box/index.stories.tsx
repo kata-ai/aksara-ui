@@ -6,7 +6,7 @@ import { Box } from '../box';
 
 const readme = require('./README.md');
 
-storiesOf('Foundations/Box', module)
+storiesOf('Core|Foundations/Box', module)
   .add(
     'default',
     () => (

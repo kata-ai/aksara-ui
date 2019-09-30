@@ -25,6 +25,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
+    "polished": "^3.4.1",
     "styled-system": "^5.1.2"
   },
   "peerDependencies": {

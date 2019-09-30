@@ -5,7 +5,7 @@ import { WicaraReset } from '../reset';
 
 const readme = require('./README.md');
 
-storiesOf('Foundations/Reset', module).add(
+storiesOf('Core|Foundations/Reset', module).add(
   'default',
   () => (
     <WicaraReset>
@@ -27,22 +27,16 @@ storiesOf('Foundations/Reset', module).add(
 
       <div>
         <label htmlFor="test">Test input</label>
-        <input
-          id="test"
-          name="test"
-          type="text"
-          placeholder="Type something..."
-        />
+        <input id="test" name="test" type="text" placeholder="Type something..." />
       </div>
 
       <br />
 
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus quos
-        animi{' '}
-        <a href="https://www.youtube.com/watch?v=ERU9ZtTs3Fk">necessitatibus</a>{' '}
-        dolore ea. Officia dolor soluta ut possimus non vero sint tenetur illo
-        nulla, reiciendis quisquam fugiat. Est, quidem.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus quos animi{' '}
+        <a href="https://www.youtube.com/watch?v=ERU9ZtTs3Fk">necessitatibus</a> dolore ea. Officia
+        dolor soluta ut possimus non vero sint tenetur illo nulla, reiciendis quisquam fugiat. Est,
+        quidem.
       </p>
     </WicaraReset>
   ),

@@ -7,7 +7,7 @@ import { Portal } from './components/Portal';
 
 const readme = require('./README.md');
 
-storiesOf('Foundations/Portal', module)
+storiesOf('Core|Foundations/Portal', module)
   .addDecorator(StorybookWrapper)
   .add(
     'default',

@@ -6,7 +6,7 @@ import { StorybookWrapper, StoryContainer, ComponentBlock } from '../../utils/st
 
 const readme = require('./README.md');
 
-storiesOf('Foundations/Typography', module)
+storiesOf('Core|Foundations/Typography', module)
   .addDecorator(StorybookWrapper)
   .add(
     'heading',
