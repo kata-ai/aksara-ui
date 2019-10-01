@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { StoryDecorator } from '@storybook/react';
 
 import { WicaraReset } from '../../foundations/reset';
 import { space, colors } from '../variables';
@@ -18,7 +17,7 @@ const StoryWrapperRoot = styled('div')`
   padding: ${space.lg}px;
 `;
 
-export const StorybookWrapper: StoryDecorator = storyFn => (
+export const StorybookWrapper = (storyFn: () => any) => (
   <WicaraReset>
     <StorybookGlobal />
     <StoryWrapperRoot>{storyFn()}</StoryWrapperRoot>

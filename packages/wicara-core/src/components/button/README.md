@@ -47,5 +47,3 @@ See more usage in the _JSX_ panel
 | block     | boolean        | -        | false     | Is a block button.                              |
 | variant   | ButtonVariants | -        | default   | The variant of the button.                      |
 | size      | ButtonSizes    | -        | md        | The size of the button.                         |
-
-See detailed props usage in the _Props_ panel
