@@ -344,4 +344,28 @@ storiesOf('Core|Components/Button', module)
     {
       notes: { markdown: readme }
     }
+  )
+  .add(
+    'additional props',
+    () => (
+      <StoryContainer>
+        <StoryHeader
+          title="Button Props"
+          subtitle="Additional props to modify the look of the button."
+        />
+        <ComponentBlock title="Block Button">
+          <Button
+            type="button"
+            block
+            style={{ margin: '0 8px' }}
+            onClick={() => alert('Button clicked!')}
+          >
+            Push Me
+          </Button>
+        </ComponentBlock>
+      </StoryContainer>
+    ),
+    {
+      notes: { markdown: readme }
+    }
   );
