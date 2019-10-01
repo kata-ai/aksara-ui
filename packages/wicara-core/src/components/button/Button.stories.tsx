@@ -145,109 +145,44 @@ storiesOf('Core|Components/Button', module)
           subtitle="Left to right: default, hover, focus, disabled"
         />
         <ComponentBlock title="Default Button">
-          <Button
-            type="button"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            className="hover"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" className="hover" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            className="focus"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" className="focus" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            disabled
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" disabled style={{ margin: '0 8px' }}>
             I'm disabled
           </Button>
         </ComponentBlock>
         <ComponentBlock title="Primary Button">
-          <Button
-            type="button"
-            variant="primary"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="primary" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="primary"
-            className="hover"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="primary" className="hover" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="primary"
-            className="focus"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="primary" className="focus" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="primary"
-            disabled
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="primary" disabled style={{ margin: '0 8px' }}>
             I'm disabled
           </Button>
         </ComponentBlock>
         <ComponentBlock title="Outline Button">
-          <Button
-            type="button"
-            variant="outline"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="outline" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="outline"
-            className="hover"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="outline" className="hover" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="outline"
-            className="focus"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="outline" className="focus" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="outline"
-            disabled
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="outline" disabled style={{ margin: '0 8px' }}>
             I'm disabled
           </Button>
         </ComponentBlock>
@@ -266,76 +201,30 @@ storiesOf('Core|Components/Button', module)
           </Button>
         </ComponentBlock>
         <ComponentBlock title="Destructive Button">
-          <Button
-            type="button"
-            variant="destructive"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="destructive" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="destructive"
-            className="hover"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="destructive" className="hover" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="destructive"
-            className="focus"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="destructive" className="focus" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="destructive"
-            disabled
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="destructive" disabled style={{ margin: '0 8px' }}>
             I'm disabled
           </Button>
         </ComponentBlock>
         <ComponentBlock title="Ghost Button">
-          <Button
-            type="button"
-            variant="ghost"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="ghost" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            className="hover"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="ghost" className="hover" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            className="focus"
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="ghost" className="focus" style={{ margin: '0 8px' }}>
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            disabled
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="ghost" disabled style={{ margin: '0 8px' }}>
             I'm disabled
           </Button>
         </ComponentBlock>
@@ -354,12 +243,23 @@ storiesOf('Core|Components/Button', module)
           subtitle="Additional props to modify the look of the button."
         />
         <ComponentBlock title="Block Button">
-          <Button
-            type="button"
-            block
-            style={{ margin: '0 8px' }}
-            onClick={() => alert('Button clicked!')}
-          >
+          <Button type="button" variant="primary" block>
+            Push Me
+          </Button>
+        </ComponentBlock>
+        <ComponentBlock title="With Icons (left)">
+          <Button type="button" size="sm" variant="primary" style={{ marginRight: 8 }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="primary">
+            Push Me
+          </Button>
+        </ComponentBlock>
+        <ComponentBlock title="With Icons (right)">
+          <Button type="button" size="sm" variant="primary" style={{ marginRight: 8 }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="primary">
             Push Me
           </Button>
         </ComponentBlock>

@@ -217,8 +217,6 @@ export const SizeLarge = css`
 `;
 
 export const ButtonBase = css`
-  display: inline-block;
-  position: relative;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -245,6 +243,10 @@ export const ButtonBase = css`
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`
+  display: ${props.block ? 'block' : 'inline-block'};
+  ${props.block ? 'width: 100%;' : ''}
+  position: relative;
+
   ${ButtonBase}
 
   ${props.variant === 'default' && DefaultButton}

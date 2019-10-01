@@ -20,5 +20,12 @@ describe('components/Button', () => {
       expect(container.firstChild).toHaveStyleRule('background-color', colors.cobalt);
       expect(container.firstChild).toHaveStyleRule('color', colors.white);
     });
+
+    test('renders block buttons correctly', () => {
+      const { container } = render(<Button block>test button</Button>);
+
+      expect(container.firstChild).toHaveStyleRule('display', 'block');
+      expect(container.firstChild).toHaveStyleRule('width', '100%');
+    });
   });
 });
