@@ -10,8 +10,7 @@
     "rootDir": "./",
     "paths": {
       "@storybook-utils/*": ["./.storybook/*"],
-      "@docs/*": ["./docs/*"],
-      "@kata-kit/*": ["./packages/*/src"]
+      "@docs/*": ["./docs/*"]
     }
   },
   "exclude": ["build-scripts", "scripts"]

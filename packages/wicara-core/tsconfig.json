@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "lib",
+    "rootDir": "src",
+    "outDir": "tsc-out"
+  },
+  "references": [],
+  "exclude": [
+    "**/*.stories.tsx",
+    "**/*.story.tsx",
+    "**/__tests__",
+    "**/__mocks__",
+    "**/lib"
+  ]
+}
