@@ -1,9 +1,14 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Transition from 'react-transition-group/Transition';
-import { ToasterSettings, NotificationStatus } from '../types';
-import { ANIMATION_DURATION, TOASTER_WIDTH } from '../constants';
+import { ToasterSettings, NotificationStatus } from '../utils/types';
+import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
 import { boxShadow } from '../../../utils/index';
+import determineToasterColor from '../utils/determineToasterColor';
+
+interface WithStatusProps {
+  status?: NotificationStatus;
+}
 
 const ToastEnter = keyframes`
   0% {
@@ -43,11 +48,14 @@ const ToastExit = keyframes`
   }
 `;
 
-const Icon = styled('i')`
+const Icon = styled('i')<WithStatusProps>`
   vertical-align: middle;
+  color: ${props => determineToasterColor(props.status)};
 `;
 
-const Title = styled('h4')`
+const Title = styled('h4')<WithStatusProps>`
+  color: ${props => determineToasterColor(props.status)};
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -112,7 +120,7 @@ interface ToasterState {
 
 export default class Toaster extends React.PureComponent<ToasterSettings, ToasterState> {
   static defaultProps: Partial<ToasterSettings> = {
-    status: NotificationStatus.DEFAULT,
+    status: 'default',
     position: 'br',
     dismissible: false,
     dismissAfter: 5000
@@ -180,31 +188,15 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
   };
 
   private renderToasterTitle = (title?: string, status?: ToasterSettings['status']) => {
-    switch (status) {
-      case NotificationStatus.ERROR: {
-        return <Title className={status ? `text-danger` : undefined}>{title}</Title>;
-      }
-      default: {
-        return title ? (
-          <Title className={status ? `text-${status}` : undefined}>{title}</Title>
-        ) : null;
-      }
-    }
+    return title ? <Title status={status}>{title}</Title> : null;
   };
 
   private renderToasterIcon = (status: ToasterSettings['status']) => {
-    if (status === NotificationStatus.DEFAULT) {
+    if (status === 'default') {
       return null;
     }
 
-    switch (status) {
-      case NotificationStatus.ERROR: {
-        return <Icon className="icon-error text-danger" />;
-      }
-      default: {
-        return <Icon className={`icon-${status} text-${status}`} />;
-      }
-    }
+    return <Icon className={`icon-${status}`} status={status} />;
   };
 
   private startCloseTimer = () => {

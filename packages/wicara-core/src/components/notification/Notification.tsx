@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ToasterSettings, ToasterHandler } from './types';
+import { ToasterSettings, ToasterHandler } from './utils/types';
 import NotificationManager from './NotificationManager';
 
 const isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';

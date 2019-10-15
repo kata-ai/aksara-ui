@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ToasterHandler, ToasterSettings } from './types';
+import { ToasterHandler, ToasterSettings } from './utils/types';
 import styled from 'styled-components';
 
 import Toaster from './components/Toaster';
-import { TOASTER_WIDTH } from './constants';
+import { TOASTER_WIDTH } from './utils/constants';
 import { TransitionGroup } from 'react-transition-group';
 
 interface Props {

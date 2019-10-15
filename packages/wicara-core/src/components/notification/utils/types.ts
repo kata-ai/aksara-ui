@@ -1,16 +1,10 @@
-export enum NotificationStatus {
-  DEFAULT = 'default',
-  INFO = 'info',
-  SUCCESS = 'success',
-  WARNING = 'warning',
-  ERROR = 'error'
-}
+export type NotificationStatus = 'default' | 'info' | 'success' | 'warning' | 'error';
 
 export interface ToasterSettings {
   id?: string;
   title?: string;
   message?: string;
-  status?: string | number | NotificationStatus;
+  status?: NotificationStatus;
   image?: any;
   position?: string;
   dismissible?: boolean;

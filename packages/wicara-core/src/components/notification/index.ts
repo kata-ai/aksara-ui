@@ -3,4 +3,4 @@ import Notification from './Notification';
 const notification = new Notification();
 
 export { notification };
-export * from './types';
+export * from './utils/types';
