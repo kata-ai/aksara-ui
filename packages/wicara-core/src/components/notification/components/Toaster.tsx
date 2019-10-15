@@ -67,12 +67,12 @@ const Message = styled('p')`
   }
 `;
 
-const Left = styled('div')`
-  margin-right: 12px;
-`;
-
 const Right = styled('div')`
   flex: 1 1 auto;
+
+  &:not(:first-child) {
+    margin-left: 12px;
+  }
 `;
 
 const Root = styled('div')`
@@ -169,11 +169,11 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
   }
 
   private renderInnerToaster = () => {
-    const { title, message, status, image, allowHTML } = this.props;
+    const { title, message, status, allowHTML } = this.props;
 
     return (
       <Inner>
-        {status || image ? <Left>{status ? this.renderToasterIcon(status) : null}</Left> : null}
+        {status !== 'default' ? <div>{status ? this.renderToasterIcon(status) : null}</div> : null}
 
         <Right>
           {this.renderToasterTitle(title, status)}
