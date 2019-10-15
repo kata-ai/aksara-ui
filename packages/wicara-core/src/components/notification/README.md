@@ -31,6 +31,32 @@ export default function MyApp({ children }) {
 }
 ```
 
-## Notification options
+## Toaster Options
 
-TODO
+### `id?: string`
+
+Optional unique id to give to the toaster. Will be automatically generated if not given.
+
+### `title?: string`
+
+Optional title of the toaster.
+
+### `message: string`
+
+The message of the toaster.
+
+### `status?: 'default' | 'info' | 'success' | 'warning' | 'error'`
+
+Status icons/colors to render in the toaster. Will default to `'default'`.
+
+### `dismissible?: boolean`
+
+Whether the notification is dismissible with a click. Default is `false`.
+
+### `dismissAfter?: number`
+
+The amount of time it takes for the toaster to dismiss (in miliseconds). Default is `5000`.
+
+### `oonRemove?: () => void`
+
+Optional callback to run when the toaster has fully exited the screen.
