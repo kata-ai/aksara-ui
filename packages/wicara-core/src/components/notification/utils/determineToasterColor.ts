@@ -7,7 +7,7 @@ export default function determineToasterColor(status?: NotificationStatus) {
       return colors.gray70;
     }
     case 'info': {
-      return colors.cobalt;
+      return colors.kataBlue;
     }
     case 'success': {
       return colors.green;
