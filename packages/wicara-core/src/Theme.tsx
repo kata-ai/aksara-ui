@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { colors, space, fonts, typeScale, breakpoints } from './utils';
+import { colors, space, fonts, typeScale, breakpoints, boxShadow } from './utils';
 
 export const themeProps = {
   colors,
   space,
   fonts,
   typeScale,
+  boxShadow,
   breakpoints: [
     `${breakpoints.sm}px`,
     `${breakpoints.md}px`,

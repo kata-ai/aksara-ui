@@ -128,6 +128,14 @@ export const breakpoints = {
   xl: 1600
 };
 
+/** Default box shadow separated by layers */
+export const boxShadow = {
+  layer100: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
+  layer200: '0 2px 4px 1px rgba(0, 0, 0, 0.15)',
+  layer300: '0 4px 6px 2px rgba(0, 0, 0, 0.15)',
+  layer400: '0 6px 10px 2px rgba(0, 0, 0, 0.15)'
+};
+
 /** Typography scale values (in pixels) mapped by style tokens. */
 export const typeScale = {
   heading1: {
