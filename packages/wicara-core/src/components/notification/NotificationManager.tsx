@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { ToasterHandler, ToasterSettings } from './utils/types';
 import styled from 'styled-components';
+import { TransitionGroup } from 'react-transition-group';
 
 import Toaster from './components/Toaster';
 import { TOASTER_WIDTH } from './utils/constants';
-import { TransitionGroup } from 'react-transition-group';
+import { ToasterHandler, ToasterSettings } from './utils/types';
 
 interface Props {
   bindToaster: (handler: ToasterHandler) => void;

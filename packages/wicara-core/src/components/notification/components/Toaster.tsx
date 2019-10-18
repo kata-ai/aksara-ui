@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
-import Transition from 'react-transition-group/Transition';
+import { Transition } from 'react-transition-group';
 import { ToasterSettings, NotificationStatus } from '../utils/types';
 import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
 import { boxShadow } from '../../../utils/index';
