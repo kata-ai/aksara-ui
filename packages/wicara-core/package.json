@@ -20,6 +20,8 @@
     "clean": "rimraf lib && rimraf tsc-out",
     "prepublishOnly": "yarn build",
     "rollup": "rollup -i ./src/index.ts -c ../../rollup.config.js",
+    "storybook": "start-storybook -p 9001",
+    "storybook:build": "build-storybook",
     "tsc": "tsc -b .",
     "watch": "yarn rollup -w",
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
@@ -35,7 +37,22 @@
     "styled-components": "^4.1.2"
   },
   "devDependencies": {
+    "@babel/core": "7.6.2",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/preset-env": "7.6.2",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.6.0",
+    "@storybook/addon-a11y": "5.2.1",
+    "@storybook/addon-actions": "5.2.1",
+    "@storybook/addon-knobs": "5.2.1",
+    "@storybook/addon-links": "5.2.1",
+    "@storybook/addon-notes": "5.2.1",
+    "@storybook/react": "5.2.1",
+    "@storybook/theming": "5.2.1",
     "@types/react-transition-group": "^4.2.3",
-    "@types/styled-system": "^5.1.1"
+    "@types/styled-system": "^5.1.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "babel-preset-react-app": "^9.0.2"
   }
 }

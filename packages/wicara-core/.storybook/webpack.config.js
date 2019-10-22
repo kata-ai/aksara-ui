@@ -7,6 +7,7 @@ module.exports = ({ config, mode }) => {
       {
         loader: require.resolve('babel-loader'),
         options: {
+          sourceType: 'unambiguous',
           presets: [
             [
               require.resolve('@babel/preset-env'),
@@ -16,6 +17,7 @@ module.exports = ({ config, mode }) => {
             require.resolve('@babel/preset-typescript')
           ],
           plugins: [
+            require.resolve('@babel/plugin-transform-modules-commonjs'),
             require.resolve('@babel/plugin-proposal-class-properties'),
             require.resolve('babel-plugin-styled-components')
           ]

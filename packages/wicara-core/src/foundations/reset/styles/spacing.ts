@@ -1,39 +1,39 @@
 import { css } from 'styled-components';
-import { variables } from '@kata-kit/theme';
+import { spaceLegacy } from '../../../utils';
 
 const spacing = css`
   ${[1, 2, 3, 4, 5].map(
     val => css`
       .m-${val} {
-        margin: ${variables.spaces[`space${val}`]} !important;
+        margin: ${spaceLegacy[`space${val}`]} !important;
       }
       .mt-${val}, .my-${val} {
-        margin-top: ${variables.spaces[`space${val}`]} !important;
+        margin-top: ${spaceLegacy[`space${val}`]} !important;
       }
       .mr-${val}, .mx-${val} {
-        margin-right: ${variables.spaces[`space${val}`]} !important;
+        margin-right: ${spaceLegacy[`space${val}`]} !important;
       }
       .mb-${val}, .my-${val} {
-        margin-bottom: ${variables.spaces[`space${val}`]} !important;
+        margin-bottom: ${spaceLegacy[`space${val}`]} !important;
       }
       .ml-${val}, .mx-${val} {
-        margin-left: ${variables.spaces[`space${val}`]} !important;
+        margin-left: ${spaceLegacy[`space${val}`]} !important;
       }
 
       .p-${val} {
-        padding: ${variables.spaces[`space${val}`]} !important;
+        padding: ${spaceLegacy[`space${val}`]} !important;
       }
       .pt-${val}, .py-${val} {
-        padding-top: ${variables.spaces[`space${val}`]} !important;
+        padding-top: ${spaceLegacy[`space${val}`]} !important;
       }
       .pr-${val}, .px-${val} {
-        padding-right: ${variables.spaces[`space${val}`]} !important;
+        padding-right: ${spaceLegacy[`space${val}`]} !important;
       }
       .pb-${val}, .py-${val} {
-        padding-bottom: ${variables.spaces[`space${val}`]} !important;
+        padding-bottom: ${spaceLegacy[`space${val}`]} !important;
       }
       .pl-${val}, .px-${val} {
-        padding-left: ${variables.spaces[`space${val}`]} !important;
+        padding-left: ${spaceLegacy[`space${val}`]} !important;
       }
     `
   )};
