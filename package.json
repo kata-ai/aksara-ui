@@ -31,7 +31,7 @@
     "lint": "tslint -p tsconfig.lint.json",
     "report-coverage": "codecov -f ./coverage/*.json",
     "storybook": "yarn workspace @wicara/core run storybook",
-    "storybook:build": "yarn workspace @wicara/core run storybook:build",
+    "storybook:build": "yarn workspace @wicara/core run storybook:build -o ../../storybook-static",
     "test": "jest --env=jsdom",
     "test:coverage": "jest --env=jsdom --coverage",
     "tsc": "tsc -b packages"
