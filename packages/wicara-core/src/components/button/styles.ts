@@ -13,7 +13,6 @@ import {
   ButtonLarge
 } from './utils/buttonUtils';
 import {
-  floatingButtonSizes,
   FloatingButtonSmall,
   FloatingButtonMedium,
   FloatingButtonLarge
