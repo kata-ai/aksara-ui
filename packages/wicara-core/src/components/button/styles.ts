@@ -15,7 +15,11 @@ import {
 import {
   FloatingButtonSmall,
   FloatingButtonMedium,
-  FloatingButtonLarge
+  FloatingButtonLarge,
+  FloatingButtonPrimary,
+  FloatingButtonSuccess,
+  FloatingButtonWarning,
+  FloatingButtonDestructive
 } from './utils/floatingButtonUtils';
 
 export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'link' | 'ghost';
@@ -79,9 +83,19 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
     vertical-align: middle;
   }
 
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+  }
+
   ${props.size === 'sm' && FloatingButtonSmall}
   ${props.size === 'md' && FloatingButtonMedium}
   ${props.size === 'lg' && FloatingButtonLarge}
+
+  ${props.variant === 'primary' && FloatingButtonPrimary}
+  ${props.variant === 'success' && FloatingButtonSuccess}
+  ${props.variant === 'warning' && FloatingButtonWarning}
+  ${props.variant === 'destructive' && FloatingButtonDestructive}
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`

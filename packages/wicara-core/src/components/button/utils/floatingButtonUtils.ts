@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { ButtonSizes } from '../styles';
+import { colors } from '../../../utils';
 
 export function floatingButtonSizes(size?: ButtonSizes) {
   switch (size) {
@@ -44,5 +45,57 @@ export const FloatingButtonLarge = css`
 
   i:before {
     font-size: 24px !important;
+  }
+`;
+
+export const FloatingButtonPrimary = css`
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: ${colors.kataBlue};
+    }
+  }
+`;
+
+export const FloatingButtonSuccess = css`
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: ${colors.green};
+    }
+  }
+`;
+
+export const FloatingButtonWarning = css`
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: ${colors.yellow};
+    }
+  }
+`;
+
+export const FloatingButtonDestructive = css`
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: ${colors.red};
+    }
   }
 `;

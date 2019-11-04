@@ -142,14 +142,14 @@ stories.add(
         title="Floating Button"
         subtitle="Floating action buttons for primary context actions."
       />
-      <ComponentBlock title="Default Button">
+      <ComponentBlock title="Button Sizes">
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}
           size="sm"
           onClick={() => alert('Button clicked!')}
         >
-          <i className="icon-add" />
+          <i className="icon-add" aria-role="presentation" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -157,7 +157,7 @@ stories.add(
           size="md"
           onClick={() => alert('Button clicked!')}
         >
-          <i className="icon-add" />
+          <i className="icon-add" aria-role="presentation" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -165,7 +165,100 @@ stories.add(
           size="lg"
           onClick={() => alert('Button clicked!')}
         >
-          <i className="icon-add" />
+          <i className="icon-add" aria-role="presentation" />
+        </FloatingButton>
+      </ComponentBlock>
+      <ComponentBlock title="Default Button">
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-add" aria-role="presentation" />
+        </FloatingButton>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          disabled
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-add" aria-role="presentation" />
+        </FloatingButton>
+      </ComponentBlock>
+      <ComponentBlock title="Primary Button">
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="primary"
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-save" aria-role="presentation" />
+        </FloatingButton>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="primary"
+          disabled
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-save" aria-role="presentation" />
+        </FloatingButton>
+      </ComponentBlock>
+      <ComponentBlock title="Success Button">
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="success"
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-tick" aria-role="presentation" />
+        </FloatingButton>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="success"
+          disabled
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-tick" aria-role="presentation" />
+        </FloatingButton>
+      </ComponentBlock>
+      <ComponentBlock title="Warning Button">
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="warning"
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-account" aria-role="presentation" />
+        </FloatingButton>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="warning"
+          disabled
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-account" aria-role="presentation" />
+        </FloatingButton>
+      </ComponentBlock>
+      <ComponentBlock title="Destructive Button">
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="destructive"
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-trash" aria-role="presentation" />
+        </FloatingButton>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="destructive"
+          disabled
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-trash" aria-role="presentation" />
         </FloatingButton>
       </ComponentBlock>
     </StoryContainer>
