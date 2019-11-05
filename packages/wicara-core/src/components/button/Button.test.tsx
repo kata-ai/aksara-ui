@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Button } from './index';
+import { Button, FloatingButton } from './index';
 
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
@@ -26,6 +26,18 @@ describe('components/Button', () => {
 
       expect(container.firstChild).toHaveStyleRule('display', 'block');
       expect(container.firstChild).toHaveStyleRule('width', '100%');
+    });
+  });
+
+  describe('<FloatingButton />', () => {
+    test('renders correctly', () => {
+      const { container } = render(
+        <FloatingButton>
+          <i className="icon-trash" />
+        </FloatingButton>
+      );
+
+      expect(container.firstChild).toBeInTheDocument();
     });
   });
 });
