@@ -6,6 +6,8 @@ It's a button. What more do you expect?
 
 Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action, either in the background or foreground of an experience.
 
+### <Button />
+
 ```jsx
 import { WicaraReset, Button } from '@wicara/core';
 
@@ -37,6 +39,24 @@ export default function MyApp({ children }) {
 ```
 
 See more usage in the _JSX_ panel
+
+### `<FloatingButton />`
+
+Floating action buttons for primary context actions. Floating buttons are often paired with Wicara Icons.
+
+```jsx
+import { WicaraReset, Button } from '@wicara/core';
+
+export default function MyApp({ children }) {
+  return (
+    <WicaraReset>
+      <FloatingButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
+        <i className="icon-tick" aria-hidden="true" />
+      </Button>
+    </WicaraReset>
+  );
+}
+```
 
 ## Props
 
