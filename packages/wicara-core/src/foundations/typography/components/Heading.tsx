@@ -3,7 +3,7 @@ import * as React from 'react';
 import { styledWrapper as styled } from '../../../utils/primitives';
 
 import { determineFontDimensions } from '../utils';
-import { Typography, TypographyProps } from './Typography';
+import Typography, { TypographyProps } from './Typography';
 import { TypeScale } from '../../../Theme';
 
 export interface HeadingProps extends TypographyProps {
@@ -27,13 +27,7 @@ const StyledText = styled(Typography)<HeadingProps>`
 /**
  * Heading component provided as a styled component primitive.
  */
-export const Heading: React.SFC<HeadingProps> = ({
-  children,
-  as,
-  scale = 'heading2',
-  color,
-  ...rest
-}) => (
+const Heading: React.SFC<HeadingProps> = ({ children, as, scale = 'heading2', color, ...rest }) => (
   <StyledText
     as={as}
     color={scale === 'label' ? 'gray50' : color}
@@ -51,3 +45,5 @@ Heading.defaultProps = {
 };
 
 Heading.displayName = 'Heading';
+
+export default Heading;

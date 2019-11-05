@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 
 const supportsPortal = typeof ReactDOM.createPortal === 'function';
 
-export class Portal extends React.Component {
+class Portal extends React.Component {
   container: HTMLDivElement | undefined;
 
   constructor(props: {}) {
@@ -37,3 +37,5 @@ export class Portal extends React.Component {
     return null;
   }
 }
+
+export default Portal;
