@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { Box } from '../box';
 import { StorybookWrapper } from '../../utils/storybook';
-import { Portal } from './components/Portal';
+import Portal from './components/Portal';
 
 const readme = require('./README.md');
 

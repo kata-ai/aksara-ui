@@ -7,8 +7,8 @@ import {
   StorybookWrapper,
   ComponentBlock
 } from '../../utils/storybook';
-import { Button } from './Button';
-import { FloatingButton } from './FloatingButton';
+import Button from './Button';
+import FloatingButton from './FloatingButton';
 
 const readme = require('./README.md');
 

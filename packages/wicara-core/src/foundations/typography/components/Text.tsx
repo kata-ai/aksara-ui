@@ -4,7 +4,7 @@ import { styledWrapper as styled } from '../../../utils/primitives';
 import { TypeScale } from '../../../Theme';
 
 import { determineFontDimensions } from '../utils';
-import { Typography, TypographyProps } from './Typography';
+import Typography, { TypographyProps } from './Typography';
 
 export interface TextProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
@@ -27,7 +27,7 @@ const StyledText = styled(Typography)<TextProps>`
 /**
  * Text component provided as a styled component primitive.
  */
-export const Text: React.SFC<TextProps> = ({ children, as, scale = 'body', ...rest }) => (
+const Text: React.SFC<TextProps> = ({ children, as, scale = 'body', ...rest }) => (
   <StyledText as={as} {...determineFontDimensions(scale)} {...rest}>
     {children}
   </StyledText>
@@ -38,3 +38,5 @@ Text.defaultProps = {
 };
 
 Text.displayName = 'Text';
+
+export default Text;

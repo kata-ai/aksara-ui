@@ -4,7 +4,7 @@ import { TypeScale } from '../../../Theme';
 import { styledWrapper as styled } from '../../../utils/primitives';
 
 import { determineFontDimensions } from '../utils';
-import { Typography, TypographyProps } from './Typography';
+import Typography, { TypographyProps } from './Typography';
 
 /**
  * This is a base `Text` element to handle typography elements.
@@ -27,12 +27,7 @@ export interface ParagraphProps extends TypographyProps {
 /**
  * Paragraph component provided as a styled component primitive.
  */
-export const Paragraph: React.SFC<ParagraphProps> = ({
-  children,
-  as,
-  scale = 'paragraph',
-  ...rest
-}) => (
+const Paragraph: React.SFC<ParagraphProps> = ({ children, as, scale = 'paragraph', ...rest }) => (
   <StyledText as={as} {...determineFontDimensions(scale)} {...rest}>
     {children}
   </StyledText>
@@ -45,3 +40,5 @@ Paragraph.defaultProps = {
 };
 
 Paragraph.displayName = 'Paragraph';
+
+export default Paragraph;

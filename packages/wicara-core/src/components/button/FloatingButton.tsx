@@ -18,7 +18,7 @@ const Root = styled('button')<FloatingButtonProps>`
 /**
  * Floating action buttons used for primary context actions.
  */
-export const FloatingButton: React.SFC<FloatingButtonProps> = ({
+const FloatingButton: React.SFC<FloatingButtonProps> = ({
   children,
   className,
   style,
@@ -37,3 +37,5 @@ FloatingButton.defaultProps = {
 };
 
 FloatingButton.displayName = 'FloatingButton';
+
+export default FloatingButton;

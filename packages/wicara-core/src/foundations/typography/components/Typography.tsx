@@ -19,7 +19,7 @@ export interface TypographyProps extends LayoutProps, SpaceProps, ColorProps, Ty
 /**
  * This is a base `Text` element to handle typography elements.
  */
-export const Typography = primitives.Text<TypographyProps>`
+const Typography = primitives.Text<TypographyProps>`
   ${layout}
   ${space}
   ${color}
@@ -27,3 +27,5 @@ export const Typography = primitives.Text<TypographyProps>`
 `;
 
 Typography.displayName = 'Typography';
+
+export default Typography;

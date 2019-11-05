@@ -39,7 +39,7 @@ export interface BoxProps
  * Box is a view with all styled-system hooks added to it. You can use it as a
  * base component for all display elements.
  */
-export const Box = primitives.View<BoxProps>`
+const Box = primitives.View<BoxProps>`
   ${layout}
   ${position}
   ${flexbox}
@@ -51,3 +51,5 @@ export const Box = primitives.View<BoxProps>`
 `;
 
 Box.displayName = 'Box';
+
+export default Box;
