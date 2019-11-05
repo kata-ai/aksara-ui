@@ -45,7 +45,7 @@ See more usage in the _JSX_ panel
 Floating action buttons for primary context actions. Floating buttons are often paired with Wicara Icons.
 
 ```jsx
-import { WicaraReset, Button } from '@wicara/core';
+import { WicaraReset, FloatingButton } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
