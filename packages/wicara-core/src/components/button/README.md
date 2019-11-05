@@ -52,7 +52,7 @@ export default function MyApp({ children }) {
     <WicaraReset>
       <FloatingButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
         <i className="icon-tick" aria-hidden="true" />
-      </Button>
+      </FloatingButton>
     </WicaraReset>
   );
 }
