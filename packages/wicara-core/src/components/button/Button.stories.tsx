@@ -51,10 +51,10 @@ stories.add(
           Push Me
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="Outline Button">
+      <ComponentBlock title="Support Button">
         <Button
           type="button"
-          variant="outline"
+          variant="support"
           style={{ marginRight: 16 }}
           size="sm"
           onClick={() => alert('Button clicked!')}
@@ -63,7 +63,7 @@ stories.add(
         </Button>
         <Button
           type="button"
-          variant="outline"
+          variant="support"
           style={{ marginRight: 16 }}
           onClick={() => alert('Button clicked!')}
         >
@@ -191,17 +191,17 @@ stories.add(
           I'm disabled
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="Outline Button">
-        <Button type="button" variant="outline" style={{ marginRight: 16 }}>
+      <ComponentBlock title="Support Button">
+        <Button type="button" variant="support" style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" variant="outline" className="hover" style={{ marginRight: 16 }}>
+        <Button type="button" variant="support" className="hover" style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" variant="outline" className="focus" style={{ marginRight: 16 }}>
+        <Button type="button" variant="support" className="focus" style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" variant="outline" disabled style={{ marginRight: 16 }}>
+        <Button type="button" variant="support" disabled style={{ marginRight: 16 }}>
           I'm disabled
         </Button>
       </ComponentBlock>
@@ -310,6 +310,14 @@ stories.add(
           Push Me
         </Button>
         <Button type="button" variant="primary" icon="add" iconPosition="right">
+          Push Me
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="With Icons (block)">
+        <Button type="button" block variant="primary" icon="add" style={{ marginBottom: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" block variant="primary" icon="add" iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
