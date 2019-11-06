@@ -13,7 +13,7 @@ import { Box } from '../../foundations';
 
 const readme = require('./README.md');
 
-const stories = storiesOf('Core|Components/Button', module).addDecorator(StorybookWrapper);
+const stories = storiesOf('Core|Components/Button/Button', module).addDecorator(StorybookWrapper);
 
 stories.add(
   'basic',

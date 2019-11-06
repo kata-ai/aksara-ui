@@ -11,7 +11,9 @@ import FloatingButton from './FloatingButton';
 
 const readme = require('./README.md');
 
-const stories = storiesOf('Core|Components/FloatingButton', module).addDecorator(StorybookWrapper);
+const stories = storiesOf('Core|Components/Button/FloatingButton', module).addDecorator(
+  StorybookWrapper
+);
 
 stories.add(
   'basic',
