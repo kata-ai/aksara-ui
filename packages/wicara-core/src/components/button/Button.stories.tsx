@@ -9,6 +9,7 @@ import {
 } from '../../utils/storybook';
 import Button from './Button';
 import FloatingButton from './FloatingButton';
+import { Box } from '../../foundations';
 
 const readme = require('./README.md');
 
@@ -124,6 +125,178 @@ stories.add(
           style={{ marginRight: 16 }}
           onClick={() => alert('Button clicked!')}
         >
+          Push Me
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="Inverse Button">
+        <Box bg="kataBlue" p="md">
+          <Button
+            type="button"
+            variant="inverse"
+            style={{ marginRight: 16 }}
+            size="sm"
+            onClick={() => alert('Button clicked!')}
+          >
+            Push Me
+          </Button>
+          <Button
+            type="button"
+            variant="inverse"
+            style={{ marginRight: 16 }}
+            onClick={() => alert('Button clicked!')}
+          >
+            Push Me
+          </Button>
+        </Box>
+      </ComponentBlock>
+    </StoryContainer>
+  ),
+  {
+    notes: { markdown: readme }
+  }
+);
+
+stories.add(
+  'button states',
+  () => (
+    <StoryContainer>
+      <StoryHeader
+        title="Button States"
+        subtitle="Left to right: default, hover, focus, disabled"
+      />
+      <ComponentBlock title="Default Button">
+        <Button type="button" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" className="hover" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" className="focus" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" disabled style={{ marginRight: 16 }}>
+          I'm disabled
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="Primary Button">
+        <Button type="button" variant="primary" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="primary" className="hover" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="primary" className="focus" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="primary" disabled style={{ marginRight: 16 }}>
+          I'm disabled
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="Outline Button">
+        <Button type="button" variant="outline" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="outline" className="hover" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="outline" className="focus" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="outline" disabled style={{ marginRight: 16 }}>
+          I'm disabled
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="Link Button">
+        <Button type="button" variant="link" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="link" className="hover" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="link" className="focus" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="link" disabled style={{ marginRight: 16 }}>
+          I'm disabled
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="Destructive Button">
+        <Button type="button" variant="destructive" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="destructive" className="hover" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="destructive" className="focus" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="destructive" disabled style={{ marginRight: 16 }}>
+          I'm disabled
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="Ghost Button">
+        <Button type="button" variant="ghost" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="ghost" className="hover" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="ghost" className="focus" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="ghost" disabled style={{ marginRight: 16 }}>
+          I'm disabled
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="Inverse Button">
+        <Box bg="kataBlue" p="md">
+          <Button type="button" variant="inverse" style={{ marginRight: 16 }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="inverse" className="hover" style={{ marginRight: 16 }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="inverse" className="focus" style={{ marginRight: 16 }}>
+            Push Me
+          </Button>
+          <Button type="button" variant="inverse" disabled style={{ marginRight: 16 }}>
+            I'm disabled
+          </Button>
+        </Box>
+      </ComponentBlock>
+    </StoryContainer>
+  ),
+  {
+    notes: { markdown: readme }
+  }
+);
+
+stories.add(
+  'additional props',
+  () => (
+    <StoryContainer>
+      <StoryHeader
+        title="Button Props"
+        subtitle="Additional props to modify the look of the button."
+      />
+      <ComponentBlock title="Block Button">
+        <Button type="button" variant="primary" block>
+          Push Me
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="With Icons (left)">
+        <Button type="button" size="sm" variant="primary" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="primary">
+          Push Me
+        </Button>
+      </ComponentBlock>
+      <ComponentBlock title="With Icons (right)">
+        <Button type="button" size="sm" variant="primary" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" variant="primary">
           Push Me
         </Button>
       </ComponentBlock>
@@ -273,141 +446,6 @@ stories.add(
         >
           <i className="icon-trash" aria-hidden="true" />
         </FloatingButton>
-      </ComponentBlock>
-    </StoryContainer>
-  ),
-  {
-    notes: { markdown: readme }
-  }
-);
-
-stories.add(
-  'button states',
-  () => (
-    <StoryContainer>
-      <StoryHeader
-        title="Button States"
-        subtitle="Left to right: default, hover, focus, disabled"
-      />
-      <ComponentBlock title="Default Button">
-        <Button type="button" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" disabled style={{ marginRight: 16 }}>
-          I'm disabled
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Primary Button">
-        <Button type="button" variant="primary" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" disabled style={{ marginRight: 16 }}>
-          I'm disabled
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Outline Button">
-        <Button type="button" variant="outline" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="outline" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="outline" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="outline" disabled style={{ marginRight: 16 }}>
-          I'm disabled
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Link Button">
-        <Button type="button" variant="link" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" disabled style={{ marginRight: 16 }}>
-          I'm disabled
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
-        <Button type="button" variant="destructive" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" disabled style={{ marginRight: 16 }}>
-          I'm disabled
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Ghost Button">
-        <Button type="button" variant="ghost" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" disabled style={{ marginRight: 16 }}>
-          I'm disabled
-        </Button>
-      </ComponentBlock>
-    </StoryContainer>
-  ),
-  {
-    notes: { markdown: readme }
-  }
-);
-
-stories.add(
-  'additional props',
-  () => (
-    <StoryContainer>
-      <StoryHeader
-        title="Button Props"
-        subtitle="Additional props to modify the look of the button."
-      />
-      <ComponentBlock title="Block Button">
-        <Button type="button" variant="primary" block>
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="With Icons (left)">
-        <Button type="button" size="sm" variant="primary" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary">
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="With Icons (right)">
-        <Button type="button" size="sm" variant="primary" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary">
-          Push Me
-        </Button>
       </ComponentBlock>
     </StoryContainer>
   ),
