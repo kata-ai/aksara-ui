@@ -24,7 +24,7 @@ storiesOf('Core|Components/Notifications', module)
         />
         <ComponentBlock title="Toaster">
           <Button
-            variant="outline"
+            variant="support"
             onClick={() =>
               notification.toaster({
                 title: 'Toaster',
@@ -38,7 +38,7 @@ storiesOf('Core|Components/Notifications', module)
             Default
           </Button>
           <Button
-            variant="outline"
+            variant="support"
             onClick={() =>
               notification.toaster({
                 title: 'Toaster',
@@ -53,7 +53,7 @@ storiesOf('Core|Components/Notifications', module)
             Success
           </Button>
           <Button
-            variant="outline"
+            variant="support"
             onClick={() =>
               notification.toaster({
                 title: 'Toaster',
@@ -68,7 +68,7 @@ storiesOf('Core|Components/Notifications', module)
             Info
           </Button>
           <Button
-            variant="outline"
+            variant="support"
             onClick={() =>
               notification.toaster({
                 title: 'Toaster',
@@ -83,7 +83,7 @@ storiesOf('Core|Components/Notifications', module)
             Warning
           </Button>
           <Button
-            variant="outline"
+            variant="support"
             onClick={() =>
               notification.toaster({
                 title: 'Toaster',
