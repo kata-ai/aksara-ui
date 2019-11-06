@@ -203,3 +203,13 @@ export const ButtonLarge = css`
   border-radius: 4px;
   font-weight: 500;
 `;
+
+export const InverseButton = css`
+  border-color: ${colors.white};
+  color: ${colors.white};
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+  }
+`;

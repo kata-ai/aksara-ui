@@ -10,7 +10,8 @@ import {
   GhostButton,
   ButtonSmall,
   ButtonMedium,
-  ButtonLarge
+  ButtonLarge,
+  InverseButton
 } from './utils/buttonUtils';
 import {
   FloatingButtonSmall,
@@ -22,7 +23,14 @@ import {
   FloatingButtonDestructive
 } from './utils/floatingButtonUtils';
 
-export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'link' | 'ghost';
+export type ButtonVariants =
+  | 'default'
+  | 'primary'
+  | 'outline'
+  | 'destructive'
+  | 'link'
+  | 'ghost'
+  | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
 
@@ -111,6 +119,7 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
   ${props.variant === 'destructive' && DestructiveButton}
   ${props.variant === 'link' && LinkButton}
   ${props.variant === 'ghost' && GhostButton}
+  ${props.variant === 'inverse' && InverseButton}
 
   ${props.size === 'sm' && ButtonSmall}
   ${props.size === 'md' && ButtonMedium}
