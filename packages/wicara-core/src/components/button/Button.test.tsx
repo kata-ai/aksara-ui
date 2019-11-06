@@ -27,6 +27,13 @@ describe('components/Button', () => {
       expect(container.firstChild).toHaveStyleRule('display', 'block');
       expect(container.firstChild).toHaveStyleRule('width', '100%');
     });
+
+    test('renders icons correctly', () => {
+      const { container } = render(<Button icon="add">test button</Button>);
+      const icon = container.querySelector('i');
+
+      expect(icon).toBeInTheDocument();
+    });
   });
 
   describe('<FloatingButton />', () => {
