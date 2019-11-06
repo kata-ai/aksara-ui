@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { typeScale, colors } from '../../../utils/variables';
+import { ButtonBaseProps } from '../styles';
 
 export const DefaultButton = css`
   background-color: ${colors.gray10};
@@ -177,31 +178,40 @@ export const GhostButton = css`
   }
 `;
 
-export const ButtonSmall = css`
+export const ButtonSmall = (props: ButtonBaseProps) => css`
   height: 32px;
   padding: 0 16px;
   font-size: 11px;
   line-height: 32px;
   border-radius: 4px;
   font-weight: 700;
+
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 36px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 36px;'}
 `;
 
-export const ButtonMedium = css`
+export const ButtonMedium = (props: ButtonBaseProps) => css`
   height: 40px;
   padding: 0 24px;
   font-size: 13px;
   line-height: 40px;
   border-radius: 4px;
   font-weight: 500;
+
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
 `;
 
-export const ButtonLarge = css`
+export const ButtonLarge = (props: ButtonBaseProps) => css`
   height: 56px;
   padding: 0 24px;
   font-size: ${typeScale.large.fontSize}px;
   line-height: 56px;
   border-radius: 4px;
   font-weight: 500;
+
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
 `;
 
 export const InverseButton = css`
