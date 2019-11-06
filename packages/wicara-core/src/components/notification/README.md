@@ -57,6 +57,6 @@ Whether the notification is dismissible with a click. Default is `false`.
 
 The amount of time it takes for the toaster to dismiss (in miliseconds). Default is `5000`.
 
-### `oonRemove?: () => void`
+### `onRemove?: () => void`
 
 Optional callback to run when the toaster has fully exited the screen.
