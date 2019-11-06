@@ -175,7 +175,7 @@ export const typeScale = {
     lineHeight: 16
   },
   small: {
-    fontSize: 12,
+    fontSize: 11,
     lineHeight: 16
   }
 };
