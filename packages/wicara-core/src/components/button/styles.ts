@@ -33,6 +33,7 @@ export type ButtonVariants =
   | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
+export type ButtonIconPositions = 'left' | 'right';
 
 export interface ButtonBaseProps {
   /** Is a block button. */
@@ -41,6 +42,10 @@ export interface ButtonBaseProps {
   variant?: ButtonVariants;
   /** The size of the button. */
   size?: ButtonSizes;
+  /** The icon that renders with the button */
+  icon?: string | React.ReactNode;
+  /** Icon position. Default is `'left'`. */
+  iconPosition?: ButtonIconPositions;
 }
 
 export interface FloatingButtonBaseProps {
@@ -121,7 +126,7 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
   ${props.variant === 'ghost' && GhostButton}
   ${props.variant === 'inverse' && InverseButton}
 
-  ${props.size === 'sm' && ButtonSmall}
-  ${props.size === 'md' && ButtonMedium}
-  ${props.size === 'lg' && ButtonLarge}
+  ${props.size === 'sm' && ButtonSmall(props)}
+  ${props.size === 'md' && ButtonMedium(props)}
+  ${props.size === 'lg' && ButtonLarge(props)}
 `;

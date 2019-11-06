@@ -285,18 +285,32 @@ stories.add(
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (left)">
-        <Button type="button" size="sm" variant="primary" style={{ marginRight: 16 }}>
+        <Button
+          type="button"
+          size="sm"
+          variant="primary"
+          icon="add"
+          iconPosition="left"
+          style={{ marginRight: 16 }}
+        >
           Push Me
         </Button>
-        <Button type="button" variant="primary">
+        <Button type="button" variant="primary" icon="add" iconPosition="left">
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (right)">
-        <Button type="button" size="sm" variant="primary" style={{ marginRight: 16 }}>
+        <Button
+          type="button"
+          size="sm"
+          variant="primary"
+          icon="add"
+          iconPosition="right"
+          style={{ marginRight: 16 }}
+        >
           Push Me
         </Button>
-        <Button type="button" variant="primary">
+        <Button type="button" variant="primary" icon="add" iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
