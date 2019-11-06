@@ -34,6 +34,17 @@ describe('components/Button', () => {
 
       expect(icon).toBeInTheDocument();
     });
+
+    test('renders icons correctly with ReactNode', () => {
+      const { container } = render(
+        <Button size="sm" icon={<i className="icon-add" />} iconPosition="right">
+          test button
+        </Button>
+      );
+      const icon = container.querySelector('i');
+
+      expect(icon).toBeInTheDocument();
+    });
   });
 
   describe('<FloatingButton />', () => {
