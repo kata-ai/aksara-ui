@@ -98,6 +98,26 @@ stories.add(
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
       </ComponentBlock>
+      <ComponentBlock title="Ghost Button">
+        <IconButton
+          type="button"
+          style={{ marginRight: 16 }}
+          variant="ghost"
+          aria-label="Push Me"
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-add" aria-hidden="true" />
+        </IconButton>
+        <IconButton
+          type="button"
+          disabled
+          variant="ghost"
+          aria-label="Push Me"
+          onClick={() => alert('Button clicked!')}
+        >
+          <i className="icon-add" aria-hidden="true" />
+        </IconButton>
+      </ComponentBlock>
     </StoryContainer>
   ),
   {
