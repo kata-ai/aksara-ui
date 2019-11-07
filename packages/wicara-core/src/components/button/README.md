@@ -40,6 +40,16 @@ export default function MyApp({ children }) {
 
 See more usage in the _JSX_ panel
 
+#### Props
+
+| Property  | Type           | Required | Default   | Description                                     |
+| --------- | -------------- | -------- | --------- | ----------------------------------------------- |
+| className | string         | -        | undefined | Additional CSS classes to give to the component |
+| style     | CSSProperties  | -        | undefined | Additional CSS styles to give to the component  |
+| block     | boolean        | -        | false     | Is a block button.                              |
+| variant   | ButtonVariants | -        | default   | The variant of the button.                      |
+| size      | ButtonSizes    | -        | md        | The size of the button.                         |
+
 ### `<FloatingButton />`
 
 Floating action buttons for primary context actions. Floating buttons are often paired with Wicara Icons.
@@ -58,12 +68,41 @@ export default function MyApp({ children }) {
 }
 ```
 
-## Props
+See more usage in the _JSX_ panel
 
-| Property  | Type           | Required | Default   | Description                                     |
-| --------- | -------------- | -------- | --------- | ----------------------------------------------- |
-| className | string         | -        | undefined | Additional CSS classes to give to the component |
-| style     | CSSProperties  | -        | undefined | Additional CSS styles to give to the component  |
-| block     | boolean        | -        | false     | Is a block button.                              |
-| variant   | ButtonVariants | -        | default   | The variant of the button.                      |
-| size      | ButtonSizes    | -        | md        | The size of the button.                         |
+#### Props
+
+| Property  | Type                   | Required | Default   | Description                                     |
+| --------- | ---------------------- | -------- | --------- | ----------------------------------------------- |
+| className | string                 | -        | undefined | Additional CSS classes to give to the component |
+| style     | CSSProperties          | -        | undefined | Additional CSS styles to give to the component  |
+| variant   | FloatingButtonVariants | -        | default   | The variant of the button.                      |
+| size      | ButtonSizes            | -        | md        | The size of the button.                         |
+
+### `<IconButton />`
+
+Icon-only buttons. Best paired with Wicara Icons.
+
+```jsx
+import { WicaraReset, IconButton } from '@wicara/core';
+
+export default function MyApp({ children }) {
+  return (
+    <WicaraReset>
+      <IconButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
+        <i className="icon-tick" aria-hidden="true" />
+      </IconButton>
+    </WicaraReset>
+  );
+}
+```
+
+See more usage in the _JSX_ panel
+
+#### Props
+
+| Property  | Type               | Required | Default   | Description                                     |
+| --------- | ------------------ | -------- | --------- | ----------------------------------------------- |
+| className | string             | -        | undefined | Additional CSS classes to give to the component |
+| style     | CSSProperties      | -        | undefined | Additional CSS styles to give to the component  |
+| variant   | IconButtonVariants | -        | default   | The variant of the button.                      |
