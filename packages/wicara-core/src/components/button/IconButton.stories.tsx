@@ -38,7 +38,7 @@ stories.add(
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
       </ComponentBlock>
-      <ComponentBlock title="Button">
+      <ComponentBlock title="Primary Button">
         <IconButton
           type="button"
           style={{ marginRight: 16 }}
@@ -58,7 +58,7 @@ stories.add(
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
       </ComponentBlock>
-      <ComponentBlock title="Button">
+      <ComponentBlock title="Support Button">
         <IconButton
           type="button"
           style={{ marginRight: 16 }}
@@ -78,7 +78,7 @@ stories.add(
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
       </ComponentBlock>
-      <ComponentBlock title="Button">
+      <ComponentBlock title="Destructive Button">
         <IconButton
           type="button"
           style={{ marginRight: 16 }}
@@ -98,7 +98,7 @@ stories.add(
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
       </ComponentBlock>
-      <ComponentBlock title="Button">
+      <ComponentBlock title="Ghost Button">
         <IconButton
           type="button"
           style={{ marginRight: 16 }}
