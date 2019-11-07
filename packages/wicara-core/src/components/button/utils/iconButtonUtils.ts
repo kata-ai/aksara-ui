@@ -3,7 +3,6 @@ import { lighten } from 'polished';
 import { colors } from '../../../utils/variables';
 
 export const IconButtonDefault = css`
-  background-color: ${colors.gray10};
   color: ${colors.gray50};
 
   &:not(:disabled):not(.disabled) {
@@ -11,8 +10,7 @@ export const IconButtonDefault = css`
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.gray20};
-      color: ${colors.gray50};
+      background-color: ${colors.gray10};
     }
 
     &:focus,
@@ -21,13 +19,13 @@ export const IconButtonDefault = css`
     &.active {
       background-color: ${colors.gray70};
       color: ${colors.white};
+      border-color: ${colors.gray70};
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
   }
 
   &:disabled,
   &.disabled {
-    background-color: ${lighten(0.02, colors.gray10)};
     color: ${colors.gray30};
   }
 `;
@@ -119,34 +117,6 @@ export const IconButtonDestructive = css`
   &:disabled,
   &.disabled {
     background-color: ${lighten(0.02, colors.gray10)};
-    color: ${colors.gray30};
-  }
-`;
-
-export const IconButtonGhost = css`
-  color: ${colors.gray50};
-
-  &:not(:disabled):not(.disabled) {
-    &:hover,
-    &.hover,
-    &:focus,
-    &.focus {
-      background-color: ${colors.gray10};
-    }
-
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      border-color: ${colors.gray70};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-  }
-
-  &:disabled,
-  &.disabled {
     color: ${colors.gray30};
   }
 `;

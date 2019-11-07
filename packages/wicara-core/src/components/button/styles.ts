@@ -26,8 +26,7 @@ import {
   IconButtonDefault,
   IconButtonPrimary,
   IconButtonSupport,
-  IconButtonDestructive,
-  IconButtonGhost
+  IconButtonDestructive
 } from './utils/iconButtonUtils';
 
 export type ButtonVariants =
@@ -39,7 +38,7 @@ export type ButtonVariants =
   | 'ghost'
   | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
-export type IconButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'ghost';
+export type IconButtonVariants = 'default' | 'primary' | 'support' | 'destructive';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
 export type ButtonIconPositions = 'left' | 'right';
 
@@ -158,7 +157,6 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   ${props.variant === 'primary' && IconButtonPrimary}
   ${props.variant === 'support' && IconButtonSupport}
   ${props.variant === 'destructive' && IconButtonDestructive}
-  ${props.variant === 'ghost' && IconButtonGhost}
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`
