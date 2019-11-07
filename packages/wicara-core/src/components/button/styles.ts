@@ -22,6 +22,13 @@ import {
   FloatingButtonWarning,
   FloatingButtonDestructive
 } from './utils/floatingButtonUtils';
+import {
+  IconButtonDefault,
+  IconButtonPrimary,
+  IconButtonSupport,
+  IconButtonDestructive,
+  IconButtonGhost
+} from './utils/iconButtonUtils';
 
 export type ButtonVariants =
   | 'default'
@@ -32,6 +39,7 @@ export type ButtonVariants =
   | 'ghost'
   | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
+export type IconButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'ghost';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
 export type ButtonIconPositions = 'left' | 'right';
 
@@ -49,8 +57,15 @@ export interface ButtonBaseProps {
 }
 
 export interface FloatingButtonBaseProps {
+  /** The variant of the button. */
   variant?: FloatingButtonVariants;
+  /** The size of the button. */
   size?: ButtonSizes;
+}
+
+export interface IconButtonBaseProps {
+  /** The variant of the button. */
+  variant?: IconButtonVariants;
 }
 
 export const ButtonBase = css`
@@ -109,6 +124,41 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
   ${props.variant === 'success' && FloatingButtonSuccess}
   ${props.variant === 'warning' && FloatingButtonWarning}
   ${props.variant === 'destructive' && FloatingButtonDestructive}
+`;
+
+export const IconButtonStyles = (props: IconButtonBaseProps) => css`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  border-radius: 4px;
+
+  ${ButtonBase}
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  i:before {
+    font-size: 16px;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  ${props.variant === 'default' && IconButtonDefault}
+  ${props.variant === 'primary' && IconButtonPrimary}
+  ${props.variant === 'support' && IconButtonSupport}
+  ${props.variant === 'destructive' && IconButtonDestructive}
+  ${props.variant === 'ghost' && IconButtonGhost}
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`
