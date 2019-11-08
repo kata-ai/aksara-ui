@@ -1,21 +1,20 @@
-import { ThemeAttributes } from '@kata-kit/theme';
 import { css } from 'styled-components';
+import { colors } from '../../utils';
 
 export interface AvatarBaseProps {
   /** Size of the avatar. */
   size?: number;
-  theme: ThemeAttributes;
 }
 
-export const AvatarBase = (props: AvatarBaseProps) =>
+export const AvatarBase = ({ size = 40 }: AvatarBaseProps) =>
   css`
     display: inline-block;
     position: relative;
-    width: ${props.size}px;
-    height: ${props.size}px;
-    border: 1px solid ${props.theme.borderColor};
+    width: ${size}px;
+    height: ${size}px;
+    border: 1px solid ${colors.gray30};
     border-radius: 50%;
-    background: ${props.theme.backgroundColor};
+    background: ${colors.gray10};
     font-size: 1rem;
     line-height: 1;
     vertical-align: middle;

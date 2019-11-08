@@ -1,9 +1,6 @@
 {
   "files": [],
   "references": [
-    { "path": "avatar" },
-    { "path": "badge" },
-    { "path": "banner" },
     { "path": "button" },
     { "path": "card" },
     { "path": "common" },
