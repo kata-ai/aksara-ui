@@ -1,25 +1,16 @@
-# @wicara/banner
+# Banner
 
-> Banner component for Wicara.
-
-## Install
-
-```sh
-# yarn
-yarn add @kata-kit/banner
-# npm
-npm install @kata-kit/banner
-```
+> Banners are used to convey important information to users.
 
 ## Usage
 
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Banner } from '@kata-kit/banner';
+import { Banner } from '@wicara/core';
 
 const Component = () => (
-  <Banner state="success" message="An alert! - You've succesfully read it." />
+  <Banner state="success" message="A banner! - You've succesfully read it." />
 );
 ```
 
@@ -30,6 +21,6 @@ See more usage in the _JSX_ panel
 | Property  | Type                                          | Required | Default     |
 | --------- | --------------------------------------------- | -------- | ----------- |
 | color     | `'error'`, `'success'`, `'warning'`, `'info'` | **Yes**  | -           |
-| message   | `any`                                         | **Yes**  | -           |
+| message   | `string | React.ReactNode`                    | **Yes**  | -           |
 | className | `string`                                      | -        | `undefined` |
 | onClose   | `(e: any) => void`                            | -        | `undefined` |
