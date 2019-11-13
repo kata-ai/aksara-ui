@@ -1,11 +1,9 @@
 {
-  "name": "@kata-kit/fonts",
+  "name": "@wicara/fonts",
   "version": "0.7.0",
   "description": "Font-stack used for Wicara.",
   "main": "N/A",
   "files": [
-    "fonts",
-    "kata-icons.css",
     "museo-sans-rounded.css",
     "museo-sans.css"
   ],
