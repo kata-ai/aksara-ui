@@ -15,6 +15,7 @@
     { "path": "split-button" },
     { "path": "theme" },
     { "path": "tooltip" },
-    { "path": "wicara-core" }
+    { "path": "wicara-core" },
+    { "path": "wicara-fonts" }
   ]
 }
