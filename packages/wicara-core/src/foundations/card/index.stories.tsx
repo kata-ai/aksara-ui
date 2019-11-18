@@ -9,16 +9,38 @@ import styled from 'styled-components';
 
 const readme = require('./README.md');
 
-const UnstyledLink = styled('a')`
-  color: unset;
-  background: unset;
+/** TODO: rewrite into foundational common component */
+const UnstyledAnchor = styled('a')`
+  font-style: inherit;
+  color: inherit;
+  background-color: transparent;
+  font-size: inherit;
   text-decoration: none;
+  font-variant: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  border-radius: inherit;
+  border: inherit;
+  outline: inherit;
+  box-shadow: inherit;
 
   &:hover,
-  &:focus {
-    color: unset;
-    outline: none;
+  &:focus,
+  &:active {
+    font-style: inherit;
+    color: inherit;
+    background-color: transparent;
+    font-size: inherit;
     text-decoration: none;
+    font-variant: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    border-radius: inherit;
+    border: inherit;
+    outline: inherit;
+    box-shadow: inherit;
   }
 `;
 
@@ -43,7 +65,7 @@ storiesOf('Core|Foundations/Card', module)
     () => (
       <WicaraReset>
         <Box padding="sm">
-          <UnstyledLink
+          <UnstyledAnchor
             href="https://www.google.com/"
             target="_blank"
             style={{ display: 'block', width: '100%', maxWidth: '33.3%' }}
@@ -67,7 +89,7 @@ storiesOf('Core|Foundations/Card', module)
                 </Paragraph>
               </Box>
             </Card>
-          </UnstyledLink>
+          </UnstyledAnchor>
         </Box>
       </WicaraReset>
     ),
