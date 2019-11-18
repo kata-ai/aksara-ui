@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { colors, boxShadow } from '../../utils/variables';
+import { colors, shadows } from '../../utils/variables';
 import {
   DefaultButton,
   PrimaryButton,
@@ -102,7 +102,7 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
 
   font-weight: 500;
   line-height: 1;
-  box-shadow: ${boxShadow.layer200};
+  box-shadow: ${shadows.layer200};
   vertical-align: middle;
   background-color: ${colors.white};
   color: ${colors.gray60};

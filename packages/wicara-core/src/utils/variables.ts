@@ -128,8 +128,16 @@ export const breakpoints = {
   xl: 1600
 };
 
-/** Default box shadow separated by layers */
-export const boxShadow = {
+/** Border radiuses */
+export const radii = {
+  xs: 2,
+  sm: 4,
+  md: 6,
+  lg: 8
+};
+
+/** Default box/text shadow separated by layers */
+export const shadows = {
   layer100: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
   layer200: '0 2px 4px 1px rgba(0, 0, 0, 0.15)',
   layer300: '0 4px 6px 2px rgba(0, 0, 0, 0.15)',
