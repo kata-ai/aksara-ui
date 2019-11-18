@@ -1,6 +1,6 @@
 # Card
 
-Similar to `Box`, but with additional `shadow` and `borderRadius` styled-system hooks.
+Similar to `Box`, but with additional `shadow` and `border` styled-system hooks.
 
 ## Usage
 

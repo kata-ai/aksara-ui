@@ -5,7 +5,7 @@ import { shadow, ShadowProps, border, BorderProps } from 'styled-system';
 export interface CardProps extends ShadowProps, BorderProps {}
 
 /**
- * Card is similar to `Box`, but with additional `shadow` and `borderRadius` styled-system hooks.
+ * Card is similar to `Box`, but with additional `shadow` and `border` styled-system hooks.
  */
 const Card = styled(Box)<CardProps>`
   ${shadow}
