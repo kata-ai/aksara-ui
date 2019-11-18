@@ -1,47 +1,27 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
+import styled from 'styled-components';
 
 import { WicaraReset } from '../reset';
 import { Box } from '../box';
 import { Card } from './index';
 import { Heading, Paragraph } from '../typography';
-import styled from 'styled-components';
+import { UnstyledAnchor, UnstyledButton } from '../common';
 
 const readme = require('./README.md');
 
-/** TODO: rewrite into foundational common component */
-const UnstyledAnchor = styled('a')`
-  font-style: inherit;
-  color: inherit;
-  background-color: transparent;
-  font-size: inherit;
-  text-decoration: none;
-  font-variant: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  font-family: inherit;
-  border-radius: inherit;
-  border: inherit;
-  outline: inherit;
-  box-shadow: inherit;
+const Anchor = styled(UnstyledAnchor)`
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 33.3%;
+  margin: 8px;
+`;
 
-  &:hover,
-  &:focus,
-  &:active {
-    font-style: inherit;
-    color: inherit;
-    background-color: transparent;
-    font-size: inherit;
-    text-decoration: none;
-    font-variant: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    border-radius: inherit;
-    border: inherit;
-    outline: inherit;
-    box-shadow: inherit;
-  }
+const StyledButton = styled(UnstyledButton)`
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 33.3%;
+  margin: 8px;
 `;
 
 storiesOf('Core|Foundations/Card', module)
@@ -65,11 +45,7 @@ storiesOf('Core|Foundations/Card', module)
     () => (
       <WicaraReset>
         <Box padding="sm" display="flex" flexWrap="wrap" position="relative">
-          <UnstyledAnchor
-            href="https://www.google.com/"
-            target="_blank"
-            style={{ display: 'flex', flexDirection: 'column', flex: '1 0 33.3%', margin: 8 }}
-          >
+          <Anchor href="https://www.google.com/" target="_blank">
             <Card
               display="flex"
               flex={1}
@@ -96,12 +72,8 @@ storiesOf('Core|Foundations/Card', module)
                 </Paragraph>
               </Box>
             </Card>
-          </UnstyledAnchor>
-          <UnstyledAnchor
-            href="https://www.google.com/"
-            target="_blank"
-            style={{ display: 'flex', flexDirection: 'column', flex: '1 0 33.3%', margin: 8 }}
-          >
+          </Anchor>
+          <StyledButton type="button" onClick={() => alert('Hello!')}>
             <Card
               display="flex"
               flex={1}
@@ -119,7 +91,7 @@ storiesOf('Core|Foundations/Card', module)
                 </Paragraph>
               </Box>
             </Card>
-          </UnstyledAnchor>
+          </StyledButton>
         </Box>
       </WicaraReset>
     ),
