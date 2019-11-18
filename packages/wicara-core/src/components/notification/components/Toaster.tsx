@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { ToasterSettings, NotificationStatus } from '../utils/types';
 import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
-import { boxShadow } from '../../../utils/index';
+import { shadows } from '../../../utils/index';
 import determineToasterColor from '../utils/determineToasterColor';
 
 interface WithStatusProps {
@@ -109,7 +109,7 @@ const Inner = styled('div')`
   padding: 16px;
   border: none;
   border-radius: 4px;
-  box-shadow: ${boxShadow.layer400};
+  box-shadow: ${shadows.layer400};
   background-color: #fff;
   cursor: pointer;
 `;
