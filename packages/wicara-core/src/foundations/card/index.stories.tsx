@@ -64,13 +64,20 @@ storiesOf('Core|Foundations/Card', module)
     'composability',
     () => (
       <WicaraReset>
-        <Box padding="sm">
+        <Box padding="sm" display="flex" flexWrap="wrap" position="relative">
           <UnstyledAnchor
             href="https://www.google.com/"
             target="_blank"
-            style={{ display: 'block', width: '100%', maxWidth: '33.3%' }}
+            style={{ display: 'flex', flexDirection: 'column', flex: '1 0 33.3%', margin: 8 }}
           >
-            <Card borderRadius="md" boxShadow="layer100">
+            <Card
+              display="flex"
+              flex={1}
+              flexDirection="column"
+              bg="white"
+              borderRadius="md"
+              boxShadow="layer100"
+            >
               <img
                 alt="Example image"
                 src="https://picsum.photos/id/873/1072/708"
@@ -80,7 +87,30 @@ storiesOf('Core|Foundations/Card', module)
                   width: '100%'
                 }}
               />
-              <Box bg="white" padding="sm">
+              <Box padding="sm" flex="1 1 auto">
+                <Heading scale="heading3">An Example Card</Heading>
+                <Paragraph marginTop="xs" marginBottom={0}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis
+                  doloremque quisquam sequi vel eaque aperiam vitae facere quia atque, hic, unde
+                  animi asperiores repudiandae quis ab enim repellat?
+                </Paragraph>
+              </Box>
+            </Card>
+          </UnstyledAnchor>
+          <UnstyledAnchor
+            href="https://www.google.com/"
+            target="_blank"
+            style={{ display: 'flex', flexDirection: 'column', flex: '1 0 33.3%', margin: 8 }}
+          >
+            <Card
+              display="flex"
+              flex={1}
+              flexDirection="column"
+              bg="white"
+              borderRadius="md"
+              boxShadow="layer100"
+            >
+              <Box padding="sm" flex="1 1 auto">
                 <Heading scale="heading3">An Example Card</Heading>
                 <Paragraph marginTop="xs" marginBottom={0}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis
