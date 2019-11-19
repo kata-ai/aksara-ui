@@ -156,14 +156,7 @@ story.add(
               >
                 View
               </Button>
-              <Button
-                icon="refresh"
-                style={{
-                  marginRight: 8
-                }}
-                type="button"
-                variant="support"
-              >
+              <Button icon="refresh" type="button" variant="support">
                 Rollback
               </Button>
             </Box>
