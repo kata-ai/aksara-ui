@@ -9,7 +9,7 @@ Other uncategorised series of foundational components.
 This is basically an anchor element with all styling elements removed (incl. hover/focus effects).
 
 ```jsx
-import { UnstyledAnchor } from '@aksara/ui-kit';
+import { UnstyledAnchor } from '@wicara/core';
 
 export default function Component({ children }) {
   return <UnstyledAnchor>I'm an unstyled link!</UnstyledAnchor>;
@@ -21,7 +21,7 @@ export default function Component({ children }) {
 Same as above, but with the `<button>` tag.
 
 ```jsx
-import { UnstyledButton } from '@aksara/ui-kit';
+import { UnstyledButton } from '@wicara/core';
 
 export default function Component({ children }) {
   return <UnstyledButton>I'm an unstyled button!</UnstyledButton>;
