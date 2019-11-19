@@ -25,7 +25,7 @@ export default function MyApp({ children }) {
 Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
 
 ```jsx
-import { WicaraReset, Button } from '@aksara/ui-kit';
+import { WicaraReset, Button } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
