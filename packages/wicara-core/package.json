@@ -27,6 +27,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
+    "clsx": "^1.0.4",
     "polished": "^3.4.2",
     "react-transition-group": "^4.3.0",
     "styled-system": "^5.1.2"
