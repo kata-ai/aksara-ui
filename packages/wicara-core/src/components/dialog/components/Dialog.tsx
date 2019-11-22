@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 
-import { Portal, Card } from '../../../foundations';
+import { Portal, Card, FocusTrap } from '../../../foundations';
 import { ANIMATION_DURATION } from '../../notification/utils/constants';
 import DialogOverlay from './DialogOverlay';
 import { IconButton } from '../../button';
@@ -153,8 +153,62 @@ class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   render() {
-    const { children, labelledById } = this.props;
+    const { children, labelledById, enableFocusTrap } = this.props;
     const { isOpen } = this.state;
+
+    if (enableFocusTrap) {
+      return (
+        <Portal>
+          <Transition
+            appear
+            in={isOpen}
+            timeout={{
+              enter: ANIMATION_DURATION,
+              exit: ANIMATION_DURATION
+            }}
+            unmountOnExit
+          >
+            {state => (
+              <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
+                <DialogOverlay
+                  className={clsx(isOpen && 'entered')}
+                  data-state={state}
+                  onClick={this.handleOverlayClick}
+                >
+                  <DialogWrapper
+                    className={clsx(isOpen && 'entered')}
+                    display="flex"
+                    flexDirection="column"
+                    backgroundColor="white"
+                    boxShadow="layer300"
+                    borderRadius="lg"
+                    width="100%"
+                    maxWidth="500px"
+                    maxHeight="calc(100% - 24vmin)"
+                    my="12vmin"
+                    mx="md"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby={labelledById}
+                    data-state={state}
+                  >
+                    <CloseButton
+                      type="button"
+                      aria-label="Close"
+                      variant="ghost"
+                      onClick={this.handleCloseSideSheet}
+                    >
+                      <i className="icon-close" />
+                    </CloseButton>
+                    {children}
+                  </DialogWrapper>
+                </DialogOverlay>
+              </FocusTrap>
+            )}
+          </Transition>
+        </Portal>
+      );
+    }
 
     return (
       <Portal>

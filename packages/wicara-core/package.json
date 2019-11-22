@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "clsx": "^1.0.4",
+    "focus-trap": "^5.1.0",
     "polished": "^3.4.2",
     "react-transition-group": "^4.3.0",
     "styled-system": "^5.1.2"
