@@ -75,6 +75,6 @@ const DialogOverlay = styled('div')`
   }
 `;
 
-DialogOverlay.displayName = 'SideSheetOverlay';
+DialogOverlay.displayName = 'DialogOverlay';
 
 export default DialogOverlay;
