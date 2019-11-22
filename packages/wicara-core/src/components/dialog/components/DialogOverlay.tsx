@@ -26,7 +26,10 @@ const FadeOut = keyframes`
   }
 `;
 
-const SideSheetOverlay = styled('div')`
+const DialogOverlay = styled('div')`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -72,6 +75,6 @@ const SideSheetOverlay = styled('div')`
   }
 `;
 
-SideSheetOverlay.displayName = 'SideSheetOverlay';
+DialogOverlay.displayName = 'SideSheetOverlay';
 
-export default SideSheetOverlay;
+export default DialogOverlay;

@@ -3,61 +3,66 @@ import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 
-import { Portal, Box, Card } from '../../../foundations';
+import { Portal, Card } from '../../../foundations';
 import { ANIMATION_DURATION } from '../../notification/utils/constants';
-import SideSheetOverlay from './SideSheetOverlay';
+import DialogOverlay from './DialogOverlay';
 import { IconButton } from '../../button';
 
-const SideSheetIn = keyframes`
+const DialogIn = keyframes`
   0% {
-    transform: translateX(100%);
+    opacity: 0;
+    transform: translate(0, -25%);
   }
 
   100% {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 `;
 
-const SideSheetOut = keyframes`
+const DialogOut = keyframes`
   0% {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 
   100% {
-    transform: translateX(100%);
+    opacity: 0;
+    transform: translate(0, -25%);
   }
 `;
 
-const SideSheetWrapper = styled(Box)`
-  transform: translateX(100%);
+const DialogWrapper = styled(Card)`
+  opacity: 0;
+  transform: translate(0, -25%);
+  overflow: hidden;
 
   &[data-state='entering'],
   &[data-state='entered'] {
-    animation-timing-function: cubic-bezier(0.15, 1, 0.3, 1);
     animation-fill-mode: forwards;
-    animation-name: ${SideSheetIn};
+    animation-name: ${DialogIn};
     animation-duration: ${ANIMATION_DURATION}ms;
   }
 
   &[data-state='exiting'] {
-    animation-timing-function: cubic-bezier(0.15, 1, 0.3, 1);
     animation-fill-mode: forwards;
-    animation-name: ${SideSheetOut};
+    animation-name: ${DialogOut};
     animation-duration: ${ANIMATION_DURATION}ms;
   }
 
   &.entered {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translate(0, 0);
   }
 `;
 
 const CloseButton = styled(IconButton)`
   position: absolute;
-  top: 26px;
-  right: 48px;
+  top: 18px;
+  right: 24px;
 `;
 
-export interface SideSheetProps {
+export interface DialogProps {
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Additional CSS properties to give to the drawer. */
@@ -76,12 +81,15 @@ export interface SideSheetProps {
   onClose?: () => void;
 }
 
-interface SideSheetState {
+interface DialogState {
   isOpen: boolean;
 }
 
-/** Side Sheets are dialogs that pop out from the right side of the screen. */
-class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
+/**
+ * Display a modal interface that will display a content on top of an overlay blocking interaction
+ * with the rest of the page.
+ */
+class Dialog extends React.Component<DialogProps, DialogState> {
   static defaultProps = {
     className: undefined,
     style: undefined,
@@ -90,9 +98,9 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
     isOpen: false
   };
 
-  static displayName = 'SideSheet';
+  static displayName = 'Dialog';
 
-  constructor(props: SideSheetProps) {
+  constructor(props: DialogProps) {
     super(props);
     this.state = {
       isOpen: props.isOpen
@@ -103,13 +111,13 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  static getDerivedStateFromProps(props: SideSheetProps) {
+  static getDerivedStateFromProps(props: DialogProps) {
     return {
       isOpen: props.isOpen
     };
   }
 
-  componentDidUpdate(prev: SideSheetProps) {
+  componentDidUpdate(prev: DialogProps) {
     const { isOpen } = this.props;
 
     if (prev.isOpen !== isOpen) {
@@ -160,40 +168,39 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           unmountOnExit
         >
           {state => (
-            <SideSheetOverlay
+            <DialogOverlay
               className={clsx(isOpen && 'entered')}
               data-state={state}
               onClick={this.handleOverlayClick}
             >
-              <SideSheetWrapper
+              <DialogWrapper
                 className={clsx(isOpen && 'entered')}
-                position="absolute"
-                right={0}
+                display="flex"
+                flexDirection="column"
+                backgroundColor="white"
+                boxShadow="layer300"
+                borderRadius="lg"
+                width="100%"
+                maxWidth="500px"
+                maxHeight="calc(100% - 24vmin)"
+                my="12vmin"
+                mx="md"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby={labelledById}
                 data-state={state}
               >
-                <Card
-                  display="flex"
-                  flexDirection="column"
-                  backgroundColor="white"
-                  boxShadow="layer300"
-                  width="500px"
-                  height="100vh"
+                <CloseButton
+                  type="button"
+                  aria-label="Close"
+                  variant="ghost"
+                  onClick={this.handleCloseSideSheet}
                 >
-                  <CloseButton
-                    type="button"
-                    aria-label="Close"
-                    variant="ghost"
-                    onClick={this.handleCloseSideSheet}
-                  >
-                    <i className="icon-close" />
-                  </CloseButton>
-                  {children}
-                </Card>
-              </SideSheetWrapper>
-            </SideSheetOverlay>
+                  <i className="icon-close" />
+                </CloseButton>
+                {children}
+              </DialogWrapper>
+            </DialogOverlay>
           )}
         </Transition>
       </Portal>
@@ -201,4 +208,4 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
   }
 }
 
-export default SideSheet;
+export default Dialog;
