@@ -10,6 +10,8 @@ To use this component in your app, import as follows:
 import { Box, Text, Paragraph, SideSheet } from '@wicara/core';
 
 const Component = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <Box>
       <Text as="p">Click the button below to open the side sheet.</Text>
