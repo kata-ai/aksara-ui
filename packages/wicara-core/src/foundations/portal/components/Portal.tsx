@@ -11,7 +11,7 @@ class Portal extends React.Component {
 
     if (typeof window !== 'undefined') {
       this.container = document.createElement('div');
-      this.container.setAttribute('data-aksara-portal', '');
+      this.container.setAttribute('data-wicara-portal', '');
     }
   }
 

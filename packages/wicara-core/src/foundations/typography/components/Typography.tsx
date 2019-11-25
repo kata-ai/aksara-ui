@@ -12,6 +12,8 @@ import {
 import { primitives } from '../../../utils/primitives';
 
 export interface TypographyProps extends LayoutProps, SpaceProps, ColorProps, TypographyProps {
+  /** Unique ID attribute */
+  id?: string;
   /** Extended color props. */
   color?: string;
 }
