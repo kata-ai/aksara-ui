@@ -36,6 +36,7 @@ See more usage in the _JSX_ panel
 | style              | `React.CSSProperties` | -        | `undefined` |
 | isOpen             | `boolean`             | **Yes**  | -           |
 | noBackdrop         | `boolean`             | -        | -           |
+| hideCloseButton    | `boolean`             | -        | -           |
 | isOverlayClickable | `boolean`             | -        | `false`     |
 | enableFocusTrap    | `boolean`             | -        | `false`     |
 | labelledById       | `boolean`             | -        | -           |

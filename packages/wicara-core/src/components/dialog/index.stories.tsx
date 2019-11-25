@@ -20,7 +20,7 @@ story.add(
         <StoryContainer>
           <StoryHeader
             title="Dialog"
-            subtitle="Display a modal interface that will display a content on top of an overlay blocking interaction with the rest of the page."
+            subtitle="Display a modal interface that will block interaction with the rest of the page with an overlay."
           />
           <Text as="p">Click the button below to open the dialog.</Text>
           <button type="button" onClick={() => setIsOpen(!isOpen)}>

@@ -2,11 +2,12 @@ import * as React from 'react';
 import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
+import { TransitionStatus } from 'react-transition-group/Transition';
 
 import { Portal, Card, FocusTrap } from '../../../foundations';
-import { ANIMATION_DURATION } from '../../notification/utils/constants';
-import DialogOverlay from './DialogOverlay';
 import { IconButton } from '../../button';
+import { ANIMATION_DURATION } from '../constants';
+import DialogOverlay from './DialogOverlay';
 
 const DialogIn = keyframes`
   0% {
@@ -71,9 +72,11 @@ export interface DialogProps {
   isOpen: boolean;
   /** Set to `true` if you want to hide the drawer backdrop. */
   noBackdrop?: boolean;
+  /** Hides the default close button. Useful if you want to add custom close behaviour. */
+  hideCloseButton?: boolean;
   /** Set to `true` to enable closing the drawer by clicking the overlay. */
   isOverlayClickable?: boolean;
-  /** Enables focus trap mode. */
+  /** Enables focus trap mode. Also enables closing dialog by pressing Escape. */
   enableFocusTrap?: boolean;
   /** Used to reference the ID of the title element in the drawer */
   labelledById?: string;
@@ -86,8 +89,7 @@ interface DialogState {
 }
 
 /**
- * Display a modal interface that will display a content on top of an overlay blocking interaction
- * with the rest of the page.
+ * Display a modal interface that will block interaction with the rest of the page with an overlay.
  */
 class Dialog extends React.Component<DialogProps, DialogState> {
   static defaultProps = {
@@ -153,7 +155,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   render() {
-    const { children, labelledById, enableFocusTrap } = this.props;
+    const { enableFocusTrap } = this.props;
     const { isOpen } = this.state;
 
     if (enableFocusTrap) {
@@ -170,39 +172,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           >
             {state => (
               <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
-                <DialogOverlay
-                  className={clsx(isOpen && 'entered')}
-                  data-state={state}
-                  onClick={this.handleOverlayClick}
-                >
-                  <DialogWrapper
-                    className={clsx(isOpen && 'entered')}
-                    display="flex"
-                    flexDirection="column"
-                    backgroundColor="white"
-                    boxShadow="layer300"
-                    borderRadius="lg"
-                    width="100%"
-                    maxWidth="500px"
-                    maxHeight="calc(100% - 24vmin)"
-                    my="12vmin"
-                    mx="md"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby={labelledById}
-                    data-state={state}
-                  >
-                    <CloseButton
-                      type="button"
-                      aria-label="Close"
-                      variant="ghost"
-                      onClick={this.handleCloseSideSheet}
-                    >
-                      <i className="icon-close" />
-                    </CloseButton>
-                    {children}
-                  </DialogWrapper>
-                </DialogOverlay>
+                {this.renderInnerContent(state)}
               </FocusTrap>
             )}
           </Transition>
@@ -221,45 +191,54 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           }}
           unmountOnExit
         >
-          {state => (
-            <DialogOverlay
-              className={clsx(isOpen && 'entered')}
-              data-state={state}
-              onClick={this.handleOverlayClick}
-            >
-              <DialogWrapper
-                className={clsx(isOpen && 'entered')}
-                display="flex"
-                flexDirection="column"
-                backgroundColor="white"
-                boxShadow="layer300"
-                borderRadius="lg"
-                width="100%"
-                maxWidth="500px"
-                maxHeight="calc(100% - 24vmin)"
-                my="12vmin"
-                mx="md"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby={labelledById}
-                data-state={state}
-              >
-                <CloseButton
-                  type="button"
-                  aria-label="Close"
-                  variant="ghost"
-                  onClick={this.handleCloseSideSheet}
-                >
-                  <i className="icon-close" />
-                </CloseButton>
-                {children}
-              </DialogWrapper>
-            </DialogOverlay>
-          )}
+          {this.renderInnerContent}
         </Transition>
       </Portal>
     );
   }
+
+  renderInnerContent = (state: TransitionStatus) => {
+    const { labelledById, hideCloseButton, children } = this.props;
+    const { isOpen } = this.state;
+
+    return (
+      <DialogOverlay
+        className={clsx(isOpen && 'entered')}
+        data-state={state}
+        onClick={this.handleOverlayClick}
+      >
+        <DialogWrapper
+          className={clsx(isOpen && 'entered')}
+          display="flex"
+          flexDirection="column"
+          backgroundColor="white"
+          boxShadow="layer300"
+          borderRadius="lg"
+          width="100%"
+          maxWidth="500px"
+          maxHeight="calc(100% - 24vmin)"
+          my="12vmin"
+          mx="md"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={labelledById}
+          data-state={state}
+        >
+          {!hideCloseButton && (
+            <CloseButton
+              type="button"
+              aria-label="Close"
+              variant="ghost"
+              onClick={this.handleCloseSideSheet}
+            >
+              <i className="icon-close" />
+            </CloseButton>
+          )}
+          {children}
+        </DialogWrapper>
+      </DialogOverlay>
+    );
+  };
 }
 
 export default Dialog;

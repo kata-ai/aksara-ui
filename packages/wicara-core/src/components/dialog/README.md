@@ -1,6 +1,6 @@
 # Dialog
 
-> Display a modal interface that will display a content on top of an overlay blocking interaction with the rest of the page.
+> Display a modal interface that will block interaction with the rest of the page with an overlay.
 
 ## Why not call it a Modal?
 
@@ -44,6 +44,7 @@ See more usage in the _JSX_ panel
 | style              | `React.CSSProperties` | -        | `undefined` |
 | isOpen             | `boolean`             | **Yes**  | -           |
 | noBackdrop         | `boolean`             | -        | -           |
+| hideCloseButton    | `boolean`             | -        | -           |
 | isOverlayClickable | `boolean`             | -        | `false`     |
 | enableFocusTrap    | `boolean`             | -        | `false`     |
 | labelledById       | `boolean`             | -        | -           |

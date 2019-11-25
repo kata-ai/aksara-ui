@@ -39,3 +39,33 @@ story.add(
     notes: { markdown: readme }
   }
 );
+
+story.add(
+  'with focus trap',
+  () => {
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    return (
+      <WicaraReset>
+        <StoryContainer>
+          <StoryHeader
+            title="Side Sheet"
+            subtitle="Dialogs that pop out from the right side of the screen."
+          />
+          <Text as="p">Click the button below to open the side sheet.</Text>
+          <button type="button" onClick={() => setIsOpen(!isOpen)}>
+            Toggle Side Sheet
+          </button>
+          <SideSheet isOpen={isOpen} enableFocusTrap onClose={() => setIsOpen(false)}>
+            <Paragraph my={26} mx={48}>
+              Basic Example
+            </Paragraph>
+          </SideSheet>
+        </StoryContainer>
+      </WicaraReset>
+    );
+  },
+  {
+    notes: { markdown: readme }
+  }
+);

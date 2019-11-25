@@ -2,11 +2,12 @@ import * as React from 'react';
 import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
+import { TransitionStatus } from 'react-transition-group/Transition';
 
-import { Portal, Box, Card } from '../../../foundations';
-import { ANIMATION_DURATION } from '../../notification/utils/constants';
-import SideSheetOverlay from './SideSheetOverlay';
+import { Portal, Box, Card, FocusTrap } from '../../../foundations';
 import { IconButton } from '../../button';
+import { ANIMATION_DURATION } from '../constants';
+import SideSheetOverlay from './SideSheetOverlay';
 
 const SideSheetIn = keyframes`
   0% {
@@ -64,11 +65,13 @@ export interface SideSheetProps {
   style?: React.CSSProperties;
   /** Whether the side sheet is open or not. */
   isOpen: boolean;
+  /** Hides the default close button. Useful if you want to add custom close behaviour. */
+  hideCloseButton?: boolean;
   /** Set to `true` if you want to hide the drawer backdrop. */
   noBackdrop?: boolean;
   /** Set to `true` to enable closing the drawer by clicking the overlay. */
   isOverlayClickable?: boolean;
-  /** Enables focus trap mode. */
+  /** Enables focus trap mode. Also enables closing side sheet by pressing Escape. */
   enableFocusTrap?: boolean;
   /** Used to reference the ID of the title element in the drawer */
   labelledById?: string;
@@ -145,8 +148,30 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
   }
 
   render() {
-    const { children, labelledById } = this.props;
+    const { enableFocusTrap } = this.props;
     const { isOpen } = this.state;
+
+    if (enableFocusTrap) {
+      return (
+        <Portal>
+          <Transition
+            appear
+            in={isOpen}
+            timeout={{
+              enter: ANIMATION_DURATION,
+              exit: ANIMATION_DURATION
+            }}
+            unmountOnExit
+          >
+            {state => (
+              <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
+                {this.renderInnerContent(state)}
+              </FocusTrap>
+            )}
+          </Transition>
+        </Portal>
+      );
+    }
 
     return (
       <Portal>
@@ -159,46 +184,55 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           }}
           unmountOnExit
         >
-          {state => (
-            <SideSheetOverlay
-              className={clsx(isOpen && 'entered')}
-              data-state={state}
-              onClick={this.handleOverlayClick}
-            >
-              <SideSheetWrapper
-                className={clsx(isOpen && 'entered')}
-                position="absolute"
-                right={0}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby={labelledById}
-                data-state={state}
-              >
-                <Card
-                  display="flex"
-                  flexDirection="column"
-                  backgroundColor="white"
-                  boxShadow="layer300"
-                  width="500px"
-                  height="100vh"
-                >
-                  <CloseButton
-                    type="button"
-                    aria-label="Close"
-                    variant="ghost"
-                    onClick={this.handleCloseSideSheet}
-                  >
-                    <i className="icon-close" />
-                  </CloseButton>
-                  {children}
-                </Card>
-              </SideSheetWrapper>
-            </SideSheetOverlay>
-          )}
+          {this.renderInnerContent}
         </Transition>
       </Portal>
     );
   }
+
+  renderInnerContent = (state: TransitionStatus) => {
+    const { children, labelledById, hideCloseButton } = this.props;
+    const { isOpen } = this.state;
+
+    return (
+      <SideSheetOverlay
+        className={clsx(isOpen && 'entered')}
+        data-state={state}
+        onClick={this.handleOverlayClick}
+      >
+        <SideSheetWrapper
+          className={clsx(isOpen && 'entered')}
+          position="absolute"
+          right={0}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={labelledById}
+          data-state={state}
+        >
+          <Card
+            display="flex"
+            flexDirection="column"
+            backgroundColor="white"
+            boxShadow="layer300"
+            width="500px"
+            height="100vh"
+          >
+            {!hideCloseButton && (
+              <CloseButton
+                type="button"
+                aria-label="Close"
+                variant="ghost"
+                onClick={this.handleCloseSideSheet}
+              >
+                <i className="icon-close" />
+              </CloseButton>
+            )}
+            {children}
+          </Card>
+        </SideSheetWrapper>
+      </SideSheetOverlay>
+    );
+  };
 }
 
 export default SideSheet;
