@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import {
@@ -24,11 +25,11 @@ stories.add(
           type="button"
           style={{ marginRight: 16 }}
           size="sm"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
-        <Button type="button" style={{ marginRight: 16 }} onClick={() => alert('Button clicked!')}>
+        <Button type="button" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -38,7 +39,7 @@ stories.add(
           variant="primary"
           style={{ marginRight: 16 }}
           size="sm"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -46,7 +47,7 @@ stories.add(
           type="button"
           variant="primary"
           style={{ marginRight: 16 }}
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -57,7 +58,7 @@ stories.add(
           variant="support"
           style={{ marginRight: 16 }}
           size="sm"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -65,7 +66,7 @@ stories.add(
           type="button"
           variant="support"
           style={{ marginRight: 16 }}
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -76,7 +77,7 @@ stories.add(
           variant="link"
           style={{ marginRight: 16 }}
           size="sm"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -84,7 +85,7 @@ stories.add(
           type="button"
           variant="link"
           style={{ marginRight: 16 }}
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -95,7 +96,7 @@ stories.add(
           variant="destructive"
           style={{ marginRight: 16 }}
           size="sm"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -103,7 +104,7 @@ stories.add(
           type="button"
           variant="destructive"
           style={{ marginRight: 16 }}
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -114,7 +115,7 @@ stories.add(
           variant="ghost"
           style={{ marginRight: 16 }}
           size="sm"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -122,7 +123,7 @@ stories.add(
           type="button"
           variant="ghost"
           style={{ marginRight: 16 }}
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           Push Me
         </Button>
@@ -134,7 +135,7 @@ stories.add(
             variant="inverse"
             style={{ marginRight: 16 }}
             size="sm"
-            onClick={() => alert('Button clicked!')}
+            onClick={action('button-click')}
           >
             Push Me
           </Button>
@@ -142,7 +143,7 @@ stories.add(
             type="button"
             variant="inverse"
             style={{ marginRight: 16 }}
-            onClick={() => alert('Button clicked!')}
+            onClick={action('button-click')}
           >
             Push Me
           </Button>

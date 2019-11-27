@@ -79,6 +79,7 @@ export const ButtonBase = css`
   text-decoration: none;
   letter-spacing: 0.2px;
   border: 1px solid transparent;
+  transition: all 0.3s ease;
 
   &:not(:disabled):not(.disabled) {
     cursor: pointer;

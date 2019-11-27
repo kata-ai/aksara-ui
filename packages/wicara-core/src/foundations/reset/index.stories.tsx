@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import { WicaraReset } from '../reset';
@@ -18,7 +19,7 @@ storiesOf('Core|Foundations/Reset', module).add(
 
       <p>Lorem ipsum other castle, arrow to the knee set us up the bomb.</p>
 
-      <button type="button" onClick={() => alert('Hello!')}>
+      <button type="button" onClick={action('button-click')}>
         Do Something
       </button>
 

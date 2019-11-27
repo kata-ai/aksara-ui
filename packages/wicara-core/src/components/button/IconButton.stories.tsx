@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import {
@@ -25,16 +26,11 @@ stories.add(
           type="button"
           style={{ marginRight: 16 }}
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
-        <IconButton
-          type="button"
-          disabled
-          aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
-        >
+        <IconButton type="button" disabled aria-label="Push Me" onClick={action('button-click')}>
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
       </ComponentBlock>
@@ -44,7 +40,7 @@ stories.add(
           style={{ marginRight: 16 }}
           variant="primary"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
@@ -53,7 +49,7 @@ stories.add(
           disabled
           variant="primary"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
@@ -64,7 +60,7 @@ stories.add(
           style={{ marginRight: 16 }}
           variant="support"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
@@ -73,7 +69,7 @@ stories.add(
           disabled
           variant="support"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
@@ -84,7 +80,7 @@ stories.add(
           style={{ marginRight: 16 }}
           variant="destructive"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
@@ -93,7 +89,7 @@ stories.add(
           disabled
           variant="destructive"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
@@ -104,7 +100,7 @@ stories.add(
           style={{ marginRight: 16 }}
           variant="ghost"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>
@@ -113,7 +109,7 @@ stories.add(
           disabled
           variant="ghost"
           aria-label="Push Me"
-          onClick={() => alert('Button clicked!')}
+          onClick={action('button-click')}
         >
           <i className="icon-add" aria-hidden="true" />
         </IconButton>

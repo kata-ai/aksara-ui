@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -81,7 +82,7 @@ story.add(
                 </Box>
               </Card>
             </Anchor>
-            <StyledButton type="button" onClick={() => alert('Hello!')}>
+            <StyledButton type="button" onClick={action('button-click')}>
               <Card
                 display="flex"
                 flex={1}

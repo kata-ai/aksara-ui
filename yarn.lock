@@ -3441,7 +3441,7 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-dom@*", "@types/react-dom@^16.8.4":
+"@types/react-dom@*", "@types/react-dom@16.8.4", "@types/react-dom@^16.8.4":
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.4.tgz#7fb7ba368857c7aa0f4e4511c4710ca2c5a12a88"
   integrity sha512-eIRpEW73DCzPIMaNBDP5pPIpK1KXyZwNgfxiVagb5iGiz6da+9A5hslSX6GAQKdO7SayVCS/Fr2kjqprgAvkfA==
@@ -3494,7 +3494,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.8.23":
+"@types/react@*", "@types/react@16.8.23", "@types/react@^16.8.23":
   version "16.8.23"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.23.tgz#ec6be3ceed6353a20948169b6cb4c97b65b97ad2"
   integrity sha512-abkEOIeljniUN9qB5onp++g0EY38h7atnDHxwKUFz1r3VH1+yG1OKi2sNPTyObL40goBmfKFpdii2lEzwLX1cA==
@@ -3778,11 +3778,6 @@ acorn@^6.2.1:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.3.0.tgz#0087509119ffa4fc0a0041d1e93a417e68cb856e"
   integrity sha512-/czfa8BwS88b9gWQVhc8eknunSA2DoJpJyTQkhheIf5E48u1N0R4q/YxxsAeqRrmK9TQ/uYfgLDfZo91UlANIA==
-
-add-px-to-style@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/add-px-to-style/-/add-px-to-style-1.0.0.tgz#d0c135441fa8014a8137904531096f67f28f263a"
-  integrity sha1-0ME1RB+oAUqBN5BFMQlvZ/KPJjo=
 
 address@1.1.2:
   version "1.1.2"
@@ -6319,15 +6314,6 @@ dom-converter@^0.2:
   integrity sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==
   dependencies:
     utila "~0.4"
-
-dom-css@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/dom-css/-/dom-css-2.1.0.tgz#fdbc2d5a015d0a3e1872e11472bbd0e7b9e6a202"
-  integrity sha1-/bwtWgFdCj4YcuEUcrvQ57nmogI=
-  dependencies:
-    add-px-to-style "1.0.0"
-    prefix-style "2.0.1"
-    to-camel-case "1.0.0"
 
 dom-helpers@^3.2.1, dom-helpers@^3.3.1:
   version "3.3.1"
@@ -11219,11 +11205,6 @@ postcss@^7.0.16:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-prefix-style@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/prefix-style/-/prefix-style-2.0.1.tgz#66bba9a870cfda308a5dc20e85e9120932c95a06"
-  integrity sha1-ZrupqHDP2jCKXcIOhekSCTLJWgY=
-
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -11531,7 +11512,7 @@ quick-lru@^1.0.0:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
   integrity sha1-Q2CxfGETatOAeDl/8RQW4Ybc+7g=
 
-raf@^3.1.0, raf@^3.4.0:
+raf@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
   integrity sha512-pDP/NMRAXoTfrhCfyfSEwJAKLaxBU9eApMeBPB1TkDouZmvPerIClV8lTAd+uF8ZiTaVl69e1FCxQrAd/VTjGw==
@@ -11616,15 +11597,6 @@ react-color@^2.17.0:
     prop-types "^15.5.10"
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
-
-react-custom-scrollbars@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/react-custom-scrollbars/-/react-custom-scrollbars-4.2.1.tgz#830fd9502927e97e8a78c2086813899b2a8b66db"
-  integrity sha1-gw/ZUCkn6X6KeMIIaBOJmyqLZts=
-  dependencies:
-    dom-css "^2.0.0"
-    prop-types "^15.5.10"
-    raf "^3.1.0"
 
 react-dev-utils@^9.0.0:
   version "9.0.4"
@@ -13736,22 +13708,10 @@ to-arraybuffer@^1.0.0:
   resolved "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
   integrity sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M=
 
-to-camel-case@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/to-camel-case/-/to-camel-case-1.0.0.tgz#1a56054b2f9d696298ce66a60897322b6f423e46"
-  integrity sha1-GlYFSy+daWKYzmamCJcyK29CPkY=
-  dependencies:
-    to-space-case "^1.0.0"
-
 to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
   integrity sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=
-
-to-no-case@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/to-no-case/-/to-no-case-1.0.2.tgz#c722907164ef6b178132c8e69930212d1b4aa16a"
-  integrity sha1-xyKQcWTvaxeBMsjmmTAhLRtKoWo=
 
 to-object-path@^0.3.0:
   version "0.3.0"
@@ -13777,13 +13737,6 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
-
-to-space-case@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/to-space-case/-/to-space-case-1.0.0.tgz#b052daafb1b2b29dc770cea0163e5ec0ebc9fc17"
-  integrity sha1-sFLar7Gysp3HcM6gFj5ewOvJ/Bc=
-  dependencies:
-    to-no-case "^1.0.0"
 
 toggle-selection@^1.0.3:
   version "1.0.6"
