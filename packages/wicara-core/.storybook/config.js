@@ -5,7 +5,9 @@ import storybookTheme from './storybookTheme';
 
 // Accessibility addon
 // https://github.com/storybooks/storybook/tree/master/addons/a11y
-addDecorator(withA11y);
+if (process.env.NODE_ENV === 'development') {
+  addDecorator(withA11y);
+}
 
 // JSX addon
 // https://github.com/storybooks/addon-jsx
