@@ -5,7 +5,6 @@
     { "path": "common" },
     { "path": "doc-utils" },
     { "path": "dropdown" },
-    { "path": "form" },
     { "path": "loading" },
     { "path": "pagination" },
     { "path": "react-select" },
