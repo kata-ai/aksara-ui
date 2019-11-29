@@ -17,6 +17,8 @@ const StoryWrapperRoot = styled('div')`
   padding: ${space.lg}px;
 `;
 
+StoryWrapperRoot.displayName = 'StoryWrapperRoot';
+
 export const StorybookWrapper = (storyFn: () => any) => (
   <WicaraReset>
     <StorybookGlobal />

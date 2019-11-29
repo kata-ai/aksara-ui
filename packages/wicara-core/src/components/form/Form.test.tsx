@@ -9,15 +9,12 @@ import {
   InputAddon,
   FormHelp,
   FormError
-} from '..';
+} from './components';
 
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
-import { variables } from '@kata-kit/theme';
 
-// TODO: refactor testid into inside component
-
-describe('Form', () => {
+describe('components/Form', () => {
   test('renders standard text input correctly', () => {
     const { getByTestId } = render(
       <FormGroup>
@@ -35,11 +32,7 @@ describe('Form', () => {
     const { getByTestId } = render(
       <FormGroup>
         <FormLabel htmlFor="textarea">Text area</FormLabel>
-        <InputTextarea
-          data-testid="text-input"
-          rows={4}
-          placeholder="Type here..."
-        />
+        <InputTextarea data-testid="text-input" rows={4} placeholder="Type here..." />
       </FormGroup>
     );
 
@@ -53,32 +46,21 @@ describe('Form', () => {
         <FormLabel data-testid="label-error" errors>
           Email Address
         </FormLabel>
-        <InputText
-          data-testid="input-error"
-          errors
-          placeholder="Type here..."
-        />
-        <FormError>Please enter an email address.</FormError>
+        <InputText errors placeholder="Type here..." />
+        <FormError data-testid="input-error">Please enter an email address.</FormError>
       </FormGroup>
     );
 
     const input = getByTestId('input-error');
 
-    expect(input).toHaveStyleRule(
-      'border',
-      `1px solid ${variables.colors.red}`
-    );
+    expect(input).toHaveTextContent('Please enter an email address.');
   });
 
   test('renders disabled input correctly', () => {
     const { getByTestId } = render(
       <FormGroup>
         <FormLabel htmlFor="disabled">Disabled input</FormLabel>
-        <InputText
-          data-testid="disabled-input"
-          disabled
-          placeholder="Can't touch this"
-        />
+        <InputText data-testid="disabled-input" disabled placeholder="Can't touch this" />
       </FormGroup>
     );
 

@@ -6,18 +6,6 @@ interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
-const InputGroup: React.SFC<InputGroupProps> = ({
-  className,
-  children,
-  ...rest
-}) => (
-  <Div className={className} {...rest}>
-    {children}
-  </Div>
-);
-
-export default InputGroup;
-
 const Div = styled('div')`
   position: relative;
   display: flex;
@@ -25,3 +13,13 @@ const Div = styled('div')`
   align-items: stretch;
   width: 100%;
 `;
+
+const InputGroup: React.SFC<InputGroupProps> = ({ className, children, ...rest }) => (
+  <Div className={className} {...rest}>
+    {children}
+  </Div>
+);
+
+InputGroup.displayName = 'InputGroup';
+
+export default InputGroup;

@@ -1,29 +1,12 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-import { InputAddonBase } from '../styles';
-
 interface InputAddonProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** True if an icon is used as addon instead of text. */
   isIcon?: boolean;
 }
-
-const InputAddon: React.SFC<InputAddonProps> = ({
-  className,
-  isIcon,
-  children,
-  ...rest
-}) => (
-  <Div className={className}>
-    <Inner isIcon={isIcon} className={className} {...rest}>
-      {children}
-    </Inner>
-  </Div>
-);
-
-export default InputAddon;
 
 const IsIconStyles = css`
   width: 38px;
@@ -35,7 +18,7 @@ const IsIconStyles = css`
 `;
 
 const Div = styled('div')`
-  ${props => InputAddonBase(props)};
+  display: flex;
 `;
 
 const Inner = styled('span')<InputAddonProps>`
@@ -60,3 +43,15 @@ const Inner = styled('span')<InputAddonProps>`
 
   ${props => props.isIcon && IsIconStyles};
 `;
+
+const InputAddon: React.FC<InputAddonProps> = ({ className, isIcon, children, ...rest }) => (
+  <Div className={className}>
+    <Inner isIcon={isIcon} className={className} {...rest}>
+      {children}
+    </Inner>
+  </Div>
+);
+
+InputAddon.displayName = 'InputAddon';
+
+export default InputAddon;
