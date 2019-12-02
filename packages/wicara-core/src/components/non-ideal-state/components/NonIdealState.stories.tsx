@@ -19,12 +19,7 @@ story.add(
         subtitle="Used to inform users that some contents are unavailable."
       />
       <NonIdealState
-        image={
-          <img
-            src="https://platform.katalabs.io/static/media/no-channel.dcd0c908.svg"
-            alt="No Project Selected"
-          />
-        }
+        image={<img src="https://via.placeholder.com/318x310.png" alt="No Project Selected" />}
         title="No Project Selected"
       >
         <Paragraph m={0}>

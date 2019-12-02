@@ -20,14 +20,13 @@ const Wrapper = styled(Box)`
 `;
 
 const ImageWrapper = styled(Box)`
+  position: relative;
   height: 100%;
   max-height: 155px;
 
-  img {
-    margin: 0 auto;
-  }
-
+  img,
   svg {
+    margin: 0 auto;
     height: 100%;
     max-height: 155px;
   }
