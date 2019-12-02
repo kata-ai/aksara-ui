@@ -3,12 +3,9 @@
   "references": [
     { "path": "button" },
     { "path": "common" },
-    { "path": "doc-utils" },
     { "path": "dropdown" },
     { "path": "loading" },
-    { "path": "react-select" },
     { "path": "reset" },
-    { "path": "split-button" },
     { "path": "theme" },
     { "path": "tooltip" },
     { "path": "wicara-core" }
