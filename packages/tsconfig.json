@@ -6,7 +6,6 @@
     { "path": "doc-utils" },
     { "path": "dropdown" },
     { "path": "loading" },
-    { "path": "pagination" },
     { "path": "react-select" },
     { "path": "reset" },
     { "path": "split-button" },
