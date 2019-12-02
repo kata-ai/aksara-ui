@@ -18,19 +18,24 @@ const DefaultStyles = css`
   &:active,
   &.active {
     background-color: ${colors.gray70};
-    color: ${colors.white};
     border-color: ${colors.gray70};
+    color: ${colors.white};
   }
 `;
 
 const IsActiveStyles = css`
-  background: ${colors.kataBlue};
+  background-color: ${colors.kataBlue};
   border-color: ${colors.kataBlue};
   color: ${colors.white};
 
+  &:hover,
+  &.hover {
+    background-color: ${colors.kataBlue};
+  }
+
   &:active,
   &.active {
-    background: ${colors.kataBlue};
+    background-color: ${colors.kataBlue};
     border-color: ${colors.kataBlue};
     color: ${colors.white};
   }
@@ -56,23 +61,11 @@ const PaginationButton = styled('button')<PaginationButtonProps>`
     margin-left: 4px;
   }
 
-  &:hover,
-  &.hover {
-    background-color: ${colors.gray10};
-  }
-
-  &:active,
-  &.active {
-    background-color: ${colors.gray70};
-    color: ${colors.white};
-    border-color: ${colors.gray70};
-  }
-
   &:disabled,
   &[disabled] {
-    color: ${colors.gray50};
     background-color: ${colors.gray10};
     border-color: ${colors.gray10};
+    color: ${colors.gray50};
   }
 
   ${props => (props.isActive ? IsActiveStyles : DefaultStyles)}
