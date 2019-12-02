@@ -18,7 +18,7 @@ export interface BannerProps extends BaseBannerProps {
 }
 
 /** Banners are used to convey important information to users. */
-export const Banner: React.FC<BannerProps> = ({ className, style, message, state, onClose }) => {
+const Banner: React.FC<BannerProps> = ({ className, style, message, state, onClose }) => {
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
