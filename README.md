@@ -119,4 +119,4 @@ Copyright (c) 2018 Kata.ai and/or contributors. All rights reserved.
 ## Maintainers
 
 - Resi Respati ([@resir014](https://twitter.com/resir014)) – [Kata.ai](https://kata.ai)
-- Reyhan Sofian Haqqi – [Kata.ai](https://kata.ai)
+- Dio Syahrizal ([@DioSyahrizal](https://github.com/DioSyahrizal)) – [Kata.ai](https://kata.ai)
