@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { variables } from '@kata-kit/theme';
 import { render } from '@testing-library/react';
 
+import { colors } from '../../../utils';
 import Badge from './Badge';
 
 import '@testing-library/jest-dom/extend-expect';
@@ -18,8 +18,8 @@ describe('compoents/Badge', () => {
     test('renders with additional variants', () => {
       const { container } = render(<Badge variant="primary">test badge</Badge>);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', variables.colors.kataBlue);
-      expect(container.firstChild).toHaveStyleRule('color', variables.colors.white);
+      expect(container.firstChild).toHaveStyleRule('background-color', colors.kataBlue);
+      expect(container.firstChild).toHaveStyleRule('color', colors.white);
     });
   });
 });

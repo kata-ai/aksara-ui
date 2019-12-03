@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { variables } from '@kata-kit/theme';
 import { render, fireEvent } from '@testing-library/react';
 
+import { colors } from '../../../utils';
 import Banner from './Banner';
 
 import '@testing-library/jest-dom/extend-expect';
@@ -14,8 +14,8 @@ describe('components/Banner', () => {
     test('renders with custom state', () => {
       const { container } = render(<Banner state="success" message="test banner" />);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', variables.colors.green);
-      expect(container.firstChild).toHaveStyleRule('color', variables.colors.white);
+      expect(container.firstChild).toHaveStyleRule('background-color', colors.green);
+      expect(container.firstChild).toHaveStyleRule('color', colors.white);
     });
 
     test('renders close button with onClose', () => {
