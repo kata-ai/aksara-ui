@@ -8,7 +8,7 @@ import 'jest-styled-components';
 
 const handleSelect = jest.fn(x => x);
 
-describe('Pagination', () => {
+describe('components/Pagination', () => {
   test('renders correctly', () => {
     const { container } = render(<Pagination current={1} total={5} onSelect={handleSelect} />);
 

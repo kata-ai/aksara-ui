@@ -23,6 +23,8 @@ export interface PaginationProps {
 }
 
 class Pagination extends React.Component<PaginationProps> {
+  static displayName = 'Pagination';
+
   constructor(props: PaginationProps) {
     super(props);
 
