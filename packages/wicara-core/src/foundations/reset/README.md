@@ -1,10 +1,10 @@
 # Reset
 
-Provides necessary CSS resets to use Aksara UI Kit.
+> Provides necessary CSS resets to use Wicara components.
 
 ## Usage
 
-Wrap your app inside the `WicaraReset` to use the resets and `ThemeProvider` component provided by Aksara UI Kit.
+Wrap your app inside the `WicaraReset` to use the resets and `ThemeProvider` component provided by Wicara.
 
 ```jsx
 import { WicaraReset } from '@wicara/core';

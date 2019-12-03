@@ -15,7 +15,7 @@
 
 ---
 
-**Wicara** (previously kata-kit) is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
+**Wicara** is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
 
 **Note: Wicara is still in beta.**
 
@@ -43,23 +43,27 @@ Check out [kata-ai/wicara-starter](https://github.com/kata-ai/wicara-starter).
 
 ### Prerequisites
 
-Wicara requires `styled-components` v4+. First, install the core Wicara theme/reset package and `styled-components`.
+Wicara requires `styled-components` v4+. First, install the core Wicara package and `styled-components`.
 
 ```bash
 # yarn
-$ yarn add styled-components @kata-kit/theme @kata-kit/reset
+$ yarn add styled-components @wicara/core
 
 # npm
-$ npm install --save styled-components @kata-kit/theme @kata-kit/reset
+$ npm install --save styled-components @wicara/core
 ```
 
-At the bare minimum, you should at least import the global CSS reset provided by Wicara.
+Then, you will need to apply the style resets + theme provider. Wrap your app inside the `WicaraReset` to use the resets and `ThemeProvider` component provided by Wicara.
 
 ```jsx
-import { KataReset } from '@kata-kit/reset';
+import { WicaraReset } from '@wicara/core';
 
-const App = ({ children }) => <KataReset>{children}</KataReset>;
+export default function MyApp({ children }) {
+  return <WicaraReset>{children}</WicaraReset>;
+}
 ```
+
+Once you've applied the style resets, you can use Wicara components in your app. See the example below.
 
 ### Example
 
@@ -69,9 +73,47 @@ Wicara is built in React, with styling done in styled-components. To use these c
 // Example for `<Button />` component.
 
 import * as React from 'react';
-import { Button } from '@kata-kit/button';
+import { Button } from '@wicara/core';
 
-export default () => <Button>Push Me</Button>;
+export default function Component() {
+  return <Button>Push Me</Button>;
+}
+```
+
+Read the [Storybook](https://next--wicara-storybook.netlify.com/) for more examples.
+
+## Fonts
+
+We use two fonts in the Aksara Design Language: `Museo Sans`, and `Museo Sans Rounded`.
+
+```sh
+# yarn
+$ yarn add @wicara/fonts
+# npm
+$ npm i @wicara/fonts
+```
+
+Note that these fonts are **not provided for free**. You should check if you have a license for them before using this package.
+
+### Usage
+
+#### Body fonts
+
+To use these fonts within your app, import as follows:
+
+```jsx
+// Museo Sans
+import '@wicara/fonts/museo-sans.css';
+// Museo Sans Rounded
+import '@wicara/fonts/museo-sans-rounded.css';
+```
+
+#### Icon fonts
+
+We also provided some icon sets. To use them, import as follows:
+
+```jsx
+import '@wicara/fonts/kata-icons.css';
 ```
 
 ## License

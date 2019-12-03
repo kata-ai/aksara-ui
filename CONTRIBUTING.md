@@ -63,7 +63,7 @@ $ git clone https://github.com/kata-ai/wicara.git
 After these repository has been cloned, `cd` into the repository:
 
 ```sh-session
-$ cd kata-kit
+$ cd wicara
 ```
 
 Install the project's dependencies. Note that we use Yarn, not npm:
@@ -72,15 +72,7 @@ Install the project's dependencies. Note that we use Yarn, not npm:
 $ yarn
 ```
 
-Note that TypeScript's project references sometimes fail to load cross-module declarations. When that happens, run this command once.
-
-```sh-session
-$ yarn tsc
-```
-
 ## Developing
-
-### Developing Components
 
 To start developing components, you have to run the Storybook server.
 
