@@ -21,14 +21,6 @@
 
 ---
 
-## Documentation
-
-- [Introduction](./docs/introduction.md)
-- [Getting Started](./docs/getting-started.md)
-- [Contributing](./docs/contributing.md)
-- [Using Assets](./docs/using-assets.md)
-- [Fonts](./docs/fonts.md)
-
 ## Contributing
 
 Wicara is developed by the help of developers like you! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started on developing Wicara.
