@@ -182,7 +182,7 @@ export const ButtonSmall = (props: ButtonBaseProps) => css`
   height: 32px;
   padding: 0 16px;
   font-size: 11px;
-  line-height: 32px;
+  line-height: 30px;
   border-radius: 4px;
   font-weight: 700;
 
@@ -194,7 +194,7 @@ export const ButtonMedium = (props: ButtonBaseProps) => css`
   height: 40px;
   padding: 0 24px;
   font-size: 13px;
-  line-height: 40px;
+  line-height: 38px;
   border-radius: 4px;
   font-weight: 500;
 
@@ -206,7 +206,7 @@ export const ButtonLarge = (props: ButtonBaseProps) => css`
   height: 56px;
   padding: 0 24px;
   font-size: ${typeScale.large.fontSize}px;
-  line-height: 56px;
+  line-height: 54px;
   border-radius: 4px;
   font-weight: 500;
 

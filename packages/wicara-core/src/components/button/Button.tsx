@@ -1,5 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
+
+import { colors } from '../../utils';
+import { Circle } from '../loading';
 import { ButtonBaseProps, ButtonStyles, ButtonSizes } from './styles';
 
 export interface ButtonProps
@@ -9,10 +12,27 @@ export interface ButtonProps
   className?: string;
   /** Additional CSS styles to give to the component */
   style?: React.CSSProperties;
+  /** True if the button is disabled due to loading */
+  isLoading?: boolean;
 }
 
 const Root = styled('button')<ButtonProps>`
   ${ButtonStyles}
+`;
+
+export const InvisibleText = styled('span')`
+  visibility: hidden;
+`;
+
+interface LoaderCircleProps {
+  buttonSize?: ButtonSizes;
+}
+
+const LoaderCircle = styled(Circle)<LoaderCircleProps>`
+  position: absolute;
+  left: 50%;
+  margin-left: ${props => (props.buttonSize === 'sm' ? '-11px' : '-15px')};
+  height: 100%;
 `;
 
 const iconPadding = (size?: ButtonSizes) => {
@@ -59,19 +79,29 @@ const Button: React.SFC<ButtonProps> = ({
   size,
   icon,
   iconPosition,
+  isLoading,
+  disabled,
   ...rest
 }) => {
   const renderIcon = () => {
     if (typeof icon === 'string') {
       return (
-        <Icon iconPosition={iconPosition} size={size}>
+        <Icon
+          iconPosition={iconPosition}
+          size={size}
+          style={isLoading ? { visibility: 'hidden' } : undefined}
+        >
           <i className={`icon-${icon}`} />
         </Icon>
       );
     }
 
     return (
-      <Icon iconPosition={iconPosition} size={size}>
+      <Icon
+        iconPosition={iconPosition}
+        size={size}
+        style={isLoading ? { visibility: 'hidden' } : undefined}
+      >
         {icon}
       </Icon>
     );
@@ -84,10 +114,23 @@ const Button: React.SFC<ButtonProps> = ({
       size={size}
       icon={icon}
       iconPosition={iconPosition}
+      disabled={disabled || isLoading}
+      isLoading={isLoading}
       {...rest}
     >
       {icon && renderIcon()}
-      {children}
+      {isLoading ? (
+        <>
+          <LoaderCircle
+            size={size === 'sm' ? 24 : 32}
+            buttonSize={size}
+            spinnerColor={colors.white}
+          />
+          <InvisibleText>{children}</InvisibleText>
+        </>
+      ) : (
+        children
+      )}
     </Root>
   );
 };
