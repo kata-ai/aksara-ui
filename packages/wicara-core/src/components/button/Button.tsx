@@ -28,13 +28,6 @@ interface LoaderCircleProps {
   buttonSize?: ButtonSizes;
 }
 
-const LoaderCircle = styled(Circle)<LoaderCircleProps>`
-  position: absolute;
-  left: 50%;
-  margin-left: ${props => (props.buttonSize === 'sm' ? '-11px' : '-15px')};
-  height: 100%;
-`;
-
 const iconPadding = (size?: ButtonSizes) => {
   switch (size) {
     case 'lg':
@@ -47,6 +40,12 @@ const iconPadding = (size?: ButtonSizes) => {
       return 16;
   }
 };
+
+const LoaderCircle = styled(Circle)<LoaderCircleProps>`
+  position: absolute;
+  left: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
+  top: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
+`;
 
 const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition'>>`
   display: flex;

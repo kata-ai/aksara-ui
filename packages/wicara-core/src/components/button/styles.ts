@@ -77,6 +77,7 @@ export const ButtonBase = css`
   user-select: none;
   background: none;
   text-decoration: none;
+  line-height: 1;
   letter-spacing: 0.2px;
   border: 1px solid transparent;
   transition: all 0.3s ease;
@@ -101,8 +102,6 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
 
   ${ButtonBase}
 
-  font-weight: 500;
-  line-height: 1;
   box-shadow: ${shadows.layer200};
   vertical-align: middle;
   background-color: ${colors.white};
