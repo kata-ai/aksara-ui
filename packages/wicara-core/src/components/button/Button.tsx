@@ -81,6 +81,7 @@ const Button: React.SFC<ButtonProps> = ({
   iconPosition,
   isLoading,
   disabled,
+  variant,
   ...rest
 }) => {
   const renderIcon = () => {
@@ -116,6 +117,7 @@ const Button: React.SFC<ButtonProps> = ({
       iconPosition={iconPosition}
       disabled={disabled || isLoading}
       isLoading={isLoading}
+      variant={variant}
       {...rest}
     >
       {icon && renderIcon()}
@@ -124,7 +126,11 @@ const Button: React.SFC<ButtonProps> = ({
           <LoaderCircle
             size={size === 'sm' ? 24 : 32}
             buttonSize={size}
-            spinnerColor={colors.white}
+            spinnerColor={
+              variant === 'support' || variant === 'link' || variant === 'ghost'
+                ? colors.gray50
+                : colors.white
+            }
           />
           <InvisibleText>{children}</InvisibleText>
         </>
