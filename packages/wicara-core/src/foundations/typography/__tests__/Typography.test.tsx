@@ -2,9 +2,6 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { Text, Heading, Paragraph } from '../index';
 
-import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
-
 describe('foundations/typography', () => {
   test('renders <Text /> correctly', () => {
     const { container } = render(<Text>example</Text>);

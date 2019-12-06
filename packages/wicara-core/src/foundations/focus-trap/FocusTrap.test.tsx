@@ -2,9 +2,6 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import FocusTrap from './FocusTrap';
 
-import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
-
 describe('EmptyMessage', () => {
   test('renders with correct tabindex', () => {
     const { container } = render(<FocusTrap active={false}>Board test</FocusTrap>);

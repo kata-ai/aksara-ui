@@ -4,9 +4,6 @@ import { render, fireEvent } from '@testing-library/react';
 import { colors } from '../../../utils';
 import Banner from './Banner';
 
-import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
-
 const handleClose = jest.fn();
 
 describe('components/Banner', () => {

@@ -7,31 +7,13 @@ module.exports = ({ config, mode }) => {
       {
         loader: require.resolve('babel-loader'),
         options: {
-          sourceType: 'unambiguous',
-          presets: [
-            [
-              require.resolve('@babel/preset-env'),
-              { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' }
-            ],
-            require.resolve('@babel/preset-react'),
-            require.resolve('@babel/preset-typescript')
-          ],
-          plugins: [
-            require.resolve('@babel/plugin-transform-modules-commonjs'),
-            require.resolve('@babel/plugin-proposal-class-properties'),
-            require.resolve('babel-plugin-styled-components')
-          ]
+          presets: [['react-app', { flow: false, typescript: true }]]
         }
       }
     ]
   });
 
   config.resolve.extensions.push('.ts', '.tsx');
-  config.resolve.alias = Object.assign({}, config.resolve.alias, {
-    '@storybook-utils': path.resolve(__dirname, './'),
-    '@kata-kit': path.resolve(__dirname, '../', 'packages')
-  });
-  config.resolve.mainFields = ['wicara:src', 'kata-kit:src', 'main'];
-
+  config.resolve.mainFields = ['wicara:src', 'main'];
   return config;
 };

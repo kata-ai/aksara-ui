@@ -11,9 +11,6 @@ import {
   FormError
 } from './components';
 
-import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
-
 describe('components/Form', () => {
   test('renders standard text input correctly', () => {
     const { getByTestId } = render(
