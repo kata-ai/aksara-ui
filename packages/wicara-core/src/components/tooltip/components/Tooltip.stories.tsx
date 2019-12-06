@@ -8,7 +8,7 @@ import {
   ComponentBlock
 } from '../../../utils/storybook';
 import Tooltip from './Tooltip';
-import { Heading, Paragraph } from '../../../foundations';
+import { Heading, Paragraph, Text, Box } from '../../../foundations';
 import { Button } from '../../button';
 
 const readme = require('../README.md');
@@ -21,101 +21,107 @@ story.add(
     <StoryContainer>
       <StoryHeader title="Tooltip" subtitle="Provides additional descriptions to elements." />
       <ComponentBlock title="Default">
-        <span style={{ marginRight: 32 }}>
-          <Tooltip placement="top" content="Tooltip text">
-            <span>Top</span>
-          </Tooltip>
-        </span>
-        <span style={{ marginRight: 32 }}>
-          <Tooltip placement="right" content="Tooltip text">
-            <span>Bottom</span>
-          </Tooltip>
-        </span>
-        <span style={{ marginRight: 32 }}>
-          <Tooltip placement="bottom" content="Tooltip text">
-            <span>Left</span>
-          </Tooltip>
-        </span>
-        <span>
-          <Tooltip placement="left" content="Tooltip text">
-            <span>Right</span>
-          </Tooltip>
-        </span>
+        <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
+          <Box>
+            <Tooltip placement="top" content="Tooltip text">
+              <Text>Top</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip placement="right" content="Tooltip text">
+              <Text>Right</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip placement="bottom" content="Tooltip text">
+              <Text>Bottom</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip placement="left" content="Tooltip text">
+              <Text>Left</Text>
+            </Tooltip>
+          </Box>
+        </Box>
       </ComponentBlock>
       <ComponentBlock title="Custom Content">
-        <span style={{ marginRight: 32 }}>
-          <Tooltip
-            placement="top"
-            content={
-              <>
-                <Heading as="h5" scale="heading5" color="white">
-                  Tooltip custom heading
-                </Heading>
-                <Paragraph scale="small" m={0}>
-                  Tooltip custom text
-                </Paragraph>
-              </>
-            }
-          >
-            <span>Top</span>
-          </Tooltip>
-        </span>
-        <span style={{ marginRight: 32 }}>
-          <Tooltip
-            placement="right"
-            content={
-              <>
-                <Heading as="h5" scale="heading5" color="white">
-                  Tooltip custom heading
-                </Heading>
-                <Paragraph scale="small" m={0}>
-                  Tooltip custom text
-                </Paragraph>
-              </>
-            }
-          >
-            <span>Bottom</span>
-          </Tooltip>
-        </span>
-        <span style={{ marginRight: 32 }}>
-          <Tooltip
-            placement="bottom"
-            content={
-              <>
-                <Heading as="h5" scale="heading5" color="white">
-                  Tooltip custom heading
-                </Heading>
-                <Paragraph scale="small" m={0}>
-                  Tooltip custom text
-                </Paragraph>
-              </>
-            }
-          >
-            <span>Left</span>
-          </Tooltip>
-        </span>
-        <span>
-          <Tooltip
-            placement="left"
-            content={
-              <>
-                <Heading as="h5" scale="heading5" color="white">
-                  Tooltip custom heading
-                </Heading>
-                <Paragraph scale="small" m={0}>
-                  Tooltip custom text
-                </Paragraph>
-              </>
-            }
-          >
-            <span>Right</span>
-          </Tooltip>
-        </span>
+        <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
+          <Box>
+            <Tooltip
+              placement="top"
+              content={
+                <>
+                  <Heading as="h5" scale="heading5" color="white">
+                    Tooltip custom heading
+                  </Heading>
+                  <Paragraph scale="small" m={0}>
+                    Tooltip custom text
+                  </Paragraph>
+                </>
+              }
+            >
+              <span>Top</span>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="right"
+              content={
+                <>
+                  <Heading as="h5" scale="heading5" color="white">
+                    Tooltip custom heading
+                  </Heading>
+                  <Paragraph scale="small" m={0}>
+                    Tooltip custom text
+                  </Paragraph>
+                </>
+              }
+            >
+              <span>Bottom</span>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="bottom"
+              content={
+                <>
+                  <Heading as="h5" scale="heading5" color="white">
+                    Tooltip custom heading
+                  </Heading>
+                  <Paragraph scale="small" m={0}>
+                    Tooltip custom text
+                  </Paragraph>
+                </>
+              }
+            >
+              <span>Left</span>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="left"
+              content={
+                <>
+                  <Heading as="h5" scale="heading5" color="white">
+                    Tooltip custom heading
+                  </Heading>
+                  <Paragraph scale="small" m={0}>
+                    Tooltip custom text
+                  </Paragraph>
+                </>
+              }
+            >
+              <span>Right</span>
+            </Tooltip>
+          </Box>
+        </Box>
       </ComponentBlock>
       <ComponentBlock title="Components">
-        <Tooltip placement="top" content="Tooltip text">
-          <Button>Push Me</Button>
-        </Tooltip>
+        <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
+          <Tooltip placement="top" content="Tooltip text">
+            <Button>Push Me</Button>
+          </Tooltip>
+        </Box>
       </ComponentBlock>
     </StoryContainer>
   ),
