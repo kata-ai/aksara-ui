@@ -6,12 +6,16 @@ import {
   color,
   ColorProps,
   typography,
-  TypographyProps
+  TypographyProps as StyledTypographyProps
 } from 'styled-system';
 
 import { primitives } from '../../../utils/primitives';
 
-export interface TypographyProps extends LayoutProps, SpaceProps, ColorProps, TypographyProps {
+export interface TypographyProps
+  extends LayoutProps,
+    SpaceProps,
+    ColorProps,
+    StyledTypographyProps {
   /** Unique ID attribute */
   id?: string;
   /** Extended color props. */
