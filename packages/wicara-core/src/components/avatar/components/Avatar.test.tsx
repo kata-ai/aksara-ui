@@ -3,9 +3,6 @@ import { render } from '@testing-library/react';
 
 import Avatar from './Avatar';
 
-import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
-
 describe('components/Avatar', () => {
   describe('<Avatar />', () => {
     test('renders on large size by default', () => {

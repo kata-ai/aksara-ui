@@ -1,17 +1,27 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationDir": "lib",
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": ["dom", "es2015", "es2016", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "lib",
+    "removeComments": true,
     "rootDir": "src",
-    "outDir": "tsc-out"
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es2015"
   },
   "references": [],
-  "exclude": [
-    "**/*.stories.tsx",
-    "**/*.story.tsx",
-    "**/__tests__",
-    "**/__mocks__",
-    "**/lib"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "**/lib"]
 }

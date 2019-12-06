@@ -3,9 +3,6 @@ import { render, fireEvent } from '@testing-library/react';
 
 import Pagination from './Pagination';
 
-import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
-
 const handleSelect = jest.fn(x => x);
 
 describe('components/Pagination', () => {

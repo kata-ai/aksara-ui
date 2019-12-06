@@ -4,9 +4,6 @@ import { render } from '@testing-library/react';
 import { colors } from '../../../utils';
 import Badge from './Badge';
 
-import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
-
 describe('compoents/Badge', () => {
   describe('<Badge />', () => {
     test('renders with children', () => {

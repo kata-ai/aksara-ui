@@ -7,10 +7,6 @@
   "author": "Kata.ai <dev@kata.ai>",
   "contributors": [
     {
-      "name": "Reyhan Sofian Haqqi",
-      "email": "reyhan@kata.ai"
-    },
-    {
       "name": "Resi Respati",
       "email": "resi@kata.ai"
     }
@@ -28,119 +24,31 @@
     "clean": "lerna run clean",
     "prepare": "yarn build",
     "lerna": "lerna",
-    "lint": "tslint -p tsconfig.lint.json",
-    "report-coverage": "codecov -f ./coverage/*.json",
+    "lint": "lerna run lint",
+    "report-coverage": "yarn workspace @wicara/core run report-coverage",
     "storybook": "yarn workspace @wicara/core run storybook",
     "storybook:build": "yarn workspace @wicara/core run storybook:build -o ../../storybook-static",
-    "test": "jest --env=jsdom",
-    "test:coverage": "jest --env=jsdom --coverage",
-    "tsc": "tsc -b packages"
-  },
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.3.2"
+    "test": "yarn workspace @wicara/core run test",
+    "test:coverage": "yarn workspace @wicara/core run test:coverage"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^7.1.2",
-    "@testing-library/jest-dom": "^4.0.0",
-    "@testing-library/react": "^8.0.5",
-    "@types/classnames": "^2.2.7",
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.6.2",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "@types/styled-components": "^4.1.18",
-    "babel-jest": "^24.8.0",
-    "clsx": "^1.0.4",
-    "codecov": "^3.5.0",
     "husky": "^3.0.2",
-    "jest": "^24.8.0",
-    "jest-styled-components": "^6.3.3",
     "lerna": "^3.15.0",
     "lint-staged": "^8.1.0",
-    "object-assign": "^4.1.1",
     "prettier": "^1.18.2",
-    "promise": "^8.0.3",
-    "raf": "^3.4.1",
     "rimraf": "^2.6.3",
     "rollup": "^1.11.3",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-typescript2": "^0.21.0",
-    "rollup-plugin-uglify": "^6.0.2",
-    "storybook-addon-jsx": "^7.1.6",
-    "ts-jest": "^24.2.0",
-    "tslint": "^5.18.0",
-    "tslint-config-kata": "^1.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "typeface-barlow": "^0.0.71",
-    "typescript": "~3.7.3"
+    "rollup-plugin-uglify": "^6.0.2"
   },
   "resolutions": {
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "packages/*/src/**/*.{ts,tsx}",
-      "!packages/*/src/**/*.stories.{ts,tsx}",
-      "!packages/*/src/**/*.story.{ts,tsx}",
-      "!packages/*/src/**/index.{ts,tsx}",
-      "!packages/*/src/index.{ts,tsx}",
-      "!packages/{kata-kit,doc-utils}/**/*.{ts,tsx}"
-    ],
-    "coverageReporters": [
-      "json",
-      "lcov"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "setupFilesAfterEnv": [
-      "@testing-library/react/cleanup-after-each"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ],
-    "modulePathIgnorePatterns": [
-      "lib"
-    ],
-    "moduleNameMapper": {
-      "@kata-kit/[^/]$": "<rootDir>packages/$1/src",
-      "@wicara/[^/]$": "<rootDir>packages/$1/src"
-    },
-    "testMatch": [
-      "<rootDir>/packages/*/src/**/__tests__/**/*.ts?(x)",
-      "<rootDir>/packages/*/src/**/?(*.)(spec|test).ts?(x)"
-    ],
-    "testEnvironment": "node",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx|mjs)$": "babel-jest",
-      "^.+\\.tsx?$": "ts-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "<rootDir>/packages/"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "./tsconfig.test.json"
-      }
-    }
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,scss,md,html}": [
