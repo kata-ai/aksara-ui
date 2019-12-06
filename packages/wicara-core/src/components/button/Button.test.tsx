@@ -54,6 +54,20 @@ describe('components/Button', () => {
 
       expect(container.firstChild).toBeInTheDocument();
     });
+
+    test('renders block buttons correctly', () => {
+      const { container } = render(<OutlineButton block>test button</OutlineButton>);
+
+      expect(container.firstChild).toHaveStyleRule('display', 'block');
+      expect(container.firstChild).toHaveStyleRule('width', '100%');
+    });
+
+    test('renders icons correctly', () => {
+      const { container } = render(<OutlineButton icon="add">test button</OutlineButton>);
+      const icon = container.querySelector('i');
+
+      expect(icon).toBeInTheDocument();
+    });
   });
 
   describe('<FloatingButton />', () => {
