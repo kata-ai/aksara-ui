@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { typeScale, colors } from '../../../utils/variables';
 import { ButtonBaseProps } from '../styles';
 
-export const DefaultButton = css`
+export const ButtonDefault = css`
   background-color: ${colors.gray10};
   color: ${colors.gray50};
 
@@ -33,7 +33,7 @@ export const DefaultButton = css`
   }
 `;
 
-export const PrimaryButton = css`
+export const ButtonPrimary = css`
   background-color: ${colors.cobalt};
   color: ${colors.white};
 
@@ -64,7 +64,7 @@ export const PrimaryButton = css`
   }
 `;
 
-export const OutlineButton = css`
+export const ButtonSupport = css`
   background-color: ${colors.white};
   color: ${colors.gray50};
   border-color: ${colors.gray30};
@@ -96,7 +96,7 @@ export const OutlineButton = css`
   }
 `;
 
-export const LinkButton = css`
+export const ButtonLink = css`
   color: ${colors.kataBlue};
 
   &:not(:disabled):not(.disabled) {
@@ -122,7 +122,7 @@ export const LinkButton = css`
   }
 `;
 
-export const DestructiveButton = css`
+export const ButtonDestructive = css`
   background-color: ${colors.red};
   color: ${colors.white};
 
@@ -152,7 +152,7 @@ export const DestructiveButton = css`
   }
 `;
 
-export const GhostButton = css`
+export const ButtonGhost = css`
   color: ${colors.kataBlue};
 
   &:not(:disabled):not(.disabled) {

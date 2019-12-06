@@ -2,12 +2,12 @@ import { css } from 'styled-components';
 
 import { colors, shadows } from '../../utils/variables';
 import {
-  DefaultButton,
-  PrimaryButton,
-  OutlineButton,
-  DestructiveButton,
-  LinkButton,
-  GhostButton,
+  ButtonDefault,
+  ButtonPrimary,
+  ButtonSupport,
+  ButtonDestructive,
+  ButtonLink,
+  ButtonGhost,
   ButtonSmall,
   ButtonMedium,
   ButtonLarge,
@@ -29,6 +29,16 @@ import {
   IconButtonDestructive,
   IconButtonGhost
 } from './utils/iconButtonUtils';
+import {
+  OutlineButtonSmall,
+  OutlineButtonMedium,
+  OutlineButtonLarge,
+  OutlineButtonDefault,
+  OutlineButtonPrimary,
+  OutlineButtonSuccess,
+  OutlineButtonWarning,
+  OutlineButtonDestructive
+} from './utils/outlineButtonUtils';
 
 export type ButtonVariants =
   | 'default'
@@ -39,6 +49,7 @@ export type ButtonVariants =
   | 'ghost'
   | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
+export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'ghost';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
 export type ButtonIconPositions = 'left' | 'right';
@@ -48,6 +59,19 @@ export interface ButtonBaseProps {
   block?: boolean;
   /** The variant of the button. */
   variant?: ButtonVariants;
+  /** The size of the button. */
+  size?: ButtonSizes;
+  /** The icon that renders with the button */
+  icon?: string | React.ReactNode;
+  /** Icon position. Default is `'left'`. */
+  iconPosition?: ButtonIconPositions;
+}
+
+export interface OutlineButtonBaseProps {
+  /** Is a block button. */
+  block?: boolean;
+  /** The variant of the button. */
+  variant?: OutlineButtonVariants;
   /** The size of the button. */
   size?: ButtonSizes;
   /** The icon that renders with the button */
@@ -168,15 +192,59 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
 
   ${ButtonBase}
 
-  ${props.variant === 'default' && DefaultButton}
-  ${props.variant === 'primary' && PrimaryButton}
-  ${props.variant === 'support' && OutlineButton}
-  ${props.variant === 'destructive' && DestructiveButton}
-  ${props.variant === 'link' && LinkButton}
-  ${props.variant === 'ghost' && GhostButton}
+  ${props.variant === 'default' && ButtonDefault}
+  ${props.variant === 'primary' && ButtonPrimary}
+  ${props.variant === 'support' && ButtonSupport}
+  ${props.variant === 'destructive' && ButtonDestructive}
+  ${props.variant === 'link' && ButtonLink}
+  ${props.variant === 'ghost' && ButtonGhost}
   ${props.variant === 'inverse' && InverseButton}
 
   ${props.size === 'sm' && ButtonSmall(props)}
   ${props.size === 'md' && ButtonMedium(props)}
   ${props.size === 'lg' && ButtonLarge(props)}
+`;
+
+export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
+  display: ${props.block ? 'block' : 'inline-block'};
+  ${props.block ? 'width: 100%;' : ''}
+  position: relative;
+
+  ${ButtonBase}
+
+  background-color: ${colors.white};
+  border-color: ${colors.gray30};
+
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &.hover {
+      background-color: ${colors.gray10};
+    }
+
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: ${colors.gray70};
+      color: ${colors.white};
+      border-color: ${colors.gray70};
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    color: inherit;
+    opacity: 0.5;
+  }
+
+  ${props.variant === 'default' && OutlineButtonDefault}
+  ${props.variant === 'primary' && OutlineButtonPrimary}
+  ${props.variant === 'success' && OutlineButtonSuccess}
+  ${props.variant === 'warning' && OutlineButtonWarning}
+  ${props.variant === 'destructive' && OutlineButtonDestructive}
+
+  ${props.size === 'sm' && OutlineButtonSmall(props)}
+  ${props.size === 'md' && OutlineButtonMedium(props)}
+  ${props.size === 'lg' && OutlineButtonLarge(props)}
 `;

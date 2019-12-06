@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Button, FloatingButton } from './index';
 
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
+
 import { colors } from '../../utils';
-import IconButton from './IconButton';
+import { Button, FloatingButton, IconButton, OutlineButton } from './index';
 
 describe('components/Button', () => {
   describe('<Button />', () => {
@@ -45,6 +45,14 @@ describe('components/Button', () => {
       const icon = container.querySelector('i');
 
       expect(icon).toBeInTheDocument();
+    });
+  });
+
+  describe('<OutlineButton />', () => {
+    test('renders correctly', () => {
+      const { container } = render(<OutlineButton>example</OutlineButton>);
+
+      expect(container.firstChild).toBeInTheDocument();
     });
   });
 

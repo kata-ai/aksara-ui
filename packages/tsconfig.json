@@ -1,8 +1,6 @@
 {
   "files": [],
   "references": [
-    { "path": "button" },
-    { "path": "loading" },
     { "path": "reset" },
     { "path": "theme" },
     { "path": "tooltip" },
