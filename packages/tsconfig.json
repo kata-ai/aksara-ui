@@ -2,7 +2,6 @@
   "files": [],
   "references": [
     { "path": "button" },
-    { "path": "dropdown" },
     { "path": "loading" },
     { "path": "reset" },
     { "path": "theme" },
