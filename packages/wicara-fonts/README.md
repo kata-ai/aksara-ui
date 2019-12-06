@@ -6,14 +6,14 @@
 
 ```sh
 # yarn
-yarn add @kata-kit/fonts
+$ yarn add @wicara/fonts
 # npm
-npm install @kata-kit/fonts
+$ npm i @wicara/fonts
 ```
 
 ## Usage
 
-We use two fonts in Kata Design Language: `Museo Sans`, and `Museo Sans Rounded`.
+We use two fonts in the Aksara Design Language: `Museo Sans`, and `Museo Sans Rounded`.
 To use these fonts within your app, import as follows:
 
 ```jsx
@@ -22,6 +22,8 @@ import '@kata-kit/fonts/museo-sans.css';
 // Museo Sans Rounded
 import '@kata-kit/fonts/museo-sans-rounded.css';
 ```
+
+Note that these fonts are **not provided for free**. You should check if you have a license for them before using this package.
 
 ### Icon fonts.
 
