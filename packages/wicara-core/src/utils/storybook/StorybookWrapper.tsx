@@ -4,8 +4,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { WicaraReset } from '../../foundations/reset';
 import { space, colors } from '../variables';
 
-import '../../../../fonts/kata-icons.css';
-import '../../../../fonts/museo-sans-rounded.css';
+import '../../../../wicara-fonts/kata-icons.css';
+import '../../../../wicara-fonts/museo-sans-rounded.css';
 
 const StorybookGlobal = createGlobalStyle`
   body {
