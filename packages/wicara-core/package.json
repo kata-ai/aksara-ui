@@ -27,6 +27,7 @@
     "watch:tsc": "tsc-watch -b --preserveWatchOutput"
   },
   "dependencies": {
+    "@tippy.js/react": "^3.1.1",
     "clsx": "^1.0.4",
     "focus-trap": "^5.1.0",
     "polished": "^3.4.2",

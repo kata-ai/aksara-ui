@@ -9,3 +9,4 @@ export * from './notification';
 export * from './pagination';
 export * from './side-sheet';
 export * from './skeleton';
+export * from './tooltip';

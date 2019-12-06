@@ -1,9 +1,4 @@
 {
   "files": [],
-  "references": [
-    { "path": "reset" },
-    { "path": "theme" },
-    { "path": "tooltip" },
-    { "path": "wicara-core" }
-  ]
+  "references": [{ "path": "wicara-core" }]
 }
