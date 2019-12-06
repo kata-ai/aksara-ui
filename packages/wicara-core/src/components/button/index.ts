@@ -7,4 +7,7 @@ export * from './FloatingButton';
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
 
+export { default as OutlineButton } from './OutlineButton';
+export * from './OutlineButton';
+
 export * from './styles';
