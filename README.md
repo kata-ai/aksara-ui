@@ -85,7 +85,7 @@ $ yarn add @wicara/fonts
 $ npm i @wicara/fonts
 ```
 
-Note that these fonts are **not provided for free**. You should check if you have a license for them before using this package.
+Note that these fonts are **not provided for free**. You should check if you have a license to use these fonts before installing this package.
 
 ### Usage
 

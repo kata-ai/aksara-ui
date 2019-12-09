@@ -23,7 +23,7 @@ import '@kata-kit/fonts/museo-sans.css';
 import '@kata-kit/fonts/museo-sans-rounded.css';
 ```
 
-Note that these fonts are **not provided for free**. You should check if you have a license for them before using this package.
+Note that these fonts are **not provided for free**. You should check if you have a license to use these fonts before installing this package.
 
 ### Icon fonts.
 
