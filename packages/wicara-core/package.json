@@ -21,7 +21,7 @@
     "lint": "tslint -p tsconfig.json",
     "prepublishOnly": "yarn build",
     "report-coverage": "codecov -f ./coverage/*.json",
-    "rollup": "rollup -i ./src/index.ts -c ../../rollup.config.js",
+    "rollup": "rollup -c ./rollup.config.js",
     "storybook": "start-storybook -p 9001",
     "storybook:build": "build-storybook",
     "test": "jest",
