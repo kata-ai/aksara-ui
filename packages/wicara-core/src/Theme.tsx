@@ -18,11 +18,7 @@ export const themeProps = {
 };
 
 export const Theme: React.FC = ({ children }) => {
-  return (
-    <ThemeProvider theme={themeProps}>
-      <>{children}</>
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={themeProps}>{children}</ThemeProvider>;
 };
 
 export type Color = keyof typeof themeProps['colors'];

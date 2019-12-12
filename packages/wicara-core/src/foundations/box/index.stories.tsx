@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { WicaraReset } from '../reset';
+import { WicaraProvider } from '../reset';
 import { Box } from '../box';
 
 const readme = require('./README.md');
@@ -10,9 +10,9 @@ storiesOf('Core|Foundations/Box', module)
   .add(
     'default',
     () => (
-      <WicaraReset>
+      <WicaraProvider>
         <Box>I'm inside a box!</Box>
-      </WicaraReset>
+      </WicaraProvider>
     ),
     {
       notes: { markdown: readme }
@@ -21,11 +21,11 @@ storiesOf('Core|Foundations/Box', module)
   .add(
     'with color/padding',
     () => (
-      <WicaraReset>
+      <WicaraProvider>
         <Box padding="sm" color="gray10" bg="kataBlue">
           I'm inside a box!
         </Box>
-      </WicaraReset>
+      </WicaraProvider>
     ),
     {
       notes: { markdown: readme }

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { WicaraReset, Text, Paragraph, Box, Heading } from '../../foundations';
+import { WicaraProvider, Text, Paragraph, Box, Heading } from '../../foundations';
 import { StoryContainer, StoryHeader, StorybookWrapper } from '../../utils/storybook';
 
 import Dialog from './components/Dialog';
@@ -16,7 +16,7 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraReset>
+      <WicaraProvider>
         <StoryContainer>
           <StoryHeader
             title="Dialog"
@@ -49,7 +49,7 @@ story.add(
             </Box>
           </Dialog>
         </StoryContainer>
-      </WicaraReset>
+      </WicaraProvider>
     );
   },
   {
@@ -63,7 +63,7 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraReset>
+      <WicaraProvider>
         <StoryContainer>
           <StoryHeader
             title="Dialog"
@@ -101,7 +101,7 @@ story.add(
             </Box>
           </Dialog>
         </StoryContainer>
-      </WicaraReset>
+      </WicaraProvider>
     );
   },
   {

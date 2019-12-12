@@ -4,13 +4,13 @@
 
 ## Usage
 
-Wrap your app inside the `WicaraReset` to use the resets and `ThemeProvider` component provided by Wicara.
+Wrap your app inside the `WicaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
 
 ```jsx
-import { WicaraReset } from '@wicara/core';
+import { WicaraProvider } from '@wicara/core';
 
 export default function MyApp({ children }) {
-  return <WicaraReset>{children}</WicaraReset>;
+  return <WicaraProvider>{children}</WicaraProvider>;
 }
 ```
 
