@@ -22,9 +22,9 @@ const Component = () => {
 
   return (
     <Box>
-      <Text as="p">Click the button below to open the side sheet.</Text>
+      <Text as="p">Click the button below to open the dialog.</Text>
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
-        Toggle Side Sheet
+        Toggle Dialog
       </button>
       <Dialog isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <Paragraph my={26} mx={48}>
