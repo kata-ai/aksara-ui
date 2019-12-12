@@ -4,6 +4,7 @@ module.exports = {
     '!src/**/*.stories.{ts,tsx}',
     '!src/**/*.story.{ts,tsx}',
     '!src/**/index.{ts,tsx}',
+    '!src/utils/storybook/**/*.{ts,tsx}',
     '!src/index.{ts,tsx}'
   ],
   coverageReporters: ['json', 'lcov'],
