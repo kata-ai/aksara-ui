@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { WicaraReset, Text, Paragraph } from '../../foundations';
+import { WicaraProvider, Text, Paragraph } from '../../foundations';
 import { StoryContainer, StoryHeader, StorybookWrapper } from '../../utils/storybook';
 
 import SideSheet from './components/SideSheet';
@@ -16,7 +16,7 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraReset>
+      <WicaraProvider>
         <StoryContainer>
           <StoryHeader
             title="Side Sheet"
@@ -32,7 +32,7 @@ story.add(
             </Paragraph>
           </SideSheet>
         </StoryContainer>
-      </WicaraReset>
+      </WicaraProvider>
     );
   },
   {
@@ -46,7 +46,7 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraReset>
+      <WicaraProvider>
         <StoryContainer>
           <StoryHeader
             title="Side Sheet"
@@ -62,7 +62,7 @@ story.add(
             </Paragraph>
           </SideSheet>
         </StoryContainer>
-      </WicaraReset>
+      </WicaraProvider>
     );
   },
   {

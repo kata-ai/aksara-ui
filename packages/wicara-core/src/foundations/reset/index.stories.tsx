@@ -2,14 +2,14 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
-import { WicaraReset } from '../reset';
+import { WicaraProvider } from '../reset';
 
 const readme = require('./README.md');
 
 storiesOf('Core|Foundations/Reset', module).add(
   'default',
   () => (
-    <WicaraReset>
+    <WicaraProvider>
       <h1>h1. Heading</h1>
       <h2>h2. Heading</h2>
       <h3>h3. Heading</h3>
@@ -39,7 +39,7 @@ storiesOf('Core|Foundations/Reset', module).add(
         dolor soluta ut possimus non vero sint tenetur illo nulla, reiciendis quisquam fugiat. Est,
         quidem.
       </p>
-    </WicaraReset>
+    </WicaraProvider>
   ),
   {
     notes: { markdown: readme }

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { WicaraReset, Box } from '../../foundations';
+import { WicaraProvider, Box } from '../../foundations';
 import {
   StoryContainer,
   StoryHeader,
@@ -19,7 +19,7 @@ const story = storiesOf('Core|Components/Skeleton', module).addDecorator(Storybo
 story.add(
   'default',
   () => (
-    <WicaraReset>
+    <WicaraProvider>
       <StoryContainer>
         <StoryHeader
           title="Skeleton"
@@ -37,7 +37,7 @@ story.add(
           <SkeletonBox style={{ height: 200 }} />
         </ComponentBlock>
       </StoryContainer>
-    </WicaraReset>
+    </WicaraProvider>
   ),
   {
     notes: { markdown: readme }

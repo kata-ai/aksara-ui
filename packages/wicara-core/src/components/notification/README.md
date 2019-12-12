@@ -7,11 +7,11 @@ Pluggable notifications element that doesn't rely on Redux.
 ### Toasters
 
 ```jsx
-import { WicaraReset, Button, notification } from '@wicara/core';
+import { WicaraProvider, Button, notification } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <Button
         variant="primary"
         onClick={() =>
@@ -26,7 +26,7 @@ export default function MyApp({ children }) {
       >
         Push Me
       </Button>
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```

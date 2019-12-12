@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import { WicaraReset } from '../../foundations/reset';
+import { WicaraProvider } from '../../foundations/reset';
 import { space, colors } from '../variables';
 
 import '../../../../wicara-fonts/kata-icons.css';
@@ -20,8 +20,8 @@ const StoryWrapperRoot = styled('div')`
 StoryWrapperRoot.displayName = 'StoryWrapperRoot';
 
 export const StorybookWrapper = (storyFn: () => any) => (
-  <WicaraReset>
+  <WicaraProvider>
     <StorybookGlobal />
     <StoryWrapperRoot>{storyFn()}</StoryWrapperRoot>
-  </WicaraReset>
+  </WicaraProvider>
 );

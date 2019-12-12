@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Badge } from '../../components/badge';
 import { Button } from '../../components/button';
 import { StoryContainer } from '../../utils/storybook';
-import { WicaraReset } from '../reset';
+import { WicaraProvider } from '../reset';
 import { Box } from '../box';
 import { Heading, Paragraph, Text } from '../typography';
 import { UnstyledAnchor, UnstyledButton } from '../common';
@@ -34,13 +34,13 @@ const story = storiesOf('Core|Foundations/Card', module);
 story.add(
   'default',
   () => (
-    <WicaraReset>
+    <WicaraProvider>
       <Box padding="sm">
         <Card padding="md" background="white" boxShadow="layer100" borderRadius="md">
           I'm inside a card!
         </Card>
       </Box>
-    </WicaraReset>
+    </WicaraProvider>
   ),
   {
     notes: { markdown: readme }
@@ -50,7 +50,7 @@ story.add(
 story.add(
   'composability (image card)',
   () => (
-    <WicaraReset>
+    <WicaraProvider>
       <Box padding="lg">
         <StoryContainer>
           <Box display="flex" flexWrap="wrap" position="relative">
@@ -104,7 +104,7 @@ story.add(
           </Box>
         </StoryContainer>
       </Box>
-    </WicaraReset>
+    </WicaraProvider>
   ),
   {
     notes: { markdown: readme }
@@ -114,7 +114,7 @@ story.add(
 story.add(
   'composability (deployments)',
   () => (
-    <WicaraReset>
+    <WicaraProvider>
       <Box padding="lg">
         <StoryContainer>
           <Card bg="white" borderRadius="md" boxShadow="layer100" position="relative">
@@ -172,7 +172,7 @@ story.add(
           </Card>
         </StoryContainer>
       </Box>
-    </WicaraReset>
+    </WicaraProvider>
   ),
   {
     notes: { markdown: readme }

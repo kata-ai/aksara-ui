@@ -9,15 +9,15 @@ Buttons express what action will occur when the user clicks or touches it. Butto
 ### `<Button />`
 
 ```jsx
-import { WicaraReset, Button } from '@wicara/core';
+import { WicaraProvider, Button } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <Button variant="primary" onClick={() => alert('Hello!')}>
         Push Me
       </Button>
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```
@@ -25,15 +25,15 @@ export default function MyApp({ children }) {
 Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
 
 ```jsx
-import { WicaraReset, Button } from '@wicara/core';
+import { WicaraProvider, Button } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <Button size="sm">Push Me</Button>
       <Button size="md">Push Me</Button>
       <Button size="lg">Push Me</Button>
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```
@@ -53,15 +53,15 @@ See more usage in the _JSX_ panel
 ### `<OutlineButton />`
 
 ```jsx
-import { WicaraReset, OutlineButton } from '@wicara/core';
+import { WicaraProvider, OutlineButton } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <OutlineButton variant="primary" onClick={() => alert('Hello!')}>
         Push Me
       </OutlineButton>
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```
@@ -69,15 +69,15 @@ export default function MyApp({ children }) {
 Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
 
 ```jsx
-import { WicaraReset, OutlineButton } from '@wicara/core';
+import { WicaraProvider, OutlineButton } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <OutlineButton size="sm">Push Me</OutlineButton>
       <OutlineButton size="md">Push Me</OutlineButton>
       <OutlineButton size="lg">Push Me</OutlineButton>
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```
@@ -99,15 +99,15 @@ See more usage in the _JSX_ panel
 Floating action buttons for primary context actions. Floating buttons are often paired with Wicara Icons.
 
 ```jsx
-import { WicaraReset, FloatingButton } from '@wicara/core';
+import { WicaraProvider, FloatingButton } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <FloatingButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
         <i className="icon-tick" aria-hidden="true" />
       </FloatingButton>
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```
@@ -128,15 +128,15 @@ See more usage in the _JSX_ panel
 Icon-only buttons. Best paired with Wicara Icons.
 
 ```jsx
-import { WicaraReset, IconButton } from '@wicara/core';
+import { WicaraProvider, IconButton } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <IconButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
         <i className="icon-tick" aria-hidden="true" />
       </IconButton>
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```

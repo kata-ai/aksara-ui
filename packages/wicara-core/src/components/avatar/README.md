@@ -7,13 +7,13 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { WicaraReset, Avatar } from '@wicara/core';
+import { WicaraProvider, Avatar } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <Avatar src="path/to/image" />
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```
@@ -21,13 +21,13 @@ export default function MyApp({ children }) {
 Avatar also accepts any `px` values as number for size. If not set, the default is 40.
 
 ```jsx
-import { WicaraReset, Avatar } from '@wicara/core';
+import { WicaraProvider, Avatar } from '@wicara/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraReset>
+    <WicaraProvider>
       <Avatar src="path/to/image" size={24} />
-    </WicaraReset>
+    </WicaraProvider>
   );
 }
 ```

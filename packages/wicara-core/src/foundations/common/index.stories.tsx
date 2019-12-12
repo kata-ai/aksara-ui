@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { UnstyledAnchor, UnstyledButton } from '.';
 import { Box } from '../box';
-import { WicaraReset } from '../reset';
+import { WicaraProvider } from '../reset';
 
 const readme = require('./README.md');
 
@@ -11,7 +11,7 @@ storiesOf('Core|Foundations/Common', module)
   .add(
     'UnstyledAnchor',
     () => (
-      <WicaraReset>
+      <WicaraProvider>
         <Box padding="sm">
           <a
             href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
@@ -28,7 +28,7 @@ storiesOf('Core|Foundations/Common', module)
             I'm an unstyled anchor!
           </UnstyledAnchor>
         </Box>
-      </WicaraReset>
+      </WicaraProvider>
     ),
     {
       notes: { markdown: readme }
@@ -37,12 +37,12 @@ storiesOf('Core|Foundations/Common', module)
   .add(
     'UnstyledButton',
     () => (
-      <WicaraReset>
+      <WicaraProvider>
         <Box padding="sm">
           <button type="button">I'm a button!</button>{' '}
           <UnstyledButton type="button">I'm an unstyled button!</UnstyledButton>
         </Box>
-      </WicaraReset>
+      </WicaraProvider>
     ),
     {
       notes: { markdown: readme }
