@@ -1,3 +1,5 @@
+// eslint-disable react/no-array-index-key
+
 import * as React from 'react';
 import styled from 'styled-components';
 import PaginationButton from './PaginationButton';
@@ -51,7 +53,7 @@ class Pagination extends React.Component<PaginationProps> {
       endPage = total;
     }
 
-    // tslint:disable-next-line:no-increment-decrement
+    // eslint-disable-next-line no-plusplus
     for (let page = startPage; page <= endPage; ++page) {
       pageButtons.push(page);
     }

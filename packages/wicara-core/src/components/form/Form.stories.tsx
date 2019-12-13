@@ -82,18 +82,18 @@ story.add(
       <StoryHeader title="Forms" subtitle="Basic form elements used with Wicara." />
       <ComponentBlock title="Form Help">
         <FormGroup>
-          <FormLabel htmlFor="billingAddress">Billing Address</FormLabel>
+          <FormLabel htmlFor="billingAddress_dummy">Billing Address</FormLabel>
           <InputTextarea
             id="billingAddress_dummy"
             name="billingAddress_dummy"
             placeholder="Type here..."
           />
-          <FormHelp>The address we'll ship your billing details to.</FormHelp>
+          <FormHelp>The address we&apos;ll ship your billing details to.</FormHelp>
         </FormGroup>
       </ComponentBlock>
       <ComponentBlock title="With Error State">
         <FormGroup>
-          <FormLabel htmlFor="firstName">First Name</FormLabel>
+          <FormLabel htmlFor="firstName_dummy">First Name</FormLabel>
           <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." />
         </FormGroup>
         <FormGroup>

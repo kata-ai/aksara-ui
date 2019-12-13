@@ -19,9 +19,11 @@ const StoryWrapperRoot = styled('div')`
 
 StoryWrapperRoot.displayName = 'StoryWrapperRoot';
 
-export const StorybookWrapper = (storyFn: () => any) => (
+const StorybookWrapper = (storyFn: () => any) => (
   <WicaraProvider>
     <StorybookGlobal />
     <StoryWrapperRoot>{storyFn()}</StoryWrapperRoot>
   </WicaraProvider>
 );
+
+export default StorybookWrapper;

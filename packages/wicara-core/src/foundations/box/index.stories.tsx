@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import { WicaraProvider } from '../reset';
-import { Box } from '../box';
+import { Box } from '.';
 
 const readme = require('./README.md');
 

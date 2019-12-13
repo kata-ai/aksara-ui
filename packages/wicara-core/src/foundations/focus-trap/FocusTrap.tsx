@@ -8,6 +8,7 @@ interface FocusTrapProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export default class FocusTrap extends React.Component<FocusTrapProps> {
   private rootRef = React.createRef<HTMLDivElement>();
+
   private trap?: FocusTrapInstance;
 
   componentDidMount() {

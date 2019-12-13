@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { Heading, Text, Paragraph } from '../typography';
+import { Heading, Text, Paragraph } from '.';
 import { StorybookWrapper, StoryContainer, ComponentBlock } from '../../utils/storybook';
 
 const readme = require('./README.md');

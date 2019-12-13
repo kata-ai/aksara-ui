@@ -37,7 +37,7 @@ story.add(
     <WicaraProvider>
       <Box padding="sm">
         <Card padding="md" background="white" boxShadow="layer100" borderRadius="md">
-          I'm inside a card!
+          I&apos;m inside a card!
         </Card>
       </Box>
     </WicaraProvider>
@@ -64,7 +64,7 @@ story.add(
                 boxShadow="layer100"
               >
                 <img
-                  alt="Example image"
+                  alt="Example"
                   src="https://picsum.photos/id/873/1072/708"
                   style={{
                     height: 248,
