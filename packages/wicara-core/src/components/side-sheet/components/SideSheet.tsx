@@ -85,6 +85,8 @@ interface SideSheetState {
 
 /** Side Sheets are dialogs that pop out from the right side of the screen. */
 class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
+  static displayName = 'SideSheet';
+
   static defaultProps = {
     className: undefined,
     style: undefined,
@@ -92,8 +94,6 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
     isOverlayClickable: false,
     isOpen: false
   };
-
-  static displayName = 'SideSheet';
 
   constructor(props: SideSheetProps) {
     super(props);
@@ -147,49 +147,6 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
     this.handleCloseSideSheet();
   }
 
-  render() {
-    const { enableFocusTrap } = this.props;
-    const { isOpen } = this.state;
-
-    if (enableFocusTrap) {
-      return (
-        <Portal>
-          <Transition
-            appear
-            in={isOpen}
-            timeout={{
-              enter: ANIMATION_DURATION,
-              exit: ANIMATION_DURATION
-            }}
-            unmountOnExit
-          >
-            {state => (
-              <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
-                {this.renderInnerContent(state)}
-              </FocusTrap>
-            )}
-          </Transition>
-        </Portal>
-      );
-    }
-
-    return (
-      <Portal>
-        <Transition
-          appear
-          in={isOpen}
-          timeout={{
-            enter: ANIMATION_DURATION,
-            exit: ANIMATION_DURATION
-          }}
-          unmountOnExit
-        >
-          {this.renderInnerContent}
-        </Transition>
-      </Portal>
-    );
-  }
-
   renderInnerContent = (state: TransitionStatus) => {
     const { children, labelledById, hideCloseButton } = this.props;
     const { isOpen } = this.state;
@@ -233,6 +190,49 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
       </SideSheetOverlay>
     );
   };
+
+  render() {
+    const { enableFocusTrap } = this.props;
+    const { isOpen } = this.state;
+
+    if (enableFocusTrap) {
+      return (
+        <Portal>
+          <Transition
+            appear
+            in={isOpen}
+            timeout={{
+              enter: ANIMATION_DURATION,
+              exit: ANIMATION_DURATION
+            }}
+            unmountOnExit
+          >
+            {state => (
+              <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
+                {this.renderInnerContent(state)}
+              </FocusTrap>
+            )}
+          </Transition>
+        </Portal>
+      );
+    }
+
+    return (
+      <Portal>
+        <Transition
+          appear
+          in={isOpen}
+          timeout={{
+            enter: ANIMATION_DURATION,
+            exit: ANIMATION_DURATION
+          }}
+          unmountOnExit
+        >
+          {this.renderInnerContent}
+        </Transition>
+      </Portal>
+    );
+  }
 }
 
 export default SideSheet;

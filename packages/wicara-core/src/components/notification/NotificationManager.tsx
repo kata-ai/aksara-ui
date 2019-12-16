@@ -1,3 +1,5 @@
+/* eslint-disable react/sort-comp */
+
 import * as React from 'react';
 import styled from 'styled-components';
 import { TransitionGroup } from 'react-transition-group';
@@ -36,18 +38,6 @@ export default class NotificationManager extends React.PureComponent<Props, Stat
     };
   }
 
-  public render() {
-    return (
-      <ToasterWrapper>
-        <TransitionGroup>
-          {this.state.toasts.map(({ id, ...props }) => {
-            return <Toaster key={id} id={id} onRemove={() => this.removeToaster(id)} {...props} />;
-          })}
-        </TransitionGroup>
-      </ToasterWrapper>
-    );
-  }
-
   private toaster = (settings: ToasterSettings) => {
     const instance = this.createToastInstance(settings);
 
@@ -60,12 +50,25 @@ export default class NotificationManager extends React.PureComponent<Props, Stat
     return instance;
   };
 
+  public render() {
+    const { toasts } = this.state;
+    return (
+      <ToasterWrapper>
+        <TransitionGroup>
+          {toasts.map(({ id, ...props }) => {
+            return <Toaster key={id} id={id} onRemove={() => this.removeToaster(id)} {...props} />;
+          })}
+        </TransitionGroup>
+      </ToasterWrapper>
+    );
+  }
+
   private createToastInstance = (settings: ToasterSettings): ToasterSettings => {
     const { id, ...rest } = settings;
 
-    // tslint:disable-next-line
+    // eslint-disable-next-line no-plusplus
     const uniqueId = ++NotificationManager.currentCount;
-    const generatedId = `${settings.id || 'toaster'}-${uniqueId}`;
+    const generatedId = `${id || 'toaster'}-${uniqueId}`;
 
     return {
       id: generatedId,

@@ -6,7 +6,7 @@ export interface StoryHeaderProps {
   subtitle?: string;
 }
 
-export const StoryHeader: React.FC<StoryHeaderProps> = ({ title, subtitle }) => (
+const StoryHeader: React.FC<StoryHeaderProps> = ({ title, subtitle }) => (
   <Box mb="lg">
     <Heading scale="heading1" mb="xxs">
       {title}
@@ -18,3 +18,5 @@ export const StoryHeader: React.FC<StoryHeaderProps> = ({ title, subtitle }) => 
     ) : null}
   </Box>
 );
+
+export default StoryHeader;

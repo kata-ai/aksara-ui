@@ -24,6 +24,7 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-wrap-multilines': 'off',
     // Cannot use `Component.displayName` pattern on class components in TS.
     'react/static-property-placement': 'off'
   },

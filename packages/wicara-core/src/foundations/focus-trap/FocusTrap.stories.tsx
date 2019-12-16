@@ -22,7 +22,11 @@ story.add(
         <p>
           Tubulo putas dicere? Erat enim Polemonis. Minime vero istorum quidem, inquit. Hic nihil
           fuit, quod quaereremus.{' '}
-          <a href="https://www.youtube.com/watch?v=mUGDxyG1kOI" target="_blank">
+          <a
+            href="https://www.youtube.com/watch?v=mUGDxyG1kOI"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Est, ut dicis, inquit;
           </a>{' '}
           Iam contemni non poteris.{' '}
@@ -32,13 +36,17 @@ story.add(
           <p>
             Focus Lock: <strong>{active ? 'On' : 'Off'}</strong>
           </p>
-          <button onClick={() => setActive(!active)} style={{ marginBottom: '16px' }}>
+          <button type="button" onClick={() => setActive(!active)} style={{ marginBottom: '16px' }}>
             Toggle focus trap
           </button>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen
             simplicia, vestra versuta.{' '}
-            <a href="https://www.youtube.com/watch?v=lOiR7b6jumI" target="_blank">
+            <a
+              href="https://www.youtube.com/watch?v=lOiR7b6jumI"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Quamquam tu hanc copiosiorem etiam soles dicere.
             </a>{' '}
             Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur

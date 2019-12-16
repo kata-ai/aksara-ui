@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
-import { ButtonSizes } from '../styles';
 import { colors } from '../../../utils';
+import { ButtonSizes } from '../types';
 
 export function floatingButtonSizes(size?: ButtonSizes) {
   switch (size) {

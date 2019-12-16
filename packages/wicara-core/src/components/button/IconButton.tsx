@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { IconButtonBaseProps, IconButtonStyles } from './styles';
+
+import { IconButtonStyles } from './styles';
+import { IconButtonBaseProps } from './types';
 
 export interface IconButtonProps
   extends IconButtonBaseProps,

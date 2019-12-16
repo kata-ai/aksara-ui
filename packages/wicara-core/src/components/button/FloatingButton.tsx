@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { FloatingButtonBaseProps, FloatingButtonStyles } from './styles';
+
+import { FloatingButtonStyles } from './styles';
+import { FloatingButtonBaseProps } from './types';
 
 export interface FloatingButtonProps
   extends FloatingButtonBaseProps,

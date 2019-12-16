@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import { typeScale, colors } from '../../../utils/variables';
-import { ButtonBaseProps } from '../styles';
+import { ButtonBaseProps } from '../types';
 
 export const ButtonDefault = css`
   background-color: ${colors.gray10};

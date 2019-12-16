@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { StoryContainer } from './StorybookContainer';
+import StoryContainer from './StoryContainer';
 
 describe('utils/storybook', () => {
   describe('StorybookContainer', () => {

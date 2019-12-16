@@ -12,6 +12,7 @@ export default class FocusTrap extends React.Component<FocusTrapProps> {
   private trap?: FocusTrapInstance;
 
   componentDidMount() {
+    const { active } = this.props;
     const rootElement = this.rootRef.current;
 
     if (rootElement) {
@@ -20,11 +21,23 @@ export default class FocusTrap extends React.Component<FocusTrapProps> {
         fallbackFocus: rootElement
       });
 
-      if (this.props.active) {
+      if (active) {
         trap.activate();
       }
 
       this.trap = trap;
+    }
+  }
+
+  componentDidUpdate(prevProps: FocusTrapProps) {
+    const { active } = this.props;
+
+    if (this.trap && prevProps.active !== active) {
+      if (active) {
+        this.trap.activate();
+      } else {
+        this.trap.deactivate();
+      }
     }
   }
 
@@ -34,14 +47,8 @@ export default class FocusTrap extends React.Component<FocusTrapProps> {
     }
   }
 
-  componentDidUpdate(prevProps: FocusTrapProps) {
-    if (this.trap && prevProps.active !== this.props.active) {
-      this.props.active ? this.trap.activate() : this.trap.deactivate();
-    }
-  }
-
   render() {
-    const { active, ...restProps } = this.props;
+    const { active: _, ...restProps } = this.props;
 
     return <div ref={this.rootRef} tabIndex={-1} {...restProps} />;
   }

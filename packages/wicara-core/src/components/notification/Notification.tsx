@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ToasterSettings, ToasterHandler } from './utils/types';
@@ -18,7 +20,7 @@ export default class Notification {
     container.setAttribute('data-wicara-notification-container', '');
     document.body.appendChild(container);
 
-    ReactDOM.render(<NotificationManager bindToaster={this._bindToaster} />, container);
+    ReactDOM.render(<NotificationManager bindToaster={this.bindToaster} />, container);
   }
 
   public toaster = (settings: ToasterSettings) => {
@@ -29,7 +31,7 @@ export default class Notification {
     return this.toasterHandler({ ...settings });
   };
 
-  private _bindToaster = (handler: ToasterHandler) => {
+  private bindToaster = (handler: ToasterHandler) => {
     this.toasterHandler = handler;
   };
 }

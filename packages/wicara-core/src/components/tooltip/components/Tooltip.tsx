@@ -4,12 +4,12 @@ import styled from 'styled-components';
 
 import TooltipInner, { TooltipPlacement } from './TooltipInner';
 
-interface TooltipProps {
+export interface TooltipProps {
   className?: string;
   style?: React.CSSProperties;
   content: string | React.ReactNode;
   placement?: TooltipPlacement;
-  children: React.ReactElement<any>;
+  children: React.ReactElement;
 }
 
 const TooltipTarget = styled('span')`
@@ -33,7 +33,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       hideOnClick={false}
       placement={placement}
       content={
-        <TooltipInner style={style} placement={placement}>
+        <TooltipInner className={className} style={style} placement={placement}>
           {content}
         </TooltipInner>
       }

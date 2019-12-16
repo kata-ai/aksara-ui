@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import { typeScale, colors } from '../../../utils/variables';
-import { OutlineButtonBaseProps } from '../styles';
+import { OutlineButtonBaseProps } from '../types';
 
 export const OutlineButtonDefault = css`
   color: ${colors.gray80};

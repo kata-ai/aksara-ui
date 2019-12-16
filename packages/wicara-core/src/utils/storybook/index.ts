@@ -1,4 +1,4 @@
+export { default as ComponentBlock } from './ComponentBlock';
 export { default as StorybookWrapper } from './StorybookWrapper';
-export * from './StorybookContainer';
-export * from './ComponentBlock';
-export * from './StoryHeader';
+export { default as StoryContainer } from './StoryContainer';
+export { default as StoryHeader } from './StoryHeader';

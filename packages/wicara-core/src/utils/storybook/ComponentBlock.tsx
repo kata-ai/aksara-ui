@@ -5,7 +5,7 @@ interface ComponentBlockProps {
   title: string;
 }
 
-export const ComponentBlock: React.FC<ComponentBlockProps> = ({ children, title }) => (
+const ComponentBlock: React.FC<ComponentBlockProps> = ({ children, title }) => (
   <Box mb="lg">
     <Box>{children}</Box>
     <Box mt="sm">
@@ -15,3 +15,5 @@ export const ComponentBlock: React.FC<ComponentBlockProps> = ({ children, title 
     </Box>
   </Box>
 );
+
+export default ComponentBlock;
