@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import {
   layout,
   LayoutProps,
@@ -18,6 +17,8 @@ import {
   typography,
   TypographyProps
 } from 'styled-system';
+
+import { primitives } from '../../../utils/primitives';
 
 export interface BoxProps
   extends LayoutProps,
@@ -38,7 +39,7 @@ export interface BoxProps
  * Box is a view with all styled-system hooks added to it. You can use it as a
  * base component for all display elements.
  */
-const Box = styled('div')<BoxProps>`
+const Box = primitives.View<BoxProps>`
   ${layout}
   ${position}
   ${flexbox}
