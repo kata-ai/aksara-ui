@@ -57,6 +57,10 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "rollup-plugin-uglify": "^6.0.3"
   },
+  "resolutions": {
+    "@types/react": "16.9.16",
+    "@types/react-dom": "16.9.4"
+  },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,scss,md,html}": [
       "prettier --write",

@@ -15,6 +15,7 @@
     "outDir": "lib",
     "removeComments": true,
     "rootDir": "src",
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2015"
