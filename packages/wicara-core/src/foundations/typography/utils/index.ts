@@ -1,1 +1,2 @@
-export * from './determineFontDimensions';
+// eslint-disable-next-line import/prefer-default-export
+export { default as determineFontDimensions } from './determineFontDimensions';

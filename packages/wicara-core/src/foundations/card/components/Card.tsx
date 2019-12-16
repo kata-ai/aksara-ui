@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Box } from '../../box';
 import { shadow, ShadowProps, border, BorderProps } from 'styled-system';
+import { Box } from '../../box';
 
 export interface CardProps extends ShadowProps, BorderProps {}
 

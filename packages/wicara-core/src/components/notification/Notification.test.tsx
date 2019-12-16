@@ -10,15 +10,15 @@ describe('components/Notification', () => {
       const { baseElement } = render(
         <Button
           variant="primary"
-          onClick={() =>
+          onClick={() => {
             notification.toaster({
               title: 'Toaster',
               message: 'Hello world! This is a toaster',
               status: 'success',
               dismissible: true,
               dismissAfter: 5000
-            })
-          }
+            });
+          }}
         >
           Push Me
         </Button>
@@ -34,7 +34,7 @@ describe('components/Notification', () => {
       const { getAllByText, baseElement } = render(
         <Button
           variant="primary"
-          onClick={() =>
+          onClick={() => {
             notification.toaster({
               id: 'test-toaster',
               title: 'Toaster',
@@ -42,8 +42,8 @@ describe('components/Notification', () => {
               status: 'success',
               dismissible: true,
               dismissAfter: 5000
-            })
-          }
+            });
+          }}
         >
           Push Me
         </Button>

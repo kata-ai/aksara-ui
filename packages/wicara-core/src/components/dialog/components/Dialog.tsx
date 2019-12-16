@@ -92,6 +92,8 @@ interface DialogState {
  * Display a modal interface that will block interaction with the rest of the page with an overlay.
  */
 class Dialog extends React.Component<DialogProps, DialogState> {
+  static displayName = 'Dialog';
+
   static defaultProps = {
     className: undefined,
     style: undefined,
@@ -99,8 +101,6 @@ class Dialog extends React.Component<DialogProps, DialogState> {
     isOverlayClickable: false,
     isOpen: false
   };
-
-  static displayName = 'Dialog';
 
   constructor(props: DialogProps) {
     super(props);
@@ -154,49 +154,6 @@ class Dialog extends React.Component<DialogProps, DialogState> {
     this.handleCloseSideSheet();
   }
 
-  render() {
-    const { enableFocusTrap } = this.props;
-    const { isOpen } = this.state;
-
-    if (enableFocusTrap) {
-      return (
-        <Portal>
-          <Transition
-            appear
-            in={isOpen}
-            timeout={{
-              enter: ANIMATION_DURATION,
-              exit: ANIMATION_DURATION
-            }}
-            unmountOnExit
-          >
-            {state => (
-              <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
-                {this.renderInnerContent(state)}
-              </FocusTrap>
-            )}
-          </Transition>
-        </Portal>
-      );
-    }
-
-    return (
-      <Portal>
-        <Transition
-          appear
-          in={isOpen}
-          timeout={{
-            enter: ANIMATION_DURATION,
-            exit: ANIMATION_DURATION
-          }}
-          unmountOnExit
-        >
-          {this.renderInnerContent}
-        </Transition>
-      </Portal>
-    );
-  }
-
   renderInnerContent = (state: TransitionStatus) => {
     const { labelledById, hideCloseButton, children } = this.props;
     const { isOpen } = this.state;
@@ -239,6 +196,49 @@ class Dialog extends React.Component<DialogProps, DialogState> {
       </DialogOverlay>
     );
   };
+
+  render() {
+    const { enableFocusTrap } = this.props;
+    const { isOpen } = this.state;
+
+    if (enableFocusTrap) {
+      return (
+        <Portal>
+          <Transition
+            appear
+            in={isOpen}
+            timeout={{
+              enter: ANIMATION_DURATION,
+              exit: ANIMATION_DURATION
+            }}
+            unmountOnExit
+          >
+            {state => (
+              <FocusTrap active={isOpen} onKeyDown={this.handleKeyDown}>
+                {this.renderInnerContent(state)}
+              </FocusTrap>
+            )}
+          </Transition>
+        </Portal>
+      );
+    }
+
+    return (
+      <Portal>
+        <Transition
+          appear
+          in={isOpen}
+          timeout={{
+            enter: ANIMATION_DURATION,
+            exit: ANIMATION_DURATION
+          }}
+          unmountOnExit
+        >
+          {this.renderInnerContent}
+        </Transition>
+      </Portal>
+    );
+  }
 }
 
 export default Dialog;

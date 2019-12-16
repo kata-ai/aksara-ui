@@ -7,6 +7,8 @@ const StoryContainerRoot = styled('div')`
   max-width: 1116px;
 `;
 
-export const StoryContainer: React.FC = ({ children }) => (
+const StoryContainer: React.FC = ({ children }) => (
   <StoryContainerRoot>{children}</StoryContainerRoot>
 );
+
+export default StoryContainer;

@@ -14,7 +14,7 @@ storiesOf('Core|Foundations/Portal', module)
     () => (
       <Portal>
         <Box position="absolute" bottom={0} right={0} padding="sm" color="gray10" bg="kataBlue">
-          I'm a box inside a portal!
+          I&apos;m a box inside a portal!
         </Box>
       </Portal>
     ),
@@ -28,12 +28,12 @@ storiesOf('Core|Foundations/Portal', module)
       <>
         <Portal>
           <Box position="absolute" bottom={0} right={0} padding="sm" color="gray10" bg="kataBlue">
-            I'm a box inside a portal!
+            I&apos;m a box inside a portal!
           </Box>
         </Portal>
         <Portal>
           <Box position="absolute" bottom={0} left={0} padding="sm" color="gray10" bg="red">
-            I'm a box inside a portal!
+            I&apos;m a box inside a portal!
           </Box>
         </Portal>
       </>

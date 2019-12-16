@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import { WicaraProvider } from '../reset';
-import { Box } from '../box';
+import { Box } from '.';
 
 const readme = require('./README.md');
 
@@ -11,7 +11,7 @@ storiesOf('Core|Foundations/Box', module)
     'default',
     () => (
       <WicaraProvider>
-        <Box>I'm inside a box!</Box>
+        <Box>I&apos;m inside a box!</Box>
       </WicaraProvider>
     ),
     {
@@ -23,7 +23,7 @@ storiesOf('Core|Foundations/Box', module)
     () => (
       <WicaraProvider>
         <Box padding="sm" color="gray10" bg="kataBlue">
-          I'm inside a box!
+          I&apos;m inside a box!
         </Box>
       </WicaraProvider>
     ),

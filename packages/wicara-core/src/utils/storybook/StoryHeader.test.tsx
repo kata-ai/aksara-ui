@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { ComponentBlock } from './ComponentBlock';
+import ComponentBlock from './ComponentBlock';
 
 describe('utils/storybook', () => {
   describe('StoryHeader', () => {

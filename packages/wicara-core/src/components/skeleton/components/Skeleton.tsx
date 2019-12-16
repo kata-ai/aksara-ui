@@ -60,7 +60,7 @@ const Skeleton: React.FC<SkeletonProps> = ({ className, numberOfLines, small }) 
     return (
       <Multiline>
         {[...Array(numberOfLines)].map((_, i) => (
-          <Wrapper key={i} className={clsx(className, small && 'is-small')} />
+          <Wrapper key={i.toString()} className={clsx(className, small && 'is-small')} />
         ))}
       </Multiline>
     );

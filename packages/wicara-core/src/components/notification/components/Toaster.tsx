@@ -119,14 +119,14 @@ interface ToasterState {
 }
 
 export default class Toaster extends React.PureComponent<ToasterSettings, ToasterState> {
+  private closeTimer: number | null = null;
+
   static defaultProps: Partial<ToasterSettings> = {
     status: 'default',
     position: 'br',
     dismissible: false,
     dismissAfter: 5000
   };
-
-  private closeTimer: number | null = null;
 
   constructor(props: ToasterSettings) {
     super(props);
@@ -142,30 +142,6 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
 
   public componentWillUnmount() {
     this.clearCloseTimer();
-  }
-
-  public render() {
-    const { id, onRemove } = this.props;
-    const { isOpen } = this.state;
-
-    return (
-      <Transition
-        appear
-        in={isOpen}
-        timeout={{
-          enter: ANIMATION_DURATION + 100,
-          exit: ANIMATION_DURATION + 400
-        }}
-        unmountOnExit
-        onExited={onRemove}
-      >
-        {state => (
-          <Root data-state={state} id={id} onClick={() => this.close()}>
-            {this.renderInnerToaster()}
-          </Root>
-        )}
-      </Transition>
-    );
   }
 
   private renderInnerToaster = () => {
@@ -200,9 +176,10 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
   };
 
   private startCloseTimer = () => {
+    const { dismissAfter } = this.props;
     this.closeTimer = setTimeout(() => {
       this.close();
-    }, this.props.dismissAfter);
+    }, dismissAfter);
   };
 
   private clearCloseTimer = () => {
@@ -218,4 +195,28 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
       isOpen: false
     });
   };
+
+  public render() {
+    const { id, onRemove } = this.props;
+    const { isOpen } = this.state;
+
+    return (
+      <Transition
+        appear
+        in={isOpen}
+        timeout={{
+          enter: ANIMATION_DURATION + 100,
+          exit: ANIMATION_DURATION + 400
+        }}
+        unmountOnExit
+        onExited={onRemove}
+      >
+        {state => (
+          <Root data-state={state} id={id} onClick={() => this.close()}>
+            {this.renderInnerToaster()}
+          </Root>
+        )}
+      </Transition>
+    );
+  }
 }

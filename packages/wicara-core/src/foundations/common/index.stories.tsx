@@ -18,14 +18,14 @@ storiesOf('Core|Foundations/Common', module)
             target="_blank"
             rel="noopener noreferrer"
           >
-            I'm an anchor!
+            I&apos;m an anchor!
           </a>{' '}
           <UnstyledAnchor
             href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
             target="_blank"
             rel="noopener noreferrer"
           >
-            I'm an unstyled anchor!
+            I&apos;m an unstyled anchor!
           </UnstyledAnchor>
         </Box>
       </WicaraProvider>
@@ -39,8 +39,8 @@ storiesOf('Core|Foundations/Common', module)
     () => (
       <WicaraProvider>
         <Box padding="sm">
-          <button type="button">I'm a button!</button>{' '}
-          <UnstyledButton type="button">I'm an unstyled button!</UnstyledButton>
+          <button type="button">I&apos;m a button!</button>{' '}
+          <UnstyledButton type="button">I&apos;m an unstyled button!</UnstyledButton>
         </Box>
       </WicaraProvider>
     ),

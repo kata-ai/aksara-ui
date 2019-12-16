@@ -136,10 +136,10 @@ stories.add(
           Push Me
         </OutlineButton>
         <OutlineButton type="button" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </OutlineButton>
         <OutlineButton type="button" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="Primary Button">
@@ -163,10 +163,10 @@ stories.add(
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="primary" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </OutlineButton>
         <OutlineButton type="button" variant="primary" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="Success Button">
@@ -190,10 +190,10 @@ stories.add(
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="success" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </OutlineButton>
         <OutlineButton type="button" variant="success" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="Warning Button">
@@ -217,10 +217,10 @@ stories.add(
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="warning" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </OutlineButton>
         <OutlineButton type="button" variant="warning" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="Destructive Button">
@@ -244,10 +244,10 @@ stories.add(
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="destructive" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </OutlineButton>
         <OutlineButton type="button" variant="destructive" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
     </StoryContainer>

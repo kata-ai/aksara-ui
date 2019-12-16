@@ -1,3 +1,5 @@
+// eslint-disable react/no-array-index-key
+
 import * as React from 'react';
 import styled from 'styled-components';
 import PaginationButton from './PaginationButton';
@@ -51,7 +53,7 @@ class Pagination extends React.Component<PaginationProps> {
       endPage = total;
     }
 
-    // tslint:disable-next-line:no-increment-decrement
+    // eslint-disable-next-line no-plusplus
     for (let page = startPage; page <= endPage; ++page) {
       pageButtons.push(page);
     }
@@ -84,7 +86,7 @@ class Pagination extends React.Component<PaginationProps> {
   }
 
   render() {
-    const { current, className } = this.props;
+    const { current, className, total } = this.props;
     const pages = this.generatePages();
 
     return (
@@ -98,7 +100,7 @@ class Pagination extends React.Component<PaginationProps> {
         </PaginationButton>
         {pages.map((page, index) => (
           <PaginationButton
-            key={index}
+            key={index.toString()}
             color="white"
             isActive={page === current}
             onClick={() => (typeof page === 'number' ? this.handleSelectPage(page) : null)}
@@ -109,7 +111,7 @@ class Pagination extends React.Component<PaginationProps> {
         ))}
         <PaginationButton
           color="white"
-          disabled={current === this.props.total}
+          disabled={current === total}
           onClick={() => this.handleSelectPage(current + 1)}
         >
           &raquo;

@@ -5,7 +5,7 @@ import { themeProps, TypeScale } from '../../../Theme';
  *
  * @param scale The size key.
  */
-export function determineFontDimensions(scale: TypeScale) {
+export default function determineFontDimensions(scale: TypeScale) {
   const match = themeProps.typeScale[scale];
 
   return {

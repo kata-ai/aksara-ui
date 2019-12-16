@@ -25,74 +25,74 @@ storiesOf('Core|Components/Notifications', module)
         <ComponentBlock title="Toaster">
           <Button
             variant="support"
-            onClick={() =>
+            onClick={() => {
               notification.toaster({
                 title: 'Toaster',
                 message: 'Hello world! This is a toaster',
                 dismissible: true,
                 dismissAfter: 5000
-              })
-            }
+              });
+            }}
             style={{ marginRight: 8 }}
           >
             Default
           </Button>
           <Button
             variant="support"
-            onClick={() =>
+            onClick={() => {
               notification.toaster({
                 title: 'Toaster',
                 message: 'Hello world! This is a toaster',
                 status: 'success',
                 dismissible: true,
                 dismissAfter: 5000
-              })
-            }
+              });
+            }}
             style={{ marginRight: 8 }}
           >
             Success
           </Button>
           <Button
             variant="support"
-            onClick={() =>
+            onClick={() => {
               notification.toaster({
                 title: 'Toaster',
                 message: 'Hello world! This is a toaster',
                 status: 'info',
                 dismissible: true,
                 dismissAfter: 5000
-              })
-            }
+              });
+            }}
             style={{ marginRight: 8 }}
           >
             Info
           </Button>
           <Button
             variant="support"
-            onClick={() =>
+            onClick={() => {
               notification.toaster({
                 title: 'Toaster',
                 message: 'Hello world! This is a toaster',
                 status: 'warning',
                 dismissible: true,
                 dismissAfter: 5000
-              })
-            }
+              });
+            }}
             style={{ marginRight: 8 }}
           >
             Warning
           </Button>
           <Button
             variant="support"
-            onClick={() =>
+            onClick={() => {
               notification.toaster({
                 title: 'Toaster',
                 message: 'Hello world! This is a toaster',
                 status: 'error',
                 dismissible: true,
                 dismissAfter: 5000
-              })
-            }
+              });
+            }}
           >
             Error
           </Button>

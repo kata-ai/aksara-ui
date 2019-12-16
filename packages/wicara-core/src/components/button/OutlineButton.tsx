@@ -2,7 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { Circle } from '../loading';
-import { ButtonSizes, OutlineButtonStyles, OutlineButtonBaseProps } from './styles';
+import { OutlineButtonStyles } from './styles';
+import { OutlineButtonBaseProps, ButtonSizes } from './types';
 
 export interface OutlineButtonProps
   extends OutlineButtonBaseProps,

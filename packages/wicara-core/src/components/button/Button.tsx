@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import { colors } from '../../utils';
 import { Circle } from '../loading';
-import { ButtonBaseProps, ButtonStyles, ButtonSizes } from './styles';
+import { ButtonStyles } from './styles';
+import { ButtonBaseProps, ButtonSizes } from './types';
 
 export interface ButtonProps
   extends ButtonBaseProps,

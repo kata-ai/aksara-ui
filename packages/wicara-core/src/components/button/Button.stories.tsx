@@ -175,10 +175,10 @@ stories.add(
           Push Me
         </Button>
         <Button type="button" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </Button>
         <Button type="button" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Primary Button">
@@ -192,10 +192,10 @@ stories.add(
           Push Me
         </Button>
         <Button type="button" variant="primary" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </Button>
         <Button type="button" variant="primary" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Support Button">
@@ -209,10 +209,10 @@ stories.add(
           Push Me
         </Button>
         <Button type="button" variant="support" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </Button>
         <Button type="button" variant="support" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Link Button">
@@ -226,10 +226,10 @@ stories.add(
           Push Me
         </Button>
         <Button type="button" variant="link" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </Button>
         <Button type="button" variant="link" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Destructive Button">
@@ -243,10 +243,10 @@ stories.add(
           Push Me
         </Button>
         <Button type="button" variant="destructive" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </Button>
         <Button type="button" variant="destructive" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Ghost Button">
@@ -260,10 +260,10 @@ stories.add(
           Push Me
         </Button>
         <Button type="button" variant="ghost" disabled style={{ marginRight: 16 }}>
-          I'm disabled
+          I&apos;m disabled
         </Button>
         <Button type="button" variant="ghost" isLoading style={{ marginRight: 16 }}>
-          I'm loading
+          I&apos;m loading
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Inverse Button">
@@ -278,10 +278,10 @@ stories.add(
             Push Me
           </Button>
           <Button type="button" variant="inverse" disabled style={{ marginRight: 16 }}>
-            I'm disabled
+            I&apos;m disabled
           </Button>
           <Button type="button" variant="inverse" isLoading style={{ marginRight: 16 }}>
-            I'm loading
+            I&apos;m loading
           </Button>
         </Box>
       </ComponentBlock>
