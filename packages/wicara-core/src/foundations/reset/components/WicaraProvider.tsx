@@ -6,22 +6,18 @@ import GlobalStyles from './GlobalStyles';
 interface WicaraProviderProps {
   className?: string;
   style?: React.CSSProperties;
-  /** Import the provider without any style resets. */
-  noReset?: boolean;
 }
 
-const WicaraProvider: React.FC<WicaraProviderProps> = ({ children, noReset }) => {
+const WicaraProvider: React.FC<WicaraProviderProps> = ({ children }) => {
   return (
     <Theme>
-      {!noReset && <GlobalStyles />}
+      <GlobalStyles />
       {children}
     </Theme>
   );
 };
 
-WicaraProvider.defaultProps = {
-  noReset: false
-};
+WicaraProvider.displayName = 'WicaraProvider';
 
 /**
  * @deprecated This has been replaced by `WicaraProvider`.
