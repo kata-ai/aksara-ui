@@ -1,16 +1,14 @@
 import styled from 'styled-components';
-import { shadow, ShadowProps, border, BorderProps } from 'styled-system';
+import { shadow, ShadowProps } from 'styled-system';
 import { Box } from '../../box';
 
-export interface CardProps extends ShadowProps, BorderProps {}
+export interface CardProps extends ShadowProps {}
 
 /**
  * Card is similar to `Box`, but with additional `shadow` and `border` styled-system hooks.
  */
 const Card = styled(Box)<CardProps>`
   ${shadow}
-  ${border}
-
   overflow: hidden;
 `;
 
