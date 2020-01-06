@@ -80,6 +80,14 @@ export interface DialogProps {
   enableFocusTrap?: boolean;
   /** Used to reference the ID of the title element in the drawer */
   labelledById?: string;
+  /** Set max width of dialog, default of 500px */
+  maxWidth?: string;
+  /** Set width of dialog, default of 100% */
+  width?: string;
+  /** Set max height of dialog, default of calc(100% - 24vmin) */
+  maxHeight?: string;
+  /** Set height of dialog */
+  height?: string;
   /** Callback method run when the "Close Drawer" button is clicked. */
   onClose?: () => void;
 }
@@ -155,7 +163,15 @@ class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   renderInnerContent = (state: TransitionStatus) => {
-    const { labelledById, hideCloseButton, children } = this.props;
+    const {
+      labelledById,
+      hideCloseButton,
+      children,
+      maxWidth,
+      width,
+      height,
+      maxHeight
+    } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -168,10 +184,14 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           className={clsx(isOpen && 'entered')}
           display="flex"
           flexDirection="column"
+          backgroundColor="white"
+          boxShadow="layer300"
+          borderRadius="lg"
+          height={height}
+          width={width || '100%'}
+          maxWidth={maxWidth || '500px'}
+          maxHeight={maxHeight || 'calc(100% - 24vmin)'}
           elevation="layer300"
-          width="100%"
-          maxWidth="500px"
-          maxHeight="calc(100% - 24vmin)"
           my="12vmin"
           mx="md"
           role="dialog"
