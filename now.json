@@ -8,5 +8,18 @@
       "use": "@now/static-build",
       "config": { "buildCommand": "yarn run storybook:build", "distDir": "storybook-static" }
     }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "packages/wicara-core/static/$1"
+    },
+    { "src": "/favicon.ico", "dest": "packages/wicara-core/favicon.ico" },
+    {
+      "src": "/(.*)",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "packages/wicara-core/$1"
+    }
   ]
 }
