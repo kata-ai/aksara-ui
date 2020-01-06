@@ -168,9 +168,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           className={clsx(isOpen && 'entered')}
           display="flex"
           flexDirection="column"
-          backgroundColor="white"
-          boxShadow="layer300"
-          borderRadius="lg"
+          elevation="layer300"
           width="100%"
           maxWidth="500px"
           maxHeight="calc(100% - 24vmin)"

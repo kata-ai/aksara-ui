@@ -136,12 +136,33 @@ export const radii = {
   lg: 8
 };
 
-/** Default box/text shadow separated by layers */
-export const shadows = {
+/** Legacy box-shadow values. */
+export const shadowsLegacy = {
   layer100: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
   layer200: '0 2px 4px 1px rgba(0, 0, 0, 0.15)',
   layer300: '0 4px 6px 2px rgba(0, 0, 0, 0.15)',
   layer400: '0 6px 10px 2px rgba(0, 0, 0, 0.15)'
+};
+
+/** Default box/text shadow separated by layers */
+export const shadows = {
+  ...shadowsLegacy
+};
+
+/** Custom elevation variant for the Card component. */
+export const elevation = {
+  layer100: {
+    boxShadow: 'layer100'
+  },
+  layer200: {
+    boxShadow: 'layer200'
+  },
+  layer300: {
+    boxShadow: 'layer300'
+  },
+  layer400: {
+    boxShadow: 'layer400'
+  }
 };
 
 /** Typography scale values (in pixels) mapped by style tokens. */
