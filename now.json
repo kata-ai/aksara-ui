@@ -6,7 +6,7 @@
     {
       "src": "packages/wicara-core/package.json",
       "use": "@now/static-build",
-      "config": { "buildCommand": "yarn run build:storybook", "distDir": "storybook-static" }
+      "config": { "buildCommand": "yarn run storybook:build", "distDir": "storybook-static" }
     }
   ],
   "routes": [
