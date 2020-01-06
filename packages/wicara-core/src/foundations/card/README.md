@@ -1,24 +1,17 @@
 # Card
 
-Similar to `Box`, but with additional `shadow` and `border` styled-system hooks.
+Renders a card based on the elevation level.
 
 ## Usage
 
-The Card contains the same styled-system hooks as `Box`, but with a couple additions:
-
-- border
-- shadow
-
-Read the [`styled-system` reference table](https://styled-system.com/table) for more information about these hooks and how they work.
-
-You can use these to compose multiple UI elements into one, for example:
+To use this component in your app, import as follows:
 
 ```jsx
 import { Box, Card } from '@wicara/core';
 
 export default function Component() {
   return (
-    <Card bg="white" borderRadius="md" boxShadow="layer100">
+    <Card elevation="layer100">
       <img
         alt="Example"
         src="https://picsum.photos/id/873/1072/708"
@@ -36,6 +29,21 @@ export default function Component() {
           asperiores repudiandae quis ab enim repellat?
         </Paragraph>
       </Box>
+    </Card>
+  );
+}
+```
+
+This component composes the `Box` component, so you can also use the styled-system hooks defined in said component
+
+```jsx
+import { Box, Card } from '@wicara/core';
+
+// Example for card with `sm` border radius.
+export default function Component({ children }) {
+  return (
+    <Card elevation="layer100" borderRadius="sm">
+      {children}
     </Card>
   );
 }

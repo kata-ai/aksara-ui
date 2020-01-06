@@ -36,8 +36,20 @@ story.add(
   () => (
     <WicaraProvider>
       <Box padding="sm">
-        <Card padding="md" background="white" boxShadow="layer100" borderRadius="md">
-          I&apos;m inside a card!
+        <Card mb="md" p="md">
+          I&apos;m inside a card! (layer100)
+        </Card>
+
+        <Card mb="md" p="md" elevation="layer200">
+          I&apos;m inside a card! (layer200)
+        </Card>
+
+        <Card mb="md" p="md" elevation="layer300">
+          I&apos;m inside a card! (layer300)
+        </Card>
+
+        <Card mb="md" p="md" elevation="layer400">
+          I&apos;m inside a card! (layer400)
         </Card>
       </Box>
     </WicaraProvider>
@@ -55,14 +67,7 @@ story.add(
         <StoryContainer>
           <Box display="flex" flexWrap="wrap" position="relative">
             <Anchor href="https://www.google.com/" target="_blank">
-              <Card
-                display="flex"
-                flex={1}
-                flexDirection="column"
-                bg="white"
-                borderRadius="md"
-                boxShadow="layer100"
-              >
+              <Card display="flex" flex={1} flexDirection="column">
                 <img
                   alt="Example"
                   src="https://picsum.photos/id/873/1072/708"

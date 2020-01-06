@@ -191,6 +191,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           width={width || '100%'}
           maxWidth={maxWidth || '500px'}
           maxHeight={maxHeight || 'calc(100% - 24vmin)'}
+          elevation="layer300"
           my="12vmin"
           mx="md"
           role="dialog"
