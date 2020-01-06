@@ -58,11 +58,17 @@ export default function MyApp({ children }) {
 Text renders a `span` by default. If you would like to determine which HTML element it renders, you can use the `as` prop.
 
 ```jsx
-<AksaraReset>
-  <Text scale={300} as="p">
-    We are making AI technology accessible to everyone
-  </Heading>
-</AksaraReset>
+import { AksaraReset, Text } from '@aksara/ui-kit';
+
+export default function MyApp({ children }) {
+  return (
+    <AksaraReset>
+      <Text scale={300} as="p">
+        We are making AI technology accessible to everyone
+      </Text>
+    </AksaraReset>
+  );
+}
 ```
 
 ### `Paragraph` component
