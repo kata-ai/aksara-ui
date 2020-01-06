@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "name": "wicara-docs",
+  "name": "wicara",
+  "alias": ["wicara.now.sh"],
   "builds": [
     {
-      "src": "package.json",
+      "src": "packages/wicara-core/package.json",
       "use": "@now/static-build",
       "config": { "buildCommand": "yarn run build:storybook", "distDir": "storybook-static" }
     }
@@ -12,13 +13,13 @@
     {
       "src": "/static/(.*)",
       "headers": { "cache-control": "s-maxage=31536000,immutable" },
-      "dest": "/static/$1"
+      "dest": "packages/wicara-core/static/$1"
     },
-    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/favicon.ico", "dest": "packages/wicara-core/favicon.ico" },
     {
       "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=0" },
-      "dest": "index.html"
+      "dest": "packages/wicara-core/index.html"
     }
   ]
 }

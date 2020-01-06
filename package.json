@@ -28,7 +28,7 @@
     "lint": "lerna run lint",
     "report-coverage": "yarn workspace @wicara/core run report-coverage",
     "storybook": "yarn workspace @wicara/core run storybook",
-    "storybook:build": "yarn workspace @wicara/core run storybook:build -o ../../storybook-static",
+    "storybook:build": "yarn workspace @wicara/core run storybook:build",
     "test": "yarn workspace @wicara/core run test",
     "test:coverage": "yarn workspace @wicara/core run test:coverage",
     "validate": "lerna run validate"
