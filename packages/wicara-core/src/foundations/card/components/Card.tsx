@@ -1,16 +1,36 @@
 import styled from 'styled-components';
-import { shadow, ShadowProps } from 'styled-system';
-import { Box } from '../../box';
+import { variant } from 'styled-system';
+import { Box, BoxProps } from '../../box';
+import { Elevation } from '../../../Theme';
 
-export type CardProps = ShadowProps;
+export interface CardProps extends BoxProps {
+  elevation?: Elevation;
+}
 
 /**
- * Card is similar to `Box`, but with additional `shadow` and `border` styled-system hooks.
+ * Renders a card based on the elevation level.
  */
 const Card = styled(Box)<CardProps>`
-  ${shadow}
-  overflow: hidden;
+  ${variant({
+    prop: 'elevation',
+    scale: 'elevation',
+    variants: {
+      // NOTE: The empty objects here is important.
+      // https://styled-system.com/variants#migrating-from-legacy-api
+      layer100: {},
+      layer200: {},
+      layer300: {},
+      layer400: {}
+    }
+  })}
 `;
+
+Card.defaultProps = {
+  backgroundColor: 'white',
+  borderRadius: 'md',
+  overflow: 'hidden',
+  elevation: 'layer100'
+};
 
 Card.displayName = 'Card';
 

@@ -17,7 +17,9 @@ import {
   typography,
   TypographyProps,
   border,
-  BorderProps
+  BorderProps,
+  shadow,
+  ShadowProps
 } from 'styled-system';
 
 import { primitives } from '../../../utils/primitives';
@@ -31,7 +33,8 @@ export interface BoxProps
     BackgroundProps,
     ColorProps,
     TypographyProps,
-    BorderProps {
+    BorderProps,
+    ShadowProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
@@ -52,6 +55,7 @@ const Box = primitives.View<BoxProps>`
   ${color}
   ${typography}
   ${border}
+  ${shadow}
 `;
 
 Box.displayName = 'Box';
