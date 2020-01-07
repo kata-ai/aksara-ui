@@ -81,13 +81,13 @@ export interface DialogProps {
   /** Used to reference the ID of the title element in the drawer */
   labelledById?: string;
   /** Set max width of dialog, default of 500px */
-  maxWidth?: string;
+  maxWidth?: string | number;
   /** Set width of dialog, default of 100% */
-  width?: string;
+  width?: string | number;
   /** Set max height of dialog, default of calc(100% - 24vmin) */
-  maxHeight?: string;
+  maxHeight?: string | number;
   /** Set height of dialog */
-  height?: string;
+  height?: string | number;
   /** Callback method run when the "Close Drawer" button is clicked. */
   onClose?: () => void;
 }
