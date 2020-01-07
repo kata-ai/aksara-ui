@@ -40,14 +40,18 @@ See more usage in the _JSX_ panel
 
 ## Props
 
-| Property           | Type                  | Required | Default     |
-| ------------------ | --------------------- | -------- | ----------- |
-| className          | `string`              | -        | `undefined` |
-| style              | `React.CSSProperties` | -        | `undefined` |
-| isOpen             | `boolean`             | **Yes**  | -           |
-| noBackdrop         | `boolean`             | -        | -           |
-| hideCloseButton    | `boolean`             | -        | -           |
-| isOverlayClickable | `boolean`             | -        | `false`     |
-| enableFocusTrap    | `boolean`             | -        | `false`     |
-| labelledById       | `boolean`             | -        | -           |
-| onClose            | `(e: any) => void`    | -        | `undefined` |
+| Property           | Type                  | Required | Default                 |
+| ------------------ | --------------------- | -------- | ----------------------- |
+| className          | `string`              | -        | `undefined`             |
+| style              | `React.CSSProperties` | -        | `undefined`             |
+| width              | `string | number`     | -        | `'100%'`                |
+| maxWidth           | `string | number`     | -        | `'500px'`               |
+| height             | `string | number`     | -        | `'100%'`                |
+| maxHeight          | `string | number`     | -        | `'calc(100% - 24vmin)'` |
+| isOpen             | `boolean`             | **Yes**  | -                       |
+| noBackdrop         | `boolean`             | -        | -                       |
+| hideCloseButton    | `boolean`             | -        | -                       |
+| isOverlayClickable | `boolean`             | -        | `false`                 |
+| enableFocusTrap    | `boolean`             | -        | `false`                 |
+| labelledById       | `boolean`             | -        | -                       |
+| onClose            | `(e: any) => void`    | -        | `undefined`             |
