@@ -72,7 +72,7 @@ export default function Component() {
 }
 ```
 
-Read the [Storybook](https://next--wicara-storybook.netlify.com/) for more examples.
+Read the [Storybook](https://wicara.now.sh/) for more examples.
 
 ## Fonts
 
