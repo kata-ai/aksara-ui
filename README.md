@@ -17,7 +17,7 @@
 
 **Wicara** is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
 
-**Note: Wicara is still in beta.**
+**Note: Migrating from v0.7 to v0.8? Please read the [migration guide](MIGRATING.md).**
 
 ---
 
