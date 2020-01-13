@@ -13,11 +13,9 @@ All typography components contain the following styled-system hooks:
 
 Read the [`styled-system` reference table](https://styled-system.com/table) for more information about these hooks and how they work.
 
-We also
-
 ### Scale props
 
-We provided a special `scale` prop on all components to automatically scale fonts based on their respective type scales. Available type scales are as follows:
+We also provided a special `scale` prop on all components to automatically scale fonts based on their respective type scales. Available type scales are as follows:
 
 - `heading1`
 - `heading2`
