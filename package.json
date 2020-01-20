@@ -20,10 +20,10 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
-    "build:storybook": "yarn storybook:build",
+    "build": "yarn storybook:build",
+    "build:prepare": "lerna run build",
     "clean": "lerna run clean",
-    "prepare": "yarn build",
+    "prepare": "yarn build:prepare",
     "lerna": "lerna",
     "lint": "lerna run lint",
     "report-coverage": "yarn workspace @wicara/core run report-coverage",
