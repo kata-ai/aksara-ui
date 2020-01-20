@@ -16,14 +16,15 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && yarn rollup",
+    "build": "yarn storybook:build",
     "clean": "rimraf lib && rimraf tsc-out",
+    "compile": "yarn clean && yarn rollup",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn compile",
     "report-coverage": "codecov -f ./coverage/*.json",
     "rollup": "rollup -c ./rollup.config.js",
     "storybook": "start-storybook -p 9001",
-    "storybook:build": "build-storybook",
+    "storybook:build": "build-storybook --quiet",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "type-check": "tsc --noEmit",
