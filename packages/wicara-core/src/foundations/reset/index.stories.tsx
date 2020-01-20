@@ -3,13 +3,7 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import { WicaraProvider } from '.';
-import {
-  SystemHeader,
-  ColorSwatch,
-  SystemContainer,
-  StorybookGlobal,
-  SystemWrapper
-} from '../../utils/storybook';
+import { SystemHeader, ColorSwatch, SystemContainer, SystemWrapper } from '../../utils/storybook';
 import { Paragraph, Heading } from '../typography';
 import { themeProps } from '../../Theme';
 import { Box } from '../box';
