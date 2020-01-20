@@ -1,17 +1,12 @@
 import * as React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 import { WicaraProvider } from '../../foundations/reset';
-import { space, colors } from '../variables';
+import { space } from '../variables';
 
 import '../../../../wicara-fonts/kata-icons.css';
 import '../../../../wicara-fonts/museo-sans-rounded.css';
-
-const StorybookGlobal = createGlobalStyle`
-  body {
-    background-color: ${colors.white};
-  }
-`;
+import StorybookGlobal from './StorybookGlobal';
 
 const StoryWrapperRoot = styled('div')`
   padding: ${space.lg}px;

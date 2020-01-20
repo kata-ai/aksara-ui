@@ -3,7 +3,13 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import { WicaraProvider } from '.';
-import { SystemHeader, ColorSwatch, SystemContainer } from '../../utils/storybook';
+import {
+  SystemHeader,
+  ColorSwatch,
+  SystemContainer,
+  StorybookGlobal,
+  SystemWrapper
+} from '../../utils/storybook';
 import { Paragraph, Heading } from '../typography';
 import { themeProps } from '../../Theme';
 import { Box } from '../box';
@@ -25,6 +31,7 @@ const ColorSwatchGrid: React.FC = ({ children }) => {
 };
 
 storiesOf('Core|Foundations/Theme', module)
+  .addDecorator(SystemWrapper)
   .add(
     'reset',
     () => {
@@ -77,7 +84,7 @@ storiesOf('Core|Foundations/Theme', module)
   )
   .add('colors', () => {
     return (
-      <WicaraProvider>
+      <>
         <SystemHeader
           title="Colors"
           subtitle={
@@ -89,13 +96,8 @@ storiesOf('Core|Foundations/Theme', module)
         <SystemContainer>
           <Heading scale="heading2">Primary</Heading>
           <ColorSwatchGrid>
-            <ColorSwatch title="White" colorKey="white" hex={themeProps.colors.white} />
-            <ColorSwatch
-              title="Gray 10"
-              colorKey="gray10"
-              hex={themeProps.colors.gray10}
-              hasBorder
-            />
+            <ColorSwatch title="White" colorKey="white" hex={themeProps.colors.white} hasBorder />
+            <ColorSwatch title="Gray 10" colorKey="gray10" hex={themeProps.colors.gray10} />
             <ColorSwatch title="Gray 20" colorKey="gray20" hex={themeProps.colors.gray20} />
             <ColorSwatch title="Gray 30" colorKey="gray30" hex={themeProps.colors.gray30} />
             <ColorSwatch title="Gray 40" colorKey="gray40" hex={themeProps.colors.gray40} />
@@ -201,6 +203,6 @@ storiesOf('Core|Foundations/Theme', module)
             />
           </ColorSwatchGrid>
         </SystemContainer>
-      </WicaraProvider>
+      </>
     );
   });
