@@ -20,8 +20,8 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn build:prepare && yarn storybook:build",
-    "build:prepare": "yarn workspaces run build",
+    "build": "lerna run build",
+    "build:storybook": "yarn storybook:build",
     "clean": "lerna run clean",
     "prepare": "yarn build",
     "lerna": "lerna",
