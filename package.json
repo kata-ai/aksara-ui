@@ -21,7 +21,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run compile",
-    "build:storybook": "lerna run storybook;build",
+    "build:storybook": "lerna run storybook:build",
     "clean": "lerna run clean",
     "compile": "lerna run compile",
     "prepare": "yarn compile",
