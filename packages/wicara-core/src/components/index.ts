@@ -4,6 +4,7 @@ export * from './banner';
 export * from './button';
 export * from './dialog';
 export * from './form';
+export * from './loading';
 export * from './non-ideal-state';
 export * from './notification';
 export * from './pagination';
