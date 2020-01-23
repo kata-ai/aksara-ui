@@ -10,6 +10,7 @@ export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warnin
 export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'ghost';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
+export type IconButtonSizes = 'sm' | 'md';
 export type ButtonIconPositions = 'left' | 'right';
 
 export interface ButtonBaseProps {
@@ -48,4 +49,6 @@ export interface FloatingButtonBaseProps {
 export interface IconButtonBaseProps {
   /** The variant of the button. */
   variant?: IconButtonVariants;
+  /** The size of the button. */
+  size?: IconButtonSizes;
 }

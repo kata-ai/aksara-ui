@@ -90,6 +90,21 @@ describe('components/Button', () => {
       expect(container.firstChild).toBeInTheDocument();
     });
 
+    test('renders in different sizes', () => {
+      const { container } = render(
+        <>
+          <IconButton size="sm">
+            <i className="icon-trash" />
+          </IconButton>
+          <IconButton size="md">
+            <i className="icon-trash" />
+          </IconButton>
+        </>
+      );
+
+      expect(container.firstChild).toBeInTheDocument();
+    });
+
     test('renders colors correctly by variant', () => {
       const { container } = render(
         <IconButton variant="primary">

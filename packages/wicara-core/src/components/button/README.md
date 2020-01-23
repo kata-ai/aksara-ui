@@ -150,3 +150,4 @@ See more usage in the _JSX_ panel
 | className | string             | -        | undefined | Additional CSS classes to give to the component |
 | style     | CSSProperties      | -        | undefined | Additional CSS styles to give to the component  |
 | variant   | IconButtonVariants | -        | default   | The variant of the button.                      |
+| size      | IconButtonSizes    | -        | sm        | The size of the button.                         |

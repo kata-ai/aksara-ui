@@ -1,6 +1,29 @@
 import { css } from 'styled-components';
 import { lighten } from 'polished';
 import { colors } from '../../../utils/variables';
+import { IconButtonSizes } from '../types';
+
+export function iconButtonSizes(size?: IconButtonSizes) {
+  switch (size) {
+    case 'md':
+      return 40;
+    case 'sm':
+      return 32;
+    default:
+      return 32;
+  }
+}
+
+export function iconSizes(size?: IconButtonSizes) {
+  switch (size) {
+    case 'md':
+      return 20;
+    case 'sm':
+      return 16;
+    default:
+      return 16;
+  }
+}
 
 export const IconButtonDefault = css`
   background-color: ${colors.gray10};
