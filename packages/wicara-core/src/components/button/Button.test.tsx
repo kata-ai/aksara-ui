@@ -92,9 +92,14 @@ describe('components/Button', () => {
 
     test('renders in different sizes', () => {
       const { container } = render(
-        <IconButton size="md">
-          <i className="icon-trash" />
-        </IconButton>
+        <>
+          <IconButton size="sm">
+            <i className="icon-trash" />
+          </IconButton>
+          <IconButton size="md">
+            <i className="icon-trash" />
+          </IconButton>
+        </>
       );
 
       expect(container.firstChild).toBeInTheDocument();
