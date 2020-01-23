@@ -27,7 +27,9 @@ import {
   IconButtonPrimary,
   IconButtonSupport,
   IconButtonDestructive,
-  IconButtonGhost
+  IconButtonGhost,
+  iconButtonSizes,
+  iconSizes
 } from './utils/iconButtonUtils';
 import {
   OutlineButtonSmall,
@@ -108,8 +110,8 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 32px;
-  width: 32px;
+  height: ${iconButtonSizes(props.size)}px;
+  width: ${iconButtonSizes(props.size)}px;
   text-align: center;
   border-radius: 4px;
 
@@ -124,12 +126,12 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   }
 
   i:before {
-    font-size: 16px;
+    font-size: ${iconSizes(props.size)}px;
   }
 
   svg {
-    width: 16px;
-    height: 16px;
+    width: ${iconSizes(props.size)}px;
+    height: ${iconSizes(props.size)}px;
   }
 
   ${props.variant === 'default' && IconButtonDefault}
