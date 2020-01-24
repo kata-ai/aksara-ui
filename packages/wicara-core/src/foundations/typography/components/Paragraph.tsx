@@ -9,9 +9,7 @@ import Typography, { TypographyProps } from './Typography';
 /**
  * This is a base `Text` element to handle typography elements.
  */
-const StyledText = styled(Typography)`
-  letter-spacing: -0.05px;
-`;
+const StyledText = styled(Typography)``;
 
 export interface ParagraphProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
@@ -36,7 +34,8 @@ const Paragraph: React.SFC<ParagraphProps> = ({ children, as, scale = 'paragraph
 Paragraph.defaultProps = {
   as: 'p',
   color: 'grey07',
-  fontWeight: 300
+  fontWeight: 300,
+  letterSpacing: '-0.05px'
 };
 
 Paragraph.displayName = 'Paragraph';

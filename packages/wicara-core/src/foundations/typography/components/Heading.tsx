@@ -20,9 +20,7 @@ export interface HeadingProps extends TypographyProps {
 /**
  * This is a base `Text` element to handle typography elements.
  */
-const StyledText = styled(Typography)<HeadingProps>`
-  font-weight: 500;
-`;
+const StyledText = styled(Typography)<HeadingProps>``;
 
 /**
  * Heading component provided as a styled component primitive.
@@ -41,7 +39,8 @@ const Heading: React.SFC<HeadingProps> = ({ children, as, scale = 'heading2', co
 
 Heading.defaultProps = {
   as: 'h2',
-  color: 'gray80'
+  color: 'gray80',
+  fontWeight: 500
 };
 
 Heading.displayName = 'Heading';
