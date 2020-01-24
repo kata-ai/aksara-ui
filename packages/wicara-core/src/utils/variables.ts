@@ -1,6 +1,5 @@
-/** Color pallette. Contains old Kata Platform colors and experimental colors. */
-export const colors = {
-  // (DEPRECATED) old color variables
+/** (DEPRECATED) old color variables */
+export const legacyColors = {
   white: '#ffffff',
   red: '#e53935',
   green: '#00c853',
@@ -30,33 +29,41 @@ export const colors = {
   special07: '#d6f8bb',
   special08: '#f5f8bb',
   special09: '#f8e5bb',
-  special10: '#f8cebb',
+  special10: '#f8cebb'
+};
 
-  // Experimental brand colors.
-  neutral01: '#fff',
-  neutral02: '#f6f7f8',
-  neutral03: '#edf1f2',
-  neutral04: '#e2e6e8',
-  neutral05: '#c2c7c8',
-  neutral06: '#949a9d',
-  neutral07: '#676b6d',
-  neutral08: '#484c4f',
-  neutral09: '#2b2f33',
-  cobalt01: '#5597e0',
-  cobalt02: '#2053af',
-  cobalt03: '#102a59',
-  kata01: '#4da3ff',
-  kata02: '#006fe6',
-  kata03: '#003e80',
-  green01: '#00ea61',
-  green02: '#59a444',
-  green03: '#658f3d',
-  red01: '#fc6627',
-  red02: '#dc211c',
-  red03: '#af1a16',
-  yellow01: '#feef99',
-  yellow02: '#fde034',
-  yellow03: '#ebc902'
+/** Experimental brand colors (0.18) */
+const experimentalColors = {
+  unstable_neutral01: '#fff',
+  unstable_neutral02: '#f6f7f8',
+  unstable_neutral03: '#edf1f2',
+  unstable_neutral04: '#e2e6e8',
+  unstable_neutral05: '#c2c7c8',
+  unstable_neutral06: '#949a9d',
+  unstable_neutral07: '#676b6d',
+  unstable_neutral08: '#484c4f',
+  unstable_neutral09: '#2b2f33',
+  unstable_cobalt01: '#5597e0',
+  unstable_cobalt02: '#2053af',
+  unstable_cobalt03: '#102a59',
+  unstable_kata01: '#4da3ff',
+  unstable_kata02: '#006fe6',
+  unstable_kata03: '#003e80',
+  unstable_green01: '#00ea61',
+  unstable_green02: '#59a444',
+  unstable_green03: '#658f3d',
+  unstable_red01: '#fc6627',
+  unstable_red02: '#dc211c',
+  unstable_red03: '#af1a16',
+  unstable_yellow01: '#feef99',
+  unstable_yellow02: '#fde034',
+  unstable_yellow03: '#ebc902'
+};
+
+/** Color pallette. Contains old Kata Platform colors and experimental colors. */
+export const colors = {
+  ...legacyColors,
+  ...experimentalColors
 };
 
 export const systemFonts =
