@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { WicaraProvider, Text, Paragraph } from '../../foundations';
-import { StoryContainer, StoryHeader, StorybookWrapper } from '../../utils/storybook';
+import { Text, Paragraph } from '../../foundations';
+import { SystemWrapper, SystemHeader, SystemContainer } from '../../utils/storybook';
 
 import SideSheet from './components/SideSheet';
 
 const readme = require('./README.md');
 
-const story = storiesOf('Core|Components/Side Sheet', module).addDecorator(StorybookWrapper);
+const story = storiesOf('Core|Components/Side Sheet', module).addDecorator(SystemWrapper);
 
 story.add(
   'default',
@@ -16,12 +16,12 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraProvider>
-        <StoryContainer>
-          <StoryHeader
-            title="Side Sheet"
-            subtitle="Dialogs that pop out from the right side of the screen."
-          />
+      <>
+        <SystemHeader
+          title="Side Sheet"
+          subtitle="Dialogs that pop out from the right side of the screen."
+        />
+        <SystemContainer>
           <Text as="p">Click the button below to open the side sheet.</Text>
           <button type="button" onClick={() => setIsOpen(!isOpen)}>
             Toggle Side Sheet
@@ -31,8 +31,8 @@ story.add(
               Basic Example
             </Paragraph>
           </SideSheet>
-        </StoryContainer>
-      </WicaraProvider>
+        </SystemContainer>
+      </>
     );
   },
   {
@@ -46,12 +46,12 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraProvider>
-        <StoryContainer>
-          <StoryHeader
-            title="Side Sheet"
-            subtitle="Dialogs that pop out from the right side of the screen."
-          />
+      <>
+        <SystemHeader
+          title="Side Sheet"
+          subtitle="Dialogs that pop out from the right side of the screen."
+        />
+        <SystemContainer>
           <Text as="p">Click the button below to open the side sheet.</Text>
           <button type="button" onClick={() => setIsOpen(!isOpen)}>
             Toggle Side Sheet
@@ -61,8 +61,8 @@ story.add(
               Basic Example
             </Paragraph>
           </SideSheet>
-        </StoryContainer>
-      </WicaraProvider>
+        </SystemContainer>
+      </>
     );
   },
   {

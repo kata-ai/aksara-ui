@@ -2,27 +2,29 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import {
-  StoryContainer,
-  StoryHeader,
-  StorybookWrapper,
-  ComponentBlock
+  ComponentBlock,
+  SystemWrapper,
+  SystemHeader,
+  SystemContainer
 } from '../../../utils/storybook';
 import Avatar from './Avatar';
 
 const readme = require('../README.md');
 
-const stories = storiesOf('Core|Components/Avatar', module).addDecorator(StorybookWrapper);
+const stories = storiesOf('Core|Components/Avatar', module).addDecorator(SystemWrapper);
 
 stories.add(
   'basic',
   () => (
-    <StoryContainer>
-      <StoryHeader title="Avatar" subtitle="Resizable avatar component." />
-      <ComponentBlock title="Usage">
-        <Avatar size={24} src="https://picsum.photos/400/400/?image=225" />{' '}
-        <Avatar src="https://picsum.photos/600/400/?image=777" />
-      </ComponentBlock>
-    </StoryContainer>
+    <>
+      <SystemHeader title="Avatar" subtitle="Resizable avatar component." />
+      <SystemContainer>
+        <ComponentBlock title="Usage">
+          <Avatar size={24} src="https://picsum.photos/400/400/?image=225" />{' '}
+          <Avatar src="https://picsum.photos/600/400/?image=777" />
+        </ComponentBlock>
+      </SystemContainer>
+    </>
   ),
   {
     notes: { markdown: readme }

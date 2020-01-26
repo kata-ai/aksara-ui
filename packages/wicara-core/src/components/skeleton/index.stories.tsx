@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { WicaraProvider, Box } from '../../foundations';
+import { Box } from '../../foundations';
 import {
-  StoryContainer,
-  StoryHeader,
-  StorybookWrapper,
-  ComponentBlock
+  ComponentBlock,
+  SystemWrapper,
+  SystemHeader,
+  SystemContainer
 } from '../../utils/storybook';
 
 import Skeleton from './components/Skeleton';
@@ -14,17 +14,17 @@ import SkeletonBox from './components/SkeletonBox';
 
 const readme = require('./README.md');
 
-const story = storiesOf('Core|Components/Skeleton', module).addDecorator(StorybookWrapper);
+const story = storiesOf('Core|Components/Skeleton', module).addDecorator(SystemWrapper);
 
 story.add(
   'default',
   () => (
-    <WicaraProvider>
-      <StoryContainer>
-        <StoryHeader
-          title="Skeleton"
-          subtitle="Renders a loading state that mimics the wrapping component."
-        />
+    <>
+      <SystemHeader
+        title="Skeleton"
+        subtitle="Renders a loading state that mimics the wrapping component."
+      />
+      <SystemContainer>
         <ComponentBlock title="Inline">
           <Box mb="md">
             <Skeleton />
@@ -36,8 +36,8 @@ story.add(
         <ComponentBlock title="Box">
           <SkeletonBox style={{ height: 200 }} />
         </ComponentBlock>
-      </StoryContainer>
-    </WicaraProvider>
+      </SystemContainer>
+    </>
   ),
   {
     notes: { markdown: readme }
