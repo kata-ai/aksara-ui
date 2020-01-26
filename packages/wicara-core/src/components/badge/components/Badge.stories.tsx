@@ -17,7 +17,7 @@ stories.add(
   'basic',
   () => (
     <>
-      <SystemHeader title="Avatar" subtitle="Resizable avatar component." />
+      <SystemHeader title="Badge" subtitle="Badge text for entity, status, etc." />
       <SystemContainer>
         <ComponentBlock title="Usage">
           <Badge>entity</Badge> <Badge variant="primary">primary</Badge>{' '}
