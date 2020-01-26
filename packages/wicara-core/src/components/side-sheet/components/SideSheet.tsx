@@ -139,12 +139,16 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
   }
 
   handleOverlayClick(e: React.MouseEvent<HTMLDivElement>) {
+    const { isOverlayClickable } = this.props;
+
     // Prevent clicking to exit inside the dialog
     if (e.target !== e.currentTarget) {
       return;
     }
 
-    this.handleCloseSideSheet();
+    if (isOverlayClickable) {
+      this.handleCloseSideSheet();
+    }
   }
 
   renderInnerContent = (state: TransitionStatus) => {
