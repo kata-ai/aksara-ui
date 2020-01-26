@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { WicaraProvider, Text, Paragraph, Box, Heading } from '../../foundations';
-import { StoryContainer, StoryHeader, StorybookWrapper } from '../../utils/storybook';
+import { Text, Paragraph, Box, Heading } from '../../foundations';
+import { SystemWrapper, SystemHeader, SystemContainer } from '../../utils/storybook';
 
 import Dialog from './components/Dialog';
 
 const readme = require('./README.md');
 
-const story = storiesOf('Core|Components/Dialog', module).addDecorator(StorybookWrapper);
+const story = storiesOf('Core|Components/Dialog', module).addDecorator(SystemWrapper);
 
 story.add(
   'default',
@@ -16,12 +16,12 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraProvider>
-        <StoryContainer>
-          <StoryHeader
-            title="Dialog"
-            subtitle="Display a modal interface that will block interaction with the rest of the page with an overlay."
-          />
+      <>
+        <SystemHeader
+          title="Dialog"
+          subtitle="Display a modal interface that will block interaction with the rest of the page with an overlay."
+        />
+        <SystemContainer>
           <Text as="p">Click the button below to open the dialog.</Text>
           <button type="button" onClick={() => setIsOpen(!isOpen)}>
             Toggle Dialog
@@ -48,8 +48,8 @@ story.add(
               </Paragraph>
             </Box>
           </Dialog>
-        </StoryContainer>
-      </WicaraProvider>
+        </SystemContainer>
+      </>
     );
   },
   {
@@ -63,12 +63,12 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <WicaraProvider>
-        <StoryContainer>
-          <StoryHeader
-            title="Dialog"
-            subtitle="Add the enableFocusTrap prop to enable focus trapping."
-          />
+      <>
+        <SystemHeader
+          title="Dialog"
+          subtitle="Add the enableFocusTrap prop to enable focus trapping."
+        />
+        <SystemContainer>
           <Text as="p">Click the button below to open the dialog.</Text>
           <button type="button" onClick={() => setIsOpen(!isOpen)}>
             Toggle Dialog
@@ -100,8 +100,8 @@ story.add(
               </Paragraph>
             </Box>
           </Dialog>
-        </StoryContainer>
-      </WicaraProvider>
+        </SystemContainer>
+      </>
     );
   },
   {
