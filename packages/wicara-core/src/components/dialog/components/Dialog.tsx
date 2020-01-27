@@ -74,8 +74,8 @@ export interface DialogProps {
   noBackdrop?: boolean;
   /** Hides the default close button. Useful if you want to add custom close behaviour. */
   hideCloseButton?: boolean;
-  /** Set to `true` to enable closing the drawer by clicking the overlay. */
-  isOverlayClickable?: boolean;
+  /** Set to `true` to disable closing the drawer by clicking the overlay. */
+  disableOverlayClick?: boolean;
   /** Enables focus trap mode. Also enables closing dialog by pressing Escape. */
   enableFocusTrap?: boolean;
   /** Used to reference the ID of the title element in the drawer */
@@ -106,7 +106,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
     className: undefined,
     style: undefined,
     enableFocusTrap: false,
-    isOverlayClickable: false,
+    disableOverlayClick: false,
     isOpen: false
   };
 
@@ -154,12 +154,16 @@ class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   handleOverlayClick(e: React.MouseEvent<HTMLDivElement>) {
+    const { disableOverlayClick } = this.props;
+
     // Prevent clicking to exit inside the dialog
     if (e.target !== e.currentTarget) {
       return;
     }
 
-    this.handleCloseSideSheet();
+    if (!disableOverlayClick) {
+      this.handleCloseSideSheet();
+    }
   }
 
   renderInnerContent = (state: TransitionStatus) => {
