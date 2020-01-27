@@ -1,6 +1,6 @@
 {
   "name": "@wicara/core",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Core components for Wicara.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
