@@ -1,7 +1,7 @@
 {
   "name": "@wicara/core",
   "version": "0.8.3",
-  "description": "Core components for Wicara.",
+  "description": "Wicara. The component library powering Kata Platform.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",
