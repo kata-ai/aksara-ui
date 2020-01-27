@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import { Text, Paragraph } from '../../foundations';
-import { SystemWrapper, SystemHeader, SystemContainer } from '../../utils/storybook';
+import { SystemWrapper, SystemBlock } from '../../utils/storybook';
 
 import SideSheet from './components/SideSheet';
 
@@ -16,23 +16,20 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <>
-        <SystemHeader
-          title="Side Sheet"
-          subtitle="Dialogs that pop out from the right side of the screen."
-        />
-        <SystemContainer>
-          <Text as="p">Click the button below to open the side sheet.</Text>
-          <button type="button" onClick={() => setIsOpen(!isOpen)}>
-            Toggle Side Sheet
-          </button>
-          <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
-            <Paragraph my={26} mx={48}>
-              Basic Example
-            </Paragraph>
-          </SideSheet>
-        </SystemContainer>
-      </>
+      <SystemBlock
+        title="Side Sheet"
+        subtitle="Dialogs that pop out from the right side of the screen."
+      >
+        <Text as="p">Click the button below to open the side sheet.</Text>
+        <button type="button" onClick={() => setIsOpen(!isOpen)}>
+          Toggle Side Sheet
+        </button>
+        <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <Paragraph my={26} mx={48}>
+            Basic Example
+          </Paragraph>
+        </SideSheet>
+      </SystemBlock>
     );
   },
   {
@@ -46,23 +43,20 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <>
-        <SystemHeader
-          title="Side Sheet"
-          subtitle="Dialogs that pop out from the right side of the screen."
-        />
-        <SystemContainer>
-          <Text as="p">Click the button below to open the side sheet.</Text>
-          <button type="button" onClick={() => setIsOpen(!isOpen)}>
-            Toggle Side Sheet
-          </button>
-          <SideSheet isOpen={isOpen} enableFocusTrap onClose={() => setIsOpen(false)}>
-            <Paragraph my={26} mx={48}>
-              Basic Example
-            </Paragraph>
-          </SideSheet>
-        </SystemContainer>
-      </>
+      <SystemBlock
+        title="Side Sheet"
+        subtitle="Dialogs that pop out from the right side of the screen."
+      >
+        <Text as="p">Click the button below to open the side sheet.</Text>
+        <button type="button" onClick={() => setIsOpen(!isOpen)}>
+          Toggle Side Sheet
+        </button>
+        <SideSheet isOpen={isOpen} enableFocusTrap onClose={() => setIsOpen(false)}>
+          <Paragraph my={26} mx={48}>
+            Basic Example
+          </Paragraph>
+        </SideSheet>
+      </SystemBlock>
     );
   },
   {

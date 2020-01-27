@@ -9,7 +9,7 @@ const ComponentBlock: React.FC<ComponentBlockProps> = ({ children, title }) => (
   <Box mb="lg">
     <Box>{children}</Box>
     <Box mt="sm">
-      <Text scale="small" fontFamily="monospace" color="gray50" m={0}>
+      <Text fontFamily="monospace" color="grey06" m={0}>
         {title}
       </Text>
     </Box>

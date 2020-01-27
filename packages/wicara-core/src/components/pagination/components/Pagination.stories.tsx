@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { SystemWrapper, SystemHeader, SystemContainer } from '../../../utils/storybook';
+import { SystemWrapper, SystemBlock } from '../../../utils/storybook';
 
 import Pagination from './Pagination';
 
@@ -16,22 +16,19 @@ story.add(
     const [currentPage, setCurrentPage] = React.useState(1);
 
     return (
-      <>
-        <SystemHeader
-          title="Pagination"
-          subtitle="Pagination indicates a series of content that exists across pages."
+      <SystemBlock
+        title="Pagination"
+        subtitle="Pagination indicates a series of content that exists across pages."
+      >
+        <Pagination
+          current={currentPage}
+          total={5}
+          onSelect={select => {
+            setCurrentPage(select);
+            action('select-page')(select);
+          }}
         />
-        <SystemContainer>
-          <Pagination
-            current={currentPage}
-            total={5}
-            onSelect={select => {
-              setCurrentPage(select);
-              action('select-page')(select);
-            }}
-          />
-        </SystemContainer>
-      </>
+      </SystemBlock>
     );
   },
   {
@@ -47,22 +44,19 @@ story.add(
     const [currentPage, setCurrentPage] = React.useState(10);
 
     return (
-      <>
-        <SystemHeader
-          title="Large page numbers"
-          subtitle="Paginations will also automatically truncate itself when the number of pages get too large."
+      <SystemBlock
+        title="Large page numbers"
+        subtitle="Paginations will also automatically truncate itself when the number of pages get too large."
+      >
+        <Pagination
+          current={currentPage}
+          total={50}
+          onSelect={select => {
+            setCurrentPage(select);
+            action('select-page')(select);
+          }}
         />
-        <SystemContainer>
-          <Pagination
-            current={currentPage}
-            total={50}
-            onSelect={select => {
-              setCurrentPage(select);
-              action('select-page')(select);
-            }}
-          />
-        </SystemContainer>
-      </>
+      </SystemBlock>
     );
   },
   {
