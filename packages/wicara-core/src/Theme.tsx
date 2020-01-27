@@ -1,6 +1,17 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { colors, space, fonts, typeScale, elevation, breakpoints, shadows, radii } from './utils';
+import {
+  colors,
+  space,
+  fonts,
+  typeScale,
+  elevation,
+  breakpoints,
+  mediaQueries,
+  shadows,
+  radii,
+  componentStyles
+} from './utils';
 
 export const themeProps = {
   // Default styled-system theme props based on the theme specification:
@@ -10,16 +21,13 @@ export const themeProps = {
   fonts,
   shadows,
   radii,
-  breakpoints: [
-    `${breakpoints.sm}px`,
-    `${breakpoints.md}px`,
-    `${breakpoints.lg}px`,
-    `${breakpoints.xl}px`
-  ],
+  breakpoints,
+  mediaQueries,
 
   // Custom theme props based on custom component variants.
   typeScale,
-  elevation
+  elevation,
+  componentStyles
 };
 
 export const Theme: React.FC = ({ children }) => {
