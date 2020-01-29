@@ -1,5 +1,5 @@
 /** (DEPRECATED) old color variables */
-export const legacyColors = {
+const legacyColors = {
   white: '#ffffff',
   red: '#e53935',
   green: '#00c853',
@@ -60,11 +60,7 @@ const experimentalColors = {
   unstable_yellow03: '#ebc902'
 };
 
-/** Color pallette. Contains old Kata Platform colors and experimental colors. */
-export const colors = {
-  ...legacyColors,
-  ...experimentalColors,
-
+const systemColors = {
   // Blue
   /** Blue01 - Glitter */
   blue01: '#e7f1fc',
@@ -218,6 +214,13 @@ export const colors = {
   grey09: '#253648',
   /** Grey 10 - Yankees Blue */
   grey10: '#1e2b3a'
+};
+
+/** Color pallette. Contains old Kata Platform colors and experimental colors. */
+export const colors = {
+  ...legacyColors,
+  ...experimentalColors,
+  ...systemColors
 };
 
 export const systemFonts =
