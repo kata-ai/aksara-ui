@@ -18,7 +18,7 @@ const SystemHeader: React.FC<SystemHeaderProps> = ({ title, subtitle }) => (
         {title}
       </Heading>
       {typeof subtitle === 'string' ? (
-        <Text as="p" mb={0} mt="lg" scale={300} fontWeight={400}>
+        <Text as="p" mb={0} mt="md" scale={400}>
           {subtitle}
         </Text>
       ) : (

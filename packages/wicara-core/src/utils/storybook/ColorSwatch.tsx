@@ -16,19 +16,19 @@ const ColorSwatch: React.FC<ColorSwatchProps> = ({ title, colorKey, hex, hasBord
       border="1px solid"
       borderColor={hasBorder ? 'gray30' : 'transparent'}
     />
-    <Box display="flex" flexDirection="row" justifyContent="space-between" mt="sm">
+    <Box display="flex" flexDirection="row" justifyContent="space-between" mt="xxs">
       <Box>
-        <Heading as="h5" scale="body" fontWeight={700} m={0}>
+        <Heading as="h5" scale={300} color="grey09" fontWeight={700} m={0}>
           {title}
         </Heading>
-        <Text scale="body" fontFamily="monospace" color="gray50" fontWeight={400} m={0}>
+        <Text as="p" fontFamily="monospace" scale={200} color="grey09" m={0}>
           {colorKey}
         </Text>
       </Box>
       <Box>
-        <Text scale="body" color="gray70" fontWeight={300} m={0}>
-          {hex.toLowerCase()}
-        </Text>
+        <Heading as="p" scale={300} color="grey07" m={0}>
+          {hex.toUpperCase()}
+        </Heading>
       </Box>
     </Box>
   </Box>

@@ -14,7 +14,7 @@ const FormError: React.SFC<FormErrorProps> = ({ className, style, children, ...r
     className={className}
     style={style}
     display="block"
-    scale="small"
+    scale={300}
     color="red"
     mt="xxs"
     {...rest}

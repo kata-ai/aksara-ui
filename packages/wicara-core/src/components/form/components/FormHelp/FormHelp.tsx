@@ -10,7 +10,7 @@ export interface FormHelpProps extends TextProps {
 }
 
 const FormHelp: React.SFC<FormHelpProps> = ({ className, style, children, ...rest }) => (
-  <Text className={className} style={style} scale="small" mt="xxs" {...rest}>
+  <Text className={className} style={style} scale={300} mt="xxs" {...rest}>
     {children}
   </Text>
 );

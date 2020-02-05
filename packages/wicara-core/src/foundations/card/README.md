@@ -22,7 +22,7 @@ export default function Component() {
         }}
       />
       <Box padding="sm" flex="1 1 auto">
-        <Heading scale="heading3">An Example Card</Heading>
+        <Heading scale={500}>An Example Card</Heading>
         <Paragraph marginTop="xs" marginBottom={0}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis
           doloremque quisquam sequi vel eaque aperiam vitae facere quia atque, hic, unde animi
