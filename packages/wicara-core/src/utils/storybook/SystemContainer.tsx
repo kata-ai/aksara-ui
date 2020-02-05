@@ -7,7 +7,13 @@ interface SystemContainerProps {
 }
 
 const SystemContainer: React.FC<SystemContainerProps> = ({ children, noBackground = false }) => (
-  <Box px="lg" pb="lg" pt="xxl" backgroundColor={!noBackground ? 'white' : undefined}>
+  <Box
+    flex="1 1 auto"
+    px="lg"
+    pb="lg"
+    pt="xxl"
+    backgroundColor={!noBackground ? 'white' : undefined}
+  >
     <StoryContainer>{children}</StoryContainer>
   </Box>
 );
