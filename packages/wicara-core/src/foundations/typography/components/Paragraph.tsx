@@ -1,15 +1,10 @@
 import * as React from 'react';
+import { variant } from 'styled-system';
 
-import { TypeScale } from '../../../Theme';
+import { ParagraphScale } from '../../../Theme';
 import { styledWrapper as styled } from '../../../utils/primitives';
 
-import { determineFontDimensions } from '../utils';
 import Typography, { TypographyProps } from './Typography';
-
-/**
- * This is a base `Text` element to handle typography elements.
- */
-const StyledText = styled(Typography)``;
 
 export interface ParagraphProps extends TypographyProps {
   /** Additional CSS classes to add to the component. */
@@ -19,22 +14,26 @@ export interface ParagraphProps extends TypographyProps {
   /** What HTML element to render the text as. */
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   /** Size value of the text. */
-  scale?: TypeScale;
+  scale?: ParagraphScale;
 }
 
 /**
  * Paragraph component provided as a styled component primitive.
  */
-const Paragraph: React.SFC<ParagraphProps> = ({ children, as, scale = 'paragraph', ...rest }) => (
-  <StyledText as={as} {...determineFontDimensions(scale)} {...rest}>
-    {children}
-  </StyledText>
-);
+const Paragraph = styled(Typography)<ParagraphProps>`
+  ${variant({
+    prop: 'scale',
+    scale: 'componentStyles.paragraph',
+    variants: {
+      400: {},
+      300: {}
+    }
+  })}
+`;
 
 Paragraph.defaultProps = {
   as: 'p',
-  color: 'grey07',
-  fontWeight: 300,
+  scale: 400,
   letterSpacing: '-0.05px'
 };
 

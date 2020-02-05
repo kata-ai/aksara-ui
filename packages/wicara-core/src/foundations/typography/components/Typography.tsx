@@ -16,9 +16,9 @@ export interface TypographyProps
     SpaceProps,
     ColorProps,
     StyledTypographyProps {
-  /** Unique ID attribute */
-  id?: string;
-  /** Extended color props. */
+  /**
+   * Extended color props. We need this because default `color` prop clashes with `styled-system`.
+   */
   color?: string;
 }
 

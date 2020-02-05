@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { determineFontDimensions } from '../utils';
 import Text, { TextProps } from './Text';
 
 export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, TextProps {}
@@ -8,9 +7,9 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 /**
  * Link component provided as a styled component primitive.
  */
-const Link: React.SFC<LinkProps> = ({ children, as = 'a', scale = 'body', ...rest }) => {
+const Link: React.SFC<LinkProps> = ({ children, as = 'a', scale = 400, ...rest }) => {
   return (
-    <Text as={as} {...determineFontDimensions(scale)} {...rest}>
+    <Text as={as} scale={scale} {...rest}>
       {children}
     </Text>
   );
