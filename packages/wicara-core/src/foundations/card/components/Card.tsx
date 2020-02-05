@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { Box, BoxProps } from '../../box';
-import { Elevation } from '../../../Theme';
+import { componentStyles } from '../../../utils';
 
 export interface CardProps extends BoxProps {
-  elevation?: Elevation;
+  elevation?: keyof typeof componentStyles.card;
 }
 
 /**
@@ -13,14 +13,15 @@ export interface CardProps extends BoxProps {
 const Card = styled(Box)<CardProps>`
   ${variant({
     prop: 'elevation',
-    scale: 'elevation',
+    scale: 'componentStyles.card',
     variants: {
       // NOTE: The empty objects here is important.
       // https://styled-system.com/variants#migrating-from-legacy-api
-      layer100: {},
-      layer200: {},
-      layer300: {},
-      layer400: {}
+      1: {},
+      2: {},
+      3: {},
+      4: {},
+      5: {}
     }
   })}
 `;
@@ -29,7 +30,7 @@ Card.defaultProps = {
   backgroundColor: 'white',
   borderRadius: 'md',
   overflow: 'hidden',
-  elevation: 'layer100'
+  elevation: 1
 };
 
 Card.displayName = 'Card';

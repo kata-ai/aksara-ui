@@ -5,12 +5,13 @@ import SystemContainer from './SystemContainer';
 interface SystemBlockProps {
   title: string;
   subtitle?: React.ReactNode;
+  noBackground?: boolean;
 }
 
-const SystemBlock: React.FC<SystemBlockProps> = ({ children, title, subtitle }) => (
+const SystemBlock: React.FC<SystemBlockProps> = ({ children, title, subtitle, noBackground }) => (
   <>
     <SystemHeader title={title} subtitle={subtitle} />
-    <SystemContainer>{children}</SystemContainer>
+    <SystemContainer noBackground={noBackground}>{children}</SystemContainer>
   </>
 );
 
