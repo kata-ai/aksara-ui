@@ -45,10 +45,10 @@ story.add(
               placement="top"
               content={
                 <>
-                  <Heading as="h5" scale="heading5" color="white">
+                  <Heading as="h5" scale={300} color="white">
                     Tooltip custom heading
                   </Heading>
-                  <Paragraph scale="small" m={0}>
+                  <Paragraph scale={300} m={0}>
                     Tooltip custom text
                   </Paragraph>
                 </>
@@ -62,10 +62,10 @@ story.add(
               placement="right"
               content={
                 <>
-                  <Heading as="h5" scale="heading5" color="white">
+                  <Heading as="h5" scale={300} color="white">
                     Tooltip custom heading
                   </Heading>
-                  <Paragraph scale="small" m={0}>
+                  <Paragraph scale={300} m={0}>
                     Tooltip custom text
                   </Paragraph>
                 </>
@@ -79,10 +79,10 @@ story.add(
               placement="bottom"
               content={
                 <>
-                  <Heading as="h5" scale="heading5" color="white">
+                  <Heading as="h5" scale={300} color="white">
                     Tooltip custom heading
                   </Heading>
-                  <Paragraph scale="small" m={0}>
+                  <Paragraph scale={300} m={0}>
                     Tooltip custom text
                   </Paragraph>
                 </>
@@ -96,10 +96,10 @@ story.add(
               placement="left"
               content={
                 <>
-                  <Heading as="h5" scale="heading5" color="white">
+                  <Heading as="h5" scale={300} color="white">
                     Tooltip custom heading
                   </Heading>
-                  <Paragraph scale="small" m={0}>
+                  <Paragraph scale={300} m={0}>
                     Tooltip custom text
                   </Paragraph>
                 </>

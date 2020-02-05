@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Heading, Paragraph } from '../../foundations';
+import { Box, Heading, Text } from '../../foundations';
 import StoryContainer from './StoryContainer';
 import AksaraLogo from './AksaraLogo';
 
@@ -9,18 +9,18 @@ export interface SystemHeaderProps {
 }
 
 const SystemHeader: React.FC<SystemHeaderProps> = ({ title, subtitle }) => (
-  <Box bg="cobalt" px="lg" py="xl">
+  <Box bg="cobalt" px="lg" py="xl" color="white">
     <StoryContainer>
       <Box mb={64}>
         <AksaraLogo height={40} />
       </Box>
-      <Heading as="h1" scale="heading1" color="white" fontFamily="system" fontWeight={600}>
+      <Heading as="h1" scale={900} color="white" fontFamily="barlow" fontWeight={600}>
         {title}
       </Heading>
       {typeof subtitle === 'string' ? (
-        <Paragraph m={0} scale="large" color="white" fontFamily="system" fontWeight={400}>
+        <Text as="p" mb={0} mt="md" scale={400}>
           {subtitle}
-        </Paragraph>
+        </Text>
       ) : (
         subtitle
       )}

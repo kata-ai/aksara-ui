@@ -26,7 +26,7 @@ story.add(
         </button>
         <Dialog labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
           <Box display="flex" alignItems="center" my="md" mx="lg">
-            <Heading id="stories-title" scale="heading3" lineHeight="32px" m={0}>
+            <Heading id="stories-title" scale={500} lineHeight="32px" m={0}>
               Basic Example
             </Heading>
           </Box>
@@ -72,7 +72,7 @@ story.add(
           onClose={() => setIsOpen(false)}
         >
           <Box display="flex" alignItems="center" my="md" mx="lg">
-            <Heading id="stories-title" scale="heading3" lineHeight="32px" m={0}>
+            <Heading id="stories-title" scale={500} lineHeight="32px" m={0}>
               Focus Trap Example
             </Heading>
           </Box>

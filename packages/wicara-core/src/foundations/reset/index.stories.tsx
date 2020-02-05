@@ -82,7 +82,7 @@ storiesOf('Core|Foundations/Theme', module)
         title="Colors"
         subtitle="These are the primary colors used within the Aksara system."
       >
-        <Heading scale="heading2">Primary</Heading>
+        <Heading scale={800}>Primary</Heading>
         <ColorSwatchGrid>
           <ColorSwatch title="White" colorKey="white" hex={themeProps.colors.white} hasBorder />
           <ColorSwatch title="Gray 10" colorKey="gray10" hex={themeProps.colors.gray10} />
@@ -94,13 +94,13 @@ storiesOf('Core|Foundations/Theme', module)
           <ColorSwatch title="Gray 70" colorKey="gray70" hex={themeProps.colors.gray70} />
           <ColorSwatch title="Gray 80" colorKey="gray80" hex={themeProps.colors.gray80} />
         </ColorSwatchGrid>
-        <Heading scale="heading2">Secondary</Heading>
+        <Heading scale={800}>Secondary</Heading>
         <ColorSwatchGrid>
           <ColorSwatch title="Red" colorKey="red" hex={themeProps.colors.red} />
           <ColorSwatch title="Green" colorKey="green" hex={themeProps.colors.green} />
           <ColorSwatch title="Yellow" colorKey="yellow" hex={themeProps.colors.yellow} />
         </ColorSwatchGrid>
-        <Heading scale="heading2">Brand Colors</Heading>
+        <Heading scale={800}>Brand Colors</Heading>
         <ColorSwatchGrid>
           <ColorSwatch
             title="Soft Kata Blue"
@@ -137,7 +137,7 @@ storiesOf('Core|Foundations/Theme', module)
             hex={themeProps.colors.darkCobalt}
           />
         </ColorSwatchGrid>
-        <Heading scale="heading2">Special Colors</Heading>
+        <Heading scale={800}>Special Colors</Heading>
         <ColorSwatchGrid>
           <ColorSwatch title="Special 01" colorKey="special01" hex={themeProps.colors.special01} />
           <ColorSwatch title="Special 02" colorKey="special02" hex={themeProps.colors.special02} />

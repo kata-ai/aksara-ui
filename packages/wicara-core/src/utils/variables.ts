@@ -228,7 +228,7 @@ export const systemFonts =
 
 export const fonts = {
   system: systemFonts,
-  sansSerif: `'Museo Sans Rounded', ${systemFonts}`,
+  barlow: `'Barlow', ${systemFonts}`,
   monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;"
 };
 

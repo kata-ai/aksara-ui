@@ -1,12 +1,7 @@
 import { css } from 'styled-components';
-import { typeScale, colors, fonts } from '../../../utils/variables';
+import { colors, fonts } from '../../../utils/variables';
 
 const base = css`
-  :root {
-    font-size: ${typeScale.body.fontSize}px;
-    line-height: ${typeScale.body.lineHeight}px;
-  }
-
   html,
   body,
   #root {
@@ -15,10 +10,9 @@ const base = css`
   }
 
   body {
-    font-family: ${fonts.sansSerif};
+    font-family: ${fonts.system};
     background-color: ${colors.gray10};
     color: ${colors.gray70};
-    font-weight: 500;
   }
 
   a {

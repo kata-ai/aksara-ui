@@ -78,7 +78,7 @@ story.add(
                   }}
                 />
                 <Box padding="sm" flex="1 1 auto">
-                  <Heading scale="heading3">An Example Card</Heading>
+                  <Heading scale={600}>An Example Card</Heading>
                   <Paragraph marginTop="xs" marginBottom={0}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis,
                     reiciendis doloremque quisquam sequi vel eaque aperiam vitae facere quia atque,
@@ -97,7 +97,7 @@ story.add(
                 boxShadow="layer100"
               >
                 <Box padding="sm" flex="1 1 auto">
-                  <Heading scale="heading3">An Example Card</Heading>
+                  <Heading scale={600}>An Example Card</Heading>
                   <Paragraph marginTop="xs" marginBottom={0}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis,
                     reiciendis doloremque quisquam sequi vel eaque aperiam vitae facere quia atque,
@@ -125,7 +125,7 @@ story.add(
           <Card bg="white" borderRadius="md" boxShadow="layer100" position="relative">
             <Box px="lg" py="sm" display="flex" flex={1} flexDirection="row" alignItems="center">
               <Box flex="0 0 87px" mr="sm">
-                <Heading as="h3" scale="heading3" m={0}>
+                <Heading as="h3" scale={600} m={0}>
                   0.0.1
                 </Heading>
               </Box>
@@ -134,25 +134,25 @@ story.add(
               </Box>
               <Box display="flex" flex="1 0 auto" flexDirection="row">
                 <Box width="100%" maxWidth="140px">
-                  <Text as="h5" color="gray50" m={0}>
+                  <Heading as="h5" scale={100} color="grey07" m={0}>
                     Bot Revision
-                  </Text>
+                  </Heading>
                   <Text as="p" m={0}>
                     <samp title="f5a065fbe8b2c72283f72fbe3c48808fc1f7e2cc">f5a065f</samp>
                   </Text>
                 </Box>
                 <Box width="100%" maxWidth="140px">
-                  <Text as="h5" color="gray50" m={0}>
+                  <Heading as="h5" scale={100} color="grey07" m={0}>
                     NLU Revision
-                  </Text>
+                  </Heading>
                   <Text as="p" m={0}>
                     <samp title="1a4daaa3fcfecaf67495d492a58e1b921713a02b">1a4daaa</samp>
                   </Text>
                 </Box>
                 <Box width="100%" maxWidth="140px">
-                  <Text as="h5" color="gray50" m={0}>
+                  <Heading as="h5" scale={100} color="grey07" m={0}>
                     CMS Revision
-                  </Text>
+                  </Heading>
                   <Text as="p" m={0}>
                     <samp title="4561c68a78c754e1e4e39e5dede9e12d3e9d6a80">4561c68</samp>
                   </Text>

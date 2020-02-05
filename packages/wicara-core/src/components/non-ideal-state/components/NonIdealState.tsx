@@ -53,7 +53,7 @@ const NonIdealState: React.FC<NonIdealStateProps> = ({
   return (
     <Wrapper className={className} style={style} mx="auto" my="xxl" textAlign="center">
       {image && <ImageWrapper mb="lg">{image}</ImageWrapper>}
-      <Heading as="h3" scale="heading4" mt={0} mb="xs">
+      <Heading as="h3" scale={600} mt={0} mb="xs">
         {title}
       </Heading>
       <Box>{children}</Box>
