@@ -38,6 +38,7 @@ export type Color = keyof typeof themeProps['colors'];
 export type Space = keyof typeof themeProps['space'];
 export type Elevation = keyof typeof themeProps['elevation'];
 export type TypeScale = keyof typeof themeProps['typeScale'];
+export type CardElevation = keyof typeof componentStyles.card;
 export type TextScale = keyof typeof componentStyles.text;
 export type ParagraphScale = keyof typeof componentStyles.paragraph;
 export type HeadingScale = keyof typeof componentStyles.heading;

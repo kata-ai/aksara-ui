@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { Box, BoxProps } from '../../box';
-import { componentStyles } from '../../../utils';
+import { CardElevation } from '../../../Theme';
 
 export interface CardProps extends BoxProps {
-  elevation?: keyof typeof componentStyles.card;
+  elevation?: CardElevation;
 }
 
 /**

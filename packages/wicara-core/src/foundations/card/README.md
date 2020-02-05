@@ -11,7 +11,7 @@ import { Box, Card } from '@wicara/core';
 
 export default function Component() {
   return (
-    <Card elevation="layer100">
+    <Card elevation={1}>
       <img
         alt="Example"
         src="https://picsum.photos/id/873/1072/708"
@@ -42,7 +42,7 @@ import { Box, Card } from '@wicara/core';
 // Example for card with `sm` border radius.
 export default function Component({ children }) {
   return (
-    <Card elevation="layer100" borderRadius="sm">
+    <Card elevation={1} borderRadius="sm">
       {children}
     </Card>
   );
