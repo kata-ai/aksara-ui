@@ -26,21 +26,22 @@ const base = css`
 
   body {
     font-family: ${fonts.system};
-    background-color: ${colors.gray10};
-    color: ${colors.gray70};
+    background-color: ${colors['bg-secondary']};
+    color: ${colors.text01};
   }
 
   a {
-    color: ${colors.kataBlue};
+    color: ${colors.link};
     text-decoration: none;
 
-    &:hover {
-      color: ${colors.darkKataBlue};
+    &:hover,
+    &:active {
+      color: ${colors['link-hover']};
       text-decoration: underline;
     }
 
-    &:active {
-      color: ${colors.darkKataBlue};
+    &:visited {
+      color: ${colors['link-visited']};
     }
   }
 

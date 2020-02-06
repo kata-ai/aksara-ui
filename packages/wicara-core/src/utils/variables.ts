@@ -29,7 +29,7 @@ const legacyColors = {
   special07: '#d6f8bb',
   special08: '#f5f8bb',
   special09: '#f8e5bb',
-  special10: '#f8cebb'
+  special10: '#f8cebb',
 };
 
 /** Experimental brand colors (0.18) */
@@ -57,7 +57,7 @@ const experimentalColors = {
   unstable_red03: '#af1a16',
   unstable_yellow01: '#feef99',
   unstable_yellow02: '#fde034',
-  unstable_yellow03: '#ebc902'
+  unstable_yellow03: '#ebc902',
 };
 
 const systemColors = {
@@ -213,14 +213,52 @@ const systemColors = {
   /** Grey 09 - Japanese Indigo */
   grey09: '#253648',
   /** Grey 10 - Yankees Blue */
-  grey10: '#1e2b3a'
+  grey10: '#1e2b3a',
 };
 
-/** Color pallette. Contains old Kata Platform colors and experimental colors. */
+/** Color pallette. Contains old Kata Platform colors, experimental colors, and style tokens. */
 export const colors = {
   ...legacyColors,
   ...experimentalColors,
-  ...systemColors
+  ...systemColors,
+
+  // Core tokens
+  bg: systemColors.grey01,
+  'bg-secondary': systemColors.grey02,
+  success: systemColors.green06,
+  warning: systemColors.yellow05,
+  danger: systemColors.red05,
+  info: systemColors.indigo03,
+  ui: systemColors.blue06,
+  'ui-hover': systemColors.blue07,
+  'ui-hover-2': systemColors.indigo01,
+  'ui-visited': systemColors.turquoise08,
+
+  // Type tokens
+  link: systemColors.blue06,
+  'link-hover': systemColors.blue07,
+  'link-visited': systemColors.turquoise08,
+  'link-destructive': systemColors.red05,
+  text01: systemColors.grey08,
+  text02: systemColors.grey09,
+  text03: systemColors.grey07,
+  text04: systemColors.grey04,
+  text05: systemColors.grey06,
+  text06: systemColors.yellow06,
+  'text-success': systemColors.green07,
+  'text-warning': systemColors.yellow07,
+  'text-danger': systemColors.red07,
+  'text-inverse': systemColors.grey01,
+
+  // Icon tokens
+  icon01: systemColors.grey08,
+  icon02: systemColors.grey06,
+  icon03: systemColors.blue06,
+  icon04: systemColors.grey04,
+  icon05: systemColors.green06,
+  icon06: systemColors.yellow05,
+  icon07: systemColors.red05,
+  icon08: systemColors.indigo03,
 };
 
 export const systemFonts =
@@ -229,7 +267,7 @@ export const systemFonts =
 export const fonts = {
   system: systemFonts,
   barlow: `'Barlow', ${systemFonts}`,
-  monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;"
+  monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;",
 };
 
 /**
@@ -255,7 +293,7 @@ export const spaceLegacy = {
   /** Equivalent to 72px */
   space9: 72,
   /** Equivalent to 80px */
-  space10: 80
+  space10: 80,
 };
 
 /** Space values (in px) mapped by size designators */
@@ -277,7 +315,7 @@ export const space = {
   /** Equivalent to 32px */
   xl: 32,
   /** Equivalent to 48px */
-  xxl: 48
+  xxl: 48,
 };
 
 export const breakpoints = ['1024px', '1280px', '1440px', '1600px'];
@@ -286,7 +324,7 @@ export const mediaQueries = {
   sm: `@media screen and (min-width: ${breakpoints[0]})`,
   md: `@media screen and (min-width: ${breakpoints[1]})`,
   lg: `@media screen and (min-width: ${breakpoints[2]})`,
-  xl: `@media screen and (min-width: ${breakpoints[3]})`
+  xl: `@media screen and (min-width: ${breakpoints[3]})`,
 };
 
 /** Border radiuses */
@@ -294,7 +332,7 @@ export const radii = {
   xs: 2,
   sm: 4,
   md: 6,
-  lg: 8
+  lg: 8,
 };
 
 /** Legacy box-shadow values. */
@@ -302,90 +340,90 @@ export const shadowsLegacy = {
   layer100: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
   layer200: '0 2px 4px 1px rgba(0, 0, 0, 0.15)',
   layer300: '0 4px 6px 2px rgba(0, 0, 0, 0.15)',
-  layer400: '0 6px 10px 2px rgba(0, 0, 0, 0.15)'
+  layer400: '0 6px 10px 2px rgba(0, 0, 0, 0.15)',
 };
 
 /** Default box/text shadow separated by layers */
 export const shadows = {
-  ...shadowsLegacy
+  ...shadowsLegacy,
 };
 
 /** Legacy elevation values. */
 export const elevationLegacy = {
   layer100: {
-    boxShadow: 'layer100'
+    boxShadow: 'layer100',
   },
   layer200: {
-    boxShadow: 'layer200'
+    boxShadow: 'layer200',
   },
   layer300: {
-    boxShadow: 'layer300'
+    boxShadow: 'layer300',
   },
   layer400: {
-    boxShadow: 'layer400'
-  }
+    boxShadow: 'layer400',
+  },
 };
 
 /** Custom elevation variant for the Card component. */
 export const elevation = {
   ...elevationLegacy,
   level1: {
-    boxShadow: 'none'
+    boxShadow: 'none',
   },
   level2: {
-    boxShadow: '0px 2px 6px rgba(176, 183, 191, 0.6);'
+    boxShadow: '0px 2px 6px rgba(176, 183, 191, 0.6);',
   },
   level3: {
-    boxShadow: '0px 6px 12px rgba(176, 183, 191, 0.6);'
+    boxShadow: '0px 6px 12px rgba(176, 183, 191, 0.6);',
   },
   level4: {
-    boxShadow: '0px 12px 24px rgba(176, 183, 191, 0.6);'
+    boxShadow: '0px 12px 24px rgba(176, 183, 191, 0.6);',
   },
   level5: {
-    boxShadow: '0px 24px 48px rgba(176, 183, 191, 0.6);'
-  }
+    boxShadow: '0px 24px 48px rgba(176, 183, 191, 0.6);',
+  },
 };
 
 /** Typography scale values (in pixels) mapped by style tokens. */
 export const typeScale = {
   heading1: {
     fontSize: 28,
-    lineHeight: 32
+    lineHeight: 32,
   },
   heading2: {
     fontSize: 24,
-    lineHeight: 30
+    lineHeight: 30,
   },
   heading3: {
     fontSize: 20,
-    lineHeight: 24
+    lineHeight: 24,
   },
   heading4: {
     fontSize: 18,
-    lineHeight: 22
+    lineHeight: 22,
   },
   heading5: {
     fontSize: 16,
-    lineHeight: 24
+    lineHeight: 24,
   },
   paragraph: {
     fontSize: 14,
-    lineHeight: 20
+    lineHeight: 20,
   },
   large: {
     fontSize: 16,
-    lineHeight: 24
+    lineHeight: 24,
   },
   body: {
     fontSize: 13,
-    lineHeight: 20
+    lineHeight: 20,
   },
   label: {
     fontSize: 12,
-    lineHeight: 16
+    lineHeight: 16,
   },
   small: {
     fontSize: 11,
-    lineHeight: 16
-  }
+    lineHeight: 16,
+  },
 };
