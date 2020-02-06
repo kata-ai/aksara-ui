@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../../utils/storybook';
 import Tooltip from './Tooltip';
-import { Heading, Paragraph, Text, Box, UnstyledAnchor } from '../../../foundations';
+import { Heading, Paragraph, Text, Box } from '../../../foundations';
 import { Button } from '../../button';
 
 const readme = require('../README.md');
