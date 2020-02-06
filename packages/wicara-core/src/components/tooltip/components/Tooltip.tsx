@@ -21,12 +21,38 @@ const TooltipTarget = styled('span')`
 TooltipTarget.displayName = 'TooltipTarget';
 
 const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, size, content, children, ...rest }) => {
+  const [visible, setVisible] = React.useState(false);
+
+  const handleTooltipEnter = () => {
+    setTimeout(() => {
+      setVisible(true);
+    }, 300);
+  };
+
+  const handleTooltipExit = () => {
+    setTimeout(() => {
+      setVisible(false);
+    }, 300);
+  };
+
   return (
     <Tippy
       touch={false}
       hideOnClick={false}
       placement={placement}
-      content={<TooltipInner className={className} style={style} placement={placement} size={size} content={content} />}
+      content={
+        <TooltipInner
+          className={className}
+          style={style}
+          placement={placement}
+          size={size}
+          onMouseOver={handleTooltipEnter}
+          onFocus={handleTooltipEnter}
+          onMouseLeave={handleTooltipExit}
+          content={content}
+        />
+      }
+      visible={visible}
       // https://github.com/FezVrasta/popper.js/issues/535
       popperOptions={{
         modifiers: {
@@ -37,7 +63,9 @@ const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, size, co
       }}
       {...rest}
     >
-      <TooltipTarget>{children}</TooltipTarget>
+      <TooltipTarget onMouseOver={handleTooltipEnter} onFocus={handleTooltipEnter} onMouseLeave={handleTooltipExit}>
+        {children}
+      </TooltipTarget>
     </Tippy>
   );
 };

@@ -9,7 +9,7 @@ import { Text, Paragraph } from '../../../foundations';
 export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
 export type TooltipSize = 'sm' | 'md' | 'lg';
 
-export interface TooltipInnerProps {
+export interface TooltipInnerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   style?: React.CSSProperties;
   content: string | React.ReactNode;
@@ -76,7 +76,7 @@ const Root = styled('div')<Omit<TooltipInnerProps, 'content'>>`
   ${props => determineMargins(props.placement)}
 `;
 
-const TooltipInner: React.FC<TooltipInnerProps> = ({ className, style, content, size, placement }) => {
+const TooltipInner: React.FC<TooltipInnerProps> = ({ className, style, content, size, placement, ...rest }) => {
   const renderContent = () => {
     if (typeof content === 'string') {
       if (size === 'sm') {
@@ -94,7 +94,7 @@ const TooltipInner: React.FC<TooltipInnerProps> = ({ className, style, content, 
   };
 
   return (
-    <Root className={className} style={style} placement={placement} size={size}>
+    <Root className={className} style={style} placement={placement} size={size} {...rest}>
       {renderContent()}
     </Root>
   );
