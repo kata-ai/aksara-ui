@@ -93,17 +93,17 @@ const systemColors = {
   /** Indigo04 - Glaucous */
   indigo04: '#5c6db4',
   /** Indigo05 - Pigment Blue */
-  indigo05: '#2e89ea',
+  indigo05: '#2e449f',
   /** Indigo06 - Indigo */
-  indigo06: '#006fe6',
+  indigo06: '#001b8a',
   /** Indigo07 - Dark Imperial Blue */
-  indigo07: '#005bbd',
+  indigo07: '#001771',
   /** Indigo08 - Royal Blue */
-  indigo08: '#004793',
-  /** Indigo09 - Maastricht Blue */
-  indigo09: '#003369',
+  indigo08: '#001258',
+  /** Indigo09 - Maastricht Indigo */
+  indigo09: '#000d3f',
   /** Indigo10 - Black Indigo */
-  indigo10: '#001f3f',
+  indigo10: '#000826',
 
   // Turquoise
   /** Turquoise01 - Bubbles */
