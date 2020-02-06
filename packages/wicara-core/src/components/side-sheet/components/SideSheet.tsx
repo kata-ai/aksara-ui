@@ -173,7 +173,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           <Card
             display="flex"
             flexDirection="column"
-            elevation="layer300"
+            elevation={4}
             borderRadius={0}
             width="500px"
             height="100vh"

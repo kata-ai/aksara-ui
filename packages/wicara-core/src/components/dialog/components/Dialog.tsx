@@ -189,13 +189,12 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           display="flex"
           flexDirection="column"
           backgroundColor="white"
-          boxShadow="layer300"
           borderRadius="lg"
           height={height}
           width={width || '100%'}
           maxWidth={maxWidth || '500px'}
           maxHeight={maxHeight || 'calc(100% - 24vmin)'}
-          elevation="layer300"
+          elevation={4}
           my="12vmin"
           mx="md"
           role="dialog"
