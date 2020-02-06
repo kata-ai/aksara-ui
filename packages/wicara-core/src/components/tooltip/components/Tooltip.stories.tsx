@@ -82,7 +82,14 @@ story.add(
                     This is an even larger tooltip which can even hold entire blocks of content.
                   </Paragraph>
                   <Paragraph scale={300} mb={0}>
-                    <UnstyledAnchor style={{ color: 'white', textDecoration: 'underline' }}>Go to link</UnstyledAnchor>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
                   </Paragraph>
                 </>
               }
@@ -91,17 +98,77 @@ story.add(
             </Tooltip>
           </Box>
           <Box>
-            <Tooltip placement="right" size="lg" content="Tooltip text">
+            <Tooltip
+              placement="right"
+              size="lg"
+              content={
+                <>
+                  <Paragraph scale={300}>
+                    This is an even larger tooltip which can even hold entire blocks of content.
+                  </Paragraph>
+                  <Paragraph scale={300} mb={0}>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
+                  </Paragraph>
+                </>
+              }
+            >
               <Text>Right</Text>
             </Tooltip>
           </Box>
           <Box>
-            <Tooltip placement="bottom" size="lg" content="Tooltip text">
+            <Tooltip
+              placement="bottom"
+              size="lg"
+              content={
+                <>
+                  <Paragraph scale={300}>
+                    This is an even larger tooltip which can even hold entire blocks of content.
+                  </Paragraph>
+                  <Paragraph scale={300} mb={0}>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
+                  </Paragraph>
+                </>
+              }
+            >
               <Text>Bottom</Text>
             </Tooltip>
           </Box>
           <Box>
-            <Tooltip placement="left" size="lg" content="Tooltip text">
+            <Tooltip
+              placement="left"
+              size="lg"
+              content={
+                <>
+                  <Paragraph scale={300}>
+                    This is an even larger tooltip which can even hold entire blocks of content.
+                  </Paragraph>
+                  <Paragraph scale={300} mb={0}>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
+                  </Paragraph>
+                </>
+              }
+            >
               <Text>Left</Text>
             </Tooltip>
           </Box>
