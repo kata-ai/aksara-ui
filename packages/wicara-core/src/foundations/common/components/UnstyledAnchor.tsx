@@ -18,7 +18,8 @@ const UnstyledAnchor = styled('a')`
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &:visited {
     font-style: inherit;
     color: inherit;
     background-color: transparent;
