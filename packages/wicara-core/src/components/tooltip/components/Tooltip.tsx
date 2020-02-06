@@ -2,13 +2,14 @@ import React from 'react';
 import Tippy from '@tippy.js/react';
 import styled from 'styled-components';
 
-import TooltipInner, { TooltipPlacement } from './TooltipInner';
+import TooltipInner, { TooltipPlacement, TooltipSize } from './TooltipInner';
 
 export interface TooltipProps {
   className?: string;
   style?: React.CSSProperties;
   content: string | React.ReactNode;
   placement?: TooltipPlacement;
+  size?: TooltipSize;
   children: React.ReactElement;
 }
 
@@ -19,17 +20,13 @@ const TooltipTarget = styled('span')`
 
 TooltipTarget.displayName = 'TooltipTarget';
 
-const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, content, children, ...rest }) => {
+const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, size, content, children, ...rest }) => {
   return (
     <Tippy
       touch={false}
       hideOnClick={false}
       placement={placement}
-      content={
-        <TooltipInner className={className} style={style} placement={placement}>
-          {content}
-        </TooltipInner>
-      }
+      content={<TooltipInner className={className} style={style} placement={placement} size={size} content={content} />}
       // https://github.com/FezVrasta/popper.js/issues/535
       popperOptions={{
         modifiers: {
@@ -48,6 +45,7 @@ const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, content,
 Tooltip.defaultProps = {
   className: undefined,
   style: undefined,
+  size: 'sm',
   placement: 'top',
 };
 

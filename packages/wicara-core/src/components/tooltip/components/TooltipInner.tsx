@@ -1,10 +1,20 @@
+import * as React from 'react';
 import styled, { css } from 'styled-components';
-import { colors, space, typeScale } from '../../../utils';
+import { variant } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get';
+
+import { colors, space } from '../../../utils';
+import { Text, Paragraph } from '../../../foundations';
 
 export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
+export type TooltipSize = 'sm' | 'md' | 'lg';
 
 export interface TooltipInnerProps {
+  className?: string;
+  style?: React.CSSProperties;
+  content: string | React.ReactNode;
   placement?: TooltipPlacement;
+  size?: TooltipSize;
 }
 
 function determineMargins(placement?: TooltipPlacement) {
@@ -37,21 +47,58 @@ function determineMargins(placement?: TooltipPlacement) {
   }
 }
 
-const TooltipInner = styled('div')<TooltipInnerProps>`
-  max-width: 200px;
-  padding: 8px;
+const Root = styled('div')<Omit<TooltipInnerProps, 'content'>>`
+  ${variant({
+    prop: 'size',
+    variants: {
+      sm: {
+        py: 'xxs',
+        px: 'md',
+        maxWidth: 200,
+      },
+      md: {
+        p: 'md',
+        maxWidth: 200,
+      },
+      lg: {
+        p: 'md',
+        maxWidth: 200,
+      },
+    },
+  })}
   text-align: left;
   vertical-align: middle;
   border-radius: 4px;
-  font-size: ${typeScale.small.fontSize}px;
-  line-height: ${typeScale.small.lineHeight}px;
-  letter-spacing: 0.2px;
 
-  color: ${colors.gray30};
-  background-color: ${colors.gray80};
+  color: ${themeGet('colors.text-inverse', colors['text-inverse'])};
+  background-color: ${themeGet('colors.grey09', colors.grey09)};
 
   ${props => determineMargins(props.placement)}
 `;
+
+const TooltipInner: React.FC<TooltipInnerProps> = ({ className, style, content, size, placement }) => {
+  const renderContent = () => {
+    if (typeof content === 'string') {
+      if (size === 'sm') {
+        return <Text scale={300}>{content}</Text>;
+      }
+
+      return (
+        <Paragraph scale={300} m={0}>
+          {content}
+        </Paragraph>
+      );
+    }
+
+    return content;
+  };
+
+  return (
+    <Root className={className} style={style} placement={placement} size={size}>
+      {renderContent()}
+    </Root>
+  );
+};
 
 TooltipInner.displayName = 'TooltipInner';
 
