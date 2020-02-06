@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-import reboot from '../styles/reboot';
+import normalize from '../styles/normalize';
 import base from '../styles/base';
 import spacing from '../styles/spacing';
 
 const GlobalStyles = createGlobalStyle`
-${reboot}
+${normalize}
 ${base}
 ${spacing}
 `;

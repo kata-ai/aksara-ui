@@ -14,7 +14,7 @@ const ColorSwatch: React.FC<ColorSwatchProps> = ({ title, colorKey, hex, hasBord
       bg={hex}
       height={64}
       border="1px solid"
-      borderColor={hasBorder ? 'gray30' : 'transparent'}
+      borderColor={hasBorder ? 'grey03' : 'transparent'}
     />
     <Box display="flex" flexDirection="row" justifyContent="space-between" mt="xxs">
       <Box>

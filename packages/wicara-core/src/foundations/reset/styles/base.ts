@@ -9,6 +9,21 @@ const base = css`
     height: 100%;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
   body {
     font-family: ${fonts.system};
     background-color: ${colors.gray10};
