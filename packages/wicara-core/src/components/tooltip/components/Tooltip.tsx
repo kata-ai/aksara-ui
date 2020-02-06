@@ -22,18 +22,28 @@ TooltipTarget.displayName = 'TooltipTarget';
 
 const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, size, content, children, ...rest }) => {
   const [visible, setVisible] = React.useState(false);
+  const [focused, setFocused] = React.useState(false);
 
   const handleTooltipEnter = () => {
-    setTimeout(() => {
-      setVisible(true);
-    }, 300);
+    setFocused(true);
   };
 
   const handleTooltipExit = () => {
-    setTimeout(() => {
-      setVisible(false);
-    }, 300);
+    setFocused(false);
   };
+
+  React.useEffect(() => {
+    const timeout = setTimeout(
+      () => {
+        setVisible(focused);
+      },
+      focused ? 300 : 0
+    );
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [focused]);
 
   return (
     <Tippy
