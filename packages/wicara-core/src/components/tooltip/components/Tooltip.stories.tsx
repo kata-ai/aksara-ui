@@ -14,7 +14,7 @@ story.add(
   'default',
   () => (
     <SystemBlock title="Tooltip" subtitle="Provides additional descriptions to elements.">
-      <ComponentBlock title="Default">
+      <ComponentBlock title="Default (size small)">
         <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
           <Box>
             <Tooltip placement="top" content="Tooltip text">
@@ -38,6 +38,142 @@ story.add(
           </Box>
         </Box>
       </ComponentBlock>
+      <ComponentBlock title="Default (size medium)">
+        <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
+          <Box>
+            <Tooltip placement="top" size="md" content="This is a medium tooltip which renders slightly more content.">
+              <Text>Top</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="right"
+              size="md"
+              content="This is a medium tooltip which renders slightly more content."
+            >
+              <Text>Right</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="bottom"
+              size="md"
+              content="This is a medium tooltip which renders slightly more content."
+            >
+              <Text>Bottom</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip placement="left" size="md" content="This is a medium tooltip which renders slightly more content.">
+              <Text>Left</Text>
+            </Tooltip>
+          </Box>
+        </Box>
+      </ComponentBlock>
+      <ComponentBlock title="Default (size large)">
+        <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
+          <Box>
+            <Tooltip
+              placement="top"
+              size="lg"
+              content={
+                <>
+                  <Paragraph scale={300}>
+                    This is an even larger tooltip which can even hold entire blocks of content.
+                  </Paragraph>
+                  <Paragraph scale={300} mb={0}>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
+                  </Paragraph>
+                </>
+              }
+            >
+              <Text>Top</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="right"
+              size="lg"
+              content={
+                <>
+                  <Paragraph scale={300}>
+                    This is an even larger tooltip which can even hold entire blocks of content.
+                  </Paragraph>
+                  <Paragraph scale={300} mb={0}>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
+                  </Paragraph>
+                </>
+              }
+            >
+              <Text>Right</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="bottom"
+              size="lg"
+              content={
+                <>
+                  <Paragraph scale={300}>
+                    This is an even larger tooltip which can even hold entire blocks of content.
+                  </Paragraph>
+                  <Paragraph scale={300} mb={0}>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
+                  </Paragraph>
+                </>
+              }
+            >
+              <Text>Bottom</Text>
+            </Tooltip>
+          </Box>
+          <Box>
+            <Tooltip
+              placement="left"
+              size="lg"
+              content={
+                <>
+                  <Paragraph scale={300}>
+                    This is an even larger tooltip which can even hold entire blocks of content.
+                  </Paragraph>
+                  <Paragraph scale={300} mb={0}>
+                    <a
+                      style={{ color: 'white', textDecoration: 'underline' }}
+                      href="https://www.youtube.com/watch?v=p8MLqBcwJJY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Go to link
+                    </a>
+                  </Paragraph>
+                </>
+              }
+            >
+              <Text>Left</Text>
+            </Tooltip>
+          </Box>
+        </Box>
+      </ComponentBlock>
       <ComponentBlock title="Custom Content">
         <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
           <Box>
@@ -45,7 +181,7 @@ story.add(
               placement="top"
               content={
                 <>
-                  <Heading as="h5" scale={300} color="white">
+                  <Heading as="h5" scale={300} color="white" m={0}>
                     Tooltip custom heading
                   </Heading>
                   <Paragraph scale={300} m={0}>
