@@ -100,7 +100,7 @@ const systemColors = {
   indigo07: '#001771',
   /** Indigo08 - Royal Blue */
   indigo08: '#001258',
-  /** Indigo09 - Maastricht Blue */
+  /** Indigo09 - Maastricht Indigo */
   indigo09: '#000d3f',
   /** Indigo10 - Black Indigo */
   indigo10: '#000826',
