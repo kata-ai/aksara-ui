@@ -26,15 +26,15 @@ const Paragraph = styled(Typography)<ParagraphProps>`
     scale: 'componentStyles.paragraph',
     variants: {
       400: {},
-      300: {}
-    }
+      300: {},
+    },
   })}
 `;
 
 Paragraph.defaultProps = {
   as: 'p',
   scale: 400,
-  letterSpacing: '-0.05px'
+  letterSpacing: '-0.05px',
 };
 
 Paragraph.displayName = 'Paragraph';

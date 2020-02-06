@@ -16,10 +16,7 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <SystemBlock
-        title="Side Sheet"
-        subtitle="Dialogs that pop out from the right side of the screen."
-      >
+      <SystemBlock title="Side Sheet" subtitle="Dialogs that pop out from the right side of the screen.">
         <Text as="p">Click the button below to open the side sheet.</Text>
         <button type="button" onClick={() => setIsOpen(!isOpen)}>
           Toggle Side Sheet
@@ -33,7 +30,7 @@ story.add(
     );
   },
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -43,10 +40,7 @@ story.add(
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-      <SystemBlock
-        title="Side Sheet"
-        subtitle="Dialogs that pop out from the right side of the screen."
-      >
+      <SystemBlock title="Side Sheet" subtitle="Dialogs that pop out from the right side of the screen.">
         <Text as="p">Click the button below to open the side sheet.</Text>
         <button type="button" onClick={() => setIsOpen(!isOpen)}>
           Toggle Side Sheet
@@ -60,6 +54,6 @@ story.add(
     );
   },
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

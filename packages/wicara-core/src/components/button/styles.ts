@@ -11,7 +11,7 @@ import {
   ButtonSmall,
   ButtonMedium,
   ButtonLarge,
-  InverseButton
+  InverseButton,
 } from './utils/buttonUtils';
 import {
   FloatingButtonSmall,
@@ -20,7 +20,7 @@ import {
   FloatingButtonPrimary,
   FloatingButtonSuccess,
   FloatingButtonWarning,
-  FloatingButtonDestructive
+  FloatingButtonDestructive,
 } from './utils/floatingButtonUtils';
 import {
   IconButtonDefault,
@@ -29,7 +29,7 @@ import {
   IconButtonDestructive,
   IconButtonGhost,
   iconButtonSizes,
-  iconSizes
+  iconSizes,
 } from './utils/iconButtonUtils';
 import {
   OutlineButtonSmall,
@@ -39,14 +39,9 @@ import {
   OutlineButtonPrimary,
   OutlineButtonSuccess,
   OutlineButtonWarning,
-  OutlineButtonDestructive
+  OutlineButtonDestructive,
 } from './utils/outlineButtonUtils';
-import {
-  OutlineButtonBaseProps,
-  ButtonBaseProps,
-  IconButtonBaseProps,
-  FloatingButtonBaseProps
-} from './types';
+import { OutlineButtonBaseProps, ButtonBaseProps, IconButtonBaseProps, FloatingButtonBaseProps } from './types';
 
 export const ButtonBase = css`
   margin: 0;

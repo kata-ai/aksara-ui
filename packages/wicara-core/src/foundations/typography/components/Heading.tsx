@@ -33,15 +33,15 @@ const Heading = styled(Typography)<HeadingProps>`
       400: {},
       300: {},
       200: {},
-      100: {}
-    }
+      100: {},
+    },
   })}
 `;
 
 Heading.defaultProps = {
   as: 'h2',
   color: 'gray80',
-  scale: 800
+  scale: 800,
 };
 
 Heading.displayName = 'Heading';

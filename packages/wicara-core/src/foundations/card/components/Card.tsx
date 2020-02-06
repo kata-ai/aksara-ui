@@ -21,8 +21,8 @@ const Card = styled(Box)<CardProps>`
       2: {},
       3: {},
       4: {},
-      5: {}
-    }
+      5: {},
+    },
   })}
 `;
 
@@ -30,7 +30,7 @@ Card.defaultProps = {
   backgroundColor: 'white',
   borderRadius: 'md',
   overflow: 'hidden',
-  elevation: 1
+  elevation: 1,
 };
 
 Card.displayName = 'Card';

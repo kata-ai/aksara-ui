@@ -26,7 +26,7 @@ const Badge: React.FC<BadgeProps> = ({ className, style, variant, children }) =>
 Badge.defaultProps = {
   variant: 'entity',
   className: undefined,
-  style: undefined
+  style: undefined,
 };
 
 Badge.displayName = 'Badge';

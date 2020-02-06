@@ -10,15 +10,7 @@ export interface FormErrorProps extends TextProps {
 }
 
 const FormError: React.SFC<FormErrorProps> = ({ className, style, children, ...rest }) => (
-  <Text
-    className={className}
-    style={style}
-    display="block"
-    scale={300}
-    color="red"
-    mt="xxs"
-    {...rest}
-  >
+  <Text className={className} style={style} display="block" scale={300} color="red" mt="xxs" {...rest}>
     {children}
   </Text>
 );

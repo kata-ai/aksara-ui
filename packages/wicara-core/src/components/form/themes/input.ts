@@ -9,19 +9,19 @@ const defaultTheme = {
   mutedTextColor: colors.gray50,
   borderColor: colors.gray30,
   borderColorHover: colors.kataBlue,
-  focusOutlineColor: colors.softKataBlue
+  focusOutlineColor: colors.softKataBlue,
 };
 
 const error = {
   ...defaultTheme,
   borderColor: colors.red,
   borderColorHover: colors.red,
-  focusOutlineColor: lighten(0.3, colors.red)
+  focusOutlineColor: lighten(0.3, colors.red),
 };
 
 const inputThemes = {
   defaultTheme,
-  error
+  error,
 };
 
 export default inputThemes;

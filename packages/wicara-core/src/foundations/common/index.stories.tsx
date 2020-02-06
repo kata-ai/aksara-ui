@@ -13,25 +13,17 @@ storiesOf('Core|Foundations/Common', module)
     () => (
       <WicaraProvider>
         <Box padding="sm">
-          <a
-            href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.youtube.com/watch?v=ORyw6TGLBvk" target="_blank" rel="noopener noreferrer">
             I&apos;m an anchor!
           </a>{' '}
-          <UnstyledAnchor
-            href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <UnstyledAnchor href="https://www.youtube.com/watch?v=ORyw6TGLBvk" target="_blank" rel="noopener noreferrer">
             I&apos;m an unstyled anchor!
           </UnstyledAnchor>
         </Box>
       </WicaraProvider>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   )
   .add(
@@ -45,6 +37,6 @@ storiesOf('Core|Foundations/Common', module)
       </WicaraProvider>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   );

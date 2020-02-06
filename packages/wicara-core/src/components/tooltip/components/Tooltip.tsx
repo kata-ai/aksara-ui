@@ -19,14 +19,7 @@ const TooltipTarget = styled('span')`
 
 TooltipTarget.displayName = 'TooltipTarget';
 
-const Tooltip: React.FC<TooltipProps> = ({
-  className,
-  style,
-  placement,
-  content,
-  children,
-  ...rest
-}) => {
+const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, content, children, ...rest }) => {
   return (
     <Tippy
       touch={false}
@@ -41,9 +34,9 @@ const Tooltip: React.FC<TooltipProps> = ({
       popperOptions={{
         modifiers: {
           preventOverflow: {
-            boundariesElement: 'window'
-          }
-        }
+            boundariesElement: 'window',
+          },
+        },
       }}
       {...rest}
     >
@@ -55,7 +48,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 Tooltip.defaultProps = {
   className: undefined,
   style: undefined,
-  placement: 'top'
+  placement: 'top',
 };
 
 Tooltip.displayName = 'Tooltip';

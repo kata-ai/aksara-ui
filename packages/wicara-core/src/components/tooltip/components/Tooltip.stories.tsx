@@ -120,6 +120,6 @@ story.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

@@ -70,7 +70,7 @@ const Skeleton: React.FC<SkeletonProps> = ({ className, numberOfLines, small }) 
 };
 
 Skeleton.defaultProps = {
-  numberOfLines: 1
+  numberOfLines: 1,
 };
 
 Skeleton.displayName = 'Skeleton';

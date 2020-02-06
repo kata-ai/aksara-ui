@@ -8,7 +8,7 @@ import {
   InputGroup,
   InputAddon,
   FormHelp,
-  FormError
+  FormError,
 } from './components';
 
 describe('components/Form', () => {

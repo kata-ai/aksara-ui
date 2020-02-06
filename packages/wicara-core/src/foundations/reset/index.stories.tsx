@@ -51,12 +51,7 @@ storiesOf('Core|Foundations/Theme', module)
           <div>
             <label htmlFor={testLabelId}>
               Test input
-              <input
-                id={testLabelId}
-                name={testLabelId}
-                type="text"
-                placeholder="Type something..."
-              />
+              <input id={testLabelId} name={testLabelId} type="text" placeholder="Type something..." />
             </label>
           </div>
 
@@ -64,23 +59,19 @@ storiesOf('Core|Foundations/Theme', module)
 
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus quos animi{' '}
-            <a href="https://www.youtube.com/watch?v=ERU9ZtTs3Fk">necessitatibus</a> dolore ea.
-            Officia dolor soluta ut possimus non vero sint tenetur illo nulla, reiciendis quisquam
-            fugiat. Est, quidem.
+            <a href="https://www.youtube.com/watch?v=ERU9ZtTs3Fk">necessitatibus</a> dolore ea. Officia dolor soluta ut
+            possimus non vero sint tenetur illo nulla, reiciendis quisquam fugiat. Est, quidem.
           </p>
         </WicaraProvider>
       );
     },
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   )
   .add('colors', () => {
     return (
-      <SystemBlock
-        title="Colors"
-        subtitle="These are the primary colors used within the Aksara system."
-      >
+      <SystemBlock title="Colors" subtitle="These are the primary colors used within the Aksara system.">
         <SystemSubheading>Primary</SystemSubheading>
         <ColorSwatchGrid>
           <ColorSwatch title="Glitter" colorKey="blue01" hex={colors.blue01} />

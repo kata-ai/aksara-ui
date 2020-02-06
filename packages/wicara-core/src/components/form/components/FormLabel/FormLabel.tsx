@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 import { InputBaseProps, LabelBase } from '../../styles';
 
-export interface FormLabelProps
-  extends InputBaseProps,
-    React.LabelHTMLAttributes<HTMLLabelElement> {}
+export interface FormLabelProps extends InputBaseProps, React.LabelHTMLAttributes<HTMLLabelElement> {}
 
 const Label = styled('label')`
   ${LabelBase};
@@ -20,7 +18,7 @@ const FormLabel: React.FC<FormLabelProps> = ({ className, children, errors, ...r
 };
 
 FormLabel.defaultProps = {
-  errors: false
+  errors: false,
 };
 
 FormLabel.displayName = 'FormLabel';

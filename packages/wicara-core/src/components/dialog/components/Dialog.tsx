@@ -107,13 +107,13 @@ class Dialog extends React.Component<DialogProps, DialogState> {
     style: undefined,
     enableFocusTrap: false,
     disableOverlayClick: false,
-    isOpen: false
+    isOpen: false,
   };
 
   constructor(props: DialogProps) {
     super(props);
     this.state = {
-      isOpen: props.isOpen
+      isOpen: props.isOpen,
     };
 
     this.handleCloseSideSheet = this.handleCloseSideSheet.bind(this);
@@ -123,7 +123,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
 
   static getDerivedStateFromProps(props: DialogProps) {
     return {
-      isOpen: props.isOpen
+      isOpen: props.isOpen,
     };
   }
 
@@ -167,23 +167,11 @@ class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   renderInnerContent = (state: TransitionStatus) => {
-    const {
-      labelledById,
-      hideCloseButton,
-      children,
-      maxWidth,
-      width,
-      height,
-      maxHeight
-    } = this.props;
+    const { labelledById, hideCloseButton, children, maxWidth, width, height, maxHeight } = this.props;
     const { isOpen } = this.state;
 
     return (
-      <DialogOverlay
-        className={clsx(isOpen && 'entered')}
-        data-state={state}
-        onClick={this.handleOverlayClick}
-      >
+      <DialogOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <DialogWrapper
           className={clsx(isOpen && 'entered')}
           display="flex"
@@ -203,12 +191,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           data-state={state}
         >
           {!hideCloseButton && (
-            <CloseButton
-              type="button"
-              aria-label="Close"
-              variant="ghost"
-              onClick={this.handleCloseSideSheet}
-            >
+            <CloseButton type="button" aria-label="Close" variant="ghost" onClick={this.handleCloseSideSheet}>
               <i className="icon-close" />
             </CloseButton>
           )}
@@ -230,7 +213,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
             in={isOpen}
             timeout={{
               enter: ANIMATION_DURATION,
-              exit: ANIMATION_DURATION
+              exit: ANIMATION_DURATION,
             }}
             unmountOnExit
           >
@@ -251,7 +234,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           in={isOpen}
           timeout={{
             enter: ANIMATION_DURATION,
-            exit: ANIMATION_DURATION
+            exit: ANIMATION_DURATION,
           }}
           unmountOnExit
         >

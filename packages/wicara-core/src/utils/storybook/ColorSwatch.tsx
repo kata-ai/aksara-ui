@@ -10,12 +10,7 @@ interface ColorSwatchProps {
 
 const ColorSwatch: React.FC<ColorSwatchProps> = ({ title, colorKey, hex, hasBorder }) => (
   <Box>
-    <Box
-      bg={hex}
-      height={64}
-      border="1px solid"
-      borderColor={hasBorder ? 'grey03' : 'transparent'}
-    />
+    <Box bg={hex} height={64} border="1px solid" borderColor={hasBorder ? 'grey03' : 'transparent'} />
     <Box display="flex" flexDirection="row" justifyContent="space-between" mt="xxs">
       <Box>
         <Heading as="h5" scale={300} color="grey09" fontWeight={700} m={0}>

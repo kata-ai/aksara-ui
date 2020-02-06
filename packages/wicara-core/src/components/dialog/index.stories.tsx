@@ -32,17 +32,13 @@ story.add(
           </Box>
           <Box mb="lg" mx="lg">
             <Paragraph m={0}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen
-              simplicia, vestra versuta.{' '}
-              <a
-                href="https://www.youtube.com/watch?v=DvKhRkE4VlY"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
+              versuta.{' '}
+              <a href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
                 Quamquam tu hanc copiosiorem etiam soles dicere
               </a>
-              . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur
-              haec: vacuitas doloris, divitiae, valitudo.
+              . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
+              doloris, divitiae, valitudo.
             </Paragraph>
           </Box>
         </Dialog>
@@ -50,7 +46,7 @@ story.add(
     );
   },
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -65,12 +61,7 @@ story.add(
         <button type="button" onClick={() => setIsOpen(!isOpen)}>
           Toggle Dialog
         </button>
-        <Dialog
-          labelledById="stories-title"
-          enableFocusTrap
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-        >
+        <Dialog labelledById="stories-title" enableFocusTrap isOpen={isOpen} onClose={() => setIsOpen(false)}>
           <Box display="flex" alignItems="center" my="md" mx="lg">
             <Heading id="stories-title" scale={500} lineHeight="32px" m={0}>
               Focus Trap Example
@@ -78,17 +69,13 @@ story.add(
           </Box>
           <Box mb="lg" mx="lg">
             <Paragraph m={0}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen
-              simplicia, vestra versuta.{' '}
-              <a
-                href="https://www.youtube.com/watch?v=DvKhRkE4VlY"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
+              versuta.{' '}
+              <a href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
                 Quamquam tu hanc copiosiorem etiam soles dicere
               </a>
-              . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur
-              haec: vacuitas doloris, divitiae, valitudo.
+              . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
+              doloris, divitiae, valitudo.
             </Paragraph>
           </Box>
         </Dialog>
@@ -96,6 +83,6 @@ story.add(
     );
   },
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

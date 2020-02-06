@@ -19,6 +19,7 @@
     "build": "yarn storybook:build",
     "clean": "rimraf lib && rimraf tsc-out",
     "compile": "yarn clean && yarn rollup",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "yarn compile",
     "report-coverage": "codecov -f ./coverage/*.json",

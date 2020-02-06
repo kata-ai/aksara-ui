@@ -31,7 +31,7 @@ const Avatar: React.FC<AvatarProps> = ({ src, size, className, style, alt }) => 
 
 Avatar.defaultProps = {
   size: 40,
-  alt: ''
+  alt: '',
 };
 
 Avatar.displayName = 'Avatar';

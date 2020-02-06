@@ -47,7 +47,7 @@ storiesOf('Core|Foundations/Typography', module)
       </SystemBlock>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   )
   .add(
@@ -72,7 +72,7 @@ storiesOf('Core|Foundations/Typography', module)
       </SystemBlock>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   )
   .add(
@@ -84,27 +84,25 @@ storiesOf('Core|Foundations/Typography', module)
       >
         <ComponentBlock title="Paragraph 400">
           <Paragraph scale={400}>
-            We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on
-            understanding human conversation so we can improve the way humans collaborate with
-            technology to be more productive and empowered. Kata.ai’s Natural Language Processing
-            (NLP) technology powers multi-purpose chatbots for major corporations in Indonesia
-            across different industries, including FMCG, Telecommunication, Banking & Financial
-            Service, and Retail.
+            We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on understanding human
+            conversation so we can improve the way humans collaborate with technology to be more productive and
+            empowered. Kata.ai’s Natural Language Processing (NLP) technology powers multi-purpose chatbots for major
+            corporations in Indonesia across different industries, including FMCG, Telecommunication, Banking &
+            Financial Service, and Retail.
           </Paragraph>
         </ComponentBlock>
         <ComponentBlock title="Paragraph 400">
           <Paragraph scale={300}>
-            We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on
-            understanding human conversation so we can improve the way humans collaborate with
-            technology to be more productive and empowered. Kata.ai’s Natural Language Processing
-            (NLP) technology powers multi-purpose chatbots for major corporations in Indonesia
-            across different industries, including FMCG, Telecommunication, Banking & Financial
-            Service, and Retail.
+            We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on understanding human
+            conversation so we can improve the way humans collaborate with technology to be more productive and
+            empowered. Kata.ai’s Natural Language Processing (NLP) technology powers multi-purpose chatbots for major
+            corporations in Indonesia across different industries, including FMCG, Telecommunication, Banking &
+            Financial Service, and Retail.
           </Paragraph>
         </ComponentBlock>
       </SystemBlock>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   );

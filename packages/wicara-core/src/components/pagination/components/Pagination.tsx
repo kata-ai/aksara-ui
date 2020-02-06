@@ -43,10 +43,7 @@ class Pagination extends React.Component<PaginationProps> {
     let endPage: number;
 
     if (maxButtons && maxButtons < total) {
-      startPage = Math.max(
-        Math.min(current - Math.floor(maxButtons / 2), total - maxButtons + 1),
-        1
-      );
+      startPage = Math.max(Math.min(current - Math.floor(maxButtons / 2), total - maxButtons + 1), 1);
       endPage = startPage + maxButtons - 1;
     } else {
       startPage = 1;
@@ -91,11 +88,7 @@ class Pagination extends React.Component<PaginationProps> {
 
     return (
       <PaginationBase className={className}>
-        <PaginationButton
-          color="white"
-          disabled={current === 1}
-          onClick={() => this.handleSelectPage(current - 1)}
-        >
+        <PaginationButton color="white" disabled={current === 1} onClick={() => this.handleSelectPage(current - 1)}>
           &laquo;
         </PaginationButton>
         {pages.map((page, index) => (
@@ -109,11 +102,7 @@ class Pagination extends React.Component<PaginationProps> {
             {page}
           </PaginationButton>
         ))}
-        <PaginationButton
-          color="white"
-          disabled={current === total}
-          onClick={() => this.handleSelectPage(current + 1)}
-        >
+        <PaginationButton color="white" disabled={current === total} onClick={() => this.handleSelectPage(current + 1)}>
           &raquo;
         </PaginationButton>
       </PaginationBase>

@@ -3,9 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { InputBaseProps, InputBase } from '../../styles';
 
-export interface InputTextareaProps
-  extends InputBaseProps,
-    React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface InputTextareaProps extends InputBaseProps, React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /** True if this text input has an addon style */
   addon?: boolean;
 }
@@ -33,7 +31,7 @@ const InputTextarea: React.FC<InputTextareaProps> = ({ className, errors, addon,
 
 InputTextarea.defaultProps = {
   errors: false,
-  addon: false
+  addon: false,
 };
 
 InputTextarea.displayName = 'InputTextarea';

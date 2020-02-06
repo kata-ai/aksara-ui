@@ -5,7 +5,7 @@ module.exports = {
     '!src/**/*.story.{ts,tsx}',
     '!src/**/index.{ts,tsx}',
     '!src/utils/storybook/**/*.{ts,tsx}',
-    '!src/index.{ts,tsx}'
+    '!src/index.{ts,tsx}',
   ],
   coverageReporters: ['json', 'lcov'],
   moduleDirectories: ['node_modules', '<rootDir>/src'],
@@ -16,6 +16,6 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx|mjs)$': 'babel-jest',
     '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
-    '^(?!.*\\.(js|jsx|ts|tsx|mjs|css|json)$)': '<rootDir>/config/jest/fileTransform.js'
-  }
+    '^(?!.*\\.(js|jsx|ts|tsx|mjs|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
+  },
 };

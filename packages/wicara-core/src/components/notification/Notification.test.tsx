@@ -16,7 +16,7 @@ describe('components/Notification', () => {
               message: 'Hello world! This is a toaster',
               status: 'success',
               dismissible: true,
-              dismissAfter: 5000
+              dismissAfter: 5000,
             });
           }}
         >
@@ -41,7 +41,7 @@ describe('components/Notification', () => {
               message: 'Hello world! This is a toaster',
               status: 'success',
               dismissible: true,
-              dismissAfter: 5000
+              dismissAfter: 5000,
             });
           }}
         >

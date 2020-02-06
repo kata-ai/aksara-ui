@@ -19,7 +19,7 @@ storiesOf('Core|Foundations/Portal', module)
       </Portal>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   )
   .add(
@@ -39,6 +39,6 @@ storiesOf('Core|Foundations/Portal', module)
       </>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   );

@@ -11,16 +11,9 @@ const stories = storiesOf('Core|Components/Banner', module).addDecorator(SystemW
 stories.add(
   'basic',
   () => (
-    <SystemBlock
-      title="Banner"
-      subtitle="Banners are used to convey important information to users."
-    >
+    <SystemBlock title="Banner" subtitle="Banners are used to convey important information to users.">
       <ComponentBlock title="Usage">
-        <Banner
-          style={{ marginBottom: 8 }}
-          message="A banner! - You've succesfully read it."
-          state="success"
-        />
+        <Banner style={{ marginBottom: 8 }} message="A banner! - You've succesfully read it." state="success" />
         <Banner
           style={{ marginBottom: 8 }}
           message="This banner shows information that isn't critical, but worth knowing."
@@ -30,15 +23,12 @@ stories.add(
           style={{ marginBottom: 8 }}
           message="Uh oh, something's not right with this banner - try fixing some things?"
         />
-        <Banner
-          message="Heads up - this banner isn't looking good, tread with caution."
-          state="warning"
-        />
+        <Banner message="Heads up - this banner isn't looking good, tread with caution." state="warning" />
       </ComponentBlock>
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -48,10 +38,7 @@ stories.add(
     const [isOpen, setIsOpen] = React.useState(true);
 
     return (
-      <SystemBlock
-        title="Closable Banner"
-        subtitle="Add an 'onClose' prop to add a close button handler"
-      >
+      <SystemBlock title="Closable Banner" subtitle="Add an 'onClose' prop to add a close button handler">
         <ComponentBlock title="Usage">
           {isOpen ? (
             <Banner
@@ -69,6 +56,6 @@ stories.add(
     );
   },
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

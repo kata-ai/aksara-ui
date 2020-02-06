@@ -125,14 +125,14 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
     status: 'default',
     position: 'br',
     dismissible: false,
-    dismissAfter: 5000
+    dismissAfter: 5000,
   };
 
   constructor(props: ToasterSettings) {
     super(props);
 
     this.state = {
-      isOpen: true
+      isOpen: true,
     };
   }
 
@@ -192,7 +192,7 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
   private close = () => {
     this.clearCloseTimer();
     this.setState({
-      isOpen: false
+      isOpen: false,
     });
   };
 
@@ -206,7 +206,7 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
         in={isOpen}
         timeout={{
           enter: ANIMATION_DURATION + 100,
-          exit: ANIMATION_DURATION + 400
+          exit: ANIMATION_DURATION + 400,
         }}
         unmountOnExit
         onExited={onRemove}

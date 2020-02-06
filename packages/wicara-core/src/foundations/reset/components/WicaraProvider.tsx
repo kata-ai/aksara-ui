@@ -24,9 +24,7 @@ WicaraProvider.displayName = 'WicaraProvider';
  */
 export const WicaraReset: React.FC<WicaraProviderProps> = ({ ...rest }) => {
   // eslint-disable-next-line no-console
-  console.warn(
-    '`WicaraReset` has been deprecated in favour of `WicaraProvider`. Please use that instead.'
-  );
+  console.warn('`WicaraReset` has been deprecated in favour of `WicaraProvider`. Please use that instead.');
 
   return <WicaraProvider {...rest} />;
 };

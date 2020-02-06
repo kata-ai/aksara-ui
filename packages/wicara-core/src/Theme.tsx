@@ -10,7 +10,7 @@ import {
   mediaQueries,
   shadows,
   radii,
-  componentStyles
+  componentStyles,
 } from './utils';
 
 export const themeProps = {
@@ -27,7 +27,7 @@ export const themeProps = {
   // Custom theme props based on custom component variants.
   typeScale,
   elevation,
-  componentStyles
+  componentStyles,
 };
 
 export const Theme: React.FC = ({ children }) => {

@@ -10,6 +10,6 @@ export default function determineFontDimensions(scale: TypeScale) {
 
   return {
     fontSize: `${match.fontSize}px`,
-    lineHeight: `${match.lineHeight}px`
+    lineHeight: `${match.lineHeight}px`,
   };
 }

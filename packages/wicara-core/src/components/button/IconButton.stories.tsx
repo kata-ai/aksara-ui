@@ -15,12 +15,7 @@ stories
     () => (
       <SystemBlock title="Icon Button" subtitle="Icon-only buttons.">
         <ComponentBlock title="Default Button">
-          <IconButton
-            type="button"
-            style={{ marginRight: 16 }}
-            aria-label="Push Me"
-            onClick={action('button-click')}
-          >
+          <IconButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
           <IconButton type="button" disabled aria-label="Push Me" onClick={action('button-click')}>
@@ -37,13 +32,7 @@ stories
           >
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
-          <IconButton
-            type="button"
-            disabled
-            variant="primary"
-            aria-label="Push Me"
-            onClick={action('button-click')}
-          >
+          <IconButton type="button" disabled variant="primary" aria-label="Push Me" onClick={action('button-click')}>
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
@@ -57,13 +46,7 @@ stories
           >
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
-          <IconButton
-            type="button"
-            disabled
-            variant="support"
-            aria-label="Push Me"
-            onClick={action('button-click')}
-          >
+          <IconButton type="button" disabled variant="support" aria-label="Push Me" onClick={action('button-click')}>
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
@@ -97,20 +80,14 @@ stories
           >
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
-          <IconButton
-            type="button"
-            disabled
-            variant="ghost"
-            aria-label="Push Me"
-            onClick={action('button-click')}
-          >
+          <IconButton type="button" disabled variant="ghost" aria-label="Push Me" onClick={action('button-click')}>
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
       </SystemBlock>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   )
   .add(
@@ -127,19 +104,13 @@ stories
           >
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
-          <IconButton
-            type="button"
-            aria-label="Push Me"
-            size="md"
-            variant="support"
-            onClick={action('button-click')}
-          >
+          <IconButton type="button" aria-label="Push Me" size="md" variant="support" onClick={action('button-click')}>
             <i className="icon-add" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
       </SystemBlock>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   );

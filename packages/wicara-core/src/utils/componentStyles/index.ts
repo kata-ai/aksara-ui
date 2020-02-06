@@ -5,7 +5,7 @@ const componentStyles = {
   card,
   heading,
   paragraph,
-  text
+  text,
 };
 
 export default componentStyles;

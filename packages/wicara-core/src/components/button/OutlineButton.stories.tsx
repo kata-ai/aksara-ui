@@ -7,21 +7,14 @@ import OutlineButton from './OutlineButton';
 
 const readme = require('./README.md');
 
-const stories = storiesOf('Core|Components/Button/OutlineButton', module).addDecorator(
-  SystemWrapper
-);
+const stories = storiesOf('Core|Components/Button/OutlineButton', module).addDecorator(SystemWrapper);
 
 stories.add(
   'basic',
   () => (
     <SystemBlock title="Outline Button" subtitle="Outline-styled button for alternate styling.">
       <ComponentBlock title="Default Button">
-        <OutlineButton
-          type="button"
-          style={{ marginRight: 16 }}
-          size="sm"
-          onClick={action('button-click')}
-        >
+        <OutlineButton type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" style={{ marginRight: 16 }} onClick={action('button-click')}>
@@ -38,12 +31,7 @@ stories.add(
         >
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="primary"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <OutlineButton type="button" variant="primary" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </OutlineButton>
       </ComponentBlock>
@@ -57,12 +45,7 @@ stories.add(
         >
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="success"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <OutlineButton type="button" variant="success" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </OutlineButton>
       </ComponentBlock>
@@ -76,12 +59,7 @@ stories.add(
         >
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="warning"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <OutlineButton type="button" variant="warning" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </OutlineButton>
       </ComponentBlock>
@@ -95,29 +73,21 @@ stories.add(
         >
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="destructive"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <OutlineButton type="button" variant="destructive" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </OutlineButton>
       </ComponentBlock>
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
 stories.add(
   'button states',
   () => (
-    <SystemBlock
-      title="Button States"
-      subtitle="Left to right: default, hover, focus, disabled, loading"
-    >
+    <SystemBlock title="Button States" subtitle="Left to right: default, hover, focus, disabled, loading">
       <ComponentBlock title="Default Button">
         <OutlineButton type="button" style={{ marginRight: 16 }}>
           Push Me
@@ -139,20 +109,10 @@ stories.add(
         <OutlineButton type="button" variant="primary" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="primary"
-          className="hover"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="primary" className="hover" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="primary"
-          className="focus"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="primary" className="focus" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="primary" disabled style={{ marginRight: 16 }}>
@@ -166,20 +126,10 @@ stories.add(
         <OutlineButton type="button" variant="success" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="success"
-          className="hover"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="success" className="hover" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="success"
-          className="focus"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="success" className="focus" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="success" disabled style={{ marginRight: 16 }}>
@@ -193,20 +143,10 @@ stories.add(
         <OutlineButton type="button" variant="warning" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="warning"
-          className="hover"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="warning" className="hover" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="warning"
-          className="focus"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="warning" className="focus" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="warning" disabled style={{ marginRight: 16 }}>
@@ -220,20 +160,10 @@ stories.add(
         <OutlineButton type="button" variant="destructive" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="destructive"
-          className="hover"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="destructive" className="hover" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton
-          type="button"
-          variant="destructive"
-          className="focus"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" variant="destructive" className="focus" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="destructive" disabled style={{ marginRight: 16 }}>
@@ -246,7 +176,7 @@ stories.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -260,13 +190,7 @@ stories.add(
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="Loading">
-        <OutlineButton
-          type="button"
-          size="sm"
-          variant="primary"
-          isLoading
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" size="sm" variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="primary" isLoading>
@@ -304,13 +228,7 @@ stories.add(
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="With Icons (block)">
-        <OutlineButton
-          type="button"
-          block
-          variant="primary"
-          icon="add"
-          style={{ marginBottom: 16 }}
-        >
+        <OutlineButton type="button" block variant="primary" icon="add" style={{ marginBottom: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" block variant="primary" icon="add" iconPosition="right">
@@ -318,14 +236,7 @@ stories.add(
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="With Icons loading">
-        <OutlineButton
-          type="button"
-          isLoading
-          variant="primary"
-          icon="add"
-          size="sm"
-          style={{ marginRight: 16 }}
-        >
+        <OutlineButton type="button" isLoading variant="primary" icon="add" size="sm" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" isLoading variant="primary" icon="add">
@@ -335,6 +246,6 @@ stories.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

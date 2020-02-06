@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
@@ -10,13 +12,13 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
     },
     {
       file: pkg.module,
       format: 'es',
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   plugins: [
     autoExternal(),
@@ -28,9 +30,9 @@ export default {
         compilerOptions: {
           sourceMap: true,
           declaration: true,
-          jsx: 'react'
-        }
-      }
-    })
-  ]
+          jsx: 'react',
+        },
+      },
+    }),
+  ],
 };

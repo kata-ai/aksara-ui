@@ -7,17 +7,12 @@ import FloatingButton from './FloatingButton';
 
 const readme = require('./README.md');
 
-const stories = storiesOf('Core|Components/Button/FloatingButton', module).addDecorator(
-  SystemWrapper
-);
+const stories = storiesOf('Core|Components/Button/FloatingButton', module).addDecorator(SystemWrapper);
 
 stories.add(
   'basic',
   () => (
-    <SystemBlock
-      title="Floating Button"
-      subtitle="Floating action buttons for primary context actions."
-    >
+    <SystemBlock title="Floating Button" subtitle="Floating action buttons for primary context actions.">
       <ComponentBlock title="Button Sizes">
         <FloatingButton
           type="button"
@@ -48,12 +43,7 @@ stories.add(
         </FloatingButton>
       </ComponentBlock>
       <ComponentBlock title="Default Button">
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
+        <FloatingButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
           <i className="icon-add" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
@@ -153,6 +143,6 @@ stories.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

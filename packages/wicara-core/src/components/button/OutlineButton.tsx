@@ -5,9 +5,7 @@ import { Circle } from '../loading';
 import { OutlineButtonStyles } from './styles';
 import { OutlineButtonBaseProps, ButtonSizes } from './types';
 
-export interface OutlineButtonProps
-  extends OutlineButtonBaseProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface OutlineButtonProps extends OutlineButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -55,9 +53,7 @@ const Icon = styled('span')<Pick<OutlineButtonProps, 'size' | 'iconPosition'>>`
   top: 0;
   bottom: 0;
   ${props =>
-    props.iconPosition === 'right'
-      ? `right: ${iconPadding(props.size)}px;`
-      : `left: ${iconPadding(props.size)}px;`}
+    props.iconPosition === 'right' ? `right: ${iconPadding(props.size)}px;` : `left: ${iconPadding(props.size)}px;`}
 
   & i {
     display: flex;
@@ -82,22 +78,14 @@ const OutlineButton: React.SFC<OutlineButtonProps> = ({
   const renderIcon = () => {
     if (typeof icon === 'string') {
       return (
-        <Icon
-          iconPosition={iconPosition}
-          size={size}
-          style={isLoading ? { visibility: 'hidden' } : undefined}
-        >
+        <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
           <i className={`icon-${icon}`} />
         </Icon>
       );
     }
 
     return (
-      <Icon
-        iconPosition={iconPosition}
-        size={size}
-        style={isLoading ? { visibility: 'hidden' } : undefined}
-      >
+      <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
         {icon}
       </Icon>
     );
@@ -135,7 +123,7 @@ OutlineButton.defaultProps = {
   icon: undefined,
   iconPosition: 'left',
   variant: 'default',
-  size: 'md'
+  size: 'md',
 };
 
 OutlineButton.displayName = 'OutlineButton';

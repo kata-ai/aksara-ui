@@ -15,12 +15,7 @@ stories.add(
   () => (
     <SystemBlock title="Button" subtitle="It's a button. What more do you expect?">
       <ComponentBlock title="Default Button">
-        <Button
-          type="button"
-          style={{ marginRight: 16 }}
-          size="sm"
-          onClick={action('button-click')}
-        >
+        <Button type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
         <Button type="button" style={{ marginRight: 16 }} onClick={action('button-click')}>
@@ -28,59 +23,26 @@ stories.add(
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Primary Button">
-        <Button
-          type="button"
-          variant="primary"
-          style={{ marginRight: 16 }}
-          size="sm"
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="primary" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button
-          type="button"
-          variant="primary"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="primary" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Support Button">
-        <Button
-          type="button"
-          variant="support"
-          style={{ marginRight: 16 }}
-          size="sm"
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="support" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button
-          type="button"
-          variant="support"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="support" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Link Button">
-        <Button
-          type="button"
-          variant="link"
-          style={{ marginRight: 16 }}
-          size="sm"
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="link" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button
-          type="button"
-          variant="link"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="link" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -94,31 +56,15 @@ stories.add(
         >
           Push Me
         </Button>
-        <Button
-          type="button"
-          variant="destructive"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="destructive" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Ghost Button">
-        <Button
-          type="button"
-          variant="ghost"
-          style={{ marginRight: 16 }}
-          size="sm"
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="ghost" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          style={{ marginRight: 16 }}
-          onClick={action('button-click')}
-        >
+        <Button type="button" variant="ghost" style={{ marginRight: 16 }} onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -133,12 +79,7 @@ stories.add(
           >
             Push Me
           </Button>
-          <Button
-            type="button"
-            variant="inverse"
-            style={{ marginRight: 16 }}
-            onClick={action('button-click')}
-          >
+          <Button type="button" variant="inverse" style={{ marginRight: 16 }} onClick={action('button-click')}>
             Push Me
           </Button>
         </Box>
@@ -146,17 +87,14 @@ stories.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
 stories.add(
   'button states',
   () => (
-    <SystemBlock
-      title="Button States"
-      subtitle="Left to right: default, hover, focus, disabled, loading"
-    >
+    <SystemBlock title="Button States" subtitle="Left to right: default, hover, focus, disabled, loading">
       <ComponentBlock title="Default Button">
         <Button type="button" style={{ marginRight: 16 }}>
           Push Me
@@ -281,7 +219,7 @@ stories.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -303,14 +241,7 @@ stories.add(
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (left)">
-        <Button
-          type="button"
-          size="sm"
-          variant="primary"
-          icon="add"
-          iconPosition="left"
-          style={{ marginRight: 16 }}
-        >
+        <Button type="button" size="sm" variant="primary" icon="add" iconPosition="left" style={{ marginRight: 16 }}>
           Push Me
         </Button>
         <Button type="button" variant="primary" icon="add" iconPosition="left">
@@ -318,14 +249,7 @@ stories.add(
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (right)">
-        <Button
-          type="button"
-          size="sm"
-          variant="primary"
-          icon="add"
-          iconPosition="right"
-          style={{ marginRight: 16 }}
-        >
+        <Button type="button" size="sm" variant="primary" icon="add" iconPosition="right" style={{ marginRight: 16 }}>
           Push Me
         </Button>
         <Button type="button" variant="primary" icon="add" iconPosition="right">
@@ -341,14 +265,7 @@ stories.add(
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons loading">
-        <Button
-          type="button"
-          isLoading
-          variant="primary"
-          icon="add"
-          size="sm"
-          style={{ marginRight: 16 }}
-        >
+        <Button type="button" isLoading variant="primary" icon="add" size="sm" style={{ marginRight: 16 }}>
           Push Me
         </Button>
         <Button type="button" isLoading variant="primary" icon="add">
@@ -358,6 +275,6 @@ stories.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

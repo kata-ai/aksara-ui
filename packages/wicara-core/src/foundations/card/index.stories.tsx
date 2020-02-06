@@ -28,10 +28,7 @@ const ElevationGrid: React.FC = ({ children }) => {
   );
 };
 
-const ElevationDetail: React.FC<{ title: string; description: string }> = ({
-  title,
-  description
-}) => {
+const ElevationDetail: React.FC<{ title: string; description: string }> = ({ title, description }) => {
   return (
     <Box
       display="flex"
@@ -99,7 +96,7 @@ story.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -120,15 +117,15 @@ story.add(
               style={{
                 height: 248,
                 objectFit: 'cover',
-                width: '100%'
+                width: '100%',
               }}
             />
             <Box padding="sm" flex="1 1 auto">
               <Heading scale={600}>An Example Card</Heading>
               <Paragraph marginTop="xs" marginBottom={0}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis
-                doloremque quisquam sequi vel eaque aperiam vitae facere quia atque, hic, unde animi
-                asperiores repudiandae quis ab enim repellat?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis doloremque quisquam
+                sequi vel eaque aperiam vitae facere quia atque, hic, unde animi asperiores repudiandae quis ab enim
+                repellat?
               </Paragraph>
             </Box>
           </Card>
@@ -138,9 +135,9 @@ story.add(
             <Box padding="sm" flex="1 1 auto">
               <Heading scale={600}>An Example Card</Heading>
               <Paragraph marginTop="xs" marginBottom={0}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis
-                doloremque quisquam sequi vel eaque aperiam vitae facere quia atque, hic, unde animi
-                asperiores repudiandae quis ab enim repellat?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis doloremque quisquam
+                sequi vel eaque aperiam vitae facere quia atque, hic, unde animi asperiores repudiandae quis ab enim
+                repellat?
               </Paragraph>
             </Box>
           </Card>
@@ -149,7 +146,7 @@ story.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -201,7 +198,7 @@ story.add(
             <OutlineButton
               icon="view"
               style={{
-                marginRight: 8
+                marginRight: 8,
               }}
               type="button"
               variant="primary"
@@ -217,6 +214,6 @@ story.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

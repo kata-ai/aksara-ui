@@ -34,7 +34,7 @@ export default class NotificationManager extends React.PureComponent<Props, Stat
     props.bindToaster(this.toaster);
 
     this.state = {
-      toasts: []
+      toasts: [],
     };
   }
 
@@ -43,7 +43,7 @@ export default class NotificationManager extends React.PureComponent<Props, Stat
 
     this.setState(previousState => {
       return {
-        toasts: [instance, ...previousState.toasts]
+        toasts: [instance, ...previousState.toasts],
       };
     });
 
@@ -72,14 +72,14 @@ export default class NotificationManager extends React.PureComponent<Props, Stat
 
     return {
       id: generatedId,
-      ...rest
+      ...rest,
     };
   };
 
   private removeToaster = (id?: string | number) => {
     this.setState(previousState => {
       return {
-        toasts: previousState.toasts.filter(toast => toast.id !== id)
+        toasts: previousState.toasts.filter(toast => toast.id !== id),
       };
     });
   };

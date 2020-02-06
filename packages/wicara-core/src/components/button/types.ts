@@ -1,11 +1,4 @@
-export type ButtonVariants =
-  | 'default'
-  | 'primary'
-  | 'support'
-  | 'destructive'
-  | 'link'
-  | 'ghost'
-  | 'inverse';
+export type ButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'link' | 'ghost' | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'ghost';

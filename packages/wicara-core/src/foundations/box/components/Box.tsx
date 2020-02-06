@@ -19,7 +19,7 @@ import {
   border,
   BorderProps,
   shadow,
-  ShadowProps
+  ShadowProps,
 } from 'styled-system';
 
 import { primitives } from '../../../utils/primitives';

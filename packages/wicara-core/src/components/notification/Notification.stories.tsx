@@ -12,10 +12,7 @@ storiesOf('Core|Components/Notifications', module)
   .add(
     'basic',
     () => (
-      <SystemBlock
-        title="Notifications"
-        subtitle="Pluggable notifications element that doesn't rely on Redux."
-      >
+      <SystemBlock title="Notifications" subtitle="Pluggable notifications element that doesn't rely on Redux.">
         <ComponentBlock title="Toaster">
           <Button
             variant="support"
@@ -24,7 +21,7 @@ storiesOf('Core|Components/Notifications', module)
                 title: 'Toaster',
                 message: 'Hello world! This is a toaster',
                 dismissible: true,
-                dismissAfter: 5000
+                dismissAfter: 5000,
               });
             }}
             style={{ marginRight: 8 }}
@@ -39,7 +36,7 @@ storiesOf('Core|Components/Notifications', module)
                 message: 'Hello world! This is a toaster',
                 status: 'success',
                 dismissible: true,
-                dismissAfter: 5000
+                dismissAfter: 5000,
               });
             }}
             style={{ marginRight: 8 }}
@@ -54,7 +51,7 @@ storiesOf('Core|Components/Notifications', module)
                 message: 'Hello world! This is a toaster',
                 status: 'info',
                 dismissible: true,
-                dismissAfter: 5000
+                dismissAfter: 5000,
               });
             }}
             style={{ marginRight: 8 }}
@@ -69,7 +66,7 @@ storiesOf('Core|Components/Notifications', module)
                 message: 'Hello world! This is a toaster',
                 status: 'warning',
                 dismissible: true,
-                dismissAfter: 5000
+                dismissAfter: 5000,
               });
             }}
             style={{ marginRight: 8 }}
@@ -84,7 +81,7 @@ storiesOf('Core|Components/Notifications', module)
                 message: 'Hello world! This is a toaster',
                 status: 'error',
                 dismissible: true,
-                dismissAfter: 5000
+                dismissAfter: 5000,
               });
             }}
           >
@@ -94,6 +91,6 @@ storiesOf('Core|Components/Notifications', module)
       </SystemBlock>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   );

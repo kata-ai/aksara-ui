@@ -3,9 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { InputBaseProps, InputBase } from '../../styles';
 
-export interface InputTextProps
-  extends InputBaseProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputTextProps extends InputBaseProps, React.InputHTMLAttributes<HTMLInputElement> {
   /** True if this text input has an addon style */
   addon?: boolean;
 }
@@ -34,7 +32,7 @@ const InputText: React.FC<InputTextProps> = ({ className, errors, addon, ...rest
 
 InputText.defaultProps = {
   errors: false,
-  addon: false
+  addon: false,
 };
 
 InputText.displayName = 'InputText';

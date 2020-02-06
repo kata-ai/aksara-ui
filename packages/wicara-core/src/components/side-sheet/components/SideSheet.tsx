@@ -92,13 +92,13 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
     style: undefined,
     enableFocusTrap: false,
     isOverlayClickable: false,
-    isOpen: false
+    isOpen: false,
   };
 
   constructor(props: SideSheetProps) {
     super(props);
     this.state = {
-      isOpen: props.isOpen
+      isOpen: props.isOpen,
     };
 
     this.handleCloseSideSheet = this.handleCloseSideSheet.bind(this);
@@ -108,7 +108,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
 
   static getDerivedStateFromProps(props: SideSheetProps) {
     return {
-      isOpen: props.isOpen
+      isOpen: props.isOpen,
     };
   }
 
@@ -156,11 +156,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
     const { isOpen } = this.state;
 
     return (
-      <SideSheetOverlay
-        className={clsx(isOpen && 'entered')}
-        data-state={state}
-        onClick={this.handleOverlayClick}
-      >
+      <SideSheetOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <SideSheetWrapper
           className={clsx(isOpen && 'entered')}
           position="absolute"
@@ -170,21 +166,9 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           aria-labelledby={labelledById}
           data-state={state}
         >
-          <Card
-            display="flex"
-            flexDirection="column"
-            elevation={4}
-            borderRadius={0}
-            width="500px"
-            height="100vh"
-          >
+          <Card display="flex" flexDirection="column" elevation={4} borderRadius={0} width="500px" height="100vh">
             {!hideCloseButton && (
-              <CloseButton
-                type="button"
-                aria-label="Close"
-                variant="ghost"
-                onClick={this.handleCloseSideSheet}
-              >
+              <CloseButton type="button" aria-label="Close" variant="ghost" onClick={this.handleCloseSideSheet}>
                 <i className="icon-close" />
               </CloseButton>
             )}
@@ -207,7 +191,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
             in={isOpen}
             timeout={{
               enter: ANIMATION_DURATION,
-              exit: ANIMATION_DURATION
+              exit: ANIMATION_DURATION,
             }}
             unmountOnExit
           >
@@ -228,7 +212,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           in={isOpen}
           timeout={{
             enter: ANIMATION_DURATION,
-            exit: ANIMATION_DURATION
+            exit: ANIMATION_DURATION,
           }}
           unmountOnExit
         >

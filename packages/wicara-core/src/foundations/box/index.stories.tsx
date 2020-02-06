@@ -15,7 +15,7 @@ storiesOf('Core|Foundations/Box', module)
       </WicaraProvider>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   )
   .add(
@@ -28,6 +28,6 @@ storiesOf('Core|Foundations/Box', module)
       </WicaraProvider>
     ),
     {
-      notes: { markdown: readme }
+      notes: { markdown: readme },
     }
   );

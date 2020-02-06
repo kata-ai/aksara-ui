@@ -6,9 +6,7 @@ import { Circle } from '../loading';
 import { ButtonStyles } from './styles';
 import { ButtonBaseProps, ButtonSizes } from './types';
 
-export interface ButtonProps
-  extends ButtonBaseProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -56,9 +54,7 @@ const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition'>>`
   top: 0;
   bottom: 0;
   ${props =>
-    props.iconPosition === 'right'
-      ? `right: ${iconPadding(props.size)}px;`
-      : `left: ${iconPadding(props.size)}px;`}
+    props.iconPosition === 'right' ? `right: ${iconPadding(props.size)}px;` : `left: ${iconPadding(props.size)}px;`}
 
   & i {
     display: flex;
@@ -87,22 +83,14 @@ const Button: React.SFC<ButtonProps> = ({
   const renderIcon = () => {
     if (typeof icon === 'string') {
       return (
-        <Icon
-          iconPosition={iconPosition}
-          size={size}
-          style={isLoading ? { visibility: 'hidden' } : undefined}
-        >
+        <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
           <i className={`icon-${icon}`} />
         </Icon>
       );
     }
 
     return (
-      <Icon
-        iconPosition={iconPosition}
-        size={size}
-        style={isLoading ? { visibility: 'hidden' } : undefined}
-      >
+      <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
         {icon}
       </Icon>
     );
@@ -127,9 +115,7 @@ const Button: React.SFC<ButtonProps> = ({
             size={size === 'sm' ? 24 : 32}
             buttonSize={size}
             spinnerColor={
-              variant === 'support' || variant === 'link' || variant === 'ghost'
-                ? colors.gray50
-                : colors.white
+              variant === 'support' || variant === 'link' || variant === 'ghost' ? colors.gray50 : colors.white
             }
           />
           <InvisibleText>{children}</InvisibleText>
@@ -148,7 +134,7 @@ Button.defaultProps = {
   icon: undefined,
   iconPosition: 'left',
   variant: 'default',
-  size: 'md'
+  size: 'md',
 };
 
 Button.displayName = 'Button';

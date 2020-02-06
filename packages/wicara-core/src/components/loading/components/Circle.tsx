@@ -25,11 +25,7 @@ const Root = styled('div')<LoadingCircleProps>`
   }
 `;
 
-const Circle: React.FC<LoadingCircleProps> = ({
-  className,
-  size = 40,
-  spinnerColor = colors.kataBlue
-}) => {
+const Circle: React.FC<LoadingCircleProps> = ({ className, size = 40, spinnerColor = colors.kataBlue }) => {
   return (
     <Root className={className} spinnerColor={spinnerColor}>
       <svg

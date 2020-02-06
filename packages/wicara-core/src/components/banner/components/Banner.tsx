@@ -49,7 +49,7 @@ const Banner: React.FC<BannerProps> = ({ className, style, message, state, onClo
 };
 
 Banner.defaultProps = {
-  state: 'error'
+  state: 'error',
 };
 
 export default Banner;

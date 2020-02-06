@@ -43,13 +43,7 @@ export interface NonIdealStateProps {
   image?: React.ReactNode;
 }
 
-const NonIdealState: React.FC<NonIdealStateProps> = ({
-  className,
-  style,
-  image,
-  title,
-  children
-}) => {
+const NonIdealState: React.FC<NonIdealStateProps> = ({ className, style, image, title, children }) => {
   return (
     <Wrapper className={className} style={style} mx="auto" my="xxl" textAlign="center">
       {image && <ImageWrapper mb="lg">{image}</ImageWrapper>}
@@ -62,7 +56,7 @@ const NonIdealState: React.FC<NonIdealStateProps> = ({
 };
 
 NonIdealState.defaultProps = {
-  image: undefined
+  image: undefined,
 };
 
 NonIdealState.displayName = 'NonIdealState';

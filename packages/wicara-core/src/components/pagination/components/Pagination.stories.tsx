@@ -16,10 +16,7 @@ story.add(
     const [currentPage, setCurrentPage] = React.useState(1);
 
     return (
-      <SystemBlock
-        title="Pagination"
-        subtitle="Pagination indicates a series of content that exists across pages."
-      >
+      <SystemBlock title="Pagination" subtitle="Pagination indicates a series of content that exists across pages.">
         <Pagination
           current={currentPage}
           total={5}
@@ -33,8 +30,8 @@ story.add(
   },
   {
     notes: {
-      markdown: readme
-    }
+      markdown: readme,
+    },
   }
 );
 
@@ -61,7 +58,7 @@ story.add(
   },
   {
     notes: {
-      markdown: readme
-    }
+      markdown: readme,
+    },
   }
 );

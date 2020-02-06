@@ -14,18 +14,11 @@ story.add(
     const [active, setActive] = React.useState(false);
 
     return (
-      <SystemBlock
-        title="FocusTrap"
-        subtitle="Helper component to support trapping tab focus inside a component."
-      >
+      <SystemBlock title="FocusTrap" subtitle="Helper component to support trapping tab focus inside a component.">
         <p>
-          Tubulo putas dicere? Erat enim Polemonis. Minime vero istorum quidem, inquit. Hic nihil
-          fuit, quod quaereremus.{' '}
-          <a
-            href="https://www.youtube.com/watch?v=mUGDxyG1kOI"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          Tubulo putas dicere? Erat enim Polemonis. Minime vero istorum quidem, inquit. Hic nihil fuit, quod
+          quaereremus.{' '}
+          <a href="https://www.youtube.com/watch?v=mUGDxyG1kOI" target="_blank" rel="noopener noreferrer">
             Est, ut dicis, inquit;
           </a>{' '}
           Iam contemni non poteris.{' '}
@@ -39,23 +32,18 @@ story.add(
             Toggle focus trap
           </button>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen
-            simplicia, vestra versuta.{' '}
-            <a
-              href="https://www.youtube.com/watch?v=lOiR7b6jumI"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra versuta.{' '}
+            <a href="https://www.youtube.com/watch?v=lOiR7b6jumI" target="_blank" rel="noopener noreferrer">
               Quamquam tu hanc copiosiorem etiam soles dicere.
             </a>{' '}
-            Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur
-            haec: vacuitas doloris, divitiae, valitudo;{' '}
+            Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris,
+            divitiae, valitudo;{' '}
           </p>
         </FocusTrap>
       </SystemBlock>
     );
   },
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

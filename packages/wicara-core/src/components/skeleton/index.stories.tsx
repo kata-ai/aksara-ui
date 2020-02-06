@@ -14,10 +14,7 @@ const story = storiesOf('Core|Components/Skeleton', module).addDecorator(SystemW
 story.add(
   'default',
   () => (
-    <SystemBlock
-      title="Skeleton"
-      subtitle="Renders a loading state that mimics the wrapping component."
-    >
+    <SystemBlock title="Skeleton" subtitle="Renders a loading state that mimics the wrapping component.">
       <ComponentBlock title="Inline">
         <Box mb="md">
           <Skeleton />
@@ -32,6 +29,6 @@ story.add(
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );

@@ -28,14 +28,14 @@ const Text = styled(Typography)<TextProps>`
       500: {},
       400: {},
       300: {},
-      200: {}
-    }
+      200: {},
+    },
   })}
 `;
 
 Text.defaultProps = {
   as: 'span',
-  scale: 400
+  scale: 400,
 };
 
 Text.displayName = 'Text';

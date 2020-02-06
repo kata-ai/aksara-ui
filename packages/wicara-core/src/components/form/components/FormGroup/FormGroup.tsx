@@ -15,9 +15,7 @@ const Div = styled('div')`
   }
 `;
 
-const FormGroup: React.FC<FormGroupProps> = ({ className, children }) => (
-  <Div className={className}>{children}</Div>
-);
+const FormGroup: React.FC<FormGroupProps> = ({ className, children }) => <Div className={className}>{children}</Div>;
 
 FormGroup.displayName = 'FormGroup';
 

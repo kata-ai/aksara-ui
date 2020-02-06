@@ -11,7 +11,7 @@ import {
   InputTextarea,
   FormHelp,
   InputGroup,
-  InputAddon
+  InputAddon,
 } from './components';
 
 const readme = require('./README.md');
@@ -40,12 +40,7 @@ story.add(
         <FormGroup>
           <InputGroup>
             <InputAddon>dashboard.kata.ai/</InputAddon>
-            <InputText
-              id="firstName_dummy"
-              name="firstName_dummy"
-              placeholder="Type here..."
-              addon
-            />
+            <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
           </InputGroup>
         </FormGroup>
         <FormGroup>
@@ -53,19 +48,14 @@ story.add(
             <InputAddon isIcon>
               <i className="icon-account" />
             </InputAddon>
-            <InputText
-              id="firstName_dummy"
-              name="firstName_dummy"
-              placeholder="Type here..."
-              addon
-            />
+            <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
           </InputGroup>
         </FormGroup>
       </ComponentBlock>
     </SystemBlock>
   ),
   {
-    notes: { markdown: readme }
+    notes: { markdown: readme },
   }
 );
 
@@ -76,11 +66,7 @@ story.add(
       <ComponentBlock title="Form Help">
         <FormGroup>
           <FormLabel htmlFor="billingAddress_dummy">Billing Address</FormLabel>
-          <InputTextarea
-            id="billingAddress_dummy"
-            name="billingAddress_dummy"
-            placeholder="Type here..."
-          />
+          <InputTextarea id="billingAddress_dummy" name="billingAddress_dummy" placeholder="Type here..." />
           <FormHelp>The address we&apos;ll ship your billing details to.</FormHelp>
         </FormGroup>
       </ComponentBlock>
@@ -101,7 +87,7 @@ story.add(
   ),
   {
     notes: {
-      markdown: readme
-    }
+      markdown: readme,
+    },
   }
 );

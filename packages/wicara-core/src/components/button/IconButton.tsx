@@ -4,9 +4,7 @@ import styled from 'styled-components';
 import { IconButtonStyles } from './styles';
 import { IconButtonBaseProps } from './types';
 
-export interface IconButtonProps
-  extends IconButtonBaseProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends IconButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -26,7 +24,7 @@ const IconButton: React.SFC<IconButtonProps> = ({ children, className, style, ..
 IconButton.defaultProps = {
   className: undefined,
   style: undefined,
-  variant: 'default'
+  variant: 'default',
 };
 
 IconButton.displayName = 'IconButton';

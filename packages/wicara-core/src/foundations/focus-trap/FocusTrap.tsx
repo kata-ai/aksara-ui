@@ -18,7 +18,7 @@ export default class FocusTrap extends React.Component<FocusTrapProps> {
     if (rootElement) {
       const trap = createFocusTrap(rootElement, {
         escapeDeactivates: false,
-        fallbackFocus: rootElement
+        fallbackFocus: rootElement,
       });
 
       if (active) {
