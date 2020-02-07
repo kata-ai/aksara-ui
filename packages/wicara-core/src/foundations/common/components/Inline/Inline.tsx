@@ -8,7 +8,6 @@ export interface InlineProps extends Omit<BoxProps, 'color'> {
   className?: string;
   style?: React.CSSProperties;
   spacing?: Space;
-  [key: string]: any;
 }
 
 const Inline: React.FC<InlineProps> = ({ children, spacing, ...rest }) => {
@@ -18,8 +17,8 @@ const Inline: React.FC<InlineProps> = ({ children, spacing, ...rest }) => {
     <Box {...rest}>
       <Box display="flex" flexWrap="wrap" alignItems="flex-start">
         {validChildrenArray.map(child => {
-          const spacingProps = { display: 'inline-block', mb: spacing, mr: spacing, mt: 0, ml: 0 };
-          return React.cloneElement(child, spacingProps);
+          const spacingProps = { display: 'block', mb: spacing, mr: spacing, mt: 0, ml: 0 };
+          return <Box {...spacingProps}>{child}</Box>;
         })}
       </Box>
     </Box>
