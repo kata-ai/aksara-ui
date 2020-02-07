@@ -1,26 +1,27 @@
 import { css } from 'styled-components';
-import badgeThemes from './theme';
+import { variant } from 'styled-system';
+import badgeVariants from './variants';
 
-export type BadgeVariants = keyof typeof badgeThemes;
+export type BadgeVariants = keyof typeof badgeVariants;
 
 export interface BaseBadgeProps {
   /** The variant options available for a badge. Defaults to 'entity' */
   variant?: BadgeVariants;
 }
 
-const BaseBadgeStyles = ({ variant = 'entity' }: BaseBadgeProps) =>
+const BaseBadgeStyles = () =>
   css`
     display: inline-block;
-    padding: 2px 4px;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1.45;
+    padding: 8px 12px;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: 2px;
-    color: ${badgeThemes[variant].textColor};
-    background-color: ${badgeThemes[variant].backgroundColor};
+    border: 1px solid transparent;
+    border-radius: 4px;
+    ${variant({
+      prop: 'variant',
+      variants: badgeVariants,
+    })}
   `;
 
 export default BaseBadgeStyles;

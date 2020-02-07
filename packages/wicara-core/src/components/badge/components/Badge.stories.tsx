@@ -13,9 +13,9 @@ stories.add(
   () => (
     <SystemBlock title="Badge" subtitle="Badge text for entity, status, etc.">
       <ComponentBlock title="Usage">
-        <Badge>entity</Badge> <Badge variant="primary">primary</Badge> <Badge variant="secondary">secondary</Badge>{' '}
-        <Badge variant="success">success</Badge> <Badge variant="warning">warning</Badge>{' '}
-        <Badge variant="danger">danger</Badge>
+        <Badge>base</Badge> <Badge variant="label">label</Badge> <Badge variant="keyword">keyword</Badge>{' '}
+        <Badge variant="green">green</Badge> <Badge variant="yellow">yellow</Badge> <Badge variant="red">red</Badge>{' '}
+        <Badge variant="turquoise">turquoise</Badge> <Badge variant="blue">blue</Badge>
       </ComponentBlock>
     </SystemBlock>
   ),
