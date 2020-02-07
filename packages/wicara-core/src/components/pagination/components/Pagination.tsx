@@ -3,6 +3,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import PaginationButton from './PaginationButton';
+import { Text } from '../../../foundations';
 
 const PaginationBase = styled('div')`
   display: inline-block;
@@ -99,7 +100,9 @@ class Pagination extends React.Component<PaginationProps> {
             onClick={() => (typeof page === 'number' ? this.handleSelectPage(page) : null)}
             disabled={typeof page !== 'number'}
           >
-            {page}
+            <Text scale={300} fontWeight={500}>
+              {page}
+            </Text>
           </PaginationButton>
         ))}
         <PaginationButton color="white" disabled={current === total} onClick={() => this.handleSelectPage(current + 1)}>

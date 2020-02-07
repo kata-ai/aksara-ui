@@ -1,43 +1,41 @@
 import styled, { css } from 'styled-components';
+import { themeGet } from '@styled-system/theme-get';
 import { ButtonBase } from '../../button';
-import { colors, typeScale } from '../../../utils';
+import { colors } from '../../../utils';
 
 interface PaginationButtonProps {
   isActive?: boolean;
 }
 
 const DefaultStyles = css`
-  background-color: ${colors.white};
-  border-color: ${colors.gray20};
+  color: inherit;
 
-  &:hover,
-  &.hover {
-    background-color: ${colors.gray10};
+  &:focus,
+  &.focus {
+    background-color: ${themeGet('colors.grey02', colors.grey02)};
   }
 
   &:active,
   &.active {
-    background-color: ${colors.gray70};
-    border-color: ${colors.gray70};
-    color: ${colors.white};
+    border-color: ${themeGet('colors.blue05', colors.blue05)};
   }
 `;
 
 const IsActiveStyles = css`
-  background-color: ${colors.kataBlue};
-  border-color: ${colors.kataBlue};
-  color: ${colors.white};
+  background-color: ${themeGet('colors.blue01', colors.blue01)};
+  border-color: ${themeGet('colors.blue01', colors.blue01)};
+  color: ${themeGet('colors.blue06', colors.blue06)};
 
   &:hover,
   &.hover {
-    background-color: ${colors.kataBlue};
+    background-color: ${themeGet('colors.blue01', colors.blue01)};
   }
 
   &:active,
   &.active {
-    background-color: ${colors.kataBlue};
-    border-color: ${colors.kataBlue};
-    color: ${colors.white};
+    background-color: ${themeGet('colors.blue01', colors.blue01)};
+    border-color: ${themeGet('colors.blue01', colors.blue01)};
+    color: ${themeGet('colors.blue06', colors.blue06)};
   }
 `;
 
@@ -53,8 +51,6 @@ const PaginationButton = styled('button')<PaginationButtonProps>`
 
   ${ButtonBase}
 
-  font-size: ${typeScale.body.fontSize}px;
-  line-height: 1;
   user-select: none;
 
   &:not(:first-of-type) {
@@ -63,9 +59,7 @@ const PaginationButton = styled('button')<PaginationButtonProps>`
 
   &:disabled,
   &[disabled] {
-    background-color: ${colors.gray10};
-    border-color: ${colors.gray10};
-    color: ${colors.gray50};
+    opacity: 0.7;
   }
 
   ${props => (props.isActive ? IsActiveStyles : DefaultStyles)}
