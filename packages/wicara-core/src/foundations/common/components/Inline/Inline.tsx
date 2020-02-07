@@ -1,4 +1,6 @@
 import * as React from 'react';
+import styled from 'styled-components';
+import { themeGet } from '@styled-system/theme-get';
 
 import { Space } from '../../../../Theme';
 import { Box, BoxProps } from '../../../box';
@@ -7,23 +9,35 @@ export interface InlineProps extends Omit<BoxProps, 'color'> {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
+  color?: string;
   spacing?: Space;
-  [key: string]: any;
 }
 
-const Inline: React.FC<InlineProps> = ({ children, spacing, ...rest }) => {
+const Root = styled(Box)<InlineProps>`
+  ${props => props.spacing && `margin-top: -${themeGet(`space.${props.spacing}`, 0)(props)}px;`}
+`;
+
+const Inner = styled(Box)<InlineProps>`
+  ${props => props.spacing && `margin-left: -${themeGet(`space.${props.spacing}`, 0)(props)}px;`}
+`;
+
+const Inline: React.FC<InlineProps> = ({ children, spacing, alignItems, ...rest }) => {
   const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
 
   return (
-    <Box {...rest}>
-      <Box display="flex" flexWrap="wrap" alignItems="flex-start">
+    <Root spacing={spacing} {...rest}>
+      <Inner display="flex" flexWrap="wrap" alignItems={alignItems} spacing={spacing}>
         {validChildrenArray.map(child => {
-          const spacingProps = { display: 'inline-block', mb: spacing, mr: spacing, mt: 0, ml: 0 };
+          const spacingProps = { display: 'inline-block', mt: spacing, ml: spacing, mb: 0, mr: 0 };
           return React.cloneElement(child, spacingProps);
         })}
-      </Box>
-    </Box>
+      </Inner>
+    </Root>
   );
+};
+
+Inline.defaultProps = {
+  spacing: 'sm',
 };
 
 Inline.displayName = 'Inline';

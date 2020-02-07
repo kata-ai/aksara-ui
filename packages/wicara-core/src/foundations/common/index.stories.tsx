@@ -49,32 +49,36 @@ storiesOf('Core|Foundations/Common', module)
       >
         <ComponentBlock title="Stack (spacing=md)">
           <Card padding="sm" elevation={2}>
-            <Stack spacing="md" backgroundColor="special01">
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-            </Stack>
+            <Box backgroundColor="red02" overflow="hidden">
+              <Stack spacing="md">
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+              </Stack>
+            </Box>
           </Card>
         </ComponentBlock>
         <ComponentBlock title="Stack (spacing=lg)">
           <Card padding="sm" elevation={2}>
-            <Stack spacing="lg" backgroundColor="special01">
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-            </Stack>
+            <Box backgroundColor="red02" overflow="hidden">
+              <Stack spacing="lg">
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+              </Stack>
+            </Box>
           </Card>
         </ComponentBlock>
       </SystemBlock>
@@ -89,32 +93,36 @@ storiesOf('Core|Foundations/Common', module)
       >
         <ComponentBlock title="Inline (spacing=xs)">
           <Card padding="sm" elevation={2}>
-            <Inline spacing="xs" backgroundColor="special01">
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-            </Inline>
+            <Box backgroundColor="red02" overflow="hidden">
+              <Inline spacing="xs">
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+              </Inline>
+            </Box>
           </Card>
         </ComponentBlock>
         <ComponentBlock title="Inline (spacing=sm)">
           <Card padding="sm" elevation={2}>
-            <Inline spacing="sm" backgroundColor="special01">
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-              <Box backgroundColor="white">
-                <Text>Box (backgroundColor=white)</Text>
-              </Box>
-            </Inline>
+            <Box backgroundColor="red02" overflow="hidden">
+              <Inline spacing="sm">
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+                <Box backgroundColor="white">
+                  <Text>Box (backgroundColor=white)</Text>
+                </Box>
+              </Inline>
+            </Box>
           </Card>
         </ComponentBlock>
       </SystemBlock>

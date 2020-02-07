@@ -7,8 +7,8 @@ export interface StackProps extends Omit<BoxProps, 'color'> {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
+  color?: string;
   spacing?: Space;
-  [key: string]: any;
 }
 
 const Stack: React.FC<StackProps> = ({ children, spacing, ...rest }) => {
