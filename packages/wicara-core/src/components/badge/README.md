@@ -16,8 +16,8 @@ See more usage in the _JSX_ panel
 
 ## Props
 
-| Property  | Type                                                             | Required | Default     |
-| --------- | ---------------------------------------------------------------- | -------- | ----------- |
-| variant   | `'primary'`, `'secondary'`, `'success'`, `'warning'`, `'danger'` | -        | -           |
-| className | `string`                                                         | -        | `undefined` |
-| style     | `React.CSSProperties`                                            | -        | `undefined` |
+| Property  | Type                                                                                       | Required | Default     |
+| --------- | ------------------------------------------------------------------------------------------ | -------- | ----------- |
+| variant   | `'base'`, `'label'`, `'keyboard'`, `'green'`, `'yellow'`, `'red'`, `'turquoise'`, `'blue'` | -        | -           |
+| className | `string`                                                                                   | -        | `undefined` |
+| style     | `React.CSSProperties`                                                                      | -        | `undefined` |

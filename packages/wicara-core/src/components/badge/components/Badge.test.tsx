@@ -13,10 +13,10 @@ describe('compoents/Badge', () => {
     });
 
     test('renders with additional variants', () => {
-      const { container } = render(<Badge variant="primary">test badge</Badge>);
+      const { container } = render(<Badge variant="green">test badge</Badge>);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', colors.kataBlue);
-      expect(container.firstChild).toHaveStyleRule('color', colors.white);
+      expect(container.firstChild).toHaveStyleRule('background-color', colors.green03);
+      expect(container.firstChild).toHaveStyleRule('color', colors.grey08);
     });
   });
 });
