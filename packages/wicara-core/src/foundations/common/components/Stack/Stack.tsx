@@ -18,8 +18,8 @@ const Stack: React.FC<StackProps> = ({ children, spacing, ...rest }) => {
     <Box {...rest}>
       {validChildrenArray.map((child, index) => {
         const isLastChild = validChildrenArray.length === index + 1;
-        const spacingProps = { mb: isLastChild ? null : spacing };
-        return React.cloneElement(child, spacingProps);
+        const spacingProps = { mb: isLastChild ? undefined : spacing };
+        return <Box {...spacingProps}>{child}</Box>;
       })}
     </Box>
   );

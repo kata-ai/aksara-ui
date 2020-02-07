@@ -28,8 +28,8 @@ const Inline: React.FC<InlineProps> = ({ children, spacing, alignItems, ...rest 
     <Root spacing={spacing} {...rest}>
       <Inner display="flex" flexWrap="wrap" alignItems={alignItems} spacing={spacing}>
         {validChildrenArray.map(child => {
-          const spacingProps = { display: 'inline-block', mt: spacing, ml: spacing, mb: 0, mr: 0 };
-          return React.cloneElement(child, spacingProps);
+          const spacingProps = { display: 'block', mt: spacing, ml: spacing, mb: 0, mr: 0 };
+          return <Box {...spacingProps}>{child}</Box>;
         })}
       </Inner>
     </Root>
