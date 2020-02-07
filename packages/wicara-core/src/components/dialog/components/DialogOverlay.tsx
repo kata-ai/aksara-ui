@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
+import { transparentize } from 'polished';
 
 import { ANIMATION_DURATION } from '../../notification/utils/constants';
+import { colors } from '../../../utils';
 
 const FadeIn = keyframes`
   0% {
@@ -44,7 +46,7 @@ const DialogOverlay = styled('div')`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: ${transparentize(0.35, colors.grey09)};
     content: ' ';
     visibility: hidden;
     opacity: 0;
