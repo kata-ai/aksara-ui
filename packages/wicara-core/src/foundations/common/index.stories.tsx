@@ -40,91 +40,103 @@ storiesOf('Core|Foundations/Common', module)
       notes: { markdown: readme },
     }
   )
-  .add('Stack', () => {
-    return (
-      <SystemBlock
-        title="Stack"
-        subtitle="Use the Stack component to evenly space inner elements vertically"
-        noBackground
-      >
-        <ComponentBlock title="Stack (spacing=md)">
-          <Card padding="sm" elevation={2}>
-            <Box backgroundColor="red02" overflow="hidden">
-              <Stack spacing="md">
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-              </Stack>
-            </Box>
-          </Card>
-        </ComponentBlock>
-        <ComponentBlock title="Stack (spacing=lg)">
-          <Card padding="sm" elevation={2}>
-            <Box backgroundColor="red02" overflow="hidden">
-              <Stack spacing="lg">
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-              </Stack>
-            </Box>
-          </Card>
-        </ComponentBlock>
-      </SystemBlock>
-    );
-  })
-  .add('Inline', () => {
-    return (
-      <SystemBlock
-        title="Inline"
-        subtitle="Use the Inline component to evenly space inner elements horizontally"
-        noBackground
-      >
-        <ComponentBlock title="Inline (spacing=xs)">
-          <Card padding="sm" elevation={2}>
-            <Box backgroundColor="red02" overflow="hidden">
-              <Inline spacing="xs">
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-              </Inline>
-            </Box>
-          </Card>
-        </ComponentBlock>
-        <ComponentBlock title="Inline (spacing=sm)">
-          <Card padding="sm" elevation={2}>
-            <Box backgroundColor="red02" overflow="hidden">
-              <Inline spacing="sm">
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-                <Box backgroundColor="white">
-                  <Text>Box (backgroundColor=white)</Text>
-                </Box>
-              </Inline>
-            </Box>
-          </Card>
-        </ComponentBlock>
-      </SystemBlock>
-    );
-  });
+  .add(
+    'Stack',
+    () => {
+      return (
+        <SystemBlock
+          title="Stack"
+          subtitle="Use the Stack component to evenly space inner elements vertically"
+          noBackground
+        >
+          <ComponentBlock title="Stack (spacing=md)">
+            <Card padding="sm" elevation={2}>
+              <Box backgroundColor="red02" overflow="hidden">
+                <Stack spacing="md">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Stack>
+              </Box>
+            </Card>
+          </ComponentBlock>
+          <ComponentBlock title="Stack (spacing=lg)">
+            <Card padding="sm" elevation={2}>
+              <Box backgroundColor="red02" overflow="hidden">
+                <Stack spacing="lg">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Stack>
+              </Box>
+            </Card>
+          </ComponentBlock>
+        </SystemBlock>
+      );
+    },
+    {
+      notes: { markdown: readme },
+    }
+  )
+  .add(
+    'Inline',
+    () => {
+      return (
+        <SystemBlock
+          title="Inline"
+          subtitle="Use the Inline component to evenly space inner elements horizontally"
+          noBackground
+        >
+          <ComponentBlock title="Inline (spacing=xs)">
+            <Card padding="sm" elevation={2}>
+              <Box backgroundColor="red02" overflow="hidden">
+                <Inline spacing="xs">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Inline>
+              </Box>
+            </Card>
+          </ComponentBlock>
+          <ComponentBlock title="Inline (spacing=sm)">
+            <Card padding="sm" elevation={2}>
+              <Box backgroundColor="red02" overflow="hidden">
+                <Inline spacing="sm">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Inline>
+              </Box>
+            </Card>
+          </ComponentBlock>
+        </SystemBlock>
+      );
+    },
+    {
+      notes: { markdown: readme },
+    }
+  );
