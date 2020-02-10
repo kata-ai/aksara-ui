@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 
-import messageVariants, { closeButtonVariants } from './variants';
+import { messageVariants, closeButtonVariants } from './variants';
 
 export type MessageStates = keyof typeof messageVariants;
 

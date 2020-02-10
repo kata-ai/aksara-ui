@@ -1,32 +1,3 @@
-import { colors } from '../../utils';
-
-const success = {
-  backgroundColor: colors.green,
-  textColor: colors.white,
-};
-
-const info = {
-  backgroundColor: colors.kataBlue,
-  textColor: colors.white,
-};
-
-const warning = {
-  backgroundColor: colors.yellow,
-  textColor: colors.gray70,
-};
-
-const error = {
-  backgroundColor: colors.red,
-  textColor: colors.white,
-};
-
-export const messageThemes = {
-  success,
-  info,
-  warning,
-  error,
-};
-
 export const closeButtonVariants = {
   general: {
     color: 'grey08',
@@ -45,7 +16,7 @@ export const closeButtonVariants = {
   },
 };
 
-const messageVariants = {
+export const messageVariants = {
   general: {
     borderColor: 'grey04',
     backgroundColor: 'grey01',
@@ -76,5 +47,3 @@ const messageVariants = {
     borderLeftWidth: '4px',
   },
 };
-
-export default messageVariants;
