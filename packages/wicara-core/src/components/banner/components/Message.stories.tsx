@@ -2,28 +2,29 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../../utils/storybook';
-import Banner from './Banner';
+import Message from './Message';
+import { Stack } from '../../../foundations';
 
 const readme = require('../README.md');
 
-const stories = storiesOf('Core|Components/Banner', module).addDecorator(SystemWrapper);
+const stories = storiesOf('Core|Components/Message', module).addDecorator(SystemWrapper);
 
 stories.add(
   'basic',
   () => (
-    <SystemBlock title="Banner" subtitle="Banners are used to convey important information to users.">
+    <SystemBlock
+      title="Message"
+      subtitle="Message blocks are used to convey important information to users."
+      noBackground
+    >
       <ComponentBlock title="Usage">
-        <Banner style={{ marginBottom: 8 }} message="A banner! - You've succesfully read it." state="success" />
-        <Banner
-          style={{ marginBottom: 8 }}
-          message="This banner shows information that isn't critical, but worth knowing."
-          state="info"
-        />
-        <Banner
-          style={{ marginBottom: 8 }}
-          message="Uh oh, something's not right with this banner - try fixing some things?"
-        />
-        <Banner message="Heads up - this banner isn't looking good, tread with caution." state="warning" />
+        <Stack spacing="sm">
+          <Message message="Simple general message" />
+          <Message message="Success message that only has 1 line" state="success" />
+          <Message message="Informational message that only has 1 line" state="info" />
+          <Message message="Error message that only has 1 line" state="error" />
+          <Message message="Warning message that only has 1 line" state="warning" />
+        </Stack>
       </ComponentBlock>
     </SystemBlock>
   ),
@@ -38,10 +39,10 @@ stories.add(
     const [isOpen, setIsOpen] = React.useState(true);
 
     return (
-      <SystemBlock title="Closable Banner" subtitle="Add an 'onClose' prop to add a close button handler">
+      <SystemBlock title="Message" subtitle="Add an 'onClose' prop to add a close button handler">
         <ComponentBlock title="Usage">
           {isOpen ? (
-            <Banner
+            <Message
               message="Hey, no peeking! Close this banner by clicking that X button."
               state="warning"
               onClose={() => setIsOpen(false)}

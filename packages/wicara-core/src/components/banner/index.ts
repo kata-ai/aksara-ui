@@ -1,2 +1,2 @@
-export { default as Banner } from './components/Banner';
-export * from './components/Banner';
+export { default as Message } from './components/Message';
+export * from './components/Message';
