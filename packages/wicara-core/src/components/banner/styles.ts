@@ -3,10 +3,10 @@ import { variant } from 'styled-system';
 
 import messageVariants, { closeButtonVariants } from './variants';
 
-export type BannerStates = keyof typeof messageVariants;
+export type MessageStates = keyof typeof messageVariants;
 
 export interface BaseMessageProps {
-  state?: BannerStates;
+  state?: MessageStates;
 }
 
 export const BaseMessageStyles = () =>

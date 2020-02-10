@@ -1,26 +1,24 @@
-# Banner
+# Message
 
 > Banners are used to convey important information to users.
 
-## Usage
+## Message blocks
 
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Banner } from '@wicara/core';
+import { Message } from '@wicara/core';
 
-const Component = () => (
-  <Banner state="success" message="A banner! - You've succesfully read it." />
-);
+const Component = () => <Message state="success" message="A banner! - You've succesfully read it." />;
 ```
 
 See more usage in the _JSX_ panel
 
 ## Props
 
-| Property  | Type                                          | Required | Default     |
-| --------- | --------------------------------------------- | -------- | ----------- |
-| color     | `'error'`, `'success'`, `'warning'`, `'info'` | **Yes**  | -           |
-| message   | `string | React.ReactNode`                    | **Yes**  | -           |
-| className | `string`                                      | -        | `undefined` |
-| onClose   | `(e: any) => void`                            | -        | `undefined` |
+| Property  | Type                                                       | Required | Default     |
+| --------- | ---------------------------------------------------------- | -------- | ----------- |
+| color     | `'general'`, `'error'`, `'success'`, `'warning'`, `'info'` | **Yes**  | -           |
+| message   | `string | React.ReactNode`                                 | **Yes**  | -           |
+| className | `string`                                                   | -        | `undefined` |
+| onClose   | `(e: any) => void`                                         | -        | `undefined` |

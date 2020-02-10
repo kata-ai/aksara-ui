@@ -1,9 +1,7 @@
 import * as React from 'react';
 
-import { BaseMessageProps, Root, Icon, Inner, CloseButton } from '../styles';
+import { BaseMessageProps, Root, Icon, Inner, CloseButton, MessageStates } from '../styles';
 import { Text } from '../../../foundations';
-
-export type BannerState = 'error' | 'success' | 'warning' | 'info';
 
 export interface MessageProps extends BaseMessageProps {
   /** Banner message. Could be a string or a `ReactNode`. */
@@ -60,6 +58,7 @@ Message.defaultProps = {
 Message.displayName = 'Message';
 
 export default Message;
+export { MessageStates };
 
 /** @deprecated - use `Message` instead */
 export const Banner = Message;
