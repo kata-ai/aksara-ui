@@ -1,18 +1,17 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import { colors } from '../../../utils';
 import Message from './Message';
 
 const handleClose = jest.fn();
 
 describe('components/Banner', () => {
   describe('<Banner />', () => {
-    test('renders with custom state', () => {
+    test('renders correctly', () => {
       const { container } = render(<Message state="success" message="test banner" />);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', colors.grey01);
-      expect(container.firstChild).toHaveStyleRule('color', colors.green07);
+      expect(container.firstChild).toHaveStyleRule('background-color', 'grey01');
+      expect(container.firstChild).toHaveStyleRule('color', 'green07');
     });
 
     test('renders close button with onClose', () => {
