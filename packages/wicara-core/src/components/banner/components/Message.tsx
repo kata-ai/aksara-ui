@@ -1,12 +1,13 @@
 import * as React from 'react';
 
 import { BaseMessageProps, Root, Icon, Inner, CloseButton } from '../styles';
+import { Text } from '../../../foundations';
 
 export type BannerState = 'error' | 'success' | 'warning' | 'info';
 
 export interface MessageProps extends BaseMessageProps {
   /** Banner message. Could be a string or a `ReactNode`. */
-  message: string | React.ReactNode;
+  message: string;
   /** Additional CSS classes to give to the banner. */
   className?: string;
   /** Additional CSS properties to give to the banner. */
@@ -32,7 +33,11 @@ const Message: React.FC<MessageProps> = ({ className, style, message, state, onC
           <i className={`icon-${state}`} />
         </Icon>
       )}
-      <Inner>{message}</Inner>
+      <Inner>
+        <Text display="inline-block" scale={200} fontWeight={500}>
+          {message}
+        </Text>
+      </Inner>
       {onClose && (
         <CloseButton
           type="button"
