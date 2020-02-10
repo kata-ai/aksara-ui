@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
@@ -27,9 +28,13 @@ const Inline: React.FC<InlineProps> = ({ children, spacing, alignItems, ...rest 
   return (
     <Root spacing={spacing} {...rest}>
       <Inner display="flex" flexWrap="wrap" alignItems={alignItems} spacing={spacing}>
-        {validChildrenArray.map(child => {
+        {validChildrenArray.map((child, i) => {
           const spacingProps = { display: 'block', mt: spacing, ml: spacing, mb: 0, mr: 0 };
-          return <Box {...spacingProps}>{child}</Box>;
+          return (
+            <Box key={`inline-child-${i}`} {...spacingProps}>
+              {child}
+            </Box>
+          );
         })}
       </Inner>
     </Root>

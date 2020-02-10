@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 
 import { Space } from '../../../../Theme';
@@ -16,10 +17,14 @@ const Stack: React.FC<StackProps> = ({ children, spacing, ...rest }) => {
 
   return (
     <Box {...rest}>
-      {validChildrenArray.map((child, index) => {
-        const isLastChild = validChildrenArray.length === index + 1;
+      {validChildrenArray.map((child, i) => {
+        const isLastChild = validChildrenArray.length === i + 1;
         const spacingProps = { mb: isLastChild ? undefined : spacing };
-        return <Box {...spacingProps}>{child}</Box>;
+        return (
+          <Box key={`stack-child-${i}`} {...spacingProps}>
+            {child}
+          </Box>
+        );
       })}
     </Box>
   );
