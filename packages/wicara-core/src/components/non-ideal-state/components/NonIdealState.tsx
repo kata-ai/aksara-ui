@@ -1,34 +1,15 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import { Box, Heading } from '../../../foundations';
-
-const FadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(5%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-`;
-
-const Wrapper = styled(Box)`
-  animation: ${FadeIn} 0.75s ease;
-  max-width: 320px;
-`;
 
 const ImageWrapper = styled(Box)`
   position: relative;
   height: 100%;
-  max-height: 155px;
 
   img,
   svg {
     margin: 0 auto;
-    height: 100%;
-    max-height: 155px;
   }
 `;
 
@@ -45,13 +26,13 @@ export interface NonIdealStateProps {
 
 const NonIdealState: React.FC<NonIdealStateProps> = ({ className, style, image, title, children }) => {
   return (
-    <Wrapper className={className} style={style} mx="auto" my="xxl" textAlign="center">
-      {image && <ImageWrapper mb="lg">{image}</ImageWrapper>}
-      <Heading as="h3" scale={600} mt={0} mb="xs">
+    <Box className={className} style={style} mx="auto" my="xxl" width="100%" maxWidth="528px" textAlign="center">
+      {image && <ImageWrapper mb={60}>{image}</ImageWrapper>}
+      <Heading scale={600} mt={0} mb="lg">
         {title}
       </Heading>
       <Box>{children}</Box>
-    </Wrapper>
+    </Box>
   );
 };
 

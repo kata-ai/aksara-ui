@@ -15,10 +15,13 @@ story.add(
   () => (
     <SystemBlock title="Non-Ideal State" subtitle="Used to inform users that some contents are unavailable.">
       <NonIdealState
-        image={<img src="https://via.placeholder.com/318x310.png" alt="No Project Selected" />}
-        title="No Project Selected"
+        image={<img src="https://via.placeholder.com/528x352.png" alt="Create a model" />}
+        title="Create a model"
       >
-        <Paragraph m={0}>You have not selected a project. Please select one from the dropdown on the left.</Paragraph>
+        <Paragraph color="grey07">
+          Perform specific text analysis tasks, like detecting topics, extracting specific words, and more.{' '}
+          <a href="#">Learn more</a>
+        </Paragraph>
       </NonIdealState>
     </SystemBlock>
   ),
