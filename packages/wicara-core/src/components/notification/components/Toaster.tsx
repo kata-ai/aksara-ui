@@ -64,6 +64,14 @@ const MessageText = styled(Text)<WithStatusProps>`
   color: ${props => themeGet(props.status === 'default' ? 'colors.grey08' : 'colors.grey01')(props)};
 `;
 
+const Right = styled('div')`
+  flex: 1 1 auto;
+
+  &:not(:first-child) {
+    margin-left: 12px;
+  }
+`;
+
 const Root = styled('div')`
   display: block;
   width: 100%;
@@ -141,9 +149,9 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
 
     return (
       <Inner status={status} elevation={5}>
-        {status !== 'default' ? <Box mr="md">{status ? this.renderToasterIcon(status) : null}</Box> : null}
+        {status !== 'default' ? <div>{status ? this.renderToasterIcon(status) : null}</div> : null}
 
-        <Box flex="1 1 auto">
+        <Right>
           {this.renderToasterTitle(title, status)}
           {allowHTML && message ? (
             <Box dangerouslySetInnerHTML={{ __html: message }} />
@@ -154,7 +162,7 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
               </MessageText>
             </Box>
           )}
-        </Box>
+        </Right>
       </Inner>
     );
   };
