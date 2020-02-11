@@ -133,7 +133,7 @@ story.add(
                 </Text>
               </Box>
               <Stack spacing="sm">
-                <Paragraph m={0}>
+                <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatibus ipsa natus consequatur
                   voluptas dolorem omnis dolor fuga labore temporibus laudantium, eaque, porro animi ut laborum maxime
                   inventore. Nobis, quidem!
@@ -168,7 +168,7 @@ story.add(
                 </Text>
               </Box>
               <Stack spacing="sm">
-                <Paragraph m={0}>
+                <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor earum, reiciendis expedita placeat
                   magnam porro ipsam libero. Perspiciatis suscipit optio, ut, cum accusantium, facilis quis ipsa est
                   saepe veniam nostrum!
@@ -203,7 +203,7 @@ story.add(
                 </Text>
               </Box>
               <Stack spacing="sm">
-                <Paragraph m={0}>
+                <Paragraph>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dicta culpa minima ipsum dolore
                   exercitationem, perferendis nobis, provident est sed maxime error ipsam eligendi molestiae. Excepturi
                   officiis delectus exercitationem facilis?
