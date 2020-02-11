@@ -7,7 +7,12 @@ const badgeVariants = {
   },
   label: {
     backgroundColor: colors.indigo01,
-    borderColor: colors.indigo02,
+    borderColor: colors.indigo03,
+    color: colors.grey08,
+  },
+  dashed: {
+    borderColor: colors.indigo03,
+    borderStyle: 'dashed',
     color: colors.grey08,
   },
   keyword: {
@@ -36,5 +41,7 @@ const badgeVariants = {
     color: colors.grey08,
   },
 };
+
+export type BadgeVariants = keyof typeof badgeVariants;
 
 export default badgeVariants;

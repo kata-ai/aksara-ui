@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
 import { variant } from 'styled-system';
-import badgeVariants from './variants';
-
-export type BadgeVariants = keyof typeof badgeVariants;
+import badgeVariants, { BadgeVariants } from './variants';
 
 export interface BaseBadgeProps {
   /** The variant options available for a badge. Defaults to 'entity' */
