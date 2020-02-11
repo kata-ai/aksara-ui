@@ -1,10 +1,13 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { variant } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get';
 import { Transition } from 'react-transition-group';
+
+import { Text, Card, Heading, Box } from '../../../foundations';
 import { ToasterSettings, NotificationStatus } from '../utils/types';
 import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
-import { shadows } from '../../../utils/index';
-import determineToasterColor from '../utils/determineToasterColor';
+import toasterVariants from './variants';
 
 interface WithStatusProps {
   status?: NotificationStatus;
@@ -50,21 +53,15 @@ const ToastExit = keyframes`
 
 const Icon = styled('i')<WithStatusProps>`
   vertical-align: middle;
-  color: ${props => determineToasterColor(props.status)};
+  color: ${props => themeGet(props.status === 'default' ? 'colors.grey09' : 'colors.grey01')(props)};
 `;
 
-const Title = styled('h4')<WithStatusProps>`
-  color: ${props => determineToasterColor(props.status)};
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+const Title = styled(Heading)<WithStatusProps>`
+  color: ${props => themeGet(props.status === 'default' ? 'colors.grey09' : 'colors.grey01')(props)};
 `;
 
-const Message = styled('p')`
-  &:last-child {
-    margin-bottom: 0;
-  }
+const MessageText = styled(Text)<WithStatusProps>`
+  color: ${props => themeGet(props.status === 'default' ? 'colors.grey08' : 'colors.grey01')(props)};
 `;
 
 const Right = styled('div')`
@@ -103,14 +100,17 @@ const Root = styled('div')`
   }
 `;
 
-const Inner = styled('div')`
+const Inner = styled(Card)<WithStatusProps>`
   display: flex;
+  flex-direction: row;
+  align-items: center;
   min-height: 40px;
   padding: 16px;
   border: none;
-  border-radius: 4px;
-  box-shadow: ${shadows.layer400};
-  background-color: #fff;
+  ${variant({
+    prop: 'status',
+    variants: toasterVariants,
+  })}
   cursor: pointer;
 `;
 
@@ -148,15 +148,19 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
     const { title, message, status, allowHTML } = this.props;
 
     return (
-      <Inner>
+      <Inner status={status} elevation={5}>
         {status !== 'default' ? <div>{status ? this.renderToasterIcon(status) : null}</div> : null}
 
         <Right>
           {this.renderToasterTitle(title, status)}
           {allowHTML && message ? (
-            <Message dangerouslySetInnerHTML={{ __html: message }} />
+            <Box dangerouslySetInnerHTML={{ __html: message }} />
           ) : (
-            <Message>{message}</Message>
+            <Box>
+              <MessageText display="block" scale={200} status={status}>
+                {message}
+              </MessageText>
+            </Box>
           )}
         </Right>
       </Inner>
@@ -164,7 +168,11 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
   };
 
   private renderToasterTitle = (title?: string, status?: ToasterSettings['status']) => {
-    return title ? <Title status={status}>{title}</Title> : null;
+    return title ? (
+      <Title as="h4" mt={0} mb="xs" scale={200} status={status}>
+        {title}
+      </Title>
+    ) : null;
   };
 
   private renderToasterIcon = (status: ToasterSettings['status']) => {

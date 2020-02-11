@@ -17,7 +17,7 @@ export default class Notification {
     if (!isBrowser) return;
 
     const container = document.createElement('div');
-    container.setAttribute('data-wicara-notification-container', '');
+    container.setAttribute('data-aksara-notification-container', '');
     document.body.appendChild(container);
 
     ReactDOM.render(<NotificationManager bindToaster={this.bindToaster} />, container);
