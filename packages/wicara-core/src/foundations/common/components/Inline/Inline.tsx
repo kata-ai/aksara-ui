@@ -30,11 +30,15 @@ const Inline: React.FC<InlineProps> = ({ children, spacing, alignItems, ...rest 
       <Inner display="flex" flexWrap="wrap" alignItems={alignItems} spacing={spacing}>
         {validChildrenArray.map((child, i) => {
           const spacingProps = { display: 'block', mt: spacing, ml: spacing, mb: 0, mr: 0 };
-          return (
-            <Box key={`inline-child-${i}`} {...spacingProps}>
-              {child}
-            </Box>
-          );
+          if (typeof child === 'string' || child.type === React.Fragment) {
+            return (
+              <Box key={`inline-child-${i}`} {...spacingProps}>
+                {child}
+              </Box>
+            );
+          }
+
+          return React.cloneElement(child, spacingProps);
         })}
       </Inner>
     </Root>

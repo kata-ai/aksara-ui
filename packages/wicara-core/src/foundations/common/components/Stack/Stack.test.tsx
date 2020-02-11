@@ -16,4 +16,16 @@ describe('foundations/common', () => {
 
     expect(container.firstChild).toBeInTheDocument();
   });
+
+  test('renders <Stack /> with fragments', () => {
+    const { container } = render(
+      <Stack>
+        <>example</>
+        <>example</>
+        <>example</>
+      </Stack>
+    );
+
+    expect(container.firstChild).toBeInTheDocument();
+  });
 });

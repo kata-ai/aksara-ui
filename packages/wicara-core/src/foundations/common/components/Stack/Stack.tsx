@@ -19,12 +19,16 @@ const Stack: React.FC<StackProps> = ({ children, spacing, ...rest }) => {
     <Box {...rest}>
       {validChildrenArray.map((child, i) => {
         const isLastChild = validChildrenArray.length === i + 1;
-        const spacingProps = { mb: isLastChild ? undefined : spacing };
-        return (
-          <Box key={`stack-child-${i}`} {...spacingProps}>
-            {child}
-          </Box>
-        );
+        const spacingProps = { mb: isLastChild ? 0 : spacing };
+        if (typeof child === 'string' || child.type === React.Fragment) {
+          return (
+            <Box key={`stack-child-${i}`} {...spacingProps}>
+              {child}
+            </Box>
+          );
+        }
+
+        return React.cloneElement(child, spacingProps);
       })}
     </Box>
   );
