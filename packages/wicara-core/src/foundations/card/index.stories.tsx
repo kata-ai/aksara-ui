@@ -134,9 +134,8 @@ story.add(
               </Box>
               <Stack spacing="sm">
                 <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatibus ipsa natus consequatur
-                  voluptas dolorem omnis dolor fuga labore temporibus laudantium, eaque, porro animi ut laborum maxime
-                  inventore. Nobis, quidem!
+                  Reiciendis facere hic modi inventore fugiat laboriosam, maiores omnis molestiae sequi. Adipisci
+                  doloremque cum ea distinctio officiis ab rem quo sint non.
                 </Paragraph>
               </Stack>
             </Box>
@@ -169,9 +168,8 @@ story.add(
               </Box>
               <Stack spacing="sm">
                 <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor earum, reiciendis expedita placeat
-                  magnam porro ipsam libero. Perspiciatis suscipit optio, ut, cum accusantium, facilis quis ipsa est
-                  saepe veniam nostrum!
+                  Dolor earum, reiciendis expedita placeat magnam porro ipsam libero. Perspiciatis suscipit optio, ut,
+                  cum accusantium, facilis quis ipsa est saepe veniam nostrum!
                 </Paragraph>
               </Stack>
             </Box>
@@ -204,9 +202,8 @@ story.add(
               </Box>
               <Stack spacing="sm">
                 <Paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dicta culpa minima ipsum dolore
-                  exercitationem, perferendis nobis, provident est sed maxime error ipsam eligendi molestiae. Excepturi
-                  officiis delectus exercitationem facilis?
+                  Minima hic, corporis soluta mollitia explicabo voluptatibus magni minus, dolore culpa deserunt facilis
+                  voluptatem alias velit maxime atque vero officia tempora animi.
                 </Paragraph>
               </Stack>
             </Box>
