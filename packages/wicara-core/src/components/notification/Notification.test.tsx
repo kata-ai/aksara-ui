@@ -24,7 +24,7 @@ describe('components/Notification', () => {
         </Button>
       );
 
-      const element = baseElement.querySelector("div[data-wicara-notification-container='']");
+      const element = baseElement.querySelector("div[data-aksara-notification-container='']");
       expect(element).toBeInTheDocument();
     });
 
