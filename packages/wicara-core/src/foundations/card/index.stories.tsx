@@ -1,20 +1,32 @@
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import styled from 'styled-components';
 
 import { Badge } from '../../components/badge';
 import { OutlineButton } from '../../components/button';
 import { SystemWrapper, SystemBlock } from '../../utils/storybook';
 import { Box } from '../box';
 import { Heading, Paragraph, Text } from '../typography';
-import { UnstyledAnchor, UnstyledButton } from '../common';
+import { UnstyledAnchor, Stack } from '../common';
 
 import { Card } from './index';
 
 const readme = require('./README.md');
 
 const ElevationGrid: React.FC = ({ children }) => {
+  return (
+    <Box
+      mt="md"
+      mb="xl"
+      display="grid"
+      gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 3 - 24px), 1fr))"
+      gridGap="24px"
+    >
+      {children}
+    </Box>
+  );
+};
+
+const ExampleGrid: React.FC = ({ children }) => {
   return (
     <Box
       mt="md"
@@ -48,20 +60,6 @@ const ElevationDetail: React.FC<{ title: string; description: string }> = ({ tit
     </Box>
   );
 };
-
-const Anchor = styled(UnstyledAnchor)`
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 33.3%;
-  margin: 8px;
-`;
-
-const StyledButton = styled(UnstyledButton)`
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 33.3%;
-  margin: 8px;
-`;
 
 const story = storiesOf('Core|Foundations/Card', module).addDecorator(SystemWrapper);
 
@@ -108,41 +106,113 @@ story.add(
       subtitle="Cards provide a base building block for composing UI patterns with other foundational components (e.g. Box and Text)."
       noBackground
     >
-      <Box display="flex" flexWrap="wrap" position="relative">
-        <Anchor href="https://www.google.com/" target="_blank">
+      <ExampleGrid>
+        <UnstyledAnchor
+          display="flex"
+          flexDirection="column"
+          href="https://sweettrip.bandcamp.com/album/velocity-design-comfort"
+          target="_blank"
+        >
           <Card display="flex" flex={1} flexDirection="column" elevation={2}>
             <img
-              alt="Example"
-              src="https://picsum.photos/id/873/1072/708"
+              alt="Sweet Trip - Velocity:Design:Comfort. album art"
+              src="https://f4.bcbits.com/img/a0341989491_10.jpg"
               style={{
-                height: 248,
+                height: 356,
                 objectFit: 'cover',
                 width: '100%',
               }}
             />
             <Box padding="sm" flex="1 1 auto">
-              <Heading scale={600}>An Example Card</Heading>
-              <Paragraph marginTop="xs" marginBottom={0}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis doloremque quisquam
-                sequi vel eaque aperiam vitae facere quia atque, hic, unde animi asperiores repudiandae quis ab enim
-                repellat?
-              </Paragraph>
+              <Box mb="sm">
+                <Heading scale={500} m={0}>
+                  Velocity:Design:Comfort.
+                </Heading>
+                <Text as="p" scale={400} fontWeight={400} m={0}>
+                  Sweet Trip &middot; 2003
+                </Text>
+              </Box>
+              <Stack spacing="sm">
+                <Paragraph m={0}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatibus ipsa natus consequatur
+                  voluptas dolorem omnis dolor fuga labore temporibus laudantium, eaque, porro animi ut laborum maxime
+                  inventore. Nobis, quidem!
+                </Paragraph>
+              </Stack>
             </Box>
           </Card>
-        </Anchor>
-        <StyledButton type="button" onClick={action('button-click')}>
+        </UnstyledAnchor>
+        <UnstyledAnchor
+          display="flex"
+          flexDirection="column"
+          href="https://miraclemusical.bandcamp.com/album/hawaii-part-ii"
+          target="_blank"
+        >
           <Card display="flex" flex={1} flexDirection="column" elevation={2}>
+            <img
+              alt="Example"
+              src="https://f4.bcbits.com/img/a3955451029_10.jpg"
+              style={{
+                height: 356,
+                objectFit: 'cover',
+                width: '100%',
+              }}
+            />
             <Box padding="sm" flex="1 1 auto">
-              <Heading scale={600}>An Example Card</Heading>
-              <Paragraph marginTop="xs" marginBottom={0}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis, reiciendis doloremque quisquam
-                sequi vel eaque aperiam vitae facere quia atque, hic, unde animi asperiores repudiandae quis ab enim
-                repellat?
-              </Paragraph>
+              <Box mb="sm">
+                <Heading scale={500} m={0}>
+                  Hawaii: Part II
+                </Heading>
+                <Text as="p" scale={400} fontWeight={400} m={0}>
+                  ミラクルミュージカル &middot; 2012
+                </Text>
+              </Box>
+              <Stack spacing="sm">
+                <Paragraph m={0}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor earum, reiciendis expedita placeat
+                  magnam porro ipsam libero. Perspiciatis suscipit optio, ut, cum accusantium, facilis quis ipsa est
+                  saepe veniam nostrum!
+                </Paragraph>
+              </Stack>
             </Box>
           </Card>
-        </StyledButton>
-      </Box>
+        </UnstyledAnchor>
+        <UnstyledAnchor
+          display="flex"
+          flexDirection="column"
+          href="https://software100p.bandcamp.com/album/digital-dance"
+          target="_blank"
+        >
+          <Card display="flex" flex={1} flexDirection="column" elevation={2}>
+            <img
+              alt="Example"
+              src="https://f4.bcbits.com/img/a3380857970_10.jpg"
+              style={{
+                height: 356,
+                objectFit: 'cover',
+                width: '100%',
+              }}
+            />
+            <Box padding="sm" flex="1 1 auto">
+              <Box mb="sm">
+                <Heading scale={500} m={0}>
+                  Digital-Dance
+                </Heading>
+                <Text as="p" scale={400} fontWeight={400} m={0}>
+                  SOFTWARE &middot; 1988
+                </Text>
+              </Box>
+              <Stack spacing="sm">
+                <Paragraph m={0}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dicta culpa minima ipsum dolore
+                  exercitationem, perferendis nobis, provident est sed maxime error ipsam eligendi molestiae. Excepturi
+                  officiis delectus exercitationem facilis?
+                </Paragraph>
+              </Stack>
+            </Box>
+          </Card>
+        </UnstyledAnchor>
+      </ExampleGrid>
     </SystemBlock>
   ),
   {
