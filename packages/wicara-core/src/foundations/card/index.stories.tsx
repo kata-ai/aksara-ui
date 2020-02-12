@@ -4,7 +4,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { Badge } from '../../components/badge';
-import { Button } from '../../components/button';
+import { OutlineButton } from '../../components/button';
 import { StoryContainer } from '../../utils/storybook';
 import { WicaraProvider } from '../reset';
 import { Box } from '../box';
@@ -159,7 +159,7 @@ story.add(
                 </Box>
               </Box>
               <Box>
-                <Button
+                <OutlineButton
                   icon="view"
                   style={{
                     marginRight: 8
@@ -168,10 +168,10 @@ story.add(
                   variant="primary"
                 >
                   View
-                </Button>
-                <Button icon="refresh" type="button" variant="destructive">
+                </OutlineButton>
+                <OutlineButton icon="refresh" type="button" variant="destructive">
                   Rollback
-                </Button>
+                </OutlineButton>
               </Box>
             </Box>
           </Card>
