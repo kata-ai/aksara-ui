@@ -165,11 +165,11 @@ story.add(
                     marginRight: 8
                   }}
                   type="button"
-                  variant="support"
+                  variant="primary"
                 >
                   View
                 </Button>
-                <Button icon="refresh" type="button" variant="support">
+                <Button icon="refresh" type="button" variant="destructive">
                   Rollback
                 </Button>
               </Box>
