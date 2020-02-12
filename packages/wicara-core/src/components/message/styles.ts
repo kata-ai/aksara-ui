@@ -1,11 +1,23 @@
 import styled, { css } from 'styled-components';
-import { variant } from 'styled-system';
+import {
+  layout,
+  LayoutProps,
+  position,
+  PositionProps,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
+  space,
+  SpaceProps,
+  variant,
+} from 'styled-system';
 
 import { messageVariants, closeButtonVariants } from './variants';
 
 export type MessageStates = keyof typeof messageVariants;
 
-export interface BaseMessageProps {
+export interface BaseMessageProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
   state?: MessageStates;
 }
 
@@ -22,6 +34,12 @@ export const BaseMessageStyles = () =>
       prop: 'state',
       variants: messageVariants,
     })}
+
+    ${layout}
+    ${position}
+    ${flexbox}
+    ${grid}
+    ${space}
   `;
 
 export const Icon = styled('div')`

@@ -15,7 +15,7 @@ export interface MessageProps extends BaseMessageProps {
 }
 
 /** Banners are used to convey important information to users. */
-const Message: React.FC<MessageProps> = ({ className, style, message, state, onClose }) => {
+const Message: React.FC<MessageProps> = ({ className, style, message, state, onClose, ...rest }) => {
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
@@ -25,7 +25,7 @@ const Message: React.FC<MessageProps> = ({ className, style, message, state, onC
   };
 
   return (
-    <Root className={className} style={style} state={state}>
+    <Root className={className} style={style} state={state} {...rest}>
       {state !== 'general' && (
         <Icon>
           <i className={`icon-${state}`} />
