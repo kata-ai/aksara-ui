@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
-import { typeScale, colors } from '../../../utils/variables';
+import { colors } from '../../../utils/variables';
 import { ButtonBaseProps } from '../types';
+import { componentStyles } from '../../../utils';
 
 export const ButtonDefault = css`
   background-color: ${colors.gray10};
@@ -180,10 +181,10 @@ export const ButtonGhost = css`
 
 export const ButtonSmall = (props: ButtonBaseProps) => css`
   height: 32px;
-  padding: 0 16px;
-  font-size: 11px;
+  padding: 0 12px;
+  font-size: ${componentStyles.text[300].fontSize};
+  line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
-  font-weight: 700;
 
   ${props.icon && props.iconPosition === 'left' && 'padding-left: 36px;'}
   ${props.icon && props.iconPosition === 'right' && 'padding-right: 36px;'}
@@ -191,21 +192,21 @@ export const ButtonSmall = (props: ButtonBaseProps) => css`
 
 export const ButtonMedium = (props: ButtonBaseProps) => css`
   height: 40px;
-  padding: 0 24px;
-  font-size: 13px;
+  padding: 0 16px;
+  font-size: ${componentStyles.text[300].fontSize};
+  line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
-  font-weight: 500;
 
   ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
   ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
 `;
 
 export const ButtonLarge = (props: ButtonBaseProps) => css`
-  height: 56px;
+  height: 48px;
   padding: 0 24px;
-  font-size: ${typeScale.large.fontSize}px;
+  font-size: ${componentStyles.text[300].fontSize};
+  line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
-  font-weight: 500;
 
   ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
   ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}

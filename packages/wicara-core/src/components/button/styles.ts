@@ -52,6 +52,7 @@ export const ButtonBase = css`
   user-select: none;
   background: none;
   text-decoration: none;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: 0.2px;
   border: 1px solid transparent;

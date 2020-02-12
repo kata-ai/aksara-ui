@@ -18,7 +18,10 @@ stories.add(
         <Button type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button type="button" style={{ marginRight: 16 }} onClick={action('button-click')}>
+        <Button type="button" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
+          Push Me
+        </Button>
+        <Button type="button" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -26,7 +29,10 @@ stories.add(
         <Button type="button" variant="primary" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button type="button" variant="primary" style={{ marginRight: 16 }} onClick={action('button-click')}>
+        <Button type="button" variant="primary" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
+          Push Me
+        </Button>
+        <Button type="button" variant="primary" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -34,7 +40,10 @@ stories.add(
         <Button type="button" variant="support" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button type="button" variant="support" style={{ marginRight: 16 }} onClick={action('button-click')}>
+        <Button type="button" variant="support" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
+          Push Me
+        </Button>
+        <Button type="button" variant="support" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -42,7 +51,10 @@ stories.add(
         <Button type="button" variant="link" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button type="button" variant="link" style={{ marginRight: 16 }} onClick={action('button-click')}>
+        <Button type="button" variant="link" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
+          Push Me
+        </Button>
+        <Button type="button" variant="link" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -56,7 +68,22 @@ stories.add(
         >
           Push Me
         </Button>
-        <Button type="button" variant="destructive" style={{ marginRight: 16 }} onClick={action('button-click')}>
+        <Button
+          type="button"
+          variant="destructive"
+          style={{ marginRight: 16 }}
+          size="md"
+          onClick={action('button-click')}
+        >
+          Push Me
+        </Button>
+        <Button
+          type="button"
+          variant="destructive"
+          style={{ marginRight: 16 }}
+          size="lg"
+          onClick={action('button-click')}
+        >
           Push Me
         </Button>
       </ComponentBlock>
@@ -64,7 +91,10 @@ stories.add(
         <Button type="button" variant="ghost" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button type="button" variant="ghost" style={{ marginRight: 16 }} onClick={action('button-click')}>
+        <Button type="button" variant="ghost" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
+          Push Me
+        </Button>
+        <Button type="button" variant="ghost" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -79,7 +109,22 @@ stories.add(
           >
             Push Me
           </Button>
-          <Button type="button" variant="inverse" style={{ marginRight: 16 }} onClick={action('button-click')}>
+          <Button
+            type="button"
+            variant="inverse"
+            style={{ marginRight: 16 }}
+            size="md"
+            onClick={action('button-click')}
+          >
+            Push Me
+          </Button>
+          <Button
+            type="button"
+            variant="inverse"
+            style={{ marginRight: 16 }}
+            size="lg"
+            onClick={action('button-click')}
+          >
             Push Me
           </Button>
         </Box>
@@ -236,7 +281,10 @@ stories.add(
         <Button type="button" size="sm" variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" variant="primary" isLoading>
+        <Button type="button" size="md" variant="primary" isLoading style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" size="lg" variant="primary" isLoading>
           Push Me
         </Button>
       </ComponentBlock>
@@ -244,7 +292,10 @@ stories.add(
         <Button type="button" size="sm" variant="primary" icon="add" iconPosition="left" style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" variant="primary" icon="add" iconPosition="left">
+        <Button type="button" size="md" variant="primary" icon="add" iconPosition="left" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button type="button" size="lg" variant="primary" icon="add" iconPosition="left">
           Push Me
         </Button>
       </ComponentBlock>
@@ -252,7 +303,10 @@ stories.add(
         <Button type="button" size="sm" variant="primary" icon="add" iconPosition="right" style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" variant="primary" icon="add" iconPosition="right">
+        <Button size="md" type="button" variant="primary" icon="add" iconPosition="right" style={{ marginRight: 16 }}>
+          Push Me
+        </Button>
+        <Button size="lg" type="button" variant="primary" icon="add" iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
