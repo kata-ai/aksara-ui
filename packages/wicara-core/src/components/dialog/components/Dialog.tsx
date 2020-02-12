@@ -59,8 +59,8 @@ const DialogWrapper = styled(Card)`
 
 const CloseButton = styled(IconButton)`
   position: absolute;
-  top: 18px;
-  right: 24px;
+  top: 32px;
+  right: 32px;
 `;
 
 export interface DialogProps {
@@ -174,10 +174,11 @@ class Dialog extends React.Component<DialogProps, DialogState> {
       <DialogOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <DialogWrapper
           className={clsx(isOpen && 'entered')}
+          position="relative"
           display="flex"
           flexDirection="column"
           backgroundColor="white"
-          borderRadius="lg"
+          borderRadius="md"
           height={height}
           width={width || '100%'}
           maxWidth={maxWidth || '500px'}
