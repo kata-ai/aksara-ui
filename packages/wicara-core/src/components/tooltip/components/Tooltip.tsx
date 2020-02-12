@@ -1,90 +1,57 @@
 import React from 'react';
-import Tippy from '@tippy.js/react';
-import styled from 'styled-components';
+import clsx from 'clsx';
+import TooltipTrigger from 'react-popper-tooltip';
 
 import TooltipInner, { TooltipPlacement, TooltipSize } from './TooltipInner';
 
 export interface TooltipProps {
   className?: string;
   style?: React.CSSProperties;
+  delay?: boolean;
   content: string | React.ReactNode;
   placement?: TooltipPlacement;
   size?: TooltipSize;
   children: React.ReactElement;
 }
 
-const TooltipTarget = styled('span')`
-  display: inline-flex;
-  align-items: center;
-`;
-
-TooltipTarget.displayName = 'TooltipTarget';
-
-const Tooltip: React.FC<TooltipProps> = ({ className, style, placement, size, content, children, ...rest }) => {
-  const [visible, setVisible] = React.useState(false);
-  const [focused, setFocused] = React.useState(false);
-
-  const handleTooltipEnter = () => {
-    setFocused(true);
-  };
-
-  const handleTooltipExit = () => {
-    setFocused(false);
-  };
-
-  React.useEffect(() => {
-    const timeout = setTimeout(
-      () => {
-        setVisible(focused);
-      },
-      focused ? 300 : 0
-    );
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [focused]);
-
+const Tooltip: React.FC<TooltipProps> = ({ className, style, delay, placement, size, content, children }) => {
   return (
-    <Tippy
-      touch={false}
-      hideOnClick={false}
+    <TooltipTrigger
+      trigger="hover"
+      delayShow={delay ? 300 : 0}
       placement={placement}
-      content={
+      tooltip={({ tooltipRef, getTooltipProps, placement: popperPlacement }) => (
         <TooltipInner
-          className={className}
-          style={style}
-          placement={placement}
-          size={size}
-          onMouseOver={handleTooltipEnter}
-          onFocus={handleTooltipEnter}
-          onMouseLeave={handleTooltipExit}
+          {...getTooltipProps({
+            size,
+            ref: tooltipRef,
+            placement: popperPlacement,
+          })}
           content={content}
         />
-      }
-      visible={visible}
-      // https://github.com/FezVrasta/popper.js/issues/535
-      popperOptions={{
-        modifiers: {
-          preventOverflow: {
-            boundariesElement: 'window',
-          },
-        },
-      }}
-      {...rest}
+      )}
     >
-      <TooltipTarget onMouseOver={handleTooltipEnter} onFocus={handleTooltipEnter} onMouseLeave={handleTooltipExit}>
-        {children}
-      </TooltipTarget>
-    </Tippy>
+      {({ getTriggerProps, triggerRef }) => {
+        return (
+          <span
+            {...getTriggerProps({
+              style,
+              ref: triggerRef,
+              className: clsx('trigger', className),
+            })}
+          >
+            {children}
+          </span>
+        );
+      }}
+    </TooltipTrigger>
   );
 };
 
 Tooltip.defaultProps = {
-  className: undefined,
-  style: undefined,
   size: 'sm',
   placement: 'top',
+  delay: true,
 };
 
 Tooltip.displayName = 'Tooltip';

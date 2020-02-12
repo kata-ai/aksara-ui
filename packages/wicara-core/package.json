@@ -32,11 +32,12 @@
     "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
+    "@reach/visually-hidden": "^0.8.2",
     "@styled-system/theme-get": "^5.1.2",
-    "@tippy.js/react": "^3.1.1",
     "clsx": "^1.0.4",
     "focus-trap": "^5.1.0",
     "polished": "^3.4.2",
+    "react-popper-tooltip": "^2.10.1",
     "react-transition-group": "^4.3.0",
     "styled-system": "^5.1.4"
   },

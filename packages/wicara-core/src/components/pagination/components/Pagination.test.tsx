@@ -25,14 +25,14 @@ describe('components/Pagination', () => {
   test('previous page button is disabled on first page', () => {
     const { getByText } = render(<Pagination current={1} total={5} onSelect={handleSelect} />);
 
-    const previousPage = getByText('«');
-    expect(previousPage).toHaveAttribute('disabled');
+    const previousPageButton = getByText('Previous Page').parentElement;
+    expect(previousPageButton).toHaveAttribute('disabled');
   });
 
   test('next page button is disabled on last page', () => {
     const { getByText } = render(<Pagination current={5} total={5} onSelect={handleSelect} />);
 
-    const previousPage = getByText('»');
-    expect(previousPage).toHaveAttribute('disabled');
+    const nextPageButton = getByText('Next Page').parentElement;
+    expect(nextPageButton).toHaveAttribute('disabled');
   });
 });

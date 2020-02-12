@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
+import VisuallyHidden from '@reach/visually-hidden';
 import PaginationButton from './PaginationButton';
 import { Text } from '../../../foundations';
 import IconChevronLeft from './IconChevronLeft';
@@ -93,7 +94,8 @@ class Pagination extends React.Component<PaginationProps> {
     return (
       <PaginationBase className={className}>
         <PaginationButton color="white" disabled={current === 1} onClick={() => this.handleSelectPage(current - 1)}>
-          <IconChevronLeft size={16} fill={colors.grey08} />
+          <VisuallyHidden>Previous Page</VisuallyHidden>
+          <IconChevronLeft aria-hidden size={16} fill={colors.grey08} />
         </PaginationButton>
         {pages.map((page, index) => (
           <PaginationButton
@@ -108,7 +110,8 @@ class Pagination extends React.Component<PaginationProps> {
           </PaginationButton>
         ))}
         <PaginationButton disabled={current === total} onClick={() => this.handleSelectPage(current + 1)}>
-          <IconChevronRight size={16} fill={colors.grey08} />
+          <VisuallyHidden>Next Page</VisuallyHidden>
+          <IconChevronRight aria-hidden size={16} fill={colors.grey08} />
         </PaginationButton>
       </PaginationBase>
     );
