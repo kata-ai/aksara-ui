@@ -24,8 +24,7 @@
     "prepublishOnly": "yarn compile",
     "report-coverage": "codecov -f ./coverage/*.json",
     "rollup": "rollup -c ./rollup.config.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "type-check": "tsc --noEmit",
     "validate": "yarn lint && yarn type-check"
   },
@@ -37,15 +36,6 @@
     "react-dom": "^16.10.0"
   },
   "devDependencies": {
-    "@babel/core": "7.7.5",
-    "@babel/plugin-proposal-class-properties": "7.7.4",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
-    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
-    "@babel/preset-env": "7.7.6",
-    "@babel/preset-react": "7.7.4",
-    "@babel/preset-typescript": "7.7.4",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
     "@types/node": "^12.12.14",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",

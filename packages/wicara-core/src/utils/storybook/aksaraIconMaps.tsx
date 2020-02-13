@@ -26,8 +26,7 @@ import {
   IconArrowLeftRounded,
   IconArrowRightRounded,
   IconArrowUpRounded,
-  // @ts-ignore
-} from '../../../../aksara-icons/src';
+} from '../../../../aksara-icons';
 
 interface IconMap {
   name: string;
