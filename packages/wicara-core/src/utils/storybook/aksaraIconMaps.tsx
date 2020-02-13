@@ -75,7 +75,7 @@ import {
   IconTrash,
   IconUnlabel,
   IconUpload,
-} from '../../../../aksara-icons';
+} from '@aksara-ui-kit/icons';
 
 interface IconMap {
   name: string;
@@ -162,10 +162,17 @@ const aksaraIconMaps: IconMapObject = {
     { name: 'IconUnlabel', children: <IconUnlabel /> },
     { name: 'IconUpload', children: <IconUpload /> },
   ],
+  bubble: [],
   chart: [
     { name: 'IconChartGraph', children: <IconChartGraph /> },
     { name: 'IconChartPie', children: <IconChartPie /> },
   ],
+  doc: [],
+  media: [],
+  menu: [],
+  panel: [],
+  social: [],
+  user: [],
 };
 
 export default aksaraIconMaps;

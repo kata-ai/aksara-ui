@@ -42,11 +42,13 @@
     "styled-system": "^5.1.4"
   },
   "peerDependencies": {
+    "@aksara-ui-kit/icons": "^0.8.0",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "styled-components": "^4.1.2"
   },
   "devDependencies": {
+    "@aksara-ui-kit/icons": "^0.8.0",
     "@storybook/addon-a11y": "5.2.8",
     "@storybook/addon-actions": "5.2.8",
     "@storybook/addon-knobs": "5.2.8",
@@ -57,9 +59,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.14",
-    "@types/react": "^16.9.19",
-    "@types/react-dom": "^16.9.5",
     "@types/react-transition-group": "^4.2.3",
     "@types/styled-components": "^4.4.1",
     "@types/styled-system": "^5.1.4",
