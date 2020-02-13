@@ -3,7 +3,7 @@ import * as React from 'react';
 import { toClipboard } from 'copee';
 
 import { SystemWrapper, SystemBlock, SystemSubheading, aksaraIconMaps } from './utils/storybook';
-import { Box, Text, UnstyledButton } from './foundations';
+import { Box, UnstyledButton } from './foundations';
 
 import { Card } from './index';
 import { Tooltip, notification } from './components';
