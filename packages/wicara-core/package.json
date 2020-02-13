@@ -67,6 +67,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "codecov": "^3.6.1",
+    "copee": "^1.0.6",
     "jest": "^24.9.0",
     "jest-styled-components": "^6.3.4",
     "react": "^16.12.0",

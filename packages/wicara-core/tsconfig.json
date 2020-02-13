@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "composite": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
@@ -20,7 +21,11 @@
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2015"
   },
-  "references": [],
+  "references": [
+    {
+      "path": "../aksara-icons"
+    }
+  ],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "**/lib"]
 }

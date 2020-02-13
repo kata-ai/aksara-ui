@@ -1,10 +1,12 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
+import { toClipboard } from 'copee';
 
 import { SystemWrapper, SystemBlock, SystemSubheading, aksaraIconMaps } from './utils/storybook';
-import { Box, Text } from './foundations';
+import { Box, Text, UnstyledButton } from './foundations';
 
 import { Card } from './index';
+import { Tooltip, notification } from './components';
 
 const readme = require('../../aksara-icons/README.md');
 
@@ -14,7 +16,7 @@ const IconGrid: React.FC = ({ children }) => {
       mt="md"
       mb="xl"
       display="grid"
-      gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 6 - 24px), 1fr))"
+      gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 12 - 24px), 1fr))"
       gridGap="24px"
     >
       {children}
@@ -22,25 +24,41 @@ const IconGrid: React.FC = ({ children }) => {
   );
 };
 
+const copyText = (text: string) => {
+  const success = toClipboard(text);
+
+  if (success) {
+    notification.toaster({
+      status: 'success',
+      message: `Successfully copied \`${text}\` to clipboard.`,
+      dismissible: true,
+      dismissAfter: 5000,
+    });
+  }
+};
+
 // TODO: Maybe use Suspense + lazy load these icons by path?
 const IconDetail: React.FC<{ name: string }> = ({ name, children }) => {
   return (
-    <Card elevation={1}>
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        textAlign="center"
-        height={167}
-        p="sm"
-      >
-        <Box>{children}</Box>
-        <Text as="h5" scale={300} fontWeight={400} color="grey07" mt="xs" mb={0}>
-          {name}
-        </Text>
-      </Box>
-    </Card>
+    <Tooltip style={{ display: 'flex', flexDirection: 'column' }} content={name}>
+      <UnstyledButton onClick={() => copyText(name)}>
+        <Card elevation={1} width="100%">
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            textAlign="center"
+            height={71}
+            p="sm"
+          >
+            <Box width={24} height={24}>
+              {children}
+            </Box>
+          </Box>
+        </Card>
+      </UnstyledButton>
+    </Tooltip>
   );
 };
 
