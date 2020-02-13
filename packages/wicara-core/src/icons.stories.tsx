@@ -1,25 +1,8 @@
-/* eslint-disable import/named */
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { SystemWrapper, SystemBlock, SystemSubheading } from './utils/storybook';
+import { SystemWrapper, SystemBlock, SystemSubheading, aksaraIconMaps } from './utils/storybook';
 import { Box, Text } from './foundations';
-
-import {
-  IconBot,
-  IconBotFlows,
-  IconModule,
-  IconModuleLibrary,
-  IconModuleTick,
-  IconAPI,
-  IconCMS,
-  IconCommand,
-  IconDeploy,
-  IconEnvironments,
-  IconNLU,
-  // @ts-ignore
-} from '../../aksara-icons/src';
 
 import { Card } from './index';
 
@@ -71,41 +54,37 @@ story.add(
       subtitle="Iconography uses symbols to represent meaning visually. They communicate a message and should be distinct and informative. Icons should be simple, yet clear enough to grab attention."
       noBackground
     >
+      <SystemSubheading>Basic Icons</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.basic.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
+      <SystemSubheading>Atoms</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.atoms.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
+      <SystemSubheading>Chart</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.chart.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
       <SystemSubheading>AI</SystemSubheading>
       <IconGrid>
-        <IconDetail name="IconBot">
-          <IconBot />
-        </IconDetail>
-        <IconDetail name="IconBotFlows">
-          <IconBotFlows />
-        </IconDetail>
-        <IconDetail name="IconModule">
-          <IconModule />
-        </IconDetail>
-        <IconDetail name="IconModuleLibrary">
-          <IconModuleLibrary />
-        </IconDetail>
-        <IconDetail name="IconModuleTick">
-          <IconModuleTick />
-        </IconDetail>
-        <IconDetail name="IconAPI">
-          <IconAPI />
-        </IconDetail>
-        <IconDetail name="IconCMS">
-          <IconCMS />
-        </IconDetail>
-        <IconDetail name="IconCommand">
-          <IconCommand />
-        </IconDetail>
-        <IconDetail name="IconDeploy">
-          <IconDeploy />
-        </IconDetail>
-        <IconDetail name="IconEnvironments">
-          <IconEnvironments />
-        </IconDetail>
-        <IconDetail name="IconNLU">
-          <IconNLU />
-        </IconDetail>
+        {aksaraIconMaps.ai.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
       </IconGrid>
     </SystemBlock>
   ),
