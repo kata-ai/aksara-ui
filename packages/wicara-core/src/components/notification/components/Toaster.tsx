@@ -3,8 +3,10 @@ import styled, { keyframes } from 'styled-components';
 import { variant } from 'styled-system';
 import { themeGet } from '@styled-system/theme-get';
 import { Transition } from 'react-transition-group';
+import { IconTickSingle, IconInfo, IconWarningTriangle, IconCloseRounded } from '@aksara-ui-kit/icons/src';
 
 import { Text, Card, Heading, Box } from '../../../foundations';
+import { colors } from '../../../utils';
 import { ToasterSettings, NotificationStatus } from '../utils/types';
 import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
 import toasterVariants from './variants';
@@ -49,11 +51,6 @@ const ToastExit = keyframes`
     max-height: 0;
     margin-bottom: 0;
   }
-`;
-
-const Icon = styled('i')<WithStatusProps>`
-  vertical-align: middle;
-  color: ${props => themeGet(props.status === 'default' ? 'colors.grey09' : 'colors.grey01')(props)};
 `;
 
 const Title = styled(Heading)<WithStatusProps>`
@@ -144,12 +141,37 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
     this.clearCloseTimer();
   }
 
+  private renderToasterIcon = () => {
+    const { status } = this.props;
+
+    switch (status) {
+      case 'default': {
+        return null;
+      }
+      case 'success': {
+        return <IconTickSingle fill={colors.grey01} />;
+      }
+      case 'info': {
+        return <IconInfo fill={colors.grey01} />;
+      }
+      case 'warning': {
+        return <IconWarningTriangle fill={colors.grey01} />;
+      }
+      case 'error': {
+        return <IconCloseRounded fill={colors.grey01} />;
+      }
+      default: {
+        return null;
+      }
+    }
+  };
+
   private renderInnerToaster = () => {
     const { title, message, status, allowHTML } = this.props;
 
     return (
       <Inner status={status} elevation={5}>
-        {status !== 'default' ? <div>{status ? this.renderToasterIcon(status) : null}</div> : null}
+        {status && status !== 'default' ? this.renderToasterIcon() : null}
 
         <Right>
           {this.renderToasterTitle(title, status)}
@@ -173,14 +195,6 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
         {title}
       </Title>
     ) : null;
-  };
-
-  private renderToasterIcon = (status: ToasterSettings['status']) => {
-    if (status === 'default') {
-      return null;
-    }
-
-    return <Icon className={`icon-${status}`} status={status} />;
   };
 
   private startCloseTimer = () => {

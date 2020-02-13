@@ -76,27 +76,9 @@ export const CloseButton = styled('button')<BaseMessageProps>`
 
   &:focus {
     outline: none;
-
-    i {
-      outline-offset: 2px;
-    }
   }
 `;
 
 export const Root = styled('div')<BaseMessageProps>`
   ${BaseMessageStyles}
-
-  ${Icon} {
-    i {
-      display: inline-block;
-      height: 16px;
-    }
-  }
-
-  ${CloseButton} {
-    i {
-      display: inline-block;
-      height: 13px;
-    }
-  }
 `;
