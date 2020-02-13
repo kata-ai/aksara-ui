@@ -44,7 +44,7 @@ const IconDetail: React.FC<{ name: string }> = ({ name, children }) => {
   );
 };
 
-const story = storiesOf('Core|Icons', module).addDecorator(SystemWrapper);
+const story = storiesOf('Icons|Aksara Icons', module).addDecorator(SystemWrapper);
 
 story.add(
   'icon library',
