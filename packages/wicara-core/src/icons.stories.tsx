@@ -128,6 +128,14 @@ story.add(
           </IconDetail>
         ))}
       </IconGrid>
+      <SystemSubheading>User</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.user.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
     </SystemBlock>
   ),
   {

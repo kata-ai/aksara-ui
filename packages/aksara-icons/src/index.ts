@@ -5,4 +5,5 @@ export * from './bubble';
 export * from './chart';
 export * from './doc';
 export * from './menu';
+export * from './user';
 export * from './utils';

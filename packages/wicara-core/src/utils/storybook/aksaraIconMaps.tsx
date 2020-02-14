@@ -108,6 +108,10 @@ import {
   IconHamburger,
   IconKebab,
   IconKebabRounded,
+  IconAudience,
+  IconClient,
+  IconUser,
+  IconVoiceTone,
 } from '@kata-ai/aksara-icons';
 
 interface IconMap {
@@ -241,7 +245,12 @@ const aksaraIconMaps: IconMapObject = {
   ],
   panel: [],
   social: [],
-  user: [],
+  user: [
+    { name: 'IconAudience', children: <IconAudience /> },
+    { name: 'IconClient', children: <IconClient /> },
+    { name: 'IconUser', children: <IconUser /> },
+    { name: 'IconVoiceTone', children: <IconVoiceTone /> },
+  ],
 };
 
 export default aksaraIconMaps;
