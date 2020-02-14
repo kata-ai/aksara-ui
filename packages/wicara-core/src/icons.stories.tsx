@@ -80,6 +80,22 @@ story.add(
           </IconDetail>
         ))}
       </IconGrid>
+      <SystemSubheading>Document</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.doc.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
+      <SystemSubheading>Menu</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.menu.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
       <SystemSubheading>Bubbles</SystemSubheading>
       <IconGrid>
         {aksaraIconMaps.bubble.map(({ name, children }) => (
