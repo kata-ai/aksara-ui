@@ -75,7 +75,7 @@ import {
   IconTrash,
   IconUnlabel,
   IconUpload,
-} from '@aksara-ui-kit/icons';
+} from '@kata-ai/aksara-icons';
 
 interface IconMap {
   name: string;

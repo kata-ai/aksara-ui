@@ -1,4 +1,4 @@
-# @aksara-ui-kit/icons
+# @kata-ai/aksara-icons
 
 > Icon library for the Aksara design system.
 

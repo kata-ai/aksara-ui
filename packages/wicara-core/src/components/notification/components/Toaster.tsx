@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { variant } from 'styled-system';
 import { themeGet } from '@styled-system/theme-get';
 import { Transition } from 'react-transition-group';
-import { IconTickSingle, IconInfo, IconWarningTriangle, IconCloseRounded } from '@aksara-ui-kit/icons';
+import { IconTickSingle, IconInfo, IconWarningTriangle, IconCloseRounded } from '@kata-ai/aksara-icons';
 
 import { Text, Card, Heading, Box } from '../../../foundations';
 import { colors } from '../../../utils';

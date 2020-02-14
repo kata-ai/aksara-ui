@@ -1,5 +1,5 @@
 {
-  "name": "@aksara-ui-kit/icons",
+  "name": "@kata-ai/aksara-icons",
   "version": "0.8.0",
   "description": "Icon library for the Aksara design system.",
   "main": "./lib/index.js",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconTickRounded, IconInfo, IconWarningRounded, IconCloseRounded, IconClose } from '@aksara-ui-kit/icons';
+import { IconTickRounded, IconInfo, IconWarningRounded, IconCloseRounded, IconClose } from '@kata-ai/aksara-icons';
 
 import { BaseMessageProps, Root, Icon, Inner, CloseButton, MessageStates } from '../styles';
 import { Text } from '../../../foundations';
