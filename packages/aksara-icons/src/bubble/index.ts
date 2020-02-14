@@ -1,0 +1,15 @@
+export { default as IconBubble } from './IconBubble';
+export { default as IconBubbleCheck } from './IconBubbleCheck';
+export { default as IconBubbleClose } from './IconBubbleClose';
+export { default as IconBubbleEdit } from './IconBubbleEdit';
+export { default as IconBubblePlus } from './IconBubblePlus';
+export { default as IconConversation } from './IconConversation';
+export { default as IconEntities } from './IconEntities';
+export { default as IconFAQ } from './IconFAQ';
+export { default as IconNLUs } from './IconNLUs';
+export { default as IconPhrase } from './IconPhrase';
+export { default as IconTranscript } from './IconTranscript';
+export { default as IconWaba } from './IconWaba';
+export { default as IconMessageBot } from './bot';
+export { default as IconMessageTemplate } from './message';
+export { default as IconNLUTrait } from './nlu';

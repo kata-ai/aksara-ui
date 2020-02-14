@@ -80,6 +80,14 @@ story.add(
           </IconDetail>
         ))}
       </IconGrid>
+      <SystemSubheading>Bubbles</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.bubble.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
       <SystemSubheading>Atoms</SystemSubheading>
       <IconGrid>
         {aksaraIconMaps.atoms.map(({ name, children }) => (
