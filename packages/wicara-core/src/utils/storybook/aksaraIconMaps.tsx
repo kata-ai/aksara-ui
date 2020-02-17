@@ -168,7 +168,7 @@ import {
   IconMethods,
   IconPie,
   IconQuickReply,
-} from '@kata-ai/aksara-icons';
+} from '@aksara-ui/icons-react';
 
 interface IconMap {
   name: string;

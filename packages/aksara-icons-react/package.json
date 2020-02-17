@@ -1,7 +1,7 @@
 {
-  "name": "@kata-ai/aksara-icons",
+  "name": "@aksara-ui/icons-react",
   "version": "0.8.0",
-  "description": "Icon library for the Aksara design system.",
+  "description": "React icon library for the Aksara design system.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
   "types": "./lib/index.d.ts",

@@ -23,7 +23,7 @@
   },
   "references": [
     {
-      "path": "../aksara-icons"
+      "path": "../aksara-icons-react"
     }
   ],
   "include": ["src/**/*.ts", "src/**/*.tsx"],

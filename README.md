@@ -35,14 +35,14 @@ Check out [kata-ai/wicara-starter](https://github.com/kata-ai/wicara-starter).
 
 ### Prerequisites
 
-Wicara requires `styled-components` v4+. First, install the core Wicara package and `styled-components`.
+Wicara requires `styled-components` v4+. First, install the core Wicara package, Wicara React icon library, and `styled-components`.
 
 ```bash
 # yarn
-$ yarn add styled-components @wicara/core
+$ yarn add styled-components @wicara/core @aksara-ui/icons-react
 
 # npm
-$ npm install --save styled-components @wicara/core
+$ npm install --save styled-components @wicara/core @aksara-ui/icons-react
 ```
 
 Then, you will need to apply the style resets + theme provider. Wrap your app inside the `WicaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
