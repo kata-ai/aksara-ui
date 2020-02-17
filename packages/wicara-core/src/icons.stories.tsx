@@ -136,6 +136,30 @@ story.add(
           </IconDetail>
         ))}
       </IconGrid>
+      <SystemSubheading>Media</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.media.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
+      <SystemSubheading>Social</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.social.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
+      <SystemSubheading>Panel</SystemSubheading>
+      <IconGrid>
+        {aksaraIconMaps.panel.map(({ name, children }) => (
+          <IconDetail key={name} name={name}>
+            {children}
+          </IconDetail>
+        ))}
+      </IconGrid>
     </SystemBlock>
   ),
   {
