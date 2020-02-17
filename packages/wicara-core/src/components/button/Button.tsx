@@ -46,7 +46,7 @@ const LoaderCircle = styled(Circle)<LoaderCircleProps>`
   top: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
 `;
 
-const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition'>>`
+const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant'>>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,11 +79,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         );
       }
 
-      return (
+      return icon ? (
         <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
-          {icon}
+          {React.createElement(icon, { fill: 'currentColor', size: 20 })}
         </Icon>
-      );
+      ) : null;
     };
 
     return (

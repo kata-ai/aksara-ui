@@ -1,14 +1,17 @@
 import { css } from 'styled-components';
 import { lighten } from 'polished';
+import { themeGet } from '@styled-system/theme-get';
 import { colors } from '../../../utils/variables';
 import { IconButtonSizes } from '../types';
 
 export function iconButtonSizes(size?: IconButtonSizes) {
   switch (size) {
-    case 'md':
+    case 'lg':
       return 40;
-    case 'sm':
+    case 'md':
       return 32;
+    case 'sm':
+      return 24;
     default:
       return 32;
   }
@@ -16,12 +19,14 @@ export function iconButtonSizes(size?: IconButtonSizes) {
 
 export function iconSizes(size?: IconButtonSizes) {
   switch (size) {
+    case 'lg':
+      return 24;
     case 'md':
-      return 20;
+      return 16;
     case 'sm':
-      return 16;
+      return 12;
     default:
-      return 16;
+      return 20;
   }
 }
 
@@ -86,34 +91,35 @@ export const IconButtonPrimary = css`
 `;
 
 export const IconButtonSupport = css`
-  background-color: ${colors.white};
-  color: ${colors.gray50};
-  border-color: ${colors.gray30};
+  background-color: ${themeGet('colors.grey01', colors.grey01)};
+  color: ${themeGet('colors.grey08', colors.grey08)};
+  border-color: ${themeGet('colors.grey04', colors.grey04)};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.gray10};
+      background-color: ${themeGet('colors.grey03', colors.grey03)};
+      color: ${themeGet('colors.blue08', colors.blue08)};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      border-color: ${colors.gray70};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${themeGet('colors.grey03', colors.grey03)};
+      color: ${themeGet('colors.blue08', colors.blue08)};
+      border-color: ${themeGet('colors.blue06', colors.blue06)};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.5);
     }
   }
 
   &:disabled,
   &.disabled {
-    background-color: ${colors.white};
-    color: ${colors.gray30};
-    border-color: ${colors.gray10};
+    background-color: ${themeGet('colors.grey01', colors.grey01)};
+    color: ${themeGet('colors.grey04', colors.grey04)};
+    border-color: ${themeGet('colors.grey04', colors.grey04)};
   }
 `;
 
@@ -147,29 +153,29 @@ export const IconButtonDestructive = css`
 `;
 
 export const IconButtonGhost = css`
-  color: ${colors.gray50};
+  color: ${themeGet('colors.grey08', colors.grey08)};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
-    &.hover,
-    &:focus,
-    &.focus {
-      background-color: ${colors.gray10};
+    &.hover {
+      color: ${themeGet('colors.blue08', colors.blue08)};
     }
 
     &:focus,
-    &.focus,
+    &.focus {
+      color: ${themeGet('colors.blue08', colors.blue08)};
+      border-color: ${themeGet('colors.blue04', colors.blue04)};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.5);
+    }
+
     &:active,
     &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      border-color: ${colors.gray70};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      border-color: ${themeGet('colors.indigo02', colors.indigo02)};
     }
   }
 
   &:disabled,
   &.disabled {
-    color: ${colors.gray30};
+    color: ${colors.grey04};
   }
 `;

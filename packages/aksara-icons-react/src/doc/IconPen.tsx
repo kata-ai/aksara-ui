@@ -6,7 +6,7 @@ const IconPen: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M13 3v5c0 1.7 1.3 3 3 3h4v8c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h7zm2 5V3.1L20 9h-4c-.6 0-1-.4-1-1z"
+      d="M18.1 3.6l2.3 2.3c.8.8.8 2.1 0 2.9l-.9.9-1.8-1.8-3.4-3.4.9-.9c.8-.8 2.1-.8 2.9 0zM3 16.2c0-.3.1-.5.3-.7L12.8 6l5.2 5.2-9.5 9.5c-.2.2-.4.3-.7.3H4c-.6 0-1-.4-1-1v-3.8z"
       fill={fill}
     />
   </svg>

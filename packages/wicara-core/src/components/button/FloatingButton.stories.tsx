@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { IconPlus } from '@aksara-ui/icons-react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import FloatingButton from './FloatingButton';
@@ -21,7 +22,7 @@ stories.add(
           aria-label="Push Me"
           onClick={action('button-click')}
         >
-          <i className="icon-add" aria-hidden="true" />
+          <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -30,7 +31,7 @@ stories.add(
           aria-label="Push Me"
           onClick={action('button-click')}
         >
-          <i className="icon-add" aria-hidden="true" />
+          <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -39,7 +40,7 @@ stories.add(
           aria-label="Push Me"
           onClick={action('button-click')}
         >
-          <i className="icon-add" aria-hidden="true" />
+          <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
       <ComponentBlock title="Default Button">

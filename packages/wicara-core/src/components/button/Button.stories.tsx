@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { IconPlus } from '@aksara-ui/icons-react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import Button from './Button';
@@ -289,40 +290,68 @@ stories.add(
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (left)">
-        <Button type="button" size="sm" variant="primary" icon="add" iconPosition="left" style={{ marginRight: 16 }}>
+        <Button
+          type="button"
+          size="sm"
+          variant="primary"
+          icon={IconPlus}
+          iconPosition="left"
+          style={{ marginRight: 16 }}
+        >
           Push Me
         </Button>
-        <Button type="button" size="md" variant="primary" icon="add" iconPosition="left" style={{ marginRight: 16 }}>
+        <Button
+          type="button"
+          size="md"
+          variant="primary"
+          icon={IconPlus}
+          iconPosition="left"
+          style={{ marginRight: 16 }}
+        >
           Push Me
         </Button>
-        <Button type="button" size="lg" variant="primary" icon="add" iconPosition="left">
+        <Button type="button" size="lg" variant="primary" icon={IconPlus} iconPosition="left">
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (right)">
-        <Button type="button" size="sm" variant="primary" icon="add" iconPosition="right" style={{ marginRight: 16 }}>
+        <Button
+          type="button"
+          size="sm"
+          variant="primary"
+          icon={IconPlus}
+          iconPosition="right"
+          style={{ marginRight: 16 }}
+        >
           Push Me
         </Button>
-        <Button size="md" type="button" variant="primary" icon="add" iconPosition="right" style={{ marginRight: 16 }}>
+        <Button
+          size="md"
+          type="button"
+          variant="primary"
+          icon={IconPlus}
+          iconPosition="right"
+          style={{ marginRight: 16 }}
+        >
           Push Me
         </Button>
-        <Button size="lg" type="button" variant="primary" icon="add" iconPosition="right">
+        <Button size="lg" type="button" variant="primary" icon={IconPlus} iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (block)">
-        <Button type="button" block variant="primary" icon="add" style={{ marginBottom: 16 }}>
+        <Button type="button" block variant="primary" icon={IconPlus} style={{ marginBottom: 16 }}>
           Push Me
         </Button>
-        <Button type="button" block variant="primary" icon="add" iconPosition="right">
+        <Button type="button" block variant="primary" icon={IconPlus} iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons loading">
-        <Button type="button" isLoading variant="primary" icon="add" size="sm" style={{ marginRight: 16 }}>
+        <Button type="button" isLoading variant="primary" icon={IconPlus} size="sm" style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" isLoading variant="primary" icon="add">
+        <Button type="button" isLoading variant="primary" icon={IconPlus}>
           Push Me
         </Button>
       </ComponentBlock>
