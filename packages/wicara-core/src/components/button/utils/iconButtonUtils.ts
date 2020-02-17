@@ -110,6 +110,7 @@ export const IconButtonSupport = css`
     &.active {
       background-color: ${themeGet('colors.grey03', colors.grey03)};
       color: ${themeGet('colors.blue08', colors.blue08)};
+      border-width: 2px;
       border-color: ${themeGet('colors.blue06', colors.blue06)};
       box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.5);
     }
