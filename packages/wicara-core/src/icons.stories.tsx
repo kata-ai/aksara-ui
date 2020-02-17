@@ -8,7 +8,7 @@ import { Box, UnstyledButton } from './foundations';
 import { Card } from './index';
 import { Tooltip, notification } from './components';
 
-const readme = require('../../aksara-icons/README.md');
+const readme = require('../../aksara-icons-react/README.md');
 
 const IconGrid: React.FC = ({ children }) => {
   return (
