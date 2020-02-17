@@ -3,7 +3,7 @@ export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warnin
 export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'ghost';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
-export type IconButtonSizes = 'sm' | 'md';
+export type IconButtonSizes = 'sm' | 'md' | 'lg';
 export type ButtonIconPositions = 'left' | 'right';
 
 export interface ButtonBaseProps {
@@ -14,7 +14,7 @@ export interface ButtonBaseProps {
   /** The size of the button. */
   size?: ButtonSizes;
   /** The icon that renders with the button */
-  icon?: string | React.ReactNode;
+  icon?: string | React.ComponentType<any>;
   /** Icon position. Default is `'left'`. */
   iconPosition?: ButtonIconPositions;
 }

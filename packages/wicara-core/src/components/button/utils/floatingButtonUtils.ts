@@ -24,6 +24,11 @@ export const FloatingButtonSmall = css`
   i:before {
     font-size: 13px !important;
   }
+
+  svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
 `;
 
 export const FloatingButtonMedium = css`
@@ -35,6 +40,11 @@ export const FloatingButtonMedium = css`
   i:before {
     font-size: 16px !important;
   }
+
+  svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
 `;
 
 export const FloatingButtonLarge = css`
@@ -45,6 +55,11 @@ export const FloatingButtonLarge = css`
 
   i:before {
     font-size: 24px !important;
+  }
+
+  svg {
+    width: 32px !important;
+    height: 32px !important;
   }
 `;
 

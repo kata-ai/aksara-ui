@@ -1,3 +1,23 @@
+import { colors } from '../../utils';
+
+export const messageIconVariants = {
+  general: {
+    fill: colors.grey08,
+  },
+  success: {
+    fill: colors.green07,
+  },
+  warning: {
+    fill: colors.yellow07,
+  },
+  error: {
+    fill: colors.red07,
+  },
+  info: {
+    fill: colors.blue07,
+  },
+};
+
 export const closeButtonVariants = {
   general: {
     color: 'grey08',

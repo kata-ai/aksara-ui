@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { IconTickRounded, IconInfo, IconWarningRounded, IconCloseRounded, IconClose } from '@aksara-ui/icons-react';
 
 import { BaseMessageProps, Root, Icon, Inner, CloseButton, MessageStates } from '../styles';
 import { Text } from '../../../foundations';
+import { messageIconVariants } from '../variants';
 
 export interface MessageProps extends BaseMessageProps {
   /** Banner message. Could be a string or a `ReactNode`. */
@@ -24,13 +26,32 @@ const Message: React.FC<MessageProps> = ({ className, style, message, state, onC
     }
   };
 
+  const renderIconStates = () => {
+    switch (state) {
+      case 'general': {
+        return null;
+      }
+      case 'success': {
+        return <IconTickRounded aria-hidden="true" size={16} {...messageIconVariants[state]} />;
+      }
+      case 'info': {
+        return <IconInfo aria-hidden="true" size={16} {...messageIconVariants[state]} />;
+      }
+      case 'warning': {
+        return <IconWarningRounded aria-hidden="true" size={16} {...messageIconVariants[state]} />;
+      }
+      case 'error': {
+        return <IconCloseRounded aria-hidden="true" size={16} {...messageIconVariants[state]} />;
+      }
+      default: {
+        return null;
+      }
+    }
+  };
+
   return (
     <Root className={className} style={style} state={state} {...rest}>
-      {state !== 'general' && (
-        <Icon>
-          <i className={`icon-${state}`} />
-        </Icon>
-      )}
+      {state !== 'general' && <Icon>{renderIconStates()}</Icon>}
       <Inner>
         <Text display="inline-block" scale={200} fontWeight={500}>
           {message}
@@ -44,7 +65,7 @@ const Message: React.FC<MessageProps> = ({ className, style, message, state, onC
           onClick={handleClose}
           state={state}
         >
-          <i className="icon-close" aria-hidden="true" />
+          <IconClose size={16} aria-hidden="true" {...(state ? messageIconVariants[state] : {})} />
         </CloseButton>
       )}
     </Root>

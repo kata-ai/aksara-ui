@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { IconPen } from '@aksara-ui/icons-react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import IconButton from './IconButton';
@@ -16,10 +17,10 @@ stories
       <SystemBlock title="Icon Button" subtitle="Icon-only buttons.">
         <ComponentBlock title="Default Button">
           <IconButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
           <IconButton type="button" disabled aria-label="Push Me" onClick={action('button-click')}>
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
         <ComponentBlock title="Primary Button">
@@ -30,10 +31,10 @@ stories
             aria-label="Push Me"
             onClick={action('button-click')}
           >
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
           <IconButton type="button" disabled variant="primary" aria-label="Push Me" onClick={action('button-click')}>
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
         <ComponentBlock title="Support Button">
@@ -44,10 +45,10 @@ stories
             aria-label="Push Me"
             onClick={action('button-click')}
           >
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
           <IconButton type="button" disabled variant="support" aria-label="Push Me" onClick={action('button-click')}>
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
         <ComponentBlock title="Destructive Button">
@@ -58,7 +59,7 @@ stories
             aria-label="Push Me"
             onClick={action('button-click')}
           >
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
           <IconButton
             type="button"
@@ -67,7 +68,7 @@ stories
             aria-label="Push Me"
             onClick={action('button-click')}
           >
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
         <ComponentBlock title="Ghost Button">
@@ -78,10 +79,10 @@ stories
             aria-label="Push Me"
             onClick={action('button-click')}
           >
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
           <IconButton type="button" disabled variant="ghost" aria-label="Push Me" onClick={action('button-click')}>
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
       </SystemBlock>
@@ -100,12 +101,23 @@ stories
             style={{ marginRight: 16 }}
             variant="support"
             aria-label="Push Me"
+            size="sm"
             onClick={action('button-click')}
           >
-            <i className="icon-add" aria-hidden="true" />
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
-          <IconButton type="button" aria-label="Push Me" size="md" variant="support" onClick={action('button-click')}>
-            <i className="icon-add" aria-hidden="true" />
+          <IconButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="Push Me"
+            size="md"
+            variant="support"
+            onClick={action('button-click')}
+          >
+            <IconPen fill="currentColor" aria-hidden="true" />
+          </IconButton>
+          <IconButton type="button" aria-label="Push Me" size="lg" variant="support" onClick={action('button-click')}>
+            <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
       </SystemBlock>

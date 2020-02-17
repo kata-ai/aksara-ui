@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { IconDocAdd } from '@aksara-ui/icons-react';
 
 import { colors } from '../../utils';
 import { Button, FloatingButton, IconButton, OutlineButton } from './index';
@@ -35,11 +36,11 @@ describe('components/Button', () => {
 
     test('renders icons correctly with ReactNode', () => {
       const { container } = render(
-        <Button size="sm" icon={<i className="icon-add" />} iconPosition="right">
+        <Button size="sm" icon={IconDocAdd} iconPosition="right">
           test button
         </Button>
       );
-      const icon = container.querySelector('i');
+      const icon = container.querySelector('svg');
 
       expect(icon).toBeInTheDocument();
     });

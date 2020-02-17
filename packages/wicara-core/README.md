@@ -1,4 +1,4 @@
-# @wicara/core
+# @aksara-ui-kit/core
 
 > Wicara. The component library powering Kata Platform.
 

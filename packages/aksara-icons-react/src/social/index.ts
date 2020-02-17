@@ -1,0 +1,11 @@
+export { default as IconBehance } from './IconBehance';
+export { default as IconDribble } from './IconDribble';
+export { default as IconFacebookMessenger } from './IconFacebookMessenger';
+export { default as IconFacebook } from './IconFacebook';
+export { default as IconGithub } from './IconGithub';
+export { default as IconInstagram } from './IconInstagram';
+export { default as IconLine } from './IconLine';
+export { default as IconLinkedin } from './IconLinkedin';
+export { default as IconSlack } from './IconSlack';
+export { default as IconTwitter } from './IconTwitter';
+export { default as IconWhatsapp } from './IconWhatsapp';
