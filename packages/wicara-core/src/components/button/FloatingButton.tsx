@@ -18,10 +18,12 @@ const Root = styled('button')<FloatingButtonProps>`
 /**
  * Floating action buttons used for primary context actions.
  */
-const FloatingButton: React.SFC<FloatingButtonProps> = ({ children, className, style, ...rest }) => (
-  <Root className={className} style={style} {...rest}>
-    {children}
-  </Root>
+const FloatingButton = React.forwardRef<HTMLButtonElement, FloatingButtonProps>(
+  ({ children, className, style, ...rest }, ref) => (
+    <Root className={className} style={style} ref={ref} {...rest}>
+      {children}
+    </Root>
+  )
 );
 
 FloatingButton.defaultProps = {

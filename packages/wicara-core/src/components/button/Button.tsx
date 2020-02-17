@@ -68,64 +68,56 @@ const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition'>>`
  * Buttons are used to initialize an action, either in the background or
  * foreground of an experience.
  */
-const Button: React.SFC<ButtonProps> = ({
-  children,
-  className,
-  style,
-  size,
-  icon,
-  iconPosition,
-  isLoading,
-  disabled,
-  variant,
-  ...rest
-}) => {
-  const renderIcon = () => {
-    if (typeof icon === 'string') {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, className, style, size, icon, iconPosition, isLoading, disabled, variant, ...rest }, ref) => {
+    const renderIcon = () => {
+      if (typeof icon === 'string') {
+        return (
+          <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
+            <i className={`icon-${icon}`} />
+          </Icon>
+        );
+      }
+
       return (
         <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
-          <i className={`icon-${icon}`} />
+          {icon}
         </Icon>
       );
-    }
+    };
 
     return (
-      <Icon iconPosition={iconPosition} size={size} style={isLoading ? { visibility: 'hidden' } : undefined}>
-        {icon}
-      </Icon>
+      <Root
+        className={className}
+        style={style}
+        size={size}
+        icon={icon}
+        iconPosition={iconPosition}
+        disabled={disabled || isLoading}
+        isLoading={isLoading}
+        variant={variant}
+        ref={ref}
+        {...rest}
+      >
+        {icon && renderIcon()}
+        {isLoading ? (
+          <>
+            <LoaderCircle
+              size={size === 'sm' ? 24 : 32}
+              buttonSize={size}
+              spinnerColor={
+                variant === 'support' || variant === 'link' || variant === 'ghost' ? colors.gray50 : colors.white
+              }
+            />
+            <InvisibleText>{children}</InvisibleText>
+          </>
+        ) : (
+          children
+        )}
+      </Root>
     );
-  };
-
-  return (
-    <Root
-      className={className}
-      style={style}
-      size={size}
-      icon={icon}
-      iconPosition={iconPosition}
-      disabled={disabled || isLoading}
-      isLoading={isLoading}
-      variant={variant}
-      {...rest}
-    >
-      {icon && renderIcon()}
-      {isLoading ? (
-        <>
-          <LoaderCircle
-            size={size === 'sm' ? 24 : 32}
-            buttonSize={size}
-            spinnerColor={
-              variant === 'support' || variant === 'link' || variant === 'ghost' ? colors.gray50 : colors.white
-            }
-          />
-          <InvisibleText>{children}</InvisibleText>
-        </>
-      ) : (
-        children
-      )}
-    </Root>
-  );
-};
+  }
+);
 
 Button.defaultProps = {
   className: undefined,
