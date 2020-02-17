@@ -1,7 +1,7 @@
 import React from 'react';
 import { BaseIconProps, iconDefaultProps } from '../../utils/types';
 
-const IconCarouselDefault: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
+const IconCarousel: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
     <path
       fillRule="evenodd"
@@ -12,8 +12,8 @@ const IconCarouselDefault: React.FC<BaseIconProps> = ({ size, fill, ...props }) 
   </svg>
 );
 
-IconCarouselDefault.defaultProps = {
+IconCarousel.defaultProps = {
   ...iconDefaultProps,
 };
 
-export default IconCarouselDefault;
+export default IconCarousel;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BaseIconProps, iconDefaultProps } from '../../utils/types';
 
-const IconImageDefault: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
+const IconImage: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
     <path
       fillRule="evenodd"
@@ -12,8 +12,8 @@ const IconImageDefault: React.FC<BaseIconProps> = ({ size, fill, ...props }) => 
   </svg>
 );
 
-IconImageDefault.defaultProps = {
+IconImage.defaultProps = {
   ...iconDefaultProps,
 };
 
-export default IconImageDefault;
+export default IconImage;
