@@ -59,7 +59,7 @@ const PaginationButton = styled('button')<PaginationButtonProps>`
 
   &:disabled,
   &[disabled] {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   ${props => (props.isActive ? IsActiveStyles : DefaultStyles)}
