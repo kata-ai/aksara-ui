@@ -15,10 +15,12 @@ const Root = styled('button')<IconButtonProps>`
   ${IconButtonStyles}
 `;
 
-const IconButton: React.SFC<IconButtonProps> = ({ children, className, style, ...rest }) => (
-  <Root className={className} style={style} {...rest}>
-    {children}
-  </Root>
+const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ children, className, style, ...rest }, ref) => (
+    <Root className={className} style={style} ref={ref} {...rest}>
+      {children}
+    </Root>
+  )
 );
 
 IconButton.defaultProps = {
