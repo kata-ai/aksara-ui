@@ -28,12 +28,12 @@ export default function Component() {
 
 ## Props
 
-| Property         | Type                 | Required | Default   | Description                                                                                                           |
-| ---------------- | -------------------- | -------- | --------- | --------------------------------------------------------------------------------------------------------------------- |
-| className        | `string`             | -        | undefined | Additional CSS classes to give to the component.                                                                      |
-| style            | `CSSProperties`      | -        | undefined | Additional CSS properties to give to the component.                                                                   |
-| summaryClassName | `string`             | -        | undefined | Additional CSS classes to give to the inner summary block.                                                            |
-| summaryStyle     | `CSSProperties`      | -        | undefined | Additional CSS properties to give to the inner summary block.                                                         |
-| trigger          | `React.ReactElement` | **Yes**  | -         | Element that triggers the popover content.                                                                            |
-| children         | `React.ReactElement` | **Yes**  | -         | Inner popover content.                                                                                                |
-| placement        | `PopperJS.Placement` | -        | undefined | Callback to run when a page number is selected. You can use this to e.g. run setState on your component's page state. |
+| Property         | Type                 | Required | Default          | Description                                                                                                           |
+| ---------------- | -------------------- | -------- | ---------------- | --------------------------------------------------------------------------------------------------------------------- |
+| className        | `string`             | -        | undefined        | Additional CSS classes to give to the component.                                                                      |
+| style            | `CSSProperties`      | -        | undefined        | Additional CSS properties to give to the component.                                                                   |
+| summaryClassName | `string`             | -        | undefined        | Additional CSS classes to give to the inner summary block.                                                            |
+| summaryStyle     | `CSSProperties`      | -        | undefined        | Additional CSS properties to give to the inner summary block.                                                         |
+| trigger          | `React.ReactElement` | **Yes**  | -                | Element that triggers the popover content.                                                                            |
+| children         | `React.ReactElement` | **Yes**  | -                | Inner popover content.                                                                                                |
+| placement        | `PopperJS.Placement` | -        | `'bottom-start'` | Callback to run when a page number is selected. You can use this to e.g. run setState on your component's page state. |
