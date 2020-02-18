@@ -1,7 +1,7 @@
 {
-  "name": "wicara",
+  "name": "aksara-ui",
   "version": "0.5.0",
-  "description": "The component library powering the Kata.ai platform.",
+  "description": "Aksara Design System, from Kata.ai.",
   "main": "N/A",
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <dev@kata.ai>",
