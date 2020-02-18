@@ -1,0 +1,79 @@
+{
+  "name": "@aksara-ui/core",
+  "version": "0.8.6",
+  "description": "Aksara UI Core. The component library powering Kata Platform.",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "wicara:src": "./src/index.ts",
+  "repository": "https://github.com/kata-ai/wicara.git",
+  "author": "Kata.ai <dev@kata.ai>",
+  "license": "Apache-2.0",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn storybook:build",
+    "clean": "rimraf lib && rimraf tsc-out",
+    "compile": "yarn clean && yarn rollup",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "prepublishOnly": "yarn compile",
+    "report-coverage": "codecov -f ./coverage/*.json",
+    "rollup": "rollup -c ./rollup.config.js",
+    "storybook": "start-storybook -p 9001",
+    "storybook:build": "build-storybook --quiet",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "type-check": "tsc --noEmit",
+    "validate": "yarn lint && yarn type-check"
+  },
+  "dependencies": {
+    "@reach/visually-hidden": "^0.8.2",
+    "@styled-system/theme-get": "^5.1.2",
+    "clsx": "^1.0.4",
+    "focus-trap": "^5.1.0",
+    "polished": "^3.4.2",
+    "react-popper": "^1.3.7",
+    "react-popper-tooltip": "^2.10.1",
+    "react-transition-group": "^4.3.0",
+    "styled-system": "^5.1.4"
+  },
+  "peerDependencies": {
+    "@aksara-ui/icons": "^0.8.0",
+    "react": "^16.10.0",
+    "react-dom": "^16.10.0",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "@aksara-ui/icons": "^0.8.0",
+    "@storybook/addon-a11y": "5.2.8",
+    "@storybook/addon-actions": "5.2.8",
+    "@storybook/addon-knobs": "5.2.8",
+    "@storybook/addon-links": "5.2.8",
+    "@storybook/addon-notes": "5.2.8",
+    "@storybook/react": "5.2.8",
+    "@storybook/theming": "5.2.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@types/jest": "^24.0.23",
+    "@types/react-transition-group": "^4.2.3",
+    "@types/styled-components": "^4.4.1",
+    "@types/styled-system": "^5.1.4",
+    "@types/styled-system__theme-get": "^5.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "codecov": "^3.6.1",
+    "copee": "^1.0.6",
+    "jest": "^24.9.0",
+    "jest-styled-components": "^6.3.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "storybook-addon-jsx": "^7.1.13",
+    "styled-components": "^4.4.1",
+    "typescript": "~3.7.3"
+  }
+}

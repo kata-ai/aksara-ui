@@ -39,16 +39,16 @@ Wicara requires `styled-components` v4+. First, install the core Wicara package,
 
 ```bash
 # yarn
-$ yarn add styled-components @wicara/core @aksara-ui/icons-react
+$ yarn add styled-components @aksara-ui/core @aksara-ui/icons
 
 # npm
-$ npm install --save styled-components @wicara/core @aksara-ui/icons-react
+$ npm install --save styled-components @aksara-ui/core @aksara-ui/icons
 ```
 
 Then, you will need to apply the style resets + theme provider. Wrap your app inside the `WicaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
 
 ```jsx
-import { WicaraProvider } from '@wicara/core';
+import { WicaraProvider } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return <WicaraProvider>{children}</WicaraProvider>;
@@ -65,7 +65,7 @@ Wicara is built in React, with styling done in styled-components. To use these c
 // Example for `<Button />` component.
 
 import * as React from 'react';
-import { Button } from '@wicara/core';
+import { Button } from '@aksara-ui/core';
 
 export default function Component() {
   return <Button>Push Me</Button>;
