@@ -15,7 +15,7 @@ Therefore, to promote the correct terminology, we use "dialog" instead of "modal
 To use this component in your app, import as follows:
 
 ```jsx
-import { Box, Text, Paragraph, Dialog } from '@wicara/core';
+import { Box, Text, Paragraph, Dialog } from '@aksara-ui/core';
 
 const Component = () => {
   const [isOpen, setIsOpen] = React.useState(false);

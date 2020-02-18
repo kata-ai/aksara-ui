@@ -7,7 +7,7 @@
 Wrap your app inside the `WicaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
 
 ```jsx
-import { WicaraProvider } from '@wicara/core';
+import { WicaraProvider } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return <WicaraProvider>{children}</WicaraProvider>;
@@ -17,7 +17,7 @@ export default function MyApp({ children }) {
 You can also use `GlobalStyles` as a standalone component which injects the base styles into the component.
 
 ```jsx
-import { GlobalStyles, Theme } from '@wicara/core';
+import { GlobalStyles, Theme } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (

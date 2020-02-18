@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Popover, Button, Card } from '@wicara/core';
+import { Popover, Button, Card } from '@aksara-ui/core';
 
 export default function Component() {
   return (

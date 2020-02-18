@@ -15,7 +15,7 @@ This component used to be called "Empty Message", but lately we've realised that
 To use this component in your app, import as follows:
 
 ```jsx
-import { NonIdealState } from '@wicara/core';
+import { NonIdealState } from '@aksara-ui/core';
 
 export default function Component() {
   return (

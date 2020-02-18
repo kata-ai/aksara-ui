@@ -9,7 +9,7 @@ To use this component in your app, import as follows:
 ### `<Skeleton />`
 
 ```jsx
-import { Box, Skeleton } from '@wicara/core';
+import { Box, Skeleton } from '@aksara-ui/core';
 
 export default function Component({ isLoading }) {
   return <Box>{isLoading ? <Skeleton /> : <LoadedContent />}</Box>;
@@ -21,7 +21,7 @@ See more usage in the _JSX_ panel
 ### `<SkeletonBox />`
 
 ```jsx
-import { SkeletonBox } from '@wicara/core';
+import { SkeletonBox } from '@aksara-ui/core';
 
 export default function Component({ isLoading }) {
   if (isLoading) {

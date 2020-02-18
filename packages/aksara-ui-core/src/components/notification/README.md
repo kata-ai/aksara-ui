@@ -7,7 +7,7 @@ Pluggable notifications element that doesn't rely on Redux.
 ### Toasters
 
 ```jsx
-import { WicaraProvider, Button, notification } from '@wicara/core';
+import { WicaraProvider, Button, notification } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (

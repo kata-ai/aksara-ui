@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Badge } from '@wicara/core';
+import { Badge } from '@aksara-ui/core';
 
 const Component = () => <Badge variant="default" message="text" />;
 ```

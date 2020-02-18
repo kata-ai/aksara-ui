@@ -9,7 +9,7 @@ Buttons express what action will occur when the user clicks or touches it. Butto
 ### `<Button />`
 
 ```jsx
-import { WicaraProvider, Button } from '@wicara/core';
+import { WicaraProvider, Button } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
@@ -25,7 +25,7 @@ export default function MyApp({ children }) {
 Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
 
 ```jsx
-import { WicaraProvider, Button } from '@wicara/core';
+import { WicaraProvider, Button } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
@@ -53,7 +53,7 @@ See more usage in the _JSX_ panel
 ### `<OutlineButton />`
 
 ```jsx
-import { WicaraProvider, OutlineButton } from '@wicara/core';
+import { WicaraProvider, OutlineButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
@@ -69,7 +69,7 @@ export default function MyApp({ children }) {
 Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
 
 ```jsx
-import { WicaraProvider, OutlineButton } from '@wicara/core';
+import { WicaraProvider, OutlineButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
@@ -99,7 +99,7 @@ See more usage in the _JSX_ panel
 Floating action buttons for primary context actions. Floating buttons are often paired with Wicara Icons.
 
 ```jsx
-import { WicaraProvider, FloatingButton } from '@wicara/core';
+import { WicaraProvider, FloatingButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
@@ -128,7 +128,7 @@ See more usage in the _JSX_ panel
 Icon-only buttons. Best paired with Wicara Icons.
 
 ```jsx
-import { WicaraProvider, IconButton } from '@wicara/core';
+import { WicaraProvider, IconButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (

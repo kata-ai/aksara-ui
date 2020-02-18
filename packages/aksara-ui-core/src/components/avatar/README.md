@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { WicaraProvider, Avatar } from '@wicara/core';
+import { WicaraProvider, Avatar } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
@@ -21,7 +21,7 @@ export default function MyApp({ children }) {
 Avatar also accepts any `px` values as number for size. If not set, the default is 40.
 
 ```jsx
-import { WicaraProvider, Avatar } from '@wicara/core';
+import { WicaraProvider, Avatar } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (

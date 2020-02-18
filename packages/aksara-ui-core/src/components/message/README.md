@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Message } from '@wicara/core';
+import { Message } from '@aksara-ui/core';
 
 const Component = () => <Message state="success" message="A banner! - You've succesfully read it." />;
 ```

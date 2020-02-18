@@ -97,7 +97,7 @@ export default function MyApp({ children }) {
 Similar to `text`, but with `<p>` as the default element and has a font weight of `300`.
 
 ```jsx
-import { Paragraph } from '@wicara/core';
+import { Paragraph } from '@aksara-ui/core';
 
 export default function Component() {
   return (
@@ -114,7 +114,7 @@ export default function Component() {
 As with all other components, you can use the `scale` prop to use different type scales for the paragraph. For example:
 
 ```jsx
-import { Paragraph } from '@wicara/core';
+import { Paragraph } from '@aksara-ui/core';
 
 export default function Component() {
   return (

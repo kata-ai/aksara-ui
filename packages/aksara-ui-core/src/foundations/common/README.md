@@ -9,7 +9,7 @@ Other uncategorised series of foundational components.
 This is basically an anchor element with all styling elements removed (incl. hover/focus effects).
 
 ```jsx
-import { UnstyledAnchor } from '@wicara/core';
+import { UnstyledAnchor } from '@aksara-ui/core';
 
 export default function Component({ children }) {
   return <UnstyledAnchor>I'm an unstyled link!</UnstyledAnchor>;
@@ -21,7 +21,7 @@ export default function Component({ children }) {
 Same as above, but with the `<button>` tag.
 
 ```jsx
-import { UnstyledButton } from '@wicara/core';
+import { UnstyledButton } from '@aksara-ui/core';
 
 export default function Component({ children }) {
   return <UnstyledButton>I'm an unstyled button!</UnstyledButton>;
@@ -33,7 +33,7 @@ export default function Component({ children }) {
 Use the `<Stack />` component to evenly space inner elements vertically.
 
 ```jsx
-import { Stack } from '@wicara/core';
+import { Stack } from '@aksara-ui/core';
 
 export default function Component({ children }) {
   return (
@@ -51,7 +51,7 @@ export default function Component({ children }) {
 Use the `<Inline />` component to evenly space inner elements horizontally.
 
 ```jsx
-import { Inline } from '@wicara/core';
+import { Inline } from '@aksara-ui/core';
 
 export default function Component({ children }) {
   return (

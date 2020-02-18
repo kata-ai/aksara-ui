@@ -7,7 +7,7 @@
 To use this component in your app, import as follows:
 
 ```jsx
-import { Box, Text, Paragraph, SideSheet } from '@wicara/core';
+import { Box, Text, Paragraph, SideSheet } from '@aksara-ui/core';
 
 const Component = () => {
   const [isOpen, setIsOpen] = React.useState(false);

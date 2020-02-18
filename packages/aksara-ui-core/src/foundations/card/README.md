@@ -7,7 +7,7 @@ Renders a card based on the elevation level.
 To use this component in your app, import as follows:
 
 ```jsx
-import { Box, Card } from '@wicara/core';
+import { Box, Card } from '@aksara-ui/core';
 
 export default function Component() {
   return (
@@ -36,7 +36,7 @@ export default function Component() {
 This component composes the `Box` component, so you can also use the styled-system hooks defined in said component
 
 ```jsx
-import { Box, Card } from '@wicara/core';
+import { Box, Card } from '@aksara-ui/core';
 
 // Example for card with `sm` border radius.
 export default function Component({ children }) {

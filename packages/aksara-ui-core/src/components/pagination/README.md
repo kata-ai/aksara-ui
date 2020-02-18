@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Pagination } from '@wicara/core';
+import { Pagination } from '@aksara-ui/core';
 
 export default function Component() {
   return <Pagination current={3} total={50} onSelect={select => console.log('selected', select)} />;

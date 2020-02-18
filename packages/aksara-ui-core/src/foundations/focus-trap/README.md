@@ -7,7 +7,7 @@
 To use this component within your app, import as follows:
 
 ```jsx
-import { FocusTrap } from '@wicara/core';
+import { FocusTrap } from '@aksara-ui/core';
 
 export default function Component() {
   const [active, setActive] = React.useState(false);

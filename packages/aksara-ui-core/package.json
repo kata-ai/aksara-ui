@@ -1,5 +1,5 @@
 {
-  "name": "@wicara/core",
+  "name": "@aksara-ui/core",
   "version": "0.8.6",
   "description": "Aksara UI Core. The component library powering Kata Platform.",
   "main": "./lib/index.js",

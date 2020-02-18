@@ -5,7 +5,7 @@ Helper component to render elements in a portal.
 ## Usage
 
 ```jsx
-import { WicaraProvider, Portal, Box } from '@wicara/core';
+import { WicaraProvider, Portal, Box } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (

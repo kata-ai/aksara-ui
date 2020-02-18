@@ -7,7 +7,7 @@
 To use this component in your app, import as follows:
 
 ```jsx
-import { Box, FormGroup, FormLabel, InputText, InputTextarea } from '@wicara/core';
+import { Box, FormGroup, FormLabel, InputText, InputTextarea } from '@aksara-ui/core';
 
 const Component = () => {
   return (

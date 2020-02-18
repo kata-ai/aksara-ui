@@ -20,7 +20,7 @@ Read the [`styled-system` reference table](https://styled-system.com/table) for 
 In general, this is how you compose an element with the `Box` primitive.
 
 ```jsx
-import { Box } from '@wicara/core';
+import { Box } from '@aksara-ui/core';
 
 export default function Component() {
   return (
