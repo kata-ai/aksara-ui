@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/icons",
-  "version": "0.8.0",
+  "version": "1.0.0-canary.0",
   "description": "React icon library for the Aksara design system.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
