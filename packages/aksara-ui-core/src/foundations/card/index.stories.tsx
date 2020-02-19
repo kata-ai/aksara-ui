@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { IconRefresh, IconEyeOpen } from '@aksara-ui/icons';
 
 import { Badge } from '../../components/badge';
 import { OutlineButton } from '../../components/button';
@@ -264,7 +263,7 @@ story.add(
           </Box>
           <Box>
             <OutlineButton
-              icon={IconEyeOpen}
+              icon="view"
               style={{
                 marginRight: 8,
               }}
@@ -273,7 +272,7 @@ story.add(
             >
               View
             </OutlineButton>
-            <OutlineButton icon={IconRefresh} type="button" variant="destructive">
+            <OutlineButton icon="refresh" type="button" variant="destructive">
               Rollback
             </OutlineButton>
           </Box>
