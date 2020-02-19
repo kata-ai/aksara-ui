@@ -14,6 +14,6 @@ module.exports = ({ config, mode }) => {
   });
 
   config.resolve.extensions.push('.ts', '.tsx');
-  config.resolve.mainFields = ['wicara:src', 'main'];
+  config.resolve.mainFields = ['aksara:src', 'main'];
   return config;
 };
