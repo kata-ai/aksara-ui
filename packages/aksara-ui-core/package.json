@@ -43,7 +43,7 @@
     "styled-system": "^5.1.4"
   },
   "peerDependencies": {
-    "@aksara-ui/icons": "^0.8.0",
+    "@aksara-ui/icons": "^1.0.0-canary.0",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "styled-components": "^4.1.2"
