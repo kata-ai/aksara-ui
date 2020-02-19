@@ -10,13 +10,9 @@ const readme = require('./README.md');
 const stories = storiesOf('Core|Components/Dropdown', module).addDecorator(SystemWrapper);
 
 stories.add(
-  'basic',
+  'DropdownMenu',
   () => (
-    <SystemBlock
-      title="Dropdown Menu"
-      subtitle="Message blocks are used to convey important information to users."
-      noBackground
-    >
+    <SystemBlock title="Dropdown Menu" subtitle="Dropdown menu to be used in a popover element." noBackground>
       <ComponentBlock title="Usage">
         <DropdownMenu width={200}>
           <DropdownMenuItem>Menu Item One</DropdownMenuItem>
