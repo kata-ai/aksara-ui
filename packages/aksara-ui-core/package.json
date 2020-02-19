@@ -46,7 +46,7 @@
     "@aksara-ui/icons": "^1.0.0-canary.0",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
-    "styled-components": "^4.1.2"
+    "styled-components": "^4.1.0 || ^5.0.0"
   },
   "devDependencies": {
     "@aksara-ui/icons": "^1.0.0-canary.0",
@@ -61,7 +61,7 @@
     "@testing-library/react": "^9.3.2",
     "@types/jest": "^24.0.23",
     "@types/react-transition-group": "^4.2.3",
-    "@types/styled-components": "^4.4.1",
+    "@types/styled-components": "^4.4.2",
     "@types/styled-system": "^5.1.4",
     "@types/styled-system__theme-get": "^5.0.0",
     "babel-loader": "^8.0.6",
@@ -72,6 +72,7 @@
     "jest-styled-components": "^6.3.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "storybook-addon-jsx": "^7.1.13"
+    "storybook-addon-jsx": "^7.1.13",
+    "styled-components": "^4.4.1"
   }
 }

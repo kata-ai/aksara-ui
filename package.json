@@ -68,7 +68,6 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-typescript2": "^0.26.0",
     "rollup-plugin-uglify": "^6.0.4",
-    "styled-components": "^4.4.1",
     "typescript": "~3.7.5"
   },
   "resolutions": {
