@@ -43,4 +43,6 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({ className, style, c
   );
 };
 
+DropdownMenuItem.displayName = 'DropdownMenuItem';
+
 export default DropdownMenuItem;

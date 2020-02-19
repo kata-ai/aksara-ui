@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import { DropdownMenu } from './components/DropdownMenu';
-import { DropdownMenuItem } from './components/DropdownMenuItem';
+import { DropdownMenuItem, DropdownMenuDivider } from './components/DropdownMenuItem';
 
 const readme = require('./README.md');
 
@@ -17,6 +17,7 @@ stories.add(
         <DropdownMenu width={200}>
           <DropdownMenuItem>Menu Item One</DropdownMenuItem>
           <DropdownMenuItem>Menu Item Two</DropdownMenuItem>
+          <DropdownMenuDivider />
           <DropdownMenuItem>Menu Item Three</DropdownMenuItem>
           <DropdownMenuItem>Menu Item Four</DropdownMenuItem>
         </DropdownMenu>

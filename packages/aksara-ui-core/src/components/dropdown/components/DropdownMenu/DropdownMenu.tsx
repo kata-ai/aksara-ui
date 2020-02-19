@@ -28,4 +28,6 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ tipOffset, width, children 
   );
 };
 
+DropdownMenu.displayName = 'DropdownMenu';
+
 export default DropdownMenu;
