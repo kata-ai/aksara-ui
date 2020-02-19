@@ -2,13 +2,10 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { toClipboard } from 'copee';
 
-import { SystemWrapper, SystemBlock, SystemSubheading, aksaraIconMaps } from './utils/storybook';
-import { Box, UnstyledButton } from './foundations';
+import { SystemWrapper, SystemBlock, SystemSubheading, aksaraIconMaps } from '../utils/storybook';
+import { Box, Card, Tooltip, UnstyledButton, notification } from '..';
 
-import { Card } from './index';
-import { Tooltip, notification } from './components';
-
-const readme = require('../../aksara-icons/README.md');
+const readme = require('../../../aksara-icons/README.md');
 
 const IconGrid: React.FC = ({ children }) => {
   return (
