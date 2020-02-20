@@ -12,7 +12,10 @@ const stories = storiesOf('Core|Components/Avatar', module).addDecorator(SystemW
 stories.add(
   'basic',
   () => (
-    <SystemBlock title="Avatar" subtitle="Resizable avatar component.">
+    <SystemBlock
+      title="Avatar"
+      subtitle="Avatars are used to show a thumbnail representation of an individual or business in the interface. An avatar can be circular or a rounded rectangular, depending on usage."
+    >
       <ComponentBlock title="Usage">
         <Inline spacing="md">
           <Avatar size={24} src="https://picsum.photos/id/225/400/400" />
