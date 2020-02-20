@@ -1,24 +1,25 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
-import { InputBaseProps, LabelBase } from '../../styles';
+import { Text, TextProps } from '../../../../foundations';
 
-export interface FormLabelProps extends InputBaseProps, React.LabelHTMLAttributes<HTMLLabelElement> {}
+export interface FormLabelProps extends TextProps, React.LabelHTMLAttributes<HTMLLabelElement> {}
 
-const Label = styled('label')`
-  ${LabelBase};
-`;
-
-const FormLabel: React.FC<FormLabelProps> = ({ className, children, errors, ...rest }) => {
+const FormLabel: React.FC<FormLabelProps> = ({ className, style, children, ...rest }) => {
   return (
-    <Label className={className} errors={errors} {...rest}>
+    <Text
+      as="label"
+      display="inline-block"
+      mb="xs"
+      fontWeight={600}
+      scale={200}
+      color="grey07"
+      className={className}
+      style={style}
+      {...rest}
+    >
       {children}
-    </Label>
+    </Text>
   );
-};
-
-FormLabel.defaultProps = {
-  errors: false,
 };
 
 FormLabel.displayName = 'FormLabel';
