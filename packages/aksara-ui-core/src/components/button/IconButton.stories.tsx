@@ -14,7 +14,7 @@ stories
   .add(
     'basic',
     () => (
-      <SystemBlock title="Icon Button" subtitle="Icon-only buttons.">
+      <SystemBlock title="Icon Button" subtitle="Icon-only buttons." noBackground>
         <ComponentBlock title="Default Button">
           <IconButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
             <IconPen fill="currentColor" aria-hidden="true" />
@@ -41,13 +41,13 @@ stories
           <IconButton
             type="button"
             style={{ marginRight: 16 }}
-            variant="support"
+            variant="outline"
             aria-label="Push Me"
             onClick={action('button-click')}
           >
             <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
-          <IconButton type="button" disabled variant="support" aria-label="Push Me" onClick={action('button-click')}>
+          <IconButton type="button" disabled variant="outline" aria-label="Push Me" onClick={action('button-click')}>
             <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>
@@ -94,12 +94,12 @@ stories
   .add(
     'button sizes',
     () => (
-      <SystemBlock title="Icon Button" subtitle="Icon-only buttons.">
+      <SystemBlock title="Icon Button" subtitle="Icon-only buttons." noBackground>
         <ComponentBlock title="Button Sizes">
           <IconButton
             type="button"
             style={{ marginRight: 16 }}
-            variant="support"
+            variant="outline"
             aria-label="Push Me"
             size="sm"
             onClick={action('button-click')}
@@ -111,12 +111,12 @@ stories
             style={{ marginRight: 16 }}
             aria-label="Push Me"
             size="md"
-            variant="support"
+            variant="outline"
             onClick={action('button-click')}
           >
             <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
-          <IconButton type="button" aria-label="Push Me" size="lg" variant="support" onClick={action('button-click')}>
+          <IconButton type="button" aria-label="Push Me" size="lg" variant="outline" onClick={action('button-click')}>
             <IconPen fill="currentColor" aria-hidden="true" />
           </IconButton>
         </ComponentBlock>

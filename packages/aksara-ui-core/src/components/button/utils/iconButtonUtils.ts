@@ -125,31 +125,27 @@ export const IconButtonSupport = css`
 `;
 
 export const IconButtonDestructive = css`
-  background-color: ${colors.red};
-  color: ${colors.white};
+  color: ${themeGet('colors.red05', colors.red05)};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover,
     &:focus,
     &.focus {
-      background-color: #e84f4c;
-      color: ${colors.white};
+      color: ${themeGet('colors.red07', colors.red07)};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.red};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      border-color: ${themeGet('colors.red04', colors.red04)};
     }
   }
 
   &:disabled,
   &.disabled {
-    background-color: ${lighten(0.02, colors.gray10)};
-    color: ${colors.gray30};
+    color: ${colors.grey04};
   }
 `;
 

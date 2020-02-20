@@ -1,14 +1,16 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
+import { IconInfo, IconTrash } from '@aksara-ui/icons';
 
 import { Badge } from '../../components/badge';
-import { OutlineButton } from '../../components/button';
+import { IconButton } from '../../components/button';
 import { SystemWrapper, SystemBlock } from '../../utils/storybook';
 import { Box } from '../box';
 import { Heading, Paragraph, Text } from '../typography';
 import { UnstyledAnchor, Stack } from '../common';
 
 import { Card } from './index';
+import { Tooltip } from '../../components';
 
 const readme = require('./README.md');
 
@@ -262,19 +264,16 @@ story.add(
             </Box>
           </Box>
           <Box>
-            <OutlineButton
-              icon="view"
-              style={{
-                marginRight: 8,
-              }}
-              type="button"
-              variant="primary"
-            >
-              View
-            </OutlineButton>
-            <OutlineButton icon="refresh" type="button" variant="destructive">
-              Rollback
-            </OutlineButton>
+            <Tooltip placement="top" content="View" style={{ display: 'inline-block', marginRight: 8 }}>
+              <IconButton type="button" size="lg" variant="ghost">
+                <IconInfo aria-hidden fill="currentColor" />
+              </IconButton>
+            </Tooltip>
+            <Tooltip placement="top" content="Rollback" style={{ display: 'inline-block' }}>
+              <IconButton type="button" size="lg" variant="destructive">
+                <IconTrash aria-hidden fill="currentColor" />
+              </IconButton>
+            </Tooltip>
           </Box>
         </Box>
       </Card>

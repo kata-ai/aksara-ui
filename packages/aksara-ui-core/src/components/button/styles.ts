@@ -23,8 +23,6 @@ import {
   FloatingButtonDestructive,
 } from './utils/floatingButtonUtils';
 import {
-  IconButtonDefault,
-  IconButtonPrimary,
   IconButtonSupport,
   IconButtonDestructive,
   IconButtonGhost,
@@ -56,7 +54,6 @@ export const ButtonBase = css`
   line-height: 1;
   letter-spacing: 0.2px;
   border: 1px solid transparent;
-  transition: all 0.3s ease;
 
   &:not(:disabled):not(.disabled) {
     cursor: pointer;
@@ -130,9 +127,9 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
     height: ${iconSizes(props.size)}px;
   }
 
-  ${props.variant === 'default' && IconButtonDefault}
-  ${props.variant === 'primary' && IconButtonPrimary}
-  ${props.variant === 'support' && IconButtonSupport}
+  ${props.variant === 'default' && IconButtonSupport}
+  ${props.variant === 'primary' && IconButtonGhost}
+  ${props.variant === 'outline' && IconButtonSupport}
   ${props.variant === 'destructive' && IconButtonDestructive}
   ${props.variant === 'ghost' && IconButtonGhost}
 `;
