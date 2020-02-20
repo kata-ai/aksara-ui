@@ -108,13 +108,12 @@ describe('components/Button', () => {
 
     test('renders colors correctly by variant', () => {
       const { container } = render(
-        <IconButton variant="primary">
+        <IconButton variant="destructive">
           <i className="icon-add" />
         </IconButton>
       );
 
-      expect(container.firstChild).toHaveStyleRule('background-color', colors.cobalt);
-      expect(container.firstChild).toHaveStyleRule('color', colors.white);
+      expect(container.firstChild).toHaveStyleRule('color', colors.red05);
     });
   });
 });
