@@ -1,13 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { AvatarBase } from '../styles';
+import { AvatarBase, AvatarBaseProps } from '../styles';
 
-export interface AvatarProps {
+export interface AvatarProps extends AvatarBaseProps {
   /** The avatar's image source. */
   src: any;
-  /** Size of the avatar. */
-  size?: number;
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Alt text for the avatar */
@@ -21,9 +19,9 @@ const Root = styled('div')`
 `;
 
 /** Resizable avatar component. */
-const Avatar: React.FC<AvatarProps> = ({ src, size, className, style, alt }) => {
+const Avatar: React.FC<AvatarProps> = ({ src, size, type, className, style, alt, ...rest }) => {
   return (
-    <Root className={className} style={style} size={size}>
+    <Root className={className} style={style} size={size} type={type} {...rest}>
       <img src={src} alt={alt} />
     </Root>
   );
@@ -32,6 +30,7 @@ const Avatar: React.FC<AvatarProps> = ({ src, size, className, style, alt }) => 
 Avatar.defaultProps = {
   size: 40,
   alt: '',
+  type: 'rounded',
 };
 
 Avatar.displayName = 'Avatar';
