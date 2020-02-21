@@ -40,9 +40,7 @@ describe('components/Form', () => {
   test('renders error state correctly', () => {
     const { getByTestId } = render(
       <FormGroup>
-        <FormLabel data-testid="label-error" errors>
-          Email Address
-        </FormLabel>
+        <FormLabel data-testid="label-error">Email Address</FormLabel>
         <InputText errors placeholder="Type here..." />
         <FormError data-testid="input-error">Please enter an email address.</FormError>
       </FormGroup>
