@@ -18,5 +18,11 @@ describe('components/Avatar', () => {
       expect(container.firstChild).toHaveStyleRule('width', '24px');
       expect(container.firstChild).toHaveStyleRule('height', '24px');
     });
+
+    test('renders initials correctly', () => {
+      const { getByText } = render(<Avatar name="Adry Muhammad" />);
+
+      expect(getByText('AM')).toBeInTheDocument();
+    });
   });
 });

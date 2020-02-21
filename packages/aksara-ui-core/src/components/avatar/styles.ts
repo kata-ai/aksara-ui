@@ -10,52 +10,46 @@ import {
   GridProps,
   space,
   SpaceProps,
-  background,
-  BackgroundProps,
-  color,
-  ColorProps,
-  typography,
-  TypographyProps,
-  border,
-  BorderProps,
-  shadow,
-  ShadowProps,
+  variant,
 } from 'styled-system';
 
 import { colors, radii } from '../../utils';
+import avatarColors from './theme';
 
-export interface AvatarBaseProps
-  extends LayoutProps,
-    PositionProps,
-    FlexboxProps,
-    GridProps,
-    SpaceProps,
-    BackgroundProps,
-    ColorProps,
-    TypographyProps,
-    BorderProps,
-    ShadowProps {
+export interface AvatarBaseProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
   /** Size of the avatar. */
   size?: 24 | 32 | 40;
   /** Extended color props. We need this because default `color` prop clashes with `styled-system`. */
-  color?: string;
-  /** Avatar type, rounded or circular. */
-  type?: 'rounded' | 'rectangular';
+  color?: keyof typeof avatarColors;
+  /** Avatar icon type. Icon only shows when no initials are set */
+  type?: 'user' | 'team';
+  /** Avatar shape, rounded or circular. */
+  shape?: 'rounded' | 'rectangular';
+  /** Force rendering of avatar type icons */
+  forceRenderIcon?: boolean;
+  /** Name for initials */
+  name?: string;
 }
 
-export const AvatarBase = ({ size = 40, type = 'rounded' }: AvatarBaseProps) =>
+export const AvatarBase = ({ size = 40, shape: type = 'rounded' }: AvatarBaseProps) =>
   css`
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: ${size}px;
     height: ${size}px;
     border: 1px solid ${colors.white};
     border-radius: ${type === 'rounded' ? size : radii.xs}px;
-    background: ${colors.turquoise05};
+    ${variant({
+      prop: 'color',
+      variants: avatarColors,
+    })}
     font-size: 1rem;
     line-height: 1;
     vertical-align: middle;
     overflow: hidden;
+    user-select: none;
 
     img {
       position: absolute;
@@ -69,9 +63,4 @@ export const AvatarBase = ({ size = 40, type = 'rounded' }: AvatarBaseProps) =>
     ${flexbox}
     ${grid}
     ${space}
-    ${background}
-    ${color}
-    ${typography}
-    ${border}
-    ${shadow}
   `;

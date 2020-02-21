@@ -1,11 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { IconUser, IconAudience } from '@aksara-ui/icons';
 
 import { AvatarBase, AvatarBaseProps } from '../styles';
+import { Text } from '../../../foundations';
+import getInitials from '../utils/getInitials';
 
 export interface AvatarProps extends AvatarBaseProps {
   /** The avatar's image source. */
-  src: any;
+  src?: any;
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Alt text for the avatar */
@@ -19,10 +22,35 @@ const Root = styled('div')`
 `;
 
 /** Resizable avatar component. */
-const Avatar: React.FC<AvatarProps> = ({ src, size, type, className, style, alt, ...rest }) => {
+const Avatar: React.FC<AvatarProps> = ({ src, size, shape, className, style, alt, name, type, ...rest }) => {
+  const renderAvatarIcon = () => {
+    return type === 'user' ? <IconUser fill="currentColor" /> : <IconAudience fill="currentColor" />;
+  };
+
+  const renderInitials = () => {
+    if (size === 24 || src || !name) {
+      return null;
+    }
+
+    return <Text scale={300}>{getInitials(name)}</Text>;
+  };
+
+  const renderImage = () => {
+    if (src) {
+      return <img src={src} alt={alt} />;
+    }
+
+    if (!name) {
+      return renderAvatarIcon();
+    }
+
+    return null;
+  };
+
   return (
-    <Root className={className} style={style} size={size} type={type} {...rest}>
-      <img src={src} alt={alt} />
+    <Root className={className} style={style} size={size} shape={shape} {...rest}>
+      {renderInitials()}
+      {renderImage()}
     </Root>
   );
 };
@@ -30,7 +58,9 @@ const Avatar: React.FC<AvatarProps> = ({ src, size, type, className, style, alt,
 Avatar.defaultProps = {
   size: 40,
   alt: '',
-  type: 'rounded',
+  color: 'indigo',
+  type: 'user',
+  shape: 'rounded',
 };
 
 Avatar.displayName = 'Avatar';
