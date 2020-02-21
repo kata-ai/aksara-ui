@@ -3,14 +3,14 @@ import * as React from 'react';
 
 import { SystemWrapper, SystemBlock, SystemSubheading } from '../../../utils/storybook';
 import Avatar from './Avatar';
-import { Inline, Box, Heading } from '../../../foundations';
+import { Inline, Box, Text, Heading, Stack } from '../../../foundations';
 
 const readme = require('../README.md');
 
 const stories = storiesOf('Core|Components/Avatar', module).addDecorator(SystemWrapper);
 
 stories.add(
-  'basic',
+  'example',
   () => (
     <SystemBlock
       title="Avatar"
@@ -32,7 +32,7 @@ stories.add(
             <Inline spacing="md">
               <Avatar shape="rounded" size={40} name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />
               <Avatar shape="rounded" size={40} color="indigo" name="Adry Muhammad" />
-              <Avatar shape="rounded" size={40} color="turquoise" />
+              <Avatar shape="rounded" size={40} color="turquoise" type="user" />
               <Avatar shape="rounded" size={40} color="green" type="team" />
             </Inline>
           </Box>
@@ -45,7 +45,7 @@ stories.add(
             <Inline spacing="md">
               <Avatar shape="rectangular" size={40} name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />
               <Avatar shape="rectangular" size={40} color="indigo" name="Adry Muhammad" />
-              <Avatar shape="rectangular" size={40} color="turquoise" />
+              <Avatar shape="rectangular" size={40} color="turquoise" type="user" />
               <Avatar shape="rectangular" size={40} color="green" type="team" />
             </Inline>
           </Box>
@@ -59,12 +59,33 @@ stories.add(
         gridGap="24px"
       >
         <Box>
-          <SystemSubheading>Sizes</SystemSubheading>
-          <Inline spacing="md">
-            <Avatar size={24} src="https://picsum.photos/id/225/400/400" />
-            <Avatar size={32} src="https://picsum.photos/id/777/600/400" />
-            <Avatar size={40} src="https://picsum.photos/id/501/400/400" />
-          </Inline>
+          <SystemSubheading>Type</SystemSubheading>
+          <Stack spacing="md">
+            <Box display="flex" flexDirection="row" alignItems="center">
+              <Avatar size={40} name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />
+              <Box ml="md">
+                <Text scale={300}>Profile picture</Text>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row" alignItems="center">
+              <Avatar size={40} color="turquoise" type="user" />
+              <Box ml="md">
+                <Text scale={300}>Profile icon</Text>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row" alignItems="center">
+              <Avatar size={40} color="green" type="team" />
+              <Box ml="md">
+                <Text scale={300}>Team icon</Text>
+              </Box>
+            </Box>
+            <Box display="flex" flexDirection="row" alignItems="center">
+              <Avatar size={40} color="indigo" name="Adry Muhammad" />
+              <Box ml="md">
+                <Text scale={300}>Initial</Text>
+              </Box>
+            </Box>
+          </Stack>
         </Box>
         <Box>
           <SystemSubheading>Sizes</SystemSubheading>
