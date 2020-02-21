@@ -76,9 +76,7 @@ story.add(
           <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." />
         </FormGroup>
         <FormGroup>
-          <FormLabel htmlFor="email_dummy" errors>
-            Email Address
-          </FormLabel>
+          <FormLabel htmlFor="email_dummy">Email Address</FormLabel>
           <InputText id="email_dummy" name="email_dummy" errors placeholder="Type here..." />
           <FormError>Please enter an email address.</FormError>
         </FormGroup>
