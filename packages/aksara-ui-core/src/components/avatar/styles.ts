@@ -1,24 +1,55 @@
 import { css } from 'styled-components';
-import { colors } from '../../utils';
+import {
+  layout,
+  LayoutProps,
+  position,
+  PositionProps,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
+  space,
+  SpaceProps,
+  variant,
+} from 'styled-system';
 
-export interface AvatarBaseProps {
+import { colors, radii } from '../../utils';
+import avatarColors from './theme';
+
+export interface AvatarBaseProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
   /** Size of the avatar. */
-  size?: number;
+  size?: 24 | 32 | 40;
+  /** Extended color props. We need this because default `color` prop clashes with `styled-system`. */
+  color?: keyof typeof avatarColors;
+  /** Avatar icon type. Icon only shows when no initials are set */
+  type?: 'user' | 'team';
+  /** Avatar shape, rounded or circular. */
+  shape?: 'rounded' | 'rectangular';
+  /** Force rendering of avatar type icons */
+  forceRenderIcon?: boolean;
+  /** Name for initials */
+  name?: string;
 }
 
-export const AvatarBase = ({ size = 40 }: AvatarBaseProps) =>
+export const AvatarBase = ({ size = 40, shape: type = 'rounded' }: AvatarBaseProps) =>
   css`
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: ${size}px;
     height: ${size}px;
-    border: 1px solid ${colors.gray30};
-    border-radius: 50%;
-    background: ${colors.gray10};
+    border: 1px solid ${colors.white};
+    border-radius: ${type === 'rounded' ? size : radii.xs}px;
+    ${variant({
+      prop: 'color',
+      variants: avatarColors,
+    })}
     font-size: 1rem;
     line-height: 1;
     vertical-align: middle;
     overflow: hidden;
+    user-select: none;
 
     img {
       position: absolute;
@@ -26,4 +57,10 @@ export const AvatarBase = ({ size = 40 }: AvatarBaseProps) =>
       height: 100%;
       object-fit: cover;
     }
+
+    ${layout}
+    ${position}
+    ${flexbox}
+    ${grid}
+    ${space}
   `;

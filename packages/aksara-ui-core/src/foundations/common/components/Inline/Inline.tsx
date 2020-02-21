@@ -29,7 +29,7 @@ const Inline: React.FC<InlineProps> = ({ children, spacing, alignItems, ...rest 
     <Root spacing={spacing} {...rest}>
       <Inner display="flex" flexWrap="wrap" alignItems={alignItems} spacing={spacing}>
         {validChildrenArray.map((child, i) => {
-          const spacingProps = { display: 'block', mt: spacing, ml: spacing, mb: 0, mr: 0 };
+          const spacingProps = { mt: spacing, ml: spacing, mb: 0, mr: 0 };
           if (typeof child === 'string' || child.type === React.Fragment) {
             return (
               <Box key={`inline-child-${i}`} {...spacingProps}>
