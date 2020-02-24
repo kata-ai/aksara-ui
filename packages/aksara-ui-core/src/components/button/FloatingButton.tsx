@@ -17,6 +17,7 @@ const Root = styled('button')<FloatingButtonProps>`
 
 /**
  * Floating action buttons used for primary context actions.
+ * @deprecated This button type has been deprecated.
  */
 const FloatingButton = React.forwardRef<HTMLButtonElement, FloatingButtonProps>(
   ({ children, className, style, ...rest }, ref) => (

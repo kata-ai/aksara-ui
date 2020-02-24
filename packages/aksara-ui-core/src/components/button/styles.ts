@@ -70,7 +70,9 @@ export const ButtonBase = css`
 `;
 
 export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 
   ${ButtonBase}

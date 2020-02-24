@@ -1,10 +1,11 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import { IconPlus } from '@aksara-ui/icons';
+import { IconPlus, IconPen, IconTickSingle, IconTrash, IconRefresh } from '@aksara-ui/icons';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import FloatingButton from './FloatingButton';
+import { Paragraph, Stack } from '../../foundations';
 
 const readme = require('./README.md');
 
@@ -13,7 +14,17 @@ const stories = storiesOf('Core|Components/Button/FloatingButton', module).addDe
 stories.add(
   'basic',
   () => (
-    <SystemBlock title="Floating Button" subtitle="Floating action buttons for primary context actions.">
+    <SystemBlock
+      title="Floating Button"
+      subtitle={
+        <Stack spacing="xxs">
+          <Paragraph>Floating action buttons for primary context actions.</Paragraph>
+          <Paragraph>
+            <strong>NOTE:</strong> This button type has been deprecated.
+          </Paragraph>
+        </Stack>
+      }
+    >
       <ComponentBlock title="Button Sizes">
         <FloatingButton
           type="button"
@@ -45,7 +56,7 @@ stories.add(
       </ComponentBlock>
       <ComponentBlock title="Default Button">
         <FloatingButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
-          <i className="icon-add" aria-hidden="true" />
+          <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -54,7 +65,7 @@ stories.add(
           disabled
           onClick={action('button-click')}
         >
-          <i className="icon-add" aria-hidden="true" />
+          <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
       <ComponentBlock title="Primary Button">
@@ -65,7 +76,7 @@ stories.add(
           variant="primary"
           onClick={action('button-click')}
         >
-          <i className="icon-save" aria-hidden="true" />
+          <IconPen fill="currentColor" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -75,7 +86,7 @@ stories.add(
           disabled
           onClick={action('button-click')}
         >
-          <i className="icon-save" aria-hidden="true" />
+          <IconPen fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
       <ComponentBlock title="Success Button">
@@ -86,7 +97,7 @@ stories.add(
           variant="success"
           onClick={action('button-click')}
         >
-          <i className="icon-tick" aria-hidden="true" />
+          <IconTickSingle fill="currentColor" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -96,7 +107,7 @@ stories.add(
           disabled
           onClick={action('button-click')}
         >
-          <i className="icon-tick" aria-hidden="true" />
+          <IconTickSingle fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
       <ComponentBlock title="Warning Button">
@@ -107,7 +118,7 @@ stories.add(
           variant="warning"
           onClick={action('button-click')}
         >
-          <i className="icon-account" aria-hidden="true" />
+          <IconRefresh fill="currentColor" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -117,7 +128,7 @@ stories.add(
           disabled
           onClick={action('button-click')}
         >
-          <i className="icon-account" aria-hidden="true" />
+          <IconRefresh fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
       <ComponentBlock title="Destructive Button">
@@ -128,7 +139,7 @@ stories.add(
           variant="destructive"
           onClick={action('button-click')}
         >
-          <i className="icon-trash" aria-hidden="true" />
+          <IconTrash fill="currentColor" aria-hidden="true" />
         </FloatingButton>
         <FloatingButton
           type="button"
@@ -138,7 +149,7 @@ stories.add(
           disabled
           onClick={action('button-click')}
         >
-          <i className="icon-trash" aria-hidden="true" />
+          <IconTrash fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
     </SystemBlock>
