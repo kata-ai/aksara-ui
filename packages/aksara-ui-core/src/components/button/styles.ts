@@ -160,29 +160,25 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
 `;
 
 export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
-  display: ${props.block ? 'block' : 'inline-block'};
-  ${props.block ? 'width: 100%;' : ''}
-  position: relative;
-
   ${ButtonBase}
 
   background-color: ${colors.white};
-  border-color: ${colors.gray30};
+  border-color: ${colors.grey04};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover {
-      background-color: ${colors.gray10};
+      background-color: ${colors.grey03};
+      border-color: ${colors.grey04};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      border-color: ${colors.gray70};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.grey03};
+      border-color: ${colors.blue06};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 

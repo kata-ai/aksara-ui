@@ -151,9 +151,9 @@ export const ButtonDestructive = css`
 
   &:disabled,
   &.disabled {
-    border-color: #a7aeb0;
-    background-color: #c2c7c8;
-    color: ${colors.white};
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey04};
+    color: ${colors.grey01};
   }
 `;
 
