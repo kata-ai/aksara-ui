@@ -9,7 +9,7 @@ export interface SystemHeaderProps {
 }
 
 const SystemHeader: React.FC<SystemHeaderProps> = ({ title, subtitle }) => (
-  <Box bg="cobalt" px="lg" py="xl" color="white">
+  <Box bg="blue09" px="lg" py="xl" color="white">
     <StoryContainer>
       <Box mb={64}>
         <AksaraLogo height={40} />
