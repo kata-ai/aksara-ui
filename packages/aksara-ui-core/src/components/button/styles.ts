@@ -148,7 +148,7 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
 
   ${props.variant === 'default' && ButtonDefault}
   ${props.variant === 'primary' && ButtonPrimary}
-  ${props.variant === 'support' && ButtonSupport}
+  ${props.variant === 'outline' && ButtonSupport}
   ${props.variant === 'destructive' && ButtonDestructive}
   ${props.variant === 'link' && ButtonLink}
   ${props.variant === 'ghost' && ButtonGhost}
@@ -184,8 +184,9 @@ export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
 
   &:disabled,
   &.disabled {
-    color: inherit;
-    opacity: 0.5;
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey01};
+    color: ${colors.grey04};
   }
 
   ${props.variant === 'default' && OutlineButtonDefault}

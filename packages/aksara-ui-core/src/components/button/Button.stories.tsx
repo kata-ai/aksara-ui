@@ -38,13 +38,13 @@ stories.add(
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Outline Button">
-        <Button type="button" variant="support" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
+        <Button type="button" variant="outline" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button type="button" variant="support" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
+        <Button type="button" variant="outline" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
           Push Me
         </Button>
-        <Button type="button" variant="support" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
+        <Button type="button" variant="outline" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
           Push Me
         </Button>
       </ComponentBlock>
@@ -181,19 +181,19 @@ stories.add(
       </ComponentBlock>
       <ComponentBlock title="Outline Button">
         <Inline spacing="md">
-          <Button type="button" variant="support">
+          <Button type="button" variant="outline">
             Push Me
           </Button>
-          <Button type="button" variant="support" className="hover">
+          <Button type="button" variant="outline" className="hover">
             Push Me
           </Button>
-          <Button type="button" variant="support" className="focus">
+          <Button type="button" variant="outline" className="focus">
             Push Me
           </Button>
-          <Button type="button" variant="support" disabled>
+          <Button type="button" variant="outline" disabled>
             I&apos;m disabled
           </Button>
-          <Button type="button" variant="support" isLoading>
+          <Button type="button" variant="outline" isLoading>
             I&apos;m loading
           </Button>
         </Inline>

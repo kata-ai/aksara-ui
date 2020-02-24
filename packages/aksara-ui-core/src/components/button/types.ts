@@ -1,14 +1,6 @@
 import { LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps } from 'styled-system';
 
-export type ButtonVariants =
-  | 'default'
-  | 'primary'
-  | 'outline'
-  | 'support'
-  | 'destructive'
-  | 'link'
-  | 'ghost'
-  | 'inverse';
+export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'link' | 'ghost' | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'ghost';
