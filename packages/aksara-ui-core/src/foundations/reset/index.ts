@@ -1,4 +1,4 @@
 export { default as GlobalStyles } from './components/GlobalStyles';
 
-export { default as WicaraProvider } from './components/WicaraProvider';
-export * from './components/WicaraProvider';
+export { default as AksaraProvider } from './components/AksaraProvider';
+export * from './components/AksaraProvider';

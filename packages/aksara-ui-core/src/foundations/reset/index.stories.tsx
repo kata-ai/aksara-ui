@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
-import { WicaraProvider } from '.';
+import { AksaraProvider } from '.';
 import { ColorSwatch, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 import { colors } from '../../utils';
 import { Box } from '../box';
@@ -31,7 +31,7 @@ storiesOf('Core|Foundations/Theme', module)
       const testLabelId = 'test';
 
       return (
-        <WicaraProvider>
+        <AksaraProvider>
           <h1>h1. Heading</h1>
           <h2>h2. Heading</h2>
           <h3>h3. Heading</h3>
@@ -62,7 +62,7 @@ storiesOf('Core|Foundations/Theme', module)
             <a href="https://www.youtube.com/watch?v=ERU9ZtTs3Fk">necessitatibus</a> dolore ea. Officia dolor soluta ut
             possimus non vero sint tenetur illo nulla, reiciendis quisquam fugiat. Est, quidem.
           </p>
-        </WicaraProvider>
+        </AksaraProvider>
       );
     },
     {

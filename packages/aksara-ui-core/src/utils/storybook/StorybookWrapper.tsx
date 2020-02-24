@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { WicaraProvider } from '../../foundations/reset';
+import { AksaraProvider } from '../../foundations/reset';
 import { space } from '../variables';
 
 import '../../../../aksara-fonts/kata-icons.css';
@@ -15,10 +15,10 @@ const StoryWrapperRoot = styled('div')`
 StoryWrapperRoot.displayName = 'StoryWrapperRoot';
 
 const StorybookWrapper = (storyFn: () => any) => (
-  <WicaraProvider>
+  <AksaraProvider>
     <StorybookGlobal />
     <StoryWrapperRoot>{storyFn()}</StoryWrapperRoot>
-  </WicaraProvider>
+  </AksaraProvider>
 );
 
 export default StorybookWrapper;

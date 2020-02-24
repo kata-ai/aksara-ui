@@ -2,11 +2,11 @@
 import * as React from 'react';
 import { DecoratorFn } from '@storybook/react';
 
-import { WicaraProvider } from '../../foundations/reset';
+import { AksaraProvider } from '../../foundations/reset';
 
 import '../../../../aksara-fonts/kata-icons.css';
 import '../../../../aksara-fonts/museo-sans-rounded.css';
 
-const SystemWrapper: DecoratorFn = storyFn => <WicaraProvider>{storyFn()}</WicaraProvider>;
+const SystemWrapper: DecoratorFn = storyFn => <AksaraProvider>{storyFn()}</AksaraProvider>;
 
 export default SystemWrapper;

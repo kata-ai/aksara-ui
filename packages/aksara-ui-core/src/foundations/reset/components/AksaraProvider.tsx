@@ -3,12 +3,12 @@ import * as React from 'react';
 import { Theme } from '../../../Theme';
 import GlobalStyles from './GlobalStyles';
 
-interface WicaraProviderProps {
+interface AksaraProviderProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const WicaraProvider: React.FC<WicaraProviderProps> = ({ children }) => {
+const AksaraProvider: React.FC<AksaraProviderProps> = ({ children }) => {
   return (
     <Theme>
       <GlobalStyles />
@@ -17,16 +17,16 @@ const WicaraProvider: React.FC<WicaraProviderProps> = ({ children }) => {
   );
 };
 
-WicaraProvider.displayName = 'WicaraProvider';
+AksaraProvider.displayName = 'AksaraProvider';
 
 /**
- * @deprecated This has been replaced by `WicaraProvider`.
+ * @deprecated This has been replaced by `AksaraProvider`.
  */
-export const WicaraReset: React.FC<WicaraProviderProps> = ({ ...rest }) => {
+export const WicaraProvider: React.FC<AksaraProviderProps> = ({ ...rest }) => {
   // eslint-disable-next-line no-console
   console.warn('`WicaraReset` has been deprecated in favour of `WicaraProvider`. Please use that instead.');
 
-  return <WicaraProvider {...rest} />;
+  return <AksaraProvider {...rest} />;
 };
 
-export default WicaraProvider;
+export default AksaraProvider;

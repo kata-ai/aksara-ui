@@ -7,7 +7,7 @@ import { TransitionGroup } from 'react-transition-group';
 import Toaster from './components/Toaster';
 import { TOASTER_WIDTH } from './utils/constants';
 import { ToasterHandler, ToasterSettings } from './utils/types';
-import { WicaraProvider } from '../../foundations';
+import { AksaraProvider } from '../../foundations';
 
 interface Props {
   bindToaster: (handler: ToasterHandler) => void;
@@ -54,7 +54,7 @@ export default class NotificationManager extends React.PureComponent<Props, Stat
   public render() {
     const { toasts } = this.state;
     return (
-      <WicaraProvider>
+      <AksaraProvider>
         <ToasterWrapper>
           <TransitionGroup>
             {toasts.map(({ id, ...props }) => {
@@ -62,7 +62,7 @@ export default class NotificationManager extends React.PureComponent<Props, Stat
             })}
           </TransitionGroup>
         </ToasterWrapper>
-      </WicaraProvider>
+      </AksaraProvider>
     );
   }
 
