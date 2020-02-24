@@ -6,6 +6,7 @@ import { IconPlus, IconPen, IconTickSingle, IconTrash, IconRefresh } from '@aksa
 import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 import { Message } from '../message';
 import FloatingButton from './FloatingButton';
+import { Box, Heading } from '../../foundations';
 
 const readme = require('./README.md');
 
@@ -17,69 +18,38 @@ stories.add(
     <SystemBlock title="Floating Button" subtitle="Floating action buttons for primary context actions.">
       <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
       <SystemSubheading>Sizes</SystemSubheading>
-      <ComponentBlock title="Small" withBackground>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          size="sm"
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          size="sm"
-          disabled
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
-      <ComponentBlock title="Medium" withBackground>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          size="md"
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          size="md"
-          disabled
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
-      <ComponentBlock title="Large" withBackground>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          size="lg"
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          size="lg"
-          disabled
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
+      <Box mt="md" mb="xl" display="grid" gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 8), 1fr))">
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={100} color="grey07" textAlign="center">
+            Small
+          </Heading>
+          <Box p="md" backgroundColor="grey02" flex="1 1 auto" textAlign="center">
+            <FloatingButton type="button" size="sm" aria-label="Push Me" onClick={action('button-click')}>
+              <IconPlus fill="currentColor" aria-hidden="true" />
+            </FloatingButton>
+          </Box>
+        </Box>
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={100} color="grey07" textAlign="center">
+            Medium
+          </Heading>
+          <Box p="md" backgroundColor="grey02" flex="1 1 auto" textAlign="center">
+            <FloatingButton type="button" size="md" aria-label="Push Me" onClick={action('button-click')}>
+              <IconPlus fill="currentColor" aria-hidden="true" />
+            </FloatingButton>
+          </Box>
+        </Box>
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={100} color="grey07" textAlign="center">
+            Large
+          </Heading>
+          <Box p="md" backgroundColor="grey02" flex="1 1 auto" textAlign="center">
+            <FloatingButton type="button" size="lg" aria-label="Push Me" onClick={action('button-click')}>
+              <IconPlus fill="currentColor" aria-hidden="true" />
+            </FloatingButton>
+          </Box>
+        </Box>
+      </Box>
       <SystemSubheading>Default Theme</SystemSubheading>
       <ComponentBlock title="Default Button" withBackground>
         <FloatingButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
