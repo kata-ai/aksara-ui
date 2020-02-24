@@ -29,10 +29,10 @@ interface LoaderCircleProps {
   buttonSize?: ButtonSizes;
 }
 
-const iconPadding = (size?: ButtonSizes) => {
+const loadingIconPadding = (size?: ButtonSizes) => {
   switch (size) {
     case 'lg':
-      return 16;
+      return 20;
     case 'md':
       return 16;
     case 'sm':
@@ -42,10 +42,23 @@ const iconPadding = (size?: ButtonSizes) => {
   }
 };
 
+const loadingIconSizes = (size?: ButtonSizes) => {
+  switch (size) {
+    case 'lg':
+      return 40;
+    case 'md':
+      return 32;
+    case 'sm':
+      return 24;
+    default:
+      return 32;
+  }
+};
+
 const LoaderCircle = styled(Circle)<LoaderCircleProps>`
   position: absolute;
-  left: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
-  top: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
+  left: ${props => `calc(50% - ${loadingIconPadding(props.buttonSize)}px)`};
+  top: ${props => `calc(50% - ${loadingIconPadding(props.buttonSize)}px)`};
 `;
 
 const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant'>>`
@@ -56,7 +69,9 @@ const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant
   top: 0;
   bottom: 0;
   ${props =>
-    props.iconPosition === 'right' ? `right: ${iconPadding(props.size)}px;` : `left: ${iconPadding(props.size)}px;`}
+    props.iconPosition === 'right'
+      ? `right: ${loadingIconPadding(props.size)}px;`
+      : `left: ${loadingIconPadding(props.size)}px;`}
 
   & i {
     display: flex;
@@ -111,7 +126,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {isLoading ? (
           <>
             <LoaderCircle
-              size={size === 'sm' ? 24 : 32}
+              size={loadingIconSizes(size)}
               buttonSize={size}
               spinnerColor={variant === 'outline' || variant === 'link' ? colors.grey04 : colors.white}
             />
