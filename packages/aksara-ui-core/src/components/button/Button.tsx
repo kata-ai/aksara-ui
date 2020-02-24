@@ -42,6 +42,19 @@ const loadingIconPadding = (size?: ButtonSizes) => {
   }
 };
 
+const iconPadding = (size?: ButtonSizes) => {
+  switch (size) {
+    case 'lg':
+      return 16;
+    case 'md':
+      return 16;
+    case 'sm':
+      return 12;
+    default:
+      return 16;
+  }
+};
+
 const loadingIconSizes = (size?: ButtonSizes) => {
   switch (size) {
     case 'lg':
@@ -69,9 +82,7 @@ const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant
   top: 0;
   bottom: 0;
   ${props =>
-    props.iconPosition === 'right'
-      ? `right: ${loadingIconPadding(props.size)}px;`
-      : `left: ${loadingIconPadding(props.size)}px;`}
+    props.iconPosition === 'right' ? `right: ${iconPadding(props.size)}px;` : `left: ${iconPadding(props.size)}px;`}
 
   & i {
     display: flex;

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import { IconPlus } from '@aksara-ui/icons';
+import { IconPen } from '@aksara-ui/icons';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import OutlineButton from './OutlineButton';
@@ -214,7 +214,7 @@ stories.add(
           type="button"
           size="sm"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="left"
           style={{ marginRight: 16 }}
         >
@@ -229,29 +229,29 @@ stories.add(
           type="button"
           size="sm"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="right"
           style={{ marginRight: 16 }}
         >
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" variant="primary" icon={IconPlus} iconPosition="right">
+        <OutlineButton type="button" variant="primary" icon={IconPen} iconPosition="right">
           Push Me
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="With Icons (block)">
-        <OutlineButton type="button" block variant="primary" icon={IconPlus} style={{ marginBottom: 16 }}>
+        <OutlineButton type="button" block variant="primary" icon={IconPen} style={{ marginBottom: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" block variant="primary" icon={IconPlus} iconPosition="right">
+        <OutlineButton type="button" block variant="primary" icon={IconPen} iconPosition="right">
           Push Me
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="With Icons loading">
-        <OutlineButton type="button" isLoading variant="primary" icon={IconPlus} size="sm" style={{ marginRight: 16 }}>
+        <OutlineButton type="button" isLoading variant="primary" icon={IconPen} size="sm" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" isLoading variant="primary" icon={IconPlus}>
+        <OutlineButton type="button" isLoading variant="primary" icon={IconPen}>
           Push Me
         </OutlineButton>
       </ComponentBlock>

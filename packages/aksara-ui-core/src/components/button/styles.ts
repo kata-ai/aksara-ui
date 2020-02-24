@@ -24,6 +24,7 @@ import {
   FloatingButtonDestructive,
 } from './utils/floatingButtonUtils';
 import {
+  IconButtonDefault,
   IconButtonSupport,
   IconButtonDestructive,
   IconButtonGhost,
@@ -87,7 +88,7 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
   box-shadow: ${shadows.layer200};
   vertical-align: middle;
   background-color: ${colors.white};
-  color: ${colors.gray60};
+  color: ${colors.grey07};
 
   i:before {
     vertical-align: middle;
@@ -136,7 +137,7 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
     height: ${iconSizes(props.buttonSize)}px;
   }
 
-  ${props.variant === 'default' && IconButtonSupport}
+  ${props.variant === 'default' && IconButtonDefault}
   ${props.variant === 'primary' && IconButtonGhost}
   ${props.variant === 'outline' && IconButtonSupport}
   ${props.variant === 'destructive' && IconButtonDestructive}

@@ -31,32 +31,30 @@ export function iconSizes(size?: IconButtonSizes) {
 }
 
 export const IconButtonDefault = css`
-  background-color: ${colors.gray10};
-  color: ${colors.gray50};
+  color: ${themeGet('colors.grey08', colors.grey08)};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
-    &.hover,
-    &:focus,
-    &.focus {
-      background-color: ${colors.gray20};
-      color: ${colors.gray50};
+    &.hover {
+      color: ${themeGet('colors.blue08', colors.blue08)};
     }
 
     &:focus,
-    &.focus,
+    &.focus {
+      color: ${themeGet('colors.blue08', colors.blue08)};
+      border-color: ${themeGet('colors.blue04', colors.blue04)};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.5);
+    }
+
     &:active,
     &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      border-color: ${themeGet('colors.indigo02', colors.indigo02)};
     }
   }
 
   &:disabled,
   &.disabled {
-    background-color: ${lighten(0.02, colors.gray10)};
-    color: ${colors.gray30};
+    color: ${colors.grey04};
   }
 `;
 

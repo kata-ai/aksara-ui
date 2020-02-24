@@ -30,8 +30,8 @@ export const OutlineButtonSmall = (props: OutlineButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 36px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 36px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 40px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 40px;'}
 `;
 
 export const OutlineButtonMedium = (props: OutlineButtonBaseProps) => css`
@@ -41,8 +41,8 @@ export const OutlineButtonMedium = (props: OutlineButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const OutlineButtonLarge = (props: OutlineButtonBaseProps) => css`
@@ -52,8 +52,8 @@ export const OutlineButtonLarge = (props: OutlineButtonBaseProps) => css`
   line-height: ${componentStyles.text[400].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const InverseButton = css`

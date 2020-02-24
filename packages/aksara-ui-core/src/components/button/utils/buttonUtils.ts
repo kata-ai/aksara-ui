@@ -195,8 +195,8 @@ export const ButtonSmall = (props: ButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 36px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 36px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 40px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 40px;'}
 `;
 
 export const ButtonMedium = (props: ButtonBaseProps) => css`
@@ -206,19 +206,19 @@ export const ButtonMedium = (props: ButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const ButtonLarge = (props: ButtonBaseProps) => css`
   height: 48px;
   padding: 0 24px;
-  font-size: ${componentStyles.text[400].fontSize};
-  line-height: ${componentStyles.text[400].lineHeight};
+  font-size: ${componentStyles.text[300].fontSize};
+  line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const InverseButton = css`
