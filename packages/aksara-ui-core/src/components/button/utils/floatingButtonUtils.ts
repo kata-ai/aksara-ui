@@ -71,7 +71,7 @@ export const FloatingButtonPrimary = css`
     &.focus,
     &:active,
     &.active {
-      color: ${colors.kataBlue};
+      color: ${colors.blue08};
     }
   }
 `;
@@ -84,7 +84,7 @@ export const FloatingButtonSuccess = css`
     &.focus,
     &:active,
     &.active {
-      color: ${colors.green};
+      color: ${colors.green07};
     }
   }
 `;
@@ -97,7 +97,7 @@ export const FloatingButtonWarning = css`
     &.focus,
     &:active,
     &.active {
-      color: ${colors.yellow};
+      color: ${colors.yellow07};
     }
   }
 `;
@@ -110,7 +110,7 @@ export const FloatingButtonDestructive = css`
     &.focus,
     &:active,
     &.active {
-      color: ${colors.red};
+      color: ${colors.red07};
     }
   }
 `;

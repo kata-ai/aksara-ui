@@ -1,4 +1,12 @@
-export type ButtonVariants = 'default' | 'primary' | 'support' | 'destructive' | 'link' | 'ghost' | 'inverse';
+export type ButtonVariants =
+  | 'default'
+  | 'primary'
+  | 'outline'
+  | 'support'
+  | 'destructive'
+  | 'link'
+  | 'ghost'
+  | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'ghost';
@@ -27,7 +35,7 @@ export interface OutlineButtonBaseProps {
   /** The size of the button. */
   size?: ButtonSizes;
   /** The icon that renders with the button */
-  icon?: string | React.ReactNode;
+  icon?: string | React.ComponentType<any>;
   /** Icon position. Default is `'left'`. */
   iconPosition?: ButtonIconPositions;
 }

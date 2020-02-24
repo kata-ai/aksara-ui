@@ -1,9 +1,11 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { IconPlus } from '@aksara-ui/icons';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import OutlineButton from './OutlineButton';
+import { Stack, Paragraph } from '../../foundations';
 
 const readme = require('./README.md');
 
@@ -12,7 +14,17 @@ const stories = storiesOf('Core|Components/Button/OutlineButton', module).addDec
 stories.add(
   'basic',
   () => (
-    <SystemBlock title="Outline Button" subtitle="Outline-styled button for alternate styling.">
+    <SystemBlock
+      title="Outline Button"
+      subtitle={
+        <Stack spacing="xxs">
+          <Paragraph>Outline-styled button for alternate styling.</Paragraph>
+          <Paragraph>
+            <strong>NOTE:</strong> This button type has been deprecated.
+          </Paragraph>
+        </Stack>
+      }
+    >
       <ComponentBlock title="Default Button">
         <OutlineButton type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
@@ -202,7 +214,7 @@ stories.add(
           type="button"
           size="sm"
           variant="primary"
-          icon="add"
+          icon={IconPlus}
           iconPosition="left"
           style={{ marginRight: 16 }}
         >
@@ -217,29 +229,29 @@ stories.add(
           type="button"
           size="sm"
           variant="primary"
-          icon="add"
+          icon={IconPlus}
           iconPosition="right"
           style={{ marginRight: 16 }}
         >
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" variant="primary" icon="add" iconPosition="right">
+        <OutlineButton type="button" variant="primary" icon={IconPlus} iconPosition="right">
           Push Me
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="With Icons (block)">
-        <OutlineButton type="button" block variant="primary" icon="add" style={{ marginBottom: 16 }}>
+        <OutlineButton type="button" block variant="primary" icon={IconPlus} style={{ marginBottom: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" block variant="primary" icon="add" iconPosition="right">
+        <OutlineButton type="button" block variant="primary" icon={IconPlus} iconPosition="right">
           Push Me
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="With Icons loading">
-        <OutlineButton type="button" isLoading variant="primary" icon="add" size="sm" style={{ marginRight: 16 }}>
+        <OutlineButton type="button" isLoading variant="primary" icon={IconPlus} size="sm" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" isLoading variant="primary" icon="add">
+        <OutlineButton type="button" isLoading variant="primary" icon={IconPlus}>
           Push Me
         </OutlineButton>
       </ComponentBlock>
