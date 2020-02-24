@@ -7,10 +7,10 @@
 Wrap your app inside the `WicaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
 
 ```jsx
-import { WicaraProvider } from '@aksara-ui/core';
+import { AksaraProvider } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
-  return <WicaraProvider>{children}</WicaraProvider>;
+  return <AksaraProvider>{children}</AksaraProvider>;
 }
 ```
 

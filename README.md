@@ -45,13 +45,13 @@ $ yarn add styled-components @aksara-ui/core @aksara-ui/icons
 $ npm install --save styled-components @aksara-ui/core @aksara-ui/icons
 ```
 
-Then, you will need to apply the style resets + theme provider. Wrap your app inside the `WicaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
+Then, you will need to apply the style resets + theme provider. Wrap your app inside the `AksaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
 
 ```jsx
-import { WicaraProvider } from '@aksara-ui/core';
+import { AksaraProvider } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
-  return <WicaraProvider>{children}</WicaraProvider>;
+  return <AksaraProvider>{children}</AksaraProvider>;
 }
 ```
 
