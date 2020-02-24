@@ -5,7 +5,7 @@ import { IconPlus } from '@aksara-ui/icons';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import Button from './Button';
-import { Box } from '../../foundations';
+import { Box, Inline } from '../../foundations';
 
 const readme = require('./README.md');
 
@@ -37,7 +37,7 @@ stories.add(
           Push Me
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="Support Button">
+      <ComponentBlock title="Outline Button">
         <Button type="button" variant="support" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </Button>
@@ -142,89 +142,99 @@ stories.add(
   () => (
     <SystemBlock title="Button States" subtitle="Left to right: default, hover, focus, disabled, loading">
       <ComponentBlock title="Default Button">
-        <Button type="button" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
+        <Inline spacing="md">
+          <Button type="button" variant="default">
+            Push Me
+          </Button>
+          <Button type="button" variant="default" className="hover">
+            Push Me
+          </Button>
+          <Button type="button" variant="default" className="focus">
+            Push Me
+          </Button>
+          <Button type="button" variant="default" disabled>
+            I&apos;m disabled
+          </Button>
+          <Button type="button" variant="default" isLoading>
+            I&apos;m loading
+          </Button>
+        </Inline>
       </ComponentBlock>
       <ComponentBlock title="Primary Button">
-        <Button type="button" variant="primary" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="primary" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
+        <Inline spacing="md">
+          <Button type="button" variant="primary">
+            Push Me
+          </Button>
+          <Button type="button" variant="primary" className="hover">
+            Push Me
+          </Button>
+          <Button type="button" variant="primary" className="focus">
+            Push Me
+          </Button>
+          <Button type="button" variant="primary" disabled>
+            I&apos;m disabled
+          </Button>
+          <Button type="button" variant="primary" isLoading>
+            I&apos;m loading
+          </Button>
+        </Inline>
       </ComponentBlock>
-      <ComponentBlock title="Support Button">
-        <Button type="button" variant="support" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="support" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
+      <ComponentBlock title="Outline Button">
+        <Inline spacing="md">
+          <Button type="button" variant="support">
+            Push Me
+          </Button>
+          <Button type="button" variant="support" className="hover">
+            Push Me
+          </Button>
+          <Button type="button" variant="support" className="focus">
+            Push Me
+          </Button>
+          <Button type="button" variant="support" disabled>
+            I&apos;m disabled
+          </Button>
+          <Button type="button" variant="support" isLoading>
+            I&apos;m loading
+          </Button>
+        </Inline>
       </ComponentBlock>
       <ComponentBlock title="Link Button">
-        <Button type="button" variant="link" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="link" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
+        <Inline spacing="md">
+          <Button type="button" variant="link">
+            Push Me
+          </Button>
+          <Button type="button" variant="link" className="hover">
+            Push Me
+          </Button>
+          <Button type="button" variant="link" className="focus">
+            Push Me
+          </Button>
+          <Button type="button" variant="link" disabled>
+            I&apos;m disabled
+          </Button>
+          <Button type="button" variant="link" isLoading>
+            I&apos;m loading
+          </Button>
+        </Inline>
       </ComponentBlock>
       <ComponentBlock title="Destructive Button">
-        <Button type="button" variant="destructive" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="destructive" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
+        <Inline spacing="md">
+          <Button type="button" variant="destructive">
+            Push Me
+          </Button>
+          <Button type="button" variant="destructive" className="hover">
+            Push Me
+          </Button>
+          <Button type="button" variant="destructive" className="focus">
+            Push Me
+          </Button>
+          <Button type="button" variant="destructive" disabled>
+            I&apos;m disabled
+          </Button>
+          <Button type="button" variant="destructive" isLoading>
+            I&apos;m loading
+          </Button>
+        </Inline>
       </ComponentBlock>
       <ComponentBlock title="Ghost Button">
         <Button type="button" variant="ghost" style={{ marginRight: 16 }}>

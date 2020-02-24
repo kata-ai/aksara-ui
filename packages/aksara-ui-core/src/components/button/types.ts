@@ -1,3 +1,5 @@
+import { LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps } from 'styled-system';
+
 export type ButtonVariants =
   | 'default'
   | 'primary'
@@ -14,7 +16,9 @@ export type ButtonSizes = 'sm' | 'md' | 'lg';
 export type IconButtonSizes = 'sm' | 'md' | 'lg';
 export type ButtonIconPositions = 'left' | 'right';
 
-export interface ButtonBaseProps {
+type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps;
+
+export interface ButtonBaseProps extends AllButtonStyledProps {
   /** Is a block button. */
   block?: boolean;
   /** The variant of the button. */
@@ -27,7 +31,7 @@ export interface ButtonBaseProps {
   iconPosition?: ButtonIconPositions;
 }
 
-export interface OutlineButtonBaseProps {
+export interface OutlineButtonBaseProps extends AllButtonStyledProps {
   /** Is a block button. */
   block?: boolean;
   /** The variant of the button. */
@@ -40,14 +44,14 @@ export interface OutlineButtonBaseProps {
   iconPosition?: ButtonIconPositions;
 }
 
-export interface FloatingButtonBaseProps {
+export interface FloatingButtonBaseProps extends AllButtonStyledProps {
   /** The variant of the button. */
   variant?: FloatingButtonVariants;
   /** The size of the button. */
   size?: ButtonSizes;
 }
 
-export interface IconButtonBaseProps {
+export interface IconButtonBaseProps extends AllButtonStyledProps {
   /** The variant of the button. */
   variant?: IconButtonVariants;
   /** The size of the button. */

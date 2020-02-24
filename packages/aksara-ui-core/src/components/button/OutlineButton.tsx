@@ -67,7 +67,10 @@ const Icon = styled('span')<Pick<OutlineButtonProps, 'size' | 'iconPosition'>>`
  * @deprecated This button type has been deprecated.
  */
 const OutlineButton = React.forwardRef<HTMLButtonElement, OutlineButtonProps>(
-  ({ children, className, style, size, icon, iconPosition, isLoading, disabled, variant, ...rest }, ref) => {
+  (
+    { children, className, style, size, icon, iconPosition, isLoading, disabled, variant, block, width, ...rest },
+    ref
+  ) => {
     const renderIcon = () => {
       if (typeof icon === 'string') {
         return (
@@ -95,6 +98,9 @@ const OutlineButton = React.forwardRef<HTMLButtonElement, OutlineButtonProps>(
         isLoading={isLoading}
         variant={variant}
         ref={ref}
+        display={block ? 'block' : 'inline-block'}
+        width={block ? '100%' : width}
+        position="relative"
         {...rest}
       >
         {icon && renderIcon()}

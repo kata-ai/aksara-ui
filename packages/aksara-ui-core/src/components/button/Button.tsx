@@ -69,7 +69,10 @@ const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant
  * foreground of an experience.
  */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, className, style, size, icon, iconPosition, isLoading, disabled, variant, ...rest }, ref) => {
+  (
+    { children, className, style, size, icon, iconPosition, isLoading, disabled, variant, block, width, ...rest },
+    ref
+  ) => {
     const renderIcon = () => {
       if (typeof icon === 'string') {
         return (
@@ -97,6 +100,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         isLoading={isLoading}
         variant={variant}
         ref={ref}
+        display={block ? 'block' : 'inline-block'}
+        width={block ? '100%' : width}
+        position="relative"
         {...rest}
       >
         {icon && renderIcon()}

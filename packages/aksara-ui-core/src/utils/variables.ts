@@ -1,3 +1,5 @@
+import { transparentize } from 'polished';
+
 /** (DEPRECATED) old color variables */
 const legacyColors = {
   red: '#e53935',
@@ -337,6 +339,8 @@ export const elevationLegacy = {
   },
 };
 
+const shadowColor = transparentize(0.85, colors.grey09);
+
 /** Custom elevation variant for the Card component. */
 export const elevation = {
   ...elevationLegacy,
@@ -344,16 +348,16 @@ export const elevation = {
     boxShadow: 'none',
   },
   level2: {
-    boxShadow: '0px 2px 6px rgba(176, 183, 191, 0.6);',
+    boxShadow: `0px 2px 6px ${shadowColor};`,
   },
   level3: {
-    boxShadow: '0px 6px 12px rgba(176, 183, 191, 0.6);',
+    boxShadow: `0px 6px 12px ${shadowColor};`,
   },
   level4: {
-    boxShadow: '0px 12px 24px rgba(176, 183, 191, 0.6);',
+    boxShadow: `0px 12px 24px ${shadowColor};`,
   },
   level5: {
-    boxShadow: '0px 24px 48px rgba(176, 183, 191, 0.6);',
+    boxShadow: `0px 24px 48px ${shadowColor};`,
   },
 };
 

@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { layout, position, flexbox, grid, space } from 'styled-system';
 
 import { colors, shadows } from '../../utils/variables';
 import {
@@ -67,6 +68,12 @@ export const ButtonBase = css`
   &:focus {
     outline: 0px;
   }
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
 `;
 
 export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
@@ -137,10 +144,6 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`
-  display: ${props.block ? 'block' : 'inline-block'};
-  ${props.block ? 'width: 100%;' : ''}
-  position: relative;
-
   ${ButtonBase}
 
   ${props.variant === 'default' && ButtonDefault}
