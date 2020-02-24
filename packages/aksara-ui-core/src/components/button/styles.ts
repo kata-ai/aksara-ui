@@ -98,9 +98,9 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
     opacity: 0.5;
   }
 
-  ${props.size === 'sm' && FloatingButtonSmall}
-  ${props.size === 'md' && FloatingButtonMedium}
-  ${props.size === 'lg' && FloatingButtonLarge}
+  ${props.buttonSize === 'sm' && FloatingButtonSmall}
+  ${props.buttonSize === 'md' && FloatingButtonMedium}
+  ${props.buttonSize === 'lg' && FloatingButtonLarge}
 
   ${props.variant === 'primary' && FloatingButtonPrimary}
   ${props.variant === 'success' && FloatingButtonSuccess}
@@ -112,8 +112,8 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: ${iconButtonSizes(props.size)}px;
-  width: ${iconButtonSizes(props.size)}px;
+  height: ${iconButtonSizes(props.buttonSize)}px;
+  width: ${iconButtonSizes(props.buttonSize)}px;
   text-align: center;
   border-radius: 4px;
 
@@ -128,12 +128,12 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   }
 
   i:before {
-    font-size: ${iconSizes(props.size)}px;
+    font-size: ${iconSizes(props.buttonSize)}px;
   }
 
   svg {
-    width: ${iconSizes(props.size)}px;
-    height: ${iconSizes(props.size)}px;
+    width: ${iconSizes(props.buttonSize)}px;
+    height: ${iconSizes(props.buttonSize)}px;
   }
 
   ${props.variant === 'default' && IconButtonSupport}
@@ -154,9 +154,9 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
   ${props.variant === 'ghost' && ButtonGhost}
   ${props.variant === 'inverse' && InverseButton}
 
-  ${props.size === 'sm' && ButtonSmall(props)}
-  ${props.size === 'md' && ButtonMedium(props)}
-  ${props.size === 'lg' && ButtonLarge(props)}
+  ${props.buttonSize === 'sm' && ButtonSmall(props)}
+  ${props.buttonSize === 'md' && ButtonMedium(props)}
+  ${props.buttonSize === 'lg' && ButtonLarge(props)}
 `;
 
 export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
@@ -195,7 +195,7 @@ export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
   ${props.variant === 'warning' && OutlineButtonWarning}
   ${props.variant === 'destructive' && OutlineButtonDestructive}
 
-  ${props.size === 'sm' && OutlineButtonSmall(props)}
-  ${props.size === 'md' && OutlineButtonMedium(props)}
-  ${props.size === 'lg' && OutlineButtonLarge(props)}
+  ${props.buttonSize === 'sm' && OutlineButtonSmall(props)}
+  ${props.buttonSize === 'md' && OutlineButtonMedium(props)}
+  ${props.buttonSize === 'lg' && OutlineButtonLarge(props)}
 `;

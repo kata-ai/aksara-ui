@@ -11,6 +11,8 @@ export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes
   className?: string;
   /** Additional CSS styles to give to the component */
   style?: React.CSSProperties;
+  /** The size of the button. */
+  size?: ButtonSizes;
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
 }
@@ -93,7 +95,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Root
         className={className}
         style={style}
-        size={size}
+        buttonSize={size}
         icon={icon}
         iconPosition={iconPosition}
         disabled={disabled || isLoading}
@@ -111,9 +113,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <LoaderCircle
               size={size === 'sm' ? 24 : 32}
               buttonSize={size}
-              spinnerColor={
-                variant === 'support' || variant === 'link' || variant === 'ghost' ? colors.gray50 : colors.white
-              }
+              spinnerColor={variant === 'outline' || variant === 'link' ? colors.grey04 : colors.white}
             />
             <InvisibleText>{children}</InvisibleText>
           </>

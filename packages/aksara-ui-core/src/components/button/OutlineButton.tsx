@@ -10,6 +10,8 @@ export interface OutlineButtonProps extends OutlineButtonBaseProps, React.Button
   className?: string;
   /** Additional CSS styles to give to the component */
   style?: React.CSSProperties;
+  /** The size of the button. */
+  size?: ButtonSizes;
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
 }
@@ -91,7 +93,7 @@ const OutlineButton = React.forwardRef<HTMLButtonElement, OutlineButtonProps>(
       <Root
         className={className}
         style={style}
-        size={size}
+        buttonSize={size}
         icon={icon}
         iconPosition={iconPosition}
         disabled={disabled || isLoading}
@@ -106,7 +108,7 @@ const OutlineButton = React.forwardRef<HTMLButtonElement, OutlineButtonProps>(
         {icon && renderIcon()}
         {isLoading ? (
           <>
-            <LoaderCircle size={size === 'sm' ? 24 : 32} buttonSize={size} spinnerColor="inherit" />
+            <LoaderCircle size={size === 'sm' ? 24 : 32} buttonSize={size} spinnerColor="currentColor" />
             <InvisibleText>{children}</InvisibleText>
           </>
         ) : (
