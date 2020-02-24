@@ -3,29 +3,21 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { IconPlus, IconPen, IconTickSingle, IconTrash, IconRefresh } from '@aksara-ui/icons';
 
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
+import { Message } from '../message';
 import FloatingButton from './FloatingButton';
-import { Paragraph, Stack } from '../../foundations';
 
 const readme = require('./README.md');
 
 const stories = storiesOf('Core|Components/Button/FloatingButton', module).addDecorator(SystemWrapper);
 
 stories.add(
-  'basic',
+  'example',
   () => (
-    <SystemBlock
-      title="Floating Button"
-      subtitle={
-        <Stack spacing="xxs">
-          <Paragraph>Floating action buttons for primary context actions.</Paragraph>
-          <Paragraph>
-            <strong>NOTE:</strong> This button type has been deprecated.
-          </Paragraph>
-        </Stack>
-      }
-    >
-      <ComponentBlock title="Button Sizes">
+    <SystemBlock title="Floating Button" subtitle="Floating action buttons for primary context actions.">
+      <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
+      <SystemSubheading>Sizes</SystemSubheading>
+      <ComponentBlock title="Small" withBackground>
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}
@@ -38,6 +30,18 @@ stories.add(
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}
+          size="sm"
+          disabled
+          aria-label="Push Me"
+          onClick={action('button-click')}
+        >
+          <IconPlus fill="currentColor" aria-hidden="true" />
+        </FloatingButton>
+      </ComponentBlock>
+      <ComponentBlock title="Medium" withBackground>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
           size="md"
           aria-label="Push Me"
           onClick={action('button-click')}
@@ -47,14 +51,37 @@ stories.add(
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}
-          size="lg"
+          size="md"
+          disabled
           aria-label="Push Me"
           onClick={action('button-click')}
         >
           <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
-      <ComponentBlock title="Default Button">
+      <ComponentBlock title="Large" withBackground>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          size="lg"
+          aria-label="Push Me"
+          onClick={action('button-click')}
+        >
+          <IconPlus fill="currentColor" aria-hidden="true" />
+        </FloatingButton>
+        <FloatingButton
+          type="button"
+          style={{ marginRight: 16 }}
+          size="lg"
+          disabled
+          aria-label="Push Me"
+          onClick={action('button-click')}
+        >
+          <IconPlus fill="currentColor" aria-hidden="true" />
+        </FloatingButton>
+      </ComponentBlock>
+      <SystemSubheading>Default Theme</SystemSubheading>
+      <ComponentBlock title="Default Button" withBackground>
         <FloatingButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
           <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
@@ -68,7 +95,7 @@ stories.add(
           <IconPlus fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
-      <ComponentBlock title="Primary Button">
+      <ComponentBlock title="Primary Button" withBackground>
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}
@@ -89,7 +116,7 @@ stories.add(
           <IconPen fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
-      <ComponentBlock title="Success Button">
+      <ComponentBlock title="Success Button" withBackground>
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}
@@ -110,7 +137,7 @@ stories.add(
           <IconTickSingle fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
-      <ComponentBlock title="Warning Button">
+      <ComponentBlock title="Warning Button" withBackground>
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}
@@ -131,7 +158,7 @@ stories.add(
           <IconRefresh fill="currentColor" aria-hidden="true" />
         </FloatingButton>
       </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
+      <ComponentBlock title="Destructive Button" withBackground>
         <FloatingButton
           type="button"
           style={{ marginRight: 16 }}

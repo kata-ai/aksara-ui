@@ -3,28 +3,20 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
 
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
+import { Message } from '../message';
 import OutlineButton from './OutlineButton';
-import { Stack, Paragraph } from '../../foundations';
 
 const readme = require('./README.md');
 
 const stories = storiesOf('Core|Components/Button/OutlineButton', module).addDecorator(SystemWrapper);
 
 stories.add(
-  'basic',
+  'example',
   () => (
-    <SystemBlock
-      title="Outline Button"
-      subtitle={
-        <Stack spacing="xxs">
-          <Paragraph>Outline-styled button for alternate styling.</Paragraph>
-          <Paragraph>
-            <strong>NOTE:</strong> This button type has been deprecated.
-          </Paragraph>
-        </Stack>
-      }
-    >
+    <SystemBlock title="Outline Button" subtitle="Outline-styled button for alternate styling.">
+      <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
+      <SystemSubheading>Default Theme</SystemSubheading>
       <ComponentBlock title="Default Button" withBackground>
         <OutlineButton type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
@@ -89,17 +81,9 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-    </SystemBlock>
-  ),
-  {
-    notes: { markdown: readme },
-  }
-);
 
-stories.add(
-  'button states',
-  () => (
-    <SystemBlock title="Button States" subtitle="Left to right: default, hover, focus, disabled, loading">
+      <SystemSubheading>Button States</SystemSubheading>
+
       <ComponentBlock title="Default Button" withBackground>
         <OutlineButton type="button" style={{ marginRight: 16 }}>
           Push Me
@@ -195,7 +179,9 @@ stories.add(
 stories.add(
   'additional props',
   () => (
-    <SystemBlock title="Button Props" subtitle="Additional props to modify the look of the button.">
+    <SystemBlock title="Outline Button" subtitle="Outline-styled button for alternate styling.">
+      <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
+      <SystemSubheading>Additional Props</SystemSubheading>
       <ComponentBlock title="Block Button" withBackground>
         <OutlineButton type="button" variant="primary" block>
           Push Me
