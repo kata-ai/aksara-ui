@@ -25,7 +25,7 @@ stories.add(
         </Stack>
       }
     >
-      <ComponentBlock title="Default Button">
+      <ComponentBlock title="Default Button" withBackground>
         <OutlineButton type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </OutlineButton>
@@ -33,7 +33,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Primary Button">
+      <ComponentBlock title="Primary Button" withBackground>
         <OutlineButton
           type="button"
           variant="primary"
@@ -47,7 +47,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Success Button">
+      <ComponentBlock title="Success Button" withBackground>
         <OutlineButton
           type="button"
           variant="success"
@@ -61,7 +61,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Warning Button">
+      <ComponentBlock title="Warning Button" withBackground>
         <OutlineButton
           type="button"
           variant="warning"
@@ -75,7 +75,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
+      <ComponentBlock title="Destructive Button" withBackground>
         <OutlineButton
           type="button"
           variant="destructive"
@@ -100,7 +100,7 @@ stories.add(
   'button states',
   () => (
     <SystemBlock title="Button States" subtitle="Left to right: default, hover, focus, disabled, loading">
-      <ComponentBlock title="Default Button">
+      <ComponentBlock title="Default Button" withBackground>
         <OutlineButton type="button" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -117,7 +117,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Primary Button">
+      <ComponentBlock title="Primary Button" withBackground>
         <OutlineButton type="button" variant="primary" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -134,7 +134,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Success Button">
+      <ComponentBlock title="Success Button" withBackground>
         <OutlineButton type="button" variant="success" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -151,7 +151,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Warning Button">
+      <ComponentBlock title="Warning Button" withBackground>
         <OutlineButton type="button" variant="warning" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -168,7 +168,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
+      <ComponentBlock title="Destructive Button" withBackground>
         <OutlineButton type="button" variant="destructive" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -196,12 +196,12 @@ stories.add(
   'additional props',
   () => (
     <SystemBlock title="Button Props" subtitle="Additional props to modify the look of the button.">
-      <ComponentBlock title="Block Button">
+      <ComponentBlock title="Block Button" withBackground>
         <OutlineButton type="button" variant="primary" block>
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Loading">
+      <ComponentBlock title="Loading" withBackground>
         <OutlineButton type="button" size="sm" variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -209,7 +209,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (left)">
+      <ComponentBlock title="With Icons (left)" withBackground>
         <OutlineButton
           type="button"
           size="sm"
@@ -224,7 +224,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (right)">
+      <ComponentBlock title="With Icons (right)" withBackground>
         <OutlineButton
           type="button"
           size="sm"
@@ -239,7 +239,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (block)">
+      <ComponentBlock title="With Icons (block)" withBackground>
         <OutlineButton type="button" block variant="primary" icon={IconPen} style={{ marginBottom: 16 }}>
           Push Me
         </OutlineButton>
@@ -247,7 +247,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons loading">
+      <ComponentBlock title="With Icons loading" withBackground>
         <OutlineButton type="button" isLoading variant="primary" icon={IconPen} size="sm" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
