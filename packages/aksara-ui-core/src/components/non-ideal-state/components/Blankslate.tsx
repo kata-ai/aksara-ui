@@ -13,7 +13,7 @@ const ImageWrapper = styled(Box)`
   }
 `;
 
-export interface NonIdealStateProps {
+export interface BlankslateProps {
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Additional CSS styles to give to the component. */
@@ -24,7 +24,7 @@ export interface NonIdealStateProps {
   image?: React.ReactNode;
 }
 
-const NonIdealState: React.FC<NonIdealStateProps> = ({ className, style, image, title, children }) => {
+const Blankslate: React.FC<BlankslateProps> = ({ className, style, image, title, children }) => {
   return (
     <Box className={className} style={style} mx="auto" my="xxl" width="100%" maxWidth="528px" textAlign="center">
       {image && <ImageWrapper mb={60}>{image}</ImageWrapper>}
@@ -36,10 +36,13 @@ const NonIdealState: React.FC<NonIdealStateProps> = ({ className, style, image, 
   );
 };
 
-NonIdealState.defaultProps = {
+Blankslate.defaultProps = {
   image: undefined,
 };
 
-NonIdealState.displayName = 'NonIdealState';
+Blankslate.displayName = 'Blankslate';
 
-export default NonIdealState;
+/** @deprecated use `<Blankslate />` instead */
+export const NonIdealState = Blankslate;
+
+export default Blankslate;
