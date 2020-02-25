@@ -6,7 +6,7 @@ import { IconPlus, IconPen, IconTickSingle, IconTrash, IconRefresh } from '@aksa
 import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 import { Message } from '../message';
 import FloatingButton from './FloatingButton';
-import { Box, Heading } from '../../foundations';
+import { Box, Heading, Stack } from '../../foundations';
 
 const readme = require('./README.md');
 
@@ -16,8 +16,8 @@ stories.add(
   'example',
   () => (
     <SystemBlock title="Floating Button" subtitle="Floating action buttons for primary context actions.">
-      <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
-      <SystemSubheading>Sizes</SystemSubheading>
+      <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="xl" />
+      <SystemSubheading mb="xl">Sizes</SystemSubheading>
       <Box
         mt="md"
         mb="xl"
@@ -56,105 +56,112 @@ stories.add(
           </Box>
         </Box>
       </Box>
-      <SystemSubheading>Default Theme</SystemSubheading>
-      <ComponentBlock title="Default Button" withBackground>
-        <FloatingButton type="button" style={{ marginRight: 16 }} aria-label="Push Me" onClick={action('button-click')}>
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="I'm disabled"
-          disabled
-          onClick={action('button-click')}
-        >
-          <IconPlus fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
-      <ComponentBlock title="Primary Button" withBackground>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="Push Me"
-          variant="primary"
-          onClick={action('button-click')}
-        >
-          <IconPen fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="I'm disabled"
-          variant="primary"
-          disabled
-          onClick={action('button-click')}
-        >
-          <IconPen fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
-      <ComponentBlock title="Success Button" withBackground>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="Push Me"
-          variant="success"
-          onClick={action('button-click')}
-        >
-          <IconTickSingle fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="I'm disabled"
-          variant="success"
-          disabled
-          onClick={action('button-click')}
-        >
-          <IconTickSingle fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
-      <ComponentBlock title="Warning Button" withBackground>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="Push Me"
-          variant="warning"
-          onClick={action('button-click')}
-        >
-          <IconRefresh fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="I'm disabled"
-          variant="warning"
-          disabled
-          onClick={action('button-click')}
-        >
-          <IconRefresh fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
-      <ComponentBlock title="Destructive Button" withBackground>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="Push Me"
-          variant="destructive"
-          onClick={action('button-click')}
-        >
-          <IconTrash fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-        <FloatingButton
-          type="button"
-          style={{ marginRight: 16 }}
-          aria-label="I'm disabled"
-          variant="destructive"
-          disabled
-          onClick={action('button-click')}
-        >
-          <IconTrash fill="currentColor" aria-hidden="true" />
-        </FloatingButton>
-      </ComponentBlock>
+      <SystemSubheading my="xl">Default Theme</SystemSubheading>
+      <Stack spacing="xl">
+        <ComponentBlock title="Default Button" withBackground>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="Push Me"
+            onClick={action('button-click')}
+          >
+            <IconPlus fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="I'm disabled"
+            disabled
+            onClick={action('button-click')}
+          >
+            <IconPlus fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+        </ComponentBlock>
+        <ComponentBlock title="Primary Button" withBackground>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="Push Me"
+            variant="primary"
+            onClick={action('button-click')}
+          >
+            <IconPen fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="I'm disabled"
+            variant="primary"
+            disabled
+            onClick={action('button-click')}
+          >
+            <IconPen fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+        </ComponentBlock>
+        <ComponentBlock title="Success Button" withBackground>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="Push Me"
+            variant="success"
+            onClick={action('button-click')}
+          >
+            <IconTickSingle fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="I'm disabled"
+            variant="success"
+            disabled
+            onClick={action('button-click')}
+          >
+            <IconTickSingle fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+        </ComponentBlock>
+        <ComponentBlock title="Warning Button" withBackground>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="Push Me"
+            variant="warning"
+            onClick={action('button-click')}
+          >
+            <IconRefresh fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="I'm disabled"
+            variant="warning"
+            disabled
+            onClick={action('button-click')}
+          >
+            <IconRefresh fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+        </ComponentBlock>
+        <ComponentBlock title="Destructive Button" withBackground>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="Push Me"
+            variant="destructive"
+            onClick={action('button-click')}
+          >
+            <IconTrash fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+          <FloatingButton
+            type="button"
+            style={{ marginRight: 16 }}
+            aria-label="I'm disabled"
+            variant="destructive"
+            disabled
+            onClick={action('button-click')}
+          >
+            <IconTrash fill="currentColor" aria-hidden="true" />
+          </FloatingButton>
+        </ComponentBlock>
+      </Stack>
     </SystemBlock>
   ),
   {

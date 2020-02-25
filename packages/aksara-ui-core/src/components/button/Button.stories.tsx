@@ -44,7 +44,7 @@ stories.add(
                 Push Me
               </Button>
             </Box>
-            <Box p="md" backgroundColor="blue09">
+            <Box p="md" backgroundColor="blue08">
               <Button type="button" variant="inverse" onClick={action('button-click')}>
                 Push Me
               </Button>
@@ -182,7 +182,7 @@ stories.add(
           </Inline>
         </ComponentBlock>
         <ComponentBlock title="Inverse Button">
-          <Box backgroundColor="blue09" p="md">
+          <Box backgroundColor="blue08" p="md">
             <Inline spacing="md">
               <Button type="button" variant="inverse">
                 Push Me
