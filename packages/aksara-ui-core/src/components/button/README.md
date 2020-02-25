@@ -9,15 +9,15 @@ Buttons express what action will occur when the user clicks or touches it. Butto
 ### `<Button />`
 
 ```jsx
-import { WicaraProvider, Button } from '@aksara-ui/core';
+import { AksaraProvider, Button } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraProvider>
+    <AksaraProvider>
       <Button variant="primary" onClick={() => alert('Hello!')}>
         Push Me
       </Button>
-    </WicaraProvider>
+    </AksaraProvider>
   );
 }
 ```
@@ -25,15 +25,15 @@ export default function MyApp({ children }) {
 Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
 
 ```jsx
-import { WicaraProvider, Button } from '@aksara-ui/core';
+import { AksaraProvider, Button } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraProvider>
+    <AksaraProvider>
       <Button size="sm">Push Me</Button>
       <Button size="md">Push Me</Button>
       <Button size="lg">Push Me</Button>
-    </WicaraProvider>
+    </AksaraProvider>
   );
 }
 ```
@@ -53,15 +53,15 @@ See more usage in the _JSX_ panel
 ### `<OutlineButton />`
 
 ```jsx
-import { WicaraProvider, OutlineButton } from '@aksara-ui/core';
+import { AksaraProvider, OutlineButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraProvider>
+    <AksaraProvider>
       <OutlineButton variant="primary" onClick={() => alert('Hello!')}>
         Push Me
       </OutlineButton>
-    </WicaraProvider>
+    </AksaraProvider>
   );
 }
 ```
@@ -69,15 +69,15 @@ export default function MyApp({ children }) {
 Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
 
 ```jsx
-import { WicaraProvider, OutlineButton } from '@aksara-ui/core';
+import { AksaraProvider, OutlineButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraProvider>
+    <AksaraProvider>
       <OutlineButton size="sm">Push Me</OutlineButton>
       <OutlineButton size="md">Push Me</OutlineButton>
       <OutlineButton size="lg">Push Me</OutlineButton>
-    </WicaraProvider>
+    </AksaraProvider>
   );
 }
 ```
@@ -99,15 +99,15 @@ See more usage in the _JSX_ panel
 Floating action buttons for primary context actions. Floating buttons are often paired with Wicara Icons.
 
 ```jsx
-import { WicaraProvider, FloatingButton } from '@aksara-ui/core';
+import { AksaraProvider, FloatingButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraProvider>
+    <AksaraProvider>
       <FloatingButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
         <i className="icon-tick" aria-hidden="true" />
       </FloatingButton>
-    </WicaraProvider>
+    </AksaraProvider>
   );
 }
 ```
@@ -128,15 +128,15 @@ See more usage in the _JSX_ panel
 Icon-only buttons. Best paired with Wicara Icons.
 
 ```jsx
-import { WicaraProvider, IconButton } from '@aksara-ui/core';
+import { AksaraProvider, IconButton } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <WicaraProvider>
+    <AksaraProvider>
       <IconButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
         <i className="icon-tick" aria-hidden="true" />
       </IconButton>
-    </WicaraProvider>
+    </AksaraProvider>
   );
 }
 ```
