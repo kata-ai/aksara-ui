@@ -4,17 +4,17 @@ import { storiesOf } from '@storybook/react';
 import { SystemWrapper, SystemBlock } from '../../../utils/storybook';
 
 import { Paragraph } from '../../../foundations';
-import NonIdealState from './NonIdealState';
+import Blankslate from './Blankslate';
 
 const readme = require('../README.md');
 
-const story = storiesOf('Core|Components/Non-Ideal State', module).addDecorator(SystemWrapper);
+const story = storiesOf('Core|Components/Blankslate', module).addDecorator(SystemWrapper);
 
 story.add(
   'default',
   () => (
-    <SystemBlock title="Non-Ideal State" subtitle="Used to inform users that some contents are unavailable.">
-      <NonIdealState
+    <SystemBlock title="Blankslate" subtitle="Used to inform users that some contents are unavailable.">
+      <Blankslate
         image={<img src="https://via.placeholder.com/528x352.png" alt="Create a model" />}
         title="Create a model"
       >
@@ -22,7 +22,7 @@ story.add(
           Perform specific text analysis tasks, like detecting topics, extracting specific words, and more.{' '}
           <a href="#">Learn more</a>
         </Paragraph>
-      </NonIdealState>
+      </Blankslate>
     </SystemBlock>
   ),
   {

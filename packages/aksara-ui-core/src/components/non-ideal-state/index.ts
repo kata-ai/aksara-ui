@@ -1,2 +1,2 @@
-export { default as NonIdealState } from './components/NonIdealState';
-export * from './components/NonIdealState';
+export { default as Blankslate } from './components/Blankslate';
+export * from './components/Blankslate';

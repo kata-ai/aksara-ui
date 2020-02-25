@@ -1,8 +1,8 @@
-# Non-Ideal State
+# Blankslate
 
 > Used to inform users that some contents are unavailable.
 
-This component used to be called "Empty Message", but lately we've realised that we use this component in cases other than empty contents (i.e. error, loading). Therefore, we borrowed the name "Non-Ideal State" from [BlueprintJS](https://blueprintjs.com/docs/#core/components/non-ideal-state):
+A Blankslate is used to represent contents that are unavailable, or "non-ideal states". The [BlueprintJS](https://blueprintjs.com/docs/#core/components/non-ideal-state) documentation explains the kinds of non-ideal states that can be handled by a Blankslate component:
 
 > There are several types of non-ideal states, including:
 >
@@ -15,11 +15,11 @@ This component used to be called "Empty Message", but lately we've realised that
 To use this component in your app, import as follows:
 
 ```jsx
-import { NonIdealState } from '@aksara-ui/core';
+import { Blankslate } from '@aksara-ui/core';
 
 export default function Component() {
   return (
-    <NonIdealState
+    <Blankslate
       title="No Project Selected"
       message="You have not selected a project. Please select one from the dropdown on the left."
     />
