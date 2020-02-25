@@ -1,267 +1,282 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import { IconPlus } from '@aksara-ui/icons';
+import { IconPen } from '@aksara-ui/icons';
 
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 import Button from './Button';
-import { Box } from '../../foundations';
+import { Box, Inline, Heading, Paragraph, Stack } from '../../foundations';
 
 const readme = require('./README.md');
 
 const stories = storiesOf('Core|Components/Button/Button', module).addDecorator(SystemWrapper);
 
 stories.add(
-  'basic',
+  'example',
   () => (
     <SystemBlock title="Button" subtitle="It's a button. What more do you expect?">
-      <ComponentBlock title="Default Button">
-        <Button type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Primary Button">
-        <Button type="button" variant="primary" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Support Button">
-        <Button type="button" variant="support" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Link Button">
-        <Button type="button" variant="link" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
-        <Button
-          type="button"
-          variant="destructive"
-          style={{ marginRight: 16 }}
-          size="sm"
-          onClick={action('button-click')}
-        >
-          Push Me
-        </Button>
-        <Button
-          type="button"
-          variant="destructive"
-          style={{ marginRight: 16 }}
-          size="md"
-          onClick={action('button-click')}
-        >
-          Push Me
-        </Button>
-        <Button
-          type="button"
-          variant="destructive"
-          style={{ marginRight: 16 }}
-          size="lg"
-          onClick={action('button-click')}
-        >
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Ghost Button">
-        <Button type="button" variant="ghost" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" style={{ marginRight: 16 }} size="md" onClick={action('button-click')}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" style={{ marginRight: 16 }} size="lg" onClick={action('button-click')}>
-          Push Me
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Inverse Button">
-        <Box bg="kataBlue" p="md">
-          <Button
-            type="button"
-            variant="inverse"
-            style={{ marginRight: 16 }}
-            size="sm"
-            onClick={action('button-click')}
-          >
-            Push Me
-          </Button>
-          <Button
-            type="button"
-            variant="inverse"
-            style={{ marginRight: 16 }}
-            size="md"
-            onClick={action('button-click')}
-          >
-            Push Me
-          </Button>
-          <Button
-            type="button"
-            variant="inverse"
-            style={{ marginRight: 16 }}
-            size="lg"
-            onClick={action('button-click')}
-          >
-            Push Me
-          </Button>
-        </Box>
-      </ComponentBlock>
-    </SystemBlock>
-  ),
-  {
-    notes: { markdown: readme },
-  }
-);
+      <SystemSubheading mb="xl">Default Theme</SystemSubheading>
+      <Stack spacing="xl">
+        <ComponentBlock title="Default Button">
+          <Box display="flex" flexWrap="wrap">
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="primary" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="outline" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="destructive" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="primary" icon={IconPen} onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="outline" icon={IconPen} onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="blue08">
+              <Button type="button" variant="inverse" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+          </Box>
+        </ComponentBlock>
+        <ComponentBlock title="Link Button (TODO)">
+          <Box display="flex" flexWrap="wrap">
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="link" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+          </Box>
+        </ComponentBlock>
+      </Stack>
 
-stories.add(
-  'button states',
-  () => (
-    <SystemBlock title="Button States" subtitle="Left to right: default, hover, focus, disabled, loading">
-      <ComponentBlock title="Default Button">
-        <Button type="button" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Primary Button">
-        <Button type="button" variant="primary" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="primary" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="primary" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Support Button">
-        <Button type="button" variant="support" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="support" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="support" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Link Button">
-        <Button type="button" variant="link" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="link" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="link" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
-        <Button type="button" variant="destructive" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="destructive" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="destructive" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Ghost Button">
-        <Button type="button" variant="ghost" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" className="hover" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" className="focus" style={{ marginRight: 16 }}>
-          Push Me
-        </Button>
-        <Button type="button" variant="ghost" disabled style={{ marginRight: 16 }}>
-          I&apos;m disabled
-        </Button>
-        <Button type="button" variant="ghost" isLoading style={{ marginRight: 16 }}>
-          I&apos;m loading
-        </Button>
-      </ComponentBlock>
-      <ComponentBlock title="Inverse Button">
-        <Box bg="kataBlue" p="md">
-          <Button type="button" variant="inverse" style={{ marginRight: 16 }}>
-            Push Me
-          </Button>
-          <Button type="button" variant="inverse" className="hover" style={{ marginRight: 16 }}>
-            Push Me
-          </Button>
-          <Button type="button" variant="inverse" className="focus" style={{ marginRight: 16 }}>
-            Push Me
-          </Button>
-          <Button type="button" variant="inverse" disabled style={{ marginRight: 16 }}>
-            I&apos;m disabled
-          </Button>
-          <Button type="button" variant="inverse" isLoading style={{ marginRight: 16 }}>
-            I&apos;m loading
-          </Button>
+      <SystemSubheading mt="xl" mb="md">
+        Button States
+      </SystemSubheading>
+      <Stack spacing="xl">
+        <Paragraph>Left to right: default, hover, focus, disabled, loading.</Paragraph>
+        <ComponentBlock title="Default Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="default">
+              Push Me
+            </Button>
+            <Button type="button" variant="default" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="default" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="default" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="default" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Primary Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="primary">
+              Push Me
+            </Button>
+            <Button type="button" variant="primary" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="primary" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="primary" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="primary" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Outline Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="outline">
+              Push Me
+            </Button>
+            <Button type="button" variant="outline" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="outline" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="outline" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="outline" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Link Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="link">
+              Push Me
+            </Button>
+            <Button type="button" variant="link" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="link" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="link" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="link" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Destructive Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="destructive">
+              Push Me
+            </Button>
+            <Button type="button" variant="destructive" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="destructive" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="destructive" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="destructive" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Ghost Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="ghost">
+              Push Me
+            </Button>
+            <Button type="button" variant="ghost" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="ghost" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="ghost" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="ghost" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Inverse Button">
+          <Box backgroundColor="blue08" p="md">
+            <Inline spacing="md">
+              <Button type="button" variant="inverse">
+                Push Me
+              </Button>
+              <Button type="button" variant="inverse" className="hover">
+                Push Me
+              </Button>
+              <Button type="button" variant="inverse" className="focus">
+                Push Me
+              </Button>
+              <Button type="button" variant="inverse" disabled>
+                I&apos;m disabled
+              </Button>
+              <Button type="button" variant="inverse" isLoading>
+                I&apos;m loading
+              </Button>
+            </Inline>
+          </Box>
+        </ComponentBlock>
+      </Stack>
+
+      <SystemSubheading my="xl">Button Sizes</SystemSubheading>
+      <Box
+        mt="md"
+        mb="xl"
+        display="grid"
+        gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 8 - 24px), 1fr))"
+        gridGap="24px"
+      >
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={200}>
+            Small
+          </Heading>
+          <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="destructive" size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" icon={IconPen} size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" icon={IconPen} size="sm">
+                Push Me
+              </Button>
+            </Box>
+          </Box>
         </Box>
-      </ComponentBlock>
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={200}>
+            Medium
+          </Heading>
+          <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="destructive" size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" icon={IconPen} size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" icon={IconPen} size="md">
+                Push Me
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </SystemBlock>
   ),
   {
@@ -272,13 +287,14 @@ stories.add(
 stories.add(
   'additional props',
   () => (
-    <SystemBlock title="Button Props" subtitle="Additional props to modify the look of the button.">
-      <ComponentBlock title="Block Button">
+    <SystemBlock title="Button" subtitle="It's a button. What more do you expect?">
+      <SystemSubheading>Additional Props</SystemSubheading>
+      <ComponentBlock title="Block Button" withBackground>
         <Button type="button" variant="primary" block>
           Push Me
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="Loading">
+      <ComponentBlock title="Loading" withBackground>
         <Button type="button" size="sm" variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </Button>
@@ -289,12 +305,12 @@ stories.add(
           Push Me
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (left)">
+      <ComponentBlock title="With Icons (left)" withBackground>
         <Button
           type="button"
           size="sm"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="left"
           style={{ marginRight: 16 }}
         >
@@ -304,22 +320,22 @@ stories.add(
           type="button"
           size="md"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="left"
           style={{ marginRight: 16 }}
         >
           Push Me
         </Button>
-        <Button type="button" size="lg" variant="primary" icon={IconPlus} iconPosition="left">
+        <Button type="button" size="lg" variant="primary" icon={IconPen} iconPosition="left">
           Push Me
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (right)">
+      <ComponentBlock title="With Icons (right)" withBackground>
         <Button
           type="button"
           size="sm"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="right"
           style={{ marginRight: 16 }}
         >
@@ -329,29 +345,29 @@ stories.add(
           size="md"
           type="button"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="right"
           style={{ marginRight: 16 }}
         >
           Push Me
         </Button>
-        <Button size="lg" type="button" variant="primary" icon={IconPlus} iconPosition="right">
+        <Button size="lg" type="button" variant="primary" icon={IconPen} iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (block)">
-        <Button type="button" block variant="primary" icon={IconPlus} style={{ marginBottom: 16 }}>
+      <ComponentBlock title="With Icons (block)" withBackground>
+        <Button type="button" block variant="primary" icon={IconPen} style={{ marginBottom: 16 }}>
           Push Me
         </Button>
-        <Button type="button" block variant="primary" icon={IconPlus} iconPosition="right">
+        <Button type="button" block variant="primary" icon={IconPen} iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
-      <ComponentBlock title="With Icons loading">
-        <Button type="button" isLoading variant="primary" icon={IconPlus} size="sm" style={{ marginRight: 16 }}>
+      <ComponentBlock title="With Icons loading" withBackground>
+        <Button type="button" isLoading variant="primary" icon={IconPen} size="sm" style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" isLoading variant="primary" icon={IconPlus}>
+        <Button type="button" isLoading variant="primary" icon={IconPen}>
           Push Me
         </Button>
       </ComponentBlock>

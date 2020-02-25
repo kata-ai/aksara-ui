@@ -1,31 +1,23 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import { IconPlus } from '@aksara-ui/icons';
+import { IconPen } from '@aksara-ui/icons';
 
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
+import { Message } from '../message';
 import OutlineButton from './OutlineButton';
-import { Stack, Paragraph } from '../../foundations';
 
 const readme = require('./README.md');
 
 const stories = storiesOf('Core|Components/Button/OutlineButton', module).addDecorator(SystemWrapper);
 
 stories.add(
-  'basic',
+  'example',
   () => (
-    <SystemBlock
-      title="Outline Button"
-      subtitle={
-        <Stack spacing="xxs">
-          <Paragraph>Outline-styled button for alternate styling.</Paragraph>
-          <Paragraph>
-            <strong>NOTE:</strong> This button type has been deprecated.
-          </Paragraph>
-        </Stack>
-      }
-    >
-      <ComponentBlock title="Default Button">
+    <SystemBlock title="Outline Button" subtitle="Outline-styled button for alternate styling.">
+      <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
+      <SystemSubheading>Default Theme</SystemSubheading>
+      <ComponentBlock title="Default Button" withBackground>
         <OutlineButton type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
           Push Me
         </OutlineButton>
@@ -33,7 +25,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Primary Button">
+      <ComponentBlock title="Primary Button" withBackground>
         <OutlineButton
           type="button"
           variant="primary"
@@ -47,7 +39,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Success Button">
+      <ComponentBlock title="Success Button" withBackground>
         <OutlineButton
           type="button"
           variant="success"
@@ -61,7 +53,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Warning Button">
+      <ComponentBlock title="Warning Button" withBackground>
         <OutlineButton
           type="button"
           variant="warning"
@@ -75,7 +67,7 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
+      <ComponentBlock title="Destructive Button" withBackground>
         <OutlineButton
           type="button"
           variant="destructive"
@@ -89,18 +81,10 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-    </SystemBlock>
-  ),
-  {
-    notes: { markdown: readme },
-  }
-);
 
-stories.add(
-  'button states',
-  () => (
-    <SystemBlock title="Button States" subtitle="Left to right: default, hover, focus, disabled, loading">
-      <ComponentBlock title="Default Button">
+      <SystemSubheading>Button States</SystemSubheading>
+
+      <ComponentBlock title="Default Button" withBackground>
         <OutlineButton type="button" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -117,7 +101,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Primary Button">
+      <ComponentBlock title="Primary Button" withBackground>
         <OutlineButton type="button" variant="primary" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -134,7 +118,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Success Button">
+      <ComponentBlock title="Success Button" withBackground>
         <OutlineButton type="button" variant="success" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -151,7 +135,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Warning Button">
+      <ComponentBlock title="Warning Button" withBackground>
         <OutlineButton type="button" variant="warning" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -168,7 +152,7 @@ stories.add(
           I&apos;m loading
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Destructive Button">
+      <ComponentBlock title="Destructive Button" withBackground>
         <OutlineButton type="button" variant="destructive" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -195,13 +179,15 @@ stories.add(
 stories.add(
   'additional props',
   () => (
-    <SystemBlock title="Button Props" subtitle="Additional props to modify the look of the button.">
-      <ComponentBlock title="Block Button">
+    <SystemBlock title="Outline Button" subtitle="Outline-styled button for alternate styling.">
+      <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
+      <SystemSubheading>Additional Props</SystemSubheading>
+      <ComponentBlock title="Block Button" withBackground>
         <OutlineButton type="button" variant="primary" block>
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="Loading">
+      <ComponentBlock title="Loading" withBackground>
         <OutlineButton type="button" size="sm" variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
@@ -209,12 +195,12 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (left)">
+      <ComponentBlock title="With Icons (left)" withBackground>
         <OutlineButton
           type="button"
           size="sm"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="left"
           style={{ marginRight: 16 }}
         >
@@ -224,34 +210,34 @@ stories.add(
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (right)">
+      <ComponentBlock title="With Icons (right)" withBackground>
         <OutlineButton
           type="button"
           size="sm"
           variant="primary"
-          icon={IconPlus}
+          icon={IconPen}
           iconPosition="right"
           style={{ marginRight: 16 }}
         >
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" variant="primary" icon={IconPlus} iconPosition="right">
+        <OutlineButton type="button" variant="primary" icon={IconPen} iconPosition="right">
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons (block)">
-        <OutlineButton type="button" block variant="primary" icon={IconPlus} style={{ marginBottom: 16 }}>
+      <ComponentBlock title="With Icons (block)" withBackground>
+        <OutlineButton type="button" block variant="primary" icon={IconPen} style={{ marginBottom: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" block variant="primary" icon={IconPlus} iconPosition="right">
+        <OutlineButton type="button" block variant="primary" icon={IconPen} iconPosition="right">
           Push Me
         </OutlineButton>
       </ComponentBlock>
-      <ComponentBlock title="With Icons loading">
-        <OutlineButton type="button" isLoading variant="primary" icon={IconPlus} size="sm" style={{ marginRight: 16 }}>
+      <ComponentBlock title="With Icons loading" withBackground>
+        <OutlineButton type="button" isLoading variant="primary" icon={IconPen} size="sm" style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
-        <OutlineButton type="button" isLoading variant="primary" icon={IconPlus}>
+        <OutlineButton type="button" isLoading variant="primary" icon={IconPen}>
           Push Me
         </OutlineButton>
       </ComponentBlock>

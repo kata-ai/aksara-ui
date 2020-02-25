@@ -4,38 +4,38 @@ import { ButtonBaseProps } from '../types';
 import { componentStyles } from '../../../utils';
 
 export const ButtonDefault = css`
-  background-color: ${colors.gray10};
-  color: ${colors.gray50};
+  color: ${colors.grey08};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.gray20};
-      color: ${colors.gray50};
+      background-color: ${colors.grey03};
+      color: ${colors.blue08};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.grey03};
+      color: ${colors.blue08};
+      border-color: ${colors.blue06};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
   &:disabled,
   &.disabled {
-    border-color: #a7aeb0;
-    background-color: #c2c7c8;
-    color: ${colors.white};
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey04};
+    color: ${colors.grey01};
   }
 `;
 
 export const ButtonPrimary = css`
-  background-color: ${colors.cobalt};
+  background-color: ${colors.blue06};
   color: ${colors.white};
 
   &:not(:disabled):not(.disabled) {
@@ -43,7 +43,7 @@ export const ButtonPrimary = css`
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.semiCobalt};
+      background-color: ${colors.blue07};
       color: ${colors.white};
     }
 
@@ -51,49 +51,51 @@ export const ButtonPrimary = css`
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.darkCobalt};
-      border-color: ${colors.darkCobalt};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.blue08};
+      border-color: ${colors.blue06};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
   &:disabled,
   &.disabled {
-    border-color: #a7aeb0;
-    background-color: #c2c7c8;
-    color: ${colors.white};
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey04};
+    color: ${colors.grey01};
   }
 `;
 
 export const ButtonSupport = css`
-  background-color: ${colors.white};
-  color: ${colors.gray50};
-  border-color: ${colors.gray30};
+  border-color: ${colors.grey04};
+  background-color: ${colors.grey01};
+  color: ${colors.grey08};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.gray10};
+      background-color: ${colors.grey03};
+      border-color: ${colors.grey04};
+      color: ${colors.blue08};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      border-color: ${colors.gray70};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.grey03};
+      color: ${colors.blue08};
+      border-color: ${colors.blue06};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
   &:disabled,
   &.disabled {
-    background-color: ${colors.white};
-    color: ${colors.gray30};
-    border-color: ${colors.gray10};
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey01};
+    color: ${colors.grey04};
   }
 `;
 
@@ -113,7 +115,7 @@ export const ButtonLink = css`
     &.focus,
     &:active,
     &.active {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      box-shadow: 0 0 0 1px ${colors.blue04};
     }
   }
 
@@ -124,58 +126,65 @@ export const ButtonLink = css`
 `;
 
 export const ButtonDestructive = css`
-  background-color: ${colors.red};
-  color: ${colors.white};
+  background-color: ${colors.red07};
+  color: ${colors.grey01};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover,
     &:focus,
     &.focus {
-      background-color: #e84f4c;
-      color: ${colors.white};
+      background-color: ${colors.red08};
+      color: ${colors.grey01};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.red};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.red09};
+      border-color: ${colors.red07};
+      color: ${colors.grey01};
+      box-shadow: 0px 0px 2px rgba(186, 19, 9, 0.4), 0 0 0 1px ${colors.red07};
     }
   }
 
   &:disabled,
   &.disabled {
-    border-color: #a7aeb0;
-    background-color: #c2c7c8;
-    color: ${colors.white};
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey04};
+    color: ${colors.grey01};
   }
 `;
 
 export const ButtonGhost = css`
-  color: ${colors.kataBlue};
+  color: ${colors.grey08};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover,
     &:focus,
     &.focus {
-      background-color: ${colors.gray10};
-      color: ${colors.darkKataBlue};
+      background-color: ${colors.grey03};
+      color: ${colors.blue08};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.grey03};
+      color: ${colors.blue08};
+      border-color: ${colors.blue06};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
   &:disabled,
   &.disabled {
-    color: ${colors.gray50};
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey04};
+    color: ${colors.grey01};
   }
 `;
 
@@ -186,8 +195,8 @@ export const ButtonSmall = (props: ButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 36px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 36px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 40px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 40px;'}
 `;
 
 export const ButtonMedium = (props: ButtonBaseProps) => css`
@@ -197,8 +206,8 @@ export const ButtonMedium = (props: ButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const ButtonLarge = (props: ButtonBaseProps) => css`
@@ -208,8 +217,8 @@ export const ButtonLarge = (props: ButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const InverseButton = css`

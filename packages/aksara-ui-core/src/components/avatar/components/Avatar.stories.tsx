@@ -18,8 +18,7 @@ stories.add(
     >
       <SystemSubheading>Default Theme</SystemSubheading>
       <Box
-        mt="md"
-        mb="xl"
+        mt="xl"
         display="grid"
         gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 3 - 24px), 1fr))"
         gridGap="24px"
@@ -52,14 +51,13 @@ stories.add(
         </Box>
       </Box>
       <Box
-        mt="md"
-        mb="xl"
+        mt="xl"
         display="grid"
         gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 2 - 24px), 1fr))"
         gridGap="24px"
       >
         <Box>
-          <SystemSubheading>Type</SystemSubheading>
+          <SystemSubheading mb="xl">Type</SystemSubheading>
           <Stack spacing="md">
             <Box display="flex" flexDirection="row" alignItems="center">
               <Avatar size={40} name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />
@@ -88,7 +86,7 @@ stories.add(
           </Stack>
         </Box>
         <Box>
-          <SystemSubheading>Sizes</SystemSubheading>
+          <SystemSubheading mb="xl">Sizes</SystemSubheading>
           <Inline spacing="md">
             <Avatar size={24} src="https://picsum.photos/id/225/400/400" />
             <Avatar size={32} src="https://picsum.photos/id/777/600/400" />

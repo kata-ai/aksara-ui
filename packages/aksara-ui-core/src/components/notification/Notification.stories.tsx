@@ -15,7 +15,7 @@ storiesOf('Core|Components/Notifications', module)
       <SystemBlock title="Notifications" subtitle="Pluggable notifications element that doesn't rely on Redux.">
         <ComponentBlock title="Toaster">
           <Button
-            variant="support"
+            variant="outline"
             onClick={() => {
               notification.toaster({
                 title: 'Toaster',
@@ -29,7 +29,7 @@ storiesOf('Core|Components/Notifications', module)
             Default
           </Button>
           <Button
-            variant="support"
+            variant="outline"
             onClick={() => {
               notification.toaster({
                 title: 'Toaster',
@@ -44,7 +44,7 @@ storiesOf('Core|Components/Notifications', module)
             Success
           </Button>
           <Button
-            variant="support"
+            variant="outline"
             onClick={() => {
               notification.toaster({
                 title: 'Toaster',
@@ -59,7 +59,7 @@ storiesOf('Core|Components/Notifications', module)
             Info
           </Button>
           <Button
-            variant="support"
+            variant="outline"
             onClick={() => {
               notification.toaster({
                 title: 'Toaster',
@@ -74,7 +74,7 @@ storiesOf('Core|Components/Notifications', module)
             Warning
           </Button>
           <Button
-            variant="support"
+            variant="outline"
             onClick={() => {
               notification.toaster({
                 title: 'Toaster',

@@ -10,6 +10,8 @@ export interface OutlineButtonProps extends OutlineButtonBaseProps, React.Button
   className?: string;
   /** Additional CSS styles to give to the component */
   style?: React.CSSProperties;
+  /** The size of the button. */
+  size?: ButtonSizes;
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
 }
@@ -26,10 +28,10 @@ interface LoaderCircleProps {
   buttonSize?: ButtonSizes;
 }
 
-const iconPadding = (size?: ButtonSizes) => {
+const loadingIconPadding = (size?: ButtonSizes) => {
   switch (size) {
     case 'lg':
-      return 16;
+      return 20;
     case 'md':
       return 16;
     case 'sm':
@@ -39,10 +41,23 @@ const iconPadding = (size?: ButtonSizes) => {
   }
 };
 
+const loadingIconSizes = (size?: ButtonSizes) => {
+  switch (size) {
+    case 'lg':
+      return 40;
+    case 'md':
+      return 32;
+    case 'sm':
+      return 24;
+    default:
+      return 32;
+  }
+};
+
 const LoaderCircle = styled(Circle)<LoaderCircleProps>`
   position: absolute;
-  left: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
-  top: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
+  left: ${props => `calc(50% - ${loadingIconPadding(props.buttonSize)}px)`};
+  top: ${props => `calc(50% - ${loadingIconPadding(props.buttonSize)}px)`};
 `;
 
 const Icon = styled('span')<Pick<OutlineButtonProps, 'size' | 'iconPosition'>>`
@@ -53,7 +68,9 @@ const Icon = styled('span')<Pick<OutlineButtonProps, 'size' | 'iconPosition'>>`
   top: 0;
   bottom: 0;
   ${props =>
-    props.iconPosition === 'right' ? `right: ${iconPadding(props.size)}px;` : `left: ${iconPadding(props.size)}px;`}
+    props.iconPosition === 'right'
+      ? `right: ${loadingIconPadding(props.size)}px;`
+      : `left: ${loadingIconPadding(props.size)}px;`}
 
   & i {
     display: flex;
@@ -67,7 +84,10 @@ const Icon = styled('span')<Pick<OutlineButtonProps, 'size' | 'iconPosition'>>`
  * @deprecated This button type has been deprecated.
  */
 const OutlineButton = React.forwardRef<HTMLButtonElement, OutlineButtonProps>(
-  ({ children, className, style, size, icon, iconPosition, isLoading, disabled, variant, ...rest }, ref) => {
+  (
+    { children, className, style, size, icon, iconPosition, isLoading, disabled, variant, block, width, ...rest },
+    ref
+  ) => {
     const renderIcon = () => {
       if (typeof icon === 'string') {
         return (
@@ -88,19 +108,22 @@ const OutlineButton = React.forwardRef<HTMLButtonElement, OutlineButtonProps>(
       <Root
         className={className}
         style={style}
-        size={size}
+        buttonSize={size}
         icon={icon}
         iconPosition={iconPosition}
         disabled={disabled || isLoading}
         isLoading={isLoading}
         variant={variant}
         ref={ref}
+        display={block ? 'block' : 'inline-block'}
+        width={block ? '100%' : width}
+        position="relative"
         {...rest}
       >
         {icon && renderIcon()}
         {isLoading ? (
           <>
-            <LoaderCircle size={size === 'sm' ? 24 : 32} buttonSize={size} spinnerColor="inherit" />
+            <LoaderCircle size={loadingIconSizes(size)} buttonSize={size} spinnerColor="currentColor" />
             <InvisibleText>{children}</InvisibleText>
           </>
         ) : (

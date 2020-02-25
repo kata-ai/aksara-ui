@@ -16,7 +16,7 @@ describe('components/Button', () => {
     test('renders colors correctly by variant', () => {
       const { container } = render(<Button variant="primary">test button</Button>);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', colors.cobalt);
+      expect(container.firstChild).toHaveStyleRule('background-color', colors.blue06);
       expect(container.firstChild).toHaveStyleRule('color', colors.white);
     });
 
@@ -24,7 +24,6 @@ describe('components/Button', () => {
       const { container } = render(<Button block>test button</Button>);
 
       expect(container.firstChild).toHaveStyleRule('display', 'block');
-      expect(container.firstChild).toHaveStyleRule('width', '100%');
     });
 
     test('renders icons correctly', () => {
@@ -57,7 +56,6 @@ describe('components/Button', () => {
       const { container } = render(<OutlineButton block>test button</OutlineButton>);
 
       expect(container.firstChild).toHaveStyleRule('display', 'block');
-      expect(container.firstChild).toHaveStyleRule('width', '100%');
     });
 
     test('renders icons correctly', () => {

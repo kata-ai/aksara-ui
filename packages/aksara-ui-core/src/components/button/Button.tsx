@@ -11,6 +11,8 @@ export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes
   className?: string;
   /** Additional CSS styles to give to the component */
   style?: React.CSSProperties;
+  /** The size of the button. */
+  size?: ButtonSizes;
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
 }
@@ -27,6 +29,19 @@ interface LoaderCircleProps {
   buttonSize?: ButtonSizes;
 }
 
+const loadingIconPadding = (size?: ButtonSizes) => {
+  switch (size) {
+    case 'lg':
+      return 20;
+    case 'md':
+      return 16;
+    case 'sm':
+      return 12;
+    default:
+      return 16;
+  }
+};
+
 const iconPadding = (size?: ButtonSizes) => {
   switch (size) {
     case 'lg':
@@ -40,10 +55,23 @@ const iconPadding = (size?: ButtonSizes) => {
   }
 };
 
+const loadingIconSizes = (size?: ButtonSizes) => {
+  switch (size) {
+    case 'lg':
+      return 40;
+    case 'md':
+      return 32;
+    case 'sm':
+      return 24;
+    default:
+      return 32;
+  }
+};
+
 const LoaderCircle = styled(Circle)<LoaderCircleProps>`
   position: absolute;
-  left: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
-  top: ${props => `calc(50% - ${iconPadding(props.buttonSize)}px)`};
+  left: ${props => `calc(50% - ${loadingIconPadding(props.buttonSize)}px)`};
+  top: ${props => `calc(50% - ${loadingIconPadding(props.buttonSize)}px)`};
 `;
 
 const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant'>>`
@@ -69,7 +97,10 @@ const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant
  * foreground of an experience.
  */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, className, style, size, icon, iconPosition, isLoading, disabled, variant, ...rest }, ref) => {
+  (
+    { children, className, style, size, icon, iconPosition, isLoading, disabled, variant, block, width, ...rest },
+    ref
+  ) => {
     const renderIcon = () => {
       if (typeof icon === 'string') {
         return (
@@ -90,24 +121,25 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Root
         className={className}
         style={style}
-        size={size}
+        buttonSize={size}
         icon={icon}
         iconPosition={iconPosition}
         disabled={disabled || isLoading}
         isLoading={isLoading}
         variant={variant}
         ref={ref}
+        display={block ? 'block' : 'inline-block'}
+        width={block ? '100%' : width}
+        position="relative"
         {...rest}
       >
         {icon && renderIcon()}
         {isLoading ? (
           <>
             <LoaderCircle
-              size={size === 'sm' ? 24 : 32}
+              size={loadingIconSizes(size)}
               buttonSize={size}
-              spinnerColor={
-                variant === 'support' || variant === 'link' || variant === 'ghost' ? colors.gray50 : colors.white
-              }
+              spinnerColor={variant === 'outline' || variant === 'link' ? colors.grey04 : colors.white}
             />
             <InvisibleText>{children}</InvisibleText>
           </>

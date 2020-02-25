@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { layout, position, flexbox, grid, space } from 'styled-system';
 
 import { colors, shadows } from '../../utils/variables';
 import {
@@ -23,6 +24,7 @@ import {
   FloatingButtonDestructive,
 } from './utils/floatingButtonUtils';
 import {
+  IconButtonDefault,
   IconButtonSupport,
   IconButtonDestructive,
   IconButtonGhost,
@@ -67,6 +69,12 @@ export const ButtonBase = css`
   &:focus {
     outline: 0px;
   }
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
 `;
 
 export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
@@ -80,7 +88,7 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
   box-shadow: ${shadows.layer200};
   vertical-align: middle;
   background-color: ${colors.white};
-  color: ${colors.gray60};
+  color: ${colors.grey07};
 
   i:before {
     vertical-align: middle;
@@ -91,9 +99,9 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
     opacity: 0.5;
   }
 
-  ${props.size === 'sm' && FloatingButtonSmall}
-  ${props.size === 'md' && FloatingButtonMedium}
-  ${props.size === 'lg' && FloatingButtonLarge}
+  ${props.buttonSize === 'sm' && FloatingButtonSmall}
+  ${props.buttonSize === 'md' && FloatingButtonMedium}
+  ${props.buttonSize === 'lg' && FloatingButtonLarge}
 
   ${props.variant === 'primary' && FloatingButtonPrimary}
   ${props.variant === 'success' && FloatingButtonSuccess}
@@ -105,8 +113,8 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: ${iconButtonSizes(props.size)}px;
-  width: ${iconButtonSizes(props.size)}px;
+  height: ${iconButtonSizes(props.buttonSize)}px;
+  width: ${iconButtonSizes(props.buttonSize)}px;
   text-align: center;
   border-radius: 4px;
 
@@ -121,15 +129,15 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   }
 
   i:before {
-    font-size: ${iconSizes(props.size)}px;
+    font-size: ${iconSizes(props.buttonSize)}px;
   }
 
   svg {
-    width: ${iconSizes(props.size)}px;
-    height: ${iconSizes(props.size)}px;
+    width: ${iconSizes(props.buttonSize)}px;
+    height: ${iconSizes(props.buttonSize)}px;
   }
 
-  ${props.variant === 'default' && IconButtonSupport}
+  ${props.variant === 'default' && IconButtonDefault}
   ${props.variant === 'primary' && IconButtonGhost}
   ${props.variant === 'outline' && IconButtonSupport}
   ${props.variant === 'destructive' && IconButtonDestructive}
@@ -137,56 +145,49 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`
-  display: ${props.block ? 'block' : 'inline-block'};
-  ${props.block ? 'width: 100%;' : ''}
-  position: relative;
-
   ${ButtonBase}
 
   ${props.variant === 'default' && ButtonDefault}
   ${props.variant === 'primary' && ButtonPrimary}
-  ${props.variant === 'support' && ButtonSupport}
+  ${props.variant === 'outline' && ButtonSupport}
   ${props.variant === 'destructive' && ButtonDestructive}
   ${props.variant === 'link' && ButtonLink}
   ${props.variant === 'ghost' && ButtonGhost}
   ${props.variant === 'inverse' && InverseButton}
 
-  ${props.size === 'sm' && ButtonSmall(props)}
-  ${props.size === 'md' && ButtonMedium(props)}
-  ${props.size === 'lg' && ButtonLarge(props)}
+  ${props.buttonSize === 'sm' && ButtonSmall(props)}
+  ${props.buttonSize === 'md' && ButtonMedium(props)}
+  ${props.buttonSize === 'lg' && ButtonLarge(props)}
 `;
 
 export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
-  display: ${props.block ? 'block' : 'inline-block'};
-  ${props.block ? 'width: 100%;' : ''}
-  position: relative;
-
   ${ButtonBase}
 
   background-color: ${colors.white};
-  border-color: ${colors.gray30};
+  border-color: ${colors.grey04};
 
   &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover {
-      background-color: ${colors.gray10};
+      background-color: ${colors.grey03};
+      border-color: ${colors.grey04};
     }
 
     &:focus,
     &.focus,
     &:active,
     &.active {
-      background-color: ${colors.gray70};
-      color: ${colors.white};
-      border-color: ${colors.gray70};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: ${colors.grey03};
+      border-color: ${colors.blue06};
+      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
   &:disabled,
   &.disabled {
-    color: inherit;
-    opacity: 0.5;
+    border-color: ${colors.grey04};
+    background-color: ${colors.grey01};
+    color: ${colors.grey04};
   }
 
   ${props.variant === 'default' && OutlineButtonDefault}
@@ -195,7 +196,7 @@ export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
   ${props.variant === 'warning' && OutlineButtonWarning}
   ${props.variant === 'destructive' && OutlineButtonDestructive}
 
-  ${props.size === 'sm' && OutlineButtonSmall(props)}
-  ${props.size === 'md' && OutlineButtonMedium(props)}
-  ${props.size === 'lg' && OutlineButtonLarge(props)}
+  ${props.buttonSize === 'sm' && OutlineButtonSmall(props)}
+  ${props.buttonSize === 'md' && OutlineButtonMedium(props)}
+  ${props.buttonSize === 'lg' && OutlineButtonLarge(props)}
 `;

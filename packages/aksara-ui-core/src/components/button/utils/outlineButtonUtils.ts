@@ -4,23 +4,23 @@ import { componentStyles } from '../../../utils';
 import { OutlineButtonBaseProps } from '../types';
 
 export const OutlineButtonDefault = css`
-  color: ${colors.gray80};
+  color: ${colors.grey08};
 `;
 
 export const OutlineButtonPrimary = css`
-  color: ${colors.kataBlue};
+  color: ${colors.blue07};
 `;
 
 export const OutlineButtonSuccess = css`
-  color: ${colors.green};
+  color: ${colors.green07};
 `;
 
 export const OutlineButtonWarning = css`
-  color: ${colors.yellow};
+  color: ${colors.yellow07};
 `;
 
 export const OutlineButtonDestructive = css`
-  color: ${colors.red};
+  color: ${colors.red07};
 `;
 
 export const OutlineButtonSmall = (props: OutlineButtonBaseProps) => css`
@@ -30,8 +30,8 @@ export const OutlineButtonSmall = (props: OutlineButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 36px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 36px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 40px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 40px;'}
 `;
 
 export const OutlineButtonMedium = (props: OutlineButtonBaseProps) => css`
@@ -41,24 +41,24 @@ export const OutlineButtonMedium = (props: OutlineButtonBaseProps) => css`
   line-height: ${componentStyles.text[300].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const OutlineButtonLarge = (props: OutlineButtonBaseProps) => css`
   height: 56px;
   padding: 0 24px;
-  font-size: ${componentStyles.text[300].fontSize};
-  line-height: ${componentStyles.text[300].lineHeight};
+  font-size: ${componentStyles.text[400].fontSize};
+  line-height: ${componentStyles.text[400].lineHeight};
   border-radius: 4px;
 
-  ${props.icon && props.iconPosition === 'left' && 'padding-left: 46px;'}
-  ${props.icon && props.iconPosition === 'right' && 'padding-right: 46px;'}
+  ${props.icon && props.iconPosition === 'left' && 'padding-left: 44px;'}
+  ${props.icon && props.iconPosition === 'right' && 'padding-right: 44px;'}
 `;
 
 export const InverseButton = css`
-  border-color: ${colors.white};
-  color: ${colors.white};
+  border-color: ${colors.grey01};
+  color: ${colors.grey01};
 
   &:disabled,
   &.disabled {
