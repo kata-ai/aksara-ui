@@ -5,7 +5,7 @@ import { IconPen } from '@aksara-ui/icons';
 
 import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 import Button from './Button';
-import { Box, Inline } from '../../foundations';
+import { Box, Inline, Heading, Paragraph, Stack } from '../../foundations';
 
 const readme = require('./README.md');
 
@@ -15,186 +15,268 @@ stories.add(
   'example',
   () => (
     <SystemBlock title="Button" subtitle="It's a button. What more do you expect?">
-      <SystemSubheading>Default Theme</SystemSubheading>
-      <ComponentBlock title="Default Button">
-        <Box display="flex" flexWrap="wrap">
-          <Box p="md" backgroundColor="grey02">
-            <Button type="button" variant="primary" onClick={action('button-click')}>
-              Push Me
-            </Button>
+      <SystemSubheading mb="xl">Default Theme</SystemSubheading>
+      <Stack spacing="xl">
+        <ComponentBlock title="Default Button">
+          <Box display="flex" flexWrap="wrap">
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="primary" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="outline" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="destructive" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="primary" icon={IconPen} onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="outline" icon={IconPen} onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
+            <Box p="md" backgroundColor="blue09">
+              <Button type="button" variant="inverse" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
           </Box>
-          <Box p="md" backgroundColor="grey02">
-            <Button type="button" variant="outline" onClick={action('button-click')}>
-              Push Me
-            </Button>
+        </ComponentBlock>
+        <ComponentBlock title="Link Button (TODO)">
+          <Box display="flex" flexWrap="wrap">
+            <Box p="md" backgroundColor="grey02">
+              <Button type="button" variant="link" onClick={action('button-click')}>
+                Push Me
+              </Button>
+            </Box>
           </Box>
-          <Box p="md" backgroundColor="grey02">
-            <Button type="button" variant="destructive" onClick={action('button-click')}>
-              Push Me
-            </Button>
-          </Box>
-          <Box p="md" backgroundColor="grey02">
-            <Button type="button" variant="primary" icon={IconPen} onClick={action('button-click')}>
-              Push Me
-            </Button>
-          </Box>
-          <Box p="md" backgroundColor="grey02">
-            <Button type="button" variant="outline" icon={IconPen} onClick={action('button-click')}>
-              Push Me
-            </Button>
-          </Box>
-          <Box p="md" backgroundColor="blue09">
-            <Button type="button" variant="inverse" onClick={action('button-click')}>
-              Push Me
-            </Button>
-          </Box>
-        </Box>
-      </ComponentBlock>
-      <ComponentBlock title="Link Button (TODO)">
-        <Box display="flex" flexWrap="wrap">
-          <Box p="md" backgroundColor="grey02">
-            <Button type="button" variant="link" onClick={action('button-click')}>
-              Push Me
-            </Button>
-          </Box>
-        </Box>
-      </ComponentBlock>
-      <SystemSubheading>Button States</SystemSubheading>
-      <ComponentBlock title="Default Button" withBackground>
-        <Inline spacing="md">
-          <Button type="button" variant="default">
-            Push Me
-          </Button>
-          <Button type="button" variant="default" className="hover">
-            Push Me
-          </Button>
-          <Button type="button" variant="default" className="focus">
-            Push Me
-          </Button>
-          <Button type="button" variant="default" disabled>
-            I&apos;m disabled
-          </Button>
-          <Button type="button" variant="default" isLoading>
-            I&apos;m loading
-          </Button>
-        </Inline>
-      </ComponentBlock>
-      <ComponentBlock title="Primary Button" withBackground>
-        <Inline spacing="md">
-          <Button type="button" variant="primary">
-            Push Me
-          </Button>
-          <Button type="button" variant="primary" className="hover">
-            Push Me
-          </Button>
-          <Button type="button" variant="primary" className="focus">
-            Push Me
-          </Button>
-          <Button type="button" variant="primary" disabled>
-            I&apos;m disabled
-          </Button>
-          <Button type="button" variant="primary" isLoading>
-            I&apos;m loading
-          </Button>
-        </Inline>
-      </ComponentBlock>
-      <ComponentBlock title="Outline Button" withBackground>
-        <Inline spacing="md">
-          <Button type="button" variant="outline">
-            Push Me
-          </Button>
-          <Button type="button" variant="outline" className="hover">
-            Push Me
-          </Button>
-          <Button type="button" variant="outline" className="focus">
-            Push Me
-          </Button>
-          <Button type="button" variant="outline" disabled>
-            I&apos;m disabled
-          </Button>
-          <Button type="button" variant="outline" isLoading>
-            I&apos;m loading
-          </Button>
-        </Inline>
-      </ComponentBlock>
-      <ComponentBlock title="Link Button" withBackground>
-        <Inline spacing="md">
-          <Button type="button" variant="link">
-            Push Me
-          </Button>
-          <Button type="button" variant="link" className="hover">
-            Push Me
-          </Button>
-          <Button type="button" variant="link" className="focus">
-            Push Me
-          </Button>
-          <Button type="button" variant="link" disabled>
-            I&apos;m disabled
-          </Button>
-          <Button type="button" variant="link" isLoading>
-            I&apos;m loading
-          </Button>
-        </Inline>
-      </ComponentBlock>
-      <ComponentBlock title="Destructive Button" withBackground>
-        <Inline spacing="md">
-          <Button type="button" variant="destructive">
-            Push Me
-          </Button>
-          <Button type="button" variant="destructive" className="hover">
-            Push Me
-          </Button>
-          <Button type="button" variant="destructive" className="focus">
-            Push Me
-          </Button>
-          <Button type="button" variant="destructive" disabled>
-            I&apos;m disabled
-          </Button>
-          <Button type="button" variant="destructive" isLoading>
-            I&apos;m loading
-          </Button>
-        </Inline>
-      </ComponentBlock>
-      <ComponentBlock title="Ghost Button" withBackground>
-        <Inline spacing="md">
-          <Button type="button" variant="ghost">
-            Push Me
-          </Button>
-          <Button type="button" variant="ghost" className="hover">
-            Push Me
-          </Button>
-          <Button type="button" variant="ghost" className="focus">
-            Push Me
-          </Button>
-          <Button type="button" variant="ghost" disabled>
-            I&apos;m disabled
-          </Button>
-          <Button type="button" variant="ghost" isLoading>
-            I&apos;m loading
-          </Button>
-        </Inline>
-      </ComponentBlock>
-      <ComponentBlock title="Inverse Button">
-        <Box backgroundColor="blue09" p="md">
+        </ComponentBlock>
+      </Stack>
+
+      <SystemSubheading mt="xl" mb="md">
+        Button States
+      </SystemSubheading>
+      <Stack spacing="xl">
+        <Paragraph>Left to right: default, hover, focus, disabled, loading.</Paragraph>
+        <ComponentBlock title="Default Button" withBackground>
           <Inline spacing="md">
-            <Button type="button" variant="inverse">
+            <Button type="button" variant="default">
               Push Me
             </Button>
-            <Button type="button" variant="inverse" className="hover">
+            <Button type="button" variant="default" className="hover">
               Push Me
             </Button>
-            <Button type="button" variant="inverse" className="focus">
+            <Button type="button" variant="default" className="focus">
               Push Me
             </Button>
-            <Button type="button" variant="inverse" disabled>
+            <Button type="button" variant="default" disabled>
               I&apos;m disabled
             </Button>
-            <Button type="button" variant="inverse" isLoading>
+            <Button type="button" variant="default" isLoading>
               I&apos;m loading
             </Button>
           </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Primary Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="primary">
+              Push Me
+            </Button>
+            <Button type="button" variant="primary" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="primary" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="primary" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="primary" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Outline Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="outline">
+              Push Me
+            </Button>
+            <Button type="button" variant="outline" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="outline" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="outline" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="outline" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Link Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="link">
+              Push Me
+            </Button>
+            <Button type="button" variant="link" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="link" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="link" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="link" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Destructive Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="destructive">
+              Push Me
+            </Button>
+            <Button type="button" variant="destructive" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="destructive" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="destructive" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="destructive" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Ghost Button" withBackground>
+          <Inline spacing="md">
+            <Button type="button" variant="ghost">
+              Push Me
+            </Button>
+            <Button type="button" variant="ghost" className="hover">
+              Push Me
+            </Button>
+            <Button type="button" variant="ghost" className="focus">
+              Push Me
+            </Button>
+            <Button type="button" variant="ghost" disabled>
+              I&apos;m disabled
+            </Button>
+            <Button type="button" variant="ghost" isLoading>
+              I&apos;m loading
+            </Button>
+          </Inline>
+        </ComponentBlock>
+        <ComponentBlock title="Inverse Button">
+          <Box backgroundColor="blue09" p="md">
+            <Inline spacing="md">
+              <Button type="button" variant="inverse">
+                Push Me
+              </Button>
+              <Button type="button" variant="inverse" className="hover">
+                Push Me
+              </Button>
+              <Button type="button" variant="inverse" className="focus">
+                Push Me
+              </Button>
+              <Button type="button" variant="inverse" disabled>
+                I&apos;m disabled
+              </Button>
+              <Button type="button" variant="inverse" isLoading>
+                I&apos;m loading
+              </Button>
+            </Inline>
+          </Box>
+        </ComponentBlock>
+      </Stack>
+
+      <SystemSubheading my="xl">Button Sizes</SystemSubheading>
+      <Box
+        mt="md"
+        mb="xl"
+        display="grid"
+        gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 8 - 24px), 1fr))"
+        gridGap="24px"
+      >
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={200}>
+            Small
+          </Heading>
+          <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="destructive" size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" icon={IconPen} size="sm">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" icon={IconPen} size="sm">
+                Push Me
+              </Button>
+            </Box>
+          </Box>
         </Box>
-      </ComponentBlock>
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={200}>
+            Medium
+          </Heading>
+          <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="destructive" size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="primary" icon={IconPen} size="md">
+                Push Me
+              </Button>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <Button type="button" variant="outline" icon={IconPen} size="md">
+                Push Me
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </SystemBlock>
   ),
   {

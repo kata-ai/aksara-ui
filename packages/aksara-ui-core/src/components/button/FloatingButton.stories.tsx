@@ -18,32 +18,38 @@ stories.add(
     <SystemBlock title="Floating Button" subtitle="Floating action buttons for primary context actions.">
       <Message state="warning" message="This button type has been deprecated. Proceed with caution." mb="lg" />
       <SystemSubheading>Sizes</SystemSubheading>
-      <Box mt="md" mb="xl" display="grid" gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 8), 1fr))">
+      <Box
+        mt="md"
+        mb="xl"
+        display="grid"
+        gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 10 - 24px), 1fr))"
+        gridGap="24px"
+      >
         <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={100} color="grey07" textAlign="center">
+          <Heading as="h4" scale={200} textAlign="center">
             Small
           </Heading>
-          <Box p="md" backgroundColor="grey02" flex="1 1 auto" textAlign="center">
+          <Box flex="1 1 auto" textAlign="center" mt="sm">
             <FloatingButton type="button" size="sm" aria-label="Push Me" onClick={action('button-click')}>
               <IconPlus fill="currentColor" aria-hidden="true" />
             </FloatingButton>
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={100} color="grey07" textAlign="center">
+          <Heading as="h4" scale={200} textAlign="center">
             Medium
           </Heading>
-          <Box p="md" backgroundColor="grey02" flex="1 1 auto" textAlign="center">
+          <Box flex="1 1 auto" textAlign="center" mt="sm">
             <FloatingButton type="button" size="md" aria-label="Push Me" onClick={action('button-click')}>
               <IconPlus fill="currentColor" aria-hidden="true" />
             </FloatingButton>
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={100} color="grey07" textAlign="center">
+          <Heading as="h4" scale={200} textAlign="center">
             Large
           </Heading>
-          <Box p="md" backgroundColor="grey02" flex="1 1 auto" textAlign="center">
+          <Box flex="1 1 auto" textAlign="center" mt="sm">
             <FloatingButton type="button" size="lg" aria-label="Push Me" onClick={action('button-click')}>
               <IconPlus fill="currentColor" aria-hidden="true" />
             </FloatingButton>

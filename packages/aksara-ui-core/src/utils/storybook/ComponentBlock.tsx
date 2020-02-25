@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Box, Heading, Stack } from '../../foundations';
+import { Box, Heading, Stack, StackProps } from '../../foundations';
 
-interface ComponentBlockProps {
+interface ComponentBlockProps extends Omit<StackProps, 'spacing'> {
   title: string;
   withBackground?: boolean;
 }
 
-const ComponentBlock: React.FC<ComponentBlockProps> = ({ children, title, withBackground }) => (
-  <Stack spacing="sm" mb="xl">
+const ComponentBlock: React.FC<ComponentBlockProps> = ({ children, title, withBackground, ...rest }) => (
+  <Stack spacing="sm" {...rest}>
     <Heading color="grey07" scale={100} m={0}>
       {title}
     </Heading>
