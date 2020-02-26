@@ -17,7 +17,3 @@ script:
   - yarn build
   - yarn validate
   - yarn test:coverage
-
-# Upload coverage reports
-after_script:
-  - yarn report-coverage
