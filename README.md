@@ -8,8 +8,8 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/kata-ai/aksara-ui"><img alt="Build Status" src="https://img.shields.io/travis/kata-ai/aksara-ui/next.svg" /></a>
-  <a href="https://codecov.io/gh/kata-ai/wicara"><img alt="codecov" src="https://codecov.io/gh/kata-ai/wicara/branch/next/graph/badge.svg" /></a>
+  <a href="https://github.com/kata-ai/aksara-ui/actions?query=workflow%3ACI"><img alt="Build Status" src="https://github.com/kata-ai/aksara-ui/workflows/CI/badge.svg" /></a>
+  <a href="https://codecov.io/gh/kata-ai/aksara-ui"><img alt="codecov" src="https://codecov.io/gh/kata-ai/aksara-ui/branch/next/graph/badge.svg" /></a>
   <a href="https://codeclimate.com/github/kata-ai/aksara-ui/maintainability"><img src="https://api.codeclimate.com/v1/badges/dd08732bf349abb47a9a/maintainability" /></a>
   <a href="https://lernajs.io/"><img alt="Build Status" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
 </p>
