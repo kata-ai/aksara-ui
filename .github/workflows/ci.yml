@@ -1,6 +1,10 @@
-name: CI
+on:
+  push:
+    branches: [master, next]
+  pull_request:
+    types: [opened, synchronize]
 
-on: [push]
+name: CI
 
 jobs:
   build:
