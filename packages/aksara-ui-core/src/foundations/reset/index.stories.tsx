@@ -14,6 +14,7 @@ export default {
   decorators: [SystemWrapper],
   parameters: {
     notes: { markdown: readme },
+    jsx: { skip: 1 },
   },
 };
 
@@ -35,7 +36,7 @@ export const Reset = () => {
   const testLabelId = 'test';
 
   return (
-    <AksaraProvider>
+    <>
       <h1>h1. Heading</h1>
       <h2>h2. Heading</h2>
       <h3>h3. Heading</h3>
@@ -66,7 +67,7 @@ export const Reset = () => {
         <a href="https://www.youtube.com/watch?v=ERU9ZtTs3Fk">necessitatibus</a> dolore ea. Officia dolor soluta ut
         possimus non vero sint tenetur illo nulla, reiciendis quisquam fugiat. Est, quidem.
       </p>
-    </AksaraProvider>
+    </>
   );
 };
 

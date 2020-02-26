@@ -12,6 +12,7 @@ export default {
   decorators: [SystemWrapper],
   parameters: {
     notes: { markdown: readme },
+    jsx: { skip: 2 },
   },
 };
 
