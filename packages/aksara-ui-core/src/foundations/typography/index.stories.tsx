@@ -33,9 +33,7 @@ export const Example = () => (
           <Heading scale={400}>We are making AI technology accessible to everyone</Heading>
           <Heading scale={300}>We are making AI technology accessible to everyone</Heading>
           <Heading scale={200}>We are making AI technology accessible to everyone</Heading>
-          <Heading scale={100} color="#626e6d">
-            We are making AI technology accessible to everyone
-          </Heading>
+          <Heading scale={100}>We are making AI technology accessible to everyone</Heading>
         </Stack>
       </ComponentBlock>
       <ComponentBlock title="Text" withBackground>
