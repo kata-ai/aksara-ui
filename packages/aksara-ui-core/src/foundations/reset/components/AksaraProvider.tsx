@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Theme } from '../../../Theme';
 import GlobalStyles from './GlobalStyles';
 
-interface AksaraProviderProps {
+export interface AksaraProviderProps {
   className?: string;
   style?: React.CSSProperties;
 }

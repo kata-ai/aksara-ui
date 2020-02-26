@@ -22,7 +22,7 @@ import {
   ShadowProps,
 } from 'styled-system';
 
-interface UnstyledAnchorProps
+export interface UnstyledAnchorProps
   extends LayoutProps,
     PositionProps,
     FlexboxProps,
