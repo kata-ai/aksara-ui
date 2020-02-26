@@ -39,9 +39,6 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
-          - run: yarn validate
-          env:
-            CI: true
       - run: yarn test:coverage
         env:
           CI: true
