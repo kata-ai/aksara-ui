@@ -1,0 +1,5 @@
+exclude_patterns:
+  - '.yarn/'
+  - '**/vendor/'
+  - '**/*.stories.{js,jsx,ts,tsx}'
+  - '**/*.test.{js,jsx,ts,tsx}'
