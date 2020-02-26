@@ -22,7 +22,7 @@ import {
   ShadowProps,
 } from 'styled-system';
 
-interface UnstyledButtonProps
+export interface UnstyledButtonProps
   extends LayoutProps,
     PositionProps,
     FlexboxProps,

@@ -25,10 +25,4 @@ addParameters({
   },
 });
 
-const stories = require.context('../src', true, /\.(story|stories)\.tsx?$/);
-
-function loadStories() {
-  stories.keys().forEach(filename => stories(filename));
-}
-
-configure(loadStories, module);
+configure(require.context('../src', true, /\.(story|stories)\.tsx?$/), module);
