@@ -7,7 +7,6 @@ import {
   ButtonPrimary,
   ButtonSupport,
   ButtonDestructive,
-  ButtonLink,
   ButtonGhost,
   ButtonSmall,
   ButtonMedium,
@@ -151,7 +150,6 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
   ${props.variant === 'primary' && ButtonPrimary}
   ${props.variant === 'outline' && ButtonSupport}
   ${props.variant === 'destructive' && ButtonDestructive}
-  ${props.variant === 'link' && ButtonLink}
   ${props.variant === 'ghost' && ButtonGhost}
   ${props.variant === 'inverse' && InverseButton}
 

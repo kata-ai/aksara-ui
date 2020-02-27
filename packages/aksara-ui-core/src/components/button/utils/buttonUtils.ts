@@ -99,32 +99,6 @@ export const ButtonSupport = css`
   }
 `;
 
-export const ButtonLink = css`
-  color: ${colors.kataBlue};
-
-  &:not(:disabled):not(.disabled) {
-    &:hover,
-    &.hover,
-    &:focus,
-    &.focus {
-      color: ${colors.darkKataBlue};
-      text-decoration: underline;
-    }
-
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
-      box-shadow: 0 0 0 1px ${colors.blue04};
-    }
-  }
-
-  &:disabled,
-  &.disabled {
-    color: ${colors.gray50};
-  }
-`;
-
 export const ButtonDestructive = css`
   background-color: ${colors.red07};
   color: ${colors.grey01};
