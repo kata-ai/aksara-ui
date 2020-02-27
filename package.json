@@ -70,10 +70,6 @@
     "rollup-plugin-uglify": "^6.0.4",
     "typescript": "~3.8.2"
   },
-  "resolutions": {
-    "@types/react": "16.9.19",
-    "@types/react-dom": "16.9.5"
-  },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,scss,md,html}": [
       "prettier --write",
