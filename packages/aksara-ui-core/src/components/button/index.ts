@@ -10,4 +10,5 @@ export * from './IconButton';
 export { default as OutlineButton } from './OutlineButton';
 export * from './OutlineButton';
 
+export * from './components/LinkButton';
 export * from './styles';

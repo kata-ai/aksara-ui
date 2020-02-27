@@ -6,6 +6,7 @@ import { IconPen } from '@aksara-ui/icons';
 import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 import Button from './Button';
 import { Box, Inline, Heading, Paragraph, Stack } from '../../foundations';
+import { LinkButton } from './components/LinkButton';
 
 const readme = require('./README.md');
 
@@ -54,9 +55,24 @@ stories.add(
         <ComponentBlock title="Link Button (TODO)">
           <Box display="flex" flexWrap="wrap">
             <Box p="md" backgroundColor="grey02">
-              <Button type="button" variant="link" onClick={action('button-click')}>
-                Push Me
-              </Button>
+              <LinkButton variant="primary" onClick={action('button-click')}>
+                Primary Link
+              </LinkButton>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <LinkButton variant="destructive" onClick={action('button-click')}>
+                Destructive Link
+              </LinkButton>
+            </Box>
+            <Box p="md" backgroundColor="grey02">
+              <LinkButton variant="primary" icon={IconPen} onClick={action('button-click')}>
+                Primary Link with Icon
+              </LinkButton>
+            </Box>
+            <Box p="md" backgroundColor="blue08">
+              <LinkButton variant="inverse" onClick={action('button-click')}>
+                Inverse Link
+              </LinkButton>
             </Box>
           </Box>
         </ComponentBlock>
@@ -120,25 +136,6 @@ stories.add(
               I&apos;m disabled
             </Button>
             <Button type="button" variant="outline" isLoading>
-              I&apos;m loading
-            </Button>
-          </Inline>
-        </ComponentBlock>
-        <ComponentBlock title="Link Button" withBackground>
-          <Inline spacing="md">
-            <Button type="button" variant="link">
-              Push Me
-            </Button>
-            <Button type="button" variant="link" className="hover">
-              Push Me
-            </Button>
-            <Button type="button" variant="link" className="focus">
-              Push Me
-            </Button>
-            <Button type="button" variant="link" disabled>
-              I&apos;m disabled
-            </Button>
-            <Button type="button" variant="link" isLoading>
               I&apos;m loading
             </Button>
           </Inline>
