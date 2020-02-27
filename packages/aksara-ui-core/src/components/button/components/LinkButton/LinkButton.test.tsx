@@ -6,7 +6,7 @@ import LinkButton from './LinkButton';
 import { colors } from '../../../../utils';
 
 describe('components/Button', () => {
-  describe('<Button />', () => {
+  describe('<LinkButton />', () => {
     test('renders correctly', () => {
       const { container } = render(<LinkButton>example</LinkButton>);
 
