@@ -16,7 +16,7 @@ import {
 export type LinkButtonVariants = 'primary' | 'destructive' | 'inverse';
 export type LinkButtonSizes = 'sm' | 'md';
 
-export interface LinkButtonBaseProps extends Omit<ButtonBaseProps, 'size'> {
+export interface LinkButtonBaseProps extends Omit<ButtonBaseProps, 'size' | 'block'> {
   variant?: LinkButtonVariants;
   buttonSize?: LinkButtonSizes;
   /** True if the button is disabled due to loading */

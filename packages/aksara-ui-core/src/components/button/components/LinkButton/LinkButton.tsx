@@ -43,7 +43,7 @@ const LoaderCircle = styled(Circle)<LoaderCircleProps>`
 `;
 
 const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>(
-  ({ children, size, icon, iconPosition, disabled, isLoading, variant, block, width, ...rest }, ref) => {
+  ({ children, size, icon, iconPosition, disabled, isLoading, variant, ...rest }, ref) => {
     const renderIcon = () => {
       if (typeof icon === 'string') {
         return (
@@ -77,8 +77,7 @@ const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>(
         iconPosition={iconPosition}
         variant={variant}
         ref={ref}
-        display={block ? 'block' : 'inline-block'}
-        width={block ? '100%' : width}
+        display="inline-block"
         position="relative"
         {...rest}
       >
