@@ -16,6 +16,9 @@ tsc-out/
 /website/*/package-lock.json
 /website/*/yarn.lock
 
+# tsbuildinfo
+*.tsbuildinfo
+
 # Logs
 logs
 *.log

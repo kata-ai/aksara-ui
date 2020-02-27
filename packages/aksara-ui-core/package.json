@@ -28,7 +28,7 @@
     "storybook:build": "build-storybook --quiet",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --emitDeclarationOnly",
     "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
