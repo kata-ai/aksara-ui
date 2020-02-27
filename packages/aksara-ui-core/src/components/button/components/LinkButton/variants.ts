@@ -46,8 +46,15 @@ export const linkButtonFocusVariants = {
 };
 
 export const linkButtonDisabledVariants = {
-  primary: {},
-  destructive: {},
+  primary: {
+    color: colors.grey04,
+  },
+  destructive: {
+    color: colors.grey04,
+  },
+  inverse: {
+    color: colors.grey04,
+  },
 };
 
 export const linkButtonSizeVariants = {

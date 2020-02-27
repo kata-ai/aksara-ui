@@ -16,7 +16,7 @@ import {
 export type LinkButtonVariants = 'primary' | 'destructive' | 'inverse';
 export type LinkButtonSizes = 'sm' | 'md';
 
-export interface LinkButtonBaseProps extends Omit<ButtonBaseProps, 'size' | 'block'> {
+export interface LinkButtonBaseProps extends Omit<ButtonBaseProps, 'size' | 'block' | 'variant'> {
   variant?: LinkButtonVariants;
   buttonSize?: LinkButtonSizes;
   /** True if the button is disabled due to loading */
@@ -26,9 +26,9 @@ export interface LinkButtonBaseProps extends Omit<ButtonBaseProps, 'size' | 'blo
 export const LinkButtonBase = styled('button')<LinkButtonBaseProps>`
   ${ButtonBase}
 
-  ${variant({ prop: 'variant', variants: linkButtonDefaultVariants })}
-
   &:not(:disabled):not(.disabled) {
+    ${variant({ prop: 'variant', variants: linkButtonDefaultVariants })}
+
     &:hover,
     &.hover {
       ${variant({ prop: 'variant', variants: linkButtonHoverVariants })}
