@@ -78,9 +78,7 @@ stories.add(
         </ComponentBlock>
       </Stack>
 
-      <SystemSubheading mt="xl" mb="md">
-        Button States
-      </SystemSubheading>
+      <SystemSubheading my="xl">Button States</SystemSubheading>
       <Stack spacing="xl">
         <ComponentBlock title="Default Button">
           <Box display="grid" gridTemplateColumns="calc(1116px / 12) 1fr" gridGap="24px">
