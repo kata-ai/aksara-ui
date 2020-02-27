@@ -26,9 +26,9 @@ export interface LinkButtonBaseProps extends Omit<ButtonBaseProps, 'size' | 'blo
 export const LinkButtonBase = styled('button')<LinkButtonBaseProps>`
   ${ButtonBase}
 
-  &:not(:disabled):not(.disabled) {
-    ${variant({ prop: 'variant', variants: linkButtonDefaultVariants })}
+  ${variant({ prop: 'variant', variants: linkButtonDefaultVariants })}
 
+  &:not(:disabled):not(.disabled) {
     &:hover,
     &.hover {
       ${variant({ prop: 'variant', variants: linkButtonHoverVariants })}
