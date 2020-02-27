@@ -139,7 +139,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <LoaderCircle
               size={loadingIconSizes(size)}
               buttonSize={size}
-              spinnerColor={variant === 'outline' || variant === 'link' ? colors.grey04 : colors.white}
+              spinnerColor={variant === 'outline' ? colors.grey04 : colors.white}
             />
             <InvisibleText>{children}</InvisibleText>
           </>
