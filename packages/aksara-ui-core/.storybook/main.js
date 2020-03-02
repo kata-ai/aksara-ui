@@ -3,21 +3,6 @@ const path = require('path');
 module.exports = {
   stories: ['../src/**/*.{story,stories}.{ts,tsx}'],
   addons: [
-    {
-      name: '@storybook/preset-typescript',
-      options: {
-        tsLoaderOptions: {
-          configFile: path.resolve(__dirname, '../tsconfig.json'),
-        },
-        tsDocgenLoaderOptions: {
-          tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
-        },
-        forkTsCheckerWebpackPluginOptions: {
-          colors: false, // disables built-in colors in logger messages
-        },
-        include: [path.resolve(__dirname, '../src')],
-      },
-    },
     '@storybook/addon-actions',
     '@storybook/addon-knobs',
     '@storybook/addon-links',
@@ -26,7 +11,20 @@ module.exports = {
     'storybook-addon-jsx/',
   ],
   webpackFinal: config => {
-    config.resolve.mainFields = ['wicara:src', 'main'];
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      use: [
+        {
+          loader: require.resolve('babel-loader'),
+          options: {
+            presets: [['react-app', { flow: false, typescript: true }]],
+          },
+        },
+      ],
+    });
+
+    config.resolve.extensions.push('.ts', '.tsx');
+    config.resolve.mainFields = ['aksara:src', 'main'];
     return config;
   },
 };
