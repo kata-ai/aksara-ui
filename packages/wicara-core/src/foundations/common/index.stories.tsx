@@ -3,32 +3,34 @@ import * as React from 'react';
 
 import { UnstyledAnchor, UnstyledButton } from '.';
 import { Box } from '../box';
-import { WicaraProvider } from '../reset';
+import { SystemWrapper, SystemBlock, ComponentBlock } from '../../utils/storybook';
+import { Stack, Inline } from './components';
+import { Text } from '../typography';
+import { Card } from '../card';
 
 const readme = require('./README.md');
 
 storiesOf('Core|Foundations/Common', module)
+  .addDecorator(SystemWrapper)
   .add(
     'UnstyledAnchor',
     () => (
-      <WicaraProvider>
-        <Box padding="sm">
-          <a
-            href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            I&apos;m an anchor!
-          </a>{' '}
-          <UnstyledAnchor
-            href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            I&apos;m an unstyled anchor!
-          </UnstyledAnchor>
-        </Box>
-      </WicaraProvider>
+      <Box padding="sm">
+        <a
+          href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          I&apos;m an anchor!
+        </a>{' '}
+        <UnstyledAnchor
+          href="https://www.youtube.com/watch?v=ORyw6TGLBvk"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          I&apos;m an unstyled anchor!
+        </UnstyledAnchor>
+      </Box>
     ),
     {
       notes: { markdown: readme }
@@ -37,13 +39,109 @@ storiesOf('Core|Foundations/Common', module)
   .add(
     'UnstyledButton',
     () => (
-      <WicaraProvider>
-        <Box padding="sm">
-          <button type="button">I&apos;m a button!</button>{' '}
-          <UnstyledButton type="button">I&apos;m an unstyled button!</UnstyledButton>
-        </Box>
-      </WicaraProvider>
+      <Box padding="sm">
+        <button type="button">I&apos;m a button!</button>{' '}
+        <UnstyledButton type="button">I&apos;m an unstyled button!</UnstyledButton>
+      </Box>
     ),
+    {
+      notes: { markdown: readme }
+    }
+  )
+  .add(
+    'Stack',
+    () => {
+      return (
+        <SystemBlock
+          title="Stack"
+          subtitle="Use the Stack component to evenly space inner elements vertically"
+        >
+          <ComponentBlock title="Stack (spacing=md)">
+            <Card padding="sm" elevation="layer200">
+              <Box backgroundColor="special01" overflow="hidden">
+                <Stack spacing="md">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Stack>
+              </Box>
+            </Card>
+          </ComponentBlock>
+          <ComponentBlock title="Stack (spacing=lg)">
+            <Card padding="sm" elevation="layer200">
+              <Box backgroundColor="special01" overflow="hidden">
+                <Stack spacing="lg">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Stack>
+              </Box>
+            </Card>
+          </ComponentBlock>
+        </SystemBlock>
+      );
+    },
+    {
+      notes: { markdown: readme }
+    }
+  )
+  .add(
+    'Inline',
+    () => {
+      return (
+        <SystemBlock
+          title="Inline"
+          subtitle="Use the Inline component to evenly space inner elements horizontally"
+        >
+          <ComponentBlock title="Inline (spacing=xs)">
+            <Card padding="sm" elevation="layer200">
+              <Box backgroundColor="special01" overflow="hidden">
+                <Inline spacing="xs">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Inline>
+              </Box>
+            </Card>
+          </ComponentBlock>
+          <ComponentBlock title="Inline (spacing=sm)">
+            <Card padding="sm" elevation="layer200">
+              <Box backgroundColor="special01" overflow="hidden">
+                <Inline spacing="sm" backgroundColor="special01">
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                  <Box backgroundColor="white">
+                    <Text>Box (backgroundColor=white)</Text>
+                  </Box>
+                </Inline>
+              </Box>
+            </Card>
+          </ComponentBlock>
+        </SystemBlock>
+      );
+    },
     {
       notes: { markdown: readme }
     }
