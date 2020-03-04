@@ -1,33 +1,23 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
 
-import { InputBaseProps, InputBase } from '../../styles';
+import { InputBaseProps, TextAreaBase } from '../../styles';
 
 export interface InputTextareaProps extends InputBaseProps, React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /** True if this text input has an addon style */
   addon?: boolean;
+  /** True if the input has errors. */
+  errors?: boolean;
+  /** Form size */
+  inputSize?: 40 | 48;
 }
 
-const WithAddonStyles = css`
-  position: relative;
-  flex: 1 1 auto;
-  width: 1%;
-  margin-bottom: 0;
-
-  /* TODO: prepend/append */
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-`;
-
-const Input = styled('textarea')<InputTextareaProps>`
-  ${InputBase};
-
-  ${props => props.addon && WithAddonStyles};
-`;
-
-const InputTextarea: React.FC<InputTextareaProps> = ({ className, errors, addon, ...rest }) => {
-  return <Input className={className} errors={errors} addon={addon} {...rest} />;
-};
+const InputTextarea = React.forwardRef<HTMLTextAreaElement, InputTextareaProps>(
+  ({ className, errors, addon, ...rest }, ref) => {
+    return (
+      <TextAreaBase className={className} inputVariant={errors ? 'errors' : 'base'} addon={addon} ref={ref} {...rest} />
+    );
+  }
+);
 
 InputTextarea.defaultProps = {
   errors: false,

@@ -1,27 +1,42 @@
-import { lighten } from 'polished';
 import { colors } from '../../../utils';
 
-const defaultTheme = {
-  backgroundColor: colors.white,
-  backgroundColorHover: colors.gray10,
-  backgroundColorActive: colors.white,
-  textColor: colors.gray80,
-  mutedTextColor: colors.gray50,
-  borderColor: colors.gray30,
-  borderColorHover: colors.kataBlue,
-  focusOutlineColor: colors.softKataBlue,
+export const inputThemeBase = {
+  base: {
+    color: colors.grey08,
+    backgroundColor: colors.grey01,
+    borderColor: colors.grey04,
+  },
+  errors: {
+    color: colors.grey08,
+    backgroundColor: colors.grey01,
+    borderColor: colors.grey04,
+  },
 };
 
-const error = {
-  ...defaultTheme,
-  borderColor: colors.red,
-  borderColorHover: colors.red,
-  focusOutlineColor: lighten(0.3, colors.red),
+export const inputThemeHover = {
+  base: {
+    color: colors.grey08,
+    backgroundColor: colors.grey01,
+    borderColor: colors.indigo02,
+  },
+  errors: {
+    color: colors.grey08,
+    backgroundColor: colors.grey01,
+    borderColor: colors.indigo02,
+  },
 };
 
-const inputThemes = {
-  defaultTheme,
-  error,
+export const inputThemeFocus = {
+  base: {
+    color: colors.grey08,
+    backgroundColor: colors.grey01,
+    borderColor: colors.blue06,
+    boxShadow: `0 0 0 1px ${colors.blue06}`,
+  },
+  errors: {
+    color: colors.grey08,
+    backgroundColor: colors.grey01,
+    borderColor: colors.red07,
+    boxShadow: `0 0 0 1px ${colors.red07}`,
+  },
 };
-
-export default inputThemes;

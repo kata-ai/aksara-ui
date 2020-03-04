@@ -4,7 +4,7 @@ import { Text, TextProps } from '../../../../foundations';
 
 export interface FormLabelProps extends TextProps, React.LabelHTMLAttributes<HTMLLabelElement> {}
 
-const FormLabel: React.FC<FormLabelProps> = ({ className, style, children, ...rest }) => {
+const FormLabel = React.forwardRef<HTMLLabelElement, FormLabelProps>(({ className, style, children, ...rest }, ref) => {
   return (
     <Text
       as="label"
@@ -15,12 +15,13 @@ const FormLabel: React.FC<FormLabelProps> = ({ className, style, children, ...re
       color="grey07"
       className={className}
       style={style}
+      ref={ref}
       {...rest}
     >
       {children}
     </Text>
   );
-};
+});
 
 FormLabel.displayName = 'FormLabel';
 

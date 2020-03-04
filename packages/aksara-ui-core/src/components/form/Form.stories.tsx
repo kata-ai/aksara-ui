@@ -1,10 +1,12 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
+import { IconLock } from '@aksara-ui/icons';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { Stack, Box } from '../../foundations';
 
 import {
-  FormError,
+  InputMessage,
   FormGroup,
   FormLabel,
   InputText,
@@ -12,6 +14,7 @@ import {
   FormHelp,
   InputGroup,
   InputAddon,
+  InputLeftElement,
 } from './components';
 
 const readme = require('./README.md');
@@ -22,36 +25,54 @@ story.add(
   'basic',
   () => (
     <SystemBlock title="Forms" subtitle="Basic form elements used with Wicara.">
-      <ComponentBlock title="Basic Example">
-        <FormGroup>
-          <FormLabel htmlFor="textDummy">Text input</FormLabel>
-          <InputText id="textDummy" name="textDummy" placeholder="Type here..." />
-        </FormGroup>
-        <FormGroup>
-          <FormLabel htmlFor="disabled">Disabled input</FormLabel>
-          <InputText id="disabled" name="disabled" disabled placeholder="Can't touch this" />
-        </FormGroup>
-        <FormGroup>
-          <FormLabel htmlFor="textarea">Text area</FormLabel>
-          <InputTextarea id="textarea" name="textarea" rows={4} placeholder="Type here..." />
-        </FormGroup>
-      </ComponentBlock>
-      <ComponentBlock title="With Addon">
-        <FormGroup>
-          <InputGroup>
-            <InputAddon>dashboard.kata.ai/</InputAddon>
-            <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
-          </InputGroup>
-        </FormGroup>
-        <FormGroup>
-          <InputGroup>
-            <InputAddon isIcon>
-              <i className="icon-account" />
-            </InputAddon>
-            <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
-          </InputGroup>
-        </FormGroup>
-      </ComponentBlock>
+      <Stack spacing="xl">
+        <ComponentBlock title="Basic Example" withBackground>
+          <Stack spacing="md">
+            <Box>
+              <FormLabel htmlFor="textDummy">Text input</FormLabel>
+              <InputText id="textDummy" name="textDummy" placeholder="Type here..." />
+            </Box>
+            <Box>
+              <FormLabel htmlFor="disabled">Disabled input</FormLabel>
+              <InputText id="disabled" name="disabled" disabled placeholder="Can't touch this" />
+            </Box>
+            <Box>
+              <FormLabel htmlFor="textarea">Text area</FormLabel>
+              <InputTextarea id="textarea" name="textarea" rows={4} placeholder="Type here..." />
+            </Box>
+          </Stack>
+        </ComponentBlock>
+        <ComponentBlock title="With Addon" withBackground>
+          <Stack spacing="md">
+            <FormGroup>
+              <InputGroup>
+                <InputAddon>dashboard.kata.ai/</InputAddon>
+                <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
+              </InputGroup>
+            </FormGroup>
+            <FormGroup>
+              <InputGroup>
+                <InputAddon isIcon>
+                  <IconLock />
+                </InputAddon>
+                <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
+              </InputGroup>
+            </FormGroup>
+          </Stack>
+        </ComponentBlock>
+        <ComponentBlock title="With Element" withBackground>
+          <Stack spacing="md">
+            <FormGroup>
+              <InputGroup>
+                <InputLeftElement>
+                  <IconLock />
+                </InputLeftElement>
+                <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." />
+              </InputGroup>
+            </FormGroup>
+          </Stack>
+        </ComponentBlock>
+      </Stack>
     </SystemBlock>
   ),
   {
@@ -78,7 +99,7 @@ story.add(
         <FormGroup>
           <FormLabel htmlFor="email_dummy">Email Address</FormLabel>
           <InputText id="email_dummy" name="email_dummy" errors placeholder="Type here..." />
-          <FormError>Please enter an email address.</FormError>
+          <InputMessage>Please enter an email address.</InputMessage>
         </FormGroup>
       </ComponentBlock>
     </SystemBlock>

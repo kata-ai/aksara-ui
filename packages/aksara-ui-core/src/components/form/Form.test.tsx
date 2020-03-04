@@ -8,7 +8,7 @@ import {
   InputGroup,
   InputAddon,
   FormHelp,
-  FormError,
+  InputMessage,
 } from './components';
 
 describe('components/Form', () => {
@@ -42,7 +42,7 @@ describe('components/Form', () => {
       <FormGroup>
         <FormLabel data-testid="label-error">Email Address</FormLabel>
         <InputText errors placeholder="Type here..." />
-        <FormError data-testid="input-error">Please enter an email address.</FormError>
+        <InputMessage data-testid="input-error">Please enter an email address.</InputMessage>
       </FormGroup>
     );
 
