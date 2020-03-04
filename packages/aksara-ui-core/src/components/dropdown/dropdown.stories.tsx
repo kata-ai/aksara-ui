@@ -1,18 +1,24 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
 import { DropdownMenu } from './components/DropdownMenu';
 import { DropdownMenuItem, DropdownMenuDivider, DropdownMenuHeader } from './components/DropdownMenuItem';
+import { Stack } from '../../foundations';
 
 const readme = require('./README.md');
 
-const stories = storiesOf('Core|Components/Dropdown', module).addDecorator(SystemWrapper);
+export default {
+  title: 'Core|Components/Dropdown/DropdownMenu',
+  component: [DropdownMenu, DropdownMenuItem, DropdownMenuDivider, DropdownMenuHeader],
+  decorators: [SystemWrapper],
+  parameters: {
+    notes: { markdown: readme },
+  },
+};
 
-stories.add(
-  'DropdownMenu',
-  () => (
-    <SystemBlock title="Dropdown Menu" subtitle="Dropdown menu to be used in a popover element." noBackground>
+export const BasicExample = () => (
+  <SystemBlock title="Dropdown Menu" subtitle="Dropdown menu to be used in a popover element." noBackground>
+    <Stack spacing="xl">
       <ComponentBlock title="Usage">
         <DropdownMenu width={200}>
           <DropdownMenuItem>Menu Item One</DropdownMenuItem>
@@ -22,7 +28,6 @@ stories.add(
           <DropdownMenuItem>Menu Item Four</DropdownMenuItem>
         </DropdownMenu>
       </ComponentBlock>
-
       <ComponentBlock title="Header">
         <DropdownMenu width={200}>
           <DropdownMenuHeader>Header</DropdownMenuHeader>
@@ -30,9 +35,6 @@ stories.add(
           <DropdownMenuItem>Menu Item Two</DropdownMenuItem>
         </DropdownMenu>
       </ComponentBlock>
-    </SystemBlock>
-  ),
-  {
-    notes: { markdown: readme },
-  }
+    </Stack>
+  </SystemBlock>
 );
