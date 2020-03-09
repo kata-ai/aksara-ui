@@ -45,7 +45,7 @@ export const TextAreaBase = styled('textarea')<InputBaseProps>`
   width: 100%;
   padding: 9px 16px;
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 4px;
   border: 1px solid transparent;
   font-size: ${componentStyles.text[300].fontSize};
   line-height: ${props => props.inputSize}px;
@@ -98,7 +98,7 @@ export const InputBase = styled('input')<InputBaseProps>`
   width: 100%;
   padding: 9px 16px;
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 4px;
   border: 1px solid transparent;
   font-size: ${componentStyles.text[300].fontSize};
   line-height: ${props => props.inputSize}px;
