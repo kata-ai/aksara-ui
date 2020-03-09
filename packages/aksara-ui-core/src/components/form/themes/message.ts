@@ -1,6 +1,6 @@
 import { colors } from '../../../utils';
 
-const messageVariant = {
+const messageIconVariant = {
   general: {
     fill: colors.grey08,
   },
@@ -18,4 +18,4 @@ const messageVariant = {
   },
 };
 
-export default messageVariant;
+export default messageIconVariant;

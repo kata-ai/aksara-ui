@@ -1,15 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import {
-  FormGroup,
-  FormLabel,
-  InputText,
-  InputTextarea,
-  InputGroup,
-  InputAddon,
-  FormHelp,
-  InputMessage,
-} from './components';
+import { FormGroup, FormLabel, InputText, InputTextarea, InputGroup, InputAddon, InputMessage } from './components';
 
 describe('components/Form', () => {
   test('renders standard text input correctly', () => {
@@ -17,7 +8,6 @@ describe('components/Form', () => {
       <FormGroup>
         <FormLabel htmlFor="textDummy">Text input</FormLabel>
         <InputText data-testid="text-input" placeholder="Type here..." />
-        <FormHelp>Some help text.</FormHelp>
       </FormGroup>
     );
 
@@ -38,17 +28,17 @@ describe('components/Form', () => {
   });
 
   test('renders error state correctly', () => {
-    const { getByTestId } = render(
+    const { getByText } = render(
       <FormGroup>
-        <FormLabel data-testid="label-error">Email Address</FormLabel>
+        <FormLabel>Email Address</FormLabel>
         <InputText errors placeholder="Type here..." />
         <InputMessage data-testid="input-error">Please enter an email address.</InputMessage>
       </FormGroup>
     );
 
-    const input = getByTestId('input-error');
+    const input = getByText('Please enter an email address.');
 
-    expect(input).toHaveTextContent('Please enter an email address.');
+    expect(input).toBeInTheDocument();
   });
 
   test('renders disabled input correctly', () => {

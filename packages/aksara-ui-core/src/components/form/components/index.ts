@@ -1,6 +1,5 @@
 export * from './InputMessage';
 export * from './FormGroup';
-export * from './FormHelp';
 export * from './FormLabel';
 export * from './InputAddon';
 export * from './InputElement';

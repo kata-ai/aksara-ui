@@ -9,7 +9,7 @@ export const inputThemeBase = {
   errors: {
     color: colors.grey08,
     backgroundColor: colors.grey01,
-    borderColor: colors.grey04,
+    borderColor: colors.red07,
   },
 };
 
@@ -22,7 +22,7 @@ export const inputThemeHover = {
   errors: {
     color: colors.grey08,
     backgroundColor: colors.grey01,
-    borderColor: colors.indigo02,
+    borderColor: colors.red07,
   },
 };
 

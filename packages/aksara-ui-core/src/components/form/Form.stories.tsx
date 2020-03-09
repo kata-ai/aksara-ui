@@ -11,7 +11,6 @@ import {
   FormLabel,
   InputText,
   InputTextarea,
-  FormHelp,
   InputGroup,
   InputAddon,
   InputLeftElement,
@@ -67,7 +66,7 @@ story.add(
                 <InputLeftElement>
                   <IconLock />
                 </InputLeftElement>
-                <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." />
+                <InputText id="password_dummy" name="password_dummy" placeholder="Type here..." />
               </InputGroup>
             </FormGroup>
           </Stack>
@@ -84,13 +83,6 @@ story.add(
   'additional labels',
   () => (
     <SystemBlock title="Forms" subtitle="Basic form elements used with Wicara.">
-      <ComponentBlock title="Form Help">
-        <FormGroup>
-          <FormLabel htmlFor="billingAddress_dummy">Billing Address</FormLabel>
-          <InputTextarea id="billingAddress_dummy" name="billingAddress_dummy" placeholder="Type here..." />
-          <FormHelp>The address we&apos;ll ship your billing details to.</FormHelp>
-        </FormGroup>
-      </ComponentBlock>
       <ComponentBlock title="With Error State">
         <FormGroup>
           <FormLabel htmlFor="firstName_dummy">First Name</FormLabel>
@@ -99,7 +91,17 @@ story.add(
         <FormGroup>
           <FormLabel htmlFor="email_dummy">Email Address</FormLabel>
           <InputText id="email_dummy" name="email_dummy" errors placeholder="Type here..." />
-          <InputMessage>Please enter an email address.</InputMessage>
+          <InputMessage variant="error">Please enter an email address.</InputMessage>
+        </FormGroup>
+        <FormGroup>
+          <FormLabel htmlFor="email_dummy">Confirm Password</FormLabel>
+          <InputGroup>
+            <InputLeftElement>
+              <IconLock />
+            </InputLeftElement>
+            <InputText id="password_dummy" name="password_dummy" placeholder="Type here..." />
+          </InputGroup>
+          <InputMessage variant="success">Passwords match!</InputMessage>
         </FormGroup>
       </ComponentBlock>
     </SystemBlock>
