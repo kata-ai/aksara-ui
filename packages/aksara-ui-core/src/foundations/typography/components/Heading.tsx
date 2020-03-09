@@ -40,7 +40,7 @@ const Heading = styled(Typography)<HeadingProps>`
 
 Heading.defaultProps = {
   as: 'h2',
-  color: 'gray80',
+  color: '#121615',
   scale: 800,
 };
 

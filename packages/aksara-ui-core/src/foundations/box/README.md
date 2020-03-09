@@ -24,7 +24,7 @@ import { Box } from '@aksara-ui/core';
 
 export default function Component() {
   return (
-    <Box padding="sm" color="gray10" bg="kataBlue">
+    <Box padding="sm" color="grey01" bg="blue06">
       I&apos;m inside a box!
     </Box>
   );
