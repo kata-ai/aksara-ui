@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { lighten } from 'polished';
 import { themeGet } from '@styled-system/theme-get';
 import { colors } from '../../../utils/variables';
 import { IconButtonSizes } from '../types';
@@ -30,7 +29,7 @@ export function iconSizes(size?: IconButtonSizes) {
   }
 }
 
-export const IconButtonDefault = css`
+const IconButtonBase = css`
   color: ${themeGet('colors.grey08', colors.grey08)};
 
   &:not(:disabled):not(.disabled) {
@@ -58,35 +57,9 @@ export const IconButtonDefault = css`
   }
 `;
 
-export const IconButtonPrimary = css`
-  background-color: ${colors.cobalt};
-  color: ${colors.white};
+export const IconButtonDefault = IconButtonBase;
 
-  &:not(:disabled):not(.disabled) {
-    &:hover,
-    &.hover,
-    &:focus,
-    &.focus {
-      background-color: ${colors.semiCobalt};
-      color: ${colors.white};
-    }
-
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
-      background-color: ${colors.darkCobalt};
-      border-color: ${colors.darkCobalt};
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: ${lighten(0.02, colors.gray10)};
-    color: ${colors.gray30};
-  }
-`;
+export const IconButtonPrimary = IconButtonBase;
 
 export const IconButtonSupport = css`
   background-color: ${themeGet('colors.grey01', colors.grey01)};
