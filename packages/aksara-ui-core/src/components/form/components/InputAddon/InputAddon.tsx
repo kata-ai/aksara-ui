@@ -35,7 +35,7 @@ const Inner = styled('span')<InputAddonProps>`
   white-space: nowrap;
   border: 1px solid ${colors.grey04};
   background-color: ${colors.grey03};
-  border-radius: 6px;
+  border-radius: 4px;
   user-select: none;
 
   /* TODO: prepend/append */
