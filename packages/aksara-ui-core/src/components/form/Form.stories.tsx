@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IconLock } from '@aksara-ui/icons';
 
 import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
-import { Stack, Box, Heading } from '../../foundations';
+import { Stack, Box, Heading, Text } from '../../foundations';
 
 import {
   InputMessage,
@@ -99,22 +99,12 @@ export const BasicExample = () => (
           <Heading as="h4" scale={200}>
             Medium (40px)
           </Heading>
-          <Box display="flex" flexDirection="column" flex="1 1 auto">
+          <Box display="flex" flexDirection="column">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
               <InputText id="textDummy" name="textDummy" placeholder="Type here..." size={40} />
             </Box>
           </Box>
-          <Box display="flex" flexDirection="column" flex="1 1 auto">
-            <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <InputGroup>
-                <InputAddon isIcon>
-                  <IconLock />
-                </InputAddon>
-                <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
-              </InputGroup>
-            </Box>
-          </Box>
-          <Box display="flex" flexDirection="column" flex="1 1 auto">
+          <Box display="flex" flexDirection="column">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
               <FormGroup>
                 <InputGroup inputSize={40}>
@@ -125,34 +115,28 @@ export const BasicExample = () => (
                 </InputGroup>
               </FormGroup>
             </Box>
+            <Box display="flex" flexDirection="column">
+              <Box flex="1 1 auto" height="100%" minHeight={72}>
+                <InputGroup>
+                  <InputAddon isIcon>
+                    <IconLock />
+                  </InputAddon>
+                  <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
+                </InputGroup>
+              </Box>
+            </Box>
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
           <Heading as="h4" scale={200}>
             Large (48px)
           </Heading>
-          <Box display="flex" flexDirection="column" flex="1 1 auto">
+          <Box display="flex" flexDirection="column">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
               <InputText id="textDummy" name="textDummy" placeholder="Type here..." size={48} />
             </Box>
           </Box>
-          <Box display="flex" flexDirection="column" flex="1 1 auto">
-            <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <InputGroup inputSize={48}>
-                <InputAddon isIcon>
-                  <IconLock />
-                </InputAddon>
-                <InputText
-                  id="firstName_dummy"
-                  name="firstName_dummy"
-                  placeholder="Type here..."
-                  addon
-                  inputSize={48}
-                />
-              </InputGroup>
-            </Box>
-          </Box>
-          <Box display="flex" flexDirection="column" flex="1 1 auto">
+          <Box display="flex" flexDirection="column">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
               <InputGroup inputSize={48}>
                 <InputLeftElement inputSize={48}>
