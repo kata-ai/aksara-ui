@@ -22,7 +22,7 @@ export const ButtonDefault = css`
       background-color: ${colors.grey03};
       color: ${colors.blue08};
       border-color: ${colors.blue06};
-      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
@@ -53,7 +53,7 @@ export const ButtonPrimary = css`
     &.active {
       background-color: ${colors.blue08};
       border-color: ${colors.blue06};
-      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
@@ -87,7 +87,7 @@ export const ButtonSupport = css`
       background-color: ${colors.grey03};
       color: ${colors.blue08};
       border-color: ${colors.blue06};
-      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
@@ -119,7 +119,7 @@ export const ButtonDestructive = css`
       background-color: ${colors.red09};
       border-color: ${colors.red07};
       color: ${colors.grey01};
-      box-shadow: 0px 0px 2px rgba(186, 19, 9, 0.4), 0 0 0 1px ${colors.red07};
+      box-shadow: 0 0 2px 1px rgba(186, 19, 9, 0.4), 0 0 0 1px ${colors.red07};
     }
   }
 
@@ -150,7 +150,7 @@ export const ButtonGhost = css`
       background-color: ${colors.grey03};
       color: ${colors.blue08};
       border-color: ${colors.blue06};
-      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
     }
   }
 
