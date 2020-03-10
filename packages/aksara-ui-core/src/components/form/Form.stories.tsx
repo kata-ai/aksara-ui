@@ -197,6 +197,76 @@ export const BasicExample = () => (
             </InputGroup>
           </Box>
         </Box>
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 4 - 24px), 1fr))"
+          gridGap="24px"
+        >
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <Text scale={300}>Error</Text>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputText errors id="textDummy" name="textDummy" placeholder="Type here..." />
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup inputSize={40}>
+              <InputLeftElement>
+                <IconLock />
+              </InputLeftElement>
+              <InputText errors id="password_dummy" name="password_dummy" placeholder="Type here..." size={40} />
+            </InputGroup>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup>
+              <InputAddon isIcon>
+                <IconLock />
+              </InputAddon>
+              <InputText errors id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
+            </InputGroup>
+          </Box>
+        </Box>
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 4 - 24px), 1fr))"
+          gridGap="24px"
+        >
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <Text scale={300}>Focus with Error</Text>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputText errors className="focus" id="textDummy" name="textDummy" placeholder="Type here..." />
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup inputSize={40}>
+              <InputLeftElement>
+                <IconLock />
+              </InputLeftElement>
+              <InputText
+                errors
+                className="focus"
+                id="password_dummy"
+                name="password_dummy"
+                placeholder="Type here..."
+                size={40}
+              />
+            </InputGroup>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup>
+              <InputAddon isIcon>
+                <IconLock />
+              </InputAddon>
+              <InputText
+                errors
+                className="focus"
+                id="firstName_dummy"
+                name="firstName_dummy"
+                placeholder="Type here..."
+                addon
+              />
+            </InputGroup>
+          </Box>
+        </Box>
       </Box>
       <SystemSubheading mb="xl">Input Sizes</SystemSubheading>
       <Box
