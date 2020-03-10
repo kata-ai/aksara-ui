@@ -1,70 +1,148 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import {
+  layout,
+  LayoutProps,
+  position,
+  PositionProps,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
+  space,
+  SpaceProps,
+  variant,
+} from 'styled-system';
 
-import inputThemes from './themes/input';
-import labelThemes from './themes/label';
-import { typeScale } from '../../utils';
+import { inputThemeBase, inputThemeHover, inputThemeFocus } from './themes/input';
+import { colors, componentStyles } from '../../utils';
 
-export interface InputBaseProps {
+export type InputSizes = 40 | 48;
+
+export interface InputBaseProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
+  /** True if this text input has an addon style */
+  addon?: boolean;
   /** True if the input has errors. */
-  errors?: boolean;
+  inputVariant?: 'base' | 'errors';
+  /** Form size */
+  inputSize?: InputSizes;
 }
 
-export const LabelBase = ({ errors }: InputBaseProps) => {
-  const theme = labelThemes[errors ? 'error' : 'defaultTheme'];
+const WithAddonStyles = css`
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
 
-  return css`
-    display: block;
-    margin-bottom: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.5;
-    letter-spacing: 0.2px;
-    text-align: left;
-    color: ${theme.textColor};
-  `;
-};
+  /* TODO: prepend/append */
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+`;
 
-export const InputBase = ({ errors }: InputBaseProps) => {
-  const theme = inputThemes[errors ? 'error' : 'defaultTheme'];
+export const TextAreaBase = styled('textarea')<InputBaseProps>`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 9px 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: ${componentStyles.text[300].fontSize};
+  line-height: ${props => props.inputSize}px;
+  outline: none;
 
-  return css`
-    display: block;
-    width: 100%;
-    padding: 8px 16px;
-    box-sizing: border-box;
-    border-radius: 6px;
-    background-color: ${theme.backgroundColor};
-    border: 1px solid ${theme.borderColor};
-    font-size: ${typeScale.body.fontSize}px;
-    line-height: ${typeScale.body.lineHeight}px;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0);
-    transition: all 0.3s ease;
-    outline: none;
+  ${variant({
+    prop: 'inputVariant',
+    variants: inputThemeBase,
+  })}
 
-    &::placeholder {
-      color: ${theme.mutedTextColor};
+  &::placeholder {
+    color: ${colors.grey06};
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: ${colors.grey03};
+    color: ${colors.grey06};
+    border-color: ${colors.grey04};
+  }
+
+  &:not(:disabled):not(.disabled) {
+    &:hover, &.hover {
+      ${variant({
+        prop: 'inputVariant',
+        variants: inputThemeHover,
+      })}
     }
 
-    &:disabled,
-    &.disabled {
-      background-color: ${theme.backgroundColorHover};
-      color: ${theme.mutedTextColor};
+    &:active, &.active,
+    &:focus, &.focus {
+      ${variant({
+        prop: 'inputVariant',
+        variants: inputThemeFocus,
+      })}
+    }
+  }
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+`;
+
+export const InputBase = styled('input')<InputBaseProps>`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 9px 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: ${componentStyles.text[300].fontSize};
+  line-height: ${props => props.inputSize}px;
+  outline: none;
+  height: ${props => props.inputSize}px;
+
+  ${props => props.addon && WithAddonStyles};
+
+  ${variant({
+    prop: 'inputVariant',
+    variants: inputThemeBase,
+  })}
+
+  &::placeholder {
+    color: ${colors.grey06};
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: ${colors.grey03};
+    color: ${colors.grey06};
+    border-color: ${colors.grey04};
+  }
+
+  &:not(:disabled):not(.disabled) {
+    &:hover, &.hover {
+      ${variant({
+        prop: 'inputVariant',
+        variants: inputThemeHover,
+      })}
     }
 
-    &:not(:disabled):not(.disabled) {
-      &:hover {
-        background-color: ${theme.backgroundColorHover};
-        border-color: ${theme.borderColorHover};
-      }
-
-      &:active,
-      &:focus {
-        background-color: ${theme.backgroundColorActive};
-        border: 1px solid ${theme.borderColorHover};
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 0 4px ${theme.focusOutlineColor};
-      }
+    &:active, &.active,
+    &:focus, &.focus {
+      ${variant({
+        prop: 'inputVariant',
+        variants: inputThemeFocus,
+      })}
     }
-  `;
-};
+  }
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+`;

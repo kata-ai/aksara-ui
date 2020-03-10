@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
+import { Text } from '../../../../foundations';
+import { colors } from '../../../../utils';
 
 export interface InputAddonProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Additional CSS classes to give to the component. */
@@ -9,7 +11,7 @@ export interface InputAddonProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const IsIconStyles = css`
-  width: 38px;
+  width: 40px;
 
   i:before {
     font-size: 20px;
@@ -31,9 +33,9 @@ const Inner = styled('span')<InputAddonProps>`
   color: #495057;
   text-align: center;
   white-space: nowrap;
-  border: 1px solid #e2e6e8;
-  background-color: #f6f7f8;
-  border-radius: 6px;
+  border: 1px solid ${colors.grey04};
+  background-color: ${colors.grey03};
+  border-radius: 4px;
   user-select: none;
 
   /* TODO: prepend/append */
@@ -47,7 +49,7 @@ const Inner = styled('span')<InputAddonProps>`
 const InputAddon: React.FC<InputAddonProps> = ({ className, isIcon, children, ...rest }) => (
   <Div className={className}>
     <Inner isIcon={isIcon} className={className} {...rest}>
-      {children}
+      {isIcon ? children : <Text scale={300}>{children}</Text>}
     </Inner>
   </Div>
 );

@@ -39,6 +39,10 @@ export interface BoxProps
   className?: string;
   /** Additional CSS properties to add to the component. */
   style?: React.CSSProperties;
+  /**
+   * Extended color props. We need this because default `color` prop clashes with `styled-system`.
+   */
+  color?: string;
 }
 
 /**
