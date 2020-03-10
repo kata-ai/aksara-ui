@@ -68,15 +68,15 @@ export const TextAreaBase = styled('textarea')<InputBaseProps>`
   }
 
   &:not(:disabled):not(.disabled) {
-    &:hover {
+    &:hover, &.hover {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeHover,
       })}
     }
 
-    &:active,
-    &:focus {
+    &:active, &.active,
+    &:focus, &.focus {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeFocus,
@@ -124,15 +124,15 @@ export const InputBase = styled('input')<InputBaseProps>`
   }
 
   &:not(:disabled):not(.disabled) {
-    &:hover {
+    &:hover, &.hover {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeHover,
       })}
     }
 
-    &:active,
-    &:focus {
+    &:active, &.active,
+    &:focus, &.focus {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeFocus,

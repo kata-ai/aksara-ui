@@ -87,6 +87,117 @@ export const BasicExample = () => (
           </FormGroup>
         </Stack>
       </ComponentBlock>
+      <SystemSubheading mb="xl">Input States</SystemSubheading>
+      <Box>
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 4 - 24px), 1fr))"
+          gridGap="24px"
+        >
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <Text scale={300}>Default</Text>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputText id="textDummy" name="textDummy" placeholder="Type here..." />
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup inputSize={40}>
+              <InputLeftElement>
+                <IconLock />
+              </InputLeftElement>
+              <InputText id="password_dummy" name="password_dummy" placeholder="Type here..." size={40} />
+            </InputGroup>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup>
+              <InputAddon isIcon>
+                <IconLock />
+              </InputAddon>
+              <InputText id="firstName_dummy" name="firstName_dummy" placeholder="Type here..." addon />
+            </InputGroup>
+          </Box>
+        </Box>
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 4 - 24px), 1fr))"
+          gridGap="24px"
+        >
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <Text scale={300}>Hover</Text>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputText className="hover" id="textDummy" name="textDummy" placeholder="Type here..." />
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup inputSize={40}>
+              <InputLeftElement>
+                <IconLock />
+              </InputLeftElement>
+              <InputText
+                className="hover"
+                id="password_dummy"
+                name="password_dummy"
+                placeholder="Type here..."
+                size={40}
+              />
+            </InputGroup>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup>
+              <InputAddon isIcon>
+                <IconLock />
+              </InputAddon>
+              <InputText
+                className="hover"
+                id="firstName_dummy"
+                name="firstName_dummy"
+                placeholder="Type here..."
+                addon
+              />
+            </InputGroup>
+          </Box>
+        </Box>
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 4 - 24px), 1fr))"
+          gridGap="24px"
+        >
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <Text scale={300}>Focus</Text>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputText className="focus" id="textDummy" name="textDummy" placeholder="Type here..." />
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup inputSize={40}>
+              <InputLeftElement>
+                <IconLock />
+              </InputLeftElement>
+              <InputText
+                className="focus"
+                id="password_dummy"
+                name="password_dummy"
+                placeholder="Type here..."
+                size={40}
+              />
+            </InputGroup>
+          </Box>
+          <Box display="flex" alignItems="center" minHeight={72}>
+            <InputGroup>
+              <InputAddon isIcon>
+                <IconLock />
+              </InputAddon>
+              <InputText
+                className="focus"
+                id="firstName_dummy"
+                name="firstName_dummy"
+                placeholder="Type here..."
+                addon
+              />
+            </InputGroup>
+          </Box>
+        </Box>
+      </Box>
       <SystemSubheading mb="xl">Input Sizes</SystemSubheading>
       <Box
         mt="md"
@@ -106,14 +217,12 @@ export const BasicExample = () => (
           </Box>
           <Box display="flex" flexDirection="column">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <FormGroup>
-                <InputGroup inputSize={40}>
-                  <InputLeftElement>
-                    <IconLock />
-                  </InputLeftElement>
-                  <InputText id="password_dummy" name="password_dummy" placeholder="Type here..." size={40} />
-                </InputGroup>
-              </FormGroup>
+              <InputGroup inputSize={40}>
+                <InputLeftElement>
+                  <IconLock />
+                </InputLeftElement>
+                <InputText id="password_dummy" name="password_dummy" placeholder="Type here..." size={40} />
+              </InputGroup>
             </Box>
             <Box display="flex" flexDirection="column">
               <Box flex="1 1 auto" height="100%" minHeight={72}>
