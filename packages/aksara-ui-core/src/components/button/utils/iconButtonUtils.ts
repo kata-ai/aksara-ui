@@ -42,7 +42,7 @@ const IconButtonBase = css`
     &.focus {
       color: ${themeGet('colors.blue08', colors.blue08)};
       border-color: ${themeGet('colors.blue04', colors.blue04)};
-      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.5);
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.5);
     }
 
     &:active,
@@ -83,7 +83,7 @@ export const IconButtonSupport = css`
       color: ${themeGet('colors.blue08', colors.blue08)};
       border-width: 2px;
       border-color: ${themeGet('colors.blue06', colors.blue06)};
-      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.5);
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.5);
     }
   }
 
@@ -133,7 +133,7 @@ export const IconButtonGhost = css`
     &.focus {
       color: ${themeGet('colors.blue08', colors.blue08)};
       border-color: ${themeGet('colors.blue04', colors.blue04)};
-      box-shadow: 0px 0px 2px rgba(0, 111, 230, 0.5);
+      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.5);
     }
 
     &:active,
