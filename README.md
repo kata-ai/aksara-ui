@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Wicara" src="assets/wicara-banner.png" />
+  <img alt="Aksara UI" src="assets/wicara-banner.png" />
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 
 ---
 
-**Wicara** is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Wicara is the designation for Aksara React components.
+**Aksara UI** is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Aksara UI is the designation for Aksara React components.
 
 **Note: Migrating from v0.7 to v0.8? Please read the [migration guide](MIGRATING.md).**
 
@@ -24,7 +24,7 @@
 
 ## Contributing
 
-Wicara is developed by the help of developers like you! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started on developing Wicara.
+Aksara UI is developed by the help of developers like you! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started on developing Aksara UI.
 
 This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -36,7 +36,7 @@ Check out [kata-ai/wicara-starter](https://github.com/kata-ai/wicara-starter).
 
 ### Prerequisites
 
-Wicara requires `styled-components` v4+. First, install the core Wicara package, Wicara React icon library, and `styled-components`.
+Aksara UI requires `styled-components` v4+. First, install the core Aksara UI package, Aksara UI React icon library, and `styled-components`.
 
 ```bash
 # yarn
@@ -46,7 +46,7 @@ $ yarn add styled-components @aksara-ui/core @aksara-ui/icons
 $ npm install --save styled-components @aksara-ui/core @aksara-ui/icons
 ```
 
-Then, you will need to apply the style resets + theme provider. Wrap your app inside the `AksaraProvider` to use the resets and `ThemeProvider` component provided by Wicara.
+Then, you will need to apply the style resets + theme provider. Wrap your app inside the `AksaraProvider` to use the resets and `ThemeProvider` component provided by Aksara UI.
 
 ```jsx
 import { AksaraProvider } from '@aksara-ui/core';
@@ -56,11 +56,11 @@ export default function MyApp({ children }) {
 }
 ```
 
-Once you've applied the style resets, you can use Wicara components in your app. See the example below.
+Once you've applied the style resets, you can use Aksara UI components in your app. See the example below.
 
 ### Example
 
-Wicara is built in React, with styling done in styled-components. To use these components, import them as follows:
+Aksara UI is built in React, with styling done in styled-components. To use these components, import them as follows:
 
 ```jsx
 // Example for `<Button />` component.
