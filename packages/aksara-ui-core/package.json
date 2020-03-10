@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/core",
-  "version": "1.0.0-canary.3",
+  "version": "1.0.0-canary.4",
   "description": "Aksara UI Core. The component library powering Kata Platform.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
