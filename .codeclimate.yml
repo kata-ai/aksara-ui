@@ -3,3 +3,4 @@ exclude_patterns:
   - '**/vendor/'
   - '**/*.stories.{js,jsx,ts,tsx}'
   - '**/*.test.{js,jsx,ts,tsx}'
+  - 'packages/aksara-icons/'
