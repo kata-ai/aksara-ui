@@ -1,24 +1,24 @@
 <p align="center">
-  <img alt="Aksara UI" src="assets/wicara-banner.png" />
+  <img alt="Aksara UI" src="assets/aksara-banner.svg" />
 </p>
 
 <p align="center">
-  <strong>wicara /wi·ca·ra/ (noun)</strong><br>
-  the expression of or the ability to express thoughts and feelings by articulate sounds.
+  <strong>aksara /ak·sa·ra/ noun</strong><br>
+  is a system of visual symbol, usually stamped on paper or other media (stone, wood, leaf, and fabric), to express thoughts and ideas.
 </p>
 
 <p align="center">
   <a href="https://github.com/kata-ai/aksara-ui/actions?query=workflow%3ACI"><img alt="Build Status" src="https://github.com/kata-ai/aksara-ui/workflows/CI/badge.svg" /></a>
   <a href="https://codecov.io/gh/kata-ai/aksara-ui"><img alt="codecov" src="https://codecov.io/gh/kata-ai/aksara-ui/branch/next/graph/badge.svg" /></a>
-  <a href="https://codeclimate.com/github/kata-ai/aksara-ui/maintainability"><img src="https://api.codeclimate.com/v1/badges/dd08732bf349abb47a9a/maintainability" /></a>
+  <a href="https://codeclimate.com/github/kata-ai/aksara-ui/maintainability"><img src="https://img.shields.io/codeclimate/maintainability/kata-ai/aksara-ui" /></a>
   <a href="https://lernajs.io/"><img alt="Build Status" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
 </p>
 
 ---
 
-**Aksara UI** is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Aksara UI is the designation for Aksara React components.
+**Aksara** is Kata.ai's design system. It contains foundations, voice and tone guidelines, component standards, and other guidelines that systematically improve quality, timeliness, and consistency to our product.
 
-**Note: Migrating from v0.7 to v0.8? Please read the [migration guide](MIGRATING.md).**
+**Aksara UI** is an implementation of Aksara using the React framework. It is the true implementation of Aksara in raw code form, designed to communicate with users and bring delightful experiences. Aksara UI is the designation for Aksara React components.
 
 ---
 
@@ -81,9 +81,9 @@ We use two fonts in the Aksara Design Language: `Museo Sans`, and `Museo Sans Ro
 
 ```sh
 # yarn
-$ yarn add @wicara/fonts
+$ yarn add @aksara-ui/fonts
 # npm
-$ npm i @wicara/fonts
+$ npm i @aksara-ui/fonts
 ```
 
 Note that these fonts are **not provided for free**. You should check if you have a license to use these fonts before installing this package.
@@ -96,9 +96,9 @@ To use these fonts within your app, import as follows:
 
 ```jsx
 // Museo Sans
-import '@wicara/fonts/museo-sans.css';
+import '@aksara-ui/fonts/museo-sans.css';
 // Museo Sans Rounded
-import '@wicara/fonts/museo-sans-rounded.css';
+import '@aksara-ui/fonts/museo-sans-rounded.css';
 ```
 
 #### Icon fonts
@@ -106,7 +106,7 @@ import '@wicara/fonts/museo-sans-rounded.css';
 We also provided some icon sets. To use them, import as follows:
 
 ```jsx
-import '@wicara/fonts/kata-icons.css';
+import '@aksara-ui/fonts/kata-icons.css';
 ```
 
 ## License
@@ -120,4 +120,3 @@ Copyright (c) 2018 Kata.ai and/or contributors. All rights reserved.
 ## Maintainers
 
 - Resi Respati ([@resir014](https://twitter.com/resir014)) – [Kata.ai](https://kata.ai)
-- Dio Syahrizal ([@DioSyahrizal](https://github.com/DioSyahrizal)) – [Kata.ai](https://kata.ai)
