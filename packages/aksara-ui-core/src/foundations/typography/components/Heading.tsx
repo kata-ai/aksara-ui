@@ -1,18 +1,11 @@
-import * as React from 'react';
 import { variant } from 'styled-system';
 
 import { styledWrapper as styled } from '../../../utils/primitives';
 
-import Typography, { TypographyProps } from './Typography';
 import { HeadingScale } from '../../../Theme';
+import { typographyBase, TypographyBaseProps } from '../utils';
 
-export interface HeadingProps extends TypographyProps {
-  /** Additional CSS classes to add to the component. */
-  className?: string;
-  /** Additional CSS properties to add to the component. */
-  style?: React.CSSProperties;
-  /** What HTML element to render the text as. */
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+export interface HeadingProps extends TypographyBaseProps {
   /** Size value of the heading. */
   scale?: HeadingScale;
 }
@@ -20,7 +13,7 @@ export interface HeadingProps extends TypographyProps {
 /**
  * Heading component provided as a styled component primitive.
  */
-const Heading = styled(Typography)<HeadingProps>`
+const Heading = styled('h2')<HeadingProps>`
   ${variant({
     prop: 'scale',
     scale: 'componentStyles.heading',
@@ -36,10 +29,11 @@ const Heading = styled(Typography)<HeadingProps>`
       100: {},
     },
   })}
+
+  ${typographyBase}
 `;
 
 Heading.defaultProps = {
-  as: 'h2',
   color: '#121615',
   scale: 800,
 };
