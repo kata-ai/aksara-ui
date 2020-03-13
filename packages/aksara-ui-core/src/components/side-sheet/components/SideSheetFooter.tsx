@@ -1,18 +1,9 @@
 import * as React from 'react';
-import { Box } from '../../../foundations';
+import { DialogFooter, DialogFooterProps } from '../../dialog';
 
-export interface SideSheetFooterProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
+export type SideSheetFooterProps = DialogFooterProps;
 
-const SideSheetFooter: React.FC<SideSheetFooterProps> = ({ className, style, children }) => {
-  return (
-    <Box className={className} style={style} pt="md" px="xl" pb="xl">
-      {children}
-    </Box>
-  );
-};
+const SideSheetFooter: React.FC<SideSheetFooterProps> = DialogFooter;
 
 SideSheetFooter.displayName = 'SideSheetFooter';
 

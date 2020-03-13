@@ -1,24 +1,10 @@
 import * as React from 'react';
-import { Box, Heading } from '../../../foundations';
+import { DialogHeader, DialogHeaderProps } from '../../dialog';
 
-export interface SideSheetHeaderProps {
-  id?: string;
-  className?: string;
-  style?: React.CSSProperties;
-}
+export type SideSheetHeaderProps = DialogHeaderProps;
 
-const DialogHeader: React.FC<SideSheetHeaderProps> = ({ id, className, style, children }) => {
-  return (
-    <Box className={className} style={style} display="flex" flexDirection="column" pt="xl" px="xl" pb="md">
-      <Box display="flex" flexDirection="row" alignItems="center" height={32}>
-        <Heading id={id} scale={500} m={0}>
-          {children}
-        </Heading>
-      </Box>
-    </Box>
-  );
-};
+const SideSheetHeader: React.FC<SideSheetHeaderProps> = DialogHeader;
 
-DialogHeader.displayName = 'DialogHeader';
+SideSheetHeader.displayName = 'SideSheetHeader';
 
-export default DialogHeader;
+export default SideSheetHeader;

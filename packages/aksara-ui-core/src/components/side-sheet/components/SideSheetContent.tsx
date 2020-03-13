@@ -1,27 +1,9 @@
 import * as React from 'react';
-import { Box } from '../../../foundations';
+import { DialogContent, DialogContentProps } from '../../dialog';
 
-export interface SideSheetContentProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
+export type SideSheetContentProps = DialogContentProps;
 
-const SideSheetContent: React.FC<SideSheetContentProps> = ({ className, style, children }) => {
-  return (
-    <Box
-      className={className}
-      style={style}
-      display="flex"
-      flexDirection="column"
-      flex="1 1 auto"
-      pt="md"
-      px="xl"
-      pb="xl"
-    >
-      {children}
-    </Box>
-  );
-};
+const SideSheetContent: React.FC<SideSheetContentProps> = DialogContent;
 
 SideSheetContent.displayName = 'SideSheetContent';
 
