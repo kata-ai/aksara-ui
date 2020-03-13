@@ -54,8 +54,8 @@ const SideSheetWrapper = styled(Box)`
 
 const CloseButton = styled(IconButton)`
   position: absolute;
-  top: 26px;
-  right: 48px;
+  top: 32px;
+  right: 32px;
 `;
 
 export interface SideSheetProps {
