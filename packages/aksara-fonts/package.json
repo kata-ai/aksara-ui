@@ -6,12 +6,11 @@
   "files": [
     "fonts",
     "kata-icons.css",
-    "museo-sans-rounded.css",
-    "museo-sans.css"
+    "objective.css"
   ],
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <info@kata.ai>",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
   }

@@ -1,38 +1,24 @@
 # @aksara-ui/fonts
 
-> Font-stack used for Wicara.
+> Font-stack used in the Aksara Design System.
 
 ## Install
 
 ```sh
 # yarn
-$ yarn add @wicara/fonts
+$ yarn add @aksara-ui/fonts
 # npm
-$ npm i @wicara/fonts
+$ npm i @aksara-ui/fonts
 ```
 
 ## Usage
 
-We use two fonts in the Aksara Design Language: `Museo Sans`, and `Museo Sans Rounded`.
-To use these fonts within your app, import as follows:
+We use the `Objective` font in the Aksara Design System. To use these fonts within your app, import as follows:
 
 ```jsx
-// Museo Sans
-import '@aksara-ui/fonts/museo-sans.css';
-// Museo Sans Rounded
-import '@aksara-ui/fonts/museo-sans-rounded.css';
+import '@aksara-ui/fonts/objective.css';
 ```
 
-Note that these fonts are **not provided for free**. You should check if you have a license to use these fonts before installing this package.
+## Credits
 
-### Icon fonts.
-
-We also provided some icon sets. To use them, import as follows:
-
-```jsx
-import '@aksara-ui/fonts/kata-icons.css';
-```
-
-## License
-
-Please note that `@aksara-ui/fonts` has a different license from the rest. While most Wicara packages are released under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html), the assets in this package remain under our copyright.
+The Objective font is released by [Alex Slobzheninov](https://www.behance.net/slobzheninov) under the [SIL Open Font License, Version 1.1](./fonts/objective/OFL.txt).
