@@ -77,43 +77,11 @@ Read the [Storybook](https://wicara.now.sh/) for more examples.
 
 ## Fonts
 
-We use two fonts in the Aksara Design Language: `Museo Sans`, and `Museo Sans Rounded`.
-
-```sh
-# yarn
-$ yarn add @aksara-ui/fonts
-# npm
-$ npm i @aksara-ui/fonts
-```
-
-Note that these fonts are **not provided for free**. You should check if you have a license to use these fonts before installing this package.
-
-### Usage
-
-#### Body fonts
-
-To use these fonts within your app, import as follows:
-
-```jsx
-// Museo Sans
-import '@aksara-ui/fonts/museo-sans.css';
-// Museo Sans Rounded
-import '@aksara-ui/fonts/museo-sans-rounded.css';
-```
-
-#### Icon fonts
-
-We also provided some icon sets. To use them, import as follows:
-
-```jsx
-import '@aksara-ui/fonts/kata-icons.css';
-```
+Please read the [Fonts package README](packages/aksara-fonts/README.md) for guide on installing fonts.
 
 ## License
 
-This is a [monorepo](https://github.com/babel/babel/blob/master/doc/design/monorepo.md), which means different packages can have different licenses.
-
-By default, the root level of this repo, as well as the demo site, are licensed under the [Apache 2.0 license](LICENSE). While most components use the same license, please note that some packages (like our assets package) may use a different license. Any overriding licenses for each package will be mentioned in the `LICENSE` file located at the root of each package.
+All packages in this repoare released under the [Apache 2.0 license](LICENSE). Please note that some packages (like our fonts package) may contain third-party materials with different licences. Any third-party acknowledgements are outlined on the "Credits" section on each package's README.
 
 Copyright (c) 2018 Kata.ai and/or contributors. All rights reserved.
 

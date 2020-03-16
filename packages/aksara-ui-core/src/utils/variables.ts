@@ -241,7 +241,8 @@ export const systemFonts =
 
 export const fonts = {
   system: systemFonts,
-  brand: `'Barlow', ${systemFonts}`,
+  brand: `'Objective', ${systemFonts}`,
+  brandLegacy: `'Barlow', ${systemFonts}`,
   monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;",
 };
 

@@ -14,7 +14,7 @@ const SystemHeader: React.FC<SystemHeaderProps> = ({ title, subtitle }) => (
       <Box mb={64}>
         <AksaraLogo height={40} />
       </Box>
-      <Heading as="h1" scale={900} color="white" fontFamily="brand" fontWeight={600} maxWidth={500}>
+      <Heading as="h1" scale={900} color="white" fontFamily="brand" fontWeight={500} maxWidth={500} mb={0}>
         {title}
       </Heading>
       {typeof subtitle === 'string' ? (
