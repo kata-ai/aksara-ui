@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 // prettier-ignore
 const normalize = css`
-  /*! modern-normalize v0.6.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+  /* modern-normalize v0.6.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
   /*
   Document
