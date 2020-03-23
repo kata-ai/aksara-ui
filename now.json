@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["wicara.now.sh"],
+  "alias": ["wicara.now.sh", "aksara-ui.now.sh"],
   "builds": [
     {
       "src": "packages/aksara-ui-core/package.json",
