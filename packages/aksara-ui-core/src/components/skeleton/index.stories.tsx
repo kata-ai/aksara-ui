@@ -1,20 +1,26 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { Box } from '../../foundations';
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { Box, Stack } from '../../foundations';
+import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 
 import Skeleton from './components/Skeleton';
 import SkeletonBox from './components/SkeletonBox';
 
 const readme = require('./README.md');
 
-const story = storiesOf('Core|Components/Skeleton', module).addDecorator(SystemWrapper);
+export default {
+  title: 'Core|Components/Skeleton',
+  component: [Skeleton, SkeletonBox],
+  decorators: [SystemWrapper],
+  parameters: {
+    notes: { markdown: readme },
+  },
+};
 
-story.add(
-  'default',
-  () => (
-    <SystemBlock title="Skeleton" subtitle="Renders a loading state that mimics the wrapping component.">
+export const BasicExample = () => (
+  <SystemBlock title="Skeleton" subtitle="Renders a loading state that mimics the wrapping component.">
+    <SystemSubheading mb="xl">Basic Example</SystemSubheading>
+    <Stack spacing="xl">
       <ComponentBlock title="Inline">
         <Box mb="md">
           <Skeleton />
@@ -26,9 +32,6 @@ story.add(
       <ComponentBlock title="Box">
         <SkeletonBox style={{ height: 200 }} />
       </ComponentBlock>
-    </SystemBlock>
-  ),
-  {
-    notes: { markdown: readme },
-  }
+    </Stack>
+  </SystemBlock>
 );

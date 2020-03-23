@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { SystemWrapper, SystemBlock } from '../../../utils/storybook';
 
@@ -9,30 +8,29 @@ import { Card } from '../../../foundations';
 
 const readme = require('../README.md');
 
-const story = storiesOf('Core|Components/Popover', module).addDecorator(SystemWrapper);
-
-story.add(
-  'basic',
-  () => {
-    return (
-      <SystemBlock title="Popover" subtitle="Popover displays floating content in relation to a target.">
-        <Popover
-          trigger={
-            <Button block variant="primary">
-              Toggle Popover
-            </Button>
-          }
-        >
-          <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
-            This is a popover
-          </Card>
-        </Popover>
-      </SystemBlock>
-    );
+export default {
+  title: 'Core|Components/Popover',
+  component: Popover,
+  decorators: [SystemWrapper],
+  parameters: {
+    notes: { markdown: readme },
   },
-  {
-    notes: {
-      markdown: readme,
-    },
-  }
-);
+};
+
+export const BasicExample = () => {
+  return (
+    <SystemBlock title="Popover" subtitle="Popover displays floating content in relation to a target.">
+      <Popover
+        trigger={
+          <Button block variant="primary">
+            Toggle Popover
+          </Button>
+        }
+      >
+        <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
+          This is a popover
+        </Card>
+      </Popover>
+    </SystemBlock>
+  );
+};

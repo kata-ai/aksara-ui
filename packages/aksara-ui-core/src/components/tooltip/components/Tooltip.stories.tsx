@@ -1,14 +1,20 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../../utils/storybook';
+import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../../utils/storybook';
 import Tooltip from './Tooltip';
-import { Heading, Paragraph, Text, Box } from '../../../foundations';
+import { Heading, Paragraph, Text, Box, Stack } from '../../../foundations';
 import { Button } from '../../button';
 
 const readme = require('../README.md');
 
-const story = storiesOf('Core|Components/Tooltip', module).addDecorator(SystemWrapper);
+export default {
+  title: 'Core|Components/Tooltip',
+  component: Tooltip,
+  decorators: [SystemWrapper],
+  parameters: {
+    notes: { markdown: readme },
+  },
+};
 
 const TooltipCustomContent: React.FC = () => {
   return (
@@ -43,10 +49,10 @@ const TooltipLargeContent: React.FC = () => {
   );
 };
 
-story.add(
-  'default',
-  () => (
-    <SystemBlock title="Tooltip" subtitle="Provides additional descriptions to elements.">
+export const BasicExample = () => (
+  <SystemBlock title="Tooltip" subtitle="Provides additional descriptions to elements.">
+    <SystemSubheading mb="xl">Basic Example</SystemSubheading>
+    <Stack spacing="xl">
       <ComponentBlock title="Default (size small)">
         <Box display="flex" flexDirection="row" justifyContent="space-evenly" py="lg">
           <Box>
@@ -158,9 +164,6 @@ story.add(
           </Tooltip>
         </Box>
       </ComponentBlock>
-    </SystemBlock>
-  ),
-  {
-    notes: { markdown: readme },
-  }
+    </Stack>
+  </SystemBlock>
 );
