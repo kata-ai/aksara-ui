@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { AksaraProvider } from '../reset';
+import { AksaraProvider } from '../theme';
 import { Box } from '.';
 
 const readme = require('./README.md');
