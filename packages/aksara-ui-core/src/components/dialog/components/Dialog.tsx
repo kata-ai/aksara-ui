@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
+import { IconClose } from '@aksara-ui/icons';
 
 import { Portal, Card, FocusTrap } from '../../../foundations';
 import { IconButton } from '../../button';
@@ -193,7 +194,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
         >
           {!hideCloseButton && (
             <CloseButton type="button" aria-label="Close" variant="ghost" onClick={this.handleCloseSideSheet}>
-              <i className="icon-close" />
+              <IconClose aria-hidden fill="currentColor" />
             </CloseButton>
           )}
           {children}

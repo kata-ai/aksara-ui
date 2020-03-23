@@ -49,7 +49,7 @@ export const BasicExample = () => {
         </DialogContent>
         <DialogFooter>
           <Box display="flex" flexDirection="row-reverse">
-            <Button>Close</Button>
+            <Button onClick={() => setIsOpen(false)}>Close</Button>
           </Box>
         </DialogFooter>
       </Dialog>

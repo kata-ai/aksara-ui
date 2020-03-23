@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
+import { IconClose } from '@aksara-ui/icons';
 
 import { Portal, Box, Card, FocusTrap } from '../../../foundations';
 import { IconButton } from '../../button';
@@ -169,7 +170,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           <Card display="flex" flexDirection="column" elevation={4} borderRadius={0} width="500px" height="100vh">
             {!hideCloseButton && (
               <CloseButton type="button" aria-label="Close" variant="ghost" onClick={this.handleCloseSideSheet}>
-                <i className="icon-close" />
+                <IconClose aria-hidden fill="currentColor" />
               </CloseButton>
             )}
             {children}
