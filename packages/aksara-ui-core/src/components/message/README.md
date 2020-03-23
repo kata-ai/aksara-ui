@@ -1,4 +1,4 @@
-# Message
+# Blankslate
 
 > Banners are used to convey important information to users.
 

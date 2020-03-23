@@ -1,6 +1,6 @@
 # Blankslate
 
-> Used to inform users that some contents are unavailable.
+> Used to provide additional information when no dynamic content exists.
 
 A Blankslate is used to represent contents that are unavailable, or "non-ideal states". The [BlueprintJS](https://blueprintjs.com/docs/#core/components/non-ideal-state) documentation explains the kinds of non-ideal states that can be handled by a Blankslate component:
 
