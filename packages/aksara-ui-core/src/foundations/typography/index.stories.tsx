@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Heading, Text, Paragraph } from '.';
+import { Heading, Text, Paragraph, Anchor } from '.';
 import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
 import { Stack } from '../common';
 
@@ -68,6 +68,28 @@ export const Example = () => (
             corporations in Indonesia across different industries, including FMCG, Telecommunication, Banking &
             Financial Service, and Retail.
           </Paragraph>
+        </Stack>
+      </ComponentBlock>
+      <ComponentBlock title="Link" withBackground>
+        <Stack spacing="md">
+          <Anchor
+            display="block"
+            scale={400}
+            href="https://www.youtube.com/watch?v=wQ2YjYGqL8I"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            We are making AI technology accessible to everyone
+          </Anchor>
+          <Anchor
+            display="block"
+            scale={300}
+            href="https://www.youtube.com/watch?v=wQ2YjYGqL8I"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            We are making AI technology accessible to everyone
+          </Anchor>
         </Stack>
       </ComponentBlock>
     </Stack>

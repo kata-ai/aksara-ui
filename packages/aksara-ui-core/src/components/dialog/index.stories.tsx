@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Text, Paragraph, Stack, Box } from '../../foundations';
+import { Text, Paragraph, Stack, Box, Anchor } from '../../foundations';
 import { SystemWrapper, SystemBlock } from '../../utils/storybook';
 
 import Dialog from './components/Dialog';
@@ -39,9 +39,9 @@ export const BasicExample = () => {
             <Paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
               versuta.{' '}
-              <a href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
+              <Anchor href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
                 Quamquam tu hanc copiosiorem etiam soles dicere
-              </a>
+              </Anchor>
               . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
               doloris, divitiae, valitudo.
             </Paragraph>
@@ -73,9 +73,9 @@ export const WithFocusTrap = () => {
             <Paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
               versuta.{' '}
-              <a href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
+              <Anchor href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
                 Quamquam tu hanc copiosiorem etiam soles dicere
-              </a>
+              </Anchor>
               . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
               doloris, divitiae, valitudo.
             </Paragraph>
