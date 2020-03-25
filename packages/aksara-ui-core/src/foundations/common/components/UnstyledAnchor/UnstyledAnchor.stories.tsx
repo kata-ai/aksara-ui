@@ -1,8 +1,9 @@
 import * as React from 'react';
 
 import { SystemWrapper } from '../../../../utils/storybook';
-import { UnstyledAnchor } from '.';
 import { Box } from '../../../box';
+import { Anchor } from '../../../typography';
+import { UnstyledAnchor } from '.';
 
 const readme = require('../../README.md');
 
@@ -18,9 +19,9 @@ export default {
 
 export const Example = () => (
   <Box padding="sm">
-    <a href="https://www.youtube.com/watch?v=ORyw6TGLBvk" target="_blank" rel="noopener noreferrer">
+    <Anchor href="https://www.youtube.com/watch?v=ORyw6TGLBvk" target="_blank" rel="noopener noreferrer">
       I&apos;m an anchor!
-    </a>{' '}
+    </Anchor>{' '}
     <UnstyledAnchor href="https://www.youtube.com/watch?v=ORyw6TGLBvk" target="_blank" rel="noopener noreferrer">
       I&apos;m an unstyled anchor!
     </UnstyledAnchor>

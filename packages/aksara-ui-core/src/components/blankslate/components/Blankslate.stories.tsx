@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { SystemWrapper, SystemBlock } from '../../../utils/storybook';
 
-import { Paragraph } from '../../../foundations';
+import { Paragraph, Anchor } from '../../../foundations';
 import Blankslate from './Blankslate';
 
 const readme = require('../README.md');
@@ -24,7 +24,7 @@ export const BasicExample = () => (
     >
       <Paragraph color="grey07">
         Perform specific text analysis tasks, like detecting topics, extracting specific words, and more.{' '}
-        <a href="#">Learn more</a>
+        <Anchor href="#">Learn more</Anchor>
       </Paragraph>
     </Blankslate>
   </SystemBlock>
