@@ -14,14 +14,9 @@ const base = css`
   h3,
   h4,
   h5,
-  h6 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
-
+  h6,
   p {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin: 0;
   }
 
   body {
@@ -38,14 +33,6 @@ const base = css`
   img {
     display: block;
     max-width: 100%;
-  }
-
-  #root {
-    transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
-
-    &.pushed-legend-right {
-      transform: translateX(-280px);
-    }
   }
 
   .noscroll {
@@ -65,12 +52,6 @@ const base = css`
     height: 100%;
     min-height: 100vh;
     width: 100%;
-  }
-
-  .icon-middle {
-    &::before {
-      vertical-align: middle;
-    }
   }
 
   .drag-handle {
