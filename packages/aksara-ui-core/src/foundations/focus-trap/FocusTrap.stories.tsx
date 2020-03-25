@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { SystemWrapper, SystemBlock } from '../../utils/storybook';
 import FocusTrap from './FocusTrap';
+import { Paragraph, Anchor } from '../typography';
 
 const readme = require('./README.md');
 
@@ -20,29 +21,29 @@ export const Example = () => {
 
   return (
     <SystemBlock title="FocusTrap" subtitle="Helper component to support trapping tab focus inside a component.">
-      <p>
+      <Paragraph mb="md">
         Tubulo putas dicere? Erat enim Polemonis. Minime vero istorum quidem, inquit. Hic nihil fuit, quod quaereremus.{' '}
-        <a href="https://www.youtube.com/watch?v=mUGDxyG1kOI" target="_blank" rel="noopener noreferrer">
+        <Anchor href="https://www.youtube.com/watch?v=mUGDxyG1kOI" target="_blank" rel="noopener noreferrer">
           Est, ut dicis, inquit;
-        </a>{' '}
+        </Anchor>{' '}
         Iam contemni non poteris.{' '}
-      </p>
+      </Paragraph>
 
       <FocusTrap active={active}>
-        <p>
+        <Paragraph mb="md">
           Focus Lock: <strong>{active ? 'On' : 'Off'}</strong>
-        </p>
+        </Paragraph>
         <button type="button" onClick={() => setActive(!active)} style={{ marginBottom: '16px' }}>
           Toggle focus trap
         </button>
-        <p>
+        <Paragraph mb="md">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra versuta.{' '}
-          <a href="https://www.youtube.com/watch?v=lOiR7b6jumI" target="_blank" rel="noopener noreferrer">
+          <Anchor href="https://www.youtube.com/watch?v=lOiR7b6jumI" target="_blank" rel="noopener noreferrer">
             Quamquam tu hanc copiosiorem etiam soles dicere.
-          </a>{' '}
+          </Anchor>{' '}
           Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris,
           divitiae, valitudo;{' '}
-        </p>
+        </Paragraph>
       </FocusTrap>
     </SystemBlock>
   );
