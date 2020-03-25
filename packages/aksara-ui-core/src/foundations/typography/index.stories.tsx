@@ -70,7 +70,7 @@ export const Example = () => (
           </Paragraph>
         </Stack>
       </ComponentBlock>
-      <ComponentBlock title="Link" withBackground>
+      <ComponentBlock title="Anchor" withBackground>
         <Stack spacing="md">
           <Anchor
             display="block"
