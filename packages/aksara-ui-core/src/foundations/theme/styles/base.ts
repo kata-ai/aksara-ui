@@ -31,18 +31,8 @@ const base = css`
   }
 
   a {
-    color: ${colors.link};
+    color: inherit;
     text-decoration: none;
-
-    &:hover,
-    &:active {
-      color: ${colors['link-hover']};
-      text-decoration: underline;
-    }
-
-    &:visited {
-      color: ${colors['link-visited']};
-    }
   }
 
   img {
