@@ -16,14 +16,13 @@ describe('components/Button', () => {
     test('renders colors correctly by variant', () => {
       const { container } = render(<Button variant="primary">test button</Button>);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', colors.blue06);
-      expect(container.firstChild).toHaveStyleRule('color', colors.white);
+      expect(container.firstChild).toMatchSnapshot();
     });
 
     test('renders block buttons correctly', () => {
       const { container } = render(<Button block>test button</Button>);
 
-      expect(container.firstChild).toHaveStyleRule('display', 'block');
+      expect(container.firstChild).toMatchSnapshot();
     });
 
     test('renders icons correctly', () => {
@@ -55,7 +54,7 @@ describe('components/Button', () => {
     test('renders block buttons correctly', () => {
       const { container } = render(<OutlineButton block>test button</OutlineButton>);
 
-      expect(container.firstChild).toHaveStyleRule('display', 'block');
+      expect(container.firstChild).toHaveStyle('display: block');
     });
 
     test('renders icons correctly', () => {
@@ -111,7 +110,7 @@ describe('components/Button', () => {
         </IconButton>
       );
 
-      expect(container.firstChild).toHaveStyleRule('color', colors.red05);
+      expect(container.firstChild).toHaveStyle(`color: ${colors.red05}`);
     });
   });
 });

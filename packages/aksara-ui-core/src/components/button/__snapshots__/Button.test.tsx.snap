@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Button <Button /> renders block buttons correctly 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  border: 1px solid transparent;
+  display: block;
+  width: 100%;
+  position: relative;
+  color: #313f4e;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.c0:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.c0:hover,
+.c0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:focus {
+  outline: 0px;
+}
+
+.c0:not(:disabled):not(.disabled):hover,
+.c0:not(:disabled):not(.disabled).hover,
+.c0:not(:disabled):not(.disabled):focus,
+.c0:not(:disabled):not(.disabled).focus {
+  background-color: #ebedef;
+  color: #004793;
+}
+
+.c0:not(:disabled):not(.disabled):focus,
+.c0:not(:disabled):not(.disabled).focus,
+.c0:not(:disabled):not(.disabled):active,
+.c0:not(:disabled):not(.disabled).active {
+  background-color: #ebedef;
+  color: #004793;
+  border-color: #006fe6;
+  box-shadow: 0 0 2px 1px rgba(0,111,230,0.4),0 0 0 1px #006fe6;
+}
+
+.c0:disabled,
+.c0.disabled {
+  border-color: #d7dbdf;
+  background-color: #d7dbdf;
+  color: #ffffff;
+}
+
+<button
+  class="c0"
+  display="block"
+  width="100%"
+>
+  test button
+</button>
+`;
+
+exports[`components/Button <Button /> renders colors correctly by variant 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  border: 1px solid transparent;
+  display: inline-block;
+  position: relative;
+  background-color: #006fe6;
+  color: #fff;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.c0:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.c0:hover,
+.c0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:focus {
+  outline: 0px;
+}
+
+.c0:not(:disabled):not(.disabled):hover,
+.c0:not(:disabled):not(.disabled).hover,
+.c0:not(:disabled):not(.disabled):focus,
+.c0:not(:disabled):not(.disabled).focus {
+  background-color: #005bbd;
+  color: #fff;
+}
+
+.c0:not(:disabled):not(.disabled):focus,
+.c0:not(:disabled):not(.disabled).focus,
+.c0:not(:disabled):not(.disabled):active,
+.c0:not(:disabled):not(.disabled).active {
+  background-color: #004793;
+  border-color: #006fe6;
+  box-shadow: 0 0 2px 1px rgba(0,111,230,0.4),0 0 0 1px #006fe6;
+}
+
+.c0:disabled,
+.c0.disabled {
+  border-color: #d7dbdf;
+  background-color: #d7dbdf;
+  color: #ffffff;
+}
+
+<button
+  class="c0"
+  display="inline-block"
+>
+  test button
+</button>
+`;

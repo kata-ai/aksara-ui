@@ -16,7 +16,7 @@ describe('components/Button', () => {
     test('renders colors correctly by variant', () => {
       const { container } = render(<LinkButton variant="primary">test button</LinkButton>);
 
-      expect(container.firstChild).toHaveStyleRule('color', colors.blue06);
+      expect(container.firstChild).toHaveStyle(`color: ${colors.blue06}`);
     });
 
     test('renders icons correctly', () => {
