@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import { colors } from '../../../utils';
 import Badge from './Badge';
 
 describe('compoents/Badge', () => {
@@ -15,8 +14,7 @@ describe('compoents/Badge', () => {
     test('renders with additional variants', () => {
       const { container } = render(<Badge variant="green">test badge</Badge>);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', colors.green03);
-      expect(container.firstChild).toHaveStyleRule('color', colors.grey08);
+      expect(container.firstChild).toMatchSnapshot();
     });
   });
 });

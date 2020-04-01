@@ -10,8 +10,7 @@ describe('components/Banner', () => {
     test('renders correctly', () => {
       const { container } = render(<Message state="success" message="test banner" />);
 
-      expect(container.firstChild).toHaveStyleRule('background-color', 'grey01');
-      expect(container.firstChild).toHaveStyleRule('color', 'green07');
+      expect(container.firstChild).toMatchSnapshot();
     });
 
     test('renders close button with onClose', () => {

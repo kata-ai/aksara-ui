@@ -19,7 +19,8 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es2015"
+    "target": "es2015",
+    "typeRoots": ["@types", "node_modules/@types", "../../node_modules/@types"]
   },
   "references": [
     {
