@@ -14,9 +14,11 @@ import {
   InputAddon,
   InputLeftElement,
   InputRightElement,
+  InputCheckbox,
+  InputCheckboxLabel,
+  InputRadio,
+  InputRadioLabel,
 } from './components';
-import { InputCheckbox, InputCheckboxLabel } from './components/InputCheckbox';
-import { InputRadioLabel, InputRadio } from './components/InputRadio';
 
 const readme = require('./README.md');
 
