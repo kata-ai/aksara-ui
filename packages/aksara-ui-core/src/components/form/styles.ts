@@ -146,3 +146,150 @@ export const InputBase = styled('input')<InputBaseProps>`
   ${grid}
   ${space}
 `;
+
+export const CheckboxBase = styled('input')<Omit<InputBaseProps, 'inputSize' | 'addon'>>`
+  @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    --active: ${colors.blue08};
+    --active-inner: ${colors.grey01};
+    --focus: 2px ${colors.blue06};
+    --border: ${colors.grey04};
+    --border-hover: ${colors.grey06};
+    --background: ${colors.grey01};
+    --disabled: ${colors.grey03};
+    --disabled-inner: ${colors.grey05};
+
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 1px solid var(--bc, var(--border));
+    border-radius: 2px;
+    background: var(--b, var(--background));
+
+    &::after {
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+
+    &::after {
+      width: 6px;
+      height: 10px;
+      border: 2px solid var(--active-inner);
+      border-top: 0;
+      border-left: 0;
+      left: 4px;
+      top: 1px;
+      transform: rotate(var(--r, 20deg));
+    }
+
+    &:checked {
+      --r: 43deg;
+      --b: var(--active);
+      --bc: var(--active);
+    }
+
+    &:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: 0.9;
+
+      &:checked {
+        --b: var(--disabled-inner);
+        --bc: var(--border);
+      }
+    }
+
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 var(--focus);
+    }
+  }
+`;
+
+export const RadioBase = styled('input')<Omit<InputBaseProps, 'inputSize' | 'addon'>>`
+  @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    --active: ${colors.grey01};
+    --active-inner: ${colors.blue08};
+    --focus: 2px ${colors.blue06};
+    --border: ${colors.grey04};
+    --border-hover: ${colors.grey06};
+    --background: ${colors.grey01};
+    --disabled: ${colors.grey03};
+    --disabled-inner: ${colors.grey05};
+
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 1px solid var(--bc, var(--border));
+    border-radius: 50%;
+    background: var(--b, var(--background));
+
+    &::after {
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+
+    &::after {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--active-inner);
+      opacity: 0;
+      transform: scale(var(--s, 0.7));
+    }
+
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+    }
+
+    &:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: 0.9;
+
+      &:checked {
+        --b: var(--disabled-inner);
+        --bc: var(--border);
+      }
+    }
+
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+
+    &:focus {
+      border-color: var(--active-inner);
+    }
+  }
+`;

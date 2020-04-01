@@ -15,6 +15,8 @@ import {
   InputLeftElement,
   InputRightElement,
 } from './components';
+import { InputCheckbox, InputCheckboxLabel } from './components/InputCheckbox';
+import { InputRadioLabel, InputRadio } from './components/InputRadio';
 
 const readme = require('./README.md');
 
@@ -54,6 +56,30 @@ export const BasicExample = () => (
           <Box>
             <FormLabel htmlFor="textarea">Text area</FormLabel>
             <InputTextarea id="textarea" name="textarea" rows={4} placeholder="Type here..." />
+          </Box>
+          <Box>
+            <InputCheckboxLabel htmlFor="checkbox">
+              <InputCheckbox id="checkbox" name="checkbox" />
+              <Text scale={300} ml="xs">
+                Checkbox
+              </Text>
+            </InputCheckboxLabel>
+          </Box>
+          <Box>
+            <InputRadioLabel htmlFor="radio">
+              <InputRadio id="radio" name="radio" value="r1" />
+              <Text scale={300} ml="xs">
+                Radio 1
+              </Text>
+            </InputRadioLabel>
+          </Box>
+          <Box>
+            <InputRadioLabel htmlFor="radio">
+              <InputRadio id="radio" name="radio" value="r2" />
+              <Text scale={300} ml="xs">
+                Radio 2
+              </Text>
+            </InputRadioLabel>
           </Box>
         </Stack>
       </ComponentBlock>
