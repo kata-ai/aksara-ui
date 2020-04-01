@@ -66,16 +66,16 @@ export const BasicExample = () => (
             </InputCheckboxLabel>
           </Box>
           <Box>
-            <InputRadioLabel htmlFor="radio">
-              <InputRadio id="radio" name="radio" value="r1" />
+            <InputRadioLabel htmlFor="r1">
+              <InputRadio id="r1" name="radio" value="r1" />
               <Text scale={300} ml="xs">
                 Radio 1
               </Text>
             </InputRadioLabel>
           </Box>
           <Box>
-            <InputRadioLabel htmlFor="radio">
-              <InputRadio id="radio" name="radio" value="r2" />
+            <InputRadioLabel htmlFor="r2">
+              <InputRadio id="r2" name="radio" value="r2" />
               <Text scale={300} ml="xs">
                 Radio 2
               </Text>

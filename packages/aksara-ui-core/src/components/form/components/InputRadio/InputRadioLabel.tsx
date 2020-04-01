@@ -15,7 +15,7 @@ const InputRadioLabel: React.FC<InputRadioLabelProps> = ({ className, style, chi
   return (
     <LabelBase
       as="label"
-      display="flex"
+      display="inline-flex"
       flexDirection="row"
       alignItems="center"
       className={className}

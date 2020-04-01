@@ -219,6 +219,14 @@ export const CheckboxBase = styled('input')<Omit<InputBaseProps, 'inputSize' | '
     &:focus {
       box-shadow: 0 0 0 var(--focus);
     }
+
+    &:after {
+      opacity: var(--o, 0);
+    }
+
+    &:checked {
+      --o: 1;
+    }
   }
 `;
 
@@ -261,12 +269,13 @@ export const RadioBase = styled('input')<Omit<InputBaseProps, 'inputSize' | 'add
       border-radius: 50%;
       background: var(--active-inner);
       opacity: 0;
-      transform: scale(var(--s, 0.7));
+      top: 3px;
+      left: 3px;
     }
 
     &:checked {
       --b: var(--active);
-      --bc: var(--active);
+      --bc: var(--active-inner);
     }
 
     &:disabled {
@@ -290,6 +299,14 @@ export const RadioBase = styled('input')<Omit<InputBaseProps, 'inputSize' | 'add
 
     &:focus {
       border-color: var(--active-inner);
+    }
+
+    &:after {
+      opacity: var(--o, 0);
+    }
+
+    &:checked {
+      --o: 1;
     }
   }
 `;

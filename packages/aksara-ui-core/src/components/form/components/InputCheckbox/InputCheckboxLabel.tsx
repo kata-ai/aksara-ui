@@ -15,7 +15,7 @@ const InputCheckboxLabel: React.FC<InputCheckboxLabelProps> = ({ className, styl
   return (
     <LabelBase
       as="label"
-      display="flex"
+      display="inline-flex"
       flexDirection="row"
       alignItems="center"
       className={className}
