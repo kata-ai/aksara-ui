@@ -1,31 +1,9 @@
 import styled, { css } from 'styled-components';
-import {
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  flexbox,
-  FlexboxProps,
-  grid,
-  GridProps,
-  space,
-  SpaceProps,
-  variant,
-} from 'styled-system';
+import { layout, position, flexbox, grid, space, variant } from 'styled-system';
 
 import { inputThemeBase, inputThemeHover, inputThemeFocus } from './themes/input';
 import { colors, componentStyles } from '../../utils';
-
-export type InputSizes = 40 | 48;
-
-export interface InputBaseProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
-  /** True if this text input has an addon style */
-  addon?: boolean;
-  /** True if the input has errors. */
-  inputVariant?: 'base' | 'errors';
-  /** Form size */
-  inputSize?: InputSizes;
-}
+import { InputBaseProps, CheckRadioBaseProps } from './types';
 
 const WithAddonStyles = css`
   position: relative;
@@ -147,7 +125,7 @@ export const InputBase = styled('input')<InputBaseProps>`
   ${space}
 `;
 
-export const CheckboxBase = styled('input')<Omit<InputBaseProps, 'inputSize' | 'addon'>>`
+export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
   @supports (-webkit-appearance: none) or (-moz-appearance: none) {
     --active: ${colors.blue08};
     --active-inner: ${colors.grey01};
@@ -228,9 +206,15 @@ export const CheckboxBase = styled('input')<Omit<InputBaseProps, 'inputSize' | '
       --o: 1;
     }
   }
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
 `;
 
-export const RadioBase = styled('input')<Omit<InputBaseProps, 'inputSize' | 'addon'>>`
+export const RadioBase = styled('input')<CheckRadioBaseProps>`
   @supports (-webkit-appearance: none) or (-moz-appearance: none) {
     --active: ${colors.grey01};
     --active-inner: ${colors.blue08};
@@ -309,4 +293,10 @@ export const RadioBase = styled('input')<Omit<InputBaseProps, 'inputSize' | 'add
       --o: 1;
     }
   }
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
 `;

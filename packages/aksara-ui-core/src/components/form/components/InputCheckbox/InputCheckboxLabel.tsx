@@ -1,11 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Box, BoxProps } from '../../../../foundations';
+import { WithStylesProps } from '../../types';
 
-export interface InputCheckboxLabelProps extends BoxProps, React.LabelHTMLAttributes<HTMLLabelElement> {
-  className?: string;
-  style?: React.CSSProperties;
-}
+export type InputCheckboxLabelProps = BoxProps & React.LabelHTMLAttributes<HTMLLabelElement> & WithStylesProps;
 
 const LabelBase = styled(Box)`
   cursor: pointer;
