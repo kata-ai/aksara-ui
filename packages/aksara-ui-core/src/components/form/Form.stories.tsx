@@ -305,7 +305,7 @@ export const BasicExample = () => (
         gridGap="24px"
       >
         <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={200}>
+          <Heading as="h4" scale={200} mb="md">
             Medium (40px)
           </Heading>
           <Box display="flex" flexDirection="column">
@@ -335,7 +335,7 @@ export const BasicExample = () => (
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={200}>
+          <Heading as="h4" scale={200} mb="md">
             Large (48px)
           </Heading>
           <Box display="flex" flexDirection="column">
