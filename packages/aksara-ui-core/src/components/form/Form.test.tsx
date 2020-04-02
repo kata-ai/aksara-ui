@@ -91,11 +91,11 @@ describe('components/Form', () => {
     expect(input).toBeInTheDocument();
   });
 
-  test('renders checkbox input correctly', () => {
+  test('renders radio input correctly', () => {
     const { getByTestId } = render(
-      <InputRadioLabel htmlFor="checkbox">
-        <InputRadio id="checkbox" data-testid="radio-input" name="checkbox" />
-        Checkbox
+      <InputRadioLabel htmlFor="radio">
+        <InputRadio id="radio" data-testid="radio-input" name="radio" />
+        Radio
       </InputRadioLabel>
     );
 
