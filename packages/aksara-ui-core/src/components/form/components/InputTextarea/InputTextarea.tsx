@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { InputBaseProps, TextAreaBase } from '../../styles';
+import { TextAreaBase } from '../../styles';
+import { InputBaseProps } from '../../types';
 
 export interface InputTextareaProps extends InputBaseProps, React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /** True if this text input has an addon style */
