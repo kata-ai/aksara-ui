@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { InputBase, InputSizes } from '../../styles';
+import { InputBase } from '../../styles';
+import { InputSizes } from '../../types';
 
 export interface InputTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /** True if this text input has an addon style */
