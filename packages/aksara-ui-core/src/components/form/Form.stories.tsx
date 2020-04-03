@@ -372,6 +372,22 @@ export const AdditionalComponents = () => (
         <InputMessage variant="error">Please enter an email address.</InputMessage>
       </FormGroup>
       <FormGroup>
+        <InputCheckboxLabel htmlFor="checkbox">
+          <InputCheckbox id="checkbox" name="checkbox" errors />
+          <Text scale={300} ml="xs">
+            Checkbox (Error)
+          </Text>
+        </InputCheckboxLabel>
+      </FormGroup>
+      <FormGroup>
+        <InputCheckboxLabel htmlFor="checkbox2">
+          <InputCheckbox id="checkbox2" name="checkbox2" disabled />
+          <Text scale={300} ml="xs">
+            Checkbox (Disabled)
+          </Text>
+        </InputCheckboxLabel>
+      </FormGroup>
+      <FormGroup>
         <FormLabel htmlFor="email_dummy">Confirm Password</FormLabel>
         <InputGroup>
           <InputLeftElement>

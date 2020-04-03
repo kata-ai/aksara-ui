@@ -4,6 +4,7 @@ import { layout, position, flexbox, grid, space, variant } from 'styled-system';
 import { inputThemeBase, inputThemeHover, inputThemeFocus } from './themes/input';
 import { colors, componentStyles } from '../../utils';
 import { InputBaseProps, CheckRadioBaseProps } from './types';
+import { checkboxThemeBase, checkboxThemeChecked, checkboxThemeHover } from './themes/checkbox';
 
 const WithAddonStyles = css`
   position: relative;
@@ -139,9 +140,13 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
     -webkit-appearance: none;
     -moz-appearance: none;
     outline: none;
-    border: 1px solid var(--bc, ${colors.grey04});
+    border: 1px solid transparent;
     border-radius: 2px;
-    background: var(--b, ${colors.grey01});
+
+    ${variant({
+      prop: 'inputVariant',
+      variants: checkboxThemeBase,
+    })}
 
     &::after {
       content: '';
@@ -159,25 +164,31 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
 
     &:checked {
       --r: 43deg;
-      --b: ${colors.blue08};
-      --bc: ${colors.blue08};
+
+      ${variant({
+        prop: 'inputVariant',
+        variants: checkboxThemeChecked,
+      })}
     }
 
     &:disabled {
-      --b: ${colors.grey03};
+      background-color: ${colors.grey03};
       cursor: not-allowed;
       opacity: 0.9;
 
       &:checked {
-        --b: ${colors.grey05};
-        --bc: ${colors.grey04};
+        background-color:${colors.grey05};
+        border-color: ${colors.grey04};
       }
     }
 
     &:hover {
       &:not(:checked) {
         &:not(:disabled) {
-          --bc: ${colors.grey06};
+          ${variant({
+            prop: 'inputVariant',
+            variants: checkboxThemeHover,
+          })}
         }
       }
     }
