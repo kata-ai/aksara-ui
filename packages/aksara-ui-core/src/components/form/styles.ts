@@ -43,6 +43,7 @@ export const TextAreaBase = styled('textarea')<InputBaseProps>`
     background-color: ${colors.grey03};
     color: ${colors.grey06};
     border-color: ${colors.grey04};
+    cursor: not-allowed;
   }
 
   &:not(:disabled):not(.disabled) {
@@ -99,6 +100,7 @@ export const InputBase = styled('input')<InputBaseProps>`
     background-color: ${colors.grey03};
     color: ${colors.grey06};
     border-color: ${colors.grey04};
+    cursor: not-allowed;
   }
 
   &:not(:disabled):not(.disabled) {
@@ -127,15 +129,6 @@ export const InputBase = styled('input')<InputBaseProps>`
 
 export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
   @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-    --active: ${colors.blue08};
-    --active-inner: ${colors.grey01};
-    --focus: 2px ${colors.blue06};
-    --border: ${colors.grey04};
-    --border-hover: ${colors.grey06};
-    --background: ${colors.grey01};
-    --disabled: ${colors.grey03};
-    --disabled-inner: ${colors.grey05};
-
     display: inline-block;
     position: relative;
     vertical-align: top;
@@ -146,56 +139,51 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
     -webkit-appearance: none;
     -moz-appearance: none;
     outline: none;
-    border: 1px solid var(--bc, var(--border));
+    border: 1px solid var(--bc, ${colors.grey04});
     border-radius: 2px;
-    background: var(--b, var(--background));
+    background: var(--b, ${colors.grey01});
 
     &::after {
       content: '';
       display: block;
-      left: 0;
-      top: 0;
       position: absolute;
-    }
-
-    &::after {
+      top: 1px;
+      left: 4px;
       width: 6px;
       height: 10px;
-      border: 2px solid var(--active-inner);
+      border: 2px solid ${colors.grey01};
       border-top: 0;
       border-left: 0;
-      left: 4px;
-      top: 1px;
       transform: rotate(var(--r, 20deg));
     }
 
     &:checked {
       --r: 43deg;
-      --b: var(--active);
-      --bc: var(--active);
+      --b: ${colors.blue08};
+      --bc: ${colors.blue08};
     }
 
     &:disabled {
-      --b: var(--disabled);
+      --b: ${colors.grey03};
       cursor: not-allowed;
       opacity: 0.9;
 
       &:checked {
-        --b: var(--disabled-inner);
-        --bc: var(--border);
+        --b: ${colors.grey05};
+        --bc: ${colors.grey04};
       }
     }
 
     &:hover {
       &:not(:checked) {
         &:not(:disabled) {
-          --bc: var(--border-hover);
+          --bc: ${colors.grey06};
         }
       }
     }
 
     &:focus {
-      box-shadow: 0 0 0 var(--focus);
+      box-shadow: 0 0 0 2px ${colors.blue06};
     }
 
     &:after {
@@ -218,7 +206,6 @@ export const RadioBase = styled('input')<CheckRadioBaseProps>`
   @supports (-webkit-appearance: none) or (-moz-appearance: none) {
     --active: ${colors.grey01};
     --active-inner: ${colors.blue08};
-    --focus: 2px ${colors.blue06};
     --border: ${colors.grey04};
     --border-hover: ${colors.grey06};
     --background: ${colors.grey01};
@@ -242,19 +229,14 @@ export const RadioBase = styled('input')<CheckRadioBaseProps>`
     &::after {
       content: '';
       display: block;
-      left: 0;
-      top: 0;
       position: absolute;
-    }
-
-    &::after {
+      top: 3px;
+      left: 3px;
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: var(--active-inner);
       opacity: 0;
-      top: 3px;
-      left: 3px;
     }
 
     &:checked {
