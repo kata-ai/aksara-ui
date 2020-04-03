@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/core",
-  "version": "1.0.0-canary.12",
+  "version": "1.0.0-canary.13",
   "description": "Aksara UI Core. The component library powering Kata Platform.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
@@ -49,7 +49,7 @@
     "styled-components": "^4.1.0 || ^5.0.0"
   },
   "devDependencies": {
-    "@aksara-ui/icons": "^1.0.0-canary.3",
+    "@aksara-ui/icons": "^1.0.0-canary.4",
     "@storybook/addon-a11y": "5.3.18",
     "@storybook/addon-actions": "5.3.18",
     "@storybook/addon-knobs": "5.3.18",
