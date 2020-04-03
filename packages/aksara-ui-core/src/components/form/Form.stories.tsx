@@ -14,6 +14,10 @@ import {
   InputAddon,
   InputLeftElement,
   InputRightElement,
+  InputCheckbox,
+  InputCheckboxLabel,
+  InputRadio,
+  InputRadioLabel,
 } from './components';
 
 const readme = require('./README.md');
@@ -54,6 +58,30 @@ export const BasicExample = () => (
           <Box>
             <FormLabel htmlFor="textarea">Text area</FormLabel>
             <InputTextarea id="textarea" name="textarea" rows={4} placeholder="Type here..." />
+          </Box>
+          <Box>
+            <InputCheckboxLabel htmlFor="checkbox">
+              <InputCheckbox id="checkbox" name="checkbox" />
+              <Text scale={300} ml="xs">
+                Checkbox
+              </Text>
+            </InputCheckboxLabel>
+          </Box>
+          <Box>
+            <InputRadioLabel htmlFor="r1">
+              <InputRadio id="r1" name="radio" value="r1" />
+              <Text scale={300} ml="xs">
+                Radio 1
+              </Text>
+            </InputRadioLabel>
+          </Box>
+          <Box>
+            <InputRadioLabel htmlFor="r2">
+              <InputRadio id="r2" name="radio" value="r2" />
+              <Text scale={300} ml="xs">
+                Radio 2
+              </Text>
+            </InputRadioLabel>
           </Box>
         </Stack>
       </ComponentBlock>
@@ -277,7 +305,7 @@ export const BasicExample = () => (
         gridGap="24px"
       >
         <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={200}>
+          <Heading as="h4" scale={200} mb="md">
             Medium (40px)
           </Heading>
           <Box display="flex" flexDirection="column">
@@ -307,7 +335,7 @@ export const BasicExample = () => (
           </Box>
         </Box>
         <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={200}>
+          <Heading as="h4" scale={200} mb="md">
             Large (48px)
           </Heading>
           <Box display="flex" flexDirection="column">
@@ -342,6 +370,22 @@ export const AdditionalComponents = () => (
         <FormLabel htmlFor="email_dummy">Email Address</FormLabel>
         <InputText id="email_dummy" name="email_dummy" errors placeholder="Type here..." />
         <InputMessage variant="error">Please enter an email address.</InputMessage>
+      </FormGroup>
+      <FormGroup>
+        <InputCheckboxLabel htmlFor="checkbox">
+          <InputCheckbox id="checkbox" name="checkbox" errors />
+          <Text scale={300} ml="xs">
+            Checkbox (Error)
+          </Text>
+        </InputCheckboxLabel>
+      </FormGroup>
+      <FormGroup>
+        <InputCheckboxLabel htmlFor="checkbox2">
+          <InputCheckbox id="checkbox2" name="checkbox2" disabled />
+          <Text scale={300} ml="xs">
+            Checkbox (Disabled)
+          </Text>
+        </InputCheckboxLabel>
       </FormGroup>
       <FormGroup>
         <FormLabel htmlFor="email_dummy">Confirm Password</FormLabel>

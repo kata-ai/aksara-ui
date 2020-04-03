@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { InputSizes } from '../../styles';
 import { InputText, InputTextProps } from '../InputText';
 import { InputLeftElement, InputRightElement } from '../InputElement';
+import { InputSizes } from '../../types';
 
 export interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Additional CSS classes to give to the component. */

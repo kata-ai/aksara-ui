@@ -1,6 +1,18 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { FormGroup, FormLabel, InputText, InputTextarea, InputGroup, InputAddon, InputMessage } from './components';
+import {
+  FormGroup,
+  FormLabel,
+  InputText,
+  InputTextarea,
+  InputGroup,
+  InputAddon,
+  InputMessage,
+  InputCheckboxLabel,
+  InputCheckbox,
+  InputRadioLabel,
+  InputRadio,
+} from './components';
 
 describe('components/Form', () => {
   test('renders standard text input correctly', () => {
@@ -65,5 +77,29 @@ describe('components/Form', () => {
 
     const addon = getByTestId('input-addon');
     expect(addon).toHaveTextContent('addon text');
+  });
+
+  test('renders checkbox input correctly', () => {
+    const { getByTestId } = render(
+      <InputCheckboxLabel htmlFor="checkbox">
+        <InputCheckbox id="checkbox" data-testid="checkbox-input" name="checkbox" />
+        Checkbox
+      </InputCheckboxLabel>
+    );
+
+    const input = getByTestId('checkbox-input');
+    expect(input).toBeInTheDocument();
+  });
+
+  test('renders radio input correctly', () => {
+    const { getByTestId } = render(
+      <InputRadioLabel htmlFor="radio">
+        <InputRadio id="radio" data-testid="radio-input" name="radio" />
+        Radio
+      </InputRadioLabel>
+    );
+
+    const input = getByTestId('radio-input');
+    expect(input).toBeInTheDocument();
   });
 });

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { InputSizes } from '../../styles';
 import { Box } from '../../../../foundations';
 import { colors } from '../../../../utils';
+import { InputSizes } from '../../types';
 
 export interface InputElementBaseProps {
   /**
