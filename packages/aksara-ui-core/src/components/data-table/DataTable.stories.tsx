@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { SystemWrapper, SystemBlock, SystemSubheading, ComponentBlock } from '../../utils/storybook';
-import { Stack } from '../../foundations';
+import { Stack, Box, Heading } from '../../foundations';
 import {
   Table,
   TableContainer,
@@ -32,33 +32,61 @@ export const BasicExample = () => {
     >
       <Stack spacing="xl">
         <SystemSubheading>Default Theme</SystemSubheading>
-        <ComponentBlock title="Basic Example">
-          <TableContainer>
-            <Table>
-              <TableHead>
-                <TableHeadRow>
-                  <TableHeaderCell>Column</TableHeaderCell>
-                  <TableHeaderCell>Column</TableHeaderCell>
-                  <TableHeaderCell>Column</TableHeaderCell>
-                  <TableHeaderCell>Column</TableHeaderCell>
-                </TableHeadRow>
-              </TableHead>
-              <TableBody>
-                <TableBodyRow>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                </TableBodyRow>
-                <TableBodyRow>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                  <TableBodyCell>Cell Item</TableBodyCell>
-                </TableBodyRow>
-              </TableBody>
-            </Table>
-          </TableContainer>
+        <ComponentBlock title="Base">
+          <Box mt="lg">
+            <Heading scale={300} mb="md">
+              With Header
+            </Heading>
+            <TableContainer>
+              <Table>
+                <TableHead>
+                  <TableHeadRow>
+                    <TableHeaderCell>Column</TableHeaderCell>
+                    <TableHeaderCell>Column</TableHeaderCell>
+                    <TableHeaderCell>Column</TableHeaderCell>
+                    <TableHeaderCell>Column</TableHeaderCell>
+                  </TableHeadRow>
+                </TableHead>
+                <TableBody>
+                  <TableBodyRow>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                  </TableBodyRow>
+                  <TableBodyRow>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                  </TableBodyRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
+          <Box mt="lg">
+            <Heading scale={300} mb="md">
+              Headless
+            </Heading>
+            <TableContainer>
+              <Table>
+                <TableBody>
+                  <TableBodyRow>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                  </TableBodyRow>
+                  <TableBodyRow>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                    <TableBodyCell>Cell Item</TableBodyCell>
+                  </TableBodyRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
         </ComponentBlock>
       </Stack>
     </SystemBlock>
