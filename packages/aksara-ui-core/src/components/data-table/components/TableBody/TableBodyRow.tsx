@@ -7,8 +7,10 @@ const TableBodyRow = styled('tr')`
     background-color: ${themeGet('colors.grey02', themeProps.colors.grey02)};
   }
 
-  > td {
-    border-bottom: 1px solid ${themeGet('colors.grey03', themeProps.colors.grey03)};
+  :not(:last-of-type) {
+    > td {
+      border-bottom: 1px solid ${themeGet('colors.grey03', themeProps.colors.grey03)};
+    }
   }
 `;
 

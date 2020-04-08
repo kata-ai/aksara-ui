@@ -4,7 +4,6 @@ import { themeProps } from '../../../../Theme';
 
 const Table = styled('table')`
   width: 100%;
-  border-collapse: collapse;
   border-spacing: 0;
   border: 1px solid ${themeGet('colors.grey04', themeProps.colors.grey04)};
   border-radius: 4px;
