@@ -14,7 +14,9 @@ const TableBodyText = styled(Text)``;
 const TableBodyCell: React.FC<TableBodyCellProps> = ({ className, style, children, ...rest }) => {
   return (
     <TableBodyRoot className={className} style={style} px="md" py="md" {...rest}>
-      <TableBodyText scale={300}>{children}</TableBodyText>
+      <TableBodyText scale={200} fontWeight={600}>
+        {children}
+      </TableBodyText>
     </TableBodyRoot>
   );
 };
