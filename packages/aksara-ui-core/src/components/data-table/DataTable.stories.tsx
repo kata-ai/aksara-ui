@@ -7,7 +7,7 @@ import {
   TableContainer,
   TableHead,
   TableHeadRow,
-  TableHeaderCell,
+  TableHeadCell,
   TableBody,
   TableBodyRow,
   TableBodyCell,
@@ -41,10 +41,10 @@ export const BasicExample = () => {
               <Table>
                 <TableHead>
                   <TableHeadRow>
-                    <TableHeaderCell>Column</TableHeaderCell>
-                    <TableHeaderCell>Column</TableHeaderCell>
-                    <TableHeaderCell>Column</TableHeaderCell>
-                    <TableHeaderCell>Column</TableHeaderCell>
+                    <TableHeadCell>Column</TableHeadCell>
+                    <TableHeadCell>Column</TableHeadCell>
+                    <TableHeadCell>Column</TableHeadCell>
+                    <TableHeadCell>Column</TableHeadCell>
                   </TableHeadRow>
                 </TableHead>
                 <TableBody>

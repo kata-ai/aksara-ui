@@ -5,7 +5,7 @@ import {
   Table,
   TableHead,
   TableHeadRow,
-  TableHeaderCell,
+  TableHeadCell,
   TableBody,
   TableBodyRow,
   TableBodyCell,
@@ -18,10 +18,10 @@ describe('components/DataTable', () => {
         <Table>
           <TableHead>
             <TableHeadRow>
-              <TableHeaderCell>Column</TableHeaderCell>
-              <TableHeaderCell>Column</TableHeaderCell>
-              <TableHeaderCell>Column</TableHeaderCell>
-              <TableHeaderCell>Column</TableHeaderCell>
+              <TableHeadCell>Column</TableHeadCell>
+              <TableHeadCell>Column</TableHeadCell>
+              <TableHeadCell>Column</TableHeadCell>
+              <TableHeadCell>Column</TableHeadCell>
             </TableHeadRow>
           </TableHead>
           <TableBody>

@@ -15,7 +15,7 @@ const TableHeaderText = styled(Text)`
   text-transform: uppercase;
 `;
 
-const TableHeaderCell: React.FC<TableHeaderCellProps> = ({ className, style, children, ...rest }) => {
+const TableHeadCell: React.FC<TableHeaderCellProps> = ({ className, style, children, ...rest }) => {
   return (
     <TableHeaderRoot className={className} style={style} px="md" py="xs" {...rest}>
       <TableHeaderText scale={200}>{children}</TableHeaderText>
@@ -23,6 +23,6 @@ const TableHeaderCell: React.FC<TableHeaderCellProps> = ({ className, style, chi
   );
 };
 
-TableHeaderCell.displayName = 'TableHeaderCell';
+TableHeadCell.displayName = 'TableHeadCell';
 
-export default TableHeaderCell;
+export default TableHeadCell;
