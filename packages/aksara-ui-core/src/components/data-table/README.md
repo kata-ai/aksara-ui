@@ -1,3 +1,51 @@
 # Data Table
 
 > Data tables are used to display associated information in an easily scannable way. And used to logically structure content in a gird to make it easier to see relantionship and to facilitate understanding.
+
+## Usage
+
+To use this component in your app, import as follows:
+
+```tsx
+import {
+  Table,
+  TableContainer,
+  TableHead,
+  TableHeadRow,
+  TableHeaderCell,
+  TableBody,
+  TableBodyRow,
+  TableBodyCell,
+} from '@aksara-ui/core';
+
+export default function Component() {
+  return (
+    <TableContainer>
+      <Table>
+        <TableHead>
+          <TableHeadRow>
+            <TableHeaderCell>Column</TableHeaderCell>
+            <TableHeaderCell>Column</TableHeaderCell>
+            <TableHeaderCell>Column</TableHeaderCell>
+            <TableHeaderCell>Column</TableHeaderCell>
+          </TableHeadRow>
+        </TableHead>
+        <TableBody>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
+```
