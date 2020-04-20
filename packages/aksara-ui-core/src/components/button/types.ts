@@ -47,5 +47,5 @@ export interface IconButtonBaseProps extends AllButtonStyledProps {
   /** The variant of the button. */
   variant?: IconButtonVariants;
   /** The size of the button. `size` is reserved by styled-system, so we alias its type. */
-  buttonSize?: ButtonSizes;
+  buttonSize?: IconButtonSizes;
 }
