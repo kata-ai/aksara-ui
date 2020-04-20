@@ -5,7 +5,7 @@ export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warnin
 export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'ghost';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
-export type IconButtonSizes = 'sm' | 'md' | 'lg';
+export type IconButtonSizes = 'xs' | 'sm' | 'md';
 export type ButtonIconPositions = 'left' | 'right';
 
 type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps;
@@ -47,5 +47,5 @@ export interface IconButtonBaseProps extends AllButtonStyledProps {
   /** The variant of the button. */
   variant?: IconButtonVariants;
   /** The size of the button. `size` is reserved by styled-system, so we alias its type. */
-  buttonSize?: ButtonSizes;
+  buttonSize?: IconButtonSizes;
 }
