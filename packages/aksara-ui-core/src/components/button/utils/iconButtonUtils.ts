@@ -5,11 +5,11 @@ import { IconButtonSizes } from '../types';
 
 export function iconButtonSizes(size?: IconButtonSizes) {
   switch (size) {
-    case 'lg':
-      return 40;
     case 'md':
-      return 32;
+      return 40;
     case 'sm':
+      return 32;
+    case 'xs':
       return 24;
     default:
       return 32;
@@ -18,11 +18,11 @@ export function iconButtonSizes(size?: IconButtonSizes) {
 
 export function iconSizes(size?: IconButtonSizes) {
   switch (size) {
-    case 'lg':
-      return 24;
     case 'md':
-      return 16;
+      return 24;
     case 'sm':
+      return 16;
+    case 'xs':
       return 12;
     default:
       return 20;

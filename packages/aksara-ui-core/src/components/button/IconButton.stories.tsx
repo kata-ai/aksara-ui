@@ -100,7 +100,7 @@ export const ButtonSizes = () => (
       >
         <Box display="flex" flexDirection="column">
           <Heading as="h4" scale={200}>
-            Small
+            Extra Small
           </Heading>
           <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
@@ -108,7 +108,7 @@ export const ButtonSizes = () => (
                 type="button"
                 variant="primary"
                 aria-label="Push Me"
-                size="sm"
+                size="xs"
                 onClick={action('button-click')}
               >
                 <IconPen fill="currentColor" aria-hidden="true" />
@@ -119,7 +119,7 @@ export const ButtonSizes = () => (
                 type="button"
                 variant="outline"
                 aria-label="Push Me"
-                size="sm"
+                size="xs"
                 onClick={action('button-click')}
               >
                 <IconPen fill="currentColor" aria-hidden="true" />
@@ -130,7 +130,47 @@ export const ButtonSizes = () => (
                 type="button"
                 variant="destructive"
                 aria-label="Push Me"
+                size="xs"
+                onClick={action('button-click')}
+              >
+                <IconPen fill="currentColor" aria-hidden="true" />
+              </IconButton>
+            </Box>
+          </Box>
+        </Box>
+        <Box display="flex" flexDirection="column">
+          <Heading as="h4" scale={200}>
+            Small
+          </Heading>
+          <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <IconButton
+                type="button"
+                aria-label="Push Me"
                 size="sm"
+                variant="primary"
+                onClick={action('button-click')}
+              >
+                <IconPen fill="currentColor" aria-hidden="true" />
+              </IconButton>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <IconButton
+                type="button"
+                aria-label="Push Me"
+                size="sm"
+                variant="outline"
+                onClick={action('button-click')}
+              >
+                <IconPen fill="currentColor" aria-hidden="true" />
+              </IconButton>
+            </Box>
+            <Box flex="1 1 auto" height="100%" minHeight={72}>
+              <IconButton
+                type="button"
+                aria-label="Push Me"
+                size="sm"
+                variant="destructive"
                 onClick={action('button-click')}
               >
                 <IconPen fill="currentColor" aria-hidden="true" />
@@ -170,46 +210,6 @@ export const ButtonSizes = () => (
                 type="button"
                 aria-label="Push Me"
                 size="md"
-                variant="destructive"
-                onClick={action('button-click')}
-              >
-                <IconPen fill="currentColor" aria-hidden="true" />
-              </IconButton>
-            </Box>
-          </Box>
-        </Box>
-        <Box display="flex" flexDirection="column">
-          <Heading as="h4" scale={200}>
-            Large
-          </Heading>
-          <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
-            <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <IconButton
-                type="button"
-                aria-label="Push Me"
-                size="lg"
-                variant="primary"
-                onClick={action('button-click')}
-              >
-                <IconPen fill="currentColor" aria-hidden="true" />
-              </IconButton>
-            </Box>
-            <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <IconButton
-                type="button"
-                aria-label="Push Me"
-                size="lg"
-                variant="outline"
-                onClick={action('button-click')}
-              >
-                <IconPen fill="currentColor" aria-hidden="true" />
-              </IconButton>
-            </Box>
-            <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <IconButton
-                type="button"
-                aria-label="Push Me"
-                size="lg"
                 variant="destructive"
                 onClick={action('button-click')}
               >
