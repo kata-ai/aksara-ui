@@ -14,7 +14,7 @@ import {
 } from './variants';
 
 export type LinkButtonVariants = 'primary' | 'destructive' | 'inverse';
-export type LinkButtonSizes = 'sm' | 'md';
+export type LinkButtonSizes = 32 | 40;
 
 export interface LinkButtonBaseProps extends Omit<ButtonBaseProps, 'size' | 'block' | 'variant'> {
   variant?: LinkButtonVariants;

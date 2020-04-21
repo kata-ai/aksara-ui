@@ -31,30 +31,30 @@ export const Example = () => (
     >
       <Box display="flex" flexDirection="column">
         <Heading as="h4" scale={200} textAlign="center">
-          Small
+          Size 32
         </Heading>
         <Box flex="1 1 auto" textAlign="center" mt="sm">
-          <FloatingButton type="button" size="sm" aria-label="Push Me" onClick={action('button-click')}>
+          <FloatingButton type="button" size={32} aria-label="Push Me" onClick={action('button-click')}>
             <IconPlus fill="currentColor" aria-hidden="true" />
           </FloatingButton>
         </Box>
       </Box>
       <Box display="flex" flexDirection="column">
         <Heading as="h4" scale={200} textAlign="center">
-          Medium
+          Size 40
         </Heading>
         <Box flex="1 1 auto" textAlign="center" mt="sm">
-          <FloatingButton type="button" size="md" aria-label="Push Me" onClick={action('button-click')}>
+          <FloatingButton type="button" size={40} aria-label="Push Me" onClick={action('button-click')}>
             <IconPlus fill="currentColor" aria-hidden="true" />
           </FloatingButton>
         </Box>
       </Box>
       <Box display="flex" flexDirection="column">
         <Heading as="h4" scale={200} textAlign="center">
-          Large
+          Size 48
         </Heading>
         <Box flex="1 1 auto" textAlign="center" mt="sm">
-          <FloatingButton type="button" size="lg" aria-label="Push Me" onClick={action('button-click')}>
+          <FloatingButton type="button" size={48} aria-label="Push Me" onClick={action('button-click')}>
             <IconPlus fill="currentColor" aria-hidden="true" />
           </FloatingButton>
         </Box>

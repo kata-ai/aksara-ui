@@ -33,7 +33,7 @@ FloatingButton.defaultProps = {
   className: undefined,
   style: undefined,
   variant: 'default',
-  size: 'md',
+  size: 40,
 };
 
 FloatingButton.displayName = 'FloatingButton';

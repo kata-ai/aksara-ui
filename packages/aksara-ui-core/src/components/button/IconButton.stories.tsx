@@ -100,7 +100,7 @@ export const ButtonSizes = () => (
       >
         <Box display="flex" flexDirection="column">
           <Heading as="h4" scale={200}>
-            Extra Small
+            Size 24
           </Heading>
           <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
@@ -108,7 +108,7 @@ export const ButtonSizes = () => (
                 type="button"
                 variant="primary"
                 aria-label="Push Me"
-                size="xs"
+                size={24}
                 onClick={action('button-click')}
               >
                 <IconPen fill="currentColor" aria-hidden="true" />
@@ -119,7 +119,7 @@ export const ButtonSizes = () => (
                 type="button"
                 variant="outline"
                 aria-label="Push Me"
-                size="xs"
+                size={24}
                 onClick={action('button-click')}
               >
                 <IconPen fill="currentColor" aria-hidden="true" />
@@ -130,7 +130,7 @@ export const ButtonSizes = () => (
                 type="button"
                 variant="destructive"
                 aria-label="Push Me"
-                size="xs"
+                size={24}
                 onClick={action('button-click')}
               >
                 <IconPen fill="currentColor" aria-hidden="true" />
@@ -140,14 +140,14 @@ export const ButtonSizes = () => (
         </Box>
         <Box display="flex" flexDirection="column">
           <Heading as="h4" scale={200}>
-            Small
+            Size 32
           </Heading>
           <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
               <IconButton
                 type="button"
                 aria-label="Push Me"
-                size="sm"
+                size={32}
                 variant="primary"
                 onClick={action('button-click')}
               >
@@ -158,7 +158,7 @@ export const ButtonSizes = () => (
               <IconButton
                 type="button"
                 aria-label="Push Me"
-                size="sm"
+                size={32}
                 variant="outline"
                 onClick={action('button-click')}
               >
@@ -169,7 +169,7 @@ export const ButtonSizes = () => (
               <IconButton
                 type="button"
                 aria-label="Push Me"
-                size="sm"
+                size={32}
                 variant="destructive"
                 onClick={action('button-click')}
               >
@@ -180,14 +180,14 @@ export const ButtonSizes = () => (
         </Box>
         <Box display="flex" flexDirection="column">
           <Heading as="h4" scale={200}>
-            Medium
+            Size 40
           </Heading>
           <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
               <IconButton
                 type="button"
                 aria-label="Push Me"
-                size="md"
+                size={40}
                 variant="primary"
                 onClick={action('button-click')}
               >
@@ -198,7 +198,7 @@ export const ButtonSizes = () => (
               <IconButton
                 type="button"
                 aria-label="Push Me"
-                size="md"
+                size={40}
                 variant="outline"
                 onClick={action('button-click')}
               >
@@ -209,7 +209,7 @@ export const ButtonSizes = () => (
               <IconButton
                 type="button"
                 aria-label="Push Me"
-                size="md"
+                size={40}
                 variant="destructive"
                 onClick={action('button-click')}
               >

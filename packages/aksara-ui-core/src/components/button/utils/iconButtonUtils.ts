@@ -4,25 +4,16 @@ import { colors } from '../../../utils/variables';
 import { IconButtonSizes } from '../types';
 
 export function iconButtonSizes(size?: IconButtonSizes) {
-  switch (size) {
-    case 'md':
-      return 40;
-    case 'sm':
-      return 32;
-    case 'xs':
-      return 24;
-    default:
-      return 32;
-  }
+  return size || 32;
 }
 
 export function iconSizes(size?: IconButtonSizes) {
   switch (size) {
-    case 'md':
+    case 40:
       return 24;
-    case 'sm':
+    case 32:
       return 16;
-    case 'xs':
+    case 24:
       return 12;
     default:
       return 20;

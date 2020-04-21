@@ -12,9 +12,9 @@ export interface LinkButtonProps extends LinkButtonBaseProps, React.ButtonHTMLAt
 
 const loadingIconPadding = (size?: LinkButtonSizes) => {
   switch (size) {
-    case 'md':
+    case 40:
       return 16;
-    case 'sm':
+    case 32:
       return 12;
     default:
       return 16;
@@ -23,9 +23,9 @@ const loadingIconPadding = (size?: LinkButtonSizes) => {
 
 const loadingIconSizes = (size?: LinkButtonSizes) => {
   switch (size) {
-    case 'md':
+    case 40:
       return 32;
-    case 'sm':
+    case 32:
       return 24;
     default:
       return 32;
@@ -97,7 +97,7 @@ const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>(
 
 LinkButton.defaultProps = {
   variant: 'primary',
-  size: 'md',
+  size: 40,
   iconPosition: 'left',
 };
 

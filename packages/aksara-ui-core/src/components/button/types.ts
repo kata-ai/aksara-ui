@@ -4,8 +4,8 @@ export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' |
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type OutlineButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
 export type IconButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'ghost';
-export type ButtonSizes = 'sm' | 'md' | 'lg';
-export type IconButtonSizes = 'xs' | 'sm' | 'md';
+export type ButtonSizes = 32 | 40 | 48;
+export type IconButtonSizes = 24 | 32 | 40;
 export type ButtonIconPositions = 'left' | 'right';
 
 type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps;

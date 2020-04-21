@@ -442,31 +442,31 @@ export const Example = () => (
         >
           <Box display="flex" flexDirection="column">
             <Heading as="h4" scale={200}>
-              Small
+              Size 32
             </Heading>
             <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="primary" size="sm">
+                <Button type="button" variant="primary" size={32}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="outline" size="sm">
+                <Button type="button" variant="outline" size={32}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="destructive" size="sm">
+                <Button type="button" variant="destructive" size={32}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="primary" icon={IconPen} size="sm">
+                <Button type="button" variant="primary" icon={IconPen} size={32}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="outline" icon={IconPen} size="sm">
+                <Button type="button" variant="outline" icon={IconPen} size={32}>
                   Push Me
                 </Button>
               </Box>
@@ -474,31 +474,31 @@ export const Example = () => (
           </Box>
           <Box display="flex" flexDirection="column">
             <Heading as="h4" scale={200}>
-              Medium
+              Size 40
             </Heading>
             <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="primary" size="md">
+                <Button type="button" variant="primary" size={40}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="outline" size="md">
+                <Button type="button" variant="outline" size={40}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="destructive" size="md">
+                <Button type="button" variant="destructive" size={40}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="primary" icon={IconPen} size="md">
+                <Button type="button" variant="primary" icon={IconPen} size={40}>
                   Push Me
                 </Button>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <Button type="button" variant="outline" icon={IconPen} size="md">
+                <Button type="button" variant="outline" icon={IconPen} size={40}>
                   Push Me
                 </Button>
               </Box>
@@ -516,21 +516,21 @@ export const Example = () => (
         >
           <Box display="flex" flexDirection="column">
             <Heading as="h4" scale={200}>
-              Small
+              Size 32
             </Heading>
             <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <LinkButton type="button" variant="primary" size="sm">
+                <LinkButton type="button" variant="primary" size={32}>
                   Push Me
                 </LinkButton>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <LinkButton type="button" variant="destructive" size="sm">
+                <LinkButton type="button" variant="destructive" size={32}>
                   Push Me
                 </LinkButton>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <LinkButton type="button" variant="primary" icon={IconPen} size="sm">
+                <LinkButton type="button" variant="primary" icon={IconPen} size={32}>
                   Push Me
                 </LinkButton>
               </Box>
@@ -538,21 +538,21 @@ export const Example = () => (
           </Box>
           <Box display="flex" flexDirection="column">
             <Heading as="h4" scale={200}>
-              Medium
+              Size 40
             </Heading>
             <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <LinkButton type="button" variant="primary" size="md">
+                <LinkButton type="button" variant="primary" size={40}>
                   Push Me
                 </LinkButton>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <LinkButton type="button" variant="destructive" size="md">
+                <LinkButton type="button" variant="destructive" size={40}>
                   Push Me
                 </LinkButton>
               </Box>
               <Box flex="1 1 auto" height="100%" minHeight={72}>
-                <LinkButton type="button" variant="primary" icon={IconPen} size="md">
+                <LinkButton type="button" variant="primary" icon={IconPen} size={40}>
                   Push Me
                 </LinkButton>
               </Box>
@@ -574,20 +574,20 @@ export const AdditionalProps = () => (
         </Button>
       </ComponentBlock>
       <ComponentBlock title="Loading" withBackground>
-        <Button type="button" size="sm" variant="primary" isLoading style={{ marginRight: 16 }}>
+        <Button type="button" size={32} variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" size="md" variant="primary" isLoading style={{ marginRight: 16 }}>
+        <Button type="button" size={40} variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </Button>
-        <Button type="button" size="lg" variant="primary" isLoading>
+        <Button type="button" size={48} variant="primary" isLoading>
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (left)" withBackground>
         <Button
           type="button"
-          size="sm"
+          size={32}
           variant="primary"
           icon={IconPen}
           iconPosition="left"
@@ -597,7 +597,7 @@ export const AdditionalProps = () => (
         </Button>
         <Button
           type="button"
-          size="md"
+          size={40}
           variant="primary"
           icon={IconPen}
           iconPosition="left"
@@ -605,14 +605,14 @@ export const AdditionalProps = () => (
         >
           Push Me
         </Button>
-        <Button type="button" size="lg" variant="primary" icon={IconPen} iconPosition="left">
+        <Button type="button" size={48} variant="primary" icon={IconPen} iconPosition="left">
           Push Me
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons (right)" withBackground>
         <Button
           type="button"
-          size="sm"
+          size={32}
           variant="primary"
           icon={IconPen}
           iconPosition="right"
@@ -621,7 +621,7 @@ export const AdditionalProps = () => (
           Push Me
         </Button>
         <Button
-          size="md"
+          size={40}
           type="button"
           variant="primary"
           icon={IconPen}
@@ -630,7 +630,7 @@ export const AdditionalProps = () => (
         >
           Push Me
         </Button>
-        <Button size="lg" type="button" variant="primary" icon={IconPen} iconPosition="right">
+        <Button size={48} type="button" variant="primary" icon={IconPen} iconPosition="right">
           Push Me
         </Button>
       </ComponentBlock>
@@ -643,7 +643,7 @@ export const AdditionalProps = () => (
         </Button>
       </ComponentBlock>
       <ComponentBlock title="With Icons loading" withBackground>
-        <Button type="button" isLoading variant="primary" icon={IconPen} size="sm" style={{ marginRight: 16 }}>
+        <Button type="button" isLoading variant="primary" icon={IconPen} size={32} style={{ marginRight: 16 }}>
           Push Me
         </Button>
         <Button type="button" isLoading variant="primary" icon={IconPen}>
