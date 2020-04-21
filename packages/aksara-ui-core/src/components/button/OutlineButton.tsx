@@ -30,11 +30,11 @@ interface LoaderCircleProps {
 
 const loadingIconPadding = (size?: ButtonSizes) => {
   switch (size) {
-    case 'lg':
+    case 48:
       return 20;
-    case 'md':
+    case 40:
       return 16;
-    case 'sm':
+    case 32:
       return 12;
     default:
       return 16;
@@ -43,11 +43,11 @@ const loadingIconPadding = (size?: ButtonSizes) => {
 
 const loadingIconSizes = (size?: ButtonSizes) => {
   switch (size) {
-    case 'lg':
+    case 48:
       return 40;
-    case 'md':
+    case 40:
       return 32;
-    case 'sm':
+    case 32:
       return 24;
     default:
       return 32;
@@ -141,7 +141,7 @@ OutlineButton.defaultProps = {
   icon: undefined,
   iconPosition: 'left',
   variant: 'default',
-  size: 'md',
+  size: 40,
 };
 
 OutlineButton.displayName = 'OutlineButton';

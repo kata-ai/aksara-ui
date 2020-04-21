@@ -34,7 +34,7 @@ describe('components/Button', () => {
 
     test('renders icons correctly with ReactNode', () => {
       const { container } = render(
-        <Button size="sm" icon={IconDocAdd} iconPosition="right">
+        <Button size={32} icon={IconDocAdd} iconPosition="right">
           test button
         </Button>
       );
@@ -91,10 +91,10 @@ describe('components/Button', () => {
     test('renders in different sizes', () => {
       const { container } = render(
         <>
-          <IconButton size="sm">
+          <IconButton size={32}>
             <i className="icon-trash" />
           </IconButton>
-          <IconButton size="md">
+          <IconButton size={40}>
             <i className="icon-trash" />
           </IconButton>
         </>

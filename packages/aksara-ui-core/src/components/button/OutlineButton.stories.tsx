@@ -24,7 +24,7 @@ export const Example = () => (
     <SystemSubheading mb="xl">Default Theme</SystemSubheading>
     <Stack spacing="xl">
       <ComponentBlock title="Default Button" withBackground>
-        <OutlineButton type="button" style={{ marginRight: 16 }} size="sm" onClick={action('button-click')}>
+        <OutlineButton type="button" style={{ marginRight: 16 }} size={32} onClick={action('button-click')}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" style={{ marginRight: 16 }} onClick={action('button-click')}>
@@ -36,7 +36,7 @@ export const Example = () => (
           type="button"
           variant="primary"
           style={{ marginRight: 16 }}
-          size="sm"
+          size={32}
           onClick={action('button-click')}
         >
           Push Me
@@ -50,7 +50,7 @@ export const Example = () => (
           type="button"
           variant="success"
           style={{ marginRight: 16 }}
-          size="sm"
+          size={32}
           onClick={action('button-click')}
         >
           Push Me
@@ -64,7 +64,7 @@ export const Example = () => (
           type="button"
           variant="warning"
           style={{ marginRight: 16 }}
-          size="sm"
+          size={32}
           onClick={action('button-click')}
         >
           Push Me
@@ -78,7 +78,7 @@ export const Example = () => (
           type="button"
           variant="destructive"
           style={{ marginRight: 16 }}
-          size="sm"
+          size={32}
           onClick={action('button-click')}
         >
           Push Me
@@ -190,7 +190,7 @@ export const AdditionalProps = () => (
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="Loading" withBackground>
-        <OutlineButton type="button" size="sm" variant="primary" isLoading style={{ marginRight: 16 }}>
+        <OutlineButton type="button" size={32} variant="primary" isLoading style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" variant="primary" isLoading>
@@ -200,7 +200,7 @@ export const AdditionalProps = () => (
       <ComponentBlock title="With Icons (left)" withBackground>
         <OutlineButton
           type="button"
-          size="sm"
+          size={32}
           variant="primary"
           icon={IconPen}
           iconPosition="left"
@@ -215,7 +215,7 @@ export const AdditionalProps = () => (
       <ComponentBlock title="With Icons (right)" withBackground>
         <OutlineButton
           type="button"
-          size="sm"
+          size={32}
           variant="primary"
           icon={IconPen}
           iconPosition="right"
@@ -236,7 +236,7 @@ export const AdditionalProps = () => (
         </OutlineButton>
       </ComponentBlock>
       <ComponentBlock title="With Icons loading" withBackground>
-        <OutlineButton type="button" isLoading variant="primary" icon={IconPen} size="sm" style={{ marginRight: 16 }}>
+        <OutlineButton type="button" isLoading variant="primary" icon={IconPen} size={32} style={{ marginRight: 16 }}>
           Push Me
         </OutlineButton>
         <OutlineButton type="button" isLoading variant="primary" icon={IconPen}>

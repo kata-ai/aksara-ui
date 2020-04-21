@@ -98,9 +98,9 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
     opacity: 0.5;
   }
 
-  ${props.buttonSize === 'sm' && FloatingButtonSmall}
-  ${props.buttonSize === 'md' && FloatingButtonMedium}
-  ${props.buttonSize === 'lg' && FloatingButtonLarge}
+  ${props.buttonSize === 32 && FloatingButtonSmall}
+  ${props.buttonSize === 40 && FloatingButtonMedium}
+  ${props.buttonSize === 64 && FloatingButtonLarge}
 
   ${props.variant === 'primary' && FloatingButtonPrimary}
   ${props.variant === 'success' && FloatingButtonSuccess}
@@ -153,9 +153,9 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
   ${props.variant === 'ghost' && ButtonGhost}
   ${props.variant === 'inverse' && InverseButton}
 
-  ${props.buttonSize === 'sm' && ButtonSmall(props)}
-  ${props.buttonSize === 'md' && ButtonMedium(props)}
-  ${props.buttonSize === 'lg' && ButtonLarge(props)}
+  ${props.buttonSize === 32 && ButtonSmall(props)}
+  ${props.buttonSize === 40 && ButtonMedium(props)}
+  ${props.buttonSize === 48 && ButtonLarge(props)}
 `;
 
 export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
@@ -194,7 +194,7 @@ export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
   ${props.variant === 'warning' && OutlineButtonWarning}
   ${props.variant === 'destructive' && OutlineButtonDestructive}
 
-  ${props.buttonSize === 'sm' && OutlineButtonSmall(props)}
-  ${props.buttonSize === 'md' && OutlineButtonMedium(props)}
-  ${props.buttonSize === 'lg' && OutlineButtonLarge(props)}
+  ${props.buttonSize === 32 && OutlineButtonSmall(props)}
+  ${props.buttonSize === 40 && OutlineButtonMedium(props)}
+  ${props.buttonSize === 48 && OutlineButtonLarge(props)}
 `;

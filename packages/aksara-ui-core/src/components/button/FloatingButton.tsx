@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { FloatingButtonStyles } from './styles';
-import { FloatingButtonBaseProps, ButtonSizes } from './types';
+import { FloatingButtonBaseProps, FloatingButtonSizes } from './types';
 
 export interface FloatingButtonProps extends FloatingButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
@@ -10,7 +10,7 @@ export interface FloatingButtonProps extends FloatingButtonBaseProps, React.Butt
   /** Additional CSS styles to give to the component */
   style?: React.CSSProperties;
   /** The size of the button. */
-  size?: ButtonSizes;
+  size?: FloatingButtonSizes;
 }
 
 const Root = styled('button')<FloatingButtonProps>`
@@ -33,7 +33,7 @@ FloatingButton.defaultProps = {
   className: undefined,
   style: undefined,
   variant: 'default',
-  size: 'md',
+  size: 40,
 };
 
 FloatingButton.displayName = 'FloatingButton';

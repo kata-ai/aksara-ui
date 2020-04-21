@@ -58,13 +58,13 @@ export const linkButtonDisabledVariants = {
 };
 
 export const linkButtonSizeVariants = {
-  sm: {
+  32: {
     height: '32px',
     fontSize: componentStyles.text[300].fontSize,
     lineHeight: componentStyles.text[300].lineHeight,
     borderRadius: radii.sm,
   },
-  md: {
+  40: {
     height: '40px',
     fontSize: componentStyles.text[300].fontSize,
     lineHeight: componentStyles.text[300].lineHeight,
