@@ -51,10 +51,10 @@ export const Example = () => (
       </Box>
       <Box display="flex" flexDirection="column">
         <Heading as="h4" scale={200} textAlign="center">
-          Size 48
+          Size 64
         </Heading>
         <Box flex="1 1 auto" textAlign="center" mt="sm">
-          <FloatingButton type="button" size={48} aria-label="Push Me" onClick={action('button-click')}>
+          <FloatingButton type="button" size={64} aria-label="Push Me" onClick={action('button-click')}>
             <IconPlus fill="currentColor" aria-hidden="true" />
           </FloatingButton>
         </Box>

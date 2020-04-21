@@ -1,14 +1,14 @@
 import { css } from 'styled-components';
 import { colors } from '../../../utils';
-import { ButtonSizes } from '../types';
+import { FloatingButtonSizes } from '../types';
 
-export function floatingButtonSizes(size?: ButtonSizes) {
+export function floatingButtonSizes(size?: FloatingButtonSizes) {
   switch (size) {
-    case 'lg':
+    case 64:
       return 64;
-    case 'md':
+    case 40:
       return 40;
-    case 'sm':
+    case 32:
       return 32;
     default:
       return 40;

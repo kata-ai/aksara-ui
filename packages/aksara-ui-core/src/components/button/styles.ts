@@ -100,7 +100,7 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
 
   ${props.buttonSize === 32 && FloatingButtonSmall}
   ${props.buttonSize === 40 && FloatingButtonMedium}
-  ${props.buttonSize === 48 && FloatingButtonLarge}
+  ${props.buttonSize === 64 && FloatingButtonLarge}
 
   ${props.variant === 'primary' && FloatingButtonPrimary}
   ${props.variant === 'success' && FloatingButtonSuccess}
