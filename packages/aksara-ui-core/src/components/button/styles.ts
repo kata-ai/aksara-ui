@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { layout, position, flexbox, grid, space } from 'styled-system';
+import { layout, position, flexbox, grid, space, border } from 'styled-system';
 
 import { colors, shadows } from '../../utils/variables';
 import {
@@ -68,12 +68,6 @@ export const ButtonBase = css`
   &:focus {
     outline: 0px;
   }
-
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
 `;
 
 export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
@@ -106,6 +100,13 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
   ${props.variant === 'success' && FloatingButtonSuccess}
   ${props.variant === 'warning' && FloatingButtonWarning}
   ${props.variant === 'destructive' && FloatingButtonDestructive}
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+  ${border}
 `;
 
 export const IconButtonStyles = (props: IconButtonBaseProps) => css`
@@ -141,6 +142,13 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
   ${props.variant === 'outline' && IconButtonSupport}
   ${props.variant === 'destructive' && IconButtonDestructive}
   ${props.variant === 'ghost' && IconButtonGhost}
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+  ${border}
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`
@@ -156,6 +164,14 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
   ${props.buttonSize === 32 && ButtonSmall(props)}
   ${props.buttonSize === 40 && ButtonMedium(props)}
   ${props.buttonSize === 48 && ButtonLarge(props)}
+
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+  ${border}
 `;
 
 export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
@@ -197,4 +213,11 @@ export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
   ${props.buttonSize === 32 && OutlineButtonSmall(props)}
   ${props.buttonSize === 40 && OutlineButtonMedium(props)}
   ${props.buttonSize === 48 && OutlineButtonLarge(props)}
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+  ${border}
 `;
