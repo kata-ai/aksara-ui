@@ -12,8 +12,11 @@ import { ButtonProps } from '../../../button/Button';
 import { IconButtonSizes, ButtonSizes } from '../../../button/types';
 
 export interface ButtonGroupProps extends BoxProps {
+  /** Join buttons as segmented group. */
   segmented?: boolean;
+  /** Stretch the buttons to fit the containing element. */
   fullWidth?: boolean;
+  /** The size of butttons in this button group. */
   size?: IconButtonSizes | ButtonSizes;
 }
 
@@ -60,6 +63,7 @@ ButtonGroup.displayName = 'ButtonGroup';
 ButtonGroup.defaultProps = {
   segmented: false,
   fullWidth: false,
+  size: 32,
 };
 
 export default ButtonGroup;
