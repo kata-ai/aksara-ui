@@ -48,7 +48,7 @@ See more usage in the _JSX_ panel
 | style     | CSSProperties  | -        | undefined | Additional CSS styles to give to the component  |
 | block     | boolean        | -        | false     | Is a block button.                              |
 | variant   | ButtonVariants | -        | default   | The variant of the button.                      |
-| size      | ButtonSizes    | -        | md        | The size of the button.                         |
+| size      | ButtonSizes    | -        | 40        | The size of the button.                         |
 
 ### `<OutlineButton />`
 
@@ -92,7 +92,7 @@ See more usage in the _JSX_ panel
 | style     | CSSProperties         | -        | undefined | Additional CSS styles to give to the component  |
 | block     | boolean               | -        | false     | Is a block button.                              |
 | variant   | OutlineButtonVariants | -        | default   | The variant of the button.                      |
-| size      | ButtonSizes           | -        | md        | The size of the button.                         |
+| size      | ButtonSizes           | -        | 40        | The size of the button.                         |
 
 ### `<FloatingButton />`
 
@@ -121,7 +121,7 @@ See more usage in the _JSX_ panel
 | className | string                 | -        | undefined | Additional CSS classes to give to the component |
 | style     | CSSProperties          | -        | undefined | Additional CSS styles to give to the component  |
 | variant   | FloatingButtonVariants | -        | default   | The variant of the button.                      |
-| size      | ButtonSizes            | -        | md        | The size of the button.                         |
+| size      | ButtonSizes            | -        | 40        | The size of the button.                         |
 
 ### `<IconButton />`
 
@@ -150,4 +150,4 @@ See more usage in the _JSX_ panel
 | className | string             | -        | undefined | Additional CSS classes to give to the component |
 | style     | CSSProperties      | -        | undefined | Additional CSS styles to give to the component  |
 | variant   | IconButtonVariants | -        | default   | The variant of the button.                      |
-| size      | IconButtonSizes    | -        | sm        | The size of the button.                         |
+| size      | IconButtonSizes    | -        | 40        | The size of the button.                         |
