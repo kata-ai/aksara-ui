@@ -21,15 +21,15 @@ exports[`components/Button <Button /> renders block buttons correctly 1`] = `
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   border: 1px solid transparent;
-  display: block;
-  width: 100%;
-  position: relative;
   color: #313f4e;
   height: 40px;
   padding: 0 16px;
   font-size: 14px;
   line-height: 20px;
   border-radius: 4px;
+  display: block;
+  width: 100%;
+  position: relative;
 }
 
 .c0:not(:disabled):not(.disabled) {
@@ -101,8 +101,6 @@ exports[`components/Button <Button /> renders colors correctly by variant 1`] = 
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   border: 1px solid transparent;
-  display: inline-block;
-  position: relative;
   background-color: #006fe6;
   color: #fff;
   height: 40px;
@@ -110,6 +108,8 @@ exports[`components/Button <Button /> renders colors correctly by variant 1`] = 
   font-size: 14px;
   line-height: 20px;
   border-radius: 4px;
+  display: inline-block;
+  position: relative;
 }
 
 .c0:not(:disabled):not(.disabled) {
