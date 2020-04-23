@@ -1,4 +1,4 @@
-import { LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps } from 'styled-system';
+import { LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps, BorderProps } from 'styled-system';
 
 export type ButtonVariants = 'default' | 'primary' | 'outline' | 'destructive' | 'ghost' | 'inverse';
 export type FloatingButtonVariants = 'default' | 'primary' | 'success' | 'warning' | 'destructive';
@@ -9,7 +9,7 @@ export type IconButtonSizes = 24 | 32 | 40;
 export type FloatingButtonSizes = 32 | 40 | 64;
 export type ButtonIconPositions = 'left' | 'right';
 
-type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps;
+type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps & BorderProps;
 
 export interface ButtonBaseProps extends AllButtonStyledProps {
   /** Is a block button. */
