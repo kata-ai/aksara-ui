@@ -39,10 +39,10 @@ class Pagination extends React.Component<PaginationProps> {
     this.handleSelectPage = this.handleSelectPage.bind(this);
   }
 
-  generatePages() {
+  generatePages(): (number | string)[] {
     const { total, current } = this.props;
     const maxButtons = 5;
-    const pageButtons: React.ReactText[] = [];
+    const pageButtons: (number | string)[] = [];
 
     let startPage: number;
     let endPage: number;
