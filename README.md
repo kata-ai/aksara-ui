@@ -10,7 +10,7 @@
 <p align="center">
   <a href="https://github.com/kata-ai/aksara-ui/actions?query=workflow%3ACI"><img alt="Build Status" src="https://github.com/kata-ai/aksara-ui/workflows/CI/badge.svg" /></a>
   <a href="https://codecov.io/gh/kata-ai/aksara-ui"><img alt="codecov" src="https://codecov.io/gh/kata-ai/aksara-ui/branch/next/graph/badge.svg" /></a>
-  <a href="https://codeclimate.com/github/kata-ai/aksara-ui/maintainability"><img src="https://img.shields.io/codeclimate/maintainability/kata-ai/aksara-ui" /></a>
+  <a href="https://sonarcloud.io/dashboard?id=kata-ai_aksara-ui"><img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=kata-ai_aksara-ui&metric=alert_status" /></a>
   <a href="https://lernajs.io/"><img alt="Build Status" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
 </p>
 
