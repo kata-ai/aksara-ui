@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import clsx from 'clsx';
 
 import { colors } from '../../utils';
 import { Circle } from '../loading';
@@ -98,7 +99,21 @@ const Icon = styled('span')<Pick<ButtonProps, 'size' | 'iconPosition' | 'variant
  */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { children, className, style, size, icon, iconPosition, isLoading, disabled, variant, block, width, ...rest },
+    {
+      children,
+      className,
+      style,
+      size,
+      icon,
+      iconPosition,
+      isLoading,
+      disabled,
+      variant,
+      block,
+      width,
+      selected,
+      ...rest
+    },
     ref
   ) => {
     const renderIcon = () => {
@@ -119,7 +134,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <Root
-        className={className}
+        className={clsx(selected && 'selected', className)}
         style={style}
         buttonSize={size}
         icon={icon}

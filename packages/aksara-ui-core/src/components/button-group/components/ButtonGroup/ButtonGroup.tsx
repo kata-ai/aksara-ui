@@ -27,7 +27,13 @@ const Root = styled(Box)<ButtonGroupProps>`
 const Inner = styled('div')<ButtonGroupProps>`
   ${props => (props.segmented ? buttonGroupInnerSegmented : buttonGroupInnerNonSegmented)}
 
-  > button:focus, > button:active {
+  > button {
+    z-index: 1;
+  }
+
+  > button:focus,
+  > button:active,
+  > button.selected {
     z-index: 10;
   }
 `;
