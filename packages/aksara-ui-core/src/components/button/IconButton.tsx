@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import clsx from 'clsx';
 
 import { IconButtonStyles } from './styles';
 import { IconButtonBaseProps, IconButtonSizes } from './types';
@@ -18,8 +19,8 @@ const Root = styled('button')<IconButtonProps>`
 `;
 
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ children, className, style, size, ...rest }, ref) => (
-    <Root className={className} style={style} buttonSize={size} ref={ref} {...rest}>
+  ({ children, className, style, size, selected, ...rest }, ref) => (
+    <Root className={clsx(selected && 'selected', className)} style={style} buttonSize={size} ref={ref} {...rest}>
       {children}
     </Root>
   )

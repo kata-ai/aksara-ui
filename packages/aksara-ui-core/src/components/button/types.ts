@@ -18,6 +18,8 @@ export interface ButtonBaseProps extends AllButtonStyledProps {
   variant?: ButtonVariants;
   /** The size of the button. `size` is reserved by styled-system, so we alias its type. */
   buttonSize?: ButtonSizes;
+  /** Add a "selected" style for use in toggle buttons. */
+  selected?: boolean;
   /** The icon that renders with the button */
   icon?: string | React.ComponentType<any>;
   /** Icon position. Default is `'left'`. */
@@ -49,4 +51,6 @@ export interface IconButtonBaseProps extends AllButtonStyledProps {
   variant?: IconButtonVariants;
   /** The size of the button. `size` is reserved by styled-system, so we alias its type. */
   buttonSize?: IconButtonSizes;
+  /** Add a "selected" style for use in toggle buttons. */
+  selected?: boolean;
 }

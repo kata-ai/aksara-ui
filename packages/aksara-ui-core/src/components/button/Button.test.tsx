@@ -42,6 +42,16 @@ describe('components/Button', () => {
 
       expect(icon).toBeInTheDocument();
     });
+
+    test('renders selected styles correctly', () => {
+      const { container } = render(
+        <Button variant="outline" selected>
+          test button
+        </Button>
+      );
+
+      expect(container.firstChild).toHaveClass('selected');
+    });
   });
 
   describe('<OutlineButton />', () => {
@@ -111,6 +121,16 @@ describe('components/Button', () => {
       );
 
       expect(container.firstChild).toHaveStyle(`color: ${colors.red05}`);
+    });
+
+    test('renders selected styles correctly', () => {
+      const { container } = render(
+        <IconButton variant="outline" selected>
+          <i className="icon-add" />
+        </IconButton>
+      );
+
+      expect(container.firstChild).toHaveClass('selected');
     });
   });
 });

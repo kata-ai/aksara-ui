@@ -37,3 +37,27 @@ export const BasicExample = () => {
     </Box>
   );
 };
+
+export const Selectable = () => {
+  const [selected, setSelected] = React.useState('');
+
+  return (
+    <Box p="md">
+      <ButtonGroup
+        segmented={boolean('Segmented', false)}
+        fullWidth={boolean('Full Width', false)}
+        size={select<number>('Button Size', options, defaultValue) as ButtonGroupProps['size']}
+      >
+        <Button variant="outline" selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+          Page 1
+        </Button>
+        <Button variant="outline" selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+          Page 2
+        </Button>
+        <Button variant="outline" selected={selected === 'page3'} onClick={() => setSelected('page3')}>
+          Page 3
+        </Button>
+      </ButtonGroup>
+    </Box>
+  );
+};
