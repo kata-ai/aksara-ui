@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Box, Heading } from '../../../foundations';
+import { Box, Heading, Paragraph } from '../../../foundations';
 
 const ImageWrapper = styled(Box)`
   position: relative;
@@ -18,26 +18,58 @@ export interface BlankslateProps {
   className?: string;
   /** Additional CSS styles to give to the component. */
   style?: React.CSSProperties;
+  /** Variant of the blankslate component. Can be `page` or `inner`. */
+  variant: 'page' | 'inner';
   /** The title of the non-ideal state. */
-  title: string;
+  title?: string;
   /** Render any image inside the image block up to 155px height. */
   image?: React.ReactNode;
+  /** Blankslate text content. */
+  content: React.ReactNode;
 }
 
-const Blankslate: React.FC<BlankslateProps> = ({ className, style, image, title, children }) => {
+const BlankslateWrapper: React.FC<Pick<BlankslateProps, 'className' | 'style'>> = ({ className, style, children }) => {
   return (
     <Box className={className} style={style} mx="auto" my="xxl" width="100%" maxWidth="528px" textAlign="center">
-      {image && <ImageWrapper mb={60}>{image}</ImageWrapper>}
-      <Heading scale={600} mt={0} mb="lg">
-        {title}
-      </Heading>
-      <Box>{children}</Box>
+      {children}
     </Box>
   );
 };
 
-Blankslate.defaultProps = {
-  image: undefined,
+const Blankslate: React.FC<BlankslateProps> = ({ className, style, variant, image, title, content, children }) => {
+  const renderContent = () => {
+    if (children) {
+      console.warn('Using `children` has been deprecated in favour of the `content` prop. Please use that instead.');
+      return children;
+    }
+
+    if (typeof content === 'string') {
+      return <Paragraph color="grey07">{content}</Paragraph>;
+    }
+
+    return content;
+  };
+
+  if (variant === 'inner') {
+    return (
+      <BlankslateWrapper className={className} style={style}>
+        {image && <ImageWrapper mb="md">{image}</ImageWrapper>}
+        <Box>{renderContent()}</Box>
+      </BlankslateWrapper>
+    );
+  }
+
+  return (
+    <BlankslateWrapper className={className} style={style}>
+      {image && <ImageWrapper mb="md">{image}</ImageWrapper>}
+      {title && (
+        <Heading scale={600} mt={0} mb="lg">
+          {title}
+        </Heading>
+      )}
+      <Box>{renderContent()}</Box>
+    </BlankslateWrapper>
+  );
 };
 
 Blankslate.displayName = 'Blankslate';
