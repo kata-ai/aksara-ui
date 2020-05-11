@@ -54,7 +54,7 @@ describe('components/Notification', () => {
       setTimeout(() => {
         const element = baseElement.querySelector('#test-toaster-1');
         expect(element).toBeInTheDocument();
-        expect(element).toHaveAttribute('data-state', 'entered');
+        expect(element).toHaveAttribute('data-toaster-state', 'entered');
       }, 1000);
 
       jest.runAllTimers();
