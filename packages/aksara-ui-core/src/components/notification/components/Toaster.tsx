@@ -1,15 +1,13 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { variant } from 'styled-system';
-import { themeGet } from '@styled-system/theme-get';
 import { Transition } from 'react-transition-group';
-import { IconTickSingle, IconInfo, IconWarningTriangle, IconCloseRounded } from '@aksara-ui/icons';
+import { IconTickSingle, IconWarningTriangle, IconCloseRounded } from '@aksara-ui/icons';
 
 import { Text, Card, Heading, Box } from '../../../foundations';
-import { colors } from '../../../utils';
 import { ToasterSettings, NotificationStatus } from '../utils/types';
 import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
-import toasterVariants from './variants';
+import { toasterVariants, toasterTextVariants } from './variants';
 
 interface WithStatusProps {
   status?: NotificationStatus;
@@ -54,11 +52,10 @@ const ToastExit = keyframes`
 `;
 
 const Title = styled(Heading)<WithStatusProps>`
-  color: ${props => themeGet(props.status === 'default' ? 'colors.grey09' : 'colors.grey01')(props)};
-`;
-
-const MessageText = styled(Text)<WithStatusProps>`
-  color: ${props => themeGet(props.status === 'default' ? 'colors.grey08' : 'colors.grey01')(props)};
+  ${variant({
+    prop: 'status',
+    variants: toasterTextVariants,
+  })}
 `;
 
 const Right = styled('div')`
@@ -78,20 +75,20 @@ const Root = styled('div')`
   z-index: 999;
   opacity: 0;
 
-  &[data-state='entering'],
-  &[data-state='entered'] {
+  &[data-toaster-state='entering'],
+  &[data-toaster-state='entered'] {
     animation-fill-mode: forwards;
     animation-name: ${ToastEnter};
     animation-duration: ${ANIMATION_DURATION}ms;
   }
 
-  &[data-state='exiting'] {
+  &[data-toaster-state='exiting'] {
     animation-fill-mode: forwards;
     animation-name: ${ToastExit};
     animation-duration: ${ANIMATION_DURATION * 2}ms;
   }
 
-  .entered {
+  &[data-toaster-state='entered'] {
     right: 0;
     opacity: 1;
   }
@@ -149,16 +146,13 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
         return null;
       }
       case 'success': {
-        return <IconTickSingle fill={colors.grey01} />;
-      }
-      case 'info': {
-        return <IconInfo fill={colors.grey01} />;
+        return <IconTickSingle fill="currentColor" />;
       }
       case 'warning': {
-        return <IconWarningTriangle fill={colors.grey01} />;
+        return <IconWarningTriangle fill="currentColor" />;
       }
       case 'error': {
-        return <IconCloseRounded fill={colors.grey01} />;
+        return <IconCloseRounded fill="currentColor" />;
       }
       default: {
         return null;
@@ -179,9 +173,9 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
             <Box dangerouslySetInnerHTML={{ __html: message }} />
           ) : (
             <Box>
-              <MessageText display="block" scale={200} status={status}>
+              <Text display="block" scale={200}>
                 {message}
-              </MessageText>
+              </Text>
             </Box>
           )}
         </Right>
@@ -234,7 +228,7 @@ export default class Toaster extends React.PureComponent<ToasterSettings, Toaste
         onExited={onRemove}
       >
         {state => (
-          <Root data-state={state} id={id} onClick={() => this.close()}>
+          <Root data-toaster-state={state} id={id} onClick={() => this.close()}>
             {this.renderInnerToaster()}
           </Root>
         )}
