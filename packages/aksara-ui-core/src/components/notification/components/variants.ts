@@ -1,16 +1,33 @@
-const toasterVariants = {
-  info: {
-    backgroundColor: 'blue06',
+export const toasterVariants = {
+  default: {
+    backgroundColor: 'grey08',
+    color: 'grey01',
   },
   success: {
-    backgroundColor: 'green06',
+    backgroundColor: 'grey08',
+    color: 'grey01',
   },
   error: {
     backgroundColor: 'red05',
+    color: 'grey01',
   },
   warning: {
-    backgroundColor: 'yellow05',
+    backgroundColor: 'yellow06',
+    color: 'grey08',
   },
 };
 
-export default toasterVariants;
+export const toasterTextVariants = {
+  default: {
+    color: 'grey01',
+  },
+  success: {
+    color: 'grey01',
+  },
+  error: {
+    color: 'grey01',
+  },
+  warning: {
+    color: 'grey08',
+  },
+};

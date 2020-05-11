@@ -53,21 +53,6 @@ export const BasicExample = () => (
           notification.toaster({
             title: 'Toaster',
             message: 'Hello world! This is a toaster',
-            status: 'info',
-            dismissible: true,
-            dismissAfter: 5000,
-          });
-        }}
-        style={{ marginRight: 8 }}
-      >
-        Info
-      </Button>
-      <Button
-        variant="outline"
-        onClick={() => {
-          notification.toaster({
-            title: 'Toaster',
-            message: 'Hello world! This is a toaster',
             status: 'warning',
             dismissible: true,
             dismissAfter: 5000,

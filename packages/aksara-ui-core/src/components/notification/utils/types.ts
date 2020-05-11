@@ -1,4 +1,4 @@
-export type NotificationStatus = 'default' | 'info' | 'success' | 'warning' | 'error';
+export type NotificationStatus = 'default' | 'success' | 'warning' | 'error';
 
 export interface ToasterSettings {
   id?: string;
