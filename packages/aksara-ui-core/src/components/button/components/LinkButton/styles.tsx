@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+import { variant, layout, position, flexbox, grid, space, border } from 'styled-system';
 
 import { ButtonBase } from '../../styles';
 import { ButtonBaseProps } from '../../types';
@@ -52,6 +52,15 @@ export const LinkButtonBase = styled('button')<LinkButtonBaseProps>`
     props.icon && props.iconPosition
       ? variant({ prop: 'iconPosition', variants: linkButtonPaddingVariants })(props)
       : null}
+
+
+
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+  ${border}
 `;
 
 export const LinkButtonIcon = styled('span')<Pick<LinkButtonBaseProps, 'buttonSize' | 'iconPosition' | 'variant'>>`
