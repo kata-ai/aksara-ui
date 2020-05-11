@@ -22,7 +22,6 @@ export const BasicExample = () => (
         variant="outline"
         onClick={() => {
           notification.toaster({
-            title: 'Toaster',
             message: 'Hello world! This is a toaster',
             dismissible: true,
             dismissAfter: 5000,
@@ -36,7 +35,6 @@ export const BasicExample = () => (
         variant="outline"
         onClick={() => {
           notification.toaster({
-            title: 'Toaster',
             message: 'Hello world! This is a toaster',
             status: 'success',
             dismissible: true,
@@ -51,7 +49,6 @@ export const BasicExample = () => (
         variant="outline"
         onClick={() => {
           notification.toaster({
-            title: 'Toaster',
             message: 'Hello world! This is a toaster',
             status: 'warning',
             dismissible: true,
@@ -66,7 +63,6 @@ export const BasicExample = () => (
         variant="outline"
         onClick={() => {
           notification.toaster({
-            title: 'Toaster',
             message: 'Hello world! This is a toaster',
             status: 'error',
             dismissible: true,
