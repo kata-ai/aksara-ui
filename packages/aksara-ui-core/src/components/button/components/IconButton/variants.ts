@@ -1,5 +1,3 @@
-import { colors } from '../../../../utils';
-
 export const iconButtonDefaultVariants = {
   default: {
     color: 'grey08',
