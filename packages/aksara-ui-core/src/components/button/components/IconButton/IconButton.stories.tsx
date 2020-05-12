@@ -2,11 +2,11 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
 
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../utils/storybook';
-import { Stack, Box, Heading } from '../../foundations';
+import { ComponentBlock, SystemWrapper, SystemBlock } from '../../../../utils/storybook';
+import { Stack, Box, Heading } from '../../../../foundations';
 import IconButton from './IconButton';
 
-const readme = require('./README.md');
+const readme = require('../../README.md');
 
 export default {
   title: 'Core|Components/Button/IconButton',
@@ -25,20 +25,6 @@ export const Example = () => (
           <IconPen fill="currentColor" aria-hidden="true" />
         </IconButton>
         <IconButton type="button" disabled aria-label="Push Me" onClick={action('button-click')}>
-          <IconPen fill="currentColor" aria-hidden="true" />
-        </IconButton>
-      </ComponentBlock>
-      <ComponentBlock title="Primary Button" withBackground>
-        <IconButton
-          type="button"
-          style={{ marginRight: 16 }}
-          variant="primary"
-          aria-label="Push Me"
-          onClick={action('button-click')}
-        >
-          <IconPen fill="currentColor" aria-hidden="true" />
-        </IconButton>
-        <IconButton type="button" disabled variant="primary" aria-label="Push Me" onClick={action('button-click')}>
           <IconPen fill="currentColor" aria-hidden="true" />
         </IconButton>
       </ComponentBlock>
@@ -104,13 +90,7 @@ export const ButtonSizes = () => (
           </Heading>
           <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <IconButton
-                type="button"
-                variant="primary"
-                aria-label="Push Me"
-                size={24}
-                onClick={action('button-click')}
-              >
+              <IconButton type="button" aria-label="Push Me" size={24} onClick={action('button-click')}>
                 <IconPen fill="currentColor" aria-hidden="true" />
               </IconButton>
             </Box>
@@ -144,13 +124,7 @@ export const ButtonSizes = () => (
           </Heading>
           <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <IconButton
-                type="button"
-                aria-label="Push Me"
-                size={32}
-                variant="primary"
-                onClick={action('button-click')}
-              >
+              <IconButton type="button" aria-label="Push Me" size={32} onClick={action('button-click')}>
                 <IconPen fill="currentColor" aria-hidden="true" />
               </IconButton>
             </Box>
@@ -184,24 +158,12 @@ export const ButtonSizes = () => (
           </Heading>
           <Box display="flex" flexDirection="column" flex="1 1 auto" mt="sm">
             <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <IconButton
-                type="button"
-                aria-label="Push Me"
-                size={40}
-                variant="primary"
-                onClick={action('button-click')}
-              >
+              <IconButton type="button" aria-label="Push Me" size={40} onClick={action('button-click')}>
                 <IconPen fill="currentColor" aria-hidden="true" />
               </IconButton>
             </Box>
             <Box flex="1 1 auto" height="100%" minHeight={72}>
-              <IconButton
-                type="button"
-                aria-label="Push Me"
-                size={40}
-                variant="outline"
-                onClick={action('button-click')}
-              >
+              <IconButton type="button" aria-label="Push Me" size={40} onClick={action('button-click')}>
                 <IconPen fill="currentColor" aria-hidden="true" />
               </IconButton>
             </Box>

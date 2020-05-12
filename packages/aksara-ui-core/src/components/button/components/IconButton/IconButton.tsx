@@ -2,8 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { IconButtonStyles } from './styles';
-import { IconButtonBaseProps, IconButtonSizes } from './types';
+import { IconButtonStyles, IconButtonBaseProps, IconButtonSizes } from './styles';
 
 export interface IconButtonProps extends IconButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
