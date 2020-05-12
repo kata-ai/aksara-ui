@@ -6,6 +6,7 @@ import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '..
 import { Stack, Box, Heading, Inline } from '../../../../foundations';
 import IconButton from './IconButton';
 import { IconButtonVariants } from './styles';
+import IconButtonAnchor from './IconButtonAnchor';
 
 const readme = require('../../README.md');
 
@@ -22,20 +23,46 @@ export default {
 
 export const Example = () => (
   <SystemBlock title="Icon Button" subtitle="Icon-only buttons.">
-    <SystemSubheading mb="xl">Default Theme</SystemSubheading>
     <Stack spacing="xl">
-      {buttonVariants.map(variant => (
-        <ComponentBlock title={`${variant.charAt(0).toUpperCase() + variant.slice(1)} Button`} withBackground>
-          <Inline spacing="md">
-            <IconButton type="button" variant={variant} aria-label="Push Me" onClick={action('button-click')}>
-              <IconPen fill="currentColor" aria-hidden="true" />
-            </IconButton>
-            <IconButton type="button" variant={variant} disabled aria-label="Push Me" onClick={action('button-click')}>
-              <IconPen fill="currentColor" aria-hidden="true" />
-            </IconButton>
-          </Inline>
-        </ComponentBlock>
-      ))}
+      <SystemSubheading>Default Theme</SystemSubheading>
+      <Stack spacing="xl">
+        {buttonVariants.map(variant => (
+          <ComponentBlock title={`${variant.charAt(0).toUpperCase() + variant.slice(1)} Button`} withBackground>
+            <Inline spacing="md">
+              <IconButton type="button" variant={variant} aria-label="Push Me" onClick={action('button-click')}>
+                <IconPen fill="currentColor" aria-hidden="true" />
+              </IconButton>
+              <IconButton
+                type="button"
+                variant={variant}
+                disabled
+                aria-label="Push Me"
+                onClick={action('button-click')}
+              >
+                <IconPen fill="currentColor" aria-hidden="true" />
+              </IconButton>
+            </Inline>
+          </ComponentBlock>
+        ))}
+      </Stack>
+      <SystemSubheading>Button as Anchor</SystemSubheading>
+      <Stack spacing="xl">
+        {buttonVariants.map(variant => (
+          <ComponentBlock title={`${variant.charAt(0).toUpperCase() + variant.slice(1)} Button`} withBackground>
+            <Inline spacing="md">
+              <IconButtonAnchor
+                variant={variant}
+                aria-label="Push Me"
+                href="https://www.youtube.com/watch?v=K8NKNKub2HI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconPen fill="currentColor" aria-hidden="true" />
+              </IconButtonAnchor>
+            </Inline>
+          </ComponentBlock>
+        ))}
+      </Stack>
     </Stack>
   </SystemBlock>
 );

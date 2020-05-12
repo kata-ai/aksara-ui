@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { colors } from '../../../../utils';
 import IconButton from './IconButton';
+import IconButtonAnchor from './IconButtonAnchor';
 
 describe('components/Button', () => {
   describe('<IconButton />', () => {
@@ -48,6 +49,18 @@ describe('components/Button', () => {
       );
 
       expect(container.firstChild).toHaveClass('selected');
+    });
+  });
+
+  describe('<IconButtonAnchor />', () => {
+    test('renders correctly', () => {
+      const { container } = render(
+        <IconButtonAnchor href="#">
+          <i className="icon-trash" />
+        </IconButtonAnchor>
+      );
+
+      expect(container.firstChild).toBeInTheDocument();
     });
   });
 });
