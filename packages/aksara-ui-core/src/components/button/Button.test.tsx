@@ -2,8 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { IconDocAdd } from '@aksara-ui/icons';
 
-import { colors } from '../../utils';
-import { Button, FloatingButton, IconButton, OutlineButton } from './index';
+import { Button, FloatingButton, OutlineButton } from './index';
 
 describe('components/Button', () => {
   describe('<Button />', () => {
@@ -84,53 +83,6 @@ describe('components/Button', () => {
       );
 
       expect(container.firstChild).toBeInTheDocument();
-    });
-  });
-
-  describe('<IconButton />', () => {
-    test('renders correctly', () => {
-      const { container } = render(
-        <IconButton>
-          <i className="icon-trash" />
-        </IconButton>
-      );
-
-      expect(container.firstChild).toBeInTheDocument();
-    });
-
-    test('renders in different sizes', () => {
-      const { container } = render(
-        <>
-          <IconButton size={32}>
-            <i className="icon-trash" />
-          </IconButton>
-          <IconButton size={40}>
-            <i className="icon-trash" />
-          </IconButton>
-        </>
-      );
-
-      expect(container.firstChild).toBeInTheDocument();
-    });
-
-    test('renders colors correctly by variant', () => {
-      const { container } = render(
-        <IconButton variant="destructive">
-          <i className="icon-add" />
-        </IconButton>
-      );
-
-      expect(container.firstChild).toHaveStyle(`color: ${colors.red05}`);
-    });
-
-    test('renders selected styles correctly', () => {
-      const { container } = render(
-        <IconButton variant="outline" selected>
-          <i className="icon-add" />
-        </IconButton>
-      );
-
-      expect(container.firstChild).toHaveClass('selected');
     });
   });
 });

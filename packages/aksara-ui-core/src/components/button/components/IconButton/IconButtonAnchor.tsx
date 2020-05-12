@@ -2,10 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { IconButtonStyles } from './styles';
-import { IconButtonBaseProps, IconButtonSizes } from './types';
+import { IconButtonStyles, IconButtonBaseProps, IconButtonSizes } from './styles';
 
-export interface IconButtonProps extends IconButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonAnchorProps extends IconButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -14,11 +13,11 @@ export interface IconButtonProps extends IconButtonBaseProps, React.ButtonHTMLAt
   size?: IconButtonSizes;
 }
 
-const Root = styled('button')<IconButtonProps>`
+const Root = styled('a')<IconButtonAnchorProps>`
   ${IconButtonStyles}
 `;
 
-const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+const IconButtonAnchor = React.forwardRef<HTMLAnchorElement, IconButtonAnchorProps>(
   ({ children, className, style, size, selected, ...rest }, ref) => (
     <Root className={clsx(selected && 'selected', className)} style={style} buttonSize={size} ref={ref} {...rest}>
       {children}
@@ -26,12 +25,12 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   )
 );
 
-IconButton.defaultProps = {
+IconButtonAnchor.defaultProps = {
   className: undefined,
   style: undefined,
   variant: 'default',
 };
 
-IconButton.displayName = 'IconButton';
+IconButtonAnchor.displayName = 'IconButtonAnchor';
 
-export default IconButton;
+export default IconButtonAnchor;

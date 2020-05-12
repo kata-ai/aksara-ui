@@ -23,14 +23,6 @@ import {
   FloatingButtonDestructive,
 } from './utils/floatingButtonUtils';
 import {
-  IconButtonDefault,
-  IconButtonSupport,
-  IconButtonDestructive,
-  IconButtonGhost,
-  iconButtonSizes,
-  iconSizes,
-} from './utils/iconButtonUtils';
-import {
   OutlineButtonSmall,
   OutlineButtonMedium,
   OutlineButtonLarge,
@@ -40,7 +32,7 @@ import {
   OutlineButtonWarning,
   OutlineButtonDestructive,
 } from './utils/outlineButtonUtils';
-import { OutlineButtonBaseProps, ButtonBaseProps, IconButtonBaseProps, FloatingButtonBaseProps } from './types';
+import { OutlineButtonBaseProps, ButtonBaseProps, FloatingButtonBaseProps } from './types';
 
 export const ButtonBase = css`
   margin: 0;
@@ -100,48 +92,6 @@ export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
   ${props.variant === 'success' && FloatingButtonSuccess}
   ${props.variant === 'warning' && FloatingButtonWarning}
   ${props.variant === 'destructive' && FloatingButtonDestructive}
-
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
-  ${border}
-`;
-
-export const IconButtonStyles = (props: IconButtonBaseProps) => css`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: ${iconButtonSizes(props.buttonSize)}px;
-  width: ${iconButtonSizes(props.buttonSize)}px;
-  text-align: center;
-  border-radius: 4px;
-
-  ${ButtonBase}
-
-  i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  i:before {
-    font-size: ${iconSizes(props.buttonSize)}px;
-  }
-
-  svg {
-    width: ${iconSizes(props.buttonSize)}px;
-    height: ${iconSizes(props.buttonSize)}px;
-  }
-
-  ${props.variant === 'default' && IconButtonDefault}
-  ${props.variant === 'primary' && IconButtonGhost}
-  ${props.variant === 'outline' && IconButtonSupport}
-  ${props.variant === 'destructive' && IconButtonDestructive}
-  ${props.variant === 'ghost' && IconButtonGhost}
 
   ${layout}
   ${position}

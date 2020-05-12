@@ -9,7 +9,7 @@ export type IconButtonSizes = 24 | 32 | 40;
 export type FloatingButtonSizes = 32 | 40 | 64;
 export type ButtonIconPositions = 'left' | 'right';
 
-type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps & BorderProps;
+export type AllButtonStyledProps = LayoutProps & PositionProps & FlexboxProps & GridProps & SpaceProps & BorderProps;
 
 export interface ButtonBaseProps extends AllButtonStyledProps {
   /** Is a block button. */
@@ -44,13 +44,4 @@ export interface FloatingButtonBaseProps extends AllButtonStyledProps {
   variant?: FloatingButtonVariants;
   /** The size of the button. `size` is reserved by styled-system, so we alias its type. */
   buttonSize?: FloatingButtonSizes;
-}
-
-export interface IconButtonBaseProps extends AllButtonStyledProps {
-  /** The variant of the button. */
-  variant?: IconButtonVariants;
-  /** The size of the button. `size` is reserved by styled-system, so we alias its type. */
-  buttonSize?: IconButtonSizes;
-  /** Add a "selected" style for use in toggle buttons. */
-  selected?: boolean;
 }
