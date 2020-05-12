@@ -2,8 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { IconDocAdd } from '@aksara-ui/icons';
 
-import { colors } from '../../utils';
-import { Button, FloatingButton, IconButton, OutlineButton } from './index';
+import { Button, FloatingButton, OutlineButton } from './index';
 
 describe('components/Button', () => {
   describe('<Button />', () => {
