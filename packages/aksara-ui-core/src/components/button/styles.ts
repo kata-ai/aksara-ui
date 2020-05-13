@@ -22,7 +22,7 @@ import {
   FloatingButtonWarning,
   FloatingButtonDestructive,
 } from './utils/floatingButtonUtils';
-import { OutlineButtonBaseProps, ButtonBaseProps, FloatingButtonBaseProps } from './types';
+import { ButtonBaseProps, FloatingButtonBaseProps } from './types';
 
 export const ButtonBase = css`
   margin: 0;
