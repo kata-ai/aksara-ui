@@ -22,17 +22,7 @@ import {
   FloatingButtonWarning,
   FloatingButtonDestructive,
 } from './utils/floatingButtonUtils';
-import {
-  OutlineButtonSmall,
-  OutlineButtonMedium,
-  OutlineButtonLarge,
-  OutlineButtonDefault,
-  OutlineButtonPrimary,
-  OutlineButtonSuccess,
-  OutlineButtonWarning,
-  OutlineButtonDestructive,
-} from './utils/outlineButtonUtils';
-import { OutlineButtonBaseProps, ButtonBaseProps, FloatingButtonBaseProps } from './types';
+import { ButtonBaseProps, FloatingButtonBaseProps } from './types';
 
 export const ButtonBase = css`
   margin: 0;
@@ -115,54 +105,6 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
   ${props.buttonSize === 40 && ButtonMedium(props)}
   ${props.buttonSize === 48 && ButtonLarge(props)}
 
-
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
-  ${border}
-`;
-
-export const OutlineButtonStyles = (props: OutlineButtonBaseProps) => css`
-  ${ButtonBase}
-
-  background-color: ${colors.white};
-  border-color: ${colors.grey04};
-
-  &:not(:disabled):not(.disabled) {
-    &:hover,
-    &.hover {
-      background-color: ${colors.grey03};
-      border-color: ${colors.grey04};
-    }
-
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
-      background-color: ${colors.grey03};
-      border-color: ${colors.blue06};
-      box-shadow: 0 0 2px 1px rgba(0, 111, 230, 0.4), 0 0 0 1px ${colors.blue06};
-    }
-  }
-
-  &:disabled,
-  &.disabled {
-    border-color: ${colors.grey04};
-    background-color: ${colors.grey01};
-    color: ${colors.grey04};
-  }
-
-  ${props.variant === 'default' && OutlineButtonDefault}
-  ${props.variant === 'primary' && OutlineButtonPrimary}
-  ${props.variant === 'success' && OutlineButtonSuccess}
-  ${props.variant === 'warning' && OutlineButtonWarning}
-  ${props.variant === 'destructive' && OutlineButtonDestructive}
-
-  ${props.buttonSize === 32 && OutlineButtonSmall(props)}
-  ${props.buttonSize === 40 && OutlineButtonMedium(props)}
-  ${props.buttonSize === 48 && OutlineButtonLarge(props)}
 
   ${layout}
   ${position}

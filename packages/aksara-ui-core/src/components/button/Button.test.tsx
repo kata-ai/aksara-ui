@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { IconDocAdd } from '@aksara-ui/icons';
 
-import { Button, FloatingButton, OutlineButton } from './index';
+import { Button, FloatingButton } from './index';
 
 describe('components/Button', () => {
   describe('<Button />', () => {
@@ -50,27 +50,6 @@ describe('components/Button', () => {
       );
 
       expect(container.firstChild).toHaveClass('selected');
-    });
-  });
-
-  describe('<OutlineButton />', () => {
-    test('renders correctly', () => {
-      const { container } = render(<OutlineButton>example</OutlineButton>);
-
-      expect(container.firstChild).toBeInTheDocument();
-    });
-
-    test('renders block buttons correctly', () => {
-      const { container } = render(<OutlineButton block>test button</OutlineButton>);
-
-      expect(container.firstChild).toHaveStyle('display: block');
-    });
-
-    test('renders icons correctly', () => {
-      const { container } = render(<OutlineButton icon="add">test button</OutlineButton>);
-      const icon = container.querySelector('i');
-
-      expect(icon).toBeInTheDocument();
     });
   });
 
