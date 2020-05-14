@@ -32,46 +32,30 @@ export default {
   },
 };
 
+const ExampleCard = () => {
+  return (
+    <UnstyledAnchor href="https://deno.land/" target="_blank" rel="noopener noreferrer">
+      <InteractiveCard>
+        <Box p="lg">
+          <Heading scale={400}>Deno</Heading>
+        </Box>
+        <Box p="lg" pt={0}>
+          <Text scale={200} color="grey07">
+            A secure runtime for JavaScript and TypeScript
+          </Text>
+        </Box>
+      </InteractiveCard>
+    </UnstyledAnchor>
+  );
+};
+
 export const BasicExample = () => {
   return (
     <Box p="md">
       <ExampleGrid>
-        <UnstyledAnchor href="https://deno.land/" target="_blank" rel="noopener noreferrer">
-          <InteractiveCard>
-            <Box p="lg">
-              <Heading scale={400}>Deno</Heading>
-            </Box>
-            <Box p="lg" pt={0}>
-              <Text scale={200} color="grey07">
-                A secure runtime for JavaScript and TypeScript
-              </Text>
-            </Box>
-          </InteractiveCard>
-        </UnstyledAnchor>
-        <UnstyledAnchor href="https://deno.land/" target="_blank" rel="noopener noreferrer">
-          <InteractiveCard>
-            <Box p="lg">
-              <Heading scale={400}>Deno</Heading>
-            </Box>
-            <Box p="lg" pt={0}>
-              <Text scale={200} color="grey07">
-                A secure runtime for JavaScript and TypeScript
-              </Text>
-            </Box>
-          </InteractiveCard>
-        </UnstyledAnchor>
-        <UnstyledAnchor href="https://deno.land/" target="_blank" rel="noopener noreferrer">
-          <InteractiveCard>
-            <Box p="lg">
-              <Heading scale={400}>Deno</Heading>
-            </Box>
-            <Box p="lg" pt={0}>
-              <Text scale={200} color="grey07">
-                A secure runtime for JavaScript and TypeScript
-              </Text>
-            </Box>
-          </InteractiveCard>
-        </UnstyledAnchor>
+        <ExampleCard />
+        <ExampleCard />
+        <ExampleCard />
       </ExampleGrid>
     </Box>
   );

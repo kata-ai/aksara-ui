@@ -9,6 +9,8 @@ Interactive card has action such as open and view in more detail that simply occ
 To use this component in your app, import as follows:
 
 ```tsx
+import { InteractiveCard, Box, Text, Heading } from '@aksara-ui/core';
+
 export default function Component() {
   return (
     <InteractiveCard>
