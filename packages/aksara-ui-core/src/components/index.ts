@@ -5,6 +5,7 @@ export * from './button';
 export * from './dialog';
 export * from './dropdown';
 export * from './form';
+export * from './interactive-card';
 export * from './loading';
 export * from './message';
 export * from './notification';
