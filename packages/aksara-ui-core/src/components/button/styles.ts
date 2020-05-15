@@ -1,7 +1,6 @@
 import { css } from 'styled-components';
 import { layout, position, flexbox, grid, space, border } from 'styled-system';
 
-import { colors, shadows } from '../../utils/variables';
 import {
   ButtonDefault,
   ButtonPrimary,
@@ -13,16 +12,7 @@ import {
   ButtonLarge,
   InverseButton,
 } from './utils/buttonUtils';
-import {
-  FloatingButtonSmall,
-  FloatingButtonMedium,
-  FloatingButtonLarge,
-  FloatingButtonPrimary,
-  FloatingButtonSuccess,
-  FloatingButtonWarning,
-  FloatingButtonDestructive,
-} from './utils/floatingButtonUtils';
-import { ButtonBaseProps, FloatingButtonBaseProps } from './types';
+import { ButtonBaseProps } from './types';
 
 export const ButtonBase = css`
   margin: 0;
@@ -50,45 +40,6 @@ export const ButtonBase = css`
   &:focus {
     outline: 0px;
   }
-`;
-
-export const FloatingButtonStyles = (props: FloatingButtonBaseProps) => css`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  ${ButtonBase}
-
-  box-shadow: ${shadows.layer200};
-  vertical-align: middle;
-  background-color: ${colors.white};
-  color: ${colors.grey07};
-
-  i:before {
-    vertical-align: middle;
-  }
-
-  &:disabled,
-  &.disabled {
-    opacity: 0.5;
-  }
-
-  ${props.buttonSize === 32 && FloatingButtonSmall}
-  ${props.buttonSize === 40 && FloatingButtonMedium}
-  ${props.buttonSize === 64 && FloatingButtonLarge}
-
-  ${props.variant === 'primary' && FloatingButtonPrimary}
-  ${props.variant === 'success' && FloatingButtonSuccess}
-  ${props.variant === 'warning' && FloatingButtonWarning}
-  ${props.variant === 'destructive' && FloatingButtonDestructive}
-
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
-  ${border}
 `;
 
 export const ButtonStyles = (props: ButtonBaseProps) => css`
