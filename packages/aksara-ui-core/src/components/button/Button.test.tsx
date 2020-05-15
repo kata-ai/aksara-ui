@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { IconDocAdd } from '@aksara-ui/icons';
 
-import { Button, FloatingButton } from './index';
+import { Button } from './index';
 
 describe('components/Button', () => {
   describe('<Button />', () => {
@@ -50,18 +50,6 @@ describe('components/Button', () => {
       );
 
       expect(container.firstChild).toHaveClass('selected');
-    });
-  });
-
-  describe('<FloatingButton />', () => {
-    test('renders correctly', () => {
-      const { container } = render(
-        <FloatingButton>
-          <i className="icon-trash" />
-        </FloatingButton>
-      );
-
-      expect(container.firstChild).toBeInTheDocument();
     });
   });
 });
