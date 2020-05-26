@@ -76,9 +76,6 @@ exports[`components/Banner <Banner /> renders correctly 1`] = `
   >
     <span
       class="c3"
-      display="inline-block"
-      font-weight="500"
-      scale="200"
     >
       test banner
     </span>

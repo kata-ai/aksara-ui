@@ -14,8 +14,7 @@ exports[`compoents/Badge <Badge /> renders with additional variants 1`] = `
 }
 
 <span
-  class="sc-AxiKw c0"
-  scale="200"
+  class="Text-sc-2ewp4w-0 c0"
 >
   test badge
 </span>
