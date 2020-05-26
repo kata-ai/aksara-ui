@@ -1,9 +1,10 @@
+import styled from 'styled-components';
 import { variant } from 'styled-system';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 
-import { styledWrapper as styled } from '../../../utils/primitives';
 import { TextScale } from '../../../Theme';
 
-import { typographyBase, TypographyBaseProps } from '../utils';
+import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../utils';
 
 export interface TextProps extends TypographyBaseProps {
   /** Size value of the text. */
@@ -13,7 +14,9 @@ export interface TextProps extends TypographyBaseProps {
 /**
  * This is a base `Text` element to handle typography elements.
  */
-const Text = styled('span')<TextProps>`
+const Text = styled('span').withConfig<TextProps>({
+  shouldForwardProp: prop => shouldForwardProp(prop) && shouldForwardTextProp(prop),
+})`
   ${variant({
     prop: 'scale',
     scale: 'componentStyles.text',

@@ -12,8 +12,6 @@ const TableBodyRoot = styled('td')<BaseStylesProps>`
   ${BaseStyles}
 `;
 
-const TableBodyText = styled(Text)``;
-
 const TableBodyCell: React.FC<TableBodyCellProps> = ({ className, style, children, customContent, ...rest }) => {
   const renderContent = () => {
     if (customContent) {
@@ -21,9 +19,9 @@ const TableBodyCell: React.FC<TableBodyCellProps> = ({ className, style, childre
     }
 
     return (
-      <TableBodyText scale={200} fontWeight={600}>
+      <Text scale={200} fontWeight={600}>
         {children}
-      </TableBodyText>
+      </Text>
     );
   };
 
