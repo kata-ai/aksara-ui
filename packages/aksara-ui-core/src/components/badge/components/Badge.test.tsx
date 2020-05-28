@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import Badge from './Badge';
 
-describe('compoents/Badge', () => {
+describe('components/Badge', () => {
   describe('<Badge />', () => {
     test('renders with children', () => {
       const { container } = render(<Badge>test badge</Badge>);
