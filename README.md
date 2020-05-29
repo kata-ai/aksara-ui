@@ -82,7 +82,37 @@ Read the [Storybook](https://wicara.now.sh/) for more examples.
 
 ## Fonts
 
-Please read the [Fonts package README](packages/aksara-fonts/README.md) for guide on installing fonts.
+We use multiple fonts in Aksara UI:
+
+- The system font stack, for all UI elements within the platform.
+- The [**Inter**](https://rsms.me/inter/) font as our primary brand typeface.
+
+### Using brand fonts
+
+First, you should install the brand fonts into your project.
+
+```bash
+# yarn
+$ yarn add typeface-inter
+
+# npm
+$ npm install --save typeface-inter
+```
+
+Then, in any typography component (e.g. `Text`, `Heading`), you can use the `brand` token in `fontFamily`.
+
+```jsx
+import * as React from 'react';
+import { Heading } from '@aksara-ui/core';
+
+export default function Component() {
+  return (
+    <Heading scale={700} fontFamily="brand">
+      Heading Text
+    </Heading>
+  );
+}
+```
 
 ## License
 
