@@ -1,9 +1,10 @@
+import styled from 'styled-components';
 import { variant } from 'styled-system';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 
 import { ParagraphScale } from '../../../Theme';
-import { styledWrapper as styled } from '../../../utils/primitives';
 
-import { typographyBase, TypographyBaseProps } from '../utils';
+import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../utils';
 
 export interface ParagraphProps extends TypographyBaseProps {
   /** Size value of the text. */
@@ -13,7 +14,9 @@ export interface ParagraphProps extends TypographyBaseProps {
 /**
  * Paragraph component provided as a styled component primitive.
  */
-const Paragraph = styled('p')<ParagraphProps>`
+const Paragraph = styled('p').withConfig<ParagraphProps>({
+  shouldForwardProp: prop => shouldForwardProp(prop) && shouldForwardTextProp(prop),
+})`
   ${variant({
     prop: 'scale',
     scale: 'componentStyles.paragraph',

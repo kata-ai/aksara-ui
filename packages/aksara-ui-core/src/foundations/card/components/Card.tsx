@@ -10,7 +10,7 @@ export interface CardProps extends BoxProps {
 /**
  * Renders a card based on the elevation level.
  */
-const Card = styled(Box)<CardProps>`
+const Card = styled(Box).withConfig<CardProps>({ shouldForwardProp: prop => !['elevation'].includes(prop) })`
   ${variant({
     prop: 'elevation',
     scale: 'componentStyles.card',
