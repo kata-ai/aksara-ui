@@ -5,7 +5,7 @@ import { DecoratorFn } from '@storybook/react';
 import { AksaraProvider, GlobalStyles } from '../../foundations/theme';
 
 import '../../../../aksara-fonts/kata-icons.css';
-import '../../../../aksara-fonts/objective.css';
+import 'typeface-inter';
 
 const SystemWrapper: DecoratorFn = storyFn => (
   <AksaraProvider>
