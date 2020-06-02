@@ -32,6 +32,7 @@
     "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
+    "@reach/accordion": "^0.10.3",
     "@reach/visually-hidden": "^0.10.1",
     "@styled-system/should-forward-prop": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",

@@ -13,5 +13,6 @@
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "workbench.colorCustomizations": {}
+  "workbench.colorCustomizations": {},
+  "deno.enable": false
 }
