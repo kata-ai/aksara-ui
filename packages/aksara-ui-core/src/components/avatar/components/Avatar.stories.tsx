@@ -40,19 +40,6 @@ export const BasicExample = () => (
           </Inline>
         </Box>
       </Box>
-      <Box>
-        <Heading scale={100} color="grey07" mb="sm">
-          Rectangular
-        </Heading>
-        <Box display="flex" justifyContent="center" px="md" py="lg" backgroundColor="grey02">
-          <Inline spacing="md">
-            <Avatar shape="rectangular" size={40} name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />
-            <Avatar shape="rectangular" size={40} color="indigo" name="Adry Muhammad" />
-            <Avatar shape="rectangular" size={40} color="turquoise" type="user" />
-            <Avatar shape="rectangular" size={40} color="green" type="team" />
-          </Inline>
-        </Box>
-      </Box>
     </Box>
     <Box
       mt="xl"
