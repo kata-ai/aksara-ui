@@ -13,6 +13,13 @@ describe('components/Banner', () => {
       expect(container.firstChild).toMatchSnapshot();
     });
 
+    test('renders with title', () => {
+      const { getByText } = render(<Message state="success" title="test title" message="test banner" />);
+
+      const titleText = getByText('test title');
+      expect(titleText).toBeInTheDocument();
+    });
+
     test('renders close button with onClose', () => {
       const { getByTestId } = render(<Message state="success" message="test banner" onClose={handleClose} />);
 
