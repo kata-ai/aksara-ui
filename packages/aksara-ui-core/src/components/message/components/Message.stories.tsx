@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { ComponentBlock, SystemWrapper, SystemBlock } from '../../../utils/storybook';
 import Message from './Message';
-import { Stack } from '../../../foundations';
+import { Stack, Box } from '../../../foundations';
 
 const readme = require('../README.md');
 
@@ -34,6 +34,8 @@ export const BasicExample = () => (
 );
 
 export const SectionLevel = () => {
+  const [isOpen, setIsOpen] = React.useState(true);
+
   return (
     <SystemBlock
       title="Message"
@@ -42,10 +44,19 @@ export const SectionLevel = () => {
     >
       <ComponentBlock title="Usage">
         <Stack spacing="sm">
-          <Message
-            title="Check out our Natural Language documentation"
-            message="You can learn how to improve your Natural Language by reading our documentation."
-          />
+          {isOpen ? (
+            <Message
+              title="Check out our Natural Language documentation"
+              message="You can learn how to improve your Natural Language by reading our documentation."
+              onClose={() => setIsOpen(false)}
+            />
+          ) : (
+            <Box>
+              <button type="button" onClick={() => setIsOpen(true)}>
+                Toggle banner
+              </button>
+            </Box>
+          )}
           <Message
             title="Prediction results will show up here after you submit a sentence"
             message="Before train your prediction sentence, please learn how to use prediction in order to train your natural language."

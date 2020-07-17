@@ -53,19 +53,11 @@ export const Inner = styled('div')`
   padding: 16px;
 `;
 
-export const CloseButton = styled('button')<BaseMessageProps>`
+export const CloseButtonWrapper = styled('div')<BaseMessageProps>`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 16px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-
-  &:focus {
-    outline: none;
-  }
 `;
 
 export const Root = styled('div')<BaseMessageProps>`

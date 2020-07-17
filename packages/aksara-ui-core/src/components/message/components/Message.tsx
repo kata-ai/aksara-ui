@@ -8,8 +8,8 @@ import {
   IconConversation,
 } from '@aksara-ui/icons';
 
-import { BaseMessageProps, Root, Icon, Inner, CloseButton, MessageStates } from '../styles';
-import { Heading, Paragraph } from '../../../foundations';
+import { BaseMessageProps, Root, Icon, Inner, CloseButtonWrapper, MessageStates } from '../styles';
+import { Heading, Paragraph, UnstyledButton } from '../../../foundations';
 import { messageIconVariants, closeButtonVariants } from '../variants';
 
 export interface MessageProps extends BaseMessageProps {
@@ -38,19 +38,19 @@ const Message: React.FC<MessageProps> = ({ className, style, title, message, sta
   const renderIconStates = () => {
     switch (state) {
       case 'general': {
-        return <IconConversation aria-hidden="true" size={24} {...messageIconVariants[state]} />;
+        return <IconConversation size={24} aria-hidden {...messageIconVariants[state]} />;
       }
       case 'success': {
-        return <IconTickRounded aria-hidden="true" size={24} {...messageIconVariants[state]} />;
+        return <IconTickRounded size={24} aria-hidden {...messageIconVariants[state]} />;
       }
       case 'info': {
-        return <IconInfo aria-hidden="true" size={24} {...messageIconVariants[state]} />;
+        return <IconInfo size={24} aria-hidden {...messageIconVariants[state]} />;
       }
       case 'warning': {
-        return <IconWarningRounded aria-hidden="true" size={24} {...messageIconVariants[state]} />;
+        return <IconWarningRounded size={24} aria-hidden {...messageIconVariants[state]} />;
       }
       case 'error': {
-        return <IconCloseRounded aria-hidden="true" size={24} {...messageIconVariants[state]} />;
+        return <IconCloseRounded size={24} aria-hidden {...messageIconVariants[state]} />;
       }
       default: {
         return null;
@@ -82,15 +82,21 @@ const Message: React.FC<MessageProps> = ({ className, style, title, message, sta
         {renderMessage()}
       </Inner>
       {onClose && (
-        <CloseButton
-          type="button"
-          aria-label="Close"
-          data-testid="Banner-closeButton"
-          onClick={handleClose}
-          state={state}
-        >
-          <IconClose size={24} aria-hidden="true" {...(state ? closeButtonVariants[state] : {})} />
-        </CloseButton>
+        <CloseButtonWrapper state={state}>
+          <UnstyledButton
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            width={24}
+            height={24}
+            type="button"
+            aria-label="Close"
+            data-testid="Banner-closeButton"
+            onClick={handleClose}
+          >
+            <IconClose size={24} aria-hidden {...(state ? closeButtonVariants[state] : {})} />
+          </UnstyledButton>
+        </CloseButtonWrapper>
       )}
     </Root>
   );
