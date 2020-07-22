@@ -2,7 +2,7 @@ import { colors } from '../../utils';
 
 export const messageIconVariants = {
   general: {
-    fill: colors.grey08,
+    fill: colors.grey06,
   },
   success: {
     fill: colors.green07,
@@ -20,50 +20,41 @@ export const messageIconVariants = {
 
 export const closeButtonVariants = {
   general: {
-    color: 'grey08',
+    fill: colors.grey08,
   },
   success: {
-    color: 'green07',
+    fill: colors.grey08,
   },
   warning: {
-    color: 'yellow07',
+    fill: colors.grey08,
   },
   error: {
-    color: 'red07',
+    fill: colors.grey08,
   },
   info: {
-    color: 'blue07',
+    fill: colors.grey08,
   },
 };
 
 export const messageVariants = {
   general: {
-    borderColor: 'grey04',
-    backgroundColor: 'grey01',
+    backgroundColor: 'grey03',
     color: 'grey08',
   },
   success: {
-    borderColor: 'green06',
-    backgroundColor: 'grey01',
-    color: 'green07',
-    borderLeftWidth: '4px',
+    backgroundColor: 'green01',
+    color: 'grey08',
   },
   warning: {
-    borderColor: 'yellow05',
-    backgroundColor: 'grey01',
-    color: 'yellow07',
-    borderLeftWidth: '4px',
+    backgroundColor: 'yellow01',
+    color: 'grey08',
   },
   error: {
-    borderColor: 'red05',
-    backgroundColor: 'grey01',
-    color: 'red07',
-    borderLeftWidth: '4px',
+    backgroundColor: 'red01',
+    color: 'grey08',
   },
   info: {
-    borderColor: 'blue06',
-    backgroundColor: 'grey01',
-    color: 'blue07',
-    borderLeftWidth: '4px',
+    backgroundColor: 'indigo01',
+    color: 'grey08',
   },
 };

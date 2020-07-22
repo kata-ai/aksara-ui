@@ -13,7 +13,7 @@ import {
   variant,
 } from 'styled-system';
 
-import { colors, radii } from '../../utils';
+import { colors } from '../../utils';
 import avatarColors from './theme';
 
 export interface AvatarBaseProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
@@ -31,7 +31,7 @@ export interface AvatarBaseProps extends LayoutProps, PositionProps, FlexboxProp
   name?: string;
 }
 
-export const AvatarBase = ({ size = 40, shape: type = 'rounded' }: AvatarBaseProps) =>
+export const AvatarBase = ({ size = 40 }: AvatarBaseProps) =>
   css`
     display: inline-flex;
     align-items: center;
@@ -40,7 +40,7 @@ export const AvatarBase = ({ size = 40, shape: type = 'rounded' }: AvatarBasePro
     width: ${size}px;
     height: ${size}px;
     border: 1px solid ${colors.white};
-    border-radius: ${type === 'rounded' ? size : radii.xs}px;
+    border-radius: ${size}px;
     ${variant({
       prop: 'color',
       variants: avatarColors,

@@ -2,6 +2,7 @@ export * from './avatar';
 export * from './badge';
 export * from './blankslate';
 export * from './button';
+export * from './collapsible';
 export * from './data-table';
 export * from './dialog';
 export * from './dropdown';

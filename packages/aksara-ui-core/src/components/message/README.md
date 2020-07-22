@@ -18,7 +18,8 @@ See more usage in the _JSX_ panel
 
 | Property  | Type                                                       | Required | Default     |
 | --------- | ---------------------------------------------------------- | -------- | ----------- |
-| color     | `'general'`, `'error'`, `'success'`, `'warning'`, `'info'` | **Yes**  | -           |
 | message   | `string | React.ReactNode`                                 | **Yes**  | -           |
+| state     | `'general'`, `'error'`, `'success'`, `'warning'`, `'info'` | -        | `'general'` |
+| title     | `string`                                                   | -        | -           |
 | className | `string`                                                   | -        | `undefined` |
 | onClose   | `(e: any) => void`                                         | -        | `undefined` |
