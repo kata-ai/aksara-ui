@@ -21,7 +21,7 @@ export default function Component() {
   return (
     <Blankslate
       title="No Project Selected"
-      message="You have not selected a project. Please select one from the dropdown on the left."
+      content="You have not selected a project. Please select one from the dropdown on the left."
     />
   );
 }

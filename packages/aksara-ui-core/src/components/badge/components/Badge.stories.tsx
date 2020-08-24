@@ -1,32 +1,26 @@
+import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { ComponentBlock, SystemWrapper, SystemBlock } from '../../../utils/storybook';
-import { Inline } from '../../../foundations';
+import { SystemWrapper } from '../../../utils/storybook';
+import { Box } from '../../../foundations';
 import badgeVariants, { BadgeVariants } from '../variants';
 
 import Badge from './Badge';
-
-const readme = require('../README.md');
 
 export default {
   title: 'Core|Components/Badge',
   component: Badge,
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
 };
 
+const options: Record<string, BadgeVariants> = {};
+Object.keys(badgeVariants).forEach((variant: BadgeVariants) => {
+  options[variant] = variant;
+});
+const defaultValue: BadgeVariants = 'base';
+
 export const BasicExample = () => (
-  <SystemBlock title="Badge" subtitle="Badge text for entity, status, etc.">
-    <ComponentBlock title="Usage">
-      <Inline spacing="xs">
-        {Object.keys(badgeVariants).map((variant: BadgeVariants) => (
-          <Badge key={variant} variant={variant}>
-            {variant}
-          </Badge>
-        ))}
-      </Inline>
-    </ComponentBlock>
-  </SystemBlock>
+  <Box p="md">
+    <Badge variant={select<BadgeVariants>('Variant', options, defaultValue)}>example</Badge>
+  </Box>
 );
