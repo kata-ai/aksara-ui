@@ -4,15 +4,10 @@ import { SystemWrapper } from '../../../../utils/storybook';
 import { Paragraph } from '../../../../foundations';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '.';
 
-const readme = require('./README.md');
-
 export default {
   title: 'Core|Components/Collapsible/Accordion',
   component: [Accordion, AccordionItem],
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
 };
 
 export const BasicExample = () => {

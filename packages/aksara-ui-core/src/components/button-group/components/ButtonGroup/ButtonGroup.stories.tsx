@@ -1,19 +1,14 @@
 import * as React from 'react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { SystemWrapper } from '../../../../utils/storybook';
 import { Button } from '../../../button';
 
-const readme = require('../../README.md');
-
 export default {
   title: 'Core|Components/Button Group',
   component: ButtonGroup,
-  decorators: [withKnobs, SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
+  decorators: [SystemWrapper],
 };
 
 const options = {
