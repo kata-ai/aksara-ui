@@ -27,7 +27,7 @@ export const Example = () => (
     type="button"
     aria-label="Push Me"
     variant={select<IconButtonVariants>('Variant', buttonVariants, 'outline')}
-    size={select<IconButtonSizes>('Color', buttonSizes, 32)}
+    size={select<IconButtonSizes>('Size', buttonSizes, 32)}
     onClick={action('button-click')}
   >
     <IconPen fill="currentColor" aria-hidden="true" />

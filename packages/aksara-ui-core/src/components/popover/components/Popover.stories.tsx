@@ -4,7 +4,7 @@ import { SystemWrapper } from '../../../utils/storybook';
 
 import Popover from './Popover';
 import { Button } from '../../button';
-import { Card, Box } from '../../../foundations';
+import { Card } from '../../../foundations';
 
 export default {
   title: 'Core|Components/Popover',
@@ -14,18 +14,16 @@ export default {
 
 export const BasicExample = () => {
   return (
-    <Box p="md">
-      <Popover
-        trigger={
-          <Button block variant="primary">
-            Toggle Popover
-          </Button>
-        }
-      >
-        <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
-          This is a popover
-        </Card>
-      </Popover>
-    </Box>
+    <Popover
+      trigger={
+        <Button block variant="primary">
+          Toggle Popover
+        </Button>
+      }
+    >
+      <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
+        This is a popover
+      </Card>
+    </Popover>
   );
 };

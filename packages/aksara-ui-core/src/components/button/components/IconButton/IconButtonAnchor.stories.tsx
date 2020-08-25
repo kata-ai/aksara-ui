@@ -26,7 +26,7 @@ export const Example = () => (
   <IconButtonAnchor
     aria-label="Push Me"
     variant={select<IconButtonVariants>('Variant', buttonVariants, 'outline')}
-    size={select<IconButtonSizes>('Color', buttonSizes, 32)}
+    size={select<IconButtonSizes>('Size', buttonSizes, 32)}
     href={text('URL', 'https://www.youtube.com/watch?v=fdixQDPA2h0')}
     target="_blank"
     rel="noopener noreferrer"
