@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { SystemWrapper } from '../../utils/storybook';
-import { Box } from '../../foundations';
 import {
   Table,
   TableContainer,
@@ -19,60 +18,56 @@ export default {
   decorators: [SystemWrapper],
 };
 
-export const BasicExample = () => {
+export const Example = () => {
   return (
-    <Box p="md">
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableHeadRow>
-              <TableHeadCell>Column</TableHeadCell>
-              <TableHeadCell>Column</TableHeadCell>
-              <TableHeadCell>Column</TableHeadCell>
-              <TableHeadCell>Column</TableHeadCell>
-            </TableHeadRow>
-          </TableHead>
-          <TableBody>
-            <TableBodyRow>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-            </TableBodyRow>
-            <TableBodyRow>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-            </TableBodyRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Box>
+    <TableContainer>
+      <Table>
+        <TableHead>
+          <TableHeadRow>
+            <TableHeadCell>Column</TableHeadCell>
+            <TableHeadCell>Column</TableHeadCell>
+            <TableHeadCell>Column</TableHeadCell>
+            <TableHeadCell>Column</TableHeadCell>
+          </TableHeadRow>
+        </TableHead>
+        <TableBody>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 
 export const Headless = () => {
   return (
-    <Box p="md">
-      <TableContainer>
-        <Table>
-          <TableBody>
-            <TableBodyRow>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-            </TableBodyRow>
-            <TableBodyRow>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-              <TableBodyCell>Cell Item</TableBodyCell>
-            </TableBodyRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Box>
+    <TableContainer>
+      <Table>
+        <TableBody>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };

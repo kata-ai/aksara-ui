@@ -7,8 +7,6 @@ import { Text, Box, Heading, UnstyledAnchor, Stack } from '../../../../foundatio
 import { ButtonGroup } from '../../../button-group';
 import { IconButton } from '../../../button';
 
-const readme = require('../../README.md');
-
 const ExampleGrid: React.FC = ({ children }) => {
   return (
     <Box
@@ -27,9 +25,6 @@ export default {
   title: 'Core|Components/Interactive Card',
   component: InteractiveCard,
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
 };
 
 const ExampleCard = () => {

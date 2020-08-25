@@ -2,7 +2,6 @@ import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
 import { SystemWrapper } from '../../../utils/storybook';
-import { Box } from '../../../foundations';
 import badgeVariants, { BadgeVariants } from '../variants';
 
 import Badge from './Badge';
@@ -20,7 +19,5 @@ Object.keys(badgeVariants).forEach((variant: BadgeVariants) => {
 const defaultValue: BadgeVariants = 'base';
 
 export const BasicExample = () => (
-  <Box p="md">
-    <Badge variant={select<BadgeVariants>('Variant', options, defaultValue)}>example</Badge>
-  </Box>
+  <Badge variant={select<BadgeVariants>('Variant', options, defaultValue)}>example</Badge>
 );

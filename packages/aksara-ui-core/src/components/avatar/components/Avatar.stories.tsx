@@ -2,7 +2,6 @@ import * as React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 
 import { SystemWrapper } from '../../../utils/storybook';
-import { Box } from '../../../foundations';
 import avatarColors from '../theme';
 import { AvatarBaseProps } from '../styles';
 import Avatar from './Avatar';
@@ -27,13 +26,11 @@ Object.keys(avatarColors).forEach(variant => {
 const defaultColorValue = 'indigo';
 
 export const Example = () => (
-  <Box p="md">
-    <Avatar
-      shape="rounded"
-      size={select<AvatarBaseProps['size']>('Size', sizeOptions, defaultSizeValue)}
-      name={text('Name', 'Adry Muhammad')}
-      color={select<keyof typeof avatarColors>('Color', colorOptions, defaultColorValue)}
-      src={text('Image Source', 'https://picsum.photos/id/2/400/400')}
-    />
-  </Box>
+  <Avatar
+    shape="rounded"
+    size={select<AvatarBaseProps['size']>('Size', sizeOptions, defaultSizeValue)}
+    name={text('Name', 'Adry Muhammad')}
+    color={select<keyof typeof avatarColors>('Color', colorOptions, defaultColorValue)}
+    src={text('Image Source', 'https://picsum.photos/id/2/400/400')}
+  />
 );
