@@ -1,89 +1,36 @@
 import * as React from 'react';
+import { select, text } from '@storybook/addon-knobs';
 
-import { SystemWrapper, SystemBlock, SystemSubheading } from '../../../utils/storybook';
+import { SystemWrapper } from '../../../utils/storybook';
+import avatarColors from '../theme';
+import { AvatarBaseProps } from '../styles';
 import Avatar from './Avatar';
-import { Inline, Box, Text, Heading, Stack } from '../../../foundations';
-
-const readme = require('../README.md');
 
 export default {
   title: 'Core|Components/Avatar',
   component: Avatar,
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
 };
 
-export const BasicExample = () => (
-  <SystemBlock
-    title="Avatar"
-    subtitle="Avatars are used to show a thumbnail representation of an individual or business in the interface. An avatar can be circular or a rounded rectangular, depending on usage."
-  >
-    <SystemSubheading>Default Theme</SystemSubheading>
-    <Box
-      mt="xl"
-      display="grid"
-      gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 3 - 24px), 1fr))"
-      gridGap="24px"
-    >
-      <Box>
-        <Heading scale={100} color="grey07" mb="sm">
-          Rounded
-        </Heading>
-        <Box display="flex" justifyContent="center" px="md" py="lg" backgroundColor="grey02">
-          <Inline spacing="md">
-            <Avatar shape="rounded" size={40} name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />
-            <Avatar shape="rounded" size={40} color="indigo" name="Adry Muhammad" />
-            <Avatar shape="rounded" size={40} color="turquoise" type="user" />
-            <Avatar shape="rounded" size={40} color="green" type="team" />
-          </Inline>
-        </Box>
-      </Box>
-    </Box>
-    <Box
-      mt="xl"
-      display="grid"
-      gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 2 - 24px), 1fr))"
-      gridGap="24px"
-    >
-      <Box>
-        <SystemSubheading mb="xl">Type</SystemSubheading>
-        <Stack spacing="md">
-          <Box display="flex" flexDirection="row" alignItems="center">
-            <Avatar size={40} name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />
-            <Box ml="md">
-              <Text scale={300}>Profile picture</Text>
-            </Box>
-          </Box>
-          <Box display="flex" flexDirection="row" alignItems="center">
-            <Avatar size={40} color="turquoise" type="user" />
-            <Box ml="md">
-              <Text scale={300}>Profile icon</Text>
-            </Box>
-          </Box>
-          <Box display="flex" flexDirection="row" alignItems="center">
-            <Avatar size={40} color="green" type="team" />
-            <Box ml="md">
-              <Text scale={300}>Team icon</Text>
-            </Box>
-          </Box>
-          <Box display="flex" flexDirection="row" alignItems="center">
-            <Avatar size={40} color="indigo" name="Adry Muhammad" />
-            <Box ml="md">
-              <Text scale={300}>Initial</Text>
-            </Box>
-          </Box>
-        </Stack>
-      </Box>
-      <Box>
-        <SystemSubheading mb="xl">Sizes</SystemSubheading>
-        <Inline spacing="md">
-          <Avatar size={24} src="https://picsum.photos/id/225/400/400" />
-          <Avatar size={32} src="https://picsum.photos/id/777/600/400" />
-          <Avatar size={40} src="https://picsum.photos/id/501/400/400" />
-        </Inline>
-      </Box>
-    </Box>
-  </SystemBlock>
+const sizeOptions: Record<number, AvatarBaseProps['size']> = {
+  24: 24,
+  32: 32,
+  40: 40,
+};
+const defaultSizeValue = 40;
+
+const colorOptions: Record<string, string> = {};
+Object.keys(avatarColors).forEach(variant => {
+  colorOptions[variant] = variant;
+});
+const defaultColorValue = 'indigo';
+
+export const Example = () => (
+  <Avatar
+    shape="rounded"
+    size={select<AvatarBaseProps['size']>('Size', sizeOptions, defaultSizeValue)}
+    name={text('Name', 'Adry Muhammad')}
+    color={select<keyof typeof avatarColors>('Color', colorOptions, defaultColorValue)}
+    src={text('Image Source', 'https://picsum.photos/id/2/400/400')}
+  />
 );

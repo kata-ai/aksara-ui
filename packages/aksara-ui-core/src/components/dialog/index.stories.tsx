@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Text, Paragraph, Stack, Box, Anchor } from '../../foundations';
-import { SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { SystemWrapper } from '../../utils/storybook';
 
 import Dialog from './components/Dialog';
 import DialogHeader from './components/DialogHeader';
@@ -9,25 +9,17 @@ import DialogContent from './components/DialogContent';
 import DialogFooter from './components/DialogFooter';
 import { Button } from '../button';
 
-const readme = require('./README.md');
-
 export default {
   title: 'Core|Components/Dialog',
   component: [Dialog, DialogHeader, DialogContent, DialogFooter],
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
 };
 
 export const BasicExample = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <SystemBlock
-      title="Dialog"
-      subtitle="Display a modal interface that will block interaction with the rest of the page with an overlay."
-    >
+    <Box p="md">
       <Text as="p">Click the button below to open the dialog.</Text>
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Dialog
@@ -53,7 +45,7 @@ export const BasicExample = () => {
           </Box>
         </DialogFooter>
       </Dialog>
-    </SystemBlock>
+    </Box>
   );
 };
 
@@ -61,7 +53,7 @@ export const WithFocusTrap = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <SystemBlock title="Dialog" subtitle="Add the enableFocusTrap prop to enable focus trapping.">
+    <Box p="md">
       <Text as="p">Click the button below to open the dialog.</Text>
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Dialog
@@ -82,6 +74,6 @@ export const WithFocusTrap = () => {
           </Stack>
         </DialogContent>
       </Dialog>
-    </SystemBlock>
+    </Box>
   );
 };

@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { colors } from '../../utils';
-import { Circle } from '../loading';
+import { colors } from '../../../../utils';
+import { Circle } from '../../../loading';
 import { ButtonStyles } from './styles';
 import { ButtonBaseProps, ButtonSizes } from './types';
 

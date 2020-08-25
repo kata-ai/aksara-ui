@@ -8,8 +8,7 @@ import {
   buttonGroupInnerSegmented,
   buttonGroupInnerNonSegmented,
 } from './styles';
-import { ButtonProps } from '../../../button/Button';
-import { IconButtonSizes, ButtonSizes } from '../../../button/types';
+import { ButtonProps, ButtonSizes, IconButtonSizes } from '../../../button';
 
 export interface ButtonGroupProps extends BoxProps {
   /** Join buttons as segmented group. */

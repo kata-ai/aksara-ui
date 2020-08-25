@@ -1,19 +1,13 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../utils/storybook';
-import { Box } from '../box';
-import Portal from './components/Portal';
-
-const readme = require('./README.md');
+import { SystemWrapper } from '../../../utils/storybook';
+import { Box } from '../../box';
+import Portal from './Portal';
 
 export default {
   title: 'Core|Foundations/Portal',
   component: Portal,
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-    jsx: { skip: 1 },
-  },
 };
 
 export const Example = () => (

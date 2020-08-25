@@ -1,27 +1,22 @@
 import * as React from 'react';
 
 import { Text, Paragraph, Stack, Box, Anchor } from '../../foundations';
-import { SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { SystemWrapper } from '../../utils/storybook';
 
 import { SideSheet, SideSheetHeader, SideSheetContent, SideSheetFooter } from '.';
 import { Button } from '../button';
-
-const readme = require('./README.md');
 
 export default {
   title: 'Core|Components/Side Sheet',
   component: [SideSheet, SideSheetHeader, SideSheetContent, SideSheetFooter],
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
 };
 
 export const BasicExample = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <SystemBlock title="Side Sheet" subtitle="Dialogs that pop out from the right side of the screen.">
+    <Box p="md">
       <Text as="p">Click the button below to open the side sheet.</Text>
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
@@ -47,7 +42,7 @@ export const BasicExample = () => {
           </Box>
         </SideSheetFooter>
       </SideSheet>
-    </SystemBlock>
+    </Box>
   );
 };
 
@@ -55,7 +50,7 @@ export const WithFocusTrap = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <SystemBlock title="Side Sheet" subtitle="Dialogs that pop out from the right side of the screen.">
+    <Box p="md">
       <Text as="p">Click the button below to open the side sheet.</Text>
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
@@ -65,6 +60,6 @@ export const WithFocusTrap = () => {
           Basic Example
         </Paragraph>
       </SideSheet>
-    </SystemBlock>
+    </Box>
   );
 };
