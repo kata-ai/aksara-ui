@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { variant, layout, position, flexbox, grid, space, border } from 'styled-system';
 
-import { ButtonBase } from '../../styles';
-import { ButtonBaseProps } from '../../types';
+import { ButtonBase } from '../Button/styles';
+import { ButtonBaseProps } from '../Button/types';
 import {
   linkButtonSizeVariants,
   linkButtonDefaultVariants,

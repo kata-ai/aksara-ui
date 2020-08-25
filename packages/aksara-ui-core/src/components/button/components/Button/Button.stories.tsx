@@ -2,20 +2,15 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
 
-import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../utils/storybook';
+import { Box, Heading, Stack, Text } from '../../../../foundations';
+import { ComponentBlock, SystemWrapper, SystemBlock, SystemSubheading } from '../../../../utils/storybook';
+import { LinkButton } from '../LinkButton';
 import Button from './Button';
-import { Box, Heading, Stack, Text } from '../../foundations';
-import { LinkButton } from './components/LinkButton';
-
-const readme = require('./README.md');
 
 export default {
   title: 'Core|Components/Button/Button',
   component: Button,
   decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-  },
 };
 
 export const Example = () => (

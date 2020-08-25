@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { variant, layout, position, flexbox, grid, space, border } from 'styled-system';
-import { ButtonBase } from '../../styles';
-import { AllButtonStyledProps } from '../../types';
+import { ButtonBase } from '../Button/styles';
+import { AllButtonStyledProps } from '../Button/types';
 import {
   iconButtonDefaultVariants,
   iconButtonHoverVariants,
