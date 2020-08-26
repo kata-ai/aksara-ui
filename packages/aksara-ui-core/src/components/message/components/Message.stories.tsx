@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 
-import { SystemWrapper } from '../../../utils/storybook';
 import { Stack, Box } from '../../../foundations';
 import { messageVariants } from '../variants';
 import Message, { MessageStates } from './Message';
 
 export default {
-  title: 'Core|Components/Message',
+  title: 'Core/Components/Message',
   component: Message,
-  decorators: [SystemWrapper],
 };
 
 const messageVariantOptions: Record<string, string> = {};

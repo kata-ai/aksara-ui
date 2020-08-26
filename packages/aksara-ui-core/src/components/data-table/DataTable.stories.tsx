@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../utils/storybook';
 import {
   Table,
   TableContainer,
@@ -13,9 +12,8 @@ import {
 } from './components';
 
 export default {
-  title: 'Core|Components/Data Table',
+  title: 'Core/Components/Data Table',
   component: [TableContainer, Table],
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => {

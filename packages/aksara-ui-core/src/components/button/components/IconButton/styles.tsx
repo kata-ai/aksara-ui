@@ -79,7 +79,6 @@ export const IconButtonStyles = (props: IconButtonBaseProps) => css`
     &:active,
     &.active {
       ${variant({ prop: 'variant', variants: iconButtonFocusVariants })}
-
     }
   }
 

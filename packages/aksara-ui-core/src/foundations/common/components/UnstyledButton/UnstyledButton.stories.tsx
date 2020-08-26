@@ -1,15 +1,13 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { UnstyledButton } from '.';
 import { Box } from '../../../box';
 
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core|Foundations/Common/UnstyledButton',
+  title: 'Core/Foundations/Common/UnstyledButton',
   component: UnstyledButton,
-  decorators: [SystemWrapper],
   parameters: {
     notes: { markdown: readme },
     jsx: { skip: 1 },

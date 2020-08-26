@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { SystemWrapper, SystemBlock, ComponentBlock } from '../../../../utils/storybook';
+import { SystemBlock, ComponentBlock } from '../../../../utils/storybook';
 import { Box } from '../../../box';
 import { Card } from '../../../card';
 import { Text } from '../../../typography';
@@ -10,9 +10,8 @@ import { Stack } from '../Stack';
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core|Foundations/Common/Inline',
+  title: 'Core/Foundations/Common/Inline',
   component: Inline,
-  decorators: [SystemWrapper],
   parameters: {
     notes: { markdown: readme },
     jsx: { skip: 2 },

@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 
-import { SystemWrapper } from '../../../utils/storybook';
 import avatarColors from '../theme';
 import { AvatarBaseProps } from '../styles';
 import Avatar from './Avatar';
 
 export default {
-  title: 'Core|Components/Avatar',
+  title: 'Core/Components/Avatar',
   component: Avatar,
-  decorators: [SystemWrapper],
 };
 
 const sizeOptions: Record<number, AvatarBaseProps['size']> = {

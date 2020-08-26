@@ -1,15 +1,13 @@
 import * as React from 'react';
 
 import { Text, Paragraph, Stack, Box, Anchor } from '../../foundations';
-import { SystemWrapper } from '../../utils/storybook';
 
 import { SideSheet, SideSheetHeader, SideSheetContent, SideSheetFooter } from '.';
 import { Button } from '../button';
 
 export default {
-  title: 'Core|Components/Side Sheet',
+  title: 'Core/Components/Side Sheet',
   component: [SideSheet, SideSheetHeader, SideSheetContent, SideSheetFooter],
-  decorators: [SystemWrapper],
 };
 
 export const BasicExample = () => {

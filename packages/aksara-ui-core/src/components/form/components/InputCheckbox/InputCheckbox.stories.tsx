@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Box, Text } from '../../../../foundations';
 import InputCheckboxLabel from './InputCheckboxLabel';
 import InputCheckbox from './InputCheckbox';
 
 export default {
-  title: 'Core|Components/Form/InputCheckbox',
+  title: 'Core/Components/Form/InputCheckbox',
   component: InputCheckbox,
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => {

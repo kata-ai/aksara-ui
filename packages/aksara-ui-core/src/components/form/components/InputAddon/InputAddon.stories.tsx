@@ -3,7 +3,6 @@ import { boolean, text, select } from '@storybook/addon-knobs';
 import { IconLock } from '@aksara-ui/icons';
 import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Box } from '../../../../foundations';
 import { messageIconVariants } from '../../../message/variants';
 import { InputSizes } from '../../types';
@@ -12,9 +11,8 @@ import { InputText } from '../InputText';
 import { InputAddon } from '.';
 
 export default {
-  title: 'Core|Components/Form/InputAddon',
+  title: 'Core/Components/Form/InputAddon',
   component: InputAddon,
-  decorators: [SystemWrapper],
 };
 
 const messageVariants: Record<string, string> = {};

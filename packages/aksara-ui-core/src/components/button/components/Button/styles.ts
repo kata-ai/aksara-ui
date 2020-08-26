@@ -47,14 +47,18 @@ export const ButtonStyles = (props: ButtonBaseProps) => css`
 
   ${props.variant === 'default' && ButtonDefault}
   ${props.variant === 'primary' && ButtonPrimary}
-  ${props.variant === 'outline' && ButtonSupport}
+  ${props.variant ===
+    'outline' && ButtonSupport}
   ${props.variant === 'destructive' && ButtonDestructive}
-  ${props.variant === 'ghost' && ButtonGhost}
+  ${props.variant === 'ghost' &&
+  ButtonGhost}
   ${props.variant === 'inverse' && InverseButton}
 
-  ${props.buttonSize === 32 && ButtonSmall(props)}
+  ${props.buttonSize === 32 &&
+  ButtonSmall(props)}
   ${props.buttonSize === 40 && ButtonMedium(props)}
-  ${props.buttonSize === 48 && ButtonLarge(props)}
+  ${props.buttonSize === 48 &&
+  ButtonLarge(props)}
 
 
   ${layout}

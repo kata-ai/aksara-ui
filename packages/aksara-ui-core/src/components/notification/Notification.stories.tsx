@@ -1,13 +1,11 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../utils/storybook';
 import { Button } from '../button';
 import { notification } from './index';
 
 export default {
-  title: 'Core|Components/Notifications',
+  title: 'Core/Components/Notifications',
   component: notification,
-  decorators: [SystemWrapper],
 };
 
 export const Toaster = () => (

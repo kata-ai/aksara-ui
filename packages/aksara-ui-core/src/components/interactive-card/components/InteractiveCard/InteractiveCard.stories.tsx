@@ -2,7 +2,6 @@ import * as React from 'react';
 import { IconTrash, IconPen } from '@aksara-ui/icons';
 
 import InteractiveCard from './InteractiveCard';
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Text, Box, Heading, UnstyledAnchor, Stack } from '../../../../foundations';
 import { ButtonGroup } from '../../../button-group';
 import { IconButton } from '../../../button';
@@ -22,9 +21,8 @@ const ExampleGrid: React.FC = ({ children }) => {
 };
 
 export default {
-  title: 'Core|Components/Interactive Card',
+  title: 'Core/Components/Interactive Card',
   component: InteractiveCard,
-  decorators: [SystemWrapper],
 };
 
 const ExampleCard = () => {

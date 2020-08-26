@@ -1,15 +1,14 @@
 import * as React from 'react';
 
-import { SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { SystemBlock } from '../../utils/storybook';
 import FocusTrap from './FocusTrap';
 import { Paragraph, Anchor } from '../typography';
 
 const readme = require('./README.md');
 
 export default {
-  title: 'Core|Foundations/FocusTrap',
+  title: 'Core/Foundations/FocusTrap',
   component: FocusTrap,
-  decorators: [SystemWrapper],
   parameters: {
     notes: { markdown: readme },
     jsx: { skip: 1 },

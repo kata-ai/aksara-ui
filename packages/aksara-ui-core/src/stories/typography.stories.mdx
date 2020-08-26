@@ -1,0 +1,84 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Heading, Text, Paragraph, Anchor } from '../foundations/typography';
+import { ComponentBlock, SystemBlock, SystemSubheading } from '../utils/storybook';
+import { Stack } from '../foundations/common';
+
+<Meta title="Foundations/Typography" />
+
+<SystemBlock
+  title="Typography"
+  subtitle="This page contains set of Text Styles that works on public pages and platform pages. Text Styles are available in different sizes and properties that are already calculated using modular scale, details could be seen on Visual Guideline."
+>
+  <Stack spacing="xl">
+    <SystemSubheading>Typography Scales</SystemSubheading>
+    <ComponentBlock title="Heading" withBackground>
+      <Stack spacing="md">
+        <Heading scale={900}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={800}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={700}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={600}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={500}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={400}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={300}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={200}>We are making AI technology accessible to everyone</Heading>
+        <Heading scale={100}>We are making AI technology accessible to everyone</Heading>
+      </Stack>
+    </ComponentBlock>
+    <ComponentBlock title="Text" withBackground>
+      <Stack spacing="md">
+        <Text display="block" scale={500}>
+          We are making AI technology accessible to everyone
+        </Text>
+        <Text display="block" scale={400}>
+          We are making AI technology accessible to everyone
+        </Text>
+        <Text display="block" scale={300}>
+          We are making AI technology accessible to everyone
+        </Text>
+        <Text display="block" scale={200}>
+          We are making AI technology accessible to everyone
+        </Text>
+      </Stack>
+    </ComponentBlock>
+    <ComponentBlock title="Paragraph" withBackground>
+      <Stack spacing="md">
+        <Paragraph scale={400}>
+          We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on understanding human
+          conversation so we can improve the way humans collaborate with technology to be more productive and empowered.
+          Kata.ai’s Natural Language Processing (NLP) technology powers multi-purpose chatbots for major corporations in
+          Indonesia across different industries, including FMCG, Telecommunication, Banking & Financial Service, and
+          Retail.
+        </Paragraph>
+        <Paragraph scale={300}>
+          We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on understanding human
+          conversation so we can improve the way humans collaborate with technology to be more productive and empowered.
+          Kata.ai’s Natural Language Processing (NLP) technology powers multi-purpose chatbots for major corporations in
+          Indonesia across different industries, including FMCG, Telecommunication, Banking & Financial Service, and
+          Retail.
+        </Paragraph>
+      </Stack>
+    </ComponentBlock>
+    <ComponentBlock title="Anchor" withBackground>
+      <Stack spacing="md">
+        <Anchor
+          display="block"
+          scale={400}
+          href="https://www.youtube.com/watch?v=wQ2YjYGqL8I"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          We are making AI technology accessible to everyone
+        </Anchor>
+        <Anchor
+          display="block"
+          scale={300}
+          href="https://www.youtube.com/watch?v=wQ2YjYGqL8I"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          We are making AI technology accessible to everyone
+        </Anchor>
+      </Stack>
+    </ComponentBlock>
+  </Stack>
+</SystemBlock>

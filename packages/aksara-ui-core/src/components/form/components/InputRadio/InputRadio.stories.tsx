@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Box, Text } from '../../../../foundations';
 import InputRadioLabel from './InputRadioLabel';
 import InputRadio from './InputRadio';
 
 export default {
-  title: 'Core|Components/Form/InputRadio',
+  title: 'Core/Components/Form/InputRadio',
   component: InputRadio,
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => {

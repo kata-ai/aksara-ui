@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 
-import { SystemWrapper } from '../../../utils/storybook';
-
 import Pagination from './Pagination';
 
 export default {
-  title: 'Core|Components/Pagination',
+  title: 'Core/Components/Pagination',
   component: Pagination,
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => {

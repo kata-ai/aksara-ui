@@ -3,7 +3,6 @@ import * as React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
 import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { LinkButtonSizes, LinkButtonVariants } from './styles';
 import LinkButton from './LinkButton';
 
@@ -15,9 +14,8 @@ const buttonVariants: SelectTypeOptionsProp<LinkButtonVariants> = {
 const buttonSizes: SelectTypeOptionsProp<LinkButtonSizes> = { 32: 32, 40: 40 };
 
 export default {
-  title: 'Core|Components/Button/LinkButton',
+  title: 'Core/Components/Button/LinkButton',
   component: LinkButton,
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => (

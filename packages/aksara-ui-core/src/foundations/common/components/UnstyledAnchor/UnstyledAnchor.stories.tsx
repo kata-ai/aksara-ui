@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Box } from '../../../box';
 import { Anchor } from '../../../typography';
 import { UnstyledAnchor } from '.';
@@ -8,9 +7,8 @@ import { UnstyledAnchor } from '.';
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core|Foundations/Common/UnstyledAnchor',
+  title: 'Core/Foundations/Common/UnstyledAnchor',
   component: UnstyledAnchor,
-  decorators: [SystemWrapper],
   parameters: {
     notes: { markdown: readme },
     jsx: { skip: 1 },
