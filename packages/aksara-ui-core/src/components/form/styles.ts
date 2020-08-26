@@ -48,15 +48,18 @@ export const TextAreaBase = styled('textarea')<InputBaseProps>`
   }
 
   &:not(:disabled):not(.disabled) {
-    &:hover, &.hover {
+    &:hover,
+    &.hover {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeHover,
       })}
     }
 
-    &:active, &.active,
-    &:focus, &.focus {
+    &:active,
+    &.active,
+    &:focus,
+    &.focus {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeFocus,
@@ -105,15 +108,18 @@ export const InputBase = styled('input')<InputBaseProps>`
   }
 
   &:not(:disabled):not(.disabled) {
-    &:hover, &.hover {
+    &:hover,
+    &.hover {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeHover,
       })}
     }
 
-    &:active, &.active,
-    &:focus, &.focus {
+    &:active,
+    &.active,
+    &:focus,
+    &.focus {
       ${variant({
         prop: 'inputVariant',
         variants: inputThemeFocus,
@@ -177,7 +183,7 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
       opacity: 0.9;
 
       &:checked {
-        background-color:${colors.grey05};
+        background-color: ${colors.grey05};
         border-color: ${colors.grey04};
       }
     }
