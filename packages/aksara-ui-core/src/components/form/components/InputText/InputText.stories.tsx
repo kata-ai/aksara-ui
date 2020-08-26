@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { boolean, text } from '@storybook/addon-knobs';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Box } from '../../../../foundations';
 import { FormLabel } from '../FormLabel';
 import InputText from './InputText';
 
 export default {
-  title: 'Core|Components/Form/InputText',
+  title: 'Core/Components/Form/InputText',
   component: InputText,
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => {

@@ -4,7 +4,6 @@ import { IconPen } from '@aksara-ui/icons';
 import { select } from '@storybook/addon-knobs';
 import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { IconButtonSizes, IconButtonVariants } from './styles';
 import IconButton from './IconButton';
 
@@ -17,9 +16,8 @@ const buttonVariants: SelectTypeOptionsProp<IconButtonVariants> = {
 const buttonSizes: SelectTypeOptionsProp<IconButtonSizes> = { 24: 24, 32: 32, 40: 40 };
 
 export default {
-  title: 'Core|Components/Button/IconButton',
+  title: 'Core/Components/Button/IconButton',
   component: IconButton,
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => (

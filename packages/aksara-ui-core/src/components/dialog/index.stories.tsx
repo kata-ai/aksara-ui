@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { Text, Paragraph, Stack, Box, Anchor } from '../../foundations';
-import { SystemWrapper } from '../../utils/storybook';
 
 import Dialog from './components/Dialog';
 import DialogHeader from './components/DialogHeader';
@@ -10,9 +9,8 @@ import DialogFooter from './components/DialogFooter';
 import { Button } from '../button';
 
 export default {
-  title: 'Core|Components/Dialog',
+  title: 'Core/Components/Dialog',
   component: [Dialog, DialogHeader, DialogContent, DialogFooter],
-  decorators: [SystemWrapper],
 };
 
 export const BasicExample = () => {

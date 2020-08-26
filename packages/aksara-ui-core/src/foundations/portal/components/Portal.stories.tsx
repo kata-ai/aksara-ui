@@ -1,13 +1,11 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../utils/storybook';
 import { Box } from '../../box';
 import Portal from './Portal';
 
 export default {
-  title: 'Core|Foundations/Portal',
+  title: 'Core/Foundations/Portal',
   component: Portal,
-  decorators: [SystemWrapper],
 };
 
 export const Example = () => (

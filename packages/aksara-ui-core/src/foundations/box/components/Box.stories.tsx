@@ -1,12 +1,10 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../utils/storybook';
 import Box from './Box';
 
 export default {
-  title: 'Core|Foundations/Box',
+  title: 'Core/Foundations/Box',
   component: Box,
-  decorators: [SystemWrapper],
 };
 
 export const BasicExample = () => <Box>I&apos;m inside a box!</Box>;

@@ -3,7 +3,7 @@ import { IconInfo, IconTrash } from '@aksara-ui/icons';
 
 import { Badge } from '../../components/badge';
 import { IconButton } from '../../components/button';
-import { SystemWrapper, SystemBlock } from '../../utils/storybook';
+import { SystemBlock } from '../../utils/storybook';
 import { Box } from '../box';
 import { Heading, Paragraph, Text } from '../typography';
 import { UnstyledAnchor, Stack } from '../common';
@@ -11,30 +11,9 @@ import { UnstyledAnchor, Stack } from '../common';
 import { Card } from './index';
 import { Tooltip } from '../../components';
 
-const readme = require('./README.md');
-
 export default {
-  title: 'Core|Foundations/Card',
+  title: 'Core/Foundations/Card',
   component: Card,
-  decorators: [SystemWrapper],
-  parameters: {
-    notes: { markdown: readme },
-    jsx: { skip: 2 },
-  },
-};
-
-const ElevationGrid: React.FC = ({ children }) => {
-  return (
-    <Box
-      mt="md"
-      mb="xl"
-      display="grid"
-      gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 3 - 24px), 1fr))"
-      gridGap="24px"
-    >
-      {children}
-    </Box>
-  );
 };
 
 const ExampleGrid: React.FC = ({ children }) => {
@@ -50,56 +29,6 @@ const ExampleGrid: React.FC = ({ children }) => {
     </Box>
   );
 };
-
-const ElevationDetail: React.FC<{ title: string; description: string }> = ({ title, description }) => {
-  return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      textAlign="center"
-      height={210}
-      p="md"
-    >
-      <Text as="h5" scale={300} fontWeight={400} color="grey05" m={0}>
-        {title}
-      </Text>
-      <Text as="p" scale={300} color="grey07" m={0} mt="xs">
-        {description}
-      </Text>
-    </Box>
-  );
-};
-
-export const Elevation = () => (
-  <SystemBlock
-    title="Elevation"
-    subtitle="This page contains Elevation levels, the distance between two surface where content and components live. The distance from the front of one surface to the front of another is measured along the z-axis and portrayed using shadows."
-    noBackground
-  >
-    <ElevationGrid>
-      <Box>
-        <ElevationDetail title="Level 0" description="Base" />
-      </Box>
-      <Card elevation={1}>
-        <ElevationDetail title="Level 1" description="Flat" />
-      </Card>
-      <Card elevation={2}>
-        <ElevationDetail title="Level 2" description="Floating" />
-      </Card>
-      <Card elevation={3}>
-        <ElevationDetail title="Level 3" description="Sticky Nav" />
-      </Card>
-      <Card elevation={4}>
-        <ElevationDetail title="Level 4" description="Dialog" />
-      </Card>
-      <Card elevation={5}>
-        <ElevationDetail title="Level 5" description="Toast" />
-      </Card>
-    </ElevationGrid>
-  </SystemBlock>
-);
 
 export const CardExample = () => (
   <Card elevation={2} display="flex" flexDirection="column" m="lg" width="100%" maxWidth={365}>

@@ -1,4 +1,7 @@
 export { default as ColorSwatch } from './ColorSwatch';
+export { default as ColorSwatchGrid } from './ColorSwatchGrid';
+export { default as ElevationDetail } from './ElevationDetail';
+export { default as ElevationGrid } from './ElevationGrid';
 export { default as ComponentBlock } from './ComponentBlock';
 export { default as StorybookGlobal } from './StorybookGlobal';
 export { default as StoryContainer } from './StoryContainer';

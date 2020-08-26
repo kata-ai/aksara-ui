@@ -1,15 +1,13 @@
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../utils/storybook';
 import badgeVariants, { BadgeVariants } from '../variants';
 
 import Badge from './Badge';
 
 export default {
-  title: 'Core|Components/Badge',
+  title: 'Core/Components/Badge',
   component: Badge,
-  decorators: [SystemWrapper],
 };
 
 const options: Record<string, BadgeVariants> = {};

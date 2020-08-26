@@ -1,14 +1,11 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../utils/storybook';
-
 import { Paragraph, Anchor } from '../../../foundations';
 import Blankslate from './Blankslate';
 
 export default {
-  title: 'Core|Components/Blankslate',
+  title: 'Core/Components/Blankslate',
   component: Blankslate,
-  decorators: [SystemWrapper],
 };
 
 export const PageLevel = () => (

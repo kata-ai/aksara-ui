@@ -1,13 +1,11 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Paragraph } from '../../../../foundations';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '.';
 
 export default {
-  title: 'Core|Components/Collapsible/Accordion',
+  title: 'Core/Components/Collapsible/Accordion',
   component: [Accordion, AccordionItem],
-  decorators: [SystemWrapper],
 };
 
 export const BasicExample = () => {

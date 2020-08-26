@@ -2,13 +2,11 @@ import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
-import { SystemWrapper } from '../../../../utils/storybook';
 import { Button } from '../../../button';
 
 export default {
-  title: 'Core|Components/Button Group',
+  title: 'Core/Components/Button Group',
   component: ButtonGroup,
-  decorators: [SystemWrapper],
 };
 
 const options = {

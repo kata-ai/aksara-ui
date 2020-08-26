@@ -1,15 +1,12 @@
 import * as React from 'react';
 
-import { SystemWrapper } from '../../../utils/storybook';
-
 import Popover from './Popover';
 import { Button } from '../../button';
 import { Card } from '../../../foundations';
 
 export default {
-  title: 'Core|Components/Popover',
+  title: 'Core/Components/Popover',
   component: Popover,
-  decorators: [SystemWrapper],
 };
 
 export const BasicExample = () => {

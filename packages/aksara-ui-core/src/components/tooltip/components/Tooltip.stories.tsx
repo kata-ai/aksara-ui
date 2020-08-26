@@ -2,7 +2,6 @@ import * as React from 'react';
 import { select } from '@storybook/addon-knobs';
 import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types';
 
-import { SystemWrapper } from '../../../utils/storybook';
 import { Box, Text } from '../../../foundations';
 import Tooltip from './Tooltip';
 import { TooltipSize, TooltipPlacement } from './TooltipInner';
@@ -10,9 +9,8 @@ import { TooltipSize, TooltipPlacement } from './TooltipInner';
 const readme = require('../README.md');
 
 export default {
-  title: 'Core|Components/Tooltip',
+  title: 'Core/Components/Tooltip',
   component: Tooltip,
-  decorators: [SystemWrapper],
   parameters: {
     notes: { markdown: readme },
   },

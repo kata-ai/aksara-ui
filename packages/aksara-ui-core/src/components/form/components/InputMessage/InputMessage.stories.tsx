@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { text, select } from '@storybook/addon-knobs';
 
-import { SystemWrapper } from '../../../../utils/storybook';
 import InputMessage, { InputMessageVariants } from './InputMessage';
 import { messageIconVariants } from '../../../message/variants';
 
 export default {
-  title: 'Core|Components/Form/InputMessage',
+  title: 'Core/Components/Form/InputMessage',
   component: InputMessage,
-  decorators: [SystemWrapper],
 };
 
 const messageVariants: Record<string, string> = {};
