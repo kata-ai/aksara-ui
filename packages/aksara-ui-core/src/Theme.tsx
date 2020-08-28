@@ -18,6 +18,7 @@ export const themeProps = {
   // https://styled-system.com/theme-specification
   colors,
   space,
+  sizes: space,
   fonts,
   shadows,
   radii,
