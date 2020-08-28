@@ -1,55 +1,56 @@
-import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
 import { IconPen } from '@aksara-ui/icons';
-import { select, boolean } from '@storybook/addon-knobs';
-import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types';
 
-import { ButtonVariants, ButtonSizes, ButtonIconPositions } from './types';
-import Button from './Button';
-
-const buttonVariants: SelectTypeOptionsProp<ButtonVariants> = {
-  default: 'default',
-  outline: 'outline',
-  destructive: 'destructive',
-  ghost: 'ghost',
-};
-const buttonSizes: SelectTypeOptionsProp<ButtonSizes> = { 32: 32, 40: 40, 48: 48 };
-const buttonIconPositions: SelectTypeOptionsProp<ButtonIconPositions> = {
-  left: 'left',
-  right: 'right',
-};
+import Button, { ButtonProps } from './Button';
 
 export default {
   title: 'Core/Components/Button/Button',
   component: Button,
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+        options: ['default', 'outline', 'destructive', 'ghost'],
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: [32, 40, 48],
+      },
+    },
+    block: {
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    isLoading: {
+      control: 'boolean',
+    },
+    children: {
+      control: 'text',
+    },
+  },
 };
 
-export const Example = () => (
-  <Button
-    type="button"
-    variant={select<ButtonVariants>('Variant', buttonVariants, 'primary')}
-    size={select<ButtonSizes>('Color', buttonSizes, 40)}
-    block={boolean('Block', false)}
-    disabled={boolean('Disabled', false)}
-    isLoading={boolean('Is Loading', false)}
-    onClick={action('button-click')}
-  >
-    Primary
-  </Button>
-);
+const Template: Story<ButtonProps> = args => <Button type="button" onClick={action('button-click')} {...args} />;
 
-export const WithIcon = () => (
-  <Button
-    type="button"
-    variant={select<ButtonVariants>('Variant', buttonVariants, 'primary')}
-    size={select<ButtonSizes>('Size', buttonSizes, 40)}
-    block={boolean('Block', false)}
-    disabled={boolean('Disabled', false)}
-    isLoading={boolean('Is Loading', false)}
-    icon={IconPen}
-    iconPosition={select<ButtonIconPositions>('Icon Position', buttonIconPositions, 'left')}
-    onClick={action('button-click')}
-  >
-    Primary
-  </Button>
-);
+export const Example = Template.bind({});
+Example.args = {
+  variant: 'primary',
+  size: 40,
+  block: false,
+  disabled: false,
+  isLoading: false,
+  children: 'Push Me',
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  ...Example.args,
+  icon: IconPen,
+  iconPosition: 'left',
+};
