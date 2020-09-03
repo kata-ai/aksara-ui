@@ -10,13 +10,6 @@ export function toggleButtonSizes(size: ToggleSizes): ToggleSizeObject {
         switch: 12,
       };
     }
-    case 'md': {
-      return {
-        width: 48,
-        height: 24,
-        switch: 20,
-      };
-    }
     default: {
       return {
         width: 48,
