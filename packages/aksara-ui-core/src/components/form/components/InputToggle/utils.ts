@@ -2,20 +2,17 @@
 import { ToggleSizes, ToggleSizeObject } from './types';
 
 export function toggleButtonSizes(size: ToggleSizes): ToggleSizeObject {
-  switch (size) {
-    case 'sm': {
-      return {
-        width: 32,
-        height: 16,
-        switch: 12,
-      };
-    }
-    default: {
-      return {
-        width: 48,
-        height: 24,
-        switch: 20,
-      };
-    }
+  if (size === 'sm') {
+    return {
+      width: 32,
+      height: 16,
+      switch: 12,
+    };
   }
+
+  return {
+    width: 48,
+    height: 24,
+    switch: 20,
+  };
 }
