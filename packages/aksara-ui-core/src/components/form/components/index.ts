@@ -8,3 +8,4 @@ export * from './InputGroup';
 export * from './InputRadio';
 export * from './InputText';
 export * from './InputTextarea';
+export * from './InputToggle';
