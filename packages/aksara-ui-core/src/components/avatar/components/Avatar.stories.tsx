@@ -1,34 +1,40 @@
 import * as React from 'react';
-import { select, text } from '@storybook/addon-knobs';
+import { Story } from '@storybook/react';
 
 import avatarColors from '../theme';
-import { AvatarBaseProps } from '../styles';
-import Avatar from './Avatar';
+import Avatar, { AvatarProps } from './Avatar';
 
 export default {
   title: 'Core/Components/Avatar',
   component: Avatar,
+  argTypes: {
+    size: {
+      control: {
+        type: 'select',
+        options: [24, 32, 40],
+      },
+    },
+    name: {
+      control: 'text',
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: Object.keys(avatarColors),
+      },
+    },
+    src: {
+      control: 'text',
+    },
+  },
 };
 
-const sizeOptions: Record<number, AvatarBaseProps['size']> = {
-  24: 24,
-  32: 32,
-  40: 40,
+const Template: Story<AvatarProps> = args => <Avatar {...args} />;
+
+export const Example = Template.bind({});
+Example.args = {
+  size: 40,
+  name: 'Adry Muhammad',
+  color: 'indigo',
+  src: 'https://picsum.photos/id/2/400/400',
 };
-const defaultSizeValue = 40;
-
-const colorOptions: Record<string, string> = {};
-Object.keys(avatarColors).forEach(variant => {
-  colorOptions[variant] = variant;
-});
-const defaultColorValue = 'indigo';
-
-export const Example = () => (
-  <Avatar
-    shape="rounded"
-    size={select<AvatarBaseProps['size']>('Size', sizeOptions, defaultSizeValue)}
-    name={text('Name', 'Adry Muhammad')}
-    color={select<keyof typeof avatarColors>('Color', colorOptions, defaultColorValue)}
-    src={text('Image Source', 'https://picsum.photos/id/2/400/400')}
-  />
-);

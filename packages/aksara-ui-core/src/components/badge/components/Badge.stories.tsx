@@ -1,21 +1,29 @@
-import { select } from '@storybook/addon-knobs';
+import { Story } from '@storybook/react';
 import * as React from 'react';
 
-import badgeVariants, { BadgeVariants } from '../variants';
-
-import Badge from './Badge';
+import badgeVariants from '../variants';
+import Badge, { BadgeProps } from './Badge';
 
 export default {
   title: 'Core/Components/Badge',
   component: Badge,
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+        options: Object.keys(badgeVariants),
+      },
+    },
+    children: {
+      control: 'text',
+    },
+  },
 };
 
-const options: Record<string, BadgeVariants> = {};
-Object.keys(badgeVariants).forEach((variant: BadgeVariants) => {
-  options[variant] = variant;
-});
-const defaultValue: BadgeVariants = 'base';
+const Template: Story<BadgeProps> = args => <Badge {...args} />;
 
-export const BasicExample = () => (
-  <Badge variant={select<BadgeVariants>('Variant', options, defaultValue)}>example</Badge>
-);
+export const BasicExample = Template.bind({});
+BasicExample.args = {
+  variant: 'base',
+  children: 'example',
+};

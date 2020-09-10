@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { boolean, select } from '@storybook/addon-knobs';
+import { Story } from '@storybook/react';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { Button } from '../../../button';
@@ -7,36 +7,41 @@ import { Button } from '../../../button';
 export default {
   title: 'Core/Components/Button Group',
   component: ButtonGroup,
+  argTypes: {
+    size: {
+      control: {
+        type: 'select',
+        options: [32, 40],
+      },
+    },
+    segmented: {
+      control: 'boolean',
+    },
+    fullWidth: {
+      control: 'boolean',
+    },
+  },
 };
 
-const options = {
-  32: 32,
-  40: 40,
-};
-const defaultValue = 32;
-
-export const BasicExample = () => {
+export const BasicExample: Story<ButtonGroupProps> = args => {
   return (
-    <ButtonGroup
-      segmented={boolean('Segmented', false)}
-      fullWidth={boolean('Full Width', false)}
-      size={select<number>('Button Size', options, defaultValue) as ButtonGroupProps['size']}
-    >
+    <ButtonGroup {...args}>
       <Button variant="outline">Cancel</Button>
       <Button variant="outline">Save</Button>
     </ButtonGroup>
   );
 };
+BasicExample.args = {
+  size: 32,
+  segmented: false,
+  fullWidth: false,
+};
 
-export const Selectable = () => {
+export const Selectable: Story<ButtonGroupProps> = args => {
   const [selected, setSelected] = React.useState('');
 
   return (
-    <ButtonGroup
-      segmented={boolean('Segmented', false)}
-      fullWidth={boolean('Full Width', false)}
-      size={select<number>('Button Size', options, defaultValue) as ButtonGroupProps['size']}
-    >
+    <ButtonGroup {...args}>
       <Button variant="outline" selected={selected === 'page1'} onClick={() => setSelected('page1')}>
         Page 1
       </Button>
@@ -48,4 +53,9 @@ export const Selectable = () => {
       </Button>
     </ButtonGroup>
   );
+};
+Selectable.args = {
+  size: 32,
+  segmented: false,
+  fullWidth: false,
 };
