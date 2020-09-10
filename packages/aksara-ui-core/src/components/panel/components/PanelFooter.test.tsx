@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Panel from './Panel';
+import PanelFooter from './PanelFooter';
 
 describe('components/Panel', () => {
-  describe('Panel', () => {
+  describe('PanelFooter', () => {
     test('renders correctly', () => {
-      const { container } = render(<Panel>example</Panel>);
+      const { container } = render(<PanelFooter>example</PanelFooter>);
 
       expect(container.firstChild).toBeInTheDocument();
     });
