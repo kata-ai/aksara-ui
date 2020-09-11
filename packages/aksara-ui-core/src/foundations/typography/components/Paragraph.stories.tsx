@@ -2,16 +2,23 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
+import { fonts } from '../../../utils';
 import Paragraph, { ParagraphProps } from './Paragraph';
 
 export default {
-  title: 'Core/Foundations/Paragraph',
+  title: 'Core/Foundations/Typography/Paragraph',
   component: Paragraph,
   argTypes: {
     scale: {
       control: {
         type: 'select',
         options: [300, 400],
+      },
+    },
+    fontFamily: {
+      control: {
+        type: 'select',
+        options: Object.keys(fonts),
       },
     },
   },
@@ -29,4 +36,5 @@ const Template: Story<ParagraphProps> = args => (
 export const Example = Template.bind({});
 Example.args = {
   scale: 400,
+  fontFamily: 'system',
 };
