@@ -2,16 +2,23 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
+import { fonts } from '../../../utils';
 import Heading, { HeadingProps } from './Heading';
 
 export default {
-  title: 'Core/Foundations/Heading',
+  title: 'Core/Foundations/Typography/Heading',
   component: Heading,
   argTypes: {
     scale: {
       control: {
         type: 'select',
         options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      },
+    },
+    fontFamily: {
+      control: {
+        type: 'select',
+        options: Object.keys(fonts),
       },
     },
   },
@@ -26,4 +33,5 @@ const Template: Story<HeadingProps> = args => (
 export const Example = Template.bind({});
 Example.args = {
   scale: 800,
+  fontFamily: 'system',
 };
