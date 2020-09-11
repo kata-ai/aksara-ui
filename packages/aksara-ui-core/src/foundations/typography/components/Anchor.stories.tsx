@@ -21,6 +21,12 @@ export default {
         options: Object.keys(fonts),
       },
     },
+    fontWeight: {
+      control: {
+        type: 'select',
+        options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      },
+    },
   },
 };
 
@@ -35,4 +41,5 @@ Example.args = {
   href: 'https://www.youtube.com/watch?v=P_mQpbCSQOo',
   scale: 400,
   fontFamily: 'system',
+  fontWeight: 600,
 };
