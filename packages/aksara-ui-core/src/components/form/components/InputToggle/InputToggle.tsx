@@ -48,10 +48,6 @@ const Input = styled('input')<InputToggleInnerProps>`
     pointer-events: none;
   }
 
-  &:focus + ${Toggle} {
-    outline: 2px solid ${themeGet('colors.blue06')};
-  }
-
   &:checked + ${Toggle} {
     background: ${themeGet('colors.green06')};
   }
