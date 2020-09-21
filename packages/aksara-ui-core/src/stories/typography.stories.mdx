@@ -10,6 +10,24 @@ import { Stack } from '../foundations/common';
   subtitle="This page contains set of Text Styles that works on public pages and platform pages. Text Styles are available in different sizes and properties that are already calculated using modular scale, details could be seen on Visual Guideline."
 >
   <Stack spacing="xl">
+    <SystemSubheading>Font Family</SystemSubheading>
+    <ComponentBlock title="Brand Fonts" withBackground>
+      <Stack spacing="md">
+        <Heading scale={800} fontFamily="brand" fontWeight={300}>Inter Light</Heading>
+        <Heading scale={800} fontFamily="brand" fontWeight={400}>Inter Regular</Heading>
+        <Heading scale={800} fontFamily="brand" fontWeight={500}>Inter Medium</Heading>
+        <Heading scale={800} fontFamily="brand" fontWeight={600}>Inter SemiBold</Heading>
+        <Heading scale={800} fontFamily="brand" fontWeight={700}>Inter Bold</Heading>
+      </Stack>
+    </ComponentBlock>
+    <ComponentBlock title="System Fonts" withBackground>
+      <Stack spacing="md">
+        <Heading scale={800} fontFamily="system" fontWeight={300}>System Light</Heading>
+        <Heading scale={800} fontFamily="system" fontWeight={400}>System Regular</Heading>
+        <Heading scale={800} fontFamily="system" fontWeight={500}>System Medium</Heading>
+        <Heading scale={800} fontFamily="system" fontWeight={700}>System Bold</Heading>
+      </Stack>
+    </ComponentBlock>
     <SystemSubheading>Typography Scales</SystemSubheading>
     <ComponentBlock title="Heading" withBackground>
       <Stack spacing="md">
@@ -80,5 +98,8 @@ import { Stack } from '../foundations/common';
         </Anchor>
       </Stack>
     </ComponentBlock>
+
+
   </Stack>
 </SystemBlock>
+
