@@ -1,33 +1,35 @@
 import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
 import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
-import { select } from '@storybook/addon-knobs';
-import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types';
 
-import { IconButtonSizes, IconButtonVariants } from './styles';
-import IconButton from './IconButton';
-
-const buttonVariants: SelectTypeOptionsProp<IconButtonVariants> = {
-  default: 'default',
-  outline: 'outline',
-  destructive: 'destructive',
-  ghost: 'ghost',
-};
-const buttonSizes: SelectTypeOptionsProp<IconButtonSizes> = { 24: 24, 32: 32, 40: 40 };
+import IconButton, { IconButtonProps } from './IconButton';
 
 export default {
   title: 'Core/Components/Button/IconButton',
   component: IconButton,
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+        options: ['default', 'outline', 'destructive', 'ghost'],
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: [24, 32, 40],
+      },
+    },
+  },
 };
 
-export const Example = () => (
-  <IconButton
-    type="button"
-    aria-label="Push Me"
-    variant={select<IconButtonVariants>('Variant', buttonVariants, 'outline')}
-    size={select<IconButtonSizes>('Size', buttonSizes, 32)}
-    onClick={action('button-click')}
-  >
-    <IconPen fill="currentColor" aria-hidden="true" />
+export const Example: Story<IconButtonProps> = args => (
+  <IconButton type="button" aria-label="Push Me" onClick={action('button-click')} {...args}>
+    <IconPen fill="currentColor" aria-hidden />
   </IconButton>
 );
+Example.args = {
+  variant: 'outline',
+  size: 32,
+};
