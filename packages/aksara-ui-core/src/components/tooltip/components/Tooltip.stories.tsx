@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { select } from '@storybook/addon-knobs';
-import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types';
+import { Story } from '@storybook/react';
 
 import { Box, Text } from '../../../foundations';
-import Tooltip from './Tooltip';
-import { TooltipSize, TooltipPlacement } from './TooltipInner';
+import Tooltip, { TooltipProps } from './Tooltip';
 
 const readme = require('../README.md');
 
@@ -14,29 +12,22 @@ export default {
   parameters: {
     notes: { markdown: readme },
   },
+  argTypes: {
+    children: { control: null },
+    className: { control: null },
+    style: { control: null },
+  },
 };
 
-const tooltipSizes: SelectTypeOptionsProp<TooltipSize> = {
-  sm: 'sm',
-  md: 'md',
-  lg: 'lg',
-};
-
-const tooltipPlacements: SelectTypeOptionsProp<TooltipPlacement> = {
-  top: 'top',
-  bottom: 'bottom',
-  left: 'left',
-  right: 'right',
-};
-
-export const BasicExample = () => (
+export const BasicExample: Story<TooltipProps> = ({ children, ...restArgs }) => (
   <Box py="xxl" px={128}>
-    <Tooltip
-      placement={select<TooltipPlacement>('Placement', tooltipPlacements, 'top')}
-      size={select<TooltipSize>('Size', tooltipSizes, 'sm')}
-      content="Tooltip text"
-    >
-      <Text>Tooltip Content</Text>
-    </Tooltip>
+    <Tooltip {...restArgs}>{children}</Tooltip>
   </Box>
 );
+
+BasicExample.args = {
+  placement: 'top',
+  size: 'sm',
+  content: 'Tooltip text',
+  children: <Text>Tooltip Content</Text>,
+};
