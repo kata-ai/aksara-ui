@@ -10,6 +10,7 @@ export interface DropdownMenuItemProps {
   className?: string;
   style?: React.CSSProperties;
   isActive?: boolean;
+  children?: React.ReactNode;
 }
 
 const Root = styled(Box)`
@@ -35,9 +36,12 @@ const Root = styled(Box)`
   }
 `;
 
-const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({ className, style, children, isActive }) => {
+const DropdownMenuItem: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuItemProps> = (
+  { className, style, children, isActive },
+  ref
+) => {
   return (
-    <Root py="xs" px="md" className={clsx(isActive && 'active', className)} style={style}>
+    <Root ref={ref} py="xs" px="md" className={clsx(isActive && 'active', className)} style={style}>
       {typeof children === 'string' ? <Text scale={300}>{children}</Text> : children}
     </Root>
   );
@@ -45,4 +49,4 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({ className, style, c
 
 DropdownMenuItem.displayName = 'DropdownMenuItem';
 
-export default DropdownMenuItem;
+export default React.forwardRef(DropdownMenuItem);

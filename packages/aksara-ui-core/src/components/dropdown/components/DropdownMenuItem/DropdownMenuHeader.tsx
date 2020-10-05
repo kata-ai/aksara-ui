@@ -1,32 +1,30 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
 import { Box, Text } from '../../../../foundations';
-import { colors } from '../../../../utils';
 
 export interface DropdownMenuHeaderProps {
   className?: string;
   style?: React.CSSProperties;
+  children?: React.ReactNode;
 }
-
-const Root = styled(Box)`
-  background-color: ${themeGet('colors.grey01', colors.grey01)};
-`;
 
 const Header = styled(Text)`
   text-transform: uppercase;
 `;
 
-const DropdownMenuHeader: React.FC<DropdownMenuHeaderProps> = ({ className, style, children }) => {
+const DropdownMenuHeader: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuHeaderProps> = (
+  { className, style, children },
+  ref
+) => {
   return (
-    <Root py="xs" px="md" className={className} style={style}>
+    <Box ref={ref} py="xs" px="md" backgroundColor="grey01" className={className} style={style}>
       <Header scale={200} fontWeight={700} color="grey07">
         {children}
       </Header>
-    </Root>
+    </Box>
   );
 };
 
 DropdownMenuHeader.displayName = 'DropdownMenuItem';
 
-export default DropdownMenuHeader;
+export default React.forwardRef(DropdownMenuHeader);
