@@ -1,11 +1,23 @@
 import * as React from 'react';
-import { number } from '@storybook/addon-knobs';
+import { Story } from '@storybook/react';
 
-import Skeleton from './Skeleton';
+import Skeleton, { SkeletonProps } from './Skeleton';
 
 export default {
   title: 'Core/Components/Skeleton/Skeleton',
   component: Skeleton,
+  argTypes: {
+    style: {
+      control: null,
+    },
+    className: {
+      control: null,
+    },
+  },
 };
 
-export const Example = () => <Skeleton numberOfLines={number('Number of Lines', 1)} />;
+export const Example: Story<SkeletonProps> = args => <Skeleton {...args} />;
+
+Example.args = {
+  numberOfLines: 1,
+};
