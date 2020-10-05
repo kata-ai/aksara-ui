@@ -1,11 +1,17 @@
 import * as React from 'react';
-import { number } from '@storybook/addon-knobs';
+import { Story } from '@storybook/react';
 
-import SkeletonBox from './SkeletonBox';
+import SkeletonBox, { SkeletonBoxProps } from './SkeletonBox';
 
 export default {
   title: 'Core/Components/Skeleton/SkeletonBox',
   component: SkeletonBox,
 };
 
-export const Example = () => <SkeletonBox style={{ height: number('Height', 200) }} />;
+export const Example: Story<SkeletonBoxProps> = args => <SkeletonBox {...args} />;
+
+Example.args = {
+  style: {
+    height: 200,
+  },
+};

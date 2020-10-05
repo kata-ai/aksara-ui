@@ -1,13 +1,18 @@
 import * as React from 'react';
-import { select, text } from '@storybook/addon-knobs';
+import { Story } from '@storybook/react';
 
 import { Stack, Box } from '../../../foundations';
 import { messageVariants } from '../variants';
-import Message, { MessageStates } from './Message';
+import Message, { MessageProps } from './Message';
 
 export default {
   title: 'Core/Components/Message',
   component: Message,
+  argTypes: {
+    style: {
+      control: null,
+    },
+  },
 };
 
 const messageVariantOptions: Record<string, string> = {};
@@ -15,21 +20,21 @@ Object.keys(messageVariants).forEach((variant: string) => {
   messageVariantOptions[variant] = variant;
 });
 
-export const BasicExample = () => (
-  <Message
-    message={text('Message', 'Trying to tell short and helpful information just in 1 sentence.')}
-    state={select<MessageStates>('State', messageVariantOptions, 'general')}
-  />
-);
+const Template: Story<MessageProps> = args => <Message {...args} />;
 
-export const SectionLevel = () => {
-  return (
-    <Message
-      title={text('Title', 'Check out our Natural Language documentation')}
-      message={text('Message', 'You can learn how to improve your Natural Language by reading our documentation.')}
-      state={select<MessageStates>('State', messageVariantOptions, 'general')}
-    />
-  );
+export const BasicExample = Template.bind({});
+
+BasicExample.args = {
+  message: 'Trying to tell short and helpful information just in 1 sentence.',
+  state: 'general',
+};
+
+export const SectionLevel = Template.bind({});
+
+SectionLevel.args = {
+  ...BasicExample.args,
+  message: 'You can learn how to improve your Natural Language by reading our documentation.',
+  title: 'Check out our Natural Language documentation',
 };
 
 interface VisibleProps {
@@ -133,4 +138,8 @@ export const Closable = () => {
       />
     </Stack>
   );
+};
+
+Closable.parameters = {
+  controls: { hideNoControlsWarning: true },
 };
