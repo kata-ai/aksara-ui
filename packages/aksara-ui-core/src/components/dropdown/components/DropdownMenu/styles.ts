@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { Card } from '../../../../foundations';
 
-export const Base = styled('div')`
-  display: inline-block;
-  position: relative;
-`;
-
 export const Arrow = styled('div')`
   display: block;
   line-height: 11px;
