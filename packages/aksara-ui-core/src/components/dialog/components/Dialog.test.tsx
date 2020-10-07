@@ -36,7 +36,7 @@ describe('components/Dialog', () => {
         </Dialog>
       );
 
-      const overlay = document.querySelector('[data-wicara-portal] > div');
+      const overlay = document.querySelector('[data-aksara-portal] > div');
       if (overlay) {
         fireEvent.click(overlay);
         expect(handleClose).toHaveBeenCalledTimes(1);
@@ -53,7 +53,7 @@ describe('components/Dialog', () => {
         </Dialog>
       );
 
-      const overlay = document.querySelector('[data-wicara-portal] > div');
+      const overlay = document.querySelector('[data-aksara-portal] > div');
       if (overlay) {
         fireEvent.click(overlay);
         expect(handleClose).toHaveBeenCalledTimes(0);
