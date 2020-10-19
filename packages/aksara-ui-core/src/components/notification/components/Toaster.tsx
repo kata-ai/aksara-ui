@@ -72,7 +72,6 @@ const Root = styled('div')`
   height: 100%;
   position: relative;
   margin-bottom: 20px;
-  z-index: 999;
   opacity: 0;
 
   &[data-toaster-state='entering'],

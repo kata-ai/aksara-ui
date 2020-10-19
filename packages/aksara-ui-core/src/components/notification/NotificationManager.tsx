@@ -23,7 +23,7 @@ const ToasterWrapper = styled('div')`
   right: 0;
   width: ${TOASTER_WIDTH}px;
   margin-right: 20px;
-  z-index: 999;
+  z-index: 9999;
 `;
 
 export default class NotificationManager extends React.PureComponent<Props, State> {
