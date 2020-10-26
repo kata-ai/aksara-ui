@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Placement } from 'popper.js';
+import { Placement } from '@popperjs/core';
 import { Manager, Reference, Popper } from 'react-popper';
 import { Details, Summary, Menu } from '../styles';
 
