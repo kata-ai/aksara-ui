@@ -19,6 +19,10 @@ tsc-out/
 # tsbuildinfo
 *.tsbuildinfo
 
+# yalc
+.yalc
+yalc.lock
+
 # Logs
 logs
 *.log

@@ -8,7 +8,7 @@ import {
   IconConversation,
 } from '@aksara-ui/icons';
 
-import { BaseMessageProps, Root, Icon, Inner, CloseButtonWrapper, MessageStates } from '../styles';
+import { BaseMessageProps, Root, Icon, Inner, CloseButtonWrapper } from '../styles';
 import { Heading, Paragraph, UnstyledButton } from '../../../foundations';
 import { messageIconVariants, closeButtonVariants } from '../variants';
 
@@ -109,7 +109,6 @@ Message.defaultProps = {
 Message.displayName = 'Message';
 
 export default Message;
-export { MessageStates };
 
 /** @deprecated - use `Message` instead */
 export const Banner = Message;

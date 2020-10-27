@@ -20,7 +20,7 @@ export default {
   },
 };
 
-const Template: Story<BadgeProps> = args => <Badge {...args} />;
+const Template: Story<React.PropsWithChildren<BadgeProps>> = args => <Badge {...args} />;
 
 export const BasicExample = Template.bind({});
 BasicExample.args = {

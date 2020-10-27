@@ -34,6 +34,7 @@ module.exports = {
       node: {
         extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.json'],
       },
+      typescript: {},
     },
     'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx'],
   },

@@ -3,9 +3,9 @@
   "version": "1.0.0-canary.7",
   "description": "React icon library for the Aksara design system.",
   "sideEffects": false,
-  "main": "./lib/index.js",
-  "module": "./lib/index.es.js",
-  "types": "./lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/react.esm.js",
+  "typings": "dist/index.d.ts",
   "aksara:src": "./src/index.ts",
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <dev@kata.ai>",
@@ -17,14 +17,13 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib && rimraf tsc-out",
-    "compile": "yarn clean && yarn rollup",
+    "build": "tsdx build --tsconfig tsconfig.build.json",
+    "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "prepublishOnly": "yarn compile",
-    "rollup": "rollup -c ./rollup.config.js",
+    "prepublish": "npm run build",
+    "start": "tsdx watch --tsconfig tsconfig.build.json --verbose",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "type-check": "tsc --emitDeclarationOnly",
     "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
@@ -35,8 +34,6 @@
     "react-dom": "^16.10.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.48",
-    "@types/react-dom": "^16.9.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

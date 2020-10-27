@@ -272,10 +272,7 @@ export const spaceLegacy = {
   space10: 80,
 };
 
-/** Space values (in px) mapped by size designators */
-
-export const space = {
-  ...spaceLegacy,
+export const spaceModern = {
   /** Equivalent to 2px */
   xxxs: 2,
   /** Equivalent to 4px */
@@ -292,6 +289,12 @@ export const space = {
   xl: 32,
   /** Equivalent to 48px */
   xxl: 48,
+};
+
+/** Space values (in px) mapped by size designators */
+export const space = {
+  ...spaceLegacy,
+  ...spaceModern,
 };
 
 export const breakpoints = ['1024px', '1280px', '1440px', '1600px'];
