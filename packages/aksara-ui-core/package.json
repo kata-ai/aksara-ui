@@ -16,7 +16,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsdx build --tsconfig tsconfig.build.json",
+    "build": "tsdx build --transpileOnly --tsconfig tsconfig.build.json",
     "build-storybook": "build-storybook --quiet",
     "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
