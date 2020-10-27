@@ -23,7 +23,6 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepublish": "npm run build",
     "start": "tsdx watch --tsconfig tsconfig.build.json --verbose",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
