@@ -27,7 +27,7 @@ class Portal extends React.Component {
     }
   }
 
-  public render() {
+  public render(): React.ReactPortal | null {
     const { children } = this.props;
 
     if (supportsPortal && this.container) {

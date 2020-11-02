@@ -4,6 +4,6 @@
 // TypeScript Version: 3.8
 
 declare module '@styled-system/should-forward-prop' {
-  declare const shouldForwardProp: (propName: string) => boolean;
+  declare const shouldForwardProp: <O extends object = {}>(propName: keyof O) => boolean;
   export default shouldForwardProp;
 }

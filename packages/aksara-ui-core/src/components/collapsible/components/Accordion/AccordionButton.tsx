@@ -11,7 +11,9 @@ import { Heading } from '../../../../foundations';
 import { UnstyledAccordionButtonStyles, SystemStyles, SystemProps } from './styled';
 import { colors } from '../../../../utils';
 
-const Root = styled(ReachAccordionButton).withConfig<SystemProps & ReachAccordionButtonProps>({ shouldForwardProp })`
+const Root = styled(ReachAccordionButton).withConfig<SystemProps & ReachAccordionButtonProps>({
+  shouldForwardProp: propName => shouldForwardProp(propName as string), // different props between these two packages
+})`
   ${UnstyledAccordionButtonStyles}
 
   &:hover {

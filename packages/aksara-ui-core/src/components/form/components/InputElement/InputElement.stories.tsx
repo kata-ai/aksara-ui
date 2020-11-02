@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { IconLock } from '@aksara-ui/icons';
+import { Story } from '@storybook/react';
 
 import { Box } from '../../../../foundations';
 import { InputGroup } from '../InputGroup';
-import { InputText } from '../InputText';
+import { InputText, InputTextProps } from '../InputText';
 import InputLeftElement from './InputLeftElement';
 import InputRightElement from './InputRightElement';
 
@@ -29,7 +30,7 @@ export default {
   },
 };
 
-const defaultArgs = {
+const defaultArgs: InputTextProps = {
   inputSize: 40,
   id: 'password_dummy',
   placeholder: 'Type here...',
@@ -37,7 +38,7 @@ const defaultArgs = {
   errors: false,
 };
 
-export const LeftElement = ({ inputSize, ...args }) => {
+export const LeftElement: Story<InputTextProps> = ({ inputSize, ...args }) => {
   return (
     <Box>
       <InputGroup inputSize={inputSize}>
@@ -51,7 +52,7 @@ export const LeftElement = ({ inputSize, ...args }) => {
 };
 LeftElement.args = defaultArgs;
 
-export const RightElement = ({ inputSize, ...args }) => {
+export const RightElement: Story<InputTextProps> = ({ inputSize, ...args }) => {
   return (
     <Box>
       <InputGroup inputSize={inputSize}>
