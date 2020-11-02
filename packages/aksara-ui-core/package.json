@@ -42,7 +42,8 @@
     "react-popper": "^2.2.3",
     "react-popper-tooltip": "^3.1.0",
     "react-transition-group": "^4.4.1",
-    "styled-system": "^5.1.4"
+    "styled-system": "^5.1.4",
+    "tslib": "^2.0.3"
   },
   "peerDependencies": {
     "@aksara-ui/icons": "^1.0.0-canary.0",
