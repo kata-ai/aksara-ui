@@ -10,7 +10,7 @@
   "author": "Kata.ai <dev@kata.ai>",
   "license": "Apache-2.0",
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
