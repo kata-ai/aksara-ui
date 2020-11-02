@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/core",
-  "version": "1.0.0-canary.27",
+  "version": "1.0.0-canary.28",
   "description": "Aksara UI Core. The component library powering Kata Platform.",
   "main": "dist/index.js",
   "module": "dist/core.esm.js",
@@ -52,7 +52,7 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@aksara-ui/icons": "^1.0.0-canary.7",
+    "@aksara-ui/icons": "^1.0.0-canary.8",
     "@babel/core": "^7.11.4",
     "@storybook/addon-actions": "6.0.18",
     "@storybook/addon-essentials": "^6.0.18",
