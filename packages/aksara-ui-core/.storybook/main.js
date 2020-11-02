@@ -8,8 +8,4 @@ module.exports = {
     '@storybook/addon-knobs',
     '@storybook/addon-links',
   ],
-  webpackFinal: config => {
-    config.resolve.mainFields = ['aksara:src', 'main'];
-    return config;
-  },
 };
