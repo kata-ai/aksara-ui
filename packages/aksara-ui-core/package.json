@@ -21,7 +21,7 @@
     "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "prepublish": "npm run build",
+    "prepublish": "yarn build",
     "report-coverage": "codecov -f ./coverage/*.json",
     "start": "tsdx watch --tsconfig tsconfig.build.json --verbose",
     "storybook": "start-storybook -p 9001",

@@ -33,7 +33,7 @@
     "test": "lerna run test --",
     "test:coverage": "yarn workspace @aksara-ui/core run test:coverage",
     "type-check": "tsc --noEmit",
-    "validate": "npm run lint && npm run type-check"
+    "validate": "yarn lint && yarn type-check"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
@@ -58,7 +58,7 @@
     "lint-staged": "^10.2.13",
     "prettier": "^2.1.1",
     "rimraf": "^3.0.0",
-    "tsdx": "^0.14.1",
+    "tsdx": "0.14.1",
     "typeface-inter": "^3.15.0",
     "typescript": "~3.9.3"
   },

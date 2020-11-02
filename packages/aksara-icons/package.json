@@ -21,7 +21,7 @@
     "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "prepublish": "npm run build",
+    "prepublish": "yarn build",
     "start": "tsdx watch --tsconfig tsconfig.build.json --verbose",
     "validate": "yarn lint && yarn type-check"
   },
