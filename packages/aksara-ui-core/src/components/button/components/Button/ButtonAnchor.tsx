@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import clsx from 'clsx';
 
 import { colors } from '../../../../utils';
-import { IconWrapper, LoaderCircle } from './components';
+import { LoaderCircle, IconWrapper } from './components';
 import { ButtonStyles } from './styles';
 import { ButtonBaseProps, ButtonSizes } from './types';
 import { loadingIconSizes } from './utils';
 
-export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonAnchorProps extends ButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -19,7 +19,7 @@ export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes
   isLoading?: boolean;
 }
 
-const Root = styled('button')<ButtonProps>`
+const Root = styled('a')<ButtonAnchorProps>`
   ${ButtonStyles}
 `;
 
@@ -32,25 +32,9 @@ const InvisibleText = styled('span')`
  * Buttons are used to initialize an action, either in the background or
  * foreground of an experience.
  */
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
   (
-    {
-      children,
-      className,
-      style,
-      size,
-      icon,
-      iconPosition,
-      isLoading,
-      disabled,
-      variant,
-      block,
-      width,
-      selected,
-      position = 'relative',
-      type = 'button',
-      ...rest
-    },
+    { children, className, style, size, icon, iconPosition, isLoading, variant, block, width, selected, ...rest },
     ref
   ) => {
     const renderIcon = () => {
@@ -84,14 +68,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonSize={size}
         icon={icon}
         iconPosition={iconPosition}
-        disabled={disabled || isLoading}
         isLoading={isLoading}
         variant={variant}
         ref={ref}
         display={block ? 'block' : 'inline-block'}
         width={block ? '100%' : width}
-        position={position}
-        type={type}
+        position="relative"
         {...rest}
       >
         {icon && renderIcon()}
