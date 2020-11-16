@@ -4,9 +4,9 @@ import clsx from 'clsx';
 
 import { ButtonStyles } from './styles';
 import { ButtonBaseProps, ButtonSizes } from './types';
-import { renderButtonChildren, renderButtonIcon } from './utils';
+import { renderButtonIcon, renderButtonChildren } from './utils';
 
-export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonAnchorProps extends ButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -17,7 +17,7 @@ export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes
   isLoading?: boolean;
 }
 
-const Root = styled('button')<ButtonProps>`
+const Root = styled('a')<ButtonAnchorProps>`
   ${ButtonStyles}
 `;
 
@@ -26,25 +26,9 @@ const Root = styled('button')<ButtonProps>`
  * Buttons are used to initialize an action, either in the background or
  * foreground of an experience.
  */
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const ButtonAnchor = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
   (
-    {
-      children,
-      className,
-      style,
-      size,
-      icon,
-      iconPosition,
-      isLoading,
-      disabled,
-      variant,
-      block,
-      width,
-      selected,
-      position = 'relative',
-      type = 'button',
-      ...rest
-    },
+    { children, className, style, size, icon, iconPosition, isLoading, variant, block, width, selected, ...rest },
     ref
   ) => {
     return (
@@ -54,14 +38,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         buttonSize={size}
         icon={icon}
         iconPosition={iconPosition}
-        disabled={disabled || isLoading}
         isLoading={isLoading}
         variant={variant}
         ref={ref}
         display={block ? 'block' : 'inline-block'}
         width={block ? '100%' : width}
-        position={position}
-        type={type}
+        position="relative"
         {...rest}
       >
         {renderButtonIcon({ icon, iconPosition, size, isLoading })}
@@ -71,7 +53,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-Button.defaultProps = {
+ButtonAnchor.defaultProps = {
   className: undefined,
   style: undefined,
   block: false,
@@ -81,6 +63,6 @@ Button.defaultProps = {
   size: 40,
 };
 
-Button.displayName = 'Button';
+ButtonAnchor.displayName = 'ButtonAnchor';
 
-export default Button;
+export default ButtonAnchor;

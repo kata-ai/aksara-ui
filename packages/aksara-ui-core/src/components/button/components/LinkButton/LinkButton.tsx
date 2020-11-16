@@ -2,7 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { Circle } from '../../../loading';
-import { LinkButtonBase, LinkButtonBaseProps, LinkButtonSizes, InvisibleText, LinkButtonIcon } from './styles';
+import { InvisibleText } from '../Button/components';
+import { LinkButtonBase, LinkButtonBaseProps, LinkButtonSizes, LinkButtonIcon } from './styles';
 
 export interface LinkButtonProps extends LinkButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

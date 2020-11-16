@@ -78,7 +78,3 @@ export const LinkButtonIcon = styled('span')<Pick<LinkButtonBaseProps, 'buttonSi
     vertical-align: middle;
   }
 `;
-
-export const InvisibleText = styled('span')`
-  visibility: hidden;
-`;

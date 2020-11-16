@@ -3,11 +3,11 @@ import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 import { IconPen } from '@aksara-ui/icons';
 
-import Button, { ButtonProps } from './Button';
+import ButtonAnchor, { ButtonAnchorProps } from './ButtonAnchor';
 
 export default {
-  title: 'Core/Components/Button/Button',
-  component: Button,
+  title: 'Core/Components/Button/ButtonAnchor',
+  component: ButtonAnchor,
   argTypes: {
     variant: {
       control: {
@@ -24,11 +24,11 @@ export default {
     block: {
       control: 'boolean',
     },
-    disabled: {
-      control: 'boolean',
+    href: {
+      control: 'text',
     },
-    isLoading: {
-      control: 'boolean',
+    target: {
+      control: 'text',
     },
     children: {
       control: 'text',
@@ -36,15 +36,17 @@ export default {
   },
 };
 
-const Template: Story<ButtonProps> = args => <Button type="button" onClick={action('button-click')} {...args} />;
+const Template: Story<ButtonAnchorProps> = args => (
+  <ButtonAnchor type="button" onClick={action('button-click')} {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {
   variant: 'primary',
   size: 40,
   block: false,
-  disabled: false,
-  isLoading: false,
+  href: 'https://www.youtube.com/watch?v=fdixQDPA2h0',
+  target: '_blank',
   children: 'Push Me',
 };
 

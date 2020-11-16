@@ -11,7 +11,7 @@ import {
   ButtonMedium,
   ButtonLarge,
   InverseButton,
-} from './utils/buttonUtils';
+} from './utils';
 import { ButtonBaseProps } from './types';
 
 export const ButtonBase = css`
