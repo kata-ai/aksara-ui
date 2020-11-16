@@ -41,5 +41,5 @@ Example.args = {
   href: 'https://www.youtube.com/watch?v=P_mQpbCSQOo',
   scale: 400,
   fontFamily: 'system',
-  fontWeight: 600,
+  fontWeight: 400,
 };
