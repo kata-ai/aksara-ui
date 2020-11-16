@@ -2,11 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { colors } from '../../../../utils';
-import { IconWrapper, LoaderCircle } from './components';
 import { ButtonStyles } from './styles';
 import { ButtonBaseProps, ButtonSizes } from './types';
-import { loadingIconSizes } from './utils';
+import { renderButtonChildren, renderButtonIcon } from './utils';
 
 export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Additional CSS classes to give to the component */
@@ -21,10 +19,6 @@ export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes
 
 const Root = styled('button')<ButtonProps>`
   ${ButtonStyles}
-`;
-
-const InvisibleText = styled('span')`
-  visibility: hidden;
 `;
 
 /**
@@ -53,30 +47,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const renderIcon = () => {
-      if (typeof icon === 'string') {
-        return (
-          <IconWrapper
-            iconPosition={iconPosition}
-            buttonSize={size}
-            style={isLoading ? { visibility: 'hidden' } : undefined}
-          >
-            <i className={`icon-${icon}`} />
-          </IconWrapper>
-        );
-      }
-
-      return icon ? (
-        <IconWrapper
-          iconPosition={iconPosition}
-          buttonSize={size}
-          style={isLoading ? { visibility: 'hidden' } : undefined}
-        >
-          {React.createElement(icon, { fill: 'currentColor', size: 20 })}
-        </IconWrapper>
-      ) : null;
-    };
-
     return (
       <Root
         className={clsx(selected && 'selected', className)}
@@ -94,19 +64,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type={type}
         {...rest}
       >
-        {icon && renderIcon()}
-        {isLoading ? (
-          <>
-            <LoaderCircle
-              size={loadingIconSizes(size)}
-              buttonSize={size}
-              spinnerColor={variant === 'outline' ? colors.grey04 : colors.white}
-            />
-            <InvisibleText>{children}</InvisibleText>
-          </>
-        ) : (
-          children
-        )}
+        {renderButtonIcon({ icon, iconPosition, size, isLoading })}
+        {renderButtonChildren({ isLoading, size, variant, children })}
       </Root>
     );
   }

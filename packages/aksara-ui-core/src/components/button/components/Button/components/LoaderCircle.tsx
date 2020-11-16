@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { Circle } from '../../../../loading';
-import { ButtonSizes } from '../types';
+import { ButtonBaseProps, ButtonSizes } from '../types';
 
-interface LoaderCircleProps {
-  buttonSize?: ButtonSizes;
-}
+type LoaderCircleProps = Pick<ButtonBaseProps, 'buttonSize'>;
 
 const loadingIconPadding = (size?: ButtonSizes) => {
   switch (size) {

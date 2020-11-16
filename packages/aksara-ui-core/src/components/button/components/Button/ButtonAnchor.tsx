@@ -2,11 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { colors } from '../../../../utils';
-import { LoaderCircle, IconWrapper } from './components';
 import { ButtonStyles } from './styles';
 import { ButtonBaseProps, ButtonSizes } from './types';
-import { loadingIconSizes } from './utils';
+import { renderButtonIcon, renderButtonChildren } from './utils';
 
 export interface ButtonAnchorProps extends ButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
@@ -23,10 +21,6 @@ const Root = styled('a')<ButtonAnchorProps>`
   ${ButtonStyles}
 `;
 
-const InvisibleText = styled('span')`
-  visibility: hidden;
-`;
-
 /**
  * Buttons express what action will occur when the user clicks or touches it.
  * Buttons are used to initialize an action, either in the background or
@@ -37,30 +31,6 @@ const Button = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
     { children, className, style, size, icon, iconPosition, isLoading, variant, block, width, selected, ...rest },
     ref
   ) => {
-    const renderIcon = () => {
-      if (typeof icon === 'string') {
-        return (
-          <IconWrapper
-            iconPosition={iconPosition}
-            buttonSize={size}
-            style={isLoading ? { visibility: 'hidden' } : undefined}
-          >
-            <i className={`icon-${icon}`} />
-          </IconWrapper>
-        );
-      }
-
-      return icon ? (
-        <IconWrapper
-          iconPosition={iconPosition}
-          buttonSize={size}
-          style={isLoading ? { visibility: 'hidden' } : undefined}
-        >
-          {React.createElement(icon, { fill: 'currentColor', size: 20 })}
-        </IconWrapper>
-      ) : null;
-    };
-
     return (
       <Root
         className={clsx(selected && 'selected', className)}
@@ -76,19 +46,8 @@ const Button = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
         position="relative"
         {...rest}
       >
-        {icon && renderIcon()}
-        {isLoading ? (
-          <>
-            <LoaderCircle
-              size={loadingIconSizes(size)}
-              buttonSize={size}
-              spinnerColor={variant === 'outline' ? colors.grey04 : colors.white}
-            />
-            <InvisibleText>{children}</InvisibleText>
-          </>
-        ) : (
-          children
-        )}
+        {renderButtonIcon({ icon, iconPosition, size, isLoading })}
+        {renderButtonChildren({ isLoading, size, variant, children })}
       </Root>
     );
   }

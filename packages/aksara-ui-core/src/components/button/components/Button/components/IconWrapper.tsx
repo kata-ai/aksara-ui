@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ButtonBaseProps, ButtonSizes } from '../types';
 
-type IconWrapperProps = Pick<ButtonBaseProps, 'buttonSize' | 'iconPosition' | 'variant'>;
+type IconWrapperProps = Pick<ButtonBaseProps, 'buttonSize' | 'iconPosition'>;
 
 const iconPadding = (size?: ButtonSizes) => {
   switch (size) {
