@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Button <Button /> renders block buttons correctly 1`] = `
+exports[`components/Button <ButtonAnchor /> renders block buttons correctly 1`] = `
 .c0 {
   margin: 0;
   padding: 0;
@@ -71,17 +71,16 @@ exports[`components/Button <Button /> renders block buttons correctly 1`] = `
   color: #ffffff;
 }
 
-<button
+<a
   class="c0"
   display="block"
-  type="button"
   width="100%"
 >
   test button
-</button>
+</a>
 `;
 
-exports[`components/Button <Button /> renders colors correctly by variant 1`] = `
+exports[`components/Button <ButtonAnchor /> renders colors correctly by variant 1`] = `
 .c0 {
   margin: 0;
   padding: 0;
@@ -151,11 +150,10 @@ exports[`components/Button <Button /> renders colors correctly by variant 1`] = 
   color: #ffffff;
 }
 
-<button
+<a
   class="c0"
   display="inline-block"
-  type="button"
 >
   test button
-</button>
+</a>
 `;
