@@ -26,7 +26,7 @@ const Root = styled('a')<ButtonAnchorProps>`
  * Buttons are used to initialize an action, either in the background or
  * foreground of an experience.
  */
-const Button = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
+const ButtonAnchor = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
   (
     { children, className, style, size, icon, iconPosition, isLoading, variant, block, width, selected, ...rest },
     ref
@@ -53,7 +53,7 @@ const Button = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
   }
 );
 
-Button.defaultProps = {
+ButtonAnchor.defaultProps = {
   className: undefined,
   style: undefined,
   block: false,
@@ -63,6 +63,6 @@ Button.defaultProps = {
   size: 40,
 };
 
-Button.displayName = 'Button';
+ButtonAnchor.displayName = 'ButtonAnchor';
 
-export default Button;
+export default ButtonAnchor;
