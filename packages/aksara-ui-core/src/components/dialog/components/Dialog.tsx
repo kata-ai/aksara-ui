@@ -5,7 +5,7 @@ import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
 import { IconClose } from '@aksara-ui/icons';
 
-import { Portal, Card, FocusTrap } from '../../../foundations';
+import { Portal, Card, FocusTrap, CardProps } from '../../../foundations';
 import { IconButton } from '../../button';
 import { ANIMATION_DURATION } from '../constants';
 import DialogOverlay from './DialogOverlay';
@@ -37,7 +37,6 @@ const DialogOut = keyframes`
 const DialogWrapper = styled(Card)`
   opacity: 0;
   transform: translate(0, -25%);
-  overflow: hidden;
 
   &[data-state='entering'],
   &[data-state='entered'] {
@@ -64,7 +63,7 @@ const CloseButton = styled(IconButton)`
   right: 32px;
 `;
 
-export interface DialogProps {
+export interface DialogProps extends CardProps {
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Additional CSS properties to give to the drawer. */
@@ -89,6 +88,8 @@ export interface DialogProps {
   maxHeight?: string | number;
   /** Set height of dialog */
   height?: string | number;
+  /** Dialog overflow */
+  overflow?: string;
   /** Callback method run when the "Close Drawer" button is clicked. */
   onClose?: () => void;
 }
@@ -168,18 +169,32 @@ class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   renderInnerContent = (state: TransitionStatus) => {
-    const { labelledById, hideCloseButton, children, maxWidth, width, height, maxHeight } = this.props;
+    const {
+      className,
+      style,
+      labelledById,
+      hideCloseButton,
+      children,
+      maxWidth,
+      width,
+      height,
+      maxHeight,
+      overflow = 'hidden',
+      ...rest
+    } = this.props;
     const { isOpen } = this.state;
 
     return (
       <DialogOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <DialogWrapper
-          className={clsx(isOpen && 'entered')}
+          className={clsx(isOpen && 'entered', className)}
+          style={style}
           position="relative"
           display="flex"
           flexDirection="column"
           backgroundColor="white"
           borderRadius="md"
+          overflow={overflow}
           height={height}
           width={width || '100%'}
           maxWidth={maxWidth || '500px'}
@@ -191,6 +206,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           aria-modal="true"
           aria-labelledby={labelledById}
           data-state={state}
+          {...rest}
         >
           {!hideCloseButton && (
             <CloseButton type="button" aria-label="Close" variant="ghost" onClick={this.handleCloseSideSheet}>
