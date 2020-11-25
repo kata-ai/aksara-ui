@@ -3,18 +3,14 @@ import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
 import { fonts } from '../../../utils';
+import { textScaleOptions } from '../utils/storybook';
 import Text, { TextProps } from './Text';
 
 export default {
   title: 'Core/Foundations/Typography/Text',
   component: Text,
   argTypes: {
-    scale: {
-      control: {
-        type: 'select',
-        options: [200, 300, 400, 500],
-      },
-    },
+    scale: textScaleOptions,
     fontFamily: {
       control: {
         type: 'select',
@@ -41,4 +37,8 @@ Example.args = {
   scale: 400,
   fontFamily: 'system',
   fontWeight: 400,
+};
+
+export const MediaQueries = () => {
+  return <Text scale={[400, 500]}>We are making AI technology accessible to everyone</Text>;
 };

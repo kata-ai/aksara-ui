@@ -7,7 +7,7 @@ import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../u
 
 export interface HeadingProps extends TypographyBaseProps {
   /** Size value of the heading. */
-  scale?: HeadingScale;
+  scale?: HeadingScale | HeadingScale[];
 }
 
 /**

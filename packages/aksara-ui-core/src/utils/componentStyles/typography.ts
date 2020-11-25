@@ -59,6 +59,22 @@ export const heading = {
 
 /** Text size values mapped by scale token. */
 export const text = {
+  900: {
+    fontSize: '42px',
+    lineHeight: '48px',
+  },
+  800: {
+    fontSize: '35px',
+    lineHeight: '40px',
+  },
+  700: {
+    fontSize: '29px',
+    lineHeight: '32px',
+  },
+  600: {
+    fontSize: '24px',
+    lineHeight: '28px',
+  },
   500: {
     fontSize: '20px',
     lineHeight: '24px',
@@ -72,6 +88,10 @@ export const text = {
     lineHeight: '20px',
   },
   200: {
+    fontSize: '12px',
+    lineHeight: '16px',
+  },
+  100: {
     fontSize: '12px',
     lineHeight: '16px',
   },

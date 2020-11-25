@@ -2,15 +2,37 @@ import { css } from 'styled-components';
 import {
   layout,
   LayoutProps,
+  position,
+  PositionProps,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
   space,
   SpaceProps,
+  background,
+  BackgroundProps,
   color,
   ColorProps,
   typography,
-  TypographyProps as StyledTypographyProps,
+  TypographyProps,
+  border,
+  BorderProps,
+  shadow,
+  ShadowProps,
 } from 'styled-system';
 
-export interface TypographyBaseProps extends LayoutProps, SpaceProps, ColorProps, StyledTypographyProps {
+export interface TypographyBaseProps
+  extends LayoutProps,
+    PositionProps,
+    FlexboxProps,
+    GridProps,
+    SpaceProps,
+    BackgroundProps,
+    ColorProps,
+    TypographyProps,
+    BorderProps,
+    ShadowProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
@@ -28,9 +50,15 @@ export interface TypographyBaseProps extends LayoutProps, SpaceProps, ColorProps
  */
 const typographyBase = css`
   ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
   ${space}
+  ${background}
   ${color}
   ${typography}
+  ${border}
+  ${shadow}
 `;
 
 export default typographyBase;
