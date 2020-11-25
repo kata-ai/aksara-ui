@@ -2,7 +2,7 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import { fonts } from '../../../utils';
+import { componentStyles, fonts } from '../../../utils';
 import Paragraph, { ParagraphProps } from './Paragraph';
 
 export default {
@@ -12,7 +12,7 @@ export default {
     scale: {
       control: {
         type: 'select',
-        options: [300, 400],
+        options: Object.keys(componentStyles.paragraph),
       },
     },
     fontFamily: {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import { fonts } from '../../../utils';
+import { fonts, componentStyles } from '../../../utils';
 import Heading, { HeadingProps } from './Heading';
 
 export default {
@@ -12,7 +12,7 @@ export default {
     scale: {
       control: {
         type: 'select',
-        options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+        options: Object.keys(componentStyles.heading),
       },
     },
     fontFamily: {
