@@ -8,7 +8,7 @@ import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../u
 
 export interface ParagraphProps extends TypographyBaseProps {
   /** Size value of the text. */
-  scale?: ParagraphScale;
+  scale?: ParagraphScale | ParagraphScale[];
 }
 
 /**

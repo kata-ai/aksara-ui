@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
 import { fonts } from '../../../utils';
@@ -27,7 +26,7 @@ export default {
 };
 
 const Template: Story<AnchorProps> = args => (
-  <Anchor onClick={action('button-click')} target="_blank" rel="noopener noreferrer" {...args}>
+  <Anchor target="_blank" rel="noopener noreferrer" {...args}>
     We are making AI technology accessible to everyone
   </Anchor>
 );
@@ -39,3 +38,14 @@ Example.args = {
   fontFamily: 'system',
   fontWeight: 400,
 };
+
+export const MediaQueries = () => (
+  <Anchor
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://www.youtube.com/watch?v=P_mQpbCSQOo"
+    scale={[400, 500]}
+  >
+    We are making AI technology accessible to everyone
+  </Anchor>
+);

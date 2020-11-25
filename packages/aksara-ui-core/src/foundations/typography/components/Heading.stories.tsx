@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
 import { fonts } from '../../../utils';
@@ -27,9 +26,7 @@ export default {
 };
 
 const Template: Story<HeadingProps> = args => (
-  <Heading onClick={action('button-click')} {...args}>
-    We are making AI technology accessible to everyone
-  </Heading>
+  <Heading {...args}>We are making AI technology accessible to everyone</Heading>
 );
 
 export const Example = Template.bind({});
@@ -37,4 +34,8 @@ Example.args = {
   scale: 800,
   fontFamily: 'system',
   fontWeight: 600,
+};
+
+export const MediaQueries = () => {
+  return <Heading scale={[800, 900]}>We are making AI technology accessible to everyone</Heading>;
 };

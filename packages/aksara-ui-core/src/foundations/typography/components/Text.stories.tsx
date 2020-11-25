@@ -38,3 +38,7 @@ Example.args = {
   fontFamily: 'system',
   fontWeight: 400,
 };
+
+export const MediaQueries = () => {
+  return <Text scale={[400, 500]}>We are making AI technology accessible to everyone</Text>;
+};

@@ -22,6 +22,6 @@ const Anchor = styled(AnchorRoot)<AnchorProps>`
   }
 `;
 
-Anchor.displayName = 'Link';
+Anchor.displayName = 'Anchor';
 
 export default Anchor;
