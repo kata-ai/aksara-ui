@@ -8,7 +8,7 @@ import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../u
 
 export interface TextProps extends TypographyBaseProps {
   /** Size value of the text. */
-  scale?: TextScale;
+  scale?: TextScale | TextScale[];
 }
 
 /**
@@ -30,10 +30,6 @@ const Text = styled('span').withConfig<TextProps>({
 
   ${typographyBase}
 `;
-
-Text.defaultProps = {
-  scale: 400,
-};
 
 Text.displayName = 'Text';
 
