@@ -12,7 +12,7 @@ export default {
     scale: {
       control: {
         type: 'select',
-        options: Object.keys(componentStyles.paragraph),
+        options: Object.keys(componentStyles.paragraph).map(k => parseInt(k, 10)),
       },
     },
     fontFamily: {

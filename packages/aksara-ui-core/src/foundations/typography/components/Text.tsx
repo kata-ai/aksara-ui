@@ -21,10 +21,15 @@ const Text = styled('span').withConfig<TextProps>({
     prop: 'scale',
     scale: 'componentStyles.text',
     variants: {
+      900: {},
+      800: {},
+      700: {},
+      600: {},
       500: {},
       400: {},
       300: {},
       200: {},
+      100: {},
     },
   })}
 
