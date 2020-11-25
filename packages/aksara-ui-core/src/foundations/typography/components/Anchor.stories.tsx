@@ -2,19 +2,15 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import { fonts, componentStyles } from '../../../utils';
+import { fonts } from '../../../utils';
+import { textScaleOptions } from '../utils/storybook';
 import Anchor, { AnchorProps } from './Anchor';
 
 export default {
   title: 'Core/Foundations/Typography/Anchor',
   component: Anchor,
   argTypes: {
-    scale: {
-      control: {
-        type: 'select',
-        options: Object.keys(componentStyles.text).map(k => parseInt(k, 10)),
-      },
-    },
+    scale: textScaleOptions,
     fontFamily: {
       control: {
         type: 'select',

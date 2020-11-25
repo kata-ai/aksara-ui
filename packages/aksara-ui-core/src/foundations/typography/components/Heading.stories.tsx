@@ -2,19 +2,15 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import { fonts, componentStyles } from '../../../utils';
+import { fonts } from '../../../utils';
+import { headingScaleOptions } from '../utils/storybook';
 import Heading, { HeadingProps } from './Heading';
 
 export default {
   title: 'Core/Foundations/Typography/Heading',
   component: Heading,
   argTypes: {
-    scale: {
-      control: {
-        type: 'select',
-        options: Object.keys(componentStyles.heading).map(k => parseInt(k, 10)),
-      },
-    },
+    scale: headingScaleOptions,
     fontFamily: {
       control: {
         type: 'select',

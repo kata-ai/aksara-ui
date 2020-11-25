@@ -2,19 +2,15 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import { componentStyles, fonts } from '../../../utils';
+import { fonts } from '../../../utils';
+import { paragraphScaleOptions } from '../utils/storybook';
 import Paragraph, { ParagraphProps } from './Paragraph';
 
 export default {
   title: 'Core/Foundations/Typography/Paragraph',
   component: Paragraph,
   argTypes: {
-    scale: {
-      control: {
-        type: 'select',
-        options: Object.keys(componentStyles.paragraph).map(k => parseInt(k, 10)),
-      },
-    },
+    scale: paragraphScaleOptions,
     fontFamily: {
       control: {
         type: 'select',
