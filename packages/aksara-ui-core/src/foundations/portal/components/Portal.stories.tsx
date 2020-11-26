@@ -4,7 +4,7 @@ import { Box } from '../../box';
 import Portal from './Portal';
 
 export default {
-  title: 'Core/Foundations/Portal',
+  title: 'Core/Foundations/Components/Portal',
   component: Portal,
 };
 

@@ -1,102 +1,53 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import { toClipboard } from 'copee';
-
-import { SystemBlock, SystemSubheading, aksaraIconMaps } from '../utils/storybook';
-import { IconGrid, IconDetail } from '../utils/storybook/icons';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
 
 <Meta title="Foundations/Icons" />
 
-<SystemBlock
-  title="Icons"
-  subtitle="Iconography uses symbols to represent meaning visually. They communicate a message and should be distinct and informative. Icons should be simple, yet clear enough to grab attention."
-  noBackground
->
-  <SystemSubheading>Basic Icons</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.basic.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Document</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.doc.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Menu</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.menu.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Bubbles</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.bubble.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Atoms</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.atoms.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Chart</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.chart.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>AI</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.ai.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>User</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.user.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Media</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.media.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Social</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.social.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-  <SystemSubheading>Panel</SystemSubheading>
-  <IconGrid>
-    {aksaraIconMaps.panel.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-</SystemBlock>
+# Icons
+
+Iconography uses symbols to represent meaning visually. They communicate a message and should be distinct and informative. Icons should be simple, yet clear enough to grab attention.
+
+Click on any of these icons to copy the component name to your clipboard.
+
+## Basic Icons
+
+<Story id="core-foundations-icons--basic-icons" />
+
+## Document
+
+<Story id="core-foundations-icons--document" />
+
+## Menu
+
+<Story id="core-foundations-icons--menu" />
+
+## Bubbles
+
+<Story id="core-foundations-icons--bubbles" />
+
+## Atoms
+
+<Story id="core-foundations-icons--atoms" />
+
+## Chart
+
+<Story id="core-foundations-icons--chart" />
+
+## AI
+
+<Story id="core-foundations-icons--ai" />
+
+## User
+
+<Story id="core-foundations-icons--user" />
+
+## Media
+
+<Story id="core-foundations-icons--media" />
+
+## Social
+
+<Story id="core-foundations-icons--social" />
+
+## Panel
+
+<Story id="core-foundations-icons--panel" />

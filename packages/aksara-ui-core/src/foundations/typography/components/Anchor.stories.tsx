@@ -6,7 +6,7 @@ import { textScaleOptions } from '../utils/storybook';
 import Anchor, { AnchorProps } from './Anchor';
 
 export default {
-  title: 'Core/Foundations/Typography/Anchor',
+  title: 'Core/Foundations/Components/Typography/Anchor',
   component: Anchor,
   argTypes: {
     scale: textScaleOptions,

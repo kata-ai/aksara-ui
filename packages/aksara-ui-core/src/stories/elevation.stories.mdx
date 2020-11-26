@@ -1,32 +1,11 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import { ElevationGrid, ElevationDetail, SystemBlock, SystemSubheading } from '../utils/storybook';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { ElevationGrid, ElevationDetail } from '../utils/storybook';
 import { Box, Card } from '../foundations';
 
 <Meta title="Foundations/Elevation" />
 
-<SystemBlock
-  title="Elevation"
-  subtitle="This page contains Elevation levels, the distance between two surface where content and components live. The distance from the front of one surface to the front of another is measured along the z-axis and portrayed using shadows."
-  noBackground
->
-  <ElevationGrid>
-    <Box>
-      <ElevationDetail title="Level 0" description="Base" />
-    </Box>
-    <Card elevation={1}>
-      <ElevationDetail title="Level 1" description="Flat" />
-    </Card>
-    <Card elevation={2}>
-      <ElevationDetail title="Level 2" description="Floating" />
-    </Card>
-    <Card elevation={3}>
-      <ElevationDetail title="Level 3" description="Sticky Nav" />
-    </Card>
-    <Card elevation={4}>
-      <ElevationDetail title="Level 4" description="Dialog" />
-    </Card>
-    <Card elevation={5}>
-      <ElevationDetail title="Level 5" description="Toast" />
-    </Card>
-  </ElevationGrid>
-</SystemBlock>
+# Elevation
+
+This page contains Elevation levels, the distance between two surface where content and components live. The distance from the front of one surface to the front of another is measured along the z-axis and portrayed using shadows.
+
+<Story id="core-foundations-elevation--elevation" />

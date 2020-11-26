@@ -6,7 +6,7 @@ import { headingScaleOptions } from '../utils/storybook';
 import Heading, { HeadingProps } from './Heading';
 
 export default {
-  title: 'Core/Foundations/Typography/Heading',
+  title: 'Core/Foundations/Components/Typography/Heading',
   component: Heading,
   argTypes: {
     scale: headingScaleOptions,

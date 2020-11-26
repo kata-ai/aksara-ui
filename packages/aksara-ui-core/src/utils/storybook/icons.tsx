@@ -12,6 +12,8 @@ export const IconGrid: React.FC = ({ children }) => {
       display="grid"
       gridTemplateColumns="repeat(auto-fill, minmax(calc(1116px / 12 - 24px), 1fr))"
       gridGap="24px"
+      p="xxl"
+      backgroundColor="grey02"
     >
       {children}
     </Box>

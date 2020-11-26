@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Text, BoxProps } from '../../foundations';
-import { space } from '../../utils';
+import { space } from '../variables';
 
 interface SpacingBlockProps extends BoxProps {
   spacing: string;

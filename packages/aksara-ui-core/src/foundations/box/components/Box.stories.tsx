@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from './Box';
 
 export default {
-  title: 'Core/Foundations/Box',
+  title: 'Core/Foundations/Components/Box',
   component: Box,
 };
 

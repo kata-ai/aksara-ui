@@ -6,7 +6,7 @@ import { paragraphScaleOptions } from '../utils/storybook';
 import Paragraph, { ParagraphProps } from './Paragraph';
 
 export default {
-  title: 'Core/Foundations/Typography/Paragraph',
+  title: 'Core/Foundations/Components/Typography/Paragraph',
   component: Paragraph,
   argTypes: {
     scale: paragraphScaleOptions,

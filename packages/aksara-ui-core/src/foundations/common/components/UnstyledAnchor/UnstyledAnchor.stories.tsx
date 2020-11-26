@@ -7,7 +7,7 @@ import { UnstyledAnchor } from '.';
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core/Foundations/Common/UnstyledAnchor',
+  title: 'Core/Foundations/Components/Common/UnstyledAnchor',
   component: UnstyledAnchor,
   parameters: {
     notes: { markdown: readme },
