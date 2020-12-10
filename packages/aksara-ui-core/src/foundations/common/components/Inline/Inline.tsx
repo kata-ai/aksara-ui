@@ -14,11 +14,11 @@ export interface InlineProps extends Omit<BoxProps, 'color'> {
   spacing?: Space;
 }
 
-const Root = styled(Box)<InlineProps>`
+const Root = styled(Box).withConfig({ shouldForwardProp: prop => !['spacing'].includes(prop) })<InlineProps>`
   ${props => props.spacing && `margin-top: -${themeGet(`space.${props.spacing}`, 0)(props)}px;`}
 `;
 
-const Inner = styled(Box)<InlineProps>`
+const Inner = styled(Box).withConfig({ shouldForwardProp: prop => !['spacing'].includes(prop) })<InlineProps>`
   ${props => props.spacing && `margin-left: -${themeGet(`space.${props.spacing}`, 0)(props)}px;`}
 `;
 
