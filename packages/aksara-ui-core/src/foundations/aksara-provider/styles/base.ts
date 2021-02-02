@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { colors, fonts } from '../utils/variables';
+import { theme } from '../../../theme';
 
 const base = css`
   html,
@@ -20,9 +20,9 @@ const base = css`
   }
 
   body {
-    font-family: ${fonts.system};
-    background-color: ${colors['bg-secondary']};
-    color: ${colors.text01};
+    font-family: ${theme.fonts.system};
+    background-color: ${theme.colors['bg-secondary']};
+    color: ${theme.colors.text01};
   }
 
   a {
