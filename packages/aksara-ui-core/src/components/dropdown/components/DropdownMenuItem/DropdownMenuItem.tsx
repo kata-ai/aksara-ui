@@ -4,7 +4,7 @@ import { themeGet } from '@styled-system/theme-get';
 import clsx from 'clsx';
 
 import { Box, Text } from '../../../../foundations';
-import { colors } from '../../../../utils';
+import { theme } from '../../../../theme';
 
 export interface DropdownMenuItemProps {
   className?: string;
@@ -15,7 +15,7 @@ export interface DropdownMenuItemProps {
 
 const Root = styled(Box)`
   border: 1px solid transparent;
-  background-color: ${themeGet('colors.grey01', colors.grey01)};
+  background-color: ${themeGet('colors.grey01', theme.colors.grey01)};
   cursor: pointer;
 
   &:hover,
@@ -24,15 +24,15 @@ const Root = styled(Box)`
   &.focus,
   &:active,
   &.active {
-    background-color: ${themeGet('colors.indigo01', colors.indigo01)};
+    background-color: ${themeGet('colors.indigo01', theme.colors.indigo01)};
   }
 
   &:focus,
   &.focus,
   &:active,
   &.active {
-    border-color: ${themeGet('colors.blue06', colors.blue06)};
-    background-color: ${themeGet('colors.indigo01', colors.indigo01)};
+    border-color: ${themeGet('colors.blue06', theme.colors.blue06)};
+    background-color: ${themeGet('colors.indigo01', theme.colors.indigo01)};
   }
 `;
 

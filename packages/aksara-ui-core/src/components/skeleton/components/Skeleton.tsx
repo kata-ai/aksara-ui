@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 
-import { colors, space } from '../../../utils';
+import { theme } from '../../../theme';
 
 const progress = keyframes`
   0% {
@@ -19,7 +19,7 @@ const Wrapper = styled('div')`
   overflow: hidden;
   height: 20px;
   width: 100%;
-  background: ${colors.gray20};
+  background: ${theme.colors.gray20};
   border-radius: 4px;
 
   &:after {
@@ -29,7 +29,7 @@ const Wrapper = styled('div')`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, ${colors.gray20}, ${colors.gray10}, ${colors.gray20});
+    background: linear-gradient(90deg, ${theme.colors.gray20}, ${theme.colors.gray10}, ${theme.colors.gray20});
     animation: ${progress} 1s ease-in-out infinite;
   }
 
@@ -40,7 +40,7 @@ const Wrapper = styled('div')`
 
 const Multiline = styled('div')`
   ${Wrapper} {
-    margin-bottom: ${space.xs}px;
+    margin-bottom: ${theme.space.xs}px;
 
     &:last-child {
       width: 65%;

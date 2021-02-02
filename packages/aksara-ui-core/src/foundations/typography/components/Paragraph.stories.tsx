@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { fonts } from '../../../utils';
+import { fonts } from '../../../theme';
 import { paragraphScaleOptions } from '../utils/storybook';
 import Paragraph, { ParagraphProps } from './Paragraph';
 

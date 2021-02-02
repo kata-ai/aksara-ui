@@ -1,38 +1,38 @@
-import { colors } from '../../utils';
+import { theme } from '../../theme';
 
 export const messageIconVariants = {
   general: {
-    fill: colors.grey06,
+    fill: theme.colors.grey06,
   },
   success: {
-    fill: colors.green07,
+    fill: theme.colors.green07,
   },
   warning: {
-    fill: colors.yellow07,
+    fill: theme.colors.yellow07,
   },
   error: {
-    fill: colors.red07,
+    fill: theme.colors.red07,
   },
   info: {
-    fill: colors.blue07,
+    fill: theme.colors.blue07,
   },
 };
 
 export const closeButtonVariants = {
   general: {
-    fill: colors.grey08,
+    fill: theme.colors.grey08,
   },
   success: {
-    fill: colors.grey08,
+    fill: theme.colors.grey08,
   },
   warning: {
-    fill: colors.grey08,
+    fill: theme.colors.grey08,
   },
   error: {
-    fill: colors.grey08,
+    fill: theme.colors.grey08,
   },
   info: {
-    fill: colors.grey08,
+    fill: theme.colors.grey08,
   },
 };
 

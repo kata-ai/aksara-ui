@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../utils';
 
-import { Theme } from '../../../Theme';
 import GlobalStyles from './GlobalStyles';
 
 const AksaraProvider: React.FC = ({ children }) => {
-  return <Theme>{children}</Theme>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 AksaraProvider.displayName = 'AksaraProvider';

@@ -1,74 +1,74 @@
-import { componentStyles, radii, colors } from '../../../../utils';
+import { theme } from '../../../../theme';
 
 export const linkButtonDefaultVariants = {
   primary: {
-    color: colors.blue06,
+    color: 'blue06',
   },
   destructive: {
-    color: colors.red05,
+    color: 'red05',
   },
   inverse: {
-    color: colors.grey01,
+    color: 'grey01',
   },
 };
 
 export const linkButtonHoverVariants = {
   primary: {
-    color: colors.blue08,
+    color: 'blue08',
     textDecoration: 'underline',
   },
   destructive: {
-    color: colors.red07,
+    color: 'red07',
     textDecoration: 'underline',
   },
   inverse: {
-    color: colors.grey01,
+    color: 'grey01',
     textDecoration: 'underline',
   },
 };
 
 export const linkButtonFocusVariants = {
   primary: {
-    color: colors.blue08,
+    color: 'blue08',
     textDecoration: 'underline',
-    boxShadow: `0 0 0 1px ${colors.blue04}`,
+    boxShadow: `0 0 0 1px ${theme.colors.blue04}`,
   },
   destructive: {
-    color: colors.red07,
+    color: 'red07',
     textDecoration: 'underline',
-    boxShadow: `0 0 0 1px ${colors.red04}`,
+    boxShadow: `0 0 0 1px ${theme.colors.red04}`,
   },
   inverse: {
-    color: colors.grey01,
+    color: 'grey01',
     textDecoration: 'underline',
-    boxShadow: `0 0 0 1px ${colors.blue04}`,
+    boxShadow: `0 0 0 1px ${theme.colors.blue04}`,
   },
 };
 
 export const linkButtonDisabledVariants = {
   primary: {
-    color: colors.grey04,
+    color: 'grey04',
   },
   destructive: {
-    color: colors.grey04,
+    color: 'grey04',
   },
   inverse: {
-    color: colors.grey04,
+    color: 'grey04',
   },
 };
 
 export const linkButtonSizeVariants = {
   32: {
     height: '32px',
-    fontSize: componentStyles.text[300].fontSize,
-    lineHeight: componentStyles.text[300].lineHeight,
-    borderRadius: radii.sm,
+    fontSize: theme.componentStyles.text[300].fontSize,
+    lineHeight: theme.componentStyles.text[300].lineHeight,
+    borderRadius: theme.radii.sm,
   },
   40: {
     height: '40px',
-    fontSize: componentStyles.text[300].fontSize,
-    lineHeight: componentStyles.text[300].lineHeight,
-    borderRadius: radii.sm,
+    fontSize: theme.componentStyles.text[300].fontSize,
+    lineHeight: theme.componentStyles.text[300].lineHeight,
+    borderRadius: theme.radii.sm,
   },
 };
 

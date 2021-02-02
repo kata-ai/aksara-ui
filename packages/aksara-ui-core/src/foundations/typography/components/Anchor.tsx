@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
-import { themeProps } from '../../../Theme';
+import { theme } from '../../../theme';
 import Text, { TextProps } from './Text';
 
 export interface AnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, TextProps {}
@@ -13,11 +13,11 @@ const AnchorRoot = Text.withComponent('a');
  * Link component provided as a styled component primitive.
  */
 const Anchor = styled(AnchorRoot)<AnchorProps>`
-  color: ${themeGet('colors.link', themeProps.colors.link)};
+  color: ${themeGet('colors.link', theme.colors.link)};
 
   &:hover,
   &:focus {
-    color: ${themeGet('colors.link-hover', themeProps.colors['link-hover'])};
+    color: ${themeGet('colors.link-hover', theme.colors['link-hover'])};
     text-decoration: underline;
   }
 `;

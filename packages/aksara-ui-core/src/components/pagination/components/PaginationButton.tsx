@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { ButtonBase } from '../../button';
-import { colors } from '../../../utils';
+import { theme } from '../../../theme';
 
 interface PaginationButtonProps {
   isActive?: boolean;
@@ -12,30 +12,30 @@ const DefaultStyles = css`
 
   &:focus,
   &.focus {
-    background-color: ${themeGet('colors.grey02', colors.grey02)};
+    background-color: ${themeGet('colors.grey02', theme.colors.grey02)};
   }
 
   &:active,
   &.active {
-    border-color: ${themeGet('colors.blue05', colors.blue05)};
+    border-color: ${themeGet('colors.blue05', theme.colors.blue05)};
   }
 `;
 
 const IsActiveStyles = css`
-  background-color: ${themeGet('colors.blue01', colors.blue01)};
-  border-color: ${themeGet('colors.blue01', colors.blue01)};
-  color: ${themeGet('colors.blue06', colors.blue06)};
+  background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
+  border-color: ${themeGet('colors.blue01', theme.colors.blue01)};
+  color: ${themeGet('colors.blue06', theme.colors.blue06)};
 
   &:hover,
   &.hover {
-    background-color: ${themeGet('colors.blue01', colors.blue01)};
+    background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
   }
 
   &:active,
   &.active {
-    background-color: ${themeGet('colors.blue01', colors.blue01)};
-    border-color: ${themeGet('colors.blue01', colors.blue01)};
-    color: ${themeGet('colors.blue06', colors.blue06)};
+    background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
+    border-color: ${themeGet('colors.blue01', theme.colors.blue01)};
+    color: ${themeGet('colors.blue06', theme.colors.blue06)};
   }
 `;
 

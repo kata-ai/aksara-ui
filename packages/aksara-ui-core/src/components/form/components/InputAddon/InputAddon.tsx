@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { Text } from '../../../../foundations';
-import { colors } from '../../../../utils';
+import { theme } from '../../../../theme';
 
 export interface InputAddonProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Additional CSS classes to give to the component. */
@@ -33,8 +33,8 @@ const Inner = styled('span')<InputAddonProps>`
   color: #495057;
   text-align: center;
   white-space: nowrap;
-  border: 1px solid ${colors.grey04};
-  background-color: ${colors.grey03};
+  border: 1px solid ${theme.colors.grey04};
+  background-color: ${theme.colors.grey03};
   border-radius: 4px;
   user-select: none;
 

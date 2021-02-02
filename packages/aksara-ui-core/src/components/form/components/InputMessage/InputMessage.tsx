@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IconCloseRounded, IconTickRounded, IconInfo, IconWarningTriangle } from '@aksara-ui/icons';
 
 import { Text, Box, BoxProps } from '../../../../foundations';
-import { space } from '../../../../utils';
+import { theme } from '../../../../theme';
 import { messageIconVariants } from '../../../message/variants';
 
 export type InputMessageVariants = keyof typeof messageIconVariants;
@@ -16,7 +16,7 @@ export interface InputMessageProps extends BoxProps {
 }
 
 function messageIcon(variant: InputMessageVariants = 'general') {
-  const spaceProps = { marginRight: space.xs };
+  const spaceProps = { marginRight: theme.space.xs };
   const fillColor = messageIconVariants[variant].fill;
 
   switch (variant) {

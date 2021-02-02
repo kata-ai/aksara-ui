@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { colors } from '../../utils';
+import { colors } from '../../theme';
 import { ColorSwatch, ColorSwatchGrid } from '../../utils/storybook';
 
 export default {

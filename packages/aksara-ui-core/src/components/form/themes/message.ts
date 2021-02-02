@@ -1,20 +1,20 @@
-import { colors } from '../../../utils';
+import { theme } from '../../../theme';
 
 const messageIconVariant = {
   general: {
-    fill: colors.grey08,
+    fill: theme.colors.grey08,
   },
   success: {
-    fill: colors.green07,
+    fill: theme.colors.green07,
   },
   warning: {
-    fill: colors.yellow07,
+    fill: theme.colors.yellow07,
   },
   error: {
-    fill: colors.red07,
+    fill: theme.colors.red07,
   },
   info: {
-    fill: colors.blue07,
+    fill: theme.colors.blue07,
   },
 };
 

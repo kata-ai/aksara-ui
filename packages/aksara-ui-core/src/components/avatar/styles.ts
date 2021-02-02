@@ -13,7 +13,7 @@ import {
   variant,
 } from 'styled-system';
 
-import { colors } from '../../utils';
+import { theme } from '../../theme';
 import avatarColors from './theme';
 
 export interface AvatarBaseProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
@@ -39,7 +39,7 @@ export const AvatarBase = ({ size = 40 }: AvatarBaseProps) =>
     position: relative;
     width: ${size}px;
     height: ${size}px;
-    border: 1px solid ${colors.white};
+    border: 1px solid ${theme.colors.white};
     border-radius: ${size}px;
     ${variant({
       prop: 'color',

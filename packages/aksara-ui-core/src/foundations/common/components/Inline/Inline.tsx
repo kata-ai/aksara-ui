@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
-import { Space } from '../../../../Theme';
+import { Space } from '../../../../theme';
 import { Box, BoxProps } from '../../../box';
 
 export interface InlineProps extends Omit<BoxProps, 'color'> {

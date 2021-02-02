@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { Box, BoxProps } from '../../box';
-import { CardElevation } from '../../../Theme';
+import { CardElevation } from '../../../theme';
 
 export interface CardProps extends BoxProps {
   elevation?: CardElevation;

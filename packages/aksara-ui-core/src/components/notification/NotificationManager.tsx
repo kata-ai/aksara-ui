@@ -7,7 +7,7 @@ import { TransitionGroup } from 'react-transition-group';
 import Toaster from './components/Toaster';
 import { TOASTER_WIDTH } from './utils/constants';
 import { ToasterHandler, ToasterSettings } from './utils/types';
-import { AksaraProvider } from '../../foundations';
+import { AksaraProvider } from '../../theme';
 
 interface Props {
   bindToaster: (handler: ToasterHandler) => void;

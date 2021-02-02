@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { variant } from 'styled-system';
 import shouldForwardProp from '@styled-system/should-forward-prop';
 
-import { ParagraphScale } from '../../../Theme';
+import { ParagraphScale } from '../../../theme';
 
 import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../utils';
 

@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 import { layout, position, flexbox, grid, space, variant } from 'styled-system';
 
 import { inputThemeBase, inputThemeHover, inputThemeFocus } from './themes/input';
-import { colors, componentStyles } from '../../utils';
 import { InputBaseProps, CheckRadioBaseProps } from './types';
 import { checkboxThemeBase, checkboxThemeChecked, checkboxThemeHover } from './themes/checkbox';
+import { theme } from '../../theme';
 
 const WithAddonStyles = css`
   position: relative;
@@ -26,7 +26,7 @@ export const TextAreaBase = styled('textarea')<InputBaseProps>`
   box-sizing: border-box;
   border-radius: 4px;
   border: 1px solid transparent;
-  font-size: ${componentStyles.text[300].fontSize};
+  font-size: ${theme.componentStyles.text[300].fontSize};
   line-height: ${props => props.inputSize}px;
   outline: none;
 
@@ -36,14 +36,14 @@ export const TextAreaBase = styled('textarea')<InputBaseProps>`
   })}
 
   &::placeholder {
-    color: ${colors.grey06};
+    color: ${theme.colors.grey06};
   }
 
   &:disabled,
   &.disabled {
-    background-color: ${colors.grey03};
-    color: ${colors.grey06};
-    border-color: ${colors.grey04};
+    background-color: ${theme.colors.grey03};
+    color: ${theme.colors.grey06};
+    border-color: ${theme.colors.grey04};
     cursor: not-allowed;
   }
 
@@ -83,7 +83,7 @@ export const InputBase = styled('input')<InputBaseProps>`
   box-sizing: border-box;
   border-radius: 4px;
   border: 1px solid transparent;
-  font-size: ${componentStyles.text[300].fontSize};
+  font-size: ${theme.componentStyles.text[300].fontSize};
   line-height: ${props => props.inputSize}px;
   outline: none;
   height: ${props => props.inputSize}px;
@@ -96,14 +96,14 @@ export const InputBase = styled('input')<InputBaseProps>`
   })}
 
   &::placeholder {
-    color: ${colors.grey06};
+    color: ${theme.colors.grey06};
   }
 
   &:disabled,
   &.disabled {
-    background-color: ${colors.grey03};
-    color: ${colors.grey06};
-    border-color: ${colors.grey04};
+    background-color: ${theme.colors.grey03};
+    color: ${theme.colors.grey06};
+    border-color: ${theme.colors.grey04};
     cursor: not-allowed;
   }
 
@@ -162,7 +162,7 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
       left: 4px;
       width: 6px;
       height: 10px;
-      border: 2px solid ${colors.grey01};
+      border: 2px solid ${theme.colors.grey01};
       border-top: 0;
       border-left: 0;
       transform: rotate(var(--r, 20deg));
@@ -178,13 +178,13 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
     }
 
     &:disabled {
-      background-color: ${colors.grey03};
+      background-color: ${theme.colors.grey03};
       cursor: not-allowed;
       opacity: 0.9;
 
       &:checked {
-        background-color: ${colors.grey05};
-        border-color: ${colors.grey04};
+        background-color: ${theme.colors.grey05};
+        border-color: ${theme.colors.grey04};
       }
     }
 
@@ -200,7 +200,7 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px ${colors.blue06};
+      box-shadow: 0 0 0 2px ${theme.colors.blue06};
     }
 
     &:after {
@@ -221,13 +221,13 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
 
 export const RadioBase = styled('input')<CheckRadioBaseProps>`
   @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-    --active: ${colors.grey01};
-    --active-inner: ${colors.blue08};
-    --border: ${colors.grey04};
-    --border-hover: ${colors.grey06};
-    --background: ${colors.grey01};
-    --disabled: ${colors.grey03};
-    --disabled-inner: ${colors.grey05};
+    --active: ${theme.colors.grey01};
+    --active-inner: ${theme.colors.blue08};
+    --border: ${theme.colors.grey04};
+    --border-hover: ${theme.colors.grey06};
+    --background: ${theme.colors.grey01};
+    --disabled: ${theme.colors.grey03};
+    --disabled-inner: ${theme.colors.grey05};
 
     display: inline-block;
     position: relative;

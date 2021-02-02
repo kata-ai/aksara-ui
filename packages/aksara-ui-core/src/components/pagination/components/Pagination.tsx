@@ -7,7 +7,7 @@ import PaginationButton from './PaginationButton';
 import { Text } from '../../../foundations';
 import IconChevronLeft from './IconChevronLeft';
 import IconChevronRight from './IconChevronRight';
-import { colors } from '../../../utils';
+import { theme } from '../../../theme';
 
 const PaginationBase = styled('div')`
   display: inline-block;
@@ -95,7 +95,7 @@ class Pagination extends React.Component<PaginationProps> {
       <PaginationBase className={className}>
         <PaginationButton color="white" disabled={current === 1} onClick={() => this.handleSelectPage(current - 1)}>
           <VisuallyHidden>Previous Page</VisuallyHidden>
-          <IconChevronLeft aria-hidden size={16} fill={colors.grey08} />
+          <IconChevronLeft aria-hidden size={16} fill={theme.colors.grey08} />
         </PaginationButton>
         {pages.map((page, index) => (
           <PaginationButton
@@ -111,7 +111,7 @@ class Pagination extends React.Component<PaginationProps> {
         ))}
         <PaginationButton disabled={current === total} onClick={() => this.handleSelectPage(current + 1)}>
           <VisuallyHidden>Next Page</VisuallyHidden>
-          <IconChevronRight aria-hidden size={16} fill={colors.grey08} />
+          <IconChevronRight aria-hidden size={16} fill={theme.colors.grey08} />
         </PaginationButton>
       </PaginationBase>
     );

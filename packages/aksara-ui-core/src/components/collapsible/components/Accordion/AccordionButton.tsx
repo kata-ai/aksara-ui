@@ -8,8 +8,8 @@ import {
 import { IconChevronRight } from '@aksara-ui/icons';
 
 import { Heading } from '../../../../foundations';
+import { theme } from '../../../../theme';
 import { UnstyledAccordionButtonStyles, SystemStyles, SystemProps } from './styled';
-import { colors } from '../../../../utils';
 
 const Root = styled(ReachAccordionButton).withConfig<SystemProps & ReachAccordionButtonProps>({
   shouldForwardProp: propName => shouldForwardProp(propName as string), // different props between these two packages
@@ -17,16 +17,16 @@ const Root = styled(ReachAccordionButton).withConfig<SystemProps & ReachAccordio
   ${UnstyledAccordionButtonStyles}
 
   &:hover {
-    background-color: ${colors.grey03};
+    background-color: ${theme.colors.grey03};
   }
 
   &:focus {
-    background-color: ${colors.indigo01};
-    outline: 1px solid ${colors.blue06};
+    background-color: ${theme.colors.indigo01};
+    outline: 1px solid ${theme.colors.blue06};
   }
 
   &[aria-expanded='true'] {
-    background-color: ${colors.indigo01};
+    background-color: ${theme.colors.indigo01};
 
     svg {
       transform: rotate(90deg);
