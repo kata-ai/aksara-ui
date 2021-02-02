@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box } from '../../../../foundations';
-import { colors } from '../../../../utils';
+import { theme } from '../../../../theme';
 import { InputSizes } from '../../types';
 
 export interface InputElementBaseProps {
@@ -43,7 +43,7 @@ const InputElement = React.forwardRef<HTMLDivElement, InputElementBaseProps>(
           // Currently hardcoded so that only components that start with `Icon` works.
           if (typeof child.type === 'function' && child.type.name.startsWith('Icon')) {
             return React.cloneElement(child, {
-              fill: colors.grey06,
+              fill: theme.colors.grey06,
             } as React.SVGProps<SVGSVGElement>);
           }
 

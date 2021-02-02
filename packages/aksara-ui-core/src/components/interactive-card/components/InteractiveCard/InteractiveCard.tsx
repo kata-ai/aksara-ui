@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Card, CardProps, Box } from '../../../../foundations';
-import { componentStyles } from '../../../../utils';
+import { theme } from '../../../../theme';
 
 export interface InteractiveCardProps extends Omit<CardProps, 'elevation' | 'position' | 'border' | 'borderColor'> {
   /** Additional action buttons that appear on hover. */
@@ -17,7 +17,7 @@ const StyledCard = styled(Card)`
 
   &:hover,
   &:focus {
-    box-shadow: ${componentStyles.card[2].boxShadow};
+    box-shadow: ${theme.componentStyles.card[2].boxShadow};
   }
 `;
 

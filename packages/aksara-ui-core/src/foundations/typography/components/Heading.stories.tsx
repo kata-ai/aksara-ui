@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { fonts } from '../../../utils';
+import { fonts } from '../../../theme';
 import { headingScaleOptions } from '../utils/storybook';
 import Heading, { HeadingProps } from './Heading';
 

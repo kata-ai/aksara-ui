@@ -1,34 +1,34 @@
-import { colors } from '../../../utils';
+import { theme } from '../../../theme';
 
 export const checkboxThemeBase = {
   base: {
-    backgroundColor: colors.grey01,
-    borderColor: colors.grey04,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.grey04,
   },
   errors: {
-    backgroundColor: colors.grey01,
-    borderColor: colors.red07,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.red07,
   },
 };
 
 export const checkboxThemeHover = {
   base: {
-    backgroundColor: colors.grey01,
-    borderColor: colors.indigo02,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.indigo02,
   },
   errors: {
-    backgroundColor: colors.grey01,
-    borderColor: colors.red07,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.red07,
   },
 };
 
 export const checkboxThemeChecked = {
   base: {
-    backgroundColor: colors.blue08,
-    borderColor: colors.blue08,
+    backgroundColor: theme.colors.blue08,
+    borderColor: theme.colors.blue08,
   },
   errors: {
-    backgroundColor: colors.red07,
-    borderColor: colors.red07,
+    backgroundColor: theme.colors.red07,
+    borderColor: theme.colors.red07,
   },
 };

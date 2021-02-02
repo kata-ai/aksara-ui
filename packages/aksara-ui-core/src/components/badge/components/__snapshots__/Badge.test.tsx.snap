@@ -9,8 +9,8 @@ exports[`components/Badge <Badge /> renders with additional variants 1`] = `
   vertical-align: baseline;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #c1e0b7;
-  color: #313f4e;
+  background-color: green03;
+  color: grey08;
 }
 
 <span

@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import { IconDocAdd } from '@aksara-ui/icons';
 
 import LinkButton from './LinkButton';
-import { colors } from '../../../../utils';
 
 describe('components/Button', () => {
   describe('<LinkButton />', () => {
@@ -16,7 +15,7 @@ describe('components/Button', () => {
     test('renders colors correctly by variant', () => {
       const { container } = render(<LinkButton variant="primary">test button</LinkButton>);
 
-      expect(container.firstChild).toHaveStyle(`color: ${colors.blue06}`);
+      expect(container.firstChild).toMatchSnapshot();
     });
 
     test('renders icons correctly', () => {

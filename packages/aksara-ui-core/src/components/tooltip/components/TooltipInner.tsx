@@ -4,7 +4,7 @@ import { variant } from 'styled-system';
 import { themeGet } from '@styled-system/theme-get';
 import * as popper from '@popperjs/core';
 
-import { colors } from '../../../utils';
+import { theme } from '../../../theme';
 import { Text, Paragraph, Box } from '../../../foundations';
 
 export type TooltipPlacement = popper.Placement;
@@ -41,8 +41,8 @@ const Inner = styled('div')<Omit<TooltipInnerProps, 'placement' | 'content'>>`
   vertical-align: middle;
   border-radius: 4px;
 
-  color: ${themeGet('colors.text-inverse', colors['text-inverse'])};
-  background-color: ${themeGet('colors.grey09', colors.grey09)};
+  color: ${themeGet('colors.text-inverse', theme.colors['text-inverse'])};
+  background-color: ${themeGet('colors.grey09', theme.colors.grey09)};
 `;
 
 const TooltipInner: React.ForwardRefRenderFunction<HTMLDivElement, TooltipInnerProps> = (

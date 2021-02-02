@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { colors, fonts } from '../../../utils/variables';
+import { colors, fonts } from '../utils/variables';
 
 const base = css`
   html,

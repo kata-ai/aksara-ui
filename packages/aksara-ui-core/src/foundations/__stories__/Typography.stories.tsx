@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ParagraphScale, TextScale, HeadingScale } from '../../Theme';
+import { ParagraphScale, TextScale, HeadingScale } from '../../theme';
 import { Stack } from '../common';
 import { Anchor, Heading, Paragraph, Text } from '../typography';
 

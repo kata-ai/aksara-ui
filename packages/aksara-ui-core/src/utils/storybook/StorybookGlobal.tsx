@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import { colors } from '../variables';
+import { theme } from '../../theme';
 
 const StorybookGlobal = createGlobalStyle`
   body {
-    background-color: ${colors.white};
+    background-color: ${theme.colors.white};
   }
 `;
 

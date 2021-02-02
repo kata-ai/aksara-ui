@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { variant } from 'styled-system';
 import shouldForwardProp from '@styled-system/should-forward-prop';
 
-import { HeadingScale } from '../../../Theme';
+import { HeadingScale } from '../../../theme';
 import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../utils';
 
 export interface HeadingProps extends TypographyBaseProps {

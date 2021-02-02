@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { space } from '../../../../utils';
+import { theme } from '../../../../theme';
 
 export interface FormGroupProps {
   /** Additional CSS classes to give to the component. */
@@ -8,7 +8,7 @@ export interface FormGroupProps {
 }
 
 const Div = styled('div')`
-  margin-bottom: ${space.md}px;
+  margin-bottom: ${theme.space.md}px;
 
   &:last-of-type {
     margin-bottom: 0;

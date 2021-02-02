@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { colors } from '../../../../../utils';
+import { theme } from '../../../../../theme';
 import { InvisibleText, LoaderCircle } from '../components';
 import { ButtonBaseProps, ButtonSizes } from '../types';
 
@@ -29,7 +29,7 @@ const renderButtonChildren = ({ isLoading, size, variant, children }: ButtonChil
         <LoaderCircle
           size={loadingIconSizes(size)}
           buttonSize={size}
-          spinnerColor={variant === 'outline' ? colors.grey04 : colors.white}
+          spinnerColor={variant === 'outline' ? theme.colors.grey04 : theme.colors.white}
         />
         <InvisibleText>{children}</InvisibleText>
       </>

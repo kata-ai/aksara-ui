@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { colors } from '../../../utils';
+import { theme } from '../../../theme';
 
 export interface LoadingCircleProps {
   /** Additional CSS classes to give to the icon. */
@@ -25,7 +25,7 @@ const Root = styled('div')<LoadingCircleProps>`
   }
 `;
 
-const Circle: React.FC<LoadingCircleProps> = ({ className, size = 40, spinnerColor = colors.kataBlue }) => {
+const Circle: React.FC<LoadingCircleProps> = ({ className, size = 40, spinnerColor = theme.colors.blue06 }) => {
   return (
     <Root className={className} spinnerColor={spinnerColor}>
       <svg

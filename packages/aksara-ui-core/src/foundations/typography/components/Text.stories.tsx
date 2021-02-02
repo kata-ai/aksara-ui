@@ -2,7 +2,7 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import { fonts } from '../../../utils';
+import { fonts } from '../../../theme';
 import { textScaleOptions } from '../utils/storybook';
 import Text, { TextProps } from './Text';
 

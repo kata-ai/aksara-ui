@@ -1,42 +1,42 @@
-import { colors } from '../../../utils';
+import { theme } from '../../../theme';
 
 export const inputThemeBase = {
   base: {
-    color: colors.grey08,
-    backgroundColor: colors.grey01,
-    borderColor: colors.grey04,
+    color: theme.colors.grey08,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.grey04,
   },
   errors: {
-    color: colors.grey08,
-    backgroundColor: colors.grey01,
-    borderColor: colors.red07,
+    color: theme.colors.grey08,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.red07,
   },
 };
 
 export const inputThemeHover = {
   base: {
-    color: colors.grey08,
-    backgroundColor: colors.grey01,
-    borderColor: colors.indigo02,
+    color: theme.colors.grey08,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.indigo02,
   },
   errors: {
-    color: colors.grey08,
-    backgroundColor: colors.grey01,
-    borderColor: colors.red07,
+    color: theme.colors.grey08,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.red07,
   },
 };
 
 export const inputThemeFocus = {
   base: {
-    color: colors.grey08,
-    backgroundColor: colors.grey01,
-    borderColor: colors.blue06,
-    boxShadow: `0 0 0 1px ${colors.blue06}`,
+    color: theme.colors.grey08,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.blue06,
+    boxShadow: `0 0 0 1px ${theme.colors.blue06}`,
   },
   errors: {
-    color: colors.grey08,
-    backgroundColor: colors.grey01,
-    borderColor: colors.red07,
-    boxShadow: `0 0 0 1px ${colors.red07}`,
+    color: theme.colors.grey08,
+    backgroundColor: theme.colors.grey01,
+    borderColor: theme.colors.red07,
+    boxShadow: `0 0 0 1px ${theme.colors.red07}`,
   },
 };

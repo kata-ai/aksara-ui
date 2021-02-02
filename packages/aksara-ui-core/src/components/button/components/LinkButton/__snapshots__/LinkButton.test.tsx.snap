@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Button <LinkButton /> renders colors correctly by variant 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  border: 1px solid transparent;
+  color: blue06;
+  height: 40px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+}
+
+.c0:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.c0:hover,
+.c0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:focus {
+  outline: 0px;
+}
+
+.c0:not(:disabled):not(.disabled):hover,
+.c0:not(:disabled):not(.disabled).hover {
+  color: blue08;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0:not(:disabled):not(.disabled):focus,
+.c0:not(:disabled):not(.disabled).focus,
+.c0:not(:disabled):not(.disabled):active,
+.c0:not(:disabled):not(.disabled).active {
+  color: blue08;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  box-shadow: 0 0 0 1px #5ca3ef;
+}
+
+.c0:disabled,
+.c0.disabled {
+  color: grey04;
+}
+
+<button
+  class="c0"
+  display="inline-block"
+>
+  test button
+</button>
+`;
