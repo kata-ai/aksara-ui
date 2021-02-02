@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import { IconDocAdd } from '@aksara-ui/icons';
 
 import LinkButton from './LinkButton';
-import { theme } from '../../../../theme';
 
 describe('components/Button', () => {
   describe('<LinkButton />', () => {
