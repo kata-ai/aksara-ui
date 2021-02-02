@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
 import { DecoratorFn } from '@storybook/react';
-import { AksaraProvider, GlobalStyles } from '../../theme';
+import { AksaraProvider, GlobalStyles } from '../../foundations';
 
 import '../../../../aksara-fonts/kata-icons.css';
 import 'typeface-inter';

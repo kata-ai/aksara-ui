@@ -1,7 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-
-import { AksaraProvider } from '.';
+import { AksaraProvider } from '../foundations';
 
 export default {
   title: 'Core/Foundations/Theme',
