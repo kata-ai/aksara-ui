@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../utils';
 
+import { theme } from '../../theme';
 import GlobalStyles from './GlobalStyles';
 
 const AksaraProvider: React.FC = ({ children }) => {

@@ -1,10 +1,9 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-
-import { AksaraProvider } from '.';
+import AksaraProvider from './AksaraProvider';
 
 export default {
-  title: 'Core/Foundations/Theme',
+  title: 'Core/Foundations/AksaraProvider',
   component: AksaraProvider,
   parameters: {
     jsx: { skip: 1 },
