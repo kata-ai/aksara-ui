@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { theme } from '../../theme';
 import AksaraProvider from './AksaraProvider';
 
 export default {
@@ -47,4 +48,8 @@ export const Reset = () => {
       </p>
     </>
   );
+};
+
+export const DefaultTheme = () => {
+  return <pre>{JSON.stringify(theme, null, 2)}</pre>;
 };
