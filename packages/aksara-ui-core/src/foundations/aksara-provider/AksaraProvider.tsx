@@ -5,7 +5,7 @@ import deepmerge from 'deepmerge';
 import { theme as defaultTheme, Theme } from '../../theme';
 import GlobalStyles from './GlobalStyles';
 
-interface AksaraProviderProps {
+export interface AksaraProviderProps {
   theme?: Partial<Theme>;
 }
 
