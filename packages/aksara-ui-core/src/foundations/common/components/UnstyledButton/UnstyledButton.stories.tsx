@@ -6,7 +6,7 @@ import { Box } from '../../../box';
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core/Foundations/Components/Common/UnstyledButton',
+  title: 'Core/Layout/UnstyledButton',
   component: UnstyledButton,
   parameters: {
     notes: { markdown: readme },

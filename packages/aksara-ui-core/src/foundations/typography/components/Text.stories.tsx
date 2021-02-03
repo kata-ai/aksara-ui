@@ -7,7 +7,7 @@ import { textScaleOptions } from '../utils/storybook';
 import Text, { TextProps } from './Text';
 
 export default {
-  title: 'Core/Foundations/Components/Typography/Text',
+  title: 'Core/Typography/Text',
   component: Text,
   argTypes: {
     scale: textScaleOptions,
