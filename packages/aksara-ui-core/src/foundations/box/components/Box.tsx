@@ -1,40 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import {
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  flexbox,
-  FlexboxProps,
-  grid,
-  GridProps,
-  space,
-  SpaceProps,
-  background,
-  BackgroundProps,
-  color,
-  ColorProps,
-  typography,
-  TypographyProps,
-  border,
-  BorderProps,
-  shadow,
-  ShadowProps,
-} from 'styled-system';
-import shouldForwardProp from '@styled-system/should-forward-prop';
+  allSystemProps,
+  AllSystemProps,
+  pseudoSystemProps,
+  PseudoSystemProps,
+  shouldForwardProp,
+} from '../../../system';
 
-export interface BoxProps
-  extends LayoutProps,
-    PositionProps,
-    FlexboxProps,
-    GridProps,
-    SpaceProps,
-    BackgroundProps,
-    ColorProps,
-    TypographyProps,
-    BorderProps,
-    ShadowProps {
+export interface BoxProps extends AllSystemProps, PseudoSystemProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
@@ -49,18 +23,7 @@ export interface BoxProps
  * Box is a view with all styled-system hooks added to it. You can use it as a
  * base component for all display elements.
  */
-const Box = styled('div').withConfig<BoxProps>({ shouldForwardProp })`
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
-  ${background}
-  ${color}
-  ${typography}
-  ${border}
-  ${shadow}
-`;
+const Box = styled('div').withConfig<BoxProps>({ shouldForwardProp })(allSystemProps, pseudoSystemProps);
 
 Box.displayName = 'Box';
 

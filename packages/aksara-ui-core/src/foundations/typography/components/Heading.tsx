@@ -1,22 +1,22 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
-import shouldForwardProp from '@styled-system/should-forward-prop';
+import { variant, ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
+import { sfp, pseudoSystemProps } from '../../../system';
 import { HeadingScale } from '../../../theme';
-import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../utils';
+import { typographyBase, TypographyBaseProps, textProps } from '../utils';
 
-export interface HeadingProps extends TypographyBaseProps {
+export interface HeadingProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
   /** Size value of the heading. */
-  scale?: HeadingScale | HeadingScale[];
+  scale?: ResponsiveValue<HeadingScale, ThemeType>;
 }
 
 /**
  * Heading component provided as a styled component primitive.
  */
 const Heading = styled('h2').withConfig<HeadingProps>({
-  shouldForwardProp: prop => shouldForwardProp(prop) && shouldForwardTextProp(prop),
-})`
-  ${variant({
+  shouldForwardProp: sfp(textProps),
+})(
+  variant({
     prop: 'scale',
     scale: 'componentStyles.heading',
     variants: {
@@ -30,10 +30,10 @@ const Heading = styled('h2').withConfig<HeadingProps>({
       200: {},
       100: {},
     },
-  })}
-
-  ${typographyBase}
-`;
+  }),
+  typographyBase,
+  pseudoSystemProps
+);
 
 Heading.defaultProps = {
   color: '#121615',

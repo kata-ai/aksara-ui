@@ -1,23 +1,23 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
-import shouldForwardProp from '@styled-system/should-forward-prop';
+import { variant, ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
+import { sfp, pseudoSystemProps } from '../../../system';
 import { TextScale } from '../../../theme';
 
-import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../utils';
+import { typographyBase, TypographyBaseProps, textProps } from '../utils';
 
-export interface TextProps extends TypographyBaseProps {
+export interface TextProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
   /** Size value of the text. */
-  scale?: TextScale | TextScale[];
+  scale?: ResponsiveValue<TextScale, ThemeType>;
 }
 
 /**
  * This is a base `Text` element to handle typography elements.
  */
 const Text = styled('span').withConfig<TextProps>({
-  shouldForwardProp: prop => shouldForwardProp(prop) && shouldForwardTextProp(prop),
-})`
-  ${variant({
+  shouldForwardProp: sfp(textProps),
+})(
+  variant({
     prop: 'scale',
     scale: 'componentStyles.text',
     variants: {
@@ -31,10 +31,10 @@ const Text = styled('span').withConfig<TextProps>({
       200: {},
       100: {},
     },
-  })}
-
-  ${typographyBase}
-`;
+  }),
+  typographyBase,
+  pseudoSystemProps
+);
 
 Text.displayName = 'Text';
 

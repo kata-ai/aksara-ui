@@ -1,33 +1,32 @@
 /* eslint-disable react/no-array-index-key */
 import * as React from 'react';
-import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
 import { Space } from '../../../../theme';
 import { Box, BoxProps } from '../../../box';
 
-export interface InlineProps extends Omit<BoxProps, 'color'> {
+interface SpacingProps {
+  spacing?: Space;
+}
+
+export interface InlineProps extends Omit<BoxProps, 'color'>, SpacingProps {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
   color?: string;
-  spacing?: Space;
 }
 
-const Root = styled(Box).withConfig({ shouldForwardProp: prop => !['spacing'].includes(prop) })<InlineProps>`
-  ${props => props.spacing && `margin-top: -${themeGet(`space.${props.spacing}`, 0)(props)}px;`}
-`;
-
-const Inner = styled(Box).withConfig({ shouldForwardProp: prop => !['spacing'].includes(prop) })<InlineProps>`
-  ${props => props.spacing && `margin-left: -${themeGet(`space.${props.spacing}`, 0)(props)}px;`}
-`;
-
-const Inline: React.FC<InlineProps> = ({ children, spacing, alignItems, ...rest }) => {
+const Inline: React.FC<InlineProps> = ({ children, spacing = 'sm', alignItems, ...rest }) => {
   const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
 
   return (
-    <Root spacing={spacing} {...rest}>
-      <Inner display="flex" flexWrap="wrap" alignItems={alignItems} spacing={spacing}>
+    <Box marginTop={`-${themeGet(`space.${spacing}`, 0)({ spacing })}px`} {...rest}>
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        alignItems={alignItems}
+        marginLeft={`-${themeGet(`space.${spacing}`, 0)({ spacing })}px`}
+      >
         {validChildrenArray.map((child, i) => {
           const spacingProps = { mt: spacing, ml: spacing, mb: 0, mr: 0 };
           if (typeof child === 'string' || child.type === React.Fragment) {
@@ -40,13 +39,9 @@ const Inline: React.FC<InlineProps> = ({ children, spacing, alignItems, ...rest 
 
           return React.cloneElement(child, spacingProps);
         })}
-      </Inner>
-    </Root>
+      </Box>
+    </Box>
   );
-};
-
-Inline.defaultProps = {
-  spacing: 'sm',
 };
 
 Inline.displayName = 'Inline';
