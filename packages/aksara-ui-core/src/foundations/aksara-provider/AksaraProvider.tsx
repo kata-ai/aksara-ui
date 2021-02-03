@@ -1,11 +1,18 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
+import deepmerge from 'deepmerge';
 
-import { theme } from '../../theme';
+import { theme as defaultTheme, Theme } from '../../theme';
 import GlobalStyles from './GlobalStyles';
 
-const AksaraProvider: React.FC = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+interface AksaraProviderProps {
+  theme?: Partial<Theme>;
+}
+
+const AksaraProvider: React.FC<AksaraProviderProps> = ({ children, theme = {} }) => {
+  const mergedTheme = React.useMemo(() => deepmerge(defaultTheme, theme), [theme]);
+
+  return <ThemeProvider theme={mergedTheme}>{children}</ThemeProvider>;
 };
 
 AksaraProvider.displayName = 'AksaraProvider';
@@ -13,12 +20,12 @@ AksaraProvider.displayName = 'AksaraProvider';
 /**
  * @deprecated This has been replaced by `AksaraProvider`.
  */
-export const WicaraProvider: React.FC = ({ children }) => {
+export const WicaraProvider: React.FC<AksaraProviderProps> = ({ children, theme }) => {
   // eslint-disable-next-line no-console
   console.warn('`WicaraProvider` has been deprecated in favour of `AksaraProvider`. Please use that instead.');
 
   return (
-    <AksaraProvider>
+    <AksaraProvider theme={theme}>
       <GlobalStyles />
       {children}
     </AksaraProvider>
