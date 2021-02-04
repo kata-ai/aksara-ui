@@ -2,56 +2,56 @@
 export const heading = {
   scale: {
     900: {
-      fontSize: '42px',
-      lineHeight: '48px',
+      fontSize: 900,
+      lineHeight: 900,
       fontWeight: 500,
       letterSpacing: '-0.2px',
     },
     800: {
-      fontSize: '35px',
-      lineHeight: '40px',
+      fontSize: 800,
+      lineHeight: 800,
       fontWeight: 500,
       letterSpacing: '-0.2px',
     },
     700: {
-      fontSize: '29px',
-      lineHeight: '32px',
+      fontSize: 700,
+      lineHeight: 700,
       fontWeight: 500,
       letterSpacing: '-0.2px',
     },
     600: {
-      fontSize: '24px',
-      lineHeight: '28px',
+      fontSize: 600,
+      lineHeight: 600,
       fontWeight: 500,
       letterSpacing: '-0.05px',
     },
     500: {
-      fontSize: '20px',
-      lineHeight: '24px',
+      fontSize: 500,
+      lineHeight: 500,
       fontWeight: 500,
       letterSpacing: '-0.05px',
     },
     400: {
-      fontSize: '16px',
-      lineHeight: '20px',
+      fontSize: 400,
+      lineHeight: 400,
       fontWeight: 600,
       letterSpacing: '-0.05px',
     },
     300: {
-      fontSize: '14px',
-      lineHeight: '20px',
+      fontSize: 300,
+      lineHeight: 300,
       fontWeight: 600,
       letterSpacing: '-0.05px',
     },
     200: {
-      fontSize: '12px',
-      lineHeight: '16px',
+      fontSize: 200,
+      lineHeight: 200,
       fontWeight: 600,
       letterSpacing: '0px',
     },
     100: {
-      fontSize: '12px',
-      lineHeight: '16px',
+      fontSize: 100,
+      lineHeight: 100,
       fontWeight: 600,
       textTransform: 'uppercase',
       letterSpacing: '0.5px',
@@ -63,40 +63,40 @@ export const heading = {
 export const text = {
   scale: {
     900: {
-      fontSize: '42px',
-      lineHeight: '48px',
+      fontSize: 900,
+      lineHeight: 900,
     },
     800: {
-      fontSize: '35px',
-      lineHeight: '40px',
+      fontSize: 800,
+      lineHeight: 800,
     },
     700: {
-      fontSize: '29px',
-      lineHeight: '32px',
+      fontSize: 700,
+      lineHeight: 700,
     },
     600: {
-      fontSize: '24px',
-      lineHeight: '28px',
+      fontSize: 600,
+      lineHeight: 600,
     },
     500: {
-      fontSize: '20px',
-      lineHeight: '24px',
+      fontSize: 500,
+      lineHeight: 500,
     },
     400: {
-      fontSize: '16px',
-      lineHeight: '20px',
+      fontSize: 400,
+      lineHeight: 400,
     },
     300: {
-      fontSize: '14px',
-      lineHeight: '20px',
+      fontSize: 300,
+      lineHeight: 300,
     },
     200: {
-      fontSize: '12px',
-      lineHeight: '16px',
+      fontSize: 200,
+      lineHeight: 200,
     },
     100: {
-      fontSize: '12px',
-      lineHeight: '16px',
+      fontSize: 100,
+      lineHeight: 100,
     },
   },
 };
@@ -105,11 +105,11 @@ export const text = {
 export const paragraph = {
   scale: {
     400: {
-      fontSize: '16px',
+      fontSize: 400,
       lineHeight: '24px',
     },
     300: {
-      fontSize: '14px',
+      fontSize: 300,
       lineHeight: '24px',
     },
   },

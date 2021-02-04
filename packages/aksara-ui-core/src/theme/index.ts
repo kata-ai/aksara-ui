@@ -1,20 +1,8 @@
-import { colors, radii, shadows, space } from './foundations';
-import { fonts, breakpoints, mediaQueries } from './variables';
-import { componentStyles } from './componentStyles';
+import foundations from './foundations';
+import componentStyles from './componentStyles';
 
 export const theme = {
-  // Default styled-system theme props based on the theme specification:
-  // https://styled-system.com/theme-specification
-  colors,
-  space,
-  sizes: space,
-  fonts,
-  shadows,
-  radii,
-  breakpoints,
-  mediaQueries,
-
-  // Custom theme props based on custom component variants.
+  ...foundations,
   componentStyles,
 };
 
