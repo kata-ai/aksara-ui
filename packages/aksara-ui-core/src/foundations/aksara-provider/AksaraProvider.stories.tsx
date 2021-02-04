@@ -4,14 +4,14 @@ import { theme } from '../../theme';
 import AksaraProvider from './AksaraProvider';
 
 export default {
-  title: 'Core/Foundations/AksaraProvider',
+  title: 'Core/Foundations/Theme',
   component: AksaraProvider,
   parameters: {
     jsx: { skip: 1 },
   },
 };
 
-export const Reset = () => {
+export const ThemeProvider = () => {
   const testLabelId = 'test';
 
   return (

@@ -1,33 +1,33 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
-import shouldForwardProp from '@styled-system/should-forward-prop';
+import { variant, ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
+import { sfp, pseudoSystemProps } from '../../../system';
 import { ParagraphScale } from '../../../theme';
 
-import { typographyBase, TypographyBaseProps, shouldForwardTextProp } from '../utils';
+import { typographyBase, TypographyBaseProps, textProps } from '../utils';
 
-export interface ParagraphProps extends TypographyBaseProps {
+export interface ParagraphProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
   /** Size value of the text. */
-  scale?: ParagraphScale | ParagraphScale[];
+  scale?: ResponsiveValue<ParagraphScale, ThemeType>;
 }
 
 /**
  * Paragraph component provided as a styled component primitive.
  */
 const Paragraph = styled('p').withConfig<ParagraphProps>({
-  shouldForwardProp: prop => shouldForwardProp(prop) && shouldForwardTextProp(prop),
-})`
-  ${variant({
+  shouldForwardProp: sfp(textProps),
+})(
+  variant({
     prop: 'scale',
     scale: 'componentStyles.paragraph',
     variants: {
       400: {},
       300: {},
     },
-  })}
-
-  ${typographyBase}
-`;
+  }),
+  typographyBase,
+  pseudoSystemProps
+);
 
 Paragraph.defaultProps = {
   scale: 400,

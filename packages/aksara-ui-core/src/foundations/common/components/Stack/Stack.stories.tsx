@@ -9,7 +9,7 @@ import { Stack } from '.';
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core/Foundations/Components/Common/Stack',
+  title: 'Core/Layout/Stack',
   component: Stack,
   parameters: {
     notes: { markdown: readme },

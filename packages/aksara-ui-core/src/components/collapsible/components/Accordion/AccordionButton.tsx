@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   AccordionButton as ReachAccordionButton,
   AccordionButtonProps as ReachAccordionButtonProps,
@@ -8,11 +7,12 @@ import {
 import { IconChevronRight } from '@aksara-ui/icons';
 
 import { Heading } from '../../../../foundations';
+import { shouldForwardProp } from '../../../../system';
 import { theme } from '../../../../theme';
 import { UnstyledAccordionButtonStyles, SystemStyles, SystemProps } from './styled';
 
 const Root = styled(ReachAccordionButton).withConfig<SystemProps & ReachAccordionButtonProps>({
-  shouldForwardProp: propName => shouldForwardProp(propName as string), // different props between these two packages
+  shouldForwardProp,
 })`
   ${UnstyledAccordionButtonStyles}
 

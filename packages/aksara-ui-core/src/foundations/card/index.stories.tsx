@@ -12,7 +12,7 @@ import { Card } from './index';
 import { Tooltip } from '../../components';
 
 export default {
-  title: 'Core/Foundations/Components/Card',
+  title: 'Core/Layout/Card',
   component: Card,
 };
 

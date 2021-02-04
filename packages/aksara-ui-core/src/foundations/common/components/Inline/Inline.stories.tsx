@@ -10,7 +10,7 @@ import { Stack } from '../Stack';
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core/Foundations/Components/Common/Inline',
+  title: 'Core/Layout/Inline',
   component: Inline,
   parameters: {
     notes: { markdown: readme },

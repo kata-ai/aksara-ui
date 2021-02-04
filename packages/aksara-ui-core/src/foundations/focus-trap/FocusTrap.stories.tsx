@@ -7,7 +7,7 @@ import { Paragraph, Anchor } from '../typography';
 const readme = require('./README.md');
 
 export default {
-  title: 'Core/Foundations/Components/FocusTrap',
+  title: 'Core/Others/FocusTrap',
   component: FocusTrap,
   parameters: {
     notes: { markdown: readme },
