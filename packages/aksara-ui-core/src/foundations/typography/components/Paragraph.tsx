@@ -2,9 +2,7 @@ import styled from 'styled-components';
 import { variant, ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
 import { sfp, pseudoSystemProps } from '../../../system';
-import { ParagraphScale } from '../../../theme';
-
-import { typographyBase, TypographyBaseProps, textProps } from '../utils';
+import { typographyBase, TypographyBaseProps, ParagraphScale, textProps } from '../utils';
 
 export interface ParagraphProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
   /** Size value of the text. */
@@ -19,7 +17,7 @@ const Paragraph = styled('p').withConfig<ParagraphProps>({
 })(
   variant({
     prop: 'scale',
-    scale: 'componentStyles.paragraph',
+    scale: 'componentStyles.paragraph.scale',
     variants: {
       400: {},
       300: {},

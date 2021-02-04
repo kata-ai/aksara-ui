@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { fonts } from '../../../theme';
+import { theme } from '../../../theme';
 import { textScaleOptions } from '../utils/storybook';
 import Anchor, { AnchorProps } from './Anchor';
 
@@ -13,7 +13,7 @@ export default {
     fontFamily: {
       control: {
         type: 'select',
-        options: Object.keys(fonts),
+        options: Object.keys(theme.fonts),
       },
     },
     fontWeight: {

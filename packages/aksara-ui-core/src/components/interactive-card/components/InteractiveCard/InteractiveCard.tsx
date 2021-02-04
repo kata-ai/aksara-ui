@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Card, CardProps, Box } from '../../../../foundations';
-import { theme } from '../../../../theme';
 
 export interface InteractiveCardProps extends Omit<CardProps, 'elevation' | 'position' | 'border' | 'borderColor'> {
   /** Additional action buttons that appear on hover. */
@@ -12,15 +11,6 @@ export interface InteractiveCardProps extends Omit<CardProps, 'elevation' | 'pos
   imageAlt?: string;
 }
 
-const StyledCard = styled(Card)`
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    box-shadow: ${theme.componentStyles.card[2].boxShadow};
-  }
-`;
-
 const CardImage = styled('img')`
   vertical-align: middle;
   width: 100%;
@@ -28,7 +18,15 @@ const CardImage = styled('img')`
   object-fit: cover;
 `;
 
-const InteractiveCard: React.FC<InteractiveCardProps> = ({ children, actions, image, imageAlt, ...rest }) => {
+const InteractiveCard: React.FC<InteractiveCardProps> = ({
+  children,
+  actions,
+  image,
+  imageAlt,
+  _hover,
+  _focus,
+  ...rest
+}) => {
   const [isActionsVisible, setIsActionsVisible] = React.useState(false);
 
   const handleMouseEnter = () => {
@@ -40,7 +38,7 @@ const InteractiveCard: React.FC<InteractiveCardProps> = ({ children, actions, im
   };
 
   return (
-    <StyledCard
+    <Card
       elevation={1}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -49,6 +47,15 @@ const InteractiveCard: React.FC<InteractiveCardProps> = ({ children, actions, im
       borderColor="grey04"
       height="100%"
       minHeight={60}
+      cursor="pointer"
+      _hover={{
+        ..._hover,
+        boxShadow: 2,
+      }}
+      _focus={{
+        ..._focus,
+        boxShadow: 2,
+      }}
       {...rest}
     >
       {actions && (
@@ -58,7 +65,7 @@ const InteractiveCard: React.FC<InteractiveCardProps> = ({ children, actions, im
       )}
       {image && <CardImage src={image} alt={imageAlt} />}
       {children}
-    </StyledCard>
+    </Card>
   );
 };
 
