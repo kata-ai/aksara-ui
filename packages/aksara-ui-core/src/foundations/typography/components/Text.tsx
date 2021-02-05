@@ -2,9 +2,7 @@ import styled from 'styled-components';
 import { variant, ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
 import { sfp, pseudoSystemProps } from '../../../system';
-import { TextScale } from '../../../theme';
-
-import { typographyBase, TypographyBaseProps, textProps } from '../utils';
+import { typographyBase, TypographyBaseProps, TextScale, textProps } from '../utils';
 
 export interface TextProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
   /** Size value of the text. */
@@ -19,7 +17,7 @@ const Text = styled('span').withConfig<TextProps>({
 })(
   variant({
     prop: 'scale',
-    scale: 'componentStyles.text',
+    scale: 'componentStyles.text.scale',
     variants: {
       900: {},
       800: {},

@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import { variant, ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
 import { sfp, pseudoSystemProps } from '../../../system';
-import { HeadingScale } from '../../../theme';
-import { typographyBase, TypographyBaseProps, textProps } from '../utils';
+import { typographyBase, TypographyBaseProps, HeadingScale, textProps } from '../utils';
 
 export interface HeadingProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
   /** Size value of the heading. */
@@ -18,7 +17,7 @@ const Heading = styled('h2').withConfig<HeadingProps>({
 })(
   variant({
     prop: 'scale',
-    scale: 'componentStyles.heading',
+    scale: 'componentStyles.heading.scale',
     variants: {
       900: {},
       800: {},

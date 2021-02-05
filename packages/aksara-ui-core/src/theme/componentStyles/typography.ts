@@ -1,110 +1,116 @@
 /** Heading size values mapped by size number. */
 export const heading = {
-  900: {
-    fontSize: '42px',
-    lineHeight: '48px',
-    fontWeight: 500,
-    letterSpacing: '-0.2px',
-  },
-  800: {
-    fontSize: '35px',
-    lineHeight: '40px',
-    fontWeight: 500,
-    letterSpacing: '-0.2px',
-  },
-  700: {
-    fontSize: '29px',
-    lineHeight: '32px',
-    fontWeight: 500,
-    letterSpacing: '-0.2px',
-  },
-  600: {
-    fontSize: '24px',
-    lineHeight: '28px',
-    fontWeight: 500,
-    letterSpacing: '-0.05px',
-  },
-  500: {
-    fontSize: '20px',
-    lineHeight: '24px',
-    fontWeight: 500,
-    letterSpacing: '-0.05px',
-  },
-  400: {
-    fontSize: '16px',
-    lineHeight: '20px',
-    fontWeight: 600,
-    letterSpacing: '-0.05px',
-  },
-  300: {
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: 600,
-    letterSpacing: '-0.05px',
-  },
-  200: {
-    fontSize: '12px',
-    lineHeight: '16px',
-    fontWeight: 600,
-    letterSpacing: '0px',
-  },
-  100: {
-    fontSize: '12px',
-    lineHeight: '16px',
-    fontWeight: 600,
-    textTransform: 'uppercase',
-    letterSpacing: '0.5px',
+  scale: {
+    900: {
+      fontSize: 900,
+      lineHeight: 900,
+      fontWeight: 500,
+      letterSpacing: '-0.2px',
+    },
+    800: {
+      fontSize: 800,
+      lineHeight: 800,
+      fontWeight: 500,
+      letterSpacing: '-0.2px',
+    },
+    700: {
+      fontSize: 700,
+      lineHeight: 700,
+      fontWeight: 500,
+      letterSpacing: '-0.2px',
+    },
+    600: {
+      fontSize: 600,
+      lineHeight: 600,
+      fontWeight: 500,
+      letterSpacing: '-0.05px',
+    },
+    500: {
+      fontSize: 500,
+      lineHeight: 500,
+      fontWeight: 500,
+      letterSpacing: '-0.05px',
+    },
+    400: {
+      fontSize: 400,
+      lineHeight: 400,
+      fontWeight: 600,
+      letterSpacing: '-0.05px',
+    },
+    300: {
+      fontSize: 300,
+      lineHeight: 300,
+      fontWeight: 600,
+      letterSpacing: '-0.05px',
+    },
+    200: {
+      fontSize: 200,
+      lineHeight: 200,
+      fontWeight: 600,
+      letterSpacing: '0px',
+    },
+    100: {
+      fontSize: 100,
+      lineHeight: 100,
+      fontWeight: 600,
+      textTransform: 'uppercase',
+      letterSpacing: '0.5px',
+    },
   },
 };
 
 /** Text size values mapped by scale token. */
 export const text = {
-  900: {
-    fontSize: '42px',
-    lineHeight: '48px',
-  },
-  800: {
-    fontSize: '35px',
-    lineHeight: '40px',
-  },
-  700: {
-    fontSize: '29px',
-    lineHeight: '32px',
-  },
-  600: {
-    fontSize: '24px',
-    lineHeight: '28px',
-  },
-  500: {
-    fontSize: '20px',
-    lineHeight: '24px',
-  },
-  400: {
-    fontSize: '16px',
-    lineHeight: '20px',
-  },
-  300: {
-    fontSize: '14px',
-    lineHeight: '20px',
-  },
-  200: {
-    fontSize: '12px',
-    lineHeight: '16px',
-  },
-  100: {
-    fontSize: '12px',
-    lineHeight: '16px',
+  scale: {
+    900: {
+      fontSize: 900,
+      lineHeight: 900,
+    },
+    800: {
+      fontSize: 800,
+      lineHeight: 800,
+    },
+    700: {
+      fontSize: 700,
+      lineHeight: 700,
+    },
+    600: {
+      fontSize: 600,
+      lineHeight: 600,
+    },
+    500: {
+      fontSize: 500,
+      lineHeight: 500,
+    },
+    400: {
+      fontSize: 400,
+      lineHeight: 400,
+    },
+    300: {
+      fontSize: 300,
+      lineHeight: 300,
+    },
+    200: {
+      fontSize: 200,
+      lineHeight: 200,
+    },
+    100: {
+      fontSize: 100,
+      lineHeight: 100,
+    },
   },
 };
 
 /** Text size values mapped by scale token. */
 export const paragraph = {
-  400: {
-    fontSize: '16px',
-    lineHeight: '24px',
-  },
-  300: {
-    fontSize: '14px',
-    lineHeight: '24px',
+  scale: {
+    400: {
+      fontSize: 400,
+      lineHeight: '24px',
+    },
+    300: {
+      fontSize: 300,
+      lineHeight: '24px',
+    },
   },
 };

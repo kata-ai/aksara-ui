@@ -60,14 +60,14 @@ export const linkButtonDisabledVariants = {
 export const linkButtonSizeVariants = {
   32: {
     height: '32px',
-    fontSize: theme.componentStyles.text[300].fontSize,
-    lineHeight: theme.componentStyles.text[300].lineHeight,
+    fontSize: theme.componentStyles.text.scale[300].fontSize,
+    lineHeight: theme.componentStyles.text.scale[300].lineHeight,
     borderRadius: theme.radii.sm,
   },
   40: {
     height: '40px',
-    fontSize: theme.componentStyles.text[300].fontSize,
-    lineHeight: theme.componentStyles.text[300].lineHeight,
+    fontSize: theme.componentStyles.text.scale[300].fontSize,
+    lineHeight: theme.componentStyles.text.scale[300].lineHeight,
     borderRadius: theme.radii.sm,
   },
 };

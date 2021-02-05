@@ -1,5 +1,3 @@
-import { transparentize } from 'polished';
-
 /** (DEPRECATED) old color variables */
 const legacyColors = {
   red: '#e53935',
@@ -33,7 +31,7 @@ const legacyColors = {
   special10: '#f8cebb',
 };
 
-const systemColors = {
+const blue = {
   // Blue
   /** Blue01 - Glitter */
   blue01: '#e7f1fc',
@@ -55,7 +53,9 @@ const systemColors = {
   blue09: '#003369',
   /** blue10 - Maastricht Blue */
   blue10: '#001f3f',
+};
 
+const indigo = {
   // Indigo
   /** Indigo01 - Soap */
   indigo01: '#e7eaf4',
@@ -77,7 +77,9 @@ const systemColors = {
   indigo09: '#000d3f',
   /** Indigo10 - Black Indigo */
   indigo10: '#000826',
+};
 
+const turquoise = {
   // Turquoise
   /** Turquoise01 - Bubbles */
   turquoise01: '#e7fafd',
@@ -99,7 +101,9 @@ const systemColors = {
   turquoise09: '#005d6a',
   /** Turquoise10 - Bubbles */
   turquoise10: '#003840',
+};
 
+const green = {
   // Green
   /** Green01 - Honeydew */
   green01: '#f2f8f0',
@@ -121,7 +125,9 @@ const systemColors = {
   green09: '#37562d',
   /** Green10 - Leather Jacket */
   green10: '#21341b',
+};
 
+const yellow = {
   // Yellow
   /** Yellow01 - Seashell */
   yellow01: '#fff7ed',
@@ -143,7 +149,9 @@ const systemColors = {
   yellow09: '#744d1e',
   /** Yellow10 - Pullman */
   yellow10: '#462f12',
+};
 
+const red = {
   // Red
   /** Red01 - Linen */
   red01: '#fce9e8',
@@ -165,7 +173,9 @@ const systemColors = {
   red09: '#680b05',
   /** Red10 - Bean */
   red10: '#3e0703',
+};
 
+const grey = {
   // Grey
   /** Grey 01 - White */
   grey01: '#ffffff',
@@ -189,8 +199,18 @@ const systemColors = {
   grey10: '#1e2b3a',
 };
 
+const systemColors = {
+  ...blue,
+  ...indigo,
+  ...turquoise,
+  ...green,
+  ...yellow,
+  ...red,
+  ...grey,
+};
+
 /** Color pallette. Contains old Kata Platform colors, experimental colors, and style tokens. */
-export const colors = {
+const colors = {
   white: '#fff',
   black: '#000',
 
@@ -236,175 +256,4 @@ export const colors = {
   icon08: systemColors.indigo03,
 };
 
-export const systemFonts =
-  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
-
-export const fonts = {
-  system: systemFonts,
-  brand: `'Inter', ${systemFonts}`,
-  brandLegacy: `'Barlow', ${systemFonts}`,
-  monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;",
-};
-
-/**
- * Legacy spacer units (in px units).
- */
-export const spaceLegacy = {
-  /** Equivalent to 8px */
-  space1: 8,
-  /** Equivalent to 16px */
-  space2: 16,
-  /** Equivalent to 24px */
-  space3: 24,
-  /** Equivalent to 32px */
-  space4: 32,
-  /** Equivalent to 40px */
-  space5: 40,
-  /** Equivalent to 48px */
-  space6: 48,
-  /** Equivalent to 56px */
-  space7: 56,
-  /** Equivalent to 64px */
-  space8: 64,
-  /** Equivalent to 72px */
-  space9: 72,
-  /** Equivalent to 80px */
-  space10: 80,
-};
-
-export const spaceModern = {
-  /** Equivalent to 2px */
-  xxxs: 2,
-  /** Equivalent to 4px */
-  xxs: 4,
-  /** Equivalent to 8px */
-  xs: 8,
-  /** Equivalent to 12px */
-  sm: 12,
-  /** Equivalent to 16px */
-  md: 16,
-  /** Equivalent to 24px */
-  lg: 24,
-  /** Equivalent to 32px */
-  xl: 32,
-  /** Equivalent to 48px */
-  xxl: 48,
-};
-
-/** Space values (in px) mapped by size designators */
-export const space = {
-  ...spaceLegacy,
-  ...spaceModern,
-};
-
-export const breakpoints = ['1024px', '1280px', '1440px', '1600px'];
-
-export const mediaQueries = {
-  sm: `@media screen and (min-width: ${breakpoints[0]})`,
-  md: `@media screen and (min-width: ${breakpoints[1]})`,
-  lg: `@media screen and (min-width: ${breakpoints[2]})`,
-  xl: `@media screen and (min-width: ${breakpoints[3]})`,
-};
-
-/** Border radiuses */
-export const radii = {
-  xs: 2,
-  sm: 4,
-  md: 6,
-  lg: 8,
-};
-
-/** Legacy box-shadow values. */
-export const shadowsLegacy = {
-  layer100: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
-  layer200: '0 2px 4px 1px rgba(0, 0, 0, 0.15)',
-  layer300: '0 4px 6px 2px rgba(0, 0, 0, 0.15)',
-  layer400: '0 6px 10px 2px rgba(0, 0, 0, 0.15)',
-};
-
-/** Default box/text shadow separated by layers */
-export const shadows = {
-  ...shadowsLegacy,
-};
-
-/** Legacy elevation values. */
-export const elevationLegacy = {
-  layer100: {
-    boxShadow: 'layer100',
-  },
-  layer200: {
-    boxShadow: 'layer200',
-  },
-  layer300: {
-    boxShadow: 'layer300',
-  },
-  layer400: {
-    boxShadow: 'layer400',
-  },
-};
-
-const shadowColor = transparentize(0.85, colors.grey09);
-
-/** Custom elevation variant for the Card component. */
-export const elevation = {
-  ...elevationLegacy,
-  level1: {
-    boxShadow: 'none',
-  },
-  level2: {
-    boxShadow: `0px 2px 6px ${shadowColor};`,
-  },
-  level3: {
-    boxShadow: `0px 6px 12px ${shadowColor};`,
-  },
-  level4: {
-    boxShadow: `0px 12px 24px ${shadowColor};`,
-  },
-  level5: {
-    boxShadow: `0px 24px 48px ${shadowColor};`,
-  },
-};
-
-/** Typography scale values (in pixels) mapped by style tokens. */
-export const typeScale = {
-  heading1: {
-    fontSize: 28,
-    lineHeight: 32,
-  },
-  heading2: {
-    fontSize: 24,
-    lineHeight: 30,
-  },
-  heading3: {
-    fontSize: 20,
-    lineHeight: 24,
-  },
-  heading4: {
-    fontSize: 18,
-    lineHeight: 22,
-  },
-  heading5: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  paragraph: {
-    fontSize: 14,
-    lineHeight: 20,
-  },
-  large: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  body: {
-    fontSize: 13,
-    lineHeight: 20,
-  },
-  label: {
-    fontSize: 12,
-    lineHeight: 16,
-  },
-  small: {
-    fontSize: 11,
-    lineHeight: 16,
-  },
-};
+export default colors;

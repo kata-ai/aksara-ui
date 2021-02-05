@@ -17,6 +17,6 @@ export const StyleProps = () => (
 
 export const PseudoProps = () => (
   <Box padding="sm" color="grey09" backgroundColor="grey01" _hover={{ backgroundColor: 'blue01' }}>
-    I&apos;m inside a box!
+    Hover over me!
   </Box>
 );

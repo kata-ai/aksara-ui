@@ -16,7 +16,7 @@ const cardProps = ['elevation'];
 const Card = styled(Box).withConfig<CardProps>({ shouldForwardProp: sfp(cardProps) })`
   ${variant({
     prop: 'elevation',
-    scale: 'componentStyles.card',
+    scale: 'componentStyles.card.elevation',
     variants: {
       // NOTE: The empty objects here is important.
       // https://styled-system.com/variants#migrating-from-legacy-api

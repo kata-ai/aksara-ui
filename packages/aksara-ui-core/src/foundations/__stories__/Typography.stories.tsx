@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { ParagraphScale, TextScale, HeadingScale } from '../../theme';
 import { Stack } from '../common';
-import { Anchor, Heading, Paragraph, Text } from '../typography';
+import { Anchor, Heading, Paragraph, Text, HeadingScale, TextScale, ParagraphScale } from '../typography';
 
 export default {
   title: 'Core/Foundations/Typography',

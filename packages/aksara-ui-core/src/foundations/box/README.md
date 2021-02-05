@@ -32,3 +32,21 @@ export default function Component() {
 ```
 
 Note that there's no `border` or `shadow` hooks placed in this component. That's because you will have to use the `Card` primitive to enable borders + box-shadows.
+
+### Pseudo elements
+
+You can also set pseudo elements through props, e.g.
+
+```jsx
+import { Box } from '@aksara-ui/core';
+
+export default function Component() {
+  return (
+    <Box padding="sm" color="grey09" backgroundColor="grey01" _hover={{ backgroundColor: 'blue01' }}>
+      I&apos;m inside a box!
+    </Box>
+  );
+}
+```
+
+This will set the box to have a colour of `blue01` _only_ when the element is hovered. All props are adapted from `chakra-ui`'s [pseudo props](https://chakra-ui.com/docs/features/style-props#pseudo)
