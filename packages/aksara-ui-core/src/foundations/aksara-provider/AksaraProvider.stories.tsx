@@ -4,7 +4,7 @@ import { theme } from '../../theme';
 import AksaraProvider from './AksaraProvider';
 
 export default {
-  title: 'Core/Foundations/Theme',
+  title: 'Core/Foundations/AksaraProvider',
   component: AksaraProvider,
   parameters: {
     jsx: { skip: 1 },
