@@ -12,7 +12,12 @@ export interface AksaraProviderProps {
 const AksaraProvider: React.FC<AksaraProviderProps> = ({ children, theme = {} }) => {
   const mergedTheme = React.useMemo(() => deepmerge(defaultTheme, theme), [theme]);
 
-  return <ThemeProvider theme={mergedTheme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={mergedTheme}>
+      <GlobalStyles />
+      {children}
+    </ThemeProvider>
+  );
 };
 
 AksaraProvider.displayName = 'AksaraProvider';
@@ -24,12 +29,7 @@ export const WicaraProvider: React.FC<AksaraProviderProps> = ({ children, theme 
   // eslint-disable-next-line no-console
   console.warn('`WicaraProvider` has been deprecated in favour of `AksaraProvider`. Please use that instead.');
 
-  return (
-    <AksaraProvider theme={theme}>
-      <GlobalStyles />
-      {children}
-    </AksaraProvider>
-  );
+  return <AksaraProvider theme={theme}>{children}</AksaraProvider>;
 };
 
 export default AksaraProvider;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AksaraProvider, GlobalStyles } from '../src';
+import { AksaraProvider } from '../src';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -8,7 +8,6 @@ export const parameters = {
 export const decorators = [
   Story => (
     <AksaraProvider>
-      <GlobalStyles />
       <Story />
     </AksaraProvider>
   ),
