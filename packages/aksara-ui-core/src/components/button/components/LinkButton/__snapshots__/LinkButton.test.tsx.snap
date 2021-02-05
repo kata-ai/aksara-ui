@@ -23,8 +23,8 @@ exports[`components/Button <LinkButton /> renders colors correctly by variant 1`
   border: 1px solid transparent;
   color: blue06;
   height: 40px;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 300px;
+  line-height: 300;
   border-radius: 4px;
   display: inline-block;
   position: relative;

@@ -24,7 +24,7 @@ exports[`components/Button <Button /> renders block buttons correctly 1`] = `
   color: #313f4e;
   height: 40px;
   padding: 0 16px;
-  font-size: 14px;
+  font-size: 300;
   line-height: 38px;
   border-radius: 4px;
   display: block;
@@ -106,7 +106,7 @@ exports[`components/Button <Button /> renders colors correctly by variant 1`] = 
   color: #fff;
   height: 40px;
   padding: 0 16px;
-  font-size: 14px;
+  font-size: 300;
   line-height: 38px;
   border-radius: 4px;
   display: inline-block;
