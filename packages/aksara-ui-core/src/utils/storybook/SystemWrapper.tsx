@@ -1,16 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
 import { DecoratorFn } from '@storybook/react';
-import { AksaraProvider, GlobalStyles } from '../../foundations';
+import { AksaraProvider } from '../../foundations';
 
-import '../../../../aksara-fonts/kata-icons.css';
 import 'typeface-inter';
 
-const SystemWrapper: DecoratorFn = storyFn => (
-  <AksaraProvider>
-    <GlobalStyles />
-    {storyFn()}
-  </AksaraProvider>
-);
+const SystemWrapper: DecoratorFn = storyFn => <AksaraProvider>{storyFn()}</AksaraProvider>;
 
 export default SystemWrapper;
