@@ -39,6 +39,14 @@ class Pagination extends React.Component<PaginationProps> {
     this.handleSelectPage = this.handleSelectPage.bind(this);
   }
 
+  handleSelectPage(page: number) {
+    const { onSelect } = this.props;
+
+    if (onSelect) {
+      onSelect(page);
+    }
+  }
+
   generatePages(): (number | string)[] {
     const { total, current } = this.props;
     const maxButtons = 5;
@@ -77,14 +85,6 @@ class Pagination extends React.Component<PaginationProps> {
     }
 
     return pageButtons;
-  }
-
-  handleSelectPage(page: number) {
-    const { onSelect } = this.props;
-
-    if (onSelect) {
-      onSelect(page);
-    }
   }
 
   render() {
