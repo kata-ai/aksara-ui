@@ -66,7 +66,15 @@ const TooltipInner: React.ForwardRefRenderFunction<HTMLDivElement, TooltipInnerP
   };
 
   return (
-    <Box p="xxs" zIndex={9999} className={className} style={style} ref={ref} data-placement={placement} {...rest}>
+    <Box
+      p="xxs"
+      zIndex={9999}
+      className={className}
+      style={style}
+      ref={ref}
+      data-popper-placement={placement}
+      {...rest}
+    >
       <Inner size={size}>{renderContent()}</Inner>
     </Box>
   );

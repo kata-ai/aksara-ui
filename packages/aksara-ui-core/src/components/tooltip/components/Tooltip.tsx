@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import TooltipTrigger from 'react-popper-tooltip';
+import { usePopperTooltip } from 'react-popper-tooltip';
 
 import TooltipInner, { TooltipPlacement, TooltipSize } from './TooltipInner';
 
@@ -15,36 +15,26 @@ export interface TooltipProps {
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ className, style, delay, placement, size, content, children }) => {
+  const { getTooltipProps, setTooltipRef, setTriggerRef, visible } = usePopperTooltip({
+    placement,
+    delayShow: delay ? 300 : 0,
+  });
+
   return (
-    <TooltipTrigger
-      trigger="hover"
-      delayShow={delay ? 300 : 0}
-      placement={placement}
-      tooltip={({ tooltipRef, getTooltipProps, placement: popperPlacement }) => (
+    <>
+      <span ref={setTriggerRef} className={clsx('trigger', className)} style={style}>
+        {children}
+      </span>{' '}
+      {visible && (
         <TooltipInner
+          ref={setTooltipRef}
           {...getTooltipProps({
             size,
-            ref: tooltipRef,
-            placement: popperPlacement,
           })}
           content={content}
         />
       )}
-    >
-      {({ getTriggerProps, triggerRef }) => {
-        return (
-          <span
-            {...getTriggerProps({
-              style,
-              ref: triggerRef,
-              className: clsx('trigger', className),
-            })}
-          >
-            {children}
-          </span>
-        );
-      }}
-    </TooltipTrigger>
+    </>
   );
 };
 

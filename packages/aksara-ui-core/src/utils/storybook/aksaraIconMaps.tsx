@@ -1,5 +1,4 @@
 /* eslint-disable import/named */
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
 import * as React from 'react';
 import {
   IconBot,

@@ -14,7 +14,7 @@ exports[`components/Badge <Badge /> renders with additional variants 1`] = `
 }
 
 <span
-  class="c0"
+  class=" c0"
 >
   test badge
 </span>

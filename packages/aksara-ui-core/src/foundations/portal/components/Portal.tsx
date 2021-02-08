@@ -6,7 +6,7 @@ const supportsPortal = typeof ReactDOM.createPortal === 'function';
 class Portal extends React.Component {
   container: HTMLDivElement | undefined;
 
-  constructor(props: {}) {
+  constructor(props: Record<string, never>) {
     super(props);
 
     if (typeof window !== 'undefined') {
