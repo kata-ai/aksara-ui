@@ -12,3 +12,5 @@ export type ComponentStyles = typeof componentStyles;
 export type Color = keyof Theme['colors'];
 export type Space = keyof Theme['space'];
 export type CardElevation = keyof ComponentStyles['card']['elevation'];
+
+export * from './types';

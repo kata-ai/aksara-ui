@@ -1,22 +1,20 @@
-import { theme } from '../../../theme';
-
 export const textScaleOptions = {
   control: {
     type: 'select',
-    options: Object.keys(theme.componentStyles.text.scale).map(k => parseInt(k, 10)),
+    options: [900, 800, 700, 600, 500, 400, 300, 200, 100],
   },
 };
 
 export const paragraphScaleOptions = {
   control: {
     type: 'select',
-    options: Object.keys(theme.componentStyles.paragraph.scale).map(k => parseInt(k, 10)),
+    options: [400, 300],
   },
 };
 
 export const headingScaleOptions = {
   control: {
     type: 'select',
-    options: Object.keys(theme.componentStyles.heading.scale).map(k => parseInt(k, 10)),
+    options: [900, 800, 700, 600, 500, 400, 300, 200, 100],
   },
 };
