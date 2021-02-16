@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
-import { sfp, pseudoSystemProps, getComponentStyles } from '../../../system';
-import { typographyBase, TypographyBaseProps, TextScale, textProps } from '../utils';
+import { sfp, pseudoSystemProps, getComponentStyles, allSystemProps, sxMixin, SxProps } from '../../../system';
+import { TypographyBaseProps, TextScale, textProps } from '../utils';
 
-export interface TextProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
+export interface TextProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps, SxProps {
   /** Size value of the text. */
   scale?: ResponsiveValue<TextScale, ThemeType>;
 }
@@ -14,7 +14,7 @@ export interface TextProps<ThemeType extends Theme = RequiredTheme> extends Typo
  */
 const Text = styled('span').withConfig<TextProps>({
   shouldForwardProp: sfp(textProps),
-})(getComponentStyles('text'), typographyBase, pseudoSystemProps);
+})(getComponentStyles('text'), allSystemProps, pseudoSystemProps, sxMixin);
 
 Text.displayName = 'Text';
 

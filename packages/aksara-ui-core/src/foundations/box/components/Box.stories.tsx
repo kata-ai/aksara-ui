@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Heading } from '../../typography';
 
 import Box from './Box';
 
@@ -18,5 +19,13 @@ export const StyleProps = () => (
 export const PseudoProps = () => (
   <Box padding="sm" color="grey09" backgroundColor="grey01" _hover={{ backgroundColor: 'blue01' }}>
     Hover over me!
+  </Box>
+);
+
+export const CustomProps = () => (
+  <Box sx={{ '--heading-color': '#0070f3' }}>
+    <Heading color="var(--heading-color)" scale={800}>
+      This heading is styled using CSS variables!
+    </Heading>
   </Box>
 );

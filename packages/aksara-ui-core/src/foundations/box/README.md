@@ -50,3 +50,31 @@ export default function Component() {
 ```
 
 This will set the box to have a colour of `blue01` _only_ when the element is hovered. All props are adapted from `chakra-ui`'s [pseudo props](https://chakra-ui.com/docs/features/style-props#pseudo)
+
+### `sx` prop
+
+You can also use the `sx` prop to add any valid CSS to an element, and use system tokens to ensure consistency.
+
+_Note that while this prop is considered an escape hatch, there are few cases where it is needed._
+
+```jsx
+import { Box, Heading } from '@aksara-ui/core';
+
+export default function Component() {
+  return <Box as="img" src="" sx={{ filter: 'blur(8px)' }} />;
+}
+```
+
+```jsx
+import { Box, Heading } from '@aksara-ui/core';
+
+export default function Component() {
+  return (
+    <Box sx={{ '--heading-color': '#0070f3' }}>
+      <Heading color="var(--heading-color)" scale={800}>
+        This heading is styled using CSS variables!
+      </Heading>
+    </Box>
+  );
+}
+```

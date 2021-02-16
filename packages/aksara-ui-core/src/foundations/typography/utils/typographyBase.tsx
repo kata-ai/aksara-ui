@@ -1,4 +1,4 @@
-import { allSystemProps, AllSystemProps } from '../../../system';
+import { AllSystemProps } from '../../../system';
 
 export interface TypographyBaseProps extends AllSystemProps {
   /** Additional CSS classes to add to the component. */
@@ -16,10 +16,3 @@ export interface TypographyBaseProps extends AllSystemProps {
 export type TextScale = 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100;
 export type ParagraphScale = 400 | 300;
 export type HeadingScale = TextScale;
-
-/**
- * This is a base `Text` element to handle typography elements.
- */
-const typographyBase = allSystemProps;
-
-export default typographyBase;

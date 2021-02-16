@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
-import { sfp, pseudoSystemProps, getComponentStyles } from '../../../system';
-import { typographyBase, TypographyBaseProps, HeadingScale, textProps } from '../utils';
+import { sfp, pseudoSystemProps, getComponentStyles, allSystemProps, sxMixin, SxProps } from '../../../system';
+import { TypographyBaseProps, HeadingScale, textProps } from '../utils';
 
-export interface HeadingProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
+export interface HeadingProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps, SxProps {
   /** Size value of the heading. */
   scale?: ResponsiveValue<HeadingScale, ThemeType>;
 }
@@ -14,7 +14,7 @@ export interface HeadingProps<ThemeType extends Theme = RequiredTheme> extends T
  */
 const Heading = styled('h2').withConfig<HeadingProps>({
   shouldForwardProp: sfp(textProps),
-})(getComponentStyles('heading'), typographyBase, pseudoSystemProps);
+})(getComponentStyles('heading'), allSystemProps, pseudoSystemProps, sxMixin);
 
 Heading.defaultProps = {
   color: '#121615',

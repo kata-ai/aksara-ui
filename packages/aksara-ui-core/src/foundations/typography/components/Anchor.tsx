@@ -1,18 +1,20 @@
-import * as React from 'react';
 import styled from 'styled-components';
+import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
-import { sfp, pseudoSystemProps, getComponentStyles } from '../../../system';
-import { typographyBase, textProps } from '../utils';
-import { TextProps } from './Text';
+import { sfp, pseudoSystemProps, getComponentStyles, allSystemProps, sxMixin, SxProps } from '../../../system';
+import { textProps, TextScale, TypographyBaseProps } from '../utils';
 
-export interface AnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, TextProps {}
+export interface AnchorProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps, SxProps {
+  /** Size value of the heading. */
+  scale?: ResponsiveValue<TextScale, ThemeType>;
+}
 
 /**
  * Link component provided as a styled component primitive.
  */
 const Anchor = styled('a').withConfig<AnchorProps>({
   shouldForwardProp: sfp(textProps),
-})(getComponentStyles('anchor'), typographyBase, pseudoSystemProps);
+})(getComponentStyles('anchor'), allSystemProps, pseudoSystemProps, sxMixin);
 
 Anchor.displayName = 'Anchor';
 
