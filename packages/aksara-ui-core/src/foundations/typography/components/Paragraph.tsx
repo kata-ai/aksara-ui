@@ -1,15 +1,7 @@
 import styled from 'styled-components';
-import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
+import { ResponsiveValue, Theme, RequiredTheme, variant } from 'styled-system';
 
-import {
-  sfp,
-  pseudoSystemProps,
-  getComponentStyles,
-  allSystemProps,
-  AllSystemProps,
-  sxMixin,
-  SxProps,
-} from '../../../system';
+import { sfp, pseudoSystemProps, allSystemProps, AllSystemProps, sxMixin, SxProps } from '../../../system';
 import { textProps } from '../utils';
 
 export type ParagraphScale = 400 | 300;
@@ -26,7 +18,19 @@ export interface ParagraphProps<ThemeType extends Theme = RequiredTheme> extends
  */
 const Paragraph = styled('p').withConfig<ParagraphProps>({
   shouldForwardProp: sfp(textProps),
-})(getComponentStyles('paragraph'), allSystemProps, pseudoSystemProps, sxMixin);
+})(
+  variant({
+    prop: 'scale',
+    scale: 'componentStyles.paragraph.scales.typeScales',
+    variants: {
+      400: {},
+      300: {},
+    },
+  }),
+  allSystemProps,
+  pseudoSystemProps,
+  sxMixin
+);
 
 Paragraph.defaultProps = {
   scale: 400,

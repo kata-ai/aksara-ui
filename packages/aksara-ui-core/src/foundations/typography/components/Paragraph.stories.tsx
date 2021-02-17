@@ -39,7 +39,6 @@ export const Example = Template.bind({});
 Example.args = {
   scale: 400,
   fontFamily: 'system',
-  fontWeight: 400,
 };
 
 export const MediaQueries = () => {

@@ -3,33 +3,37 @@ import { ComponentThemeConfig } from '../types';
 
 /** Heading size values mapped by size number. */
 export const heading: ComponentThemeConfig = {
-  baseStyle: { fontWeight: 500 },
   propToScaleMap: [['scale', 'typeScales']],
   scales: {
     typeScales: {
       900: {
         fontSize: 900,
         lineHeight: 900,
+        fontWeight: 500,
         letterSpacing: '-0.2px',
       },
       800: {
         fontSize: 800,
         lineHeight: 800,
+        fontWeight: 500,
         letterSpacing: '-0.2px',
       },
       700: {
         fontSize: 700,
         lineHeight: 700,
+        fontWeight: 500,
         letterSpacing: '-0.2px',
       },
       600: {
         fontSize: 600,
         lineHeight: 600,
+        fontWeight: 500,
         letterSpacing: '-0.05px',
       },
       500: {
         fontSize: 500,
         lineHeight: 500,
+        fontWeight: 500,
         letterSpacing: '-0.05px',
       },
       400: {
