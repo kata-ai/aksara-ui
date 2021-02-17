@@ -1,10 +1,14 @@
 import styled from 'styled-components';
-import { variant, ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
+import { ResponsiveValue, Theme, RequiredTheme, variant } from 'styled-system';
 
-import { sfp, pseudoSystemProps } from '../../../system';
-import { typographyBase, TypographyBaseProps, TextScale, textProps } from '../utils';
+import { sfp, pseudoSystemProps, allSystemProps, AllSystemProps, sxMixin, SxProps } from '../../../system';
+import { textProps } from '../utils';
 
-export interface TextProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps {
+export type TextScale = 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100;
+
+export interface TextProps<ThemeType extends Theme = RequiredTheme> extends AllSystemProps, SxProps {
+  color?: string;
+  children?: React.ReactNode;
   /** Size value of the text. */
   scale?: ResponsiveValue<TextScale, ThemeType>;
 }
@@ -17,7 +21,7 @@ const Text = styled('span').withConfig<TextProps>({
 })(
   variant({
     prop: 'scale',
-    scale: 'componentStyles.text.scale',
+    scale: 'componentStyles.text.scales.typeScales',
     variants: {
       900: {},
       800: {},
@@ -30,8 +34,9 @@ const Text = styled('span').withConfig<TextProps>({
       100: {},
     },
   }),
-  typographyBase,
-  pseudoSystemProps
+  allSystemProps,
+  pseudoSystemProps,
+  sxMixin
 );
 
 Text.displayName = 'Text';

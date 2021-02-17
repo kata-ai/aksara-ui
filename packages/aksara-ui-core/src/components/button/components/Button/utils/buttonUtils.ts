@@ -170,7 +170,7 @@ export const ButtonGhost = css`
 export const ButtonSmall = (props: ButtonBaseProps) => css`
   height: 32px;
   padding: 0 12px;
-  font-size: ${theme.componentStyles.text.scale[300].fontSize};
+  font-size: ${theme.fontSizes[300]};
   line-height: 30px;
   border-radius: 4px;
 
@@ -181,7 +181,7 @@ export const ButtonSmall = (props: ButtonBaseProps) => css`
 export const ButtonMedium = (props: ButtonBaseProps) => css`
   height: 40px;
   padding: 0 16px;
-  font-size: ${theme.componentStyles.text.scale[300].fontSize};
+  font-size: ${theme.fontSizes[300]};
   line-height: 38px;
   border-radius: 4px;
 
@@ -192,7 +192,7 @@ export const ButtonMedium = (props: ButtonBaseProps) => css`
 export const ButtonLarge = (props: ButtonBaseProps) => css`
   height: 48px;
   padding: 0 24px;
-  font-size: ${theme.componentStyles.text.scale[300].fontSize};
+  font-size: ${theme.fontSizes[300]};
   line-height: 46px;
   border-radius: 4px;
 

@@ -1,3 +1,2 @@
+/* eslint-disable import/prefer-default-export */
 export { default as textProps } from './textProps';
-export { default as typographyBase } from './typographyBase';
-export * from './typographyBase';

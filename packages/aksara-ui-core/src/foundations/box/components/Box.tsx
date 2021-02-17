@@ -6,9 +6,11 @@ import {
   pseudoSystemProps,
   PseudoSystemProps,
   shouldForwardProp,
+  sxMixin,
+  SxProps,
 } from '../../../system';
 
-export interface BoxProps extends AllSystemProps, PseudoSystemProps {
+export interface BoxProps extends AllSystemProps, PseudoSystemProps, SxProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
@@ -20,10 +22,10 @@ export interface BoxProps extends AllSystemProps, PseudoSystemProps {
 }
 
 /**
- * Box is a view with all styled-system hooks added to it. You can use it as a
+ * Box is a base component with all styled-system hooks added to it. You can use it as a
  * base component for all display elements.
  */
-const Box = styled('div').withConfig<BoxProps>({ shouldForwardProp })(allSystemProps, pseudoSystemProps);
+const Box = styled('div').withConfig<BoxProps>({ shouldForwardProp })(allSystemProps, pseudoSystemProps, sxMixin);
 
 Box.displayName = 'Box';
 

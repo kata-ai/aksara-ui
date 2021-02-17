@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import css from '@styled-system/css';
+import css, { CssFunctionReturnType } from '@styled-system/css';
 import { createShouldForwardProp, props } from '@styled-system/should-forward-prop';
 import {
   layout,
@@ -58,6 +58,7 @@ export const allSystemProps = compose(
   typography,
   other
 );
+
 export const pseudoSelectors = {
   _hover: '&:hover, &[data-hover]',
   _active: '&:active, &[data-active]',
@@ -184,4 +185,12 @@ export function pseudoSystemProps({
     [pseudoSelectors._fullScreen]: _fullScreen,
     [pseudoSelectors._selection]: _selection,
   });
+}
+
+export interface SxProps {
+  sx?: Partial<Record<keyof AllSystemProps & PseudoSystemProps, any>>;
+}
+
+export function sxMixin(p: SxProps): CssFunctionReturnType | Record<string, never> {
+  return p.sx ? css(p.sx) : {};
 }

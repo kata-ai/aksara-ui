@@ -1,5 +1,5 @@
 import card from './card';
-import { heading, paragraph, text } from './typography';
+import { heading, paragraph, text, anchor } from './typography';
 
 /**
  * Custom theme props based on custom component variants.
@@ -9,6 +9,7 @@ const componentStyles = {
   heading,
   paragraph,
   text,
+  anchor,
 };
 
 export default componentStyles;
