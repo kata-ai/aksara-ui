@@ -1,8 +1,10 @@
 /* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 
-import { Space } from '../../../../theme';
+import { theme } from '../../../../theme';
 import { Box, BoxProps } from '../../../box';
+
+type Space = keyof typeof theme['space'];
 
 export interface StackProps extends Omit<BoxProps, 'color'> {
   id?: string;

@@ -1,10 +1,22 @@
 import styled from 'styled-components';
 import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
-import { sfp, pseudoSystemProps, getComponentStyles, allSystemProps, sxMixin, SxProps } from '../../../system';
-import { TypographyBaseProps, ParagraphScale, textProps } from '../utils';
+import {
+  sfp,
+  pseudoSystemProps,
+  getComponentStyles,
+  allSystemProps,
+  AllSystemProps,
+  sxMixin,
+  SxProps,
+} from '../../../system';
+import { textProps } from '../utils';
 
-export interface ParagraphProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps, SxProps {
+export type ParagraphScale = 400 | 300;
+
+export interface ParagraphProps<ThemeType extends Theme = RequiredTheme> extends AllSystemProps, SxProps {
+  color?: string;
+  children?: React.ReactNode;
   /** Size value of the text. */
   scale?: ResponsiveValue<ParagraphScale, ThemeType>;
 }

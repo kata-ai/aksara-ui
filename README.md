@@ -46,7 +46,7 @@ $ yarn add styled-components @aksara-ui/core @aksara-ui/icons
 $ npm install --save styled-components @aksara-ui/core @aksara-ui/icons
 ```
 
-Then, you will need to apply the theme provider as well as the global styles. Wrap your app inside the `AksaraProvider` to do so.
+Then, you will need to apply the theme provider as well as the default global styles. Wrap your app inside the `AksaraProvider` to do so.
 
 ```jsx
 import { AksaraProvider } from '@aksara-ui/core';
@@ -56,7 +56,40 @@ export default function MyApp({ children }) {
 }
 ```
 
-Once you've applied the style resets, you can use Aksara UI components in your app. See the example below.
+If you would like to use additional styles for `AksaraProvider`, add the `disableInjection` prop to `AksaraProvider` and add your custom styles as follows.
+
+```jsx
+import { css } from 'styled-components';
+import { AksaraProvider, injectGlobalStyles } from '@aksara-ui/core';
+
+const styles = css`
+  [data-reach-tooltip] {
+    z-index: 1;
+    pointer-events: none;
+    position: absolute;
+    padding: 0.25em 0.5em;
+    box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.1);
+    white-space: nowrap;
+    font-size: 85%;
+    background: #f0f0f0;
+    color: #444;
+    border: solid 1px #ccc;
+  }
+`;
+
+const { GlobalStyles } = injectGlobalStyles(styles);
+
+export default function MyApp({ children }) {
+  return (
+    <AksaraProvider disableInjection>
+      <GlobalStyles />
+      {children}
+    </AksaraProvider>
+  );
+}
+```
+
+Once you've applied the provider, you can use Aksara UI components in your app. See the example below.
 
 ### Example
 

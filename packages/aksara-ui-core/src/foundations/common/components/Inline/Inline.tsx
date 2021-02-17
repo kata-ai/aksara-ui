@@ -2,8 +2,10 @@
 import * as React from 'react';
 import { themeGet } from '@styled-system/theme-get';
 
-import { Space } from '../../../../theme';
+import { theme } from '../../../../theme';
 import { Box, BoxProps } from '../../../box';
+
+type Space = keyof typeof theme['space'];
 
 interface SpacingProps {
   spacing?: Space;

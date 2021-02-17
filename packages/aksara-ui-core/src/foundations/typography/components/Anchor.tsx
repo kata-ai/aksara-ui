@@ -1,15 +1,27 @@
 import styled from 'styled-components';
 import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
-import { sfp, pseudoSystemProps, getComponentStyles, allSystemProps, sxMixin, SxProps } from '../../../system';
-import { textProps, TextScale, TypographyBaseProps } from '../utils';
+import {
+  sfp,
+  pseudoSystemProps,
+  getComponentStyles,
+  allSystemProps,
+  AllSystemProps,
+  sxMixin,
+  SxProps,
+} from '../../../system';
+import { textProps } from '../utils';
+
+export type AnchorScale = 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100;
 
 export interface AnchorProps<ThemeType extends Theme = RequiredTheme>
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    TypographyBaseProps,
+    AllSystemProps,
     SxProps {
+  color?: string;
+  children?: React.ReactNode;
   /** Size value of the heading. */
-  scale?: ResponsiveValue<TextScale, ThemeType>;
+  scale?: ResponsiveValue<AnchorScale, ThemeType>;
 }
 
 /**
