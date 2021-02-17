@@ -4,7 +4,10 @@ import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 import { sfp, pseudoSystemProps, getComponentStyles, allSystemProps, sxMixin, SxProps } from '../../../system';
 import { textProps, TextScale, TypographyBaseProps } from '../utils';
 
-export interface AnchorProps<ThemeType extends Theme = RequiredTheme> extends TypographyBaseProps, SxProps {
+export interface AnchorProps<ThemeType extends Theme = RequiredTheme>
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    TypographyBaseProps,
+    SxProps {
   /** Size value of the heading. */
   scale?: ResponsiveValue<TextScale, ThemeType>;
 }
