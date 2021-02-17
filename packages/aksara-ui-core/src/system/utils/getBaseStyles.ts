@@ -7,7 +7,7 @@ import { runIfFn } from '../../utils';
  */
 export default function getComponentStyles(componentKey: string) {
   return (props: any): any => {
-    const { children: _children, theme } = props;
+    const { theme } = props;
 
     const config = get(theme, `componentStyles.${componentKey}`);
 
