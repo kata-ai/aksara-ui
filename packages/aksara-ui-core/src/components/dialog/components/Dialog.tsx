@@ -35,9 +35,6 @@ const DialogOut = keyframes`
 `;
 
 const DialogWrapper = styled(Card)`
-  opacity: 0;
-  transform: translate(0, -25%);
-
   &[data-state='entering'],
   &[data-state='entered'] {
     animation-fill-mode: forwards;
@@ -49,11 +46,6 @@ const DialogWrapper = styled(Card)`
     animation-fill-mode: forwards;
     animation-name: ${DialogOut};
     animation-duration: ${ANIMATION_DURATION}ms;
-  }
-
-  &.entered {
-    opacity: 1;
-    transform: translate(0, 0);
   }
 `;
 
@@ -206,6 +198,14 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           aria-modal="true"
           aria-labelledby={labelledById}
           data-state={state}
+          sx={{
+            opacity: 0,
+            transform: 'translate(0, -25%)',
+            '&.entered': {
+              opacity: 1,
+              transform: 'translate(0, 0)',
+            },
+          }}
           {...rest}
         >
           {!hideCloseButton && (

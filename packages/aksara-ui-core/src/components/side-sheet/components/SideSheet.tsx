@@ -5,7 +5,7 @@ import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
 import { IconClose } from '@aksara-ui/icons';
 
-import { Portal, Box, Card, FocusTrap } from '../../../foundations';
+import { Portal, Box, BoxProps, Card, FocusTrap } from '../../../foundations';
 import { IconButton } from '../../button';
 import { ANIMATION_DURATION } from '../constants';
 import SideSheetOverlay from './SideSheetOverlay';
@@ -31,8 +31,6 @@ const SideSheetOut = keyframes`
 `;
 
 const SideSheetWrapper = styled(Box)`
-  transform: translateX(100%);
-
   &[data-state='entering'],
   &[data-state='entered'] {
     animation-timing-function: cubic-bezier(0.15, 1, 0.3, 1);
@@ -47,10 +45,6 @@ const SideSheetWrapper = styled(Box)`
     animation-name: ${SideSheetOut};
     animation-duration: ${ANIMATION_DURATION}ms;
   }
-
-  &.entered {
-    transform: translateX(0);
-  }
 `;
 
 const CloseButton = styled(IconButton)`
@@ -59,7 +53,7 @@ const CloseButton = styled(IconButton)`
   right: 32px;
 `;
 
-export interface SideSheetProps {
+export interface SideSheetProps extends BoxProps {
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Additional CSS properties to give to the drawer. */
@@ -153,19 +147,27 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
   }
 
   renderInnerContent = (state: TransitionStatus) => {
-    const { children, labelledById, hideCloseButton } = this.props;
+    const { className, style, children, labelledById, hideCloseButton, ...rest } = this.props;
     const { isOpen } = this.state;
 
     return (
       <SideSheetOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <SideSheetWrapper
-          className={clsx(isOpen && 'entered')}
+          className={clsx(isOpen && 'entered', className)}
+          style={style}
           position="absolute"
           right={0}
           role="dialog"
           aria-modal="true"
           aria-labelledby={labelledById}
           data-state={state}
+          sx={{
+            transform: 'translateX(100%)',
+            '&.entered': {
+              transform: 'translateX(0)',
+            },
+          }}
+          {...rest}
         >
           <Card display="flex" flexDirection="column" elevation={4} borderRadius={0} width="500px" height="100vh">
             {!hideCloseButton && (
