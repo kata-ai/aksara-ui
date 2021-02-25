@@ -8,7 +8,7 @@ export const textScaleOptions = {
 export const paragraphScaleOptions = {
   control: {
     type: 'select',
-    options: [400, 300],
+    options: [500, 400, 300, 200],
   },
 };
 
