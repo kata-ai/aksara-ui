@@ -114,6 +114,10 @@ export const paragraph: ComponentThemeConfig = {
   propToScaleMap: [['scale', 'typeScales']],
   scales: {
     typeScales: {
+      500: {
+        fontSize: 500,
+        lineHeight: '28px',
+      },
       400: {
         fontSize: 400,
         lineHeight: '24px',
@@ -121,6 +125,10 @@ export const paragraph: ComponentThemeConfig = {
       300: {
         fontSize: 300,
         lineHeight: '24px',
+      },
+      200: {
+        fontSize: 200,
+        lineHeight: '20px',
       },
     },
   },
