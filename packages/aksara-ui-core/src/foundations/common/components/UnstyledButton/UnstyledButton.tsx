@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {
+  ButtonStyleProps,
   layout,
   LayoutProps,
   position,
@@ -23,7 +24,8 @@ import {
 } from 'styled-system';
 
 export interface UnstyledButtonProps
-  extends LayoutProps,
+  extends ButtonStyleProps,
+    LayoutProps,
     PositionProps,
     FlexboxProps,
     GridProps,
