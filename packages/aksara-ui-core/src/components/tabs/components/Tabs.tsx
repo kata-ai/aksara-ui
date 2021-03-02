@@ -6,7 +6,7 @@ import { TabsSizeVariants } from '../variants';
 import { Box } from '../../../foundations';
 import { TabsProvider } from '../context';
 
-export interface TabsProps extends Exclude<BaseTabsProps, 'tabsSize'> {
+export interface TabsProps extends Omit<BaseTabsProps, 'tabsSize'> {
   /** Size of the tabs. */
   size?: TabsSizeVariants;
   /** Additional CSS classes to give to the component. */
