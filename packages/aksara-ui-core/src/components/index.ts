@@ -15,4 +15,5 @@ export * from './pagination';
 export * from './popover';
 export * from './side-sheet';
 export * from './skeleton';
+export * from './tabs';
 export * from './tooltip';
