@@ -1,12 +1,13 @@
 import * as React from 'react';
+import clsx from 'clsx';
 
-import { BaseTabsProps, MainTabs } from '../styles';
+import { BaseTabsProps } from '../styles';
 import { TabsSizeVariants } from '../variants';
-import { BoxProps } from '../../../foundations';
+import { Box } from '../../../foundations';
 import { TabsProvider } from '../context';
 
-export interface TabsProps extends BaseTabsProps, BoxProps {
-  // /** Size of the tabs. */
+export interface TabsProps extends BaseTabsProps {
+  /** Size of the tabs. */
   size?: TabsSizeVariants;
   /** Additional CSS classes to give to the component. */
   className?: string;
@@ -14,12 +15,12 @@ export interface TabsProps extends BaseTabsProps, BoxProps {
   style?: React.CSSProperties;
 }
 
-const Tabs: React.FC<TabsProps> = ({ className, style, children, size = 48, defaultIndex = 0, ...rest }) => {
+const Tabs: React.FC<TabsProps> = ({ className, style, children, defaultIndex = 0, size = 48, ...rest }) => {
   return (
-    <TabsProvider defaultIndex={defaultIndex}>
-      <MainTabs className={className} style={style} size={size} {...rest}>
+    <TabsProvider defaultIndex={defaultIndex} size={size}>
+      <Box display="block" className={clsx('tabs', className)} style={style} {...rest}>
         {children}
-      </MainTabs>
+      </Box>
     </TabsProvider>
   );
 };

@@ -1,25 +1,44 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
+import { Box, BoxProps, UnstyledButton, UnstyledButtonProps } from '../../foundations';
+import { theme } from '../../theme';
 import { tabButtonSizeVariants, tabListSizeVariants, TabsSizeVariants, tabPanelsSizeVariants } from './variants';
 
 export interface BaseTabsProps {
   /** Size of the tabs. */
-  size?: TabsSizeVariants;
+  tabsSize?: TabsSizeVariants;
   /** The initial index of the selected tab */
   defaultIndex?: number;
 }
 
-export const MainTabs = styled('div')<BaseTabsProps>`
-  display: block;
+export type BaseBoxProps = BaseTabsProps & BoxProps;
 
-  .tablist {
-    ${variant({ prop: 'size', variants: tabListSizeVariants })}
+export interface BaseButtonProps extends BaseTabsProps, UnstyledButtonProps {
+  active?: boolean;
+}
 
-    .tabbutton {
-      ${variant({ prop: 'size', variants: tabButtonSizeVariants })}
-    }
+export const BaseTabList = styled(Box)<BaseBoxProps>`
+  ${variant({ prop: 'tabsSize', variants: tabListSizeVariants })}
+`;
+
+export const BaseTabButton = styled(UnstyledButton)<BaseButtonProps>`
+  outline: none;
+  transition: all 0.2s ease 0s;
+  ${variant({ prop: 'tabsSize', variants: tabButtonSizeVariants })}
+
+  &:hover {
+    border-bottom: 2px solid ${theme.colors.grey04};
   }
-  .tabpanels {
-    ${variant({ prop: 'size', variants: tabPanelsSizeVariants })}
-  }
+
+  ${props =>
+    props.active &&
+    css`
+      font-weight: 500;
+      color: ${theme.colors.blue07};
+      border-bottom: 2px solid ${theme.colors.blue08};
+    `};
+`;
+
+export const BaseTabPanels = styled(Box)<BaseBoxProps>`
+  ${variant({ prop: 'tabsSize', variants: tabPanelsSizeVariants })}
 `;

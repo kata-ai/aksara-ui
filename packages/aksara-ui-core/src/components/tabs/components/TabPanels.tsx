@@ -1,19 +1,27 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Box, BoxProps } from '../../../foundations';
+import { BaseTabPanels, BaseBoxProps } from '../styles';
 import { useTabs } from '../context';
 
-export interface TabPanelsProps extends BoxProps {
+export interface TabPanelsProps extends BaseBoxProps {
   children: React.ReactElement[];
 }
 
 const TabPanels: React.FC<TabPanelsProps> = ({ children, className, style, ...rest }) => {
-  const { currentPage } = useTabs();
+  const { currentPage, size } = useTabs();
   const ActivePage = children[currentPage];
+
   return (
-    <Box display="flex" width="100%" className={clsx('tabpanels', className)} style={style} {...rest}>
+    <BaseTabPanels
+      display="flex"
+      width="100%"
+      className={clsx('tabpanels', className)}
+      style={style}
+      tabsSize={size}
+      {...rest}
+    >
       {ActivePage}
-    </Box>
+    </BaseTabPanels>
   );
 };
 

@@ -35,12 +35,6 @@ const Template: Story<TabsProps> = args => (
 export const BasicExample = Template.bind({});
 BasicExample.args = {};
 
-export const Size40 = Template.bind({});
-Size40.args = {
-  ...BasicExample.args,
-  size: 40,
-};
-
 export const ExampleWithDefaultIndex = Template.bind({});
 ExampleWithDefaultIndex.args = {
   ...BasicExample.args,

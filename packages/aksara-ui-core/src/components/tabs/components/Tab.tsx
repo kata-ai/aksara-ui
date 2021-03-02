@@ -1,35 +1,16 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
-import { UnstyledButton, UnstyledButtonProps } from '../../../foundations';
-import { theme } from '../../../theme';
+import { BaseTabButton, BaseButtonProps } from '../styles';
 import { useTabs } from '../context';
 
-export interface TabProps extends UnstyledButtonProps {
+export interface TabProps extends BaseButtonProps {
   index?: number;
 }
 
-const TabButton = styled(UnstyledButton)<{ active?: boolean }>`
-  outline: none;
-  transition: all 0.2s ease 0s;
-
-  &:hover {
-    border-bottom: 2px solid ${theme.colors.grey04};
-  }
-
-  ${props =>
-    props.active &&
-    css`
-      font-weight: 500;
-      color: ${theme.colors.blue07};
-      border-bottom: 2px solid ${theme.colors.blue08};
-    `};
-`;
-
-const Tab: React.FC<TabProps> = ({ children, index = 0, size, ...rest }) => {
-  const { setPage, currentPage } = useTabs();
+const Tab: React.FC<TabProps> = ({ children, index = 0, ...rest }) => {
+  const { currentPage, setPage, size } = useTabs();
 
   return (
-    <TabButton
+    <BaseTabButton
       type="button"
       display="inline-flex"
       alignItems="center"
@@ -41,10 +22,11 @@ const Tab: React.FC<TabProps> = ({ children, index = 0, size, ...rest }) => {
       gridGap="sm"
       onClick={() => setPage(index)}
       active={currentPage === index}
+      tabsSize={size}
       {...rest}
     >
       {children}
-    </TabButton>
+    </BaseTabButton>
   );
 };
 
