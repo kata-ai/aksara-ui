@@ -12,6 +12,7 @@ export * from './loading';
 export * from './message';
 export * from './notification';
 export * from './pagination';
+export * from './panel';
 export * from './popover';
 export * from './side-sheet';
 export * from './skeleton';
