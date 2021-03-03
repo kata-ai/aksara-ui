@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BaseIconProps, iconDefaultProps } from '../utils/types';
 
 const IconAudio: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (

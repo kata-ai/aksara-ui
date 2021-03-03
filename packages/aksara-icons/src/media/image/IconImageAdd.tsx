@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BaseIconProps, iconDefaultProps } from '../../utils/types';
 
 const IconImageAdd: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
