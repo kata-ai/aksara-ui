@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BaseIconProps, iconDefaultProps } from '../utils/types';
 
 const IconNLU: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
