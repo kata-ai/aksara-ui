@@ -3,9 +3,11 @@
   "version": "1.0.0-canary.10",
   "description": "React icon library for the Aksara design system.",
   "sideEffects": false,
-  "main": "dist/index.js",
-  "module": "dist/icons.esm.js",
-  "typings": "dist/index.d.ts",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.modern.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
   "aksara:src": "./src/index.ts",
   "repository": "https://github.com/kata-ai/wicara.git",
   "author": "Kata.ai <dev@kata.ai>",
@@ -17,12 +19,13 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsdx build --transpileOnly --tsconfig tsconfig.build.json",
+    "build": "microbundle --no-compress --format modern,es,cjs --jsx React.createElement",
     "clean": "rimraf dist",
+    "dev": "microbundle watch --jsx React.createElement",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepublish": "yarn build",
-    "start": "tsdx watch --tsconfig tsconfig.build.json --verbose",
+    "start": "microbundle watch --jsx React.createElement",
     "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
