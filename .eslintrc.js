@@ -18,6 +18,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'dot-notation': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
     'react/jsx-closing-tag-location': 'off',
