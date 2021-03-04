@@ -8,7 +8,7 @@ import {
   AllSystemProps,
   sxMixin,
   SxProps,
-  getBaseStyles,
+  componentStylesMixin,
 } from '../../../system';
 import { textProps } from '../utils';
 
@@ -30,10 +30,10 @@ export interface AnchorProps<ThemeType extends Theme = RequiredTheme>
 const Anchor = styled('a').withConfig<AnchorProps>({
   shouldForwardProp: sfp(textProps),
 })(
-  getBaseStyles('anchor'),
+  componentStylesMixin('anchor'),
   variant({
     prop: 'scale',
-    scale: 'componentStyles.anchor.scales.typeScales',
+    scale: 'variants.text',
     variants: {
       900: {},
       800: {},

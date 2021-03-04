@@ -21,7 +21,7 @@ const Heading = styled('h2').withConfig<HeadingProps>({
 })(
   variant({
     prop: 'scale',
-    scale: 'componentStyles.heading.scales.typeScales',
+    scale: 'variants.heading',
     variants: {
       900: {},
       800: {},

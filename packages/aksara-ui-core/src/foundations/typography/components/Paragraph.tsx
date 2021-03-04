@@ -21,7 +21,7 @@ const Paragraph = styled('p').withConfig<ParagraphProps>({
 })(
   variant({
     prop: 'scale',
-    scale: 'componentStyles.paragraph.scales.typeScales',
+    scale: 'variants.paragraph',
     variants: {
       500: {},
       400: {},
