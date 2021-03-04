@@ -11,4 +11,4 @@ export { default as SystemContainer } from './SystemContainer';
 export { default as SystemHeader } from './SystemHeader';
 export { default as SystemSubheading } from './SystemSubheading';
 export { default as SystemWrapper } from './SystemWrapper';
-export { default as aksaraIconMaps } from './aksaraIconMaps';
+export { default as aksaraIconMaps } from '../../../../aksara-icons/src/utils/aksaraIconMaps';

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { toClipboard } from 'copee';
 
-import { Box, Card, Tooltip, UnstyledButton, notification } from '../..';
+import { Box, Card, Tooltip, UnstyledButton, notification } from '../../../aksara-ui-core/src';
 
 export const IconGrid: React.FC = ({ children }) => {
   return (

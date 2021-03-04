@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { aksaraIconMaps } from '../../utils/storybook';
-import { IconDetail, IconGrid } from '../../utils/storybook/icons';
+import aksaraIconMaps from '../utils/aksaraIconMaps';
+import { IconDetail } from '../utils/storybook';
+import { IconGrid } from '..';
 
 export default {
-  title: 'Core/Foundations/Icons',
+  title: 'Icons/Icon Library',
   parameters: {
     controls: {
       disabled: true,

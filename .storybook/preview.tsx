@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AksaraProvider } from '../src';
+import { AksaraProvider } from '../packages/aksara-ui-core/src';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

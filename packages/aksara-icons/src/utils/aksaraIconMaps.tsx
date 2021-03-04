@@ -167,7 +167,7 @@ import {
   IconMethods,
   IconPie,
   IconQuickReply,
-} from '@aksara-ui/icons';
+} from '..';
 
 interface IconMap {
   name: string;

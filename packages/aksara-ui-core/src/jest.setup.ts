@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable import/no-extraneous-dependencies */
 import '@testing-library/jest-dom/extend-expect';
