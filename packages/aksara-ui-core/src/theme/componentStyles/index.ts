@@ -1,12 +1,12 @@
 import card from './card';
-import typography from './typography';
+import { anchor } from './typography';
 
 /**
  * Custom theme props based on custom component variants.
  */
 const componentStyles = {
   card,
-  ...typography,
+  anchor,
 };
 
 export default componentStyles;
