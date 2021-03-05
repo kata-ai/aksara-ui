@@ -13,6 +13,12 @@ export default {
         options: ['default', 'neutral', 'info', 'warning', 'critical', 'success'],
       },
     },
+    size: {
+      control: {
+        type: 'radio',
+        options: ['sm', 'md', 'lg'],
+      },
+    },
     children: {
       control: 'text',
     },
