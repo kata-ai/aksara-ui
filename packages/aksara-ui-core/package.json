@@ -19,13 +19,14 @@
   },
   "scripts": {
     "build": "microbundle --no-compress --format modern,es,cjs --jsx React.createElement",
+    "build-storybook": "build-storybook --quiet",
     "clean": "rimraf dist",
     "dev": "microbundle watch --jsx React.createElement",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepublish": "yarn build",
     "report-coverage": "codecov -f ./coverage/*.json",
-    "start": "microbundle watch --jsx React.createElement",
+    "start": "yarn dev",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "type-check": "tsc --emitDeclarationOnly"
