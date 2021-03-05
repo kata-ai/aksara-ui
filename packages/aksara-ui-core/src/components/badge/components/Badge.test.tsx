@@ -12,7 +12,7 @@ describe('components/Badge', () => {
     });
 
     test('renders with additional variants', () => {
-      const { container } = render(<Badge variant="green">test badge</Badge>);
+      const { container } = render(<Badge variant="success">test badge</Badge>);
 
       expect(container.firstChild).toMatchSnapshot();
     });
