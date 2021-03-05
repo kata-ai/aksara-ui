@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
 
-import badgeVariants from '../variants';
 import Badge, { BadgeProps } from './Badge';
 
 export default {
@@ -11,7 +10,13 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: Object.keys(badgeVariants),
+        options: ['default', 'neutral', 'info', 'warning', 'critical', 'success'],
+      },
+    },
+    size: {
+      control: {
+        type: 'radio',
+        options: ['sm', 'md', 'lg'],
       },
     },
     children: {
@@ -24,6 +29,7 @@ const Template: Story<React.PropsWithChildren<BadgeProps>> = args => <Badge {...
 
 export const BasicExample = Template.bind({});
 BasicExample.args = {
-  variant: 'base',
+  variant: 'default',
+  size: 'md',
   children: 'example',
 };
