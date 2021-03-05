@@ -12,6 +12,7 @@ export interface BadgeProps extends Omit<BoxProps, 'size'> {
   variant?: 'default' | 'neutral' | 'info' | 'warning' | 'critical' | 'success';
   /** Size of the badge. Defaults to 'md' */
   size?: 'sm' | 'md' | 'lg';
+  children?: React.ReactNode;
 }
 
 /** Badge text for entity, status, etc. */
