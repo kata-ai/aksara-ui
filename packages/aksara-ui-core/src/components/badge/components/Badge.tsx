@@ -15,23 +15,19 @@ export interface BadgeProps extends Omit<BoxProps, 'size'> {
 }
 
 /** Badge text for entity, status, etc. */
-const Badge: React.FC<BadgeProps> = ({ className, style, variant, size, children, sx, ...rest }) => {
+const Badge: React.ForwardRefRenderFunction<HTMLSpanElement, BadgeProps> = (
+  { className, style, variant = 'default', size = 'md', children, sx, ...rest },
+  ref
+) => {
   const styles = useComponentStyles('badge', { variant, size });
 
   return (
-    <Box as="span" className={className} style={style} sx={{ ...styles, ...sx }} {...rest}>
+    <Box as="span" ref={ref} className={className} style={style} sx={{ ...styles, ...sx }} {...rest}>
       {children}
     </Box>
   );
 };
 
-Badge.defaultProps = {
-  variant: 'default',
-  size: 'md',
-  className: undefined,
-  style: undefined,
-};
-
 Badge.displayName = 'Badge';
 
-export default Badge;
+export default React.forwardRef(Badge);
