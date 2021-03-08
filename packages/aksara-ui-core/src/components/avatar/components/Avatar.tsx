@@ -1,67 +1,80 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { IconUser, IconAudience } from '@aksara-ui/icons';
 
-import { AvatarBase, AvatarBaseProps } from '../styles';
-import { Text } from '../../../foundations';
+import { Box, BoxProps, Text } from '../../../foundations';
+import { useComponentStyles } from '../../../system';
 import getInitials from '../utils/getInitials';
 
-export interface AvatarProps extends AvatarBaseProps {
-  /** The avatar's image source. */
-  src?: any;
+export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** Additional CSS classes to give to the component. */
   className?: string;
-  /** Alt text for the avatar */
-  alt?: string;
   /** Additional CSS styles to give to the component. */
   style?: React.CSSProperties;
+  /** Name for initials */
+  name?: string;
+  /** The avatar's image source. */
+  src?: any;
+  /** Alt text for the avatar. */
+  alt?: string;
+  /** The background color of the avatar. */
+  bg?: string;
+  /** The icon that renders with the avatar. */
+  icon?: React.ComponentType<any>;
+  /** Size of the avatar. */
+  size?: 24 | 32 | 40;
 }
 
-const Root = styled('div')`
-  ${AvatarBase};
-`;
+function iconSizes(size: AvatarProps['size'] = 40) {
+  switch (size) {
+    case 24: {
+      return 12;
+    }
+    case 32: {
+      return 16;
+    }
+    case 40: {
+      return 20;
+    }
+    default: {
+      return 20;
+    }
+  }
+}
 
 /** Resizable avatar component. */
-const Avatar: React.FC<AvatarProps> = ({ src, size, shape, className, style, alt, name, type, ...rest }) => {
-  const renderAvatarIcon = () => {
-    return type === 'user' ? <IconUser fill="currentColor" /> : <IconAudience fill="currentColor" />;
-  };
+const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
+  ({ className, style, src, alt = '', name, size = 40, color = 'white', bg = 'indigo03', icon, ...rest }, ref) => {
+    const styles = useComponentStyles('avatar', { size });
 
-  const renderInitials = () => {
-    if (size === 24 || src || !name) {
-      return null;
-    }
+    const renderInitials = () => {
+      return <Text scale={300}>{name ? getInitials(name) : '??'}</Text>;
+    };
 
-    return <Text scale={300}>{getInitials(name)}</Text>;
-  };
+    const renderImage = () => {
+      if (src) {
+        return (
+          <Box
+            as="img"
+            sx={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }}
+            src={src}
+            alt={alt}
+          />
+        );
+      }
 
-  const renderImage = () => {
-    if (src) {
-      return <img src={src} alt={alt} />;
-    }
+      if (icon) {
+        return React.createElement(icon, { fill: 'currentColor', size: iconSizes(size), 'aria-hidden': true });
+      }
 
-    if (!name) {
-      return renderAvatarIcon();
-    }
+      return renderInitials();
+    };
 
-    return null;
-  };
-
-  return (
-    <Root className={className} style={style} size={size} shape={shape} {...rest}>
-      {renderInitials()}
-      {renderImage()}
-    </Root>
-  );
-};
-
-Avatar.defaultProps = {
-  size: 40,
-  alt: '',
-  color: 'indigo',
-  type: 'user',
-  shape: 'rounded',
-};
+    return (
+      <Box as="span" ref={ref} className={className} style={style} color={color} bg={bg} sx={{ ...styles }} {...rest}>
+        {renderImage()}
+      </Box>
+    );
+  }
+);
 
 Avatar.displayName = 'Avatar';
 
