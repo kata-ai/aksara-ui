@@ -1,3 +1,4 @@
+import { IconClose } from '@aksara-ui/icons';
 import { Story } from '@storybook/react';
 import * as React from 'react';
 
@@ -30,6 +31,15 @@ const Template: Story<React.PropsWithChildren<BadgeProps>> = args => <Badge {...
 export const BasicExample = Template.bind({});
 BasicExample.args = {
   variant: 'default',
+  size: 'md',
+  children: 'example',
+};
+
+export const WithIcon: Story<React.PropsWithChildren<BadgeProps>> = args => {
+  return <Badge icon={IconClose} {...args} />;
+};
+WithIcon.args = {
+  variant: 'critical',
   size: 'md',
   children: 'example',
 };
