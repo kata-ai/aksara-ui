@@ -54,8 +54,8 @@
   },
   "peerDependencies": {
     "@aksara-ui/icons": "^1.0.0-canary.0",
-    "react": "^16.10.0",
-    "react-dom": "^16.10.0",
+    "react": "^16.10.0 || ^17.0.0",
+    "react-dom": "^16.10.0 || ^17.0.0",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
@@ -80,9 +80,9 @@
     "copee": "^1.0.6",
     "jest": "^26.6.3",
     "jest-styled-components": "^7.0.3",
-    "react": "^16.13.1",
+    "react": "^17.0.1",
     "react-docgen-typescript-loader": "^3.6.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
   }
 }
