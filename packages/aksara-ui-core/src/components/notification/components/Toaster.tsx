@@ -112,7 +112,7 @@ interface ToasterState {
 }
 
 export default class Toaster extends React.PureComponent<ToasterSettings, ToasterState> {
-  private closeTimer: number | null = null;
+  private closeTimer: NodeJS.Timeout | null = null;
 
   static defaultProps: Partial<ToasterSettings> = {
     status: 'default',
