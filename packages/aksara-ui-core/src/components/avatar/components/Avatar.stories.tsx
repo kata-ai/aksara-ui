@@ -1,7 +1,7 @@
+import { IconUser } from '@aksara-ui/icons';
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import avatarColors from '../theme';
 import Avatar, { AvatarProps } from './Avatar';
 
 export default {
@@ -17,12 +17,6 @@ export default {
     name: {
       control: 'text',
     },
-    color: {
-      control: {
-        type: 'select',
-        options: Object.keys(avatarColors),
-      },
-    },
     src: {
       control: 'text',
     },
@@ -35,6 +29,13 @@ export const Example = Template.bind({});
 Example.args = {
   size: 40,
   name: 'Adry Muhammad',
-  color: 'indigo',
+  bg: 'indigo03',
   src: 'https://picsum.photos/id/2/400/400',
+};
+
+export const WithIcons: Story<AvatarProps> = args => <Avatar icon={IconUser} {...args} />;
+WithIcons.args = {
+  size: 40,
+  name: 'Adry Muhammad',
+  bg: 'indigo03',
 };
