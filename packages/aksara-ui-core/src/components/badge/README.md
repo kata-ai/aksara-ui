@@ -16,8 +16,9 @@ See more usage in the _JSX_ panel
 
 ## Props
 
-| Property  | Type                                                                                       | Required | Default     |
-| --------- | ------------------------------------------------------------------------------------------ | -------- | ----------- |
-| variant   | `'base'`, `'label'`, `'keyboard'`, `'green'`, `'yellow'`, `'red'`, `'turquoise'`, `'blue'` | -        | -           |
-| className | `string`                                                                                   | -        | `undefined` |
-| style     | `React.CSSProperties`                                                                      | -        | `undefined` |
+| Property  | Type                  | Required | Default     |
+| --------- | --------------------- | -------- | ----------- |
+| variant   | `string`              | -        | `'default'` |
+| size      | `string`              | -        | `'md'`      |
+| className | `string`              | -        | `undefined` |
+| style     | `React.CSSProperties` | -        | `undefined` |
