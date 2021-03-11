@@ -23,7 +23,10 @@ export interface PillProps extends Omit<BoxProps, 'size'> {
 const CloseButton = styled(IconButton)<{ outline?: boolean }>`
   background-color: rgba(49, 63, 78, 0.2);
   color: ${theme.colors.grey03};
-  border-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   outline: none;
   height: 100%;
 
