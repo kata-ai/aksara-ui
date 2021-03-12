@@ -16,6 +16,8 @@ export interface PillProps extends Omit<BoxProps, 'size'> {
   className?: string;
   /** Additional CSS properties to give to the component. */
   style?: React.CSSProperties;
+  /** Set `true` to display the Close button. */
+  closable?: boolean;
   /** Triggers when the Close button is clicked. */
   onClose?: () => void;
 }
@@ -54,12 +56,21 @@ const Pill: React.FC<PillProps> = ({
   children,
   size = 'sm',
   variant = 'default',
+  closable = false,
   onClose,
   sx,
   ...rest
 }) => {
   const boxStyles = useComponentStyles('pill', { variant });
-  const buttonStyles = useComponentStyles('pill', { size, buttonVariant: variant });
+  const buttonStyles = useComponentStyles('pill', { size, buttonVariant: closable ? variant : undefined });
+
+  const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (onClose) {
+      onClose();
+    }
+  };
 
   return (
     <Box
@@ -75,8 +86,8 @@ const Pill: React.FC<PillProps> = ({
       <Box as="span" role="button" sx={{ ...buttonStyles, ...sx }}>
         {children}
       </Box>
-      {onClose && (
-        <CloseButton onClick={onClose} outline={variant === 'neutral'}>
+      {closable && onClose && (
+        <CloseButton onClick={handleClose} outline={variant === 'neutral'}>
           <IconClose fill="currentColor" aria-hidden="true" display="inline-block" />
         </CloseButton>
       )}

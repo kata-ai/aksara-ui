@@ -19,6 +19,7 @@ export const BasicExample = Template.bind({});
 BasicExample.args = {};
 
 export const ClosableExample = Template.bind({});
-BasicExample.args = {
+ClosableExample.args = {
+  closable: true,
   onClose: action('pill-close'),
 };
