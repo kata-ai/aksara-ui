@@ -6,6 +6,10 @@ import { Box, BoxProps } from '../../../foundations';
 import { theme } from '../../../theme';
 
 export interface SpinnerProps extends BoxProps {
+  /** Additional classes to give to the component. */
+  className?: string;
+  /** Additional styles to give to the component. */
+  style?: React.CSSProperties;
   /** The color of the spinner. */
   spinnerColor?: string;
   /** The speed of the spinner. */
