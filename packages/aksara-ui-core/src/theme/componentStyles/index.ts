@@ -1,6 +1,7 @@
 import avatar from './avatar';
 import badge from './badge';
 import card from './card';
+import pill from './pill';
 import { anchor } from './typography';
 
 /**
@@ -11,6 +12,7 @@ const componentStyles = {
   badge,
   card,
   anchor,
+  pill,
 };
 
 export default componentStyles;
