@@ -5,4 +5,3 @@ export { default as IconHistoryPanel } from './IconHistoryPanel';
 export { default as IconIdea } from './IconIdea';
 export { default as IconMethods } from './IconMethods';
 export { default as IconPie } from './IconPie';
-export { default as IconQuickReply } from './IconQuickReply';

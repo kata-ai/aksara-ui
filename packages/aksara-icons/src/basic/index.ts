@@ -6,7 +6,9 @@ export * from './drag';
 export * from './drop';
 export * from './eye';
 export * from './jump';
+export * from './minus';
 export * from './plus';
+export * from './quick';
 export * from './tick';
 export * from './warning';
 
@@ -25,6 +27,7 @@ export { default as IconMixer } from './IconMixer';
 export { default as IconRefresh } from './IconRefresh';
 export { default as IconReply } from './IconReply';
 export { default as IconSearch } from './IconSearch';
+export { default as IconStar } from './IconStar';
 export { default as IconTrash } from './IconTrash';
 export { default as IconUnlabel } from './IconUnlabel';
 export { default as IconUpload } from './IconUpload';
