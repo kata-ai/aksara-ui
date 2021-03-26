@@ -27,6 +27,7 @@ export { default as IconPersistentMenu } from './IconPersistentMenu';
 export { default as IconPlug } from './IconPlug';
 export { default as IconSave } from './IconSave';
 export { default as IconSend } from './IconSend';
+export { default as IconShare } from './IconShare';
 export { default as IconShutdown } from './IconShutdown';
 export { default as IconSlinder } from './IconSlinder';
 export { default as IconSquare } from './IconSquare';
