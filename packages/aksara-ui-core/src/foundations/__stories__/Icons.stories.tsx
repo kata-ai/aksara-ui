@@ -121,13 +121,3 @@ export const Social = () => (
     ))}
   </IconGrid>
 );
-
-export const Panel = () => (
-  <IconGrid>
-    {aksaraIconMaps.panel.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-);

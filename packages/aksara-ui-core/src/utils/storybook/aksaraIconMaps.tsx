@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import {
-  IconAnalytic,
   IconAPI,
   IconArrowDown,
   IconArrowDownRounded,
@@ -74,7 +73,6 @@ import {
   IconConversation3,
   IconConversation4,
   IconCopy,
-  IconCrmBot,
   IconCrystalLamp,
   IconData,
   IconDeploy,
@@ -96,7 +94,6 @@ import {
   IconEmoji,
   IconEntities,
   IconEnvironments,
-  IconError,
   IconEyeClose,
   IconEyeOpen,
   IconEyeRecognition,
@@ -115,11 +112,9 @@ import {
   IconGuides,
   IconHamburger,
   IconHistory,
-  IconHistoryPanel,
   IconHumanoid,
   IconHumanoid2,
   IconHumanoid3,
-  IconIdea,
   IconIdeaBrain,
   IconImage,
   IconImageAdd,
@@ -148,7 +143,6 @@ import {
   IconMessage,
   IconMessageBot,
   IconMessageTemplate,
-  IconMethods,
   IconMinus,
   IconMinusRound,
   IconMixer,
@@ -169,7 +163,6 @@ import {
   IconPen,
   IconPersistentMenu,
   IconPhrase,
-  IconPie,
   IconPlug,
   IconPlus,
   IconPlusRounded,
@@ -278,6 +271,7 @@ import {
   IconStoreAdd,
   IconWarehouse,
   IconCooking,
+  IconMedium,
 } from '@aksara-ui/icons';
 
 interface IconMap {
@@ -530,15 +524,6 @@ const aksaraIconMaps: IconMapObject = {
     { name: 'IconKebabHorizontal', children: <IconKebabHorizontal /> },
     { name: 'IconKebabRounded', children: <IconKebabRounded /> },
   ],
-  panel: [
-    { name: 'IconAnalytic', children: <IconAnalytic /> },
-    { name: 'IconCrmBot', children: <IconCrmBot /> },
-    { name: 'IconError', children: <IconError /> },
-    { name: 'IconHistoryPanel', children: <IconHistoryPanel /> },
-    { name: 'IconIdea', children: <IconIdea /> },
-    { name: 'IconMethods', children: <IconMethods /> },
-    { name: 'IconPie', children: <IconPie /> },
-  ],
   social: [
     { name: 'IconBehance', children: <IconBehance /> },
     { name: 'IconDribble', children: <IconDribble /> },
@@ -551,6 +536,7 @@ const aksaraIconMaps: IconMapObject = {
     { name: 'IconSlack', children: <IconSlack /> },
     { name: 'IconTwitter', children: <IconTwitter /> },
     { name: 'IconWhatsapp', children: <IconWhatsapp /> },
+    { name: 'IconMedium', children: <IconMedium /> },
   ],
   user: [
     { name: 'IconAudience', children: <IconAudience /> },

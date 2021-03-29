@@ -7,7 +7,6 @@ export * from './doc';
 export * from './ecommerce';
 export * from './media';
 export * from './menu';
-export * from './panel';
 export * from './social';
 export * from './user';
 export * from './utils';
