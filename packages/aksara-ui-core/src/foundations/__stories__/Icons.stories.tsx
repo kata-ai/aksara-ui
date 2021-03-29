@@ -52,6 +52,16 @@ export const Chat = () => (
   </IconGrid>
 );
 
+export const ECommerce = () => (
+  <IconGrid>
+    {aksaraIconMaps.ecommerce.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
 export const Atoms = () => (
   <IconGrid>
     {aksaraIconMaps.atoms.map(({ name, children }) => (

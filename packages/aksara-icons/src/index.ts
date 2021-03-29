@@ -4,6 +4,7 @@ export * from './basic';
 export * from './chat';
 export * from './chart';
 export * from './doc';
+export * from './ecommerce';
 export * from './media';
 export * from './menu';
 export * from './panel';
