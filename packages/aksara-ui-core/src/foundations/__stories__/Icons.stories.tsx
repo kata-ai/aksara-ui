@@ -42,9 +42,9 @@ export const Menu = () => (
   </IconGrid>
 );
 
-export const Bubbles = () => (
+export const Chat = () => (
   <IconGrid>
-    {aksaraIconMaps.bubble.map(({ name, children }) => (
+    {aksaraIconMaps.chat.map(({ name, children }) => (
       <IconDetail key={name} name={name}>
         {children}
       </IconDetail>

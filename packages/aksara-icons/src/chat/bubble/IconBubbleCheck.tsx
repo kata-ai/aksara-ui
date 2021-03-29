@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseIconProps, iconDefaultProps } from '../utils/types';
+import { BaseIconProps, iconDefaultProps } from '../../utils/types';
 
 const IconBubbleCheck: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>

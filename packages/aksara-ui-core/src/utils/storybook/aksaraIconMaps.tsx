@@ -361,7 +361,7 @@ const aksaraIconMaps: IconMapObject = {
     { name: 'IconStar', children: <IconStar /> },
     { name: 'IconUnlabel', children: <IconUnlabel /> },
   ],
-  bubble: [
+  chat: [
     { name: 'IconBubble', children: <IconBubble /> },
     { name: 'IconBubble2', children: <IconBubble2 /> },
     { name: 'IconBubble3', children: <IconBubble3 /> },
