@@ -18,7 +18,6 @@ export { default as IconDropdown } from './IconDropdown';
 export { default as IconEmoji } from './IconEmoji';
 export { default as IconFlag } from './IconFlag';
 export { default as IconGuides } from './IconGuides';
-export { default as IconLocator } from './IconLocator';
 export { default as IconMarker } from './IconMarker';
 export { default as IconMessage } from './IconMessage';
 export { default as IconPaperPlane } from './IconPaperPlane';

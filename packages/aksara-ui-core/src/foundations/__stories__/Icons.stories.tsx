@@ -42,9 +42,9 @@ export const Menu = () => (
   </IconGrid>
 );
 
-export const Chat = () => (
+export const ECommerce = () => (
   <IconGrid>
-    {aksaraIconMaps.chat.map(({ name, children }) => (
+    {aksaraIconMaps.ecommerce.map(({ name, children }) => (
       <IconDetail key={name} name={name}>
         {children}
       </IconDetail>
@@ -52,9 +52,9 @@ export const Chat = () => (
   </IconGrid>
 );
 
-export const ECommerce = () => (
+export const BusinessFinance = () => (
   <IconGrid>
-    {aksaraIconMaps.ecommerce.map(({ name, children }) => (
+    {aksaraIconMaps.businessfinance.map(({ name, children }) => (
       <IconDetail key={name} name={name}>
         {children}
       </IconDetail>
