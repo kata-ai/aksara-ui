@@ -62,6 +62,16 @@ export const BusinessFinance = () => (
   </IconGrid>
 );
 
+export const Marketing = () => (
+  <IconGrid>
+    {aksaraIconMaps.marketing.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
 export const Atoms = () => (
   <IconGrid>
     {aksaraIconMaps.atoms.map(({ name, children }) => (

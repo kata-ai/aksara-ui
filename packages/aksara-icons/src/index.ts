@@ -5,6 +5,7 @@ export * from './businessfinance';
 export * from './chat';
 export * from './doc';
 export * from './ecommerce';
+export * from './marketing';
 export * from './media';
 export * from './menu';
 export * from './social';
