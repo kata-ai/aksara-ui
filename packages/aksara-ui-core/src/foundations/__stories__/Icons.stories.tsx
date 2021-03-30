@@ -52,6 +52,16 @@ export const ECommerce = () => (
   </IconGrid>
 );
 
+export const Chat = () => (
+  <IconGrid>
+    {aksaraIconMaps.chat.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
 export const BusinessFinance = () => (
   <IconGrid>
     {aksaraIconMaps.businessfinance.map(({ name, children }) => (
@@ -75,6 +85,16 @@ export const Marketing = () => (
 export const Medicine = () => (
   <IconGrid>
     {aksaraIconMaps.medicine.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
+export const CustomerSupport = () => (
+  <IconGrid>
+    {aksaraIconMaps.customer.map(({ name, children }) => (
       <IconDetail key={name} name={name}>
         {children}
       </IconDetail>

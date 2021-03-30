@@ -3,6 +3,7 @@ export * from './atoms';
 export * from './basic';
 export * from './businessfinance';
 export * from './chat';
+export * from './customer';
 export * from './doc';
 export * from './ecommerce';
 export * from './legal';
