@@ -122,6 +122,16 @@ export const User = () => (
   </IconGrid>
 );
 
+export const Legal = () => (
+  <IconGrid>
+    {aksaraIconMaps.legal.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
 export const Media = () => (
   <IconGrid>
     {aksaraIconMaps.media.map(({ name, children }) => (
