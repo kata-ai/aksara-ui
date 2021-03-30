@@ -29,5 +29,4 @@ export { default as IconReply } from './IconReply';
 export { default as IconSearch } from './IconSearch';
 export { default as IconStar } from './IconStar';
 export { default as IconTrash } from './IconTrash';
-export { default as IconUnlabel } from './IconUnlabel';
 export { default as IconUpload } from './IconUpload';

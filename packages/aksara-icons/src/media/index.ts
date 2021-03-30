@@ -10,7 +10,6 @@ export { default as IconButton } from './IconButton';
 export { default as IconCircle } from './IconCircle';
 export { default as IconCloudUpload } from './IconCloudUpload';
 export { default as IconCopy } from './IconCopy';
-export { default as IconDesign } from './IconDesign';
 export { default as IconDiamond } from './IconDiamond';
 export { default as IconDropdown } from './IconDropdown';
 export { default as IconEmoji } from './IconEmoji';

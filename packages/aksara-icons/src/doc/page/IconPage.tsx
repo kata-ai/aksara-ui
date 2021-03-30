@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BaseIconProps, iconDefaultProps } from '../utils/types';
+import { BaseIconProps, iconDefaultProps } from '../../utils/types';
 
-const IconPages: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
+const IconPage: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
     <path
       fillRule="evenodd"
@@ -12,8 +12,8 @@ const IconPages: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
   </svg>
 );
 
-IconPages.defaultProps = {
+IconPage.defaultProps = {
   ...iconDefaultProps,
 };
 
-export default IconPages;
+export default IconPage;
