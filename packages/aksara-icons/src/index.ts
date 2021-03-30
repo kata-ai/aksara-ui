@@ -10,5 +10,6 @@ export * from './media';
 export * from './medicine';
 export * from './menu';
 export * from './social';
+export * from './tech';
 export * from './user';
 export * from './utils';

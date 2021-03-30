@@ -141,3 +141,13 @@ export const Social = () => (
     ))}
   </IconGrid>
 );
+
+export const Technology = () => (
+  <IconGrid>
+    {aksaraIconMaps.tech.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
