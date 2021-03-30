@@ -181,3 +181,13 @@ export const Technology = () => (
     ))}
   </IconGrid>
 );
+
+export const Daily = () => (
+  <IconGrid>
+    {aksaraIconMaps.daily.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);

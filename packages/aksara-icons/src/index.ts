@@ -4,6 +4,7 @@ export * from './basic';
 export * from './businessfinance';
 export * from './chat';
 export * from './customer';
+export * from './daily';
 export * from './doc';
 export * from './ecommerce';
 export * from './legal';
