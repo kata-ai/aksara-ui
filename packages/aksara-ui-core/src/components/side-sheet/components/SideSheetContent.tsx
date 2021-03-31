@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Box } from '../../../foundations';
-import { DialogContentProps } from '../../dialog';
+import { Box, BoxProps } from '../../../foundations';
 
-export type SideSheetContentProps = DialogContentProps;
+export type SideSheetContentProps = BoxProps;
 
 const SideSheetContent: React.FC<SideSheetContentProps> = ({ children, ...rest }) => {
   return (
