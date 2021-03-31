@@ -112,16 +112,6 @@ export const Atoms = () => (
   </IconGrid>
 );
 
-export const Chart = () => (
-  <IconGrid>
-    {aksaraIconMaps.chart.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-);
-
 export const AI = () => (
   <IconGrid>
     {aksaraIconMaps.ai.map(({ name, children }) => (
