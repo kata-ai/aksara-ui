@@ -8,7 +8,7 @@ const SideSheetContent: React.FC<SideSheetContentProps> = ({ children, ...rest }
     <Box flex="1 1 auto" pt="md" pb={64} px="xl" {...rest}>
       {children}
     </Box>
-  )
+  );
 };
 
 SideSheetContent.displayName = 'SideSheetContent';
