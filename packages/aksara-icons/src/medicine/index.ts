@@ -1,0 +1,21 @@
+export * from './hearth';
+export * from './redcross';
+
+export { default as IconAmbulance } from './IconAmbulance';
+export { default as IconBagMedic } from './IconBagMedic';
+export { default as IconBloodPlasma } from './IconBloodPlasma';
+export { default as IconCapsule } from './IconCapsule';
+export { default as IconDental } from './IconDental';
+export { default as IconDNA } from './IconDNA';
+export { default as IconDocumentMedic } from './IconDocumentMedic';
+export { default as IconDrug } from './IconDrug';
+export { default as IconHealthBox } from './IconHealthBox';
+export { default as IconHealthCare } from './IconHealthCare';
+export { default as IconHospital } from './IconHospital';
+export { default as IconLab } from './IconLab';
+export { default as IconMonitorMedic } from './IconMonitorMedic';
+export { default as IconNoSmoking } from './IconNoSmoking';
+export { default as IconShieldHeart } from './IconShieldHeart';
+export { default as IconStetoskop } from './IconStetoskop';
+export { default as IconSyringe } from './IconSyringe';
+export { default as IconVirus } from './IconVirus';

@@ -1,0 +1,23 @@
+export * from './bag';
+export * from './barcode';
+export * from './basket';
+export * from './box';
+export * from './collection';
+export * from './invoice';
+export * from './store';
+
+export { default as IconAtm } from './IconAtm';
+export { default as IconAwards } from './IconAwards';
+export { default as IconCamera } from './IconCamera';
+export { default as IconCart } from './IconCart';
+export { default as IconCartAdd } from './IconCartAdd';
+export { default as IconCooking } from './IconCooking';
+export { default as IconDelivery } from './IconDelivery';
+export { default as IconDiscount } from './IconDiscount';
+export { default as IconFlag2 } from './IconFlag2';
+export { default as IconGif } from './IconGif';
+export { default as IconGift } from './IconGift';
+export { default as IconLabel } from './IconLabel';
+export { default as IconLid } from './IconLid';
+export { default as IconPromo } from './IconPromo';
+export { default as IconWarehouse } from './IconWarehouse';

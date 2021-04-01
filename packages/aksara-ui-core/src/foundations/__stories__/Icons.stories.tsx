@@ -42,9 +42,59 @@ export const Menu = () => (
   </IconGrid>
 );
 
-export const Bubbles = () => (
+export const ECommerce = () => (
   <IconGrid>
-    {aksaraIconMaps.bubble.map(({ name, children }) => (
+    {aksaraIconMaps.ecommerce.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
+export const Chat = () => (
+  <IconGrid>
+    {aksaraIconMaps.chat.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
+export const BusinessFinance = () => (
+  <IconGrid>
+    {aksaraIconMaps.businessfinance.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
+export const Marketing = () => (
+  <IconGrid>
+    {aksaraIconMaps.marketing.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
+export const Medicine = () => (
+  <IconGrid>
+    {aksaraIconMaps.medicine.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
+export const CustomerSupport = () => (
+  <IconGrid>
+    {aksaraIconMaps.customer.map(({ name, children }) => (
       <IconDetail key={name} name={name}>
         {children}
       </IconDetail>
@@ -55,16 +105,6 @@ export const Bubbles = () => (
 export const Atoms = () => (
   <IconGrid>
     {aksaraIconMaps.atoms.map(({ name, children }) => (
-      <IconDetail key={name} name={name}>
-        {children}
-      </IconDetail>
-    ))}
-  </IconGrid>
-);
-
-export const Chart = () => (
-  <IconGrid>
-    {aksaraIconMaps.chart.map(({ name, children }) => (
       <IconDetail key={name} name={name}>
         {children}
       </IconDetail>
@@ -92,6 +132,16 @@ export const User = () => (
   </IconGrid>
 );
 
+export const Legal = () => (
+  <IconGrid>
+    {aksaraIconMaps.legal.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
 export const Media = () => (
   <IconGrid>
     {aksaraIconMaps.media.map(({ name, children }) => (
@@ -112,9 +162,19 @@ export const Social = () => (
   </IconGrid>
 );
 
-export const Panel = () => (
+export const Technology = () => (
   <IconGrid>
-    {aksaraIconMaps.panel.map(({ name, children }) => (
+    {aksaraIconMaps.tech.map(({ name, children }) => (
+      <IconDetail key={name} name={name}>
+        {children}
+      </IconDetail>
+    ))}
+  </IconGrid>
+);
+
+export const Daily = () => (
+  <IconGrid>
+    {aksaraIconMaps.daily.map(({ name, children }) => (
       <IconDetail key={name} name={name}>
         {children}
       </IconDetail>

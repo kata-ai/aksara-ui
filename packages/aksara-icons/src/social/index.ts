@@ -6,6 +6,7 @@ export { default as IconGithub } from './IconGithub';
 export { default as IconInstagram } from './IconInstagram';
 export { default as IconLine } from './IconLine';
 export { default as IconLinkedin } from './IconLinkedin';
+export { default as IconMedium } from './IconMedium';
 export { default as IconSlack } from './IconSlack';
 export { default as IconTwitter } from './IconTwitter';
 export { default as IconWhatsapp } from './IconWhatsapp';
