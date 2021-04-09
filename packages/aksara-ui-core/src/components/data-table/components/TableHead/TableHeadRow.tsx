@@ -1,7 +1,18 @@
-import styled from 'styled-components';
+import * as React from 'react';
+import { Box, BoxProps } from '../../../../foundations';
 
-const TableHeadRow = styled('tr')``;
+export type TableHeadRowProps = React.TableHTMLAttributes<HTMLTableRowElement> & Omit<BoxProps, 'width' | 'height'>;
 
-TableHeadRow.displayName = 'TableHeadRow';
+const TableHeadRow = React.forwardRef<HTMLTableRowElement, TableHeadRowProps>(
+  ({ children, _hover, _notLast, ...rest }, ref) => {
+    return (
+      <Box as="tr" ref={ref} {...rest}>
+        {children}
+      </Box>
+    );
+  }
+);
+
+TableHeadRow.displayName = 'TableBody';
 
 export default TableHeadRow;

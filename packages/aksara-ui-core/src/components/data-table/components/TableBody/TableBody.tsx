@@ -1,6 +1,15 @@
-import styled from 'styled-components';
+import * as React from 'react';
+import { Box, BoxProps } from '../../../../foundations';
 
-const TableBody = styled('tbody')``;
+export type TableBodyProps = React.TableHTMLAttributes<HTMLTableSectionElement> & Omit<BoxProps, 'width' | 'height'>;
+
+const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProps>(({ children, ...rest }, ref) => {
+  return (
+    <Box as="tbody" ref={ref} {...rest}>
+      {children}
+    </Box>
+  );
+});
 
 TableBody.displayName = 'TableBody';
 

@@ -1,14 +1,15 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
-import { theme } from '../../../../theme';
+import * as React from 'react';
+import { Box, BoxProps } from '../../../../foundations';
 
-const Table = styled('table')`
-  width: 100%;
-  border-spacing: 0;
-  border: 1px solid ${themeGet('colors.grey04', theme.colors.grey04)};
-  border-radius: 4px;
-  overflow: hidden;
-`;
+export type TableProps = React.TableHTMLAttributes<HTMLTableElement> & Omit<BoxProps, 'width' | 'height'>;
+
+const Table = React.forwardRef<HTMLTableElement, TableProps>(({ children, sx, ...rest }, ref) => {
+  return (
+    <Box ref={ref} as="table" width="100%" sx={{ borderCollapse: 'collapse', ...sx }} {...rest}>
+      {children}
+    </Box>
+  );
+});
 
 Table.displayName = 'Table';
 

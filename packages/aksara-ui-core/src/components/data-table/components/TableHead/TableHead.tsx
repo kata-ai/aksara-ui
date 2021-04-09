@@ -1,10 +1,15 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
-import { theme } from '../../../../theme';
+import * as React from 'react';
+import { Box, BoxProps } from '../../../../foundations';
 
-const TableHead = styled('thead')`
-  background-color: ${themeGet('colors.grey04', theme.colors.grey04)};
-`;
+export type TableHeadProps = React.TableHTMLAttributes<HTMLTableSectionElement> & Omit<BoxProps, 'width' | 'height'>;
+
+const TableHead = React.forwardRef<HTMLTableSectionElement, TableHeadProps>(({ children, ...rest }, ref) => {
+  return (
+    <Box as="thead" ref={ref} {...rest}>
+      {children}
+    </Box>
+  );
+});
 
 TableHead.displayName = 'TableHead';
 

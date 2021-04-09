@@ -1,27 +1,31 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { Text } from '../../../../foundations';
-import { BaseStylesProps, BaseStyles } from '../../styles';
+import { Box, BoxProps, Text } from '../../../../foundations';
+import { theme } from '../../../../theme';
 
-export type TableHeaderCellProps = React.ThHTMLAttributes<HTMLTableHeaderCellElement>;
+export type TableHeadCellProps = React.ThHTMLAttributes<HTMLTableHeaderCellElement> &
+  Omit<BoxProps, 'width' | 'height'>;
 
-const TableHeaderRoot = styled('th')<BaseStylesProps>`
-  text-align: left;
-
-  ${BaseStyles}
-`;
-
-const TableHeaderText = styled(Text)`
-  text-transform: uppercase;
-`;
-
-const TableHeadCell: React.FC<TableHeaderCellProps> = ({ className, style, children, ...rest }) => {
-  return (
-    <TableHeaderRoot className={className} style={style} px="md" py="xs" {...rest}>
-      <TableHeaderText scale={200}>{children}</TableHeaderText>
-    </TableHeaderRoot>
-  );
-};
+const TableHeadCell = React.forwardRef<HTMLTableHeaderCellElement, TableHeadCellProps>(
+  ({ className, style, children, ...rest }, ref) => {
+    return (
+      <Box
+        ref={ref}
+        as="th"
+        className={className}
+        style={style}
+        textAlign="left"
+        px="lg"
+        py="sm"
+        sx={{ boxShadow: `inset 0px 1px 0px ${theme.colors.grey03}, inset 0px -1px 0px ${theme.colors.grey03}` }}
+        {...rest}
+      >
+        <Text scale={200} fontWeight={600}>
+          {children}
+        </Text>
+      </Box>
+    );
+  }
+);
 
 TableHeadCell.displayName = 'TableHeadCell';
 
