@@ -19,7 +19,7 @@ const TableHeadCell = React.forwardRef<HTMLTableHeaderCellElement, TableHeadCell
         sx={{ boxShadow: `inset 0px 1px 0px ${theme.colors.grey03}, inset 0px -1px 0px ${theme.colors.grey03}` }}
         {...rest}
       >
-        <Text scale={200} fontWeight={600}>
+        <Text scale={200} fontWeight={700}>
           {children}
         </Text>
       </Box>
