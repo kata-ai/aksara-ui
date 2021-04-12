@@ -1,12 +1,5 @@
-# Data Table
+import * as React from 'react';
 
-> Data tables are used to display associated information in an easily scannable way. And used to logically structure content in a gird to make it easier to see relantionship and to facilitate understanding.
-
-## Usage
-
-To use this component in your app, import as follows:
-
-```tsx
 import {
   Table,
   TableContainer,
@@ -16,9 +9,14 @@ import {
   TableBody,
   TableBodyRow,
   TableBodyCell,
-} from '@aksara-ui/core';
+} from './components';
 
-export default function Component() {
+export default {
+  title: 'Core/Components/Table',
+  component: Table,
+};
+
+export const Example = () => {
   return (
     <TableContainer>
       <Table>
@@ -47,5 +45,27 @@ export default function Component() {
       </Table>
     </TableContainer>
   );
-}
-```
+};
+
+export const Headless = () => {
+  return (
+    <TableContainer>
+      <Table>
+        <TableBody>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+          <TableBodyRow>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+            <TableBodyCell>Cell Item</TableBodyCell>
+          </TableBodyRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+};

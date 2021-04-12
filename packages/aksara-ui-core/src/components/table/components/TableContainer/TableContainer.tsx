@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Box, BoxProps } from '../../../../foundations';
 
-export type TableContainerProps = BoxProps;
+export type TableContainerProps = BoxProps & React.HTMLAttributes<HTMLDivElement>;
 
-const TableContainer = React.forwardRef<HTMLDivElement, BoxProps>(({ children, ...rest }, ref) => {
+const TableContainer = React.forwardRef<HTMLDivElement, TableContainerProps>(({ children, ...rest }, ref) => {
   return (
     <Box ref={ref} overflowX="auto" {...rest}>
       {children}

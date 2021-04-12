@@ -1,5 +1,12 @@
-import * as React from 'react';
+# Table
 
+> Tables are used to display associated information in an easily scannable way. It is also used to logically structure content in a gird to make it easier to see relationship and to facilitate understanding.
+
+## Usage
+
+To use this component in your app, import as follows:
+
+```tsx
 import {
   Table,
   TableContainer,
@@ -9,14 +16,9 @@ import {
   TableBody,
   TableBodyRow,
   TableBodyCell,
-} from './components';
+} from '@aksara-ui/core';
 
-export default {
-  title: 'Core/Components/Data Table',
-  component: [TableContainer, Table],
-};
-
-export const Example = () => {
+export default function Component() {
   return (
     <TableContainer>
       <Table>
@@ -45,27 +47,5 @@ export const Example = () => {
       </Table>
     </TableContainer>
   );
-};
-
-export const Headless = () => {
-  return (
-    <TableContainer>
-      <Table>
-        <TableBody>
-          <TableBodyRow>
-            <TableBodyCell>Cell Item</TableBodyCell>
-            <TableBodyCell>Cell Item</TableBodyCell>
-            <TableBodyCell>Cell Item</TableBodyCell>
-            <TableBodyCell>Cell Item</TableBodyCell>
-          </TableBodyRow>
-          <TableBodyRow>
-            <TableBodyCell>Cell Item</TableBodyCell>
-            <TableBodyCell>Cell Item</TableBodyCell>
-            <TableBodyCell>Cell Item</TableBodyCell>
-            <TableBodyCell>Cell Item</TableBodyCell>
-          </TableBodyRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-};
+}
+```
