@@ -19,7 +19,7 @@ export interface BlankslateProps {
   /** Additional CSS styles to give to the component. */
   style?: React.CSSProperties;
   /** Variant of the blankslate component. Can be `page` or `inner`. */
-  variant: 'page' | 'inner';
+  variant: 'page' | 'section' | 'inner';
   /** The title of the non-ideal state. */
   title?: string;
   /** Render any image inside the image block up to 155px height. */
@@ -28,49 +28,80 @@ export interface BlankslateProps {
   content: React.ReactNode;
 }
 
-const BlankslateWrapper: React.FC<Pick<BlankslateProps, 'className' | 'style'>> = ({ className, style, children }) => {
-  return (
-    <Box className={className} style={style} mx="auto" my="xxl" width="100%" maxWidth="528px" textAlign="center">
-      {children}
-    </Box>
-  );
-};
+const Blankslate = React.forwardRef<HTMLDivElement, BlankslateProps>(
+  ({ className, style, variant, image, title, content, children }, ref) => {
+    const renderContent = () => {
+      if (children) {
+        console.warn('Using `children` has been deprecated in favour of the `content` prop. Please use that instead.');
+        return children;
+      }
 
-const Blankslate: React.FC<BlankslateProps> = ({ className, style, variant, image, title, content, children }) => {
-  const renderContent = () => {
-    if (children) {
-      console.warn('Using `children` has been deprecated in favour of the `content` prop. Please use that instead.');
-      return children;
-    }
+      if (typeof content === 'string') {
+        return <Paragraph color="grey07">{content}</Paragraph>;
+      }
 
-    if (typeof content === 'string') {
-      return <Paragraph color="grey07">{content}</Paragraph>;
-    }
+      return content;
+    };
 
-    return content;
-  };
+    const renderWrapper = () => {
+      if (variant === 'inner') {
+        return (
+          <>
+            {image && <ImageWrapper mb="md">{image}</ImageWrapper>}
+            <Box fontSize="14px" lineHeight="24px">
+              {renderContent()}
+            </Box>
+          </>
+        );
+      }
 
-  if (variant === 'inner') {
+      if (variant === 'section') {
+        return (
+          <>
+            {image && <ImageWrapper mb="md">{image}</ImageWrapper>}
+            {title && (
+              <Heading scale={400} mt={0} mb="md">
+                {title}
+              </Heading>
+            )}
+            <Box fontSize="14px" lineHeight="24px">
+              {renderContent()}
+            </Box>
+          </>
+        );
+      }
+
+      return (
+        <>
+          {image && <ImageWrapper mb="md">{image}</ImageWrapper>}
+          {title && (
+            <Heading scale={600} mt={0} mb="md">
+              {title}
+            </Heading>
+          )}
+          <Box fontSize="16px" lineHeight="24px">
+            {renderContent()}
+          </Box>
+        </>
+      );
+    };
+
     return (
-      <BlankslateWrapper className={className} style={style}>
-        {image && <ImageWrapper mb="md">{image}</ImageWrapper>}
-        <Box>{renderContent()}</Box>
-      </BlankslateWrapper>
+      <Box
+        ref={ref}
+        className={className}
+        style={style}
+        mx="auto"
+        my="xxl"
+        width="100%"
+        maxWidth="528px"
+        textAlign="center"
+      >
+        {renderWrapper()}
+      </Box>
     );
   }
-
-  return (
-    <BlankslateWrapper className={className} style={style}>
-      {image && <ImageWrapper mb="md">{image}</ImageWrapper>}
-      {title && (
-        <Heading scale={600} mt={0} mb="lg">
-          {title}
-        </Heading>
-      )}
-      <Box>{renderContent()}</Box>
-    </BlankslateWrapper>
-  );
-};
+);
 
 Blankslate.displayName = 'Blankslate';
 
