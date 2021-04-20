@@ -22,6 +22,20 @@ export const PageLevel = () => (
   />
 );
 
+export const SectionLevel = () => (
+  <Blankslate
+    image={<img src="https://via.placeholder.com/528x352.png" alt="Create a model" />}
+    title="Create a model"
+    variant="section"
+    content={
+      <Paragraph scale={300} color="grey07">
+        Perform specific text analysis tasks, like detecting topics, extracting specific words, and more.{' '}
+        <Anchor href="#">Learn more</Anchor>
+      </Paragraph>
+    }
+  />
+);
+
 export const InnerLevel = () => (
   <Blankslate
     variant="inner"
