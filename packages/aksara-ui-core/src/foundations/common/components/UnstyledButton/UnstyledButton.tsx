@@ -1,40 +1,16 @@
 import styled from 'styled-components';
 import {
-  ButtonStyleProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  flexbox,
-  FlexboxProps,
-  grid,
-  GridProps,
-  space,
-  SpaceProps,
-  background,
-  BackgroundProps,
-  color,
-  ColorProps,
-  typography,
-  TypographyProps,
-  border,
-  BorderProps,
-  shadow,
-  ShadowProps,
-} from 'styled-system';
+  allSystemProps,
+  AllSystemProps,
+  pseudoSystemProps,
+  PseudoSystemProps,
+  shouldForwardProp,
+  sxMixin,
+  SxProps,
+  componentStylesMixin,
+} from '../../../../system';
 
-export interface UnstyledButtonProps
-  extends ButtonStyleProps,
-    LayoutProps,
-    PositionProps,
-    FlexboxProps,
-    GridProps,
-    SpaceProps,
-    BackgroundProps,
-    ColorProps,
-    TypographyProps,
-    BorderProps,
-    ShadowProps {
+export interface UnstyledButtonProps extends AllSystemProps, PseudoSystemProps, SxProps {
   /**
    * Extended color props. We need this because default `color` prop clashes with `styled-system`.
    */
@@ -42,44 +18,12 @@ export interface UnstyledButtonProps
 }
 
 /** A button element with all styling elements removed (incl. hover/focus effects). */
-const UnstyledButton = styled('button')<UnstyledButtonProps>`
-  width: auto;
-  margin: 0;
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-
-  /* Normalizes line height & removes center align */
-  line-height: normal;
-  text-align: inherit;
-
-  /* Corrects font smoothing for webkit */
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-
-  /* Corrects inability to style clickable \`input\` types in iOS */
-  -webkit-appearance: none;
-
-  /* Remove excess padding and border in Firefox 4+ */
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
-
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
-  ${background}
-  ${color}
-  ${typography}
-  ${border}
-  ${shadow}
-`;
+const UnstyledButton = styled('button').withConfig<UnstyledButtonProps>({ shouldForwardProp })(
+  componentStylesMixin('unstyledButton'),
+  allSystemProps,
+  pseudoSystemProps,
+  sxMixin
+);
 
 UnstyledButton.displayName = 'UnstyledButton';
 
