@@ -8,8 +8,9 @@ import {
   IconConversation,
 } from '@aksara-ui/icons';
 
+import { Heading, Paragraph } from '../../../layout';
+import { UnstyledButton } from '../../button';
 import { BaseMessageProps, Root, Icon, Inner, CloseButtonWrapper } from '../styles';
-import { Heading, Paragraph, UnstyledButton } from '../../../layout';
 import { messageIconVariants, closeButtonVariants } from '../variants';
 
 export interface MessageProps extends BaseMessageProps {
