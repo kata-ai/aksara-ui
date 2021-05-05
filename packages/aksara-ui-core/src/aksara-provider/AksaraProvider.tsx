@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { theme as defaultTheme, Theme } from '../../theme';
+import { theme as defaultTheme, Theme } from '../theme';
 import injectGlobalStyles from './injectGlobalStyles';
 
 export interface AksaraProviderProps {
