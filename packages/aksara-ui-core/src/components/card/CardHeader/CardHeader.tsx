@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, Heading, BoxProps } from '../../../foundations';
+import { Box, Heading, BoxProps } from '../../../layout';
 
 export interface CardHeaderProps extends BoxProps {
   className?: string;

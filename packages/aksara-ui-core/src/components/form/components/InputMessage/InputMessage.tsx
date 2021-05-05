@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IconCloseRounded, IconTickRounded, IconInfo, IconWarningTriangle } from '@aksara-ui/icons';
 
-import { Text, Box, BoxProps } from '../../../../foundations';
+import { Text, Box, BoxProps } from '../../../../layout';
 import { theme } from '../../../../theme';
 import { messageIconVariants } from '../../../message/variants';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Box, BoxProps } from '../../../foundations';
+import { Box, BoxProps } from '../../../layout';
 
 export type TabPanelProps = BoxProps;
 

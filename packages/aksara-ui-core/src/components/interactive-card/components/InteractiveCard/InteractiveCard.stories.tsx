@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IconTrash, IconPen } from '@aksara-ui/icons';
 
 import InteractiveCard from './InteractiveCard';
-import { Text, Box, Heading, UnstyledAnchor, Stack } from '../../../../foundations';
+import { Text, Box, Heading, UnstyledAnchor, Stack } from '../../../../layout';
 import { ButtonGroup } from '../../../button-group';
 import { IconButton } from '../../../button';
 

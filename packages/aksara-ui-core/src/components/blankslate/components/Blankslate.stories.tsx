@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Paragraph, Anchor } from '../../../foundations';
+import { Paragraph, Anchor } from '../../../layout';
 import Blankslate from './Blankslate';
 
 export default {

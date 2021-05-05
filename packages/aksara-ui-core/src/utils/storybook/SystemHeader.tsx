@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Heading, Text } from '../../foundations';
+import { Box, Heading, Text } from '../../layout';
 import StoryContainer from './StoryContainer';
 import AksaraLogo from './AksaraLogo';
 

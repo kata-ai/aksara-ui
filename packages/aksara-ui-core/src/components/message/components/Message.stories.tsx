@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { Stack, Box } from '../../../foundations';
+import { Stack, Box } from '../../../layout';
 import { messageVariants } from '../variants';
 import Message, { MessageProps } from './Message';
 

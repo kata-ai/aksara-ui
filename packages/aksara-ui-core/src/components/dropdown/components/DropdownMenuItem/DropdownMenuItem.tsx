@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import clsx from 'clsx';
 
-import { Box, Text } from '../../../../foundations';
+import { Box, Text } from '../../../../layout';
 import { theme } from '../../../../theme';
 
 export interface DropdownMenuItemProps {

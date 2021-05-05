@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { BaseTabsProps } from '../styles';
 import { TabsSizeVariants } from '../variants';
-import { Box } from '../../../foundations';
+import { Box } from '../../../layout';
 import { TabsProvider } from '../context';
 
 export interface TabsProps extends Omit<BaseTabsProps, 'tabsSize'> {

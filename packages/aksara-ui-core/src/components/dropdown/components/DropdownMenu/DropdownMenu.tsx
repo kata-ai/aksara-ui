@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps, Card } from '../../../../foundations';
+import { Box, BoxProps, Card } from '../../../../layout';
 import { Arrow } from './styles';
 
 export interface DropdownMenuProps extends BoxProps {

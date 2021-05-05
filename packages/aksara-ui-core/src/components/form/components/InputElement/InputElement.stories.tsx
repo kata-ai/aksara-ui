@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IconLock } from '@aksara-ui/icons';
 import { Story } from '@storybook/react';
 
-import { Box } from '../../../../foundations';
+import { Box } from '../../../../layout';
 import { InputGroup } from '../InputGroup';
 import { InputText, InputTextProps } from '../InputText';
 import InputLeftElement from './InputLeftElement';

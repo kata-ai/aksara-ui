@@ -5,7 +5,7 @@ import { themeGet } from '@styled-system/theme-get';
 import * as popper from '@popperjs/core';
 
 import { theme } from '../../../theme';
-import { Text, Paragraph, Box } from '../../../foundations';
+import { Text, Paragraph, Box } from '../../../layout';
 
 export type TooltipPlacement = popper.Placement;
 export type TooltipSize = 'sm' | 'md' | 'lg';
