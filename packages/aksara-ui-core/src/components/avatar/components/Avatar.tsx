@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, BoxProps, Text } from '../../../foundations';
+import { Box, BoxProps, Text } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import getInitials from '../utils/getInitials';
 

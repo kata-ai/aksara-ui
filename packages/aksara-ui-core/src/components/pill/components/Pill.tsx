@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { IconClose } from '@aksara-ui/icons';
 
-import { Box, BoxProps } from '../../../foundations';
+import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { IconButton } from '../../button';
 import { theme } from '../../../theme';

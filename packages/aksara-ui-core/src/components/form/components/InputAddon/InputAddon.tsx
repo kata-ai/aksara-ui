@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
-import { Text } from '../../../../foundations';
+import { Text } from '../../../../layout';
 import { theme } from '../../../../theme';
 
 export interface InputAddonProps extends React.HTMLAttributes<HTMLSpanElement> {

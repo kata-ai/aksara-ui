@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { UnstyledButton } from '.';
-import { Box } from '../../../box';
+import { Box } from '../../../../layout/box';
 
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core/Layout/UnstyledButton',
+  title: 'Core/Components/Button/UnstyledButton',
   component: UnstyledButton,
   parameters: {
     notes: { markdown: readme },

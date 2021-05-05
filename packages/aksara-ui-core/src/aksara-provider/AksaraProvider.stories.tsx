@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import { theme } from '../../theme';
+import { theme } from '../theme';
 import AksaraProvider from './AksaraProvider';
 
 export default {

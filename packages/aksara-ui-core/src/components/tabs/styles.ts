@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
-import { Box, BoxProps, UnstyledButton, UnstyledButtonProps } from '../../foundations';
+import { Box, BoxProps, UnstyledButton, UnstyledButtonProps } from '../../layout';
 import { theme } from '../../theme';
 import { tabButtonSizeVariants, tabListSizeVariants, TabsSizeVariants, tabPanelsSizeVariants } from './variants';
 

@@ -2,8 +2,8 @@ import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
-import { theme } from '../../../theme';
-import { textScaleOptions } from '../utils/storybook';
+import { theme } from '../../../../theme';
+import { textScaleOptions } from '../../utils/storybook';
 import Text, { TextProps } from './Text';
 
 export default {

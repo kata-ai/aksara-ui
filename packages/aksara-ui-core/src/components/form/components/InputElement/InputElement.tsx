@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box } from '../../../../foundations';
+import { Box } from '../../../../layout';
 import { theme } from '../../../../theme';
 import { InputSizes } from '../../types';
 

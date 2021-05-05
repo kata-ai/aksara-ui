@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import VisuallyHidden from '@reach/visually-hidden';
 
-import { Box } from '../../../../foundations';
+import { Box } from '../../../../layout';
 import { ToggleSizes, InputToggleInnerProps } from './types';
 import { toggleButtonSizes } from './utils';
 

@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import { Box } from '../../../box';
-import { Anchor } from '../../../typography';
+import { Anchor } from '../..';
 import { UnstyledAnchor } from '.';
 
 const readme = require('../../README.md');
 
 export default {
-  title: 'Core/Layout/UnstyledAnchor',
+  title: 'Core/Typography/UnstyledAnchor',
   component: UnstyledAnchor,
   parameters: {
     notes: { markdown: readme },

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Text, Heading } from '../../foundations';
+import { Box, Text, Heading } from '../../layout';
 
 interface ColorSwatchProps {
   title: string;

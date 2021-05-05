@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../../../../foundations';
+import { Box, BoxProps } from '../../../../layout';
 
 export interface TableBodyRowProps
   extends React.TableHTMLAttributes<HTMLTableRowElement>,

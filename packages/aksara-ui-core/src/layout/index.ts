@@ -1,4 +1,3 @@
-export * from './aksara-provider';
 export * from './box';
 export * from './card';
 export * from './common';

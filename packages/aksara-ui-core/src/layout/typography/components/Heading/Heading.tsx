@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { ResponsiveValue, Theme, RequiredTheme, variant } from 'styled-system';
 
-import { sfp, pseudoSystemProps, allSystemProps, AllSystemProps, sxMixin, SxProps } from '../../../system';
-import { textProps } from '../utils';
+import { sfp, pseudoSystemProps, allSystemProps, AllSystemProps, sxMixin, SxProps } from '../../../../system';
+import { textProps } from '../../utils';
 
 export type HeadingScale = 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100;
 

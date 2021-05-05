@@ -4,7 +4,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { TransitionGroup } from 'react-transition-group';
 
-import { AksaraProvider } from '../../foundations';
+import { AksaraProvider } from '../../layout';
 import Toaster from './components/Toaster';
 import { TOASTER_WIDTH } from './utils/constants';
 import { ToasterHandler, ToasterSettings } from './utils/types';

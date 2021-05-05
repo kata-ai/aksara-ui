@@ -9,7 +9,7 @@ import {
 } from '@aksara-ui/icons';
 
 import { BaseMessageProps, Root, Icon, Inner, CloseButtonWrapper } from '../styles';
-import { Heading, Paragraph, UnstyledButton } from '../../../foundations';
+import { Heading, Paragraph, UnstyledButton } from '../../../layout';
 import { messageIconVariants, closeButtonVariants } from '../variants';
 
 export interface MessageProps extends BaseMessageProps {

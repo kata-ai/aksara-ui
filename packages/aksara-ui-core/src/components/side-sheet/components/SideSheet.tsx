@@ -5,7 +5,7 @@ import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
 import { IconClose } from '@aksara-ui/icons';
 
-import { Portal, Box, BoxProps, Card, FocusTrap } from '../../../foundations';
+import { Portal, Box, BoxProps, Card, FocusTrap } from '../../../layout';
 import { IconButton } from '../../button';
 import { ANIMATION_DURATION } from '../constants';
 import SideSheetOverlay from './SideSheetOverlay';

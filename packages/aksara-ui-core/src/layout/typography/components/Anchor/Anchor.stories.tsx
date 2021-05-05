@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { theme } from '../../../theme';
-import { textScaleOptions } from '../utils/storybook';
+import { theme } from '../../../../theme';
+import { textScaleOptions } from '../../utils/storybook';
 import Anchor, { AnchorProps } from './Anchor';
 
 export default {

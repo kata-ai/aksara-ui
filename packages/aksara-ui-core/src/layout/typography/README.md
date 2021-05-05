@@ -18,7 +18,7 @@ Read the [`styled-system` reference table](https://styled-system.com/table) for 
 We also provided a special `scale` prop on all components to automatically scale fonts based on their respective type scales.
 
 ```jsx
-import { Heading } from '@aksara/ui-kit';
+import { Heading } from '@aksara-ui/core';
 
 export default function Component() {
   return <Heading scale={500}>We are making AI technology accessible to everyone</Heading>;
@@ -30,11 +30,11 @@ export default function Component() {
 The heading component is used for all headings.
 
 ```jsx
-import { AksaraReset, Heading } from '@aksara/ui-kit';
+import { Box, Heading } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <AksaraReset>
+    <Box>
       <Heading scale={900}>We are making AI technology accessible to everyone</Heading>
       <Heading scale={800}>We are making AI technology accessible to everyone</Heading>
       <Heading scale={700}>We are making AI technology accessible to everyone</Heading>
@@ -44,7 +44,7 @@ export default function MyApp({ children }) {
       <Heading scale={300}>We are making AI technology accessible to everyone</Heading>
       <Heading scale={200}>We are making AI technology accessible to everyone</Heading>
       <Heading scale={100}>We are making AI technology accessible to everyone</Heading>
-    </AksaraReset>
+    </Box>
   );
 }
 ```
@@ -52,9 +52,7 @@ export default function MyApp({ children }) {
 Heading renders a `h2` by default. If you would like to determine which HTML element it renders, you can use the `as` prop.
 
 ```jsx
-<AksaraReset>
-  <Heading as="h3">We are making AI technology accessible to everyone</Heading>
-</AksaraReset>
+<Heading as="h3">We are making AI technology accessible to everyone</Heading>
 ```
 
 ### `Text` component
@@ -62,16 +60,16 @@ Heading renders a `h2` by default. If you would like to determine which HTML ele
 The text component is used for single line text.
 
 ```jsx
-import { AksaraReset, Text } from '@aksara/ui-kit';
+import { Box, Text } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <AksaraReset>
+    <Box>
       <Text scale={500}>We are making AI technology accessible to everyone</Text>
       <Text scale={400}>We are making AI technology accessible to everyone</Text>
       <Text scale={300}>We are making AI technology accessible to everyone</Text>
       <Text scale={200}>We are making AI technology accessible to everyone</Text>
-    </AksaraReset>
+    </Box>
   );
 }
 ```
@@ -79,15 +77,13 @@ export default function MyApp({ children }) {
 Text renders a `span` by default. If you would like to determine which HTML element it renders, you can use the `as` prop.
 
 ```jsx
-import { AksaraReset, Text } from '@aksara/ui-kit';
+import { Text } from '@aksara-ui/core';
 
 export default function MyApp({ children }) {
   return (
-    <AksaraReset>
-      <Text scale={400} as="p">
-        We are making AI technology accessible to everyone
-      </Text>
-    </AksaraReset>
+    <Text scale={400} as="p">
+      We are making AI technology accessible to everyone
+    </Text>
   );
 }
 ```
@@ -125,5 +121,29 @@ export default function Component() {
       Indonesia across different industries, including FMCG, Telecommunication, Banking & Financial Service, and Retail.
     </Paragraph>
   );
+}
+```
+
+### `Anchor` component
+
+The anchor component is used to render a link.
+
+```jsx
+import { Anchor } from '@aksara-ui/core';
+
+export default function MyApp({ children }) {
+  return <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo">Visit this nice link!</Anchor>;
+}
+```
+
+### `UnstyledAnchor` component
+
+This is basically an `Anchor` component with all styling elements removed (incl. hover/focus effects).
+
+```jsx
+import { UnstyledAnchor } from '@aksara-ui/core';
+
+export default function Component({ children }) {
+  return <UnstyledAnchor>I'm an unstyled link!</UnstyledAnchor>;
 }
 ```

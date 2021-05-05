@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { Box } from '../../../../foundations';
+import { Box } from '../../../../layout';
 import { FormLabel, FormLabelProps } from '../FormLabel';
 import InputText, { InputTextProps } from './InputText';
 

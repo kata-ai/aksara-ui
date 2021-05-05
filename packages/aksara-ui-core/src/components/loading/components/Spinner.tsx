@@ -2,7 +2,7 @@ import VisuallyHidden from '@reach/visually-hidden';
 import { createShouldForwardProp } from '@styled-system/should-forward-prop';
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Box, BoxProps } from '../../../foundations';
+import { Box, BoxProps } from '../../../layout';
 import { theme } from '../../../theme';
 
 export interface SpinnerProps extends BoxProps {

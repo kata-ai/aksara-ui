@@ -151,3 +151,21 @@ See more usage in the _JSX_ panel
 | style     | CSSProperties      | -        | undefined | Additional CSS styles to give to the component  |
 | variant   | IconButtonVariants | -        | default   | The variant of the button.                      |
 | size      | IconButtonSizes    | -        | 40        | The size of the button.                         |
+
+### `<UnstyledButton />`
+
+This is basically a button with all styling elements removed (incl. hover/focus effects).
+
+```jsx
+import { UnstyledButton } from '@aksara-ui/core';
+
+export default function Component({ children }) {
+  return <UnstyledButton>I'm an unstyled button!</UnstyledButton>;
+}
+```
+
+See more usage in the _JSX_ panel
+
+#### Props
+
+Props for this component are similar to the `Box` component.

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Story, Meta } from '@storybook/react';
-import { Box } from '../../../foundations';
+import { Box } from '../../../layout';
 import Pill, { PillProps } from './Pill';
 
 export default {

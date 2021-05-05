@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../../../../foundations';
+import { Box, BoxProps } from '../../../../layout';
 
 export type TableHeadRowProps = React.TableHTMLAttributes<HTMLTableRowElement> & Omit<BoxProps, 'width' | 'height'>;
 
