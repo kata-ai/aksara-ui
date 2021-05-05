@@ -1,8 +1,9 @@
 import avatar from './avatar';
 import badge from './badge';
+import button from './button';
 import card from './card';
 import pill from './pill';
-import { anchor } from './typography';
+import typography from './typography';
 
 /**
  * Custom theme props based on custom component variants.
@@ -10,9 +11,10 @@ import { anchor } from './typography';
 const componentStyles = {
   avatar,
   badge,
+  ...button,
   card,
-  anchor,
   pill,
+  ...typography,
 };
 
 export default componentStyles;

@@ -16,8 +16,42 @@ export const anchor: ComponentThemeConfig = {
   }),
 };
 
+export const unstyledAnchor: ComponentThemeConfig = {
+  baseStyle: () => ({
+    fontStyle: 'inherit',
+    color: 'inherit',
+    backgroundColor: 'transparent',
+    fontSize: 'inherit',
+    textDecoration: 'none',
+    fontVariant: 'inherit',
+    fontWeight: 'inherit',
+    lineHeight: 'inherit',
+    fontFamily: 'inherit',
+    borderRadius: 'inherit',
+    border: 'inherit',
+    outline: 'inherit',
+    boxShadow: 'inherit',
+    '&:hover, &:focus, &:active': {
+      fontStyle: 'inherit',
+      color: 'inherit',
+      backgroundColor: 'transparent',
+      fontSize: 'inherit',
+      textDecoration: 'none',
+      fontVariant: 'inherit',
+      fontWeight: 'inherit',
+      lineHeight: 'inherit',
+      fontFamily: 'inherit',
+      borderRadius: 'inherit',
+      border: 'inherit',
+      outline: 'inherit',
+      boxShadow: 'inherit',
+    },
+  }),
+};
+
 const typography = {
   anchor,
+  unstyledAnchor,
 };
 
 export default typography;
