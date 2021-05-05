@@ -5,8 +5,8 @@ import { Badge } from '../../components/badge';
 import { IconButton } from '../../components/button';
 import { SystemBlock } from '../../utils/storybook';
 import { Box } from '../box';
-import { Heading, Paragraph, Text } from '../typography';
-import { UnstyledAnchor, Stack } from '../common';
+import { Heading, Paragraph, Text, UnstyledAnchor } from '../typography';
+import { Stack } from '../common';
 
 import { Card } from './index';
 import { Tooltip } from '../../components';
