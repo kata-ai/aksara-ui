@@ -1,17 +1,16 @@
 import * as React from 'react';
 
-import { SystemBlock, ComponentBlock } from '../../../../utils/storybook';
-import { Box } from '../../../box';
-import { Card } from '../../../card';
-import { Text } from '../../../typography';
-import { Inline } from '.';
-import { Stack } from '../Stack';
+import { SystemBlock, ComponentBlock } from '../../utils/storybook';
+import { Box } from '../box';
+import { Card } from '../card';
+import { Text } from '../typography';
+import { Stack } from '.';
 
-const readme = require('../../README.md');
+const readme = require('./README.md');
 
 export default {
-  title: 'Core/Layout/Inline',
-  component: Inline,
+  title: 'Core/Layout/Stack',
+  component: Stack,
   parameters: {
     notes: { markdown: readme },
     jsx: { skip: 2 },
@@ -21,15 +20,15 @@ export default {
 export const Example = () => {
   return (
     <SystemBlock
-      title="Inline"
-      subtitle="Use the Inline component to evenly space inner elements horizontally"
+      title="Stack"
+      subtitle="Use the Stack component to evenly space inner elements vertically"
       noBackground
     >
       <Stack spacing="xl">
-        <ComponentBlock title="Inline (spacing=xs)">
+        <ComponentBlock title="Stack (spacing=md)">
           <Card padding="sm" elevation={2}>
             <Box backgroundColor="red02" overflow="hidden">
-              <Inline spacing="xs">
+              <Stack spacing="md">
                 <Box backgroundColor="white">
                   <Text>Box (backgroundColor=white)</Text>
                 </Box>
@@ -39,14 +38,14 @@ export const Example = () => {
                 <Box backgroundColor="white">
                   <Text>Box (backgroundColor=white)</Text>
                 </Box>
-              </Inline>
+              </Stack>
             </Box>
           </Card>
         </ComponentBlock>
-        <ComponentBlock title="Inline (spacing=sm)">
+        <ComponentBlock title="Stack (spacing=lg)">
           <Card padding="sm" elevation={2}>
             <Box backgroundColor="red02" overflow="hidden">
-              <Inline spacing="sm">
+              <Stack spacing="lg">
                 <Box backgroundColor="white">
                   <Text>Box (backgroundColor=white)</Text>
                 </Box>
@@ -56,7 +55,7 @@ export const Example = () => {
                 <Box backgroundColor="white">
                   <Text>Box (backgroundColor=white)</Text>
                 </Box>
-              </Inline>
+              </Stack>
             </Box>
           </Card>
         </ComponentBlock>

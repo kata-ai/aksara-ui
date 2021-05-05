@@ -2,8 +2,8 @@
 import * as React from 'react';
 import { get } from 'styled-system';
 
-import { useTheme, Theme } from '../../../../theme';
-import { Box, BoxProps } from '../../../box';
+import { useTheme, Theme } from '../../theme';
+import { Box, BoxProps } from '../box';
 
 type Space = keyof Theme['space'];
 

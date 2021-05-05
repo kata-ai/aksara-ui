@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import { Box } from '../../../box';
+import { Box } from '../box';
 import Inline from './Inline';
 
 describe('foundations/common', () => {
