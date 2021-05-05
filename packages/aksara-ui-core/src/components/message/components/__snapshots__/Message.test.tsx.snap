@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Banner <Banner /> renders correctly 1`] = `
+.c3 {
+  display: inline-block;
+  margin: 0;
+  -webkit-letter-spacing: -0.05px;
+  -moz-letter-spacing: -0.05px;
+  -ms-letter-spacing: -0.05px;
+  letter-spacing: -0.05px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -36,15 +45,6 @@ exports[`components/Banner <Banner /> renders correctly 1`] = `
   overflow: hidden;
   background-color: green01;
   color: grey08;
-}
-
-.c3 {
-  display: inline-block;
-  margin: 0;
-  -webkit-letter-spacing: -0.05px;
-  -moz-letter-spacing: -0.05px;
-  -ms-letter-spacing: -0.05px;
-  letter-spacing: -0.05px;
 }
 
 <div

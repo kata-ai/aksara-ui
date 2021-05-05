@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SpacingBlock } from '../../utils/storybook';
-import { Stack } from '../common';
+import { Stack } from '../stack';
 
 export default {
   title: 'Core/Foundations/Spacing',

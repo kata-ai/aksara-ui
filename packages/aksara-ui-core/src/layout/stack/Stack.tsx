@@ -1,8 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 
-import { theme } from '../../../../theme';
-import { Box, BoxProps } from '../../../box';
+import { theme } from '../../theme';
+import { Box, BoxProps } from '../box';
 
 type Space = keyof typeof theme['space'];
 

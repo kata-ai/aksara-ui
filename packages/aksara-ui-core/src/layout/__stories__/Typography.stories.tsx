@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stack } from '../common';
+import { Stack } from '../stack';
 import { Anchor, Heading, Paragraph, Text, HeadingScale, TextScale, ParagraphScale } from '../typography';
 
 export default {
