@@ -1,24 +1,17 @@
-name: publish
+name: Publish to NPM
+
 on:
   push:
     tags:
-      - 'v*-canary.*'
+      - '@aksara-ui/*@*-canary.*'
 
 jobs:
-  publish:
-    name: Publish
-    needs: test
+  build:
+    name: Build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cache node_modules
-        id: cache-modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+      - uses: actions/checkout@v2
+      - run: yarn install --frozen-lockfile
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -26,11 +19,41 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_IDENTITY_TOKEN }}
-      - name: Install
-        if: steps.cache-modules.outputs.cache-hit != 'true'
-        run: yarn install
       - name: Build
         run: yarn build
+      - uses: actions/cache@v1
+        id: cache-build
+        with:
+          path: '.'
+          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          path: '.'
+          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+      - run: yarn validate
+        env:
+          CI: true
+      - run: yarn test:coverage
+        env:
+          CI: true
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          path: '.'
+          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
       - name: Setup Node ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
