@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box } from '../../box';
+import { Box } from '../../../layout';
 import Portal from './Portal';
 
 export default {

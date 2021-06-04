@@ -1,8 +1,8 @@
 import * as React from 'react';
 
+import { Paragraph, Anchor } from '../../layout/typography';
 import { SystemBlock } from '../../utils/storybook';
 import FocusTrap from './FocusTrap';
-import { Paragraph, Anchor } from '../typography';
 
 const readme = require('./README.md');
 
