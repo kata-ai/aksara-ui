@@ -33,7 +33,9 @@
     "test": "lerna run test --",
     "test:coverage": "yarn workspace @aksara-ui/core run test:coverage",
     "type-check": "tsc --noEmit",
-    "validate": "yarn lint && yarn type-check"
+    "validate": "yarn lint && yarn type-check",
+    "canary:release": "lerna version prerelease --preid=canary",
+    "canary:publish": "lerna publish from-git --npm-tag canary --yes"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
