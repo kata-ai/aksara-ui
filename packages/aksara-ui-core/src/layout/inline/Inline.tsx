@@ -16,33 +16,39 @@ export interface InlineProps extends Omit<BoxProps, 'color'>, SpacingProps {
   className?: string;
   style?: React.CSSProperties;
   color?: string;
+  children?: React.ReactNode;
 }
 
-const Inline: React.FC<InlineProps> = ({ children, spacing = 'sm', alignItems, ...rest }) => {
-  const theme = useTheme();
-  const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
+/**
+ * @deprecated This component will soon be replaced with `<Stack direction="row" />`
+ */
+const Inline = React.forwardRef<HTMLDivElement, InlineProps>(
+  ({ children, spacing = 'sm', alignItems, ...rest }, ref) => {
+    const theme = useTheme();
+    const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
 
-  const negativeSpacing = React.useMemo(() => `-${get(theme, `space.${spacing}`, 0)}px`, [theme]);
+    const negativeSpacing = React.useMemo(() => `-${get(theme, `space.${spacing}`, 0)}px`, [theme]);
 
-  return (
-    <Box marginTop={negativeSpacing} {...rest}>
-      <Box display="flex" flexWrap="wrap" alignItems={alignItems} marginLeft={negativeSpacing}>
-        {validChildrenArray.map((child, i) => {
-          const spacingProps = { mt: spacing, ml: spacing, mb: 0, mr: 0 };
-          if (typeof child === 'string' || child.type === React.Fragment) {
-            return (
-              <Box key={`inline-child-${i}`} {...spacingProps}>
-                {child}
-              </Box>
-            );
-          }
+    return (
+      <Box ref={ref} marginTop={negativeSpacing} {...rest}>
+        <Box display="flex" flexWrap="wrap" alignItems={alignItems} marginLeft={negativeSpacing}>
+          {validChildrenArray.map((child, i) => {
+            const spacingProps = { mt: spacing, ml: spacing, mb: 0, mr: 0 };
+            if (typeof child === 'string' || child.type === React.Fragment) {
+              return (
+                <Box key={`inline-child-${i}`} {...spacingProps}>
+                  {child}
+                </Box>
+              );
+            }
 
-          return React.cloneElement(child, spacingProps);
-        })}
+            return React.cloneElement(child, spacingProps);
+          })}
+        </Box>
       </Box>
-    </Box>
-  );
-};
+    );
+  }
+);
 
 Inline.displayName = 'Inline';
 
