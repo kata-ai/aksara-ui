@@ -12,13 +12,14 @@ export interface StackProps extends Omit<BoxProps, 'color'> {
   style?: React.CSSProperties;
   color?: string;
   spacing?: Space;
+  children?: React.ReactNode;
 }
 
-const Stack: React.FC<StackProps> = ({ children, spacing, ...rest }) => {
+const Stack = React.forwardRef<HTMLDivElement, StackProps>(({ children, spacing, ...rest }, ref) => {
   const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
 
   return (
-    <Box {...rest}>
+    <Box ref={ref} {...rest}>
       {validChildrenArray.map((child, i) => {
         const isLastChild = validChildrenArray.length === i + 1;
         const spacingProps = { mb: isLastChild ? 0 : spacing };
@@ -34,7 +35,7 @@ const Stack: React.FC<StackProps> = ({ children, spacing, ...rest }) => {
       })}
     </Box>
   );
-};
+});
 
 Stack.displayName = 'Stack';
 
