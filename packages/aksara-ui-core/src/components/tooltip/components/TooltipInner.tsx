@@ -1,11 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { variant } from 'styled-system';
-import { themeGet } from '@styled-system/theme-get';
 import * as popper from '@popperjs/core';
 
-import { theme } from '../../../theme';
 import { Text, Paragraph, Box } from '../../../layout';
+import { useComponentStyles } from '../../../system';
 
 export type TooltipPlacement = popper.Placement;
 export type TooltipSize = 'sm' | 'md' | 'lg';
@@ -18,68 +15,42 @@ export interface TooltipInnerProps extends React.HTMLAttributes<HTMLDivElement> 
   size?: TooltipSize;
 }
 
-const Inner = styled('div')<Omit<TooltipInnerProps, 'placement' | 'content'>>`
-  ${variant({
-    prop: 'size',
-    variants: {
-      sm: {
-        py: 'xxs',
-        px: 'md',
-        maxWidth: 200,
-      },
-      md: {
-        p: 'md',
-        maxWidth: 200,
-      },
-      lg: {
-        p: 'md',
-        maxWidth: 200,
-      },
-    },
-  })}
-  text-align: left;
-  vertical-align: middle;
-  border-radius: 4px;
+const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
+  ({ className, style, content, size, placement, ...rest }, ref) => {
+    const tooltipInnerStyles = useComponentStyles('tooltipInner', { size });
 
-  color: ${themeGet('colors.text-inverse', theme.colors['text-inverse'])};
-  background-color: ${themeGet('colors.grey09', theme.colors.grey09)};
-`;
+    const renderContent = () => {
+      if (typeof content === 'string') {
+        if (size === 'sm') {
+          return <Text scale={300}>{content}</Text>;
+        }
 
-const TooltipInner: React.ForwardRefRenderFunction<HTMLDivElement, TooltipInnerProps> = (
-  { className, style, content, size, placement, ...rest },
-  ref
-) => {
-  const renderContent = () => {
-    if (typeof content === 'string') {
-      if (size === 'sm') {
-        return <Text scale={300}>{content}</Text>;
+        return (
+          <Paragraph scale={300} m={0}>
+            {content}
+          </Paragraph>
+        );
       }
 
-      return (
-        <Paragraph scale={300} m={0}>
-          {content}
-        </Paragraph>
-      );
-    }
+      return content;
+    };
 
-    return content;
-  };
-
-  return (
-    <Box
-      p="xxs"
-      zIndex={9999}
-      className={className}
-      style={style}
-      ref={ref}
-      data-popper-placement={placement}
-      {...rest}
-    >
-      <Inner size={size}>{renderContent()}</Inner>
-    </Box>
-  );
-};
+    return (
+      <Box
+        p="xxs"
+        zIndex={9999}
+        className={className}
+        style={style}
+        ref={ref}
+        data-popper-placement={placement}
+        {...rest}
+      >
+        <Box sx={tooltipInnerStyles}>{renderContent()}</Box>
+      </Box>
+    );
+  }
+);
 
 TooltipInner.displayName = 'TooltipInner';
 
-export default React.forwardRef(TooltipInner);
+export default TooltipInner;
