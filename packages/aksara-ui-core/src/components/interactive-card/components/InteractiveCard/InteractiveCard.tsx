@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Card, CardProps, Box } from '../../../../foundations';
+import { Card, CardProps, Box } from '../../../../layout';
 
 export interface InteractiveCardProps extends Omit<CardProps, 'elevation' | 'position' | 'border' | 'borderColor'> {
   /** Additional action buttons that appear on hover. */

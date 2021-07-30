@@ -5,7 +5,8 @@ import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
 import { IconClose } from '@aksara-ui/icons';
 
-import { Portal, Card, FocusTrap, CardProps } from '../../../foundations';
+import { Portal, FocusTrap } from '../../../helpers';
+import { Card, CardProps } from '../../../layout';
 import { IconButton } from '../../button';
 import { ANIMATION_DURATION } from '../constants';
 import DialogOverlay from './DialogOverlay';

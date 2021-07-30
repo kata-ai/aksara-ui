@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SystemHeader from './SystemHeader';
 import SystemContainer from './SystemContainer';
-import { Box } from '../../foundations';
+import { Box } from '../../layout';
 
 interface SystemBlockProps {
   title: string;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BoxProps } from '../../../../foundations';
+import { BoxProps } from '../../../../layout';
 import InputElement, { InputElementBaseProps } from './InputElement';
 
 type InputElementProps = InputElementBaseProps & BoxProps;

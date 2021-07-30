@@ -6,7 +6,7 @@ import {
 } from '@reach/accordion';
 import { IconChevronRight } from '@aksara-ui/icons';
 
-import { Heading } from '../../../../foundations';
+import { Heading } from '../../../../layout';
 import { shouldForwardProp } from '../../../../system';
 import { theme } from '../../../../theme';
 import { UnstyledAccordionButtonStyles, SystemStyles, SystemProps } from './styled';

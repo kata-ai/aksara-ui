@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card } from '../../../../foundations';
+import { Card } from '../../../../layout';
 
 export const Arrow = styled('div')`
   display: block;

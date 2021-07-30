@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Paragraph } from '../../../../foundations';
+import { Paragraph } from '../../../../layout';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '.';
 
 export default {

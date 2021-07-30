@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps, Heading } from '../../../foundations';
+import { Box, BoxProps, Heading } from '../../../layout';
 
 export interface PanelHeaderProps extends BoxProps {
   title?: string;

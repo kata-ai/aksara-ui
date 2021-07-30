@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Box, Heading, Paragraph } from '../../../foundations';
+import { Box, Heading, Paragraph } from '../../../layout';
 
 const ImageWrapper = styled(Box)`
   position: relative;

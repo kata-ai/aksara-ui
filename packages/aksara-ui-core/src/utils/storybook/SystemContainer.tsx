@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box } from '../../foundations';
+import { Box } from '../../layout';
 import StoryContainer from './StoryContainer';
 
 interface SystemContainerProps {

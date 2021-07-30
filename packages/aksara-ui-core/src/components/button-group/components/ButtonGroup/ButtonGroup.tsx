@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Box, BoxProps } from '../../../../foundations';
+import { Box, BoxProps } from '../../../../layout';
 import {
   buttonGroupSegmented,
   buttonGroupNonSegmented,

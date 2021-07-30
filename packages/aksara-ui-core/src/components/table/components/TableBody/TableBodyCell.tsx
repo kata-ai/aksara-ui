@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps, Paragraph } from '../../../../foundations';
+import { Box, BoxProps, Paragraph } from '../../../../layout';
 import { theme } from '../../../../theme';
 
 export interface TableBodyCellProps

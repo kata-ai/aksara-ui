@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps } from '../../../../foundations';
+import { Box, BoxProps } from '../../../../layout';
 import { WithStylesProps } from '../../types';
 
 export type InputCheckboxLabelProps = BoxProps & React.LabelHTMLAttributes<HTMLLabelElement> & WithStylesProps;

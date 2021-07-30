@@ -4,7 +4,7 @@ import { variant } from 'styled-system';
 import { Transition } from 'react-transition-group';
 import { IconTickSingle, IconWarningTriangle, IconCloseRounded } from '@aksara-ui/icons';
 
-import { Text, Card, Heading, Box } from '../../../foundations';
+import { Text, Card, Heading, Box } from '../../../layout';
 import { ToasterSettings, NotificationStatus } from '../utils/types';
 import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
 import { toasterVariants, toasterTextVariants } from './variants';

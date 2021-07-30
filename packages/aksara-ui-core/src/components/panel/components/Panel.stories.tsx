@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import { IconChevronLeft } from '@aksara-ui/icons';
 
-import { Text, Box } from '../../../foundations';
+import { Text, Box } from '../../../layout';
 import { IconButton } from '../../button';
 import Panel, { PanelProps } from './Panel';
 import PanelHeader from './PanelHeader';

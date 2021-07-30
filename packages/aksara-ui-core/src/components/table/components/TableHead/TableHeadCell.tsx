@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, BoxProps, Text } from '../../../../foundations';
+import { Box, BoxProps, Text } from '../../../../layout';
 import { theme } from '../../../../theme';
 
 export type TableHeadCellProps = React.ThHTMLAttributes<HTMLTableHeaderCellElement> &

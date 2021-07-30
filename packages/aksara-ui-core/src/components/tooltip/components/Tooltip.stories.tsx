@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { Box, Text } from '../../../foundations';
+import { Box, Text } from '../../../layout';
 import Tooltip, { TooltipProps } from './Tooltip';
 
 const readme = require('../README.md');

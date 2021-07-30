@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Text, Paragraph, Stack, Box, Anchor } from '../../foundations';
+import { Text, Paragraph, Stack, Box, Anchor } from '../../layout';
 
 import { SideSheet, SideSheetHeader, SideSheetContent, SideSheetFooter } from '.';
 import { Button } from '../button';
