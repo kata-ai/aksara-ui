@@ -1,68 +1,56 @@
-# Migrating to Wicara 0.8
+# Migrating to Aksara UI 1.0
 
-Wicara 0.8 introduced a lot of changes compared to the previous version, 0.7. To provide a smooth transition process, this documentation is created.
+Aksara UI introduced a lot of changes compared to the previous version from the previous releases (0.x). To provide a smooth transition process, this documentation is created.
 
-## One single core component
+If anything is missing from this document, please [file an issue](https://github.com/kata-ai/aksara-ui/issues/new/choose).
 
-The architecture of Wicara 0.7 is based off of single npm packages per component. We quickly realised that [this was a bad idea](https://segment.com/blog/driving-adoption-of-a-design-system/#too-early-for-a-mono-repo), so we decided to merge them all into a single package, `@wicara/core`.
+## New package name
+
+The package has been named from `@wicara/core` to `@aksara-ui/react`.
 
 To install it, run the following command:
 
 ```sh
 # yarn
-yarn add @wicara/core
+yarn add @aksara-ui/react
 
 # npm
-npm install --save @wicara/core
+npm install --save @aksara-ui/react
 ```
 
 Here's an example of replacing the old imports with the new one.
 
+### From Wicara (0.8)
+
 ```diff
-- import { Button } from '@kata-kit/button';
-- import { TextInput } from '@kata-kit/form';
-+ import { Button, TextInput } from '@wicara/core';
+- import { Button, InputText } from '@wicara/core';
++ import { Button, InputText } from '@aksara-ui/react';
 ```
 
-Aside from that, all packages with the `@kata-kit/` scope have been deprecated, and will no longer be updated. Please migrate to the `@wicara/` scope.
+### From Aksara UI canary
 
-## New fonts package
+```diff
+- import { Button, InputText } from '@aksara-ui/core';
++ import { Button, InputText } from '@aksara-ui/react';
+```
 
-The font stack is still provided on a separate package from the core, and has been renamed to `@wicara/fonts`.
+## Fonts package removed
 
-## Removed components
+Aksara UI will no longer provide a fonts package. If you would like to install the brand fonts for Aksara UI, please install them separately.
 
-The following components have been removed because we deemed to be too high-level:
+```bash
+# yarn
+$ yarn add typeface-inter
 
-- `dashboard`
-- `layout`
+# npm
+$ npm install --save typeface-inter
+```
 
-The following components have been replaced by another component:
+## Removed deprecated components/utilities
 
-- `button/SupportButton` -> `<Button size="sm" variant="support" />`
-- `common/Board` -> use the new `Card` instead
+Deprecated components/utilities have been removed in this release. Here are a list of deprecated components/utilities, as well as its replacements, if available:
 
-The following components have been removed until a replacement has been found:
-
-- `dropdown`
-- `split-button`
-
-If you would like to still use any of these packages, please copy and paste the codebase from the primary package to your app.
-
-## Renamed components
-
-- `EmptyMessage` -> `NonIdealState`
-- `modal` -> `dialog`
-- `drawer` -> `side-sheet`
-
-## Dialog & Side Sheet's internal components removed
-
-All projects using the `Dialog` and `SideSheet` components should construct the inner components with foundational components. See [this Storybook](https://wicara.now.sh/?path=/story/core-components-dialog--default) for example.
-
-You can also create a reusable component for them inside your app.
-
-## Theme Provider
-
-`KataReset` has been replaced by `WicaraProvider`. If you still rely on old Wicara components, you can still use them side-by-side and there shouldn't be any problems.
-
-Read the [README](README.md) for more information.
+- `WicaraProvider` -> `AksaraProvider`
+- `NonIdealState` -> `Blankslate`
+- `Banner` -> `Message`
+- All legacy theme tokens (colours, spacing, etc.)
