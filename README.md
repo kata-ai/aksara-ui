@@ -40,16 +40,16 @@ Aksara UI requires `styled-components` v4+. First, install the core Aksara UI pa
 
 ```bash
 # yarn
-$ yarn add styled-components @aksara-ui/core @aksara-ui/icons
+$ yarn add styled-components @aksara-ui/react @aksara-ui/icons
 
 # npm
-$ npm install --save styled-components @aksara-ui/core @aksara-ui/icons
+$ npm install --save styled-components @aksara-ui/react @aksara-ui/icons
 ```
 
 Then, you will need to apply the theme provider as well as the default global styles. Wrap your app inside the `AksaraProvider` to do so.
 
 ```jsx
-import { AksaraProvider } from '@aksara-ui/core';
+import { AksaraProvider } from '@aksara-ui/react';
 
 export default function MyApp({ children }) {
   return <AksaraProvider>{children}</AksaraProvider>;
@@ -60,7 +60,7 @@ If you would like to use additional styles for `AksaraProvider`, add the `disabl
 
 ```jsx
 import { css } from 'styled-components';
-import { AksaraProvider, injectGlobalStyles } from '@aksara-ui/core';
+import { AksaraProvider, injectGlobalStyles } from '@aksara-ui/react';
 
 const styles = css`
   [data-reach-tooltip] {
@@ -99,7 +99,7 @@ Aksara UI is built in React, with styling done in styled-components. To use thes
 // Example for `<Button />` component.
 
 import * as React from 'react';
-import { Button } from '@aksara-ui/core';
+import { Button } from '@aksara-ui/react';
 
 export default function Component() {
   return <Button>Push Me</Button>;
@@ -131,7 +131,7 @@ Then, in any typography component (e.g. `Text`, `Heading`), you can use the `bra
 
 ```jsx
 import * as React from 'react';
-import { Heading } from '@aksara-ui/core';
+import { Heading } from '@aksara-ui/react';
 
 export default function Component() {
   return (
