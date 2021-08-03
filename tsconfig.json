@@ -6,7 +6,7 @@
     "baseUrl": ".",
     "typeRoots": ["./node_modules/@types", "./@types"],
     "paths": {
-      "@aksara-ui/react": ["packages/aksara-ui-core/src"],
+      "@aksara-ui/react": ["packages/react/src"],
       "@aksara-ui/icons": ["packages/aksara-icons/src"]
     }
   }
