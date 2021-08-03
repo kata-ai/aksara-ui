@@ -59,7 +59,7 @@ export const WithImages = () => {
     <Box p="md">
       <ExampleGrid>
         <UnstyledAnchor target="_blank" rel="noopener noreferrer">
-          <InteractiveCard image="http://via.placeholder.com/504x336" imageAlt="Card header">
+          <InteractiveCard image="https://via.placeholder.com/504x336" imageAlt="Card header">
             <Stack spacing="md" p="lg">
               <Box>
                 <Text display="inline-block" scale={200} color="grey07" mb="xs">
