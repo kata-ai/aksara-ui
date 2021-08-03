@@ -105,7 +105,4 @@ const Blankslate = React.forwardRef<HTMLDivElement, BlankslateProps>(
 
 Blankslate.displayName = 'Blankslate';
 
-/** @deprecated use `<Blankslate />` instead */
-export const NonIdealState = Blankslate;
-
 export default Blankslate;
