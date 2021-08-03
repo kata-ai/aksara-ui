@@ -110,6 +110,3 @@ Message.defaultProps = {
 Message.displayName = 'Message';
 
 export default Message;
-
-/** @deprecated - use `Message` instead */
-export const Banner = Message;
