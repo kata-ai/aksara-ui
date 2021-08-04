@@ -19,7 +19,7 @@ const Wrapper = styled('div')`
   overflow: hidden;
   height: 20px;
   width: 100%;
-  background: ${theme.colors.gray20};
+  background: ${theme.colors.grey03};
   border-radius: 4px;
 
   &:after {
@@ -29,7 +29,7 @@ const Wrapper = styled('div')`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, ${theme.colors.gray20}, ${theme.colors.gray10}, ${theme.colors.gray20});
+    background: linear-gradient(90deg, ${theme.colors.grey03}, ${theme.colors.grey02}, ${theme.colors.grey03});
     animation: ${progress} 1s ease-in-out infinite;
   }
 
