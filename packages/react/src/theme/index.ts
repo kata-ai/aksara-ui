@@ -1,5 +1,5 @@
 import { useTheme as defaultUseTheme } from 'styled-components';
-import foundations from './foundations';
+import { foundations } from '@aksara-ui/core';
 import variants from './variants';
 import componentStyles from './componentStyles';
 
