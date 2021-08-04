@@ -1,36 +1,3 @@
-/** (DEPRECATED) old color variables */
-const legacyColors = {
-  red: '#e53935',
-  green: '#00c853',
-  yellow: '#ffc400',
-  softKataBlue: '#d8ebff',
-  lightKataBlue: '#7fbcff',
-  kataBlue: '#006fe6',
-  darkKataBlue: '#0056b3',
-  lightCobalt: '#6386c7',
-  semiCobalt: '#2662cf',
-  cobalt: '#2053af',
-  darkCobalt: '#19428c',
-  gray10: '#f6f7f8',
-  gray20: '#edf1f2',
-  gray30: '#e2e6e8',
-  gray40: '#c2c7c8',
-  gray50: '#949a9d',
-  gray60: '#676b6d',
-  gray70: '#484c4f',
-  gray80: '#24282d',
-  special01: '#f8bbd0',
-  special02: '#e8bbf8',
-  special03: '#bbcaf8',
-  special04: '#bbe7f8',
-  special05: '#bbf8ee',
-  special06: '#bbf8c4',
-  special07: '#d6f8bb',
-  special08: '#f5f8bb',
-  special09: '#f8e5bb',
-  special10: '#f8cebb',
-};
-
 const blue = {
   // Blue
   /** Blue01 - Glitter */
@@ -214,7 +181,6 @@ const colors = {
   white: '#fff',
   black: '#000',
 
-  ...legacyColors,
   ...systemColors,
 
   // Core tokens
