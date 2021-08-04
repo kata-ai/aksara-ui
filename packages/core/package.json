@@ -1,7 +1,7 @@
 {
   "name": "@aksara-ui/core",
   "version": "1.0.0-canary.49",
-  "description": "Core design tokens for the Aksara design system..",
+  "description": "Core design tokens for the Aksara design system.",
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/icons.esm.js",
