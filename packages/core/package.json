@@ -25,7 +25,7 @@
     "start": "tsdx watch --tsconfig tsconfig.build.json --verbose",
     "validate": "yarn lint && yarn type-check"
   },
-  "dependencies": {},
-  "peerDependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "polished": "^4.1.3"
+  }
 }
