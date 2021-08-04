@@ -6,9 +6,7 @@ import { theme } from '../../theme';
 describe('utils/storybook', () => {
   describe('ColorSwatch', () => {
     test('renders correctly', () => {
-      const { container } = render(
-        <ColorSwatch title="Dark Kata Blue" colorKey="darkKataBlue" hex={theme.colors.darkKataBlue} />
-      );
+      const { container } = render(<ColorSwatch title="blue06" colorKey="blue06" hex={theme.colors.blue06} />);
 
       expect(container.firstChild).toBeInTheDocument();
     });
