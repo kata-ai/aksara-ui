@@ -1,0 +1,21 @@
+{
+  "extends": "../../.eslintrc.js",
+  "overrides": [
+    {
+      "files": ["**/*.stories.tsx", "**/*.story.ts"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": ["off"]
+      }
+    },
+    {
+      "files": ["rollup.config.js"],
+      "parserOptions": {
+        "version": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "modules": true
+        }
+      }
+    }
+  ]
+}
