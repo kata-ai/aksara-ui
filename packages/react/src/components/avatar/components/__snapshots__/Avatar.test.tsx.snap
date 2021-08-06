@@ -10,7 +10,7 @@ exports[`components/Avatar <Avatar /> renders in correct sizes 1`] = `
   class="c0"
 >
   <span
-    class=""
+    class="Text-sc-1e9atua-0"
   >
     ??
   </span>
@@ -27,7 +27,7 @@ exports[`components/Avatar <Avatar /> renders on large size by default 1`] = `
   class="c0"
 >
   <span
-    class=""
+    class="Text-sc-1e9atua-0"
   >
     ??
   </span>

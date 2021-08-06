@@ -2,7 +2,7 @@
 
 exports[`components/Badge <Badge /> renders with additional variants 1`] = `
 <span
-  class=""
+  class="Box-sc-1sdmhvq-0"
 >
   test badge
 </span>
@@ -14,7 +14,7 @@ exports[`components/Badge <Badge /> renders with icon 1`] = `
 }
 
 <div
-  class=""
+  class="Box-sc-1sdmhvq-0"
 >
   <svg
     aria-hidden="true"
