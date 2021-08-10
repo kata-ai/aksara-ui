@@ -108,10 +108,10 @@ export const paragraph = {
   },
   300: {
     fontSize: 300,
-    lineHeight: '24px',
+    lineHeight: '20px',
   },
   200: {
     fontSize: 200,
-    lineHeight: '20px',
+    lineHeight: '18px',
   },
 };
