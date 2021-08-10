@@ -42,7 +42,7 @@ function iconSizes(size: AvatarProps['size'] = 40) {
 
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
-  ({ className, style, src, alt = '', name, size = 40, color = 'white', bg = 'indigo03', icon, ...rest }, ref) => {
+  ({ className, style, src, alt = '', name, size = 40, color = 'white', bg = 'indigo05', icon, ...rest }, ref) => {
     const styles = useComponentStyles('avatar', { size });
 
     const renderInitials = () => {

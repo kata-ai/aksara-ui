@@ -29,13 +29,20 @@ export const Example = Template.bind({});
 Example.args = {
   size: 40,
   name: 'Adry Muhammad',
-  bg: 'indigo03',
+  bg: 'indigo05',
   src: 'https://picsum.photos/id/2/400/400',
+};
+
+export const WithInitial = Template.bind({});
+WithInitial.args = {
+  size: 40,
+  name: 'Adry Muhammad',
+  bg: 'indigo05',
 };
 
 export const WithIcons: Story<AvatarProps> = args => <Avatar icon={IconUser} {...args} />;
 WithIcons.args = {
   size: 40,
   name: 'Adry Muhammad',
-  bg: 'indigo03',
+  bg: 'indigo05',
 };

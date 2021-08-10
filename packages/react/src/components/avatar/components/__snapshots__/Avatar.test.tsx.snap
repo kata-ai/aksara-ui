@@ -3,7 +3,7 @@
 exports[`components/Avatar <Avatar /> renders in correct sizes 1`] = `
 .c0 {
   color: white;
-  background-color: indigo03;
+  background-color: indigo05;
 }
 
 <span
@@ -20,7 +20,7 @@ exports[`components/Avatar <Avatar /> renders in correct sizes 1`] = `
 exports[`components/Avatar <Avatar /> renders on large size by default 1`] = `
 .c0 {
   color: white;
-  background-color: indigo03;
+  background-color: indigo05;
 }
 
 <span
