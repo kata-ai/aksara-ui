@@ -51,7 +51,7 @@ exports[`components/Button <ButtonAnchor /> renders block buttons correctly 1`] 
 .c0:not(:disabled):not(.disabled):focus,
 .c0:not(:disabled):not(.disabled).focus {
   background-color: #ebedef;
-  color: #004793;
+  color: #0057B4;
 }
 
 .c0:not(:disabled):not(.disabled):focus,
@@ -59,9 +59,9 @@ exports[`components/Button <ButtonAnchor /> renders block buttons correctly 1`] 
 .c0:not(:disabled):not(.disabled):active,
 .c0:not(:disabled):not(.disabled).active {
   background-color: #ebedef;
-  color: #004793;
-  border-color: #006fe6;
-  box-shadow: 0 0 2px 1px rgba(0,111,230,0.4),0 0 0 1px #006fe6;
+  color: #0057B4;
+  border-color: #3797FF;
+  box-shadow: 0 0 2px 1px rgba(0,111,230,0.4),0 0 0 1px #3797FF;
 }
 
 .c0:disabled,
@@ -101,7 +101,7 @@ exports[`components/Button <ButtonAnchor /> renders colors correctly by variant 
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   border: 1px solid transparent;
-  background-color: #006fe6;
+  background-color: #3797FF;
   color: #fff;
   height: 40px;
   padding: 0 16px;
@@ -130,7 +130,7 @@ exports[`components/Button <ButtonAnchor /> renders colors correctly by variant 
 .c0:not(:disabled):not(.disabled).hover,
 .c0:not(:disabled):not(.disabled):focus,
 .c0:not(:disabled):not(.disabled).focus {
-  background-color: #005bbd;
+  background-color: #006FE6;
   color: #fff;
 }
 
@@ -138,9 +138,9 @@ exports[`components/Button <ButtonAnchor /> renders colors correctly by variant 
 .c0:not(:disabled):not(.disabled).focus,
 .c0:not(:disabled):not(.disabled):active,
 .c0:not(:disabled):not(.disabled).active {
-  background-color: #004793;
-  border-color: #006fe6;
-  box-shadow: 0 0 2px 1px rgba(0,111,230,0.4),0 0 0 1px #006fe6;
+  background-color: #0057B4;
+  border-color: #3797FF;
+  box-shadow: 0 0 2px 1px rgba(0,111,230,0.4),0 0 0 1px #3797FF;
 }
 
 .c0:disabled,

@@ -1,169 +1,202 @@
 const blue = {
   // Blue
-  /** Blue01 - Glitter */
-  blue01: '#e7f1fc',
-  /** Blue02 - Pale Aqua */
-  blue02: '#b9d7f8',
-  /** Blue03 - Jordy Blue */
-  blue03: '#8bbdf3',
-  /** Blue04 - Blue Jeans */
-  blue04: '#5ca3ef',
-  /** Blue05 - Bleu de France */
-  blue05: '#2e89ea',
-  /** Blue06 - Brandeis Blue */
-  blue06: '#006fe6',
-  /** Blue07 - Absolute Zero */
-  blue07: '#005bbd',
-  /** Blue08 - Usafa Blue */
-  blue08: '#004793',
-  /** Blue09 - Dark Midnight Blue */
-  blue09: '#003369',
-  /** blue10 - Maastricht Blue */
-  blue10: '#001f3f',
+  /** blue-01 - Glitter */
+  blue01: '#EBF5FF',
+  /** blue-02 - Aqua */
+  blue02: '#D7EAFF',
+  /** blue-03 - Jordy */
+  blue03: '#AFD6FF',
+  /** blue-04 - Jeans */
+  blue04: '#87C1FF',
+  /** blue-05 - France */
+  blue05: '#5FACFF',
+  /** blue-06 - Absolute */
+  blue06: '#3797FF',
+  /** blue-07 - Brandeis */
+  blue07: '#006FE6',
+  /** blue-08 - Usafa */
+  blue08: '#0057B4',
+  /** blue-09 - Midnight */
+  blue09: '#004793',
+  /** blue-10 - Maastricht */
+  blue10: '#002C5C',
 };
 
 const indigo = {
   // Indigo
-  /** Indigo01 - Soap */
-  indigo01: '#e7eaf4',
-  /** Indigo02 - Light Steel Blue */
-  indigo02: '#b9c0df',
-  /** Indigo03 - Ceil */
-  indigo03: '#8b97c9',
-  /** Indigo04 - Glaucous */
-  indigo04: '#5c6db4',
-  /** Indigo05 - Pigment Blue */
-  indigo05: '#2e449f',
-  /** Indigo06 - Indigo */
-  indigo06: '#001b8a',
-  /** Indigo07 - Dark Imperial Blue */
-  indigo07: '#001771',
-  /** Indigo08 - Royal Blue */
-  indigo08: '#001258',
-  /** Indigo09 - Maastricht Indigo */
-  indigo09: '#000d3f',
-  /** Indigo10 - Black Indigo */
-  indigo10: '#000826',
+  /** indigo-01 - Soap */
+  indigo01: '#F3F1FD',
+  /** indigo-02 - Steel */
+  indigo02: '#E8E2FB',
+  /** indigo-03 - Ceil */
+  indigo03: '#D0C6F6',
+  /** indigo-04 - Glaucous */
+  indigo04: '#B9A9F2',
+  /** indigo-05 - Pigment */
+  indigo05: '#967FEC',
+  /** indigo-06 - Imperial */
+  indigo06: '#6E4EE4',
+  /** indigo-07 - Indigo */
+  indigo07: '#5F3AE1',
+  /** indigo-08 - Royal */
+  indigo08: '#461FD1',
+  /** indigo-09 - Zaffre */
+  indigo09: '#34179D',
+  /** indigo-10 - Xiketic */
+  indigo10: '#1D0D57',
 };
 
 const turquoise = {
   // Turquoise
-  /** Turquoise01 - Bubbles */
-  turquoise01: '#e7fafd',
-  /** Turquoise02 - Diamond */
-  turquoise02: '#b9f1f9',
-  /** Turquoise03 - Pale Cyan */
-  turquoise03: '#8be7f5',
-  /** Turquoise04 - Sky Blue */
-  turquoise04: '#5cdef1',
-  /** Turquoise05 - Turquoise Surf */
-  turquoise05: '#2ed5ed',
-  /** Turquoise06 - Turquoise */
-  turquoise06: '#00cce9',
-  /** Turquoise07 - Bondi Blue */
-  turquoise07: '#00a7bf',
-  /** Turquoise08 - Teal */
+  /** turquoise-01 - Bubbles */
+  turquoise01: '#E7FAFD',
+  /** turquoise-02 - Diamond */
+  turquoise02: '#B9F1F9',
+  /** turquoise-03 - Cyan */
+  turquoise03: '#8BE7F5',
+  /** turquoise-04 - Sky */
+  turquoise04: '#5CDEF1',
+  /** turquoise-05 - Surf */
+  turquoise05: '#2ED5ED',
+  /** turquoise-06 - Turquoise */
+  turquoise06: '#00CCE9',
+  /** turquoise-07 - Bondi */
+  turquoise07: '#00A7BF',
+  /** turquoise-08 - Teal */
   turquoise08: '#008295',
-  /** Turquoise09 - Bubbles */
-  turquoise09: '#005d6a',
-  /** Turquoise10 - Bubbles */
+  /** turquoise-09 - Metallic */
+  turquoise09: '#005D6A',
+  /** turquoise-10 - Jungle */
   turquoise10: '#003840',
 };
 
 const green = {
   // Green
-  /** Green01 - Honeydew */
-  green01: '#f2f8f0',
-  /** Green02 - Timbrewolf */
-  green02: '#daecd3',
-  /** Green03 - Celadon */
-  green03: '#c1e0b7',
-  /** Green04 - Granny Smith Apple */
-  green04: '#a9d49a',
-  /** Green05 - Pistachio */
-  green05: '#90c87d',
-  /** Green06 - Green Bud */
-  green06: '#78bc61',
-  /** Green07 - Palm Leaf */
-  green07: '#639a50',
-  /** Green08 - Fern Green */
-  green08: '#4d783e',
-  /** Green09 - Mughal Green */
-  green09: '#37562d',
-  /** Green10 - Leather Jacket */
-  green10: '#21341b',
+  /** green-01 - Honeydew */
+  green01: '#EAFDF5',
+  /** green-02 - Timberwolf */
+  green02: '#D5FCEB',
+  /** green-03 - Celadon */
+  green03: '#AAF8D6',
+  /** green-04 - Granny */
+  green04: '#6AF3B8',
+  /** green-05 - Pistachio */
+  green05: '#12D983',
+  /** green-06 - Bud */
+  green06: '#10C476',
+  /** green-07 - Leaf */
+  green07: '#0EAD69',
+  /** green-08 - Fern */
+  green08: '#0C965A',
+  /** green-09 - Mughal */
+  green09: '#08643C',
+  /** green-10 - Leather */
+  green10: '#053E26',
 };
 
 const yellow = {
   // Yellow
-  /** Yellow01 - Seashell */
-  yellow01: '#fff7ed',
-  /** Yellow02 - Lumber */
-  yellow02: '#ffe7ca',
-  /** Yellow03 - Tuscan */
-  yellow03: '#ffd7a8',
-  /** Yellow04 - Topaz */
-  yellow04: '#ffc885',
-  /** Yellow05 - Rajah */
-  yellow05: '#ffb862',
-  /** Yellow06 - Yellow Orange */
-  yellow06: '#ffa940',
-  /** Yellow07 - Bronze */
-  yellow07: '#d18b35',
-  /** Yellow08 - Liver */
-  yellow08: '#a36c29',
-  /** Yellow09 - Drab */
-  yellow09: '#744d1e',
-  /** Yellow10 - Pullman */
-  yellow10: '#462f12',
+  /** yellow-01 - Seashell */
+  yellow01: '#FFFBED',
+  /** yellow-02 - Lumber */
+  yellow02: '#FFF7DB',
+  /** yellow-03 - Tuscan */
+  yellow03: '#FFEEB6',
+  /** yellow-04 - Topaz */
+  yellow04: '#FFE592',
+  /** yellow-05 - Rajah */
+  yellow05: '#FFD95B',
+  /** yellow-06 - Yellow */
+  yellow06: '#FFCC24',
+  /** yellow-07 - Mango */
+  yellow07: '#FFBE0B',
+  /** yellow-08 - Liver */
+  yellow08: '#DBA800',
+  /** yellow-09 - Drab */
+  yellow09: '#A37D00',
+  /** yellow-10 - Pullman */
+  yellow10: '#5B4600',
 };
 
 const red = {
   // Red
-  /** Red01 - Linen */
-  red01: '#fce9e8',
-  /** Red02 - Spanish Pink */
-  red02: '#f7bfbc',
-  /** Red03 - Salmon Pink */
-  red03: '#f2958f',
-  /** Red04 - Pastel */
-  red04: '#ed6b63',
-  /** Red05 - Vermilion */
-  red05: '#e84136',
-  /** Red06 - Crimson */
-  red06: '#e3170a',
-  /** Red07 - Orange */
-  red07: '#ba1309',
-  /** Red08 - Sangria */
-  red08: '#910f07',
-  /** Red09 - Rosewood */
-  red09: '#680b05',
-  /** Red10 - Bean */
-  red10: '#3e0703',
+  /** red-01 - Linen */
+  red01: '#FFF4F3',
+  /** red-02 - Pink */
+  red02: '#FFE9E6',
+  /** red-03 - Salmon */
+  red03: '#FFDBD6',
+  /** red-04 - Pastel */
+  red04: '#FFB1A8',
+  /** red-05 - Vermilion */
+  red05: '#FF9083',
+  /** red-06 - Crimson */
+  red06: '#FF796A',
+  /** red-07 - Soda */
+  red07: '#FF6150',
+  /** red-08 - Sangria */
+  red08: '#FF3822',
+  /** red-09 - Rosewood */
+  red09: '#D81600',
+  /** red-10 - Bean */
+  red10: '#780C00',
+};
+
+const greyLegacy = {
+  // Grey (legacy)
+  /** grey-01 - White */
+  grey01: '#ffffff',
+  /** grey-02 - Ghost */
+  grey02: '#f7f8f9',
+  /** grey-03 - Isabelline */
+  grey03: '#ebedef',
+  /** grey-04 - Gainsboro */
+  grey04: '#d7dbdf',
+  /** grey-05 - Ash Grey */
+  grey05: '#b0b7bf',
+  /** grey-06 - Grey Blue */
+  grey06: '#89949f',
+  /** grey-07 - Aurometalsaurus */
+  grey07: '#62707f',
+  /** grey-08 - Outer Space */
+  grey08: '#313f4e',
+  /** grey-09 - Japanese Indigo */
+  grey09: '#253648',
+  /** grey-10 - Yankees Blue */
+  grey10: '#1e2b3a',
 };
 
 const grey = {
-  // Grey
-  /** Grey 01 - White */
-  grey01: '#ffffff',
-  /** Grey 02 - Ghost */
-  grey02: '#f7f8f9',
-  /** Grey 03 - Isabelline */
-  grey03: '#ebedef',
-  /** Grey 04 - Gainsboro */
-  grey04: '#d7dbdf',
-  /** Grey 05 - Ash Grey */
-  grey05: '#b0b7bf',
-  /** Grey 06 - Grey Blue */
-  grey06: '#89949f',
-  /** Grey 07 - Aurometalsaurus */
-  grey07: '#62707f',
-  /** Grey 08 - Outer Space */
-  grey08: '#313f4e',
-  /** Grey 09 - Japanese Indigo */
-  grey09: '#253648',
-  /** Grey 10 - Yankees Blue */
-  grey10: '#1e2b3a',
+  /** greylight-01 - White */
+  greylight01: '#FFFFFF',
+  /** greylight-02 - Ghost */
+  greylight02: '#FAFBFD',
+  /** greylight-03 - Isabeline */
+  greylight03: '#F5F6F8',
+  /** greylight-04 - Gainsboro */
+  greylight04: '#E5EAEF',
+  /** greylight-05 - Ash Grey */
+  greylight05: '#C6D0DB',
+  /** greymed-01 - Crayola */
+  greymed01: '#B0B7BF',
+  /** greymed-02 - Cadet */
+  greymed02: '#949DA7',
+  /** greymed-03 - Light state */
+  greymed03: '#758495',
+  /** greymed-04 - Slate */
+  greymed04: '#6A7A8A',
+  /** greymed-05 - Electric */
+  greymed05: '#62707F',
+  /** greydark-01 - Charcoal */
+  greydark01: '#3C4D5F',
+  /** greydark-02 - Gunmetal */
+  greydark02: '#313F4E',
+  /** greydark-03 - Raisin */
+  greydark03: '#2A3643',
+  /** greydark-04 - Rich black */
+  greydark04: '#232D38',
+  /** greydark-05 - Black */
+  greydark05: '#181E25',
 };
 
 const systemColors = {
@@ -173,6 +206,7 @@ const systemColors = {
   ...green,
   ...yellow,
   ...red,
+  ...greyLegacy,
   ...grey,
 };
 

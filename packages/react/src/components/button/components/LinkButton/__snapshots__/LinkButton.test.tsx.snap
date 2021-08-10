@@ -58,7 +58,7 @@ exports[`components/Button <LinkButton /> renders colors correctly by variant 1`
   color: blue08;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  box-shadow: 0 0 0 1px #5ca3ef;
+  box-shadow: 0 0 0 1px #87C1FF;
 }
 
 .c0:disabled,
