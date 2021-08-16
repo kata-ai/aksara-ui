@@ -11,7 +11,7 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: ['default', 'neutral', 'info', 'warning', 'critical', 'success'],
+        options: ['default', 'grey', 'indigo', 'yellow', 'red', 'green', 'blue'],
       },
     },
     size: {
@@ -39,7 +39,7 @@ export const WithIcon: Story<React.PropsWithChildren<BadgeProps>> = args => {
   return <Badge icon={IconClose} {...args} />;
 };
 WithIcon.args = {
-  variant: 'critical',
+  variant: 'red',
   size: 'md',
   children: 'example',
 };
