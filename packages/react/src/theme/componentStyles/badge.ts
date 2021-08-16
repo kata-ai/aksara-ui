@@ -30,28 +30,32 @@ const badge: ComponentThemeConfig = {
     },
     variants: {
       default: {
-        backgroundColor: 'grey03',
-        color: 'grey08',
+        backgroundColor: 'greylight04',
+        color: 'greymed04',
       },
-      neutral: {
-        backgroundColor: 'grey03',
-        color: 'grey07',
+      grey: {
+        backgroundColor: 'greylight04',
+        color: 'greymed04',
       },
-      info: {
+      indigo: {
         backgroundColor: 'indigo01',
-        color: 'indigo04',
+        color: 'indigo06',
       },
-      warning: {
+      yellow: {
         backgroundColor: 'yellow01',
-        color: 'yellow07',
+        color: 'yellow08',
       },
-      critical: {
+      red: {
         backgroundColor: 'red01',
-        color: 'red06',
+        color: 'red07',
       },
-      success: {
+      green: {
         backgroundColor: 'green01',
         color: 'green07',
+      },
+      blue: {
+        backgroundColor: 'blue01',
+        color: 'blue07',
       },
     },
   },
