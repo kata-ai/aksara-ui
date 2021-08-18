@@ -6,8 +6,8 @@ const tooltipInner: ComponentThemeConfig = {
     textAlign: 'left',
     verticalAlign: 'middle',
     borderRadius: '4px',
-    color: 'grey01',
-    backgroundColor: 'grey09',
+    color: 'greylight01',
+    backgroundColor: 'greydark02',
   },
   propToScaleMap: [['size', 'sizes']],
   scales: {
