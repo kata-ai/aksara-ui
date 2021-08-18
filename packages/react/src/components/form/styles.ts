@@ -162,7 +162,7 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
       left: 4px;
       width: 6px;
       height: 10px;
-      border: 2px solid ${theme.colors.grey01};
+      border: 2px solid ${theme.colors.greylight01};
       border-top: 0;
       border-left: 0;
       transform: rotate(var(--r, 20deg));
@@ -178,13 +178,13 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
     }
 
     &:disabled {
-      background-color: ${theme.colors.grey03};
+      background-color: ${theme.colors.greylight02};
       cursor: not-allowed;
       opacity: 0.9;
 
       &:checked {
-        background-color: ${theme.colors.grey05};
-        border-color: ${theme.colors.grey04};
+        background-color: ${theme.colors.greylight05};
+        border-color: ${theme.colors.greylight05};
       }
     }
 
@@ -200,7 +200,7 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px ${theme.colors.blue06};
+      box-shadow: 0 0 0 2px ${theme.colors.blue03};
     }
 
     &:after {

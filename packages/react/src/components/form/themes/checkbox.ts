@@ -2,22 +2,22 @@ import { theme } from '../../../theme';
 
 export const checkboxThemeBase = {
   base: {
-    backgroundColor: theme.colors.grey01,
-    borderColor: theme.colors.grey04,
+    backgroundColor: theme.colors.greylight01,
+    borderColor: theme.colors.greylight05,
   },
   errors: {
-    backgroundColor: theme.colors.grey01,
+    backgroundColor: theme.colors.greylight01,
     borderColor: theme.colors.red07,
   },
 };
 
 export const checkboxThemeHover = {
   base: {
-    backgroundColor: theme.colors.grey01,
-    borderColor: theme.colors.indigo02,
+    backgroundColor: theme.colors.greylight03,
+    borderColor: theme.colors.greymed01,
   },
   errors: {
-    backgroundColor: theme.colors.grey01,
+    backgroundColor: theme.colors.greylight03,
     borderColor: theme.colors.red07,
   },
 };
