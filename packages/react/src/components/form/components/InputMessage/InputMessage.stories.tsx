@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import InputMessage from './InputMessage';
-import { messageIconVariants } from '../../../message/variants';
+import InputMessage, { InputMessageProps } from './InputMessage';
 
 export default {
   title: 'Core/Components/Form/InputMessage',
@@ -10,7 +9,7 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: Object.keys(messageIconVariants),
+        options: ['default', 'success', 'warning', 'info', 'critical'],
       },
     },
     children: {
@@ -19,10 +18,10 @@ export default {
   },
 };
 
-export const Example = (args: any) => {
+export const Example = (args: InputMessageProps) => {
   return <InputMessage {...args} />;
 };
 Example.args = {
-  variant: 'error',
+  variant: 'success',
   children: 'Please enter an email address.',
 };
