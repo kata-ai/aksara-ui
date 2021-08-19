@@ -7,7 +7,7 @@ import { useComponentStyles } from '../../../../system';
 
 export type InputMessageVariants = 'default' | 'success' | 'warning' | 'info' | 'critical';
 
-export interface InputMessageProps extends BoxProps {
+export interface InputMessageProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Additional CSS styles to give to the component. */
