@@ -6,7 +6,7 @@ const messageBase: ComponentThemeConfig = {
     minHeight: 56,
     border: '1px solid',
     borderColor: 'transparent',
-    borderRadius: 4,
+    borderRadius: 8,
     color: 'grey08',
     overflow: 'hidden',
   },
