@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 
 import { Stack, Box } from '../../../layout';
-import { messageVariants } from '../variants';
 import Message, { MessageProps } from './Message';
 
 export default {
@@ -15,18 +14,13 @@ export default {
   },
 };
 
-const messageVariantOptions: Record<string, string> = {};
-Object.keys(messageVariants).forEach((variant: string) => {
-  messageVariantOptions[variant] = variant;
-});
-
 const Template: Story<MessageProps> = args => <Message {...args} />;
 
 export const BasicExample = Template.bind({});
 
 BasicExample.args = {
   message: 'Trying to tell short and helpful information just in 1 sentence.',
-  state: 'general',
+  variant: 'default',
 };
 
 export const SectionLevel = Template.bind({});
@@ -101,7 +95,7 @@ export const Closable = () => {
           <Message
             title="Prediction results will show up here after you submit a sentence"
             message="Before train your prediction sentence, please learn how to use prediction in order to train your natural language."
-            state="info"
+            variant="info"
             onClose={handleClose}
           />
         )}
@@ -111,7 +105,7 @@ export const Closable = () => {
           <Message
             title="Your project is ready to deploy"
             message="This project has been completed and ready to live. Latest changes on Saturday, 21 March 2020 by Adri Muhammad."
-            state="success"
+            variant="success"
             onClose={handleClose}
           />
         )}
@@ -121,7 +115,7 @@ export const Closable = () => {
           <Message
             title="Risk action of updating training data"
             message="You intent to delete several training data, please learn how to utilize data set to improve your project performance."
-            state="error"
+            variant="critical"
             onClose={handleClose}
           />
         )}
@@ -131,7 +125,7 @@ export const Closable = () => {
           <Message
             title="Rollback to previous version"
             message="This action will rollback all of your configurations into version 3.0.1, please learn how deployment version works."
-            state="warning"
+            variant="warning"
             onClose={handleClose}
           />
         )}

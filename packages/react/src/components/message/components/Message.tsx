@@ -8,12 +8,13 @@ import {
   IconConversation,
 } from '@aksara-ui/icons';
 
-import { Heading, Paragraph } from '../../../layout';
+import { Box, Heading, Paragraph } from '../../../layout';
+import { useComponentStyles } from '../../../system';
 import { UnstyledButton } from '../../button';
-import { BaseMessageProps, Root, Icon, Inner, CloseButtonWrapper } from '../styles';
-import { messageIconVariants, closeButtonVariants } from '../variants';
 
-export interface MessageProps extends BaseMessageProps {
+export type MessageStates = 'default' | 'info' | 'warning' | 'critical' | 'success';
+
+export interface MessageProps {
   /** Message box content. Could be a string or a `ReactNode`. */
   message: string | React.ReactNode;
   /** Message title. */
@@ -22,12 +23,25 @@ export interface MessageProps extends BaseMessageProps {
   className?: string;
   /** Additional CSS properties to give to the banner. */
   style?: React.CSSProperties;
+  /** The message variant. Defaults to `default`. */
+  variant?: MessageStates;
   /** Triggers when the Close button is clicked. */
   onClose?: () => void;
 }
 
 /** Banners are used to convey important information to users. */
-const Message: React.FC<MessageProps> = ({ className, style, title, message, state, onClose, ...rest }) => {
+const Message: React.FC<MessageProps> = ({
+  className,
+  style,
+  title,
+  message,
+  variant = 'default',
+  onClose,
+  ...rest
+}) => {
+  const messageBaseStyles = useComponentStyles('messageBase', { variant });
+  const messageIconStyles = useComponentStyles('messageIcon', { variant });
+
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
@@ -37,21 +51,21 @@ const Message: React.FC<MessageProps> = ({ className, style, title, message, sta
   };
 
   const renderIconStates = () => {
-    switch (state) {
-      case 'general': {
-        return <IconConversation size={24} aria-hidden {...messageIconVariants[state]} />;
+    switch (variant) {
+      case 'default': {
+        return <IconConversation size={24} aria-hidden fill="currentColor" />;
       }
       case 'success': {
-        return <IconTickRounded size={24} aria-hidden {...messageIconVariants[state]} />;
+        return <IconTickRounded size={24} aria-hidden fill="currentColor" />;
       }
       case 'info': {
-        return <IconInfo size={24} aria-hidden {...messageIconVariants[state]} />;
+        return <IconInfo size={24} aria-hidden fill="currentColor" />;
       }
       case 'warning': {
-        return <IconWarningRounded size={24} aria-hidden {...messageIconVariants[state]} />;
+        return <IconWarningRounded size={24} aria-hidden fill="currentColor" />;
       }
-      case 'error': {
-        return <IconCloseRounded size={24} aria-hidden {...messageIconVariants[state]} />;
+      case 'critical': {
+        return <IconCloseRounded size={24} aria-hidden fill="currentColor" />;
       }
       default: {
         return null;
@@ -72,18 +86,20 @@ const Message: React.FC<MessageProps> = ({ className, style, title, message, sta
   };
 
   return (
-    <Root className={className} style={style} state={state} {...rest}>
-      <Icon>{renderIconStates()}</Icon>
-      <Inner>
+    <Box className={className} style={style} sx={messageBaseStyles} {...rest}>
+      <Box display="flex" alignItems="flex-start" justifyContent="center" py="md" pl="md" sx={messageIconStyles}>
+        {renderIconStates()}
+      </Box>
+      <Box flex="1 1 auto" p="md">
         {title ? (
           <Heading as="h4" mb="sm" scale={400} fontWeight={600}>
             {title}
           </Heading>
         ) : null}
         {renderMessage()}
-      </Inner>
+      </Box>
       {onClose && (
-        <CloseButtonWrapper state={state}>
+        <Box display="flex" alignItems="flex-start" justifyContent="center" p="md" color="greymed04">
           <UnstyledButton
             display="flex"
             alignItems="center"
@@ -95,16 +111,12 @@ const Message: React.FC<MessageProps> = ({ className, style, title, message, sta
             data-testid="Banner-closeButton"
             onClick={handleClose}
           >
-            <IconClose size={24} aria-hidden {...(state ? closeButtonVariants[state] : {})} />
+            <IconClose size={24} aria-hidden fill="currentColor" />
           </UnstyledButton>
-        </CloseButtonWrapper>
+        </Box>
       )}
-    </Root>
+    </Box>
   );
-};
-
-Message.defaultProps = {
-  state: 'general',
 };
 
 Message.displayName = 'Message';
