@@ -2,6 +2,8 @@ import avatar from './avatar';
 import badge from './badge';
 import button from './button';
 import card from './card';
+import form from './form';
+import message from './message';
 import pill from './pill';
 import typography from './typography';
 import tooltip from './tooltip';
@@ -14,6 +16,8 @@ const componentStyles = {
   badge,
   ...button,
   card,
+  ...form,
+  ...message,
   pill,
   ...typography,
   ...tooltip,
