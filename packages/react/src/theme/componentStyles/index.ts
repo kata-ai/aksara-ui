@@ -18,7 +18,7 @@ const componentStyles = {
   card,
   ...form,
   ...message,
-  pill,
+  ...pill,
   ...typography,
   ...tooltip,
 };
