@@ -1,78 +1,56 @@
 import { ComponentThemeConfig } from '../types';
 
-const pill: ComponentThemeConfig = {
+const pillRoot: ComponentThemeConfig = {
   baseStyle: {
     display: 'flex',
     position: 'relative',
     alignItems: 'center',
-    fontSize: 300,
+    fontSize: 200,
+    lineHeight: 200,
     fontWeight: 400,
     borderWidth: '1px',
     borderStyle: 'solid',
     borderColor: 'transparent',
   },
-  propToScaleMap: [
-    ['size', 'sizes'],
-    ['variant', 'variants'],
-    ['buttonVariant', 'buttonVariants'],
-  ],
+  propToScaleMap: [['variant', 'variants']],
   scales: {
-    sizes: {
-      sm: {
-        px: 'sm',
-        py: 'xxs',
-        fontSize: 300,
-      },
-      md: {
-        px: 'sm',
-        py: 'xs',
-        fontSize: 300,
-      },
-      lg: {
-        px: 'md',
-        py: 'sm',
-        fontSize: 300,
-      },
-    },
     variants: {
       default: {
-        backgroundColor: 'green03',
-        color: 'grey08',
-        borderColor: 'green03',
+        backgroundColor: 'greylight04',
+        color: 'greymed04',
+        borderColor: 'greylight04',
       },
-      neutral: {
+      grey: {
+        backgroundColor: 'greylight04',
+        color: 'greymed04',
+        borderColor: 'greylight04',
+      },
+      indigo: {
         backgroundColor: 'indigo01',
-        color: 'grey08',
-        borderColor: 'indigo03',
+        color: 'indigo06',
+        borderColor: 'indigo01',
       },
-      info: {
-        backgroundColor: 'blue03',
-        color: 'grey08',
-        borderColor: 'blue03',
+      red: {
+        backgroundColor: 'red01',
+        color: 'red07',
+        borderColor: 'red01',
       },
-      warning: {
-        backgroundColor: 'yellow03',
-        color: 'grey08',
+      green: {
+        backgroundColor: 'green01',
+        color: 'green07',
+        borderColor: 'green01',
       },
-      critical: {
-        backgroundColor: 'red03',
-        color: 'grey08',
-        borderColor: 'red03',
-      },
-      success: {
-        backgroundColor: 'green03',
-        color: 'grey08',
-        borderColor: 'green03',
-      },
-    },
-    buttonVariants: {
-      neutral: {
-        borderRightWidth: '1px',
-        borderRightStyle: 'solid',
-        borderRightColor: 'indigo03',
+      blue: {
+        backgroundColor: 'blue01',
+        color: 'blue07',
+        borderColor: 'blue01',
       },
     },
   },
+};
+
+const pill = {
+  pillRoot,
 };
 
 export default pill;

@@ -14,7 +14,7 @@ const componentStyles = {
   badge,
   ...button,
   card,
-  pill,
+  ...pill,
   ...typography,
   ...tooltip,
 };

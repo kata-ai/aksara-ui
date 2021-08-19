@@ -16,10 +16,13 @@ const Template: Story<PillProps> = args => (
 );
 
 export const BasicExample = Template.bind({});
-BasicExample.args = {};
+BasicExample.args = {
+  variant: 'default',
+};
 
 export const ClosableExample = Template.bind({});
 ClosableExample.args = {
+  variant: 'default',
   closable: true,
   onClose: action('pill-close'),
 };
