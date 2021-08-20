@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
 
-import { theme } from '../../../theme';
 import Spinner, { SpinnerProps } from './Spinner';
 
 export default {
@@ -30,7 +29,7 @@ const Template: Story<SpinnerProps> = args => <Spinner {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  spinnerColor: theme.colors.blue06,
+  spinnerColor: 'blue07',
   size: 24,
   label: 'Loading...',
 };
