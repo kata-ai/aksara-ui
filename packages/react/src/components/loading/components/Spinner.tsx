@@ -43,7 +43,7 @@ const BaseBox = styled(Box).withConfig<SpinnerProps>({ shouldForwardProp })`
  */
 const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
   (
-    { className, style, speed = '0.5s', spinnerColor = theme.colors.blue06, size = 24, label = 'Loading...', ...rest },
+    { className, style, speed = '0.5s', spinnerColor = theme.colors.blue07, size = 24, label = 'Loading...', ...rest },
     ref
   ) => {
     return (
