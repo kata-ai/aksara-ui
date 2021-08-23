@@ -30,8 +30,16 @@ export default {
   },
 };
 
-export const Example: Story<IconButtonAnchorProps> = args => (
-  <IconButtonAnchor aria-label="Push Me" rel="noopener noreferrer" onClick={action('button-click')} {...args}>
+export const Example: Story<IconButtonAnchorProps> = ({ variant, size, href, target }) => (
+  <IconButtonAnchor
+    aria-label="Push Me"
+    rel="noopener noreferrer"
+    onClick={action('button-click')}
+    variant={variant}
+    size={size}
+    href={href}
+    target={target}
+  >
     <IconPen fill="currentColor" aria-hidden="true" />
   </IconButtonAnchor>
 );

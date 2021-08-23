@@ -10,16 +10,10 @@ export default {
   component: Button,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['default', 'primary', 'outline', 'destructive', 'ghost'],
-      },
+      options: ['default', 'primary', 'outline', 'destructive', 'ghost'],
     },
     size: {
-      control: {
-        type: 'select',
-        options: [32, 40, 48],
-      },
+      options: [32, 40, 48],
     },
     block: {
       control: 'boolean',
@@ -36,7 +30,21 @@ export default {
   },
 };
 
-const Template: Story<ButtonProps> = args => <Button type="button" onClick={action('button-click')} {...args} />;
+const Template: Story<ButtonProps> = ({ variant, size, block, disabled, isLoading, icon, iconPosition }) => (
+  <Button
+    type="button"
+    onClick={action('button-click')}
+    variant={variant}
+    size={size}
+    block={block}
+    disabled={disabled}
+    isLoading={isLoading}
+    icon={icon}
+    iconPosition={iconPosition}
+  >
+    Push Me
+  </Button>
+);
 
 export const Example = Template.bind({});
 Example.args = {
@@ -45,7 +53,6 @@ Example.args = {
   block: false,
   disabled: false,
   isLoading: false,
-  children: 'Push Me',
 };
 
 export const WithIcon = Template.bind({});
