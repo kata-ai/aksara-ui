@@ -1,5 +1,6 @@
 import avatar from './avatar';
 import badge from './badge';
+import breadcrumb from './breadcrumb';
 import button from './button';
 import card from './card';
 import form from './form';
@@ -14,6 +15,7 @@ import tooltip from './tooltip';
 const componentStyles = {
   avatar,
   badge,
+  ...breadcrumb,
   ...button,
   card,
   ...form,
