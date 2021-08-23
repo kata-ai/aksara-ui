@@ -12,22 +12,16 @@ export default {
   argTypes: {
     scale: textScaleOptions,
     fontFamily: {
-      control: {
-        type: 'select',
-        options: Object.keys(theme.fonts),
-      },
+      options: Object.keys(theme.fonts),
     },
     fontWeight: {
-      control: {
-        type: 'select',
-        options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      },
+      options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 };
 
-const Template: Story<TextProps> = args => (
-  <Text onClick={action('button-click')} {...args}>
+const Template: Story<TextProps> = ({ scale, fontFamily, fontWeight }) => (
+  <Text onClick={action('button-click')} {...{ scale, fontFamily, fontWeight }}>
     We are making AI technology accessible to everyone
   </Text>
 );

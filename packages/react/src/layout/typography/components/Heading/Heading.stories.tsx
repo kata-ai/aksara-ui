@@ -25,8 +25,8 @@ export default {
   },
 };
 
-const Template: Story<HeadingProps> = args => (
-  <Heading {...args}>We are making AI technology accessible to everyone</Heading>
+const Template: Story<HeadingProps> = ({ scale, fontFamily, fontWeight }) => (
+  <Heading {...{ scale, fontFamily, fontWeight }}>We are making AI technology accessible to everyone</Heading>
 );
 
 export const Example = Template.bind({});

@@ -10,16 +10,10 @@ export default {
   component: ButtonAnchor,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['default', 'primary', 'outline', 'destructive', 'ghost'],
-      },
+      options: ['default', 'primary', 'outline', 'destructive', 'ghost'],
     },
     size: {
-      control: {
-        type: 'select',
-        options: [32, 40, 48],
-      },
+      options: [32, 40, 48],
     },
     block: {
       control: 'boolean',
@@ -36,8 +30,21 @@ export default {
   },
 };
 
-const Template: Story<ButtonAnchorProps> = args => (
-  <ButtonAnchor type="button" onClick={action('button-click')} {...args} />
+const Template: Story<ButtonAnchorProps> = ({ variant, size, block, href, target, isLoading, icon, iconPosition }) => (
+  <ButtonAnchor
+    type="button"
+    onClick={action('button-click')}
+    variant={variant}
+    size={size}
+    block={block}
+    href={href}
+    target={target}
+    isLoading={isLoading}
+    icon={icon}
+    iconPosition={iconPosition}
+  >
+    Push Me
+  </ButtonAnchor>
 );
 
 export const Example = Template.bind({});

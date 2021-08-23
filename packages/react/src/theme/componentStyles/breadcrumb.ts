@@ -13,9 +13,6 @@ const breadcrumbList: ComponentThemeConfig = {
     m: 0,
     p: 0,
     listStyleType: 'none',
-    '> :not([hidden]) ~ :not([hidden])': {
-      ml: 'xxs',
-    },
   },
 };
 
@@ -26,9 +23,6 @@ const breadcrumbListItem: ComponentThemeConfig = {
     alignItems: 'center',
     m: 0,
     p: 0,
-    '> :not([hidden]) ~ :not([hidden])': {
-      ml: 'xxs',
-    },
   },
 };
 

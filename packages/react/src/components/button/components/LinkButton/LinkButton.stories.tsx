@@ -9,16 +9,10 @@ export default {
   component: LinkButton,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['primary', 'destructive', 'inverse'],
-      },
+      options: ['primary', 'destructive', 'inverse'],
     },
     size: {
-      control: {
-        type: 'select',
-        options: [32, 40],
-      },
+      options: [32, 40],
     },
     isLoading: {
       control: 'boolean',
@@ -26,8 +20,8 @@ export default {
   },
 };
 
-export const Example: Story<LinkButtonProps> = args => (
-  <LinkButton type="button" onClick={action('button-click')} {...args}>
+export const Example: Story<LinkButtonProps> = ({ variant, size, isLoading }) => (
+  <LinkButton type="button" onClick={action('button-click')} variant={variant} size={size} isLoading={isLoading}>
     Push Me
   </LinkButton>
 );
