@@ -66,7 +66,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       if (isLoading) {
         return (
           <>
-            <Box>
+            <Box position="absolute" width={16} height={16}>
               <Spinner
                 size={16}
                 spinnerColor={variant === 'secondary' ? theme.colors.greydark02 : theme.colors.greylight01}
