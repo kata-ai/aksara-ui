@@ -9,7 +9,7 @@ export default {
   component: Button,
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'destructive', 'ghost'],
+      options: ['primary', 'secondary', 'destructive', 'outline-destructive', 'ghost'],
     },
     size: {
       options: ['sm', 'md', 'lg'],

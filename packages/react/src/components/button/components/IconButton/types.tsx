@@ -1,6 +1,12 @@
 import { AllButtonStyledProps } from '../Button';
 
-export type IconButtonVariants = 'primary' | 'secondary' | 'outline' | 'destructive' | 'ghost' | 'inverse';
+export type IconButtonVariants =
+  | 'primary'
+  | 'secondary'
+  | 'outline-destructive'
+  | 'plain'
+  | 'plain-destructive'
+  | 'inverse';
 export type IconButtonSizes = 'sm' | 'md' | 'lg';
 
 export interface IconButtonBaseProps extends AllButtonStyledProps {

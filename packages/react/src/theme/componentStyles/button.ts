@@ -23,60 +23,6 @@ const baseStyle = {
   },
 };
 
-const variants = {
-  primary: {
-    '&:not(:disabled)': {
-      backgroundColor: 'blue07',
-      color: 'greylight01',
-      '&:hover': {
-        backgroundColor: 'blue08',
-      },
-      '&:active': {
-        backgroundColor: 'blue09',
-      },
-    },
-    '&:disabled': {
-      backgroundColor: 'greylight05',
-      color: 'greylight01',
-    },
-  },
-  secondary: {
-    '&:not(:disabled)': {
-      borderColor: 'greylight04',
-      backgroundColor: 'greylight03',
-      color: 'greydark02',
-      '&:hover': {
-        backgroundColor: 'greylight04',
-      },
-    },
-    '&:disabled': {
-      backgroundColor: 'greylight03',
-      borderColor: 'greylight04',
-      color: 'greymed01',
-    },
-  },
-  destructive: {
-    '&:not(:disabled)': {
-      backgroundColor: 'red07',
-      color: 'greylight01',
-    },
-    '&:disabled': {
-      backgroundColor: 'greylight05',
-      color: 'greylight01',
-    },
-  },
-  'outline-destructive': {
-    '&:not(:disabled)': {
-      borderColor: 'red07',
-      color: 'greylight01',
-    },
-    '&:disabled': {
-      borderColor: 'greylight04',
-      color: 'greymed01',
-    },
-  },
-};
-
 export const buttonBase: ComponentThemeConfig = {
   baseStyle,
   propToScaleMap: [
@@ -101,7 +47,62 @@ export const buttonBase: ComponentThemeConfig = {
         px: 'md',
       },
     },
-    variants,
+    variants: {
+      primary: {
+        '&:not(:disabled)': {
+          backgroundColor: 'blue07',
+          color: 'greylight01',
+          '&:hover': {
+            backgroundColor: 'blue08',
+          },
+          '&:active': {
+            backgroundColor: 'blue09',
+          },
+        },
+        '&:disabled': {
+          backgroundColor: 'greylight05',
+          color: 'greylight01',
+        },
+      },
+      secondary: {
+        '&:not(:disabled)': {
+          borderColor: 'greylight04',
+          backgroundColor: 'greylight03',
+          color: 'greydark02',
+          '&:hover': {
+            backgroundColor: 'greylight04',
+          },
+        },
+        '&:disabled': {
+          backgroundColor: 'greylight03',
+          borderColor: 'greylight04',
+          color: 'greymed01',
+        },
+      },
+      destructive: {
+        '&:not(:disabled)': {
+          backgroundColor: 'red07',
+          color: 'greylight01',
+        },
+        '&:disabled': {
+          backgroundColor: 'greylight05',
+          color: 'greylight01',
+        },
+      },
+      'outline-destructive': {
+        '&:not(:disabled)': {
+          borderColor: 'red07',
+          color: 'red07',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 219, 214, 0.8)',
+          },
+        },
+        '&:disabled': {
+          borderColor: 'greylight04',
+          color: 'greymed01',
+        },
+      },
+    },
   },
 };
 
@@ -138,7 +139,77 @@ export const iconButton: ComponentThemeConfig = {
         },
       },
     },
-    variants,
+    variants: {
+      primary: {
+        '&:not(:disabled)': {
+          backgroundColor: 'blue07',
+          color: 'greylight01',
+          '&:hover': {
+            backgroundColor: 'blue08',
+          },
+          '&:active': {
+            backgroundColor: 'blue09',
+          },
+        },
+        '&:disabled': {
+          backgroundColor: 'greylight05',
+          color: 'greylight01',
+        },
+      },
+      secondary: {
+        '&:not(:disabled)': {
+          borderColor: 'greylight04',
+          backgroundColor: 'greylight03',
+          color: 'greydark02',
+          '&:hover': {
+            backgroundColor: 'greylight04',
+          },
+        },
+        '&:disabled': {
+          backgroundColor: 'greylight03',
+          borderColor: 'greylight04',
+          color: 'greymed01',
+        },
+      },
+      'outline-destructive': {
+        '&:not(:disabled)': {
+          borderColor: 'red07',
+          color: 'red07',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 219, 214, 0.8)',
+          },
+        },
+        '&:disabled': {
+          borderColor: 'greylight04',
+          color: 'greymed01',
+        },
+      },
+      plain: {
+        '&:not(:disabled)': {
+          color: 'greymed04',
+          '&:hover': {
+            backgroundColor: 'greylight03',
+          },
+        },
+        '&:disabled': {
+          color: 'greymed01',
+        },
+      },
+      'plain-destructive': {
+        '&:not(:disabled)': {
+          color: 'red07',
+          '&:hover': {
+            backgroundColor: 'red01',
+          },
+          '&:focus': {
+            backgroundColor: 'rgba(255, 219, 214, 0.8)',
+          },
+        },
+        '&:disabled': {
+          color: 'greymed01',
+        },
+      },
+    },
   },
 };
 
