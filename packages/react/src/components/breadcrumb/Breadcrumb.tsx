@@ -22,7 +22,11 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
           <Box as="li" sx={breadcrumbListItemStyles} key={`breadcrumb_${i}`}>
             {i !== 0 && (
               <Box aria-hidden color="greymed01">
-                {separator ?? <span>/</span>}
+                {separator ? (
+                  React.createElement(separator, { fill: 'currentColor', width: 8, height: 8 })
+                ) : (
+                  <span>/</span>
+                )}
               </Box>
             )}
             <Box>{item}</Box>

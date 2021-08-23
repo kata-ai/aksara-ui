@@ -23,6 +23,7 @@ const breadcrumbListItem: ComponentThemeConfig = {
   baseStyle: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
     m: 0,
     p: 0,
     '> :not([hidden]) ~ :not([hidden])': {
