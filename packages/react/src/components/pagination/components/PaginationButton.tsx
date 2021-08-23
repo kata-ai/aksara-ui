@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
-import { ButtonBase } from '../../button';
+import { UnstyledButton } from '../../button';
 import { theme } from '../../../theme';
 
 interface PaginationButtonProps {
@@ -39,7 +39,7 @@ const IsActiveStyles = css`
   }
 `;
 
-const PaginationButton = styled('button')<PaginationButtonProps>`
+const PaginationButton = styled(UnstyledButton)<PaginationButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -48,8 +48,6 @@ const PaginationButton = styled('button')<PaginationButtonProps>`
   text-align: center;
   border-radius: 4px;
   border: 1px solid transparent;
-
-  ${ButtonBase}
 
   user-select: none;
 
