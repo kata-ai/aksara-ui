@@ -1,12 +1,14 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { ButtonStyles } from './styles';
+import { Box, Text } from '../../../../layout';
+import { theme } from '../../../../theme';
+import { useComponentStyles } from '../../../../system';
+import { Spinner } from '../../../loading';
 import { ButtonBaseProps, ButtonSizes } from './types';
-import { renderButtonChildren, renderButtonIcon } from './utils';
+import { UnstyledButton } from '../UnstyledButton';
 
-export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonBaseProps, React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
@@ -16,10 +18,6 @@ export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
 }
-
-const Root = styled('button')<ButtonProps>`
-  ${ButtonStyles}
-`;
 
 /**
  * Buttons express what action will occur when the user clicks or touches it.
@@ -32,54 +30,77 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className,
       style,
-      size,
+      size = 'md',
       icon,
-      iconPosition,
+      iconPosition = 'left',
       isLoading,
       disabled,
-      variant,
+      variant = 'primary',
       block,
       width,
       selected,
-      position = 'relative',
       type = 'button',
       ...rest
     },
     ref
   ) => {
+    const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant });
+
+    const renderIcon = () => {
+      if (icon) {
+        return (
+          <Box
+            mr={iconPosition === 'left' ? 'xs' : null}
+            ml={iconPosition === 'right' ? 'xs' : null}
+            style={isLoading ? { visibility: 'hidden' } : undefined}
+          >
+            {React.createElement(icon, { fill: 'currentColor', size: 16 })}
+          </Box>
+        );
+      }
+
+      return null;
+    };
+
+    const renderButtonChildren = () => {
+      if (isLoading) {
+        return (
+          <>
+            <Box>
+              <Spinner
+                size={16}
+                spinnerColor={variant === 'secondary' ? theme.colors.greydark02 : theme.colors.greylight01}
+              />
+            </Box>
+            <Text visibility="hidden">{children}</Text>
+          </>
+        );
+      }
+
+      return <Text>{children}</Text>;
+    };
+
     return (
-      <Root
+      <UnstyledButton
         className={clsx(selected && 'selected', className)}
         style={style}
-        buttonSize={size}
-        icon={icon}
-        iconPosition={iconPosition}
         disabled={disabled || isLoading}
-        isLoading={isLoading}
-        variant={variant}
         ref={ref}
-        display={block ? 'block' : 'inline-block'}
+        display={block ? 'flex' : 'inline-flex'}
         width={block ? '100%' : width}
-        position={position}
+        flexDirection={iconPosition === 'left' ? 'row' : 'row-reverse'}
+        alignItems="center"
+        justifyContent="center"
         type={type}
+        sx={buttonBaseStyles}
         {...rest}
       >
-        {renderButtonIcon({ icon, iconPosition, size, isLoading })}
-        {renderButtonChildren({ isLoading, size, variant, children })}
-      </Root>
+        {renderIcon()}
+        {renderButtonChildren()}
+      </UnstyledButton>
     );
   }
 );
-
-Button.defaultProps = {
-  className: undefined,
-  style: undefined,
-  block: false,
-  icon: undefined,
-  iconPosition: 'left',
-  variant: 'default',
-  size: 40,
-};
 
 Button.displayName = 'Button';
 

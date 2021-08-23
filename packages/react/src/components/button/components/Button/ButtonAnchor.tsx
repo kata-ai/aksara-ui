@@ -1,10 +1,11 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { ButtonStyles } from './styles';
+import { Box, Text, UnstyledAnchor } from '../../../../layout';
+import { theme } from '../../../../theme';
+import { useComponentStyles } from '../../../../system';
+import { Spinner } from '../../../loading';
 import { ButtonBaseProps, ButtonSizes } from './types';
-import { renderButtonIcon, renderButtonChildren } from './utils';
 
 export interface ButtonAnchorProps extends ButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
@@ -17,10 +18,6 @@ export interface ButtonAnchorProps extends ButtonBaseProps, React.AnchorHTMLAttr
   isLoading?: boolean;
 }
 
-const Root = styled('a')<ButtonAnchorProps>`
-  ${ButtonStyles}
-`;
-
 /**
  * Buttons express what action will occur when the user clicks or touches it.
  * Buttons are used to initialize an action, either in the background or
@@ -28,40 +25,77 @@ const Root = styled('a')<ButtonAnchorProps>`
  */
 const ButtonAnchor = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
   (
-    { children, className, style, size, icon, iconPosition, isLoading, variant, block, width, selected, ...rest },
+    {
+      children,
+      className,
+      style,
+      size = 'md',
+      icon,
+      iconPosition = 'left',
+      isLoading,
+      variant = 'primary',
+      block,
+      width,
+      selected,
+      ...rest
+    },
     ref
   ) => {
+    const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant });
+
+    const renderIcon = () => {
+      if (icon) {
+        return (
+          <Box
+            mr={iconPosition === 'left' ? 'xs' : null}
+            ml={iconPosition === 'right' ? 'xs' : null}
+            style={isLoading ? { visibility: 'hidden' } : undefined}
+          >
+            {React.createElement(icon, { fill: 'currentColor', size: 16 })}
+          </Box>
+        );
+      }
+
+      return null;
+    };
+
+    const renderButtonChildren = () => {
+      if (isLoading) {
+        return (
+          <>
+            <Box>
+              <Spinner
+                size={16}
+                spinnerColor={variant === 'secondary' ? theme.colors.greydark02 : theme.colors.greylight01}
+              />
+            </Box>
+            <Text visibility="hidden">{children}</Text>
+          </>
+        );
+      }
+
+      return <Text>{children}</Text>;
+    };
+
     return (
-      <Root
+      <UnstyledAnchor
         className={clsx(selected && 'selected', className)}
         style={style}
-        buttonSize={size}
-        icon={icon}
-        iconPosition={iconPosition}
-        isLoading={isLoading}
-        variant={variant}
         ref={ref}
-        display={block ? 'block' : 'inline-block'}
+        display={block ? 'flex' : 'inline-flex'}
         width={block ? '100%' : width}
-        position="relative"
+        flexDirection={iconPosition === 'left' ? 'row' : 'row-reverse'}
+        alignItems="center"
+        justifyContent="center"
+        sx={buttonBaseStyles}
         {...rest}
       >
-        {renderButtonIcon({ icon, iconPosition, size, isLoading })}
-        {renderButtonChildren({ isLoading, size, variant, children })}
-      </Root>
+        {renderIcon()}
+        {renderButtonChildren()}
+      </UnstyledAnchor>
     );
   }
 );
-
-ButtonAnchor.defaultProps = {
-  className: undefined,
-  style: undefined,
-  block: false,
-  icon: undefined,
-  iconPosition: 'left',
-  variant: 'default',
-  size: 40,
-};
 
 ButtonAnchor.displayName = 'ButtonAnchor';
 

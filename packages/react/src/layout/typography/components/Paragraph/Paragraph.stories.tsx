@@ -11,22 +11,16 @@ export default {
   argTypes: {
     scale: paragraphScaleOptions,
     fontFamily: {
-      control: {
-        type: 'select',
-        options: Object.keys(theme.fonts),
-      },
+      options: Object.keys(theme.fonts),
     },
     fontWeight: {
-      control: {
-        type: 'select',
-        options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      },
+      options: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 };
 
-const Template: Story<ParagraphProps> = args => (
-  <Paragraph {...args}>
+const Template: Story<ParagraphProps> = ({ scale, fontFamily, fontWeight }) => (
+  <Paragraph {...{ scale, fontFamily, fontWeight }}>
     We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on understanding human
     conversation so we can improve the way humans collaborate with technology to be more productive and empowered.
     Kata.ai’s Natural Language Processing (NLP) technology powers multi-purpose chatbots for major corporations in

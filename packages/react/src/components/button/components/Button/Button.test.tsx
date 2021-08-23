@@ -24,16 +24,9 @@ describe('components/Button', () => {
       expect(container.firstChild).toMatchSnapshot();
     });
 
-    test('renders icons correctly', () => {
-      const { container } = render(<Button icon="add">test button</Button>);
-      const icon = container.querySelector('i');
-
-      expect(icon).toBeInTheDocument();
-    });
-
     test('renders icons correctly with ReactNode', () => {
       const { container } = render(
-        <Button size={32} icon={IconDocAdd} iconPosition="right">
+        <Button size="lg" icon={IconDocAdd} iconPosition="right">
           test button
         </Button>
       );

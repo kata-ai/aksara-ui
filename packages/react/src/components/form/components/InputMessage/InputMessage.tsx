@@ -2,10 +2,8 @@ import * as React from 'react';
 import { IconCloseRounded, IconTickRounded, IconInfo, IconWarningTriangle } from '@aksara-ui/icons';
 
 import { Text, Box, BoxProps } from '../../../../layout';
-import { theme } from '../../../../theme';
-import { useComponentStyles } from '../../../../system';
 
-export type InputMessageVariants = 'default' | 'success' | 'warning' | 'info' | 'critical';
+export type InputMessageVariants = 'success' | 'warning' | 'info' | 'critical';
 
 export interface InputMessageProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
   /** Additional CSS classes to give to the component. */
@@ -15,35 +13,48 @@ export interface InputMessageProps extends BoxProps, React.ComponentPropsWithout
   variant?: InputMessageVariants;
 }
 
-function messageIcon(variant: InputMessageVariants = 'default') {
-  const spaceProps = { marginRight: theme.space.xs };
-
+function messageIcon(variant: InputMessageVariants = 'info') {
   switch (variant) {
-    case 'default': {
-      return null;
-    }
     case 'success': {
-      return <IconTickRounded size={16} fill="currentColor" style={spaceProps} />;
+      return <IconTickRounded size={16} fill="currentColor" />;
     }
     case 'info': {
-      return <IconInfo size={16} fill="currentColor" style={spaceProps} />;
+      return <IconInfo size={16} fill="currentColor" />;
     }
     case 'warning': {
-      return <IconWarningTriangle size={16} fill="currentColor" style={spaceProps} />;
+      return <IconWarningTriangle size={16} fill="currentColor" />;
     }
     case 'critical': {
-      return <IconCloseRounded size={16} fill="currentColor" style={spaceProps} />;
+      return <IconCloseRounded size={16} fill="currentColor" />;
     }
     default: {
-      return null;
+      return <IconInfo size={16} fill="currentColor" />;
+    }
+  }
+}
+
+function messageColors(variant: InputMessageVariants = 'info') {
+  switch (variant) {
+    case 'success': {
+      return 'green08';
+    }
+    case 'info': {
+      return 'indigo06';
+    }
+    case 'warning': {
+      return 'yellow08';
+    }
+    case 'critical': {
+      return 'red07';
+    }
+    default: {
+      return 'indigo06';
     }
   }
 }
 
 const InputMessage = React.forwardRef<HTMLDivElement, InputMessageProps>(
-  ({ className, style, children, variant = 'default', ...rest }, ref) => {
-    const inputMessageStyles = useComponentStyles('inputMessage', { variant });
-
+  ({ className, style, children, variant = 'info', ...rest }, ref) => {
     return (
       <Box
         ref={ref}
@@ -53,7 +64,7 @@ const InputMessage = React.forwardRef<HTMLDivElement, InputMessageProps>(
         flexDirection="row"
         alignItems="center"
         mt="xs"
-        sx={inputMessageStyles}
+        color={messageColors(variant)}
         {...rest}
       >
         <Box mr="xs" size={16}>

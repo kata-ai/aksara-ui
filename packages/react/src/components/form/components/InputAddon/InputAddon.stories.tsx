@@ -21,22 +21,25 @@ export default {
       control: 'boolean',
     },
     inputSize: {
-      control: {
-        type: 'select',
-        options: [40, 48],
-      },
+      options: [40, 48],
     },
   },
 };
 
-export const Example: Story<InputTextProps> = ({ ...args }) => {
+export const Example: Story<InputTextProps> = ({ size, placeholder, disabled, errors }) => {
   return (
     <Box>
       <InputGroup inputSize={40}>
         <InputAddon>
           <IconLock />
         </InputAddon>
-        <InputText addon id="password_dummy" name="password_dummy" size={40} {...args} />
+        <InputText
+          addon
+          id="password_dummy"
+          name="password_dummy"
+          size={40}
+          {...{ size, placeholder, disabled, errors }}
+        />
       </InputGroup>
     </Box>
   );

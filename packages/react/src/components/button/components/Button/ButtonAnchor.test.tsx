@@ -25,15 +25,8 @@ describe('components/Button', () => {
     });
 
     test('renders icons correctly', () => {
-      const { container } = render(<ButtonAnchor icon="add">test button</ButtonAnchor>);
-      const icon = container.querySelector('i');
-
-      expect(icon).toBeInTheDocument();
-    });
-
-    test('renders icons correctly with ReactNode', () => {
       const { container } = render(
-        <ButtonAnchor size={32} icon={IconDocAdd} iconPosition="right">
+        <ButtonAnchor size="lg" icon={IconDocAdd} iconPosition="right">
           test button
         </ButtonAnchor>
       );

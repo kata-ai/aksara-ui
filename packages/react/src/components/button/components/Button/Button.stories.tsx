@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 import { IconPen } from '@aksara-ui/icons';
 
@@ -10,16 +9,10 @@ export default {
   component: Button,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['default', 'primary', 'outline', 'destructive', 'ghost'],
-      },
+      options: ['primary', 'secondary', 'destructive', 'ghost'],
     },
     size: {
-      control: {
-        type: 'select',
-        options: [32, 40, 48],
-      },
+      options: ['sm', 'md', 'lg'],
     },
     block: {
       control: 'boolean',
@@ -33,22 +26,38 @@ export default {
     children: {
       control: 'text',
     },
+    onClick: {
+      action: 'clicked',
+    },
   },
 };
 
-const Template: Story<ButtonProps> = args => <Button type="button" onClick={action('button-click')} {...args} />;
+const Template: Story<ButtonProps> = ({ variant, size, block, disabled, isLoading, icon, iconPosition, onClick }) => (
+  <Button
+    type="button"
+    variant={variant}
+    size={size}
+    block={block}
+    disabled={disabled}
+    isLoading={isLoading}
+    icon={icon}
+    iconPosition={iconPosition}
+    onClick={onClick}
+  >
+    Push Me
+  </Button>
+);
 
-export const Example = Template.bind({});
+export const Example: Story<ButtonProps> = Template.bind({});
 Example.args = {
   variant: 'primary',
-  size: 40,
+  size: 'md',
   block: false,
   disabled: false,
   isLoading: false,
-  children: 'Push Me',
 };
 
-export const WithIcon = Template.bind({});
+export const WithIcon: Story<ButtonProps> = Template.bind({});
 WithIcon.args = {
   ...Example.args,
   icon: IconPen,

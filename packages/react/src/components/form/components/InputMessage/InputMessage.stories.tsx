@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react';
 import * as React from 'react';
 
 import InputMessage, { InputMessageProps } from './InputMessage';
@@ -7,21 +8,16 @@ export default {
   component: InputMessage,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['default', 'success', 'warning', 'info', 'critical'],
-      },
-    },
-    children: {
-      control: 'text',
+      options: ['success', 'warning', 'info', 'critical'],
     },
   },
 };
 
-export const Example = (args: InputMessageProps) => {
-  return <InputMessage {...args} />;
+const Template = ({ variant }: InputMessageProps) => {
+  return <InputMessage variant={variant}>Input Helper Text</InputMessage>;
 };
+
+export const Example: Story<InputMessageProps> = Template.bind({});
 Example.args = {
-  variant: 'success',
-  children: 'Please enter an email address.',
+  variant: 'info',
 };
