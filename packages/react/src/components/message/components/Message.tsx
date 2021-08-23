@@ -79,7 +79,7 @@ const Message: React.FC<MessageProps> = ({
     }
 
     return (
-      <Paragraph display="inline-block" scale={300} m={0}>
+      <Paragraph display="inline-block" scale={200} m={0}>
         {message}
       </Paragraph>
     );
@@ -92,7 +92,7 @@ const Message: React.FC<MessageProps> = ({
       </Box>
       <Box flex="1 1 auto" p="md">
         {title ? (
-          <Heading as="h4" mb="sm" scale={400} fontWeight={600}>
+          <Heading as="h4" mb="xs" scale={300} fontWeight={600}>
             {title}
           </Heading>
         ) : null}
