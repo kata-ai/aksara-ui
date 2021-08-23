@@ -10,6 +10,9 @@ const renderButtonIcon = ({ icon, iconPosition, isLoading }: ButtonIconProps) =>
   if (icon) {
     return (
       <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
         mr={iconPosition === 'left' ? 'xs' : null}
         ml={iconPosition === 'right' ? 'xs' : null}
         style={isLoading ? { visibility: 'hidden' } : undefined}

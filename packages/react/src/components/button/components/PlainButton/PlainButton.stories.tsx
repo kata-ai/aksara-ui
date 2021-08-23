@@ -23,8 +23,16 @@ export default {
   },
 };
 
-const Template: Story<PlainButtonProps> = ({ variant, size, isLoading, onClick }) => (
-  <PlainButton type="button" variant={variant} size={size} isLoading={isLoading} onClick={onClick}>
+const Template: Story<PlainButtonProps> = ({ variant, size, isLoading, icon, iconPosition, onClick }) => (
+  <PlainButton
+    type="button"
+    variant={variant}
+    size={size}
+    isLoading={isLoading}
+    icon={icon}
+    iconPosition={iconPosition}
+    onClick={onClick}
+  >
     Push Me
   </PlainButton>
 );
