@@ -1,42 +1,30 @@
 import * as React from 'react';
+import { Box, Text } from '../../../../../layout';
 import { theme } from '../../../../../theme';
-import { InvisibleText, LoaderCircle } from '../components';
-import { ButtonBaseProps, ButtonSizes } from '../types';
+import { Spinner } from '../../../../loading';
+import { ButtonBaseProps } from '../types';
 
 interface ButtonChildrenProps extends Pick<ButtonBaseProps, 'variant'> {
   isLoading?: boolean;
-  size?: ButtonSizes;
   children?: React.ReactNode;
 }
 
-const loadingIconSizes = (size?: ButtonSizes) => {
-  switch (size) {
-    case 48:
-      return 40;
-    case 40:
-      return 32;
-    case 32:
-      return 24;
-    default:
-      return 32;
-  }
-};
-
-const renderButtonChildren = ({ isLoading, size, variant, children }: ButtonChildrenProps) => {
+const renderButtonChildren = ({ isLoading, variant, children }: ButtonChildrenProps) => {
   if (isLoading) {
     return (
       <>
-        <LoaderCircle
-          size={loadingIconSizes(size)}
-          buttonSize={size}
-          spinnerColor={variant === 'outline' ? theme.colors.grey04 : theme.colors.white}
-        />
-        <InvisibleText>{children}</InvisibleText>
+        <Box position="absolute" width={16} height={16}>
+          <Spinner
+            size={16}
+            spinnerColor={variant === 'secondary' ? theme.colors.greydark02 : theme.colors.greylight01}
+          />
+        </Box>
+        <Text visibility="hidden">{children}</Text>
       </>
     );
   }
 
-  return children;
+  return <Text>{children}</Text>;
 };
 
 export default renderButtonChildren;

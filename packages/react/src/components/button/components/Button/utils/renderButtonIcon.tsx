@@ -1,34 +1,21 @@
 import * as React from 'react';
-import { IconWrapper } from '../components';
-import { ButtonBaseProps, ButtonSizes } from '../types';
+import { Box } from '../../../../../layout';
+import { ButtonBaseProps } from '../types';
 
 interface ButtonIconProps extends ButtonBaseProps {
-  size?: ButtonSizes;
   isLoading?: boolean;
 }
 
-const renderButtonIcon = ({ icon, iconPosition, size, isLoading }: ButtonIconProps) => {
-  if (typeof icon === 'string') {
-    return (
-      <IconWrapper
-        iconPosition={iconPosition}
-        buttonSize={size}
-        style={isLoading ? { visibility: 'hidden' } : undefined}
-      >
-        <i className={`icon-${icon}`} />
-      </IconWrapper>
-    );
-  }
-
+const renderButtonIcon = ({ icon, iconPosition, isLoading }: ButtonIconProps) => {
   if (icon) {
     return (
-      <IconWrapper
-        iconPosition={iconPosition}
-        buttonSize={size}
+      <Box
+        mr={iconPosition === 'left' ? 'xs' : null}
+        ml={iconPosition === 'right' ? 'xs' : null}
         style={isLoading ? { visibility: 'hidden' } : undefined}
       >
-        {React.createElement(icon, { fill: 'currentColor', size: 20 })}
-      </IconWrapper>
+        {React.createElement(icon, { fill: 'currentColor', size: 16 })}
+      </Box>
     );
   }
 

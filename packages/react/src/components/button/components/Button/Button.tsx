@@ -1,12 +1,10 @@
 import * as React from 'react';
 import clsx from 'clsx';
 
-import { Box, Text } from '../../../../layout';
-import { theme } from '../../../../theme';
 import { useComponentStyles } from '../../../../system';
-import { Spinner } from '../../../loading';
 import { ButtonBaseProps, ButtonSizes } from './types';
 import { UnstyledButton } from '../UnstyledButton';
+import { renderButtonChildren, renderButtonIcon } from './utils';
 
 export interface ButtonProps extends ButtonBaseProps, React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component */
@@ -46,40 +44,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant });
 
-    const renderIcon = () => {
-      if (icon) {
-        return (
-          <Box
-            mr={iconPosition === 'left' ? 'xs' : null}
-            ml={iconPosition === 'right' ? 'xs' : null}
-            style={isLoading ? { visibility: 'hidden' } : undefined}
-          >
-            {React.createElement(icon, { fill: 'currentColor', size: 16 })}
-          </Box>
-        );
-      }
-
-      return null;
-    };
-
-    const renderButtonChildren = () => {
-      if (isLoading) {
-        return (
-          <>
-            <Box position="absolute" width={16} height={16}>
-              <Spinner
-                size={16}
-                spinnerColor={variant === 'secondary' ? theme.colors.greydark02 : theme.colors.greylight01}
-              />
-            </Box>
-            <Text visibility="hidden">{children}</Text>
-          </>
-        );
-      }
-
-      return <Text>{children}</Text>;
-    };
-
     return (
       <UnstyledButton
         className={clsx(selected && 'selected', className)}
@@ -95,8 +59,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         sx={buttonBaseStyles}
         {...rest}
       >
-        {renderIcon()}
-        {renderButtonChildren()}
+        {renderButtonIcon({ icon, iconPosition, isLoading })}
+        {renderButtonChildren({ isLoading, variant, children })}
       </UnstyledButton>
     );
   }
