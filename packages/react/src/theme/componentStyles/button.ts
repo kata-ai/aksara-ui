@@ -213,6 +213,73 @@ export const iconButton: ComponentThemeConfig = {
   },
 };
 
+export const plainButton: ComponentThemeConfig = {
+  baseStyle: {
+    ...baseStyle,
+    '> svg': {
+      width: '16px',
+      height: '16px',
+    },
+    '&:disabled': {
+      color: 'greymed01',
+    },
+  },
+  propToScaleMap: [
+    ['variant', 'variants'],
+    ['size', 'sizes'],
+  ],
+  scales: {
+    sizes: {
+      sm: {
+        fontSize: '14px',
+        lineHeight: '24px',
+      },
+      md: {
+        fontSize: '16px',
+        lineHeight: '24px',
+      },
+    },
+    variants: {
+      primary: {
+        '&:not(:disabled)': {
+          color: 'blue07',
+          '&:hover': {
+            color: 'blue08',
+            '> span': {
+              textDecoration: 'underline',
+            },
+          },
+          '&:focus': {
+            backgroundColor: 'greylight03',
+            color: 'blue09',
+            '> span': {
+              textDecoration: 'underline',
+            },
+          },
+        },
+      },
+      destructive: {
+        '&:not(:disabled)': {
+          color: 'red07',
+          '&:hover': {
+            color: 'red08',
+            '> span': {
+              textDecoration: 'underline',
+            },
+          },
+          '&:focus': {
+            backgroundColor: 'greylight03',
+            color: 'red09',
+            '> span': {
+              textDecoration: 'underline',
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
 export const unstyledButton: ComponentThemeConfig = {
   baseStyle: {
     width: 'auto',
@@ -246,6 +313,7 @@ export const unstyledButton: ComponentThemeConfig = {
 const button = {
   buttonBase,
   iconButton,
+  plainButton,
   unstyledButton,
 };
 
