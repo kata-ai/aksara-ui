@@ -1,8 +1,9 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { IconButtonStyles, IconButtonBaseProps, IconButtonSizes } from './styles';
+import { UnstyledAnchor } from '../../../../layout';
+import { useComponentStyles } from '../../../../system';
+import { IconButtonBaseProps, IconButtonSizes } from './types';
 
 export interface IconButtonAnchorProps extends IconButtonBaseProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Additional CSS classes to give to the component */
@@ -11,25 +12,30 @@ export interface IconButtonAnchorProps extends IconButtonBaseProps, React.Anchor
   style?: React.CSSProperties;
   /** The size of the button. */
   size?: IconButtonSizes;
+  /** True if the button is disabled due to loading */
+  isLoading?: boolean;
 }
 
-const Root = styled('a')<IconButtonAnchorProps>`
-  ${IconButtonStyles}
-`;
-
 const IconButtonAnchor = React.forwardRef<HTMLAnchorElement, IconButtonAnchorProps>(
-  ({ children, className, style, size, selected, ...rest }, ref) => (
-    <Root className={clsx(selected && 'selected', className)} style={style} buttonSize={size} ref={ref} {...rest}>
-      {children}
-    </Root>
-  )
-);
+  ({ children, className, style, isLoading, size = 'md', variant = 'primary', width, selected, ...rest }, ref) => {
+    const iconButtonStyles = useComponentStyles('iconButton', { size, variant });
 
-IconButtonAnchor.defaultProps = {
-  className: undefined,
-  style: undefined,
-  variant: 'default',
-};
+    return (
+      <UnstyledAnchor
+        className={clsx(selected && 'selected', className)}
+        style={style}
+        ref={ref}
+        display="inline-flex"
+        alignItems="center"
+        justifyContent="center"
+        sx={iconButtonStyles}
+        {...rest}
+      >
+        {children}
+      </UnstyledAnchor>
+    );
+  }
+);
 
 IconButtonAnchor.displayName = 'IconButtonAnchor';
 

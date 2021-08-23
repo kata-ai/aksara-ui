@@ -1,28 +1,84 @@
 import { ComponentThemeConfig } from '../types';
 
-export const buttonBase: ComponentThemeConfig = {
-  baseStyle: {
-    margin: 0,
-    padding: 0,
-    textAlign: 'center',
-    whiteSpace: 'nowrap',
-    verticalAlign: 'middle',
-    userSelect: 'none',
-    background: 'none',
-    textDecoration: 'none',
-    fontSize: '14px',
-    fontWeight: 400,
-    lineHeight: '16px',
-    letterSpacing: '0.2px',
-    border: '1px solid transparent',
-    borderRadius: 8,
-    '&:focus': {
-      boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+const baseStyle = {
+  margin: 0,
+  padding: 0,
+  textAlign: 'center',
+  whiteSpace: 'nowrap',
+  verticalAlign: 'middle',
+  userSelect: 'none',
+  background: 'none',
+  textDecoration: 'none',
+  fontSize: '14px',
+  fontWeight: 400,
+  lineHeight: '16px',
+  letterSpacing: '0.2px',
+  border: '1px solid transparent',
+  borderRadius: 8,
+  '&:focus': {
+    boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+  },
+  '&:disabled': {
+    cursor: 'not-allowed',
+  },
+};
+
+const variants = {
+  primary: {
+    '&:not(:disabled)': {
+      backgroundColor: 'blue07',
+      color: 'greylight01',
+      '&:hover': {
+        backgroundColor: 'blue08',
+      },
+      '&:active': {
+        backgroundColor: 'blue09',
+      },
     },
     '&:disabled': {
-      cursor: 'not-allowed',
+      backgroundColor: 'greylight05',
+      color: 'greylight01',
     },
   },
+  secondary: {
+    '&:not(:disabled)': {
+      borderColor: 'greylight04',
+      backgroundColor: 'greylight03',
+      color: 'greydark02',
+      '&:hover': {
+        backgroundColor: 'greylight04',
+      },
+    },
+    '&:disabled': {
+      backgroundColor: 'greylight03',
+      borderColor: 'greylight04',
+      color: 'greymed01',
+    },
+  },
+  destructive: {
+    '&:not(:disabled)': {
+      backgroundColor: 'red07',
+      color: 'greylight01',
+    },
+    '&:disabled': {
+      backgroundColor: 'greylight05',
+      color: 'greylight01',
+    },
+  },
+  'outline-destructive': {
+    '&:not(:disabled)': {
+      borderColor: 'red07',
+      color: 'greylight01',
+    },
+    '&:disabled': {
+      borderColor: 'greylight04',
+      color: 'greymed01',
+    },
+  },
+};
+
+export const buttonBase: ComponentThemeConfig = {
+  baseStyle,
   propToScaleMap: [
     ['size', 'sizes'],
     ['variant', 'variants'],
@@ -45,59 +101,44 @@ export const buttonBase: ComponentThemeConfig = {
         px: 'md',
       },
     },
-    variants: {
-      primary: {
-        '&:not(:disabled)': {
-          backgroundColor: 'blue07',
-          color: 'greylight01',
-          '&:hover': {
-            backgroundColor: 'blue08',
-          },
-          '&:active': {
-            backgroundColor: 'blue09',
-          },
-        },
-        '&:disabled': {
-          backgroundColor: 'greylight05',
-          color: 'greylight01',
-        },
-      },
-      secondary: {
-        '&:not(:disabled)': {
-          borderColor: 'greylight04',
-          backgroundColor: 'greylight03',
-          color: 'greydark02',
-          '&:hover': {
-            backgroundColor: 'greylight04',
-          },
-        },
-        '&:disabled': {
-          backgroundColor: 'greylight03',
-          borderColor: 'greylight04',
-          color: 'greymed01',
+    variants,
+  },
+};
+
+export const iconButton: ComponentThemeConfig = {
+  baseStyle,
+  propToScaleMap: [
+    ['size', 'sizes'],
+    ['variant', 'variants'],
+  ],
+  scales: {
+    sizes: {
+      sm: {
+        width: '24px',
+        height: '24px',
+        '> svg': {
+          width: '16px',
+          height: '16px',
         },
       },
-      destructive: {
-        '&:not(:disabled)': {
-          backgroundColor: 'red07',
-          color: 'greylight01',
-        },
-        '&:disabled': {
-          backgroundColor: 'greylight05',
-          color: 'greylight01',
+      md: {
+        width: '32px',
+        height: '32px',
+        '> svg': {
+          width: '16px',
+          height: '16px',
         },
       },
-      'outline-destructive': {
-        '&:not(:disabled)': {
-          borderColor: 'red07',
-          color: 'greylight01',
-        },
-        '&:disabled': {
-          borderColor: 'greylight04',
-          color: 'greymed01',
+      lg: {
+        width: '40px',
+        height: '40px',
+        '> svg': {
+          width: '20px',
+          height: '20px',
         },
       },
     },
+    variants,
   },
 };
 
@@ -133,6 +174,7 @@ export const unstyledButton: ComponentThemeConfig = {
 
 const button = {
   buttonBase,
+  iconButton,
   unstyledButton,
 };
 

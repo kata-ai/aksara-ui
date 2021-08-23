@@ -4,4 +4,4 @@ export * from './IconButton';
 export { default as IconButtonAnchor } from './IconButtonAnchor';
 export * from './IconButtonAnchor';
 
-export * from './styles';
+export * from './types';

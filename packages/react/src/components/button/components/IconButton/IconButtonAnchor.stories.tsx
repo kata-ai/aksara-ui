@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
@@ -10,16 +9,10 @@ export default {
   component: IconButtonAnchor,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['default', 'primary', 'outline', 'destructive', 'ghost'],
-      },
+      options: ['primary', 'secondary', 'destructive', 'ghost'],
     },
     size: {
-      control: {
-        type: 'select',
-        options: [24, 32, 40],
-      },
+      options: ['sm', 'md', 'lg'],
     },
     href: {
       control: 'text',
@@ -34,7 +27,6 @@ export const Example: Story<IconButtonAnchorProps> = ({ variant, size, href, tar
   <IconButtonAnchor
     aria-label="Push Me"
     rel="noopener noreferrer"
-    onClick={action('button-click')}
     variant={variant}
     size={size}
     href={href}
@@ -44,8 +36,8 @@ export const Example: Story<IconButtonAnchorProps> = ({ variant, size, href, tar
   </IconButtonAnchor>
 );
 Example.args = {
-  variant: 'outline',
-  size: 32,
+  variant: 'primary',
+  size: 'md',
   href: 'https://www.youtube.com/watch?v=fdixQDPA2h0',
   target: '_blank',
 };
