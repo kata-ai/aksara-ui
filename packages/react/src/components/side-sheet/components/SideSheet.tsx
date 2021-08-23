@@ -172,7 +172,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
         >
           <Card display="flex" flexDirection="column" elevation={4} borderRadius={0} width="500px" height="100vh">
             {!hideCloseButton && (
-              <CloseButton type="button" aria-label="Close" variant="ghost" onClick={this.handleCloseSideSheet}>
+              <CloseButton type="button" aria-label="Close" variant="plain" onClick={this.handleCloseSideSheet}>
                 <IconClose aria-hidden fill="currentColor" />
               </CloseButton>
             )}

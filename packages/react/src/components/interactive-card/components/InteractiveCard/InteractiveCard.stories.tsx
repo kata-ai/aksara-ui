@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { IconTrash, IconPen } from '@aksara-ui/icons';
+import { IconTrash } from '@aksara-ui/icons';
 
 import InteractiveCard from './InteractiveCard';
 import { Text, Box, Heading, UnstyledAnchor, Stack } from '../../../../layout';
-import { ButtonGroup } from '../../../button-group';
 import { IconButton } from '../../../button';
 
 const ExampleGrid: React.FC = ({ children }) => {
@@ -87,28 +86,16 @@ export const WithActions = () => {
         <UnstyledAnchor href="https://deno.land/" target="_blank" rel="noopener noreferrer">
           <InteractiveCard
             actions={
-              <ButtonGroup segmented size={32}>
-                <IconButton
-                  type="button"
-                  variant="outline"
-                  onClick={e => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                  }}
-                >
-                  <IconTrash />
-                </IconButton>
-                <IconButton
-                  type="button"
-                  variant="outline"
-                  onClick={e => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                  }}
-                >
-                  <IconPen />
-                </IconButton>
-              </ButtonGroup>
+              <IconButton
+                type="button"
+                variant="secondary"
+                onClick={e => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
+              >
+                <IconTrash />
+              </IconButton>
             }
           >
             <Box p="lg">

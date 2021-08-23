@@ -210,7 +210,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           {...rest}
         >
           {!hideCloseButton && (
-            <CloseButton type="button" aria-label="Close" variant="ghost" onClick={this.handleCloseSideSheet}>
+            <CloseButton type="button" aria-label="Close" variant="plain" onClick={this.handleCloseSideSheet}>
               <IconClose aria-hidden fill="currentColor" />
             </CloseButton>
           )}
