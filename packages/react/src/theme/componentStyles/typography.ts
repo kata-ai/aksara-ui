@@ -4,13 +4,13 @@ import { ComponentThemeConfig } from '../types';
 /** Anchor size values mapped by scale token. */
 export const anchor: ComponentThemeConfig = {
   baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
-    color: theme.colors.link,
+    color: theme.colors.blue07,
     '&:hover': {
-      color: theme.colors['link-hover'],
+      color: theme.colors.blue08,
       textDecoration: 'underline',
     },
-    '&:focus': {
-      color: theme.colors['link-hover'],
+    '&:focus, &:active': {
+      color: theme.colors.blue09,
       textDecoration: 'underline',
     },
   }),
