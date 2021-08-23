@@ -9,7 +9,7 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: ['default', 'success', 'warning', 'info', 'critical'],
+        options: ['success', 'warning', 'info', 'critical'],
       },
     },
     children: {
@@ -22,6 +22,6 @@ export const Example = (args: InputMessageProps) => {
   return <InputMessage {...args} />;
 };
 Example.args = {
-  variant: 'success',
+  variant: 'info',
   children: 'Please enter an email address.',
 };
