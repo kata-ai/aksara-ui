@@ -6,7 +6,7 @@ import { ButtonStyles } from './styles';
 import { ButtonBaseProps, ButtonSizes } from './types';
 import { renderButtonChildren, renderButtonIcon } from './utils';
 
-export interface ButtonProps extends ButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonBaseProps, React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */

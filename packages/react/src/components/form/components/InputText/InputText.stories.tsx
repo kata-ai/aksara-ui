@@ -1,36 +1,19 @@
 import * as React from 'react';
-import { Story } from '@storybook/react';
 
 import { Box } from '../../../../layout';
-import { FormLabel, FormLabelProps } from '../FormLabel';
-import InputText, { InputTextProps } from './InputText';
+import { FormLabel } from '../FormLabel';
+import InputText from './InputText';
 
 export default {
   title: 'Core/Components/Form/InputText',
   component: InputText,
-  argTypes: {
-    addon: {
-      control: null,
-    },
-    children: {
-      control: 'text',
-      name: 'label',
-    },
-  },
 };
 
-export const Example: Story<InputTextProps & FormLabelProps> = ({ children, ...restArgs }) => {
+export const Example = () => {
   return (
     <Box>
-      <FormLabel htmlFor="textDummy">{children}</FormLabel>
-      <InputText id="textDummy" name="textDummy" {...restArgs} />
+      <FormLabel htmlFor="textDummy">Text input</FormLabel>
+      <InputText id="textDummy" name="textDummy" placeholder="Type here..." />
     </Box>
   );
-};
-
-Example.args = {
-  children: 'Text input',
-  placeholder: 'Type here...',
-  disabled: false,
-  errors: false,
 };

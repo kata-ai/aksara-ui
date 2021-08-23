@@ -9,16 +9,10 @@ export default {
   component: Badge,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['default', 'grey', 'indigo', 'yellow', 'red', 'green', 'blue'],
-      },
+      options: ['default', 'grey', 'indigo', 'yellow', 'red', 'green', 'blue'],
     },
     size: {
-      control: {
-        type: 'radio',
-        options: ['sm', 'md', 'lg'],
-      },
+      options: ['sm', 'md', 'lg'],
     },
     children: {
       control: 'text',
