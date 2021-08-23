@@ -222,12 +222,12 @@ export const Example2 = () => (
         </Box>
         <Box>
           <Tooltip placement="top" content="View" style={{ display: 'inline-block', marginRight: 8 }}>
-            <IconButton type="button" size={40} variant="ghost">
+            <IconButton type="button" size="lg" variant="plain">
               <IconInfo aria-hidden fill="currentColor" />
             </IconButton>
           </Tooltip>
           <Tooltip placement="top" content="Rollback" style={{ display: 'inline-block' }}>
-            <IconButton type="button" size={40} variant="destructive">
+            <IconButton type="button" size="lg" variant="plain-destructive">
               <IconTrash aria-hidden fill="currentColor" />
             </IconButton>
           </Tooltip>

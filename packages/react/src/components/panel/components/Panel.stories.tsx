@@ -26,7 +26,7 @@ const Template: Story<PanelProps> = args => (
     <PanelHeader title="Panel Title" />
     <Box flex="1 1 auto">inner</Box>
     <PanelFooter>
-      <IconButton size={32}>
+      <IconButton size="md">
         <IconChevronLeft fill="currentColor" aria-hidden="true" />
       </IconButton>
       <Text ml="md" scale={200} fontWeight={500}>

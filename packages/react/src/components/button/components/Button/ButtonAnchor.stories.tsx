@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 import { IconPen } from '@aksara-ui/icons';
 
@@ -33,7 +32,6 @@ export default {
 const Template: Story<ButtonAnchorProps> = ({ variant, size, block, href, target, isLoading, icon, iconPosition }) => (
   <ButtonAnchor
     type="button"
-    onClick={action('button-click')}
     variant={variant}
     size={size}
     block={block}
@@ -50,11 +48,10 @@ const Template: Story<ButtonAnchorProps> = ({ variant, size, block, href, target
 export const Example = Template.bind({});
 Example.args = {
   variant: 'primary',
-  size: 40,
+  size: 'md',
   block: false,
   href: 'https://www.youtube.com/watch?v=fdixQDPA2h0',
   target: '_blank',
-  children: 'Push Me',
 };
 
 export const WithIcon = Template.bind({});

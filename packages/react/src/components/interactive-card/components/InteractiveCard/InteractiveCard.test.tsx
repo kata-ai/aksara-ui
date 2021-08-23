@@ -14,7 +14,7 @@ describe('components/InteractiveCard', () => {
 
     test('renders icons correctly', () => {
       const { getByText } = render(
-        <InteractiveCard actions={<Button size={32}>action</Button>}>test card</InteractiveCard>
+        <InteractiveCard actions={<Button size="sm">action</Button>}>test card</InteractiveCard>
       );
 
       expect(getByText('action')).toBeInTheDocument();

@@ -11,7 +11,7 @@ export default {
     size: {
       control: {
         type: 'select',
-        options: [32, 40],
+        options: ['sm', 'md', 'lg'],
       },
     },
     segmented: {
@@ -32,7 +32,7 @@ export const BasicExample: Story<ButtonGroupProps> = args => {
   );
 };
 BasicExample.args = {
-  size: 32,
+  size: 'md',
   segmented: false,
   fullWidth: false,
 };
@@ -55,7 +55,7 @@ export const Selectable: Story<ButtonGroupProps> = args => {
   );
 };
 Selectable.args = {
-  size: 32,
+  size: 'md',
   segmented: false,
   fullWidth: false,
 };

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { ButtonStyles } from './styles';
+import { useComponentStyles } from '../../../../system';
 import { ButtonBaseProps, ButtonSizes } from './types';
+import { UnstyledButton } from '../UnstyledButton';
 import { renderButtonChildren, renderButtonIcon } from './utils';
 
 export interface ButtonProps extends ButtonBaseProps, React.ComponentPropsWithoutRef<'button'> {
@@ -17,10 +17,6 @@ export interface ButtonProps extends ButtonBaseProps, React.ComponentPropsWithou
   isLoading?: boolean;
 }
 
-const Root = styled('button')<ButtonProps>`
-  ${ButtonStyles}
-`;
-
 /**
  * Buttons express what action will occur when the user clicks or touches it.
  * Buttons are used to initialize an action, either in the background or
@@ -32,54 +28,43 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className,
       style,
-      size,
+      size = 'md',
       icon,
-      iconPosition,
+      iconPosition = 'left',
       isLoading,
       disabled,
-      variant,
+      variant = 'primary',
       block,
       width,
       selected,
-      position = 'relative',
       type = 'button',
       ...rest
     },
     ref
   ) => {
+    const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant });
+
     return (
-      <Root
+      <UnstyledButton
         className={clsx(selected && 'selected', className)}
         style={style}
-        buttonSize={size}
-        icon={icon}
-        iconPosition={iconPosition}
         disabled={disabled || isLoading}
-        isLoading={isLoading}
-        variant={variant}
         ref={ref}
-        display={block ? 'block' : 'inline-block'}
+        display={block ? 'flex' : 'inline-flex'}
         width={block ? '100%' : width}
-        position={position}
+        flexDirection={iconPosition === 'left' ? 'row' : 'row-reverse'}
+        alignItems="center"
+        justifyContent="center"
         type={type}
+        sx={buttonBaseStyles}
         {...rest}
       >
-        {renderButtonIcon({ icon, iconPosition, size, isLoading })}
-        {renderButtonChildren({ isLoading, size, variant, children })}
-      </Root>
+        {renderButtonIcon({ icon, iconPosition, isLoading })}
+        {renderButtonChildren({ isLoading, variant, children })}
+      </UnstyledButton>
     );
   }
 );
-
-Button.defaultProps = {
-  className: undefined,
-  style: undefined,
-  block: false,
-  icon: undefined,
-  iconPosition: 'left',
-  variant: 'default',
-  size: 40,
-};
 
 Button.displayName = 'Button';
 

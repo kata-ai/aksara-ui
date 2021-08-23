@@ -68,7 +68,7 @@ ButtonGroup.displayName = 'ButtonGroup';
 ButtonGroup.defaultProps = {
   segmented: false,
   fullWidth: false,
-  size: 32,
+  size: 'md',
 };
 
 export default ButtonGroup;

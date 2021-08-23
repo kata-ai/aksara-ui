@@ -1,35 +1,57 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import clsx from 'clsx';
 
-import { IconButtonStyles, IconButtonBaseProps, IconButtonSizes } from './styles';
+import { useComponentStyles } from '../../../../system';
+import { UnstyledButton } from '../UnstyledButton';
+import { IconButtonBaseProps, IconButtonSizes } from './types';
 
-export interface IconButtonProps extends IconButtonBaseProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends IconButtonBaseProps, React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component */
   className?: string;
   /** Additional CSS styles to give to the component */
   style?: React.CSSProperties;
   /** The size of the button. */
   size?: IconButtonSizes;
+  /** True if the button is disabled due to loading */
+  isLoading?: boolean;
 }
 
-const Root = styled('button')<IconButtonProps>`
-  ${IconButtonStyles}
-`;
-
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ children, className, style, size, selected, ...rest }, ref) => (
-    <Root className={clsx(selected && 'selected', className)} style={style} buttonSize={size} ref={ref} {...rest}>
-      {children}
-    </Root>
-  )
-);
+  (
+    {
+      children,
+      className,
+      style,
+      size = 'md',
+      selected,
+      disabled,
+      isLoading,
+      type = 'button',
+      variant = 'primary',
+      ...rest
+    },
+    ref
+  ) => {
+    const iconButtonStyles = useComponentStyles('iconButton', { size, variant });
 
-IconButton.defaultProps = {
-  className: undefined,
-  style: undefined,
-  variant: 'default',
-};
+    return (
+      <UnstyledButton
+        className={clsx(selected && 'selected', className)}
+        style={style}
+        disabled={disabled || isLoading}
+        ref={ref}
+        display="inline-flex"
+        alignItems="center"
+        justifyContent="center"
+        type={type}
+        sx={iconButtonStyles}
+        {...rest}
+      >
+        {children}
+      </UnstyledButton>
+    );
+  }
+);
 
 IconButton.displayName = 'IconButton';
 

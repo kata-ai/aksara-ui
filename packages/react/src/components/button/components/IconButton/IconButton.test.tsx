@@ -14,16 +14,6 @@ describe('components/Button', () => {
 
       expect(container.firstChild).toBeInTheDocument();
     });
-
-    test('renders selected styles correctly', () => {
-      const { container } = render(
-        <IconButton variant="outline" selected>
-          <i className="icon-add" />
-        </IconButton>
-      );
-
-      expect(container.firstChild).toHaveClass('selected');
-    });
   });
 
   describe('<IconButtonAnchor />', () => {
