@@ -10,7 +10,8 @@ import IconChevronRight from './IconChevronRight';
 import { theme } from '../../../theme';
 
 const PaginationBase = styled('div')`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 `;
 
 export interface PaginationProps {
