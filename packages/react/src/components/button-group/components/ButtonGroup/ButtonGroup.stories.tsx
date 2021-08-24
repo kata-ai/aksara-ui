@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { IconStar } from '@aksara-ui/icons';
+import { IconPlus } from '@aksara-ui/icons';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { Button } from '../../../button';
@@ -38,22 +38,22 @@ BasicExample.args = {
   fullWidth: false,
 };
 
-export const Selectable: Story<ButtonGroupProps> = args => {
+export const Segmented: Story<ButtonGroupProps> = args => {
   const [selected, setSelected] = React.useState('');
 
   return (
     <ButtonGroup {...args}>
-      <Button icon={IconStar} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+      <Button icon={IconPlus} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
         Label
       </Button>
-      <Button icon={IconStar} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+      <Button icon={IconPlus} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
         Label
       </Button>
     </ButtonGroup>
   );
 };
-Selectable.args = {
+Segmented.args = {
   size: 'md',
-  segmented: false,
+  segmented: true,
   fullWidth: false,
 };
