@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
+import { IconPlus } from '@aksara-ui/icons';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { Button } from '../../../button';
@@ -26,8 +27,8 @@ export default {
 export const BasicExample: Story<ButtonGroupProps> = args => {
   return (
     <ButtonGroup {...args}>
-      <Button variant="outline">Cancel</Button>
-      <Button variant="outline">Save</Button>
+      <Button variant="secondary">Cancel</Button>
+      <Button variant="primary">Save</Button>
     </ButtonGroup>
   );
 };
@@ -37,25 +38,22 @@ BasicExample.args = {
   fullWidth: false,
 };
 
-export const Selectable: Story<ButtonGroupProps> = args => {
+export const Segmented: Story<ButtonGroupProps> = args => {
   const [selected, setSelected] = React.useState('');
 
   return (
     <ButtonGroup {...args}>
-      <Button variant="outline" selected={selected === 'page1'} onClick={() => setSelected('page1')}>
-        Page 1
+      <Button icon={IconPlus} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+        Label
       </Button>
-      <Button variant="outline" selected={selected === 'page2'} onClick={() => setSelected('page2')}>
-        Page 2
-      </Button>
-      <Button variant="outline" selected={selected === 'page3'} onClick={() => setSelected('page3')}>
-        Page 3
+      <Button icon={IconPlus} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+        Label
       </Button>
     </ButtonGroup>
   );
 };
-Selectable.args = {
+Segmented.args = {
   size: 'md',
-  segmented: false,
+  segmented: true,
   fullWidth: false,
 };
