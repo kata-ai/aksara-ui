@@ -33,7 +33,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       iconPosition = 'left',
       isLoading,
       disabled,
-      variant = 'primary',
+      variant = 'secondary',
       block,
       width,
       selected,

@@ -39,4 +39,7 @@ const PlainButton = React.forwardRef<HTMLButtonElement, PlainButtonProps>(
 
 PlainButton.displayName = 'LinkButton';
 
+/** @deprecated - use `LinkButton` instead */
+export const LinkButton = PlainButton;
+
 export default PlainButton;

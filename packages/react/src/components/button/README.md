@@ -50,91 +50,19 @@ See more usage in the _JSX_ panel
 | variant   | ButtonVariants | -        | default   | The variant of the button.                      |
 | size      | ButtonSizes    | -        | 40        | The size of the button.                         |
 
-### `<OutlineButton />`
-
-```jsx
-import { AksaraProvider, OutlineButton } from '@aksara-ui/react';
-
-export default function MyApp({ children }) {
-  return (
-    <AksaraProvider>
-      <OutlineButton variant="primary" onClick={() => alert('Hello!')}>
-        Push Me
-      </OutlineButton>
-    </AksaraProvider>
-  );
-}
-```
-
-Button accepts all the HTML props available in a standard HTML `<button>` element. It has three supported sizes, `sm`, `md`, and `lg`.
-
-```jsx
-import { AksaraProvider, OutlineButton } from '@aksara-ui/react';
-
-export default function MyApp({ children }) {
-  return (
-    <AksaraProvider>
-      <OutlineButton size="sm">Push Me</OutlineButton>
-      <OutlineButton size="md">Push Me</OutlineButton>
-      <OutlineButton size="lg">Push Me</OutlineButton>
-    </AksaraProvider>
-  );
-}
-```
-
-See more usage in the _JSX_ panel
-
-#### Props
-
-| Property  | Type                  | Required | Default   | Description                                     |
-| --------- | --------------------- | -------- | --------- | ----------------------------------------------- |
-| className | string                | -        | undefined | Additional CSS classes to give to the component |
-| style     | CSSProperties         | -        | undefined | Additional CSS styles to give to the component  |
-| block     | boolean               | -        | false     | Is a block button.                              |
-| variant   | OutlineButtonVariants | -        | default   | The variant of the button.                      |
-| size      | ButtonSizes           | -        | 40        | The size of the button.                         |
-
-### `<FloatingButton />`
-
-Floating action buttons for primary context actions. Floating buttons are often paired with Wicara Icons.
-
-```jsx
-import { AksaraProvider, FloatingButton } from '@aksara-ui/react';
-
-export default function MyApp({ children }) {
-  return (
-    <AksaraProvider>
-      <FloatingButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
-        <i className="icon-tick" aria-hidden="true" />
-      </FloatingButton>
-    </AksaraProvider>
-  );
-}
-```
-
-See more usage in the _JSX_ panel
-
-#### Props
-
-| Property  | Type                   | Required | Default   | Description                                     |
-| --------- | ---------------------- | -------- | --------- | ----------------------------------------------- |
-| className | string                 | -        | undefined | Additional CSS classes to give to the component |
-| style     | CSSProperties          | -        | undefined | Additional CSS styles to give to the component  |
-| variant   | FloatingButtonVariants | -        | default   | The variant of the button.                      |
-| size      | ButtonSizes            | -        | 40        | The size of the button.                         |
-
 ### `<IconButton />`
 
-Icon-only buttons. Best paired with Wicara Icons.
+Icon-only buttons. Best paired with `@aksara-ui/icons`.
 
 ```jsx
 import { AksaraProvider, IconButton } from '@aksara-ui/react';
+import { IconPlus } from '@aksara-ui/icons';
 
 export default function MyApp({ children }) {
   return (
     <AksaraProvider>
       <IconButton variant="primary" aria-label="Push Me" onClick={() => alert('Hello!')}>
-        <i className="icon-tick" aria-hidden="true" />
+        <IconPlus />
       </IconButton>
     </AksaraProvider>
   );
@@ -151,6 +79,18 @@ See more usage in the _JSX_ panel
 | style     | CSSProperties      | -        | undefined | Additional CSS styles to give to the component  |
 | variant   | IconButtonVariants | -        | default   | The variant of the button.                      |
 | size      | IconButtonSizes    | -        | 40        | The size of the button.                         |
+
+### `<PlainButton />`
+
+Link-level buttons.
+
+```jsx
+import { PlainButton } from '@aksara-ui/react';
+
+export default function Component({ children }) {
+  return <PlainButton>I'm a plain button!</PlainButton>;
+}
+```
 
 ### `<UnstyledButton />`
 

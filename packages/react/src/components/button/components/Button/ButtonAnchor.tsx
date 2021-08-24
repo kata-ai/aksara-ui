@@ -32,7 +32,7 @@ const ButtonAnchor = React.forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
       icon,
       iconPosition = 'left',
       isLoading,
-      variant = 'primary',
+      variant = 'secondary',
       block,
       width,
       selected,
