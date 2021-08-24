@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
+import { IconStar } from '@aksara-ui/icons';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { Button } from '../../../button';
@@ -26,8 +27,8 @@ export default {
 export const BasicExample: Story<ButtonGroupProps> = args => {
   return (
     <ButtonGroup {...args}>
-      <Button variant="outline">Cancel</Button>
-      <Button variant="outline">Save</Button>
+      <Button variant="secondary">Cancel</Button>
+      <Button variant="primary">Save</Button>
     </ButtonGroup>
   );
 };
@@ -42,14 +43,11 @@ export const Selectable: Story<ButtonGroupProps> = args => {
 
   return (
     <ButtonGroup {...args}>
-      <Button variant="outline" selected={selected === 'page1'} onClick={() => setSelected('page1')}>
-        Page 1
+      <Button icon={IconStar} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+        Label
       </Button>
-      <Button variant="outline" selected={selected === 'page2'} onClick={() => setSelected('page2')}>
-        Page 2
-      </Button>
-      <Button variant="outline" selected={selected === 'page3'} onClick={() => setSelected('page3')}>
-        Page 3
+      <Button icon={IconStar} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+        Label
       </Button>
     </ButtonGroup>
   );

@@ -1,14 +1,9 @@
+/* eslint-disable react/no-array-index-key */
 import * as React from 'react';
-import styled from 'styled-components';
 
 import { Box, BoxProps } from '../../../../layout';
-import {
-  buttonGroupSegmented,
-  buttonGroupNonSegmented,
-  buttonGroupInnerSegmented,
-  buttonGroupInnerNonSegmented,
-} from './styles';
 import { ButtonProps, ButtonSizes, IconButtonSizes } from '../../../button';
+import { ButtonVariants } from '../../../button/components/Button';
 
 export interface ButtonGroupProps extends BoxProps {
   /** Join buttons as segmented group. */
@@ -17,58 +12,37 @@ export interface ButtonGroupProps extends BoxProps {
   fullWidth?: boolean;
   /** The size of butttons in this button group. */
   size?: IconButtonSizes | ButtonSizes;
+  /** Base variant of all the buttons in the group. */
+  variant?: ButtonVariants | 'IconButtonVariants';
 }
 
-const Root = styled(Box)<ButtonGroupProps>`
-  ${props => (props.segmented ? buttonGroupSegmented : buttonGroupNonSegmented)}
-`;
-
-const Inner = styled('div')<ButtonGroupProps>`
-  ${props => (props.segmented ? buttonGroupInnerSegmented : buttonGroupInnerNonSegmented)}
-
-  > button {
-    z-index: 1;
-  }
-
-  > button:focus,
-  > button:active,
-  > button.selected {
-    z-index: 10;
-  }
-`;
-
-const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, segmented, fullWidth, size, ...rest }) => {
+const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, segmented, fullWidth, size = 'md', sx, ...rest }) => {
   const validChildren = React.Children.toArray(children).filter(React.isValidElement);
 
   return (
-    <Root segmented={segmented} fullWidth={fullWidth} {...rest}>
+    <Box
+      display="inline-flex"
+      alignItems="center"
+      flexWrap={segmented ? 'nowrap' : 'wrap'}
+      backgroundColor={segmented ? 'greylight03' : null}
+      sx={{
+        '> :not([hidden]) ~ :not([hidden])': {
+          marginLeft: 'xxs',
+        },
+      }}
+      {...rest}
+    >
       {validChildren.map((child, i) => {
-        const isFirstChild = i === 0;
-        const isLastChild = validChildren.length === i + 1;
-
-        const borderLeftRadiuses = !isFirstChild ? { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } : {};
-        const borderRightRadiuses = !isLastChild
-          ? { marginRight: -1, borderTopRightRadius: 0, borderBottomRightRadius: 0 }
-          : {};
-
-        const borderProps = segmented ? { ...borderLeftRadiuses, ...borderRightRadiuses } : {};
-
         return (
-          <Inner segmented={segmented} fullWidth={fullWidth}>
-            {React.cloneElement(child, { ...borderProps, size } as ButtonProps)}
-          </Inner>
+          <Box key={i}>
+            {React.cloneElement(child, { size, ...(segmented ? { variant: 'segment-item' } : {}) } as ButtonProps)}
+          </Box>
         );
       })}
-    </Root>
+    </Box>
   );
 };
 
 ButtonGroup.displayName = 'ButtonGroup';
-
-ButtonGroup.defaultProps = {
-  segmented: false,
-  fullWidth: false,
-  size: 'md',
-};
 
 export default ButtonGroup;
