@@ -5,8 +5,6 @@ import {
   FormLabel,
   InputText,
   InputTextarea,
-  InputGroup,
-  InputAddon,
   InputMessage,
   InputCheckboxLabel,
   InputCheckbox,
@@ -63,20 +61,6 @@ describe('components/Form', () => {
 
     const input = getByTestId('disabled-input');
     expect(input).toHaveAttribute('disabled');
-  });
-
-  test('renders input addon correctly', () => {
-    const { getByTestId } = render(
-      <FormGroup>
-        <InputGroup>
-          <InputAddon data-testid="input-addon">addon text</InputAddon>
-          <InputText placeholder="Type here..." addon />
-        </InputGroup>
-      </FormGroup>
-    );
-
-    const addon = getByTestId('input-addon');
-    expect(addon).toHaveTextContent('addon text');
   });
 
   test('renders checkbox input correctly', () => {
