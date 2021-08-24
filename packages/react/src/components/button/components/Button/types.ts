@@ -1,6 +1,6 @@
 import { LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps, BorderProps } from 'styled-system';
 
-export type ButtonVariants = 'primary' | 'secondary' | 'outline' | 'destructive' | 'ghost' | 'inverse';
+export type ButtonVariants = 'primary' | 'secondary' | 'outline' | 'destructive';
 export type ButtonSizes = 'sm' | 'md' | 'lg';
 export type ButtonIconPositions = 'left' | 'right';
 
