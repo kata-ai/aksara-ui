@@ -27,7 +27,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       disabled,
       isLoading,
       type = 'button',
-      variant = 'primary',
+      variant = 'secondary',
       ...rest
     },
     ref
