@@ -5,6 +5,7 @@ import button from './button';
 import card from './card';
 import form from './form';
 import message from './message';
+import navigation from './navigation';
 import pill from './pill';
 import typography from './typography';
 import tooltip from './tooltip';
@@ -20,6 +21,7 @@ const componentStyles = {
   card,
   ...form,
   ...message,
+  ...navigation,
   ...pill,
   ...typography,
   ...tooltip,
