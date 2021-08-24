@@ -1,7 +1,6 @@
 export * from './InputMessage';
 export * from './FormGroup';
 export * from './FormLabel';
-export * from './InputAddon';
 export * from './InputCheckbox';
 export * from './InputElement';
 export * from './InputGroup';
