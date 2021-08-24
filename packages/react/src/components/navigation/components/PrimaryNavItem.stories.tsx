@@ -10,6 +10,7 @@ export default {
 export const Example = () => {
   return (
     <PrimaryNavItem
+      title="Flow"
       icon={IconGrid}
       href="https://www.youtube.com/watch?v=QjGYHf0jTRA"
       target="_blank"
@@ -21,6 +22,7 @@ export const Example = () => {
 export const IsActive = () => {
   return (
     <PrimaryNavItem
+      title="Flow"
       icon={IconGrid}
       href="https://www.youtube.com/watch?v=QjGYHf0jTRA"
       target="_blank"
@@ -31,5 +33,5 @@ export const IsActive = () => {
 };
 
 export const Disabled = () => {
-  return <PrimaryNavItem icon={IconGrid} disabled />;
+  return <PrimaryNavItem title="Flow" icon={IconGrid} disabled />;
 };
