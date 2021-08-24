@@ -9,7 +9,7 @@ export default {
   component: ButtonAnchor,
   argTypes: {
     variant: {
-      options: ['default', 'primary', 'outline', 'destructive', 'ghost'],
+      options: ['primary', 'secondary', 'destructive', 'outline-destructive'],
     },
     size: {
       options: [32, 40, 48],

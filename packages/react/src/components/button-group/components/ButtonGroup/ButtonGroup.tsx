@@ -25,6 +25,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, segmented, fullWidt
       alignItems="center"
       flexWrap={segmented ? 'nowrap' : 'wrap'}
       backgroundColor={segmented ? 'greylight03' : null}
+      borderRadius={8}
       sx={{
         '> :not([hidden]) ~ :not([hidden])': {
           marginLeft: 'xxs',
