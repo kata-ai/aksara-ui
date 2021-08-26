@@ -17,19 +17,13 @@ export const anchor: ComponentThemeConfig = {
 
 export const unstyledAnchor: ComponentThemeConfig = {
   baseStyle: {
-    fontStyle: 'inherit',
     color: 'inherit',
-    backgroundColor: 'transparent',
     textDecoration: 'none',
-    outline: 'inherit',
-    boxShadow: 'inherit',
+    fontWeight: 'inherit',
     '&:hover, &:focus, &:active': {
-      fontStyle: 'inherit',
       color: 'inherit',
-      backgroundColor: 'transparent',
       textDecoration: 'none',
-      outline: 'inherit',
-      boxShadow: 'inherit',
+      fontWeight: 'inherit',
     },
   },
 };

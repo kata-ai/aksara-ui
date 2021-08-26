@@ -9,7 +9,7 @@ export default {
   component: IconButton,
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'outline-destructive', 'plain', 'plain-destructive', 'ghost'],
+      options: ['primary', 'secondary', 'outline-destructive', 'plain', 'plain-destructive'],
     },
     size: {
       options: ['sm', 'md', 'lg'],
