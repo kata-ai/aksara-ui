@@ -8,6 +8,7 @@ import message from './message';
 import navigation from './navigation';
 import pill from './pill';
 import typography from './typography';
+import toast from './toast';
 import tooltip from './tooltip';
 
 /**
@@ -24,6 +25,7 @@ const componentStyles = {
   ...navigation,
   ...pill,
   ...typography,
+  ...toast,
   ...tooltip,
 };
 

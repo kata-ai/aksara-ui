@@ -1,0 +1,12 @@
+export type ToastVariants = 'default' | 'error';
+
+export interface ToastSettings {
+  id?: string;
+  message: string;
+  status?: ToastVariants;
+  icon?: React.ComponentType<any>;
+  dismissible?: boolean;
+  dismissAfter?: number;
+  onRemove?: () => void;
+  allowHTML?: boolean;
+}
