@@ -12,7 +12,9 @@ const Toast: React.FC<ToastProps> = ({ id, message, variant = 'default' }) => {
   return (
     <Box id={id} sx={toastBaseStyles}>
       <Box display="flex" alignItems="flex-start">
-        <Text scale={200}>{message}</Text>
+        <Text scale={200}>
+          {id} &mdash; {message}
+        </Text>
       </Box>
     </Box>
   );

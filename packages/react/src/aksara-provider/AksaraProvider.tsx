@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { ToastProvider } from '../components/toast/internals';
 
 import { theme as defaultTheme, Theme } from '../theme';
 import injectGlobalStyles from './injectGlobalStyles';
@@ -19,8 +20,10 @@ const { GlobalStyles } = injectGlobalStyles();
 const AksaraProvider: React.FC<AksaraProviderProps> = ({ children, disableInjection, theme = defaultTheme }) => {
   return (
     <ThemeProvider theme={theme}>
-      {!disableInjection && <GlobalStyles />}
-      {children}
+      <ToastProvider>
+        {!disableInjection && <GlobalStyles />}
+        {children}
+      </ToastProvider>
     </ThemeProvider>
   );
 };

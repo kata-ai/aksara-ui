@@ -1,2 +1,2 @@
-export { default as ToastContainer } from './ToastContainer';
-export * from './ToastContext';
+export { default as useToast } from './useToast';
+export * from './types';

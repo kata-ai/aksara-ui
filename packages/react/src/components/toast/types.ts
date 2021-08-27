@@ -10,3 +10,9 @@ export interface ToastSettings {
   onRemove?: () => void;
   allowHTML?: boolean;
 }
+
+export interface ToastContextType {
+  toasts?: ToastSettings[];
+  addToast: (settings: ToastSettings) => ToastSettings;
+  removeToast: (id: string) => void;
+}
