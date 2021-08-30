@@ -13,12 +13,13 @@ const Toast: React.FC<ToastProps> = ({ id, message, dismissAfter, variant = 'def
   const [isOpen, setIsOpen] = React.useState(false);
   const toastBaseStyles = useComponentStyles('toastBase', { variant });
 
-  const close = () => {
+  const close = React.useCallback(() => {
     setIsOpen(false);
-  };
+  }, [setIsOpen]);
 
   React.useEffect(() => {
     let currentTimer: NodeJS.Timeout | null = null;
+    setIsOpen(true);
 
     currentTimer = setTimeout(() => {
       close();
