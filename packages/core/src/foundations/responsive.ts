@@ -12,4 +12,7 @@ const responsive = {
   mediaQueries,
 };
 
+export type Breakpoints = typeof breakpoints;
+export type MediaQueries = typeof mediaQueries;
+
 export default responsive;

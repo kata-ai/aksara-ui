@@ -7,6 +7,8 @@ export interface ToastSettings {
   icon?: React.ComponentType<any>;
   dismissible?: boolean;
   dismissAfter?: number;
+  actionText?: string;
+  onAction?: () => void;
   onRemove?: () => void;
   allowHTML?: boolean;
 }
@@ -14,5 +16,5 @@ export interface ToastSettings {
 export interface ToastContextType {
   toasts?: ToastSettings[];
   addToast: (settings: ToastSettings) => ToastSettings;
-  removeToast: (id: string) => void;
+  removeToast: (id?: string) => void;
 }
