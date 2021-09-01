@@ -25,7 +25,7 @@ const injectGlobalStyles = (additionalStyles?: string | ReturnType<typeof css>) 
     body {
       font-family: ${p => p.theme.fonts.system};
       background-color: ${p => p.theme.colors['bg-secondary']};
-      color: ${p => p.theme.colors.text01};
+      color: ${p => p.theme.colors.greydark02};
     }
 
     a {
