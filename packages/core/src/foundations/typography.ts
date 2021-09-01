@@ -45,4 +45,9 @@ const typography = {
   letterSpacings,
 };
 
+export type Fonts = typeof fonts;
+export type FontSizes = typeof fontSizes;
+export type LineHeights = typeof lineHeights;
+export type LetterSpacings = typeof letterSpacings;
+
 export default typography;

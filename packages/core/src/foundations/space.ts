@@ -18,4 +18,6 @@ const space = {
   xxl: 48,
 };
 
+export type Space = typeof space;
+
 export default space;

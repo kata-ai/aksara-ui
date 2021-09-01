@@ -199,7 +199,11 @@ const grey = {
   greydark05: '#181E25',
 };
 
-const systemColors = {
+/** Color pallette. Contains old Kata Platform colors, experimental colors, and style tokens. */
+const colors = {
+  white: '#fff',
+  black: '#000',
+
   ...blue,
   ...indigo,
   ...turquoise,
@@ -208,52 +212,12 @@ const systemColors = {
   ...red,
   ...greyLegacy,
   ...grey,
-};
-
-/** Color pallette. Contains old Kata Platform colors, experimental colors, and style tokens. */
-const colors = {
-  white: '#fff',
-  black: '#000',
-
-  ...systemColors,
 
   // Core tokens
-  bg: systemColors.grey01,
-  'bg-secondary': systemColors.grey02,
-  success: systemColors.green06,
-  warning: systemColors.yellow05,
-  danger: systemColors.red05,
-  info: systemColors.indigo03,
-  ui: systemColors.blue06,
-  'ui-hover': systemColors.blue07,
-  'ui-hover-2': systemColors.indigo01,
-  'ui-visited': systemColors.turquoise08,
-
-  // Type tokens
-  link: systemColors.blue06,
-  'link-hover': systemColors.blue07,
-  'link-visited': systemColors.turquoise08,
-  'link-destructive': systemColors.red05,
-  text01: systemColors.grey08,
-  text02: systemColors.grey09,
-  text03: systemColors.grey07,
-  text04: systemColors.grey04,
-  text05: systemColors.grey06,
-  text06: systemColors.yellow06,
-  'text-success': systemColors.green07,
-  'text-warning': systemColors.yellow07,
-  'text-danger': systemColors.red07,
-  'text-inverse': systemColors.grey01,
-
-  // Icon tokens
-  icon01: systemColors.grey08,
-  icon02: systemColors.grey06,
-  icon03: systemColors.blue06,
-  icon04: systemColors.grey04,
-  icon05: systemColors.green06,
-  icon06: systemColors.yellow05,
-  icon07: systemColors.red05,
-  icon08: systemColors.indigo03,
+  bg: greyLegacy.grey01,
+  'bg-secondary': greyLegacy.grey02,
 };
+
+export type Colors = typeof colors;
 
 export default colors;

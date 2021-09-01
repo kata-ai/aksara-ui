@@ -6,4 +6,6 @@ const radii = {
   lg: 8,
 };
 
+export type Radii = typeof radii;
+
 export default radii;

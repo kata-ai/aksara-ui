@@ -12,4 +12,6 @@ const shadows = {
   5: `0px 24px 48px ${shadowColor};`,
 };
 
+export type Shadows = typeof shadows;
+
 export default shadows;
