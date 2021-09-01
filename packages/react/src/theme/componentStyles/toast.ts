@@ -1,13 +1,15 @@
 import { transparentize } from 'polished';
 import { DefaultTheme } from 'styled-components';
+import { TOASTER_WIDTH } from '../../components/toast/internals/constants';
 import { ComponentThemeConfig } from '../types';
 
-const toastBase: ComponentThemeConfig = {
+const toastInner: ComponentThemeConfig = {
   baseStyle: {
     display: 'inline-flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
-    maxWidth: 366,
+    width: '100%',
+    maxWidth: TOASTER_WIDTH,
     p: 'md',
     textAlign: 'left',
     border: '1px solid',
@@ -67,7 +69,7 @@ const toastCloseButton: ComponentThemeConfig = {
 };
 
 const toast = {
-  toastBase,
+  toastInner,
   toastCloseButton,
 };
 
