@@ -73,12 +73,7 @@ const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
         style={style}
         ref={ref}
         data-popper-placement={placement}
-        sx={{
-          ...tooltipRootStyles,
-          '--tooltip-foreground': theme.colors.greylight01,
-          '--tooltip-border': theme.colors.greydark02,
-          '--tooltip-background': theme.colors.greydark02,
-        }}
+        sx={tooltipRootStyles}
         {...rest}
       >
         {renderContent()}
