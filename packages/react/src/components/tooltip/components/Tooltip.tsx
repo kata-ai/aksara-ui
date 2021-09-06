@@ -15,7 +15,7 @@ export interface TooltipProps {
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ className, style, delay, placement, size, content, children }) => {
-  const { getTooltipProps, setTooltipRef, setTriggerRef, visible } = usePopperTooltip({
+  const { getTooltipProps, getArrowProps, setTooltipRef, setTriggerRef, visible } = usePopperTooltip({
     placement,
     delayShow: delay ? 300 : 0,
   });
@@ -32,6 +32,7 @@ const Tooltip: React.FC<TooltipProps> = ({ className, style, delay, placement, s
             size,
           })}
           content={content}
+          getArrowProps={getArrowProps}
         />
       )}
     </>
