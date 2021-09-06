@@ -48,7 +48,7 @@ const Arrow = styled(Box)`
 const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
   ({ className, style, content, size, placement, getArrowProps, ...rest }, ref) => {
     const theme = useTheme();
-    const tooltipInnerStyles = useComponentStyles('tooltipRoot', { size });
+    const tooltipRootStyles = useComponentStyles('tooltipRoot', { size });
 
     const renderContent = () => {
       if (typeof content === 'string') {
@@ -74,7 +74,7 @@ const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
         ref={ref}
         data-popper-placement={placement}
         sx={{
-          ...tooltipInnerStyles,
+          ...tooltipRootStyles,
           '--tooltip-foreground': theme.colors.greylight01,
           '--tooltip-border': theme.colors.greydark02,
           '--tooltip-background': theme.colors.greydark02,
