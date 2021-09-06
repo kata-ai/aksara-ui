@@ -5,7 +5,6 @@ import { usePopperTooltip } from 'react-popper-tooltip';
 
 import { Text, Paragraph, Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
-import { useTheme } from '../../../theme';
 
 export type TooltipPlacement = popper.Placement;
 export type TooltipSize = 'sm' | 'md' | 'lg';
@@ -47,7 +46,6 @@ const Arrow = styled(Box)`
 
 const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
   ({ className, style, content, size, placement, getArrowProps, ...rest }, ref) => {
-    const theme = useTheme();
     const tooltipRootStyles = useComponentStyles('tooltipRoot', { size });
 
     const renderContent = () => {
