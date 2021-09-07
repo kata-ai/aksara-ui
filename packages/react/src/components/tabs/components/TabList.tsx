@@ -1,28 +1,20 @@
 import * as React from 'react';
-import clsx from 'clsx';
-import { BaseTabList, BaseBoxProps } from '../styles';
-import { useTabs } from '../context';
+import { Box, BoxProps } from '../../../layout';
+import { useComponentStyles } from '../../../system';
 
-export interface TabListProps extends BaseBoxProps {
+export interface TabListProps extends BoxProps {
   children: React.ReactElement[];
 }
 
 const TabList: React.FC<TabListProps> = ({ children, className, style, ...rest }) => {
-  const { size } = useTabs();
+  const tabListStyles = useComponentStyles('tabList');
+
   return (
-    <BaseTabList
-      className={clsx('tablist', className)}
-      style={style}
-      display="flex"
-      alignItems="center"
-      gridGap="sm"
-      tabsSize={size}
-      {...rest}
-    >
+    <Box className={className} style={style} sx={tabListStyles} {...rest}>
       {children &&
         Array.isArray(children) &&
         children.map((child, index) => React.cloneElement(child, { index, key: index.toString() }))}
-    </BaseTabList>
+    </Box>
   );
 };
 

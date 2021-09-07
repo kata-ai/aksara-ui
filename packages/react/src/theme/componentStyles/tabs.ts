@@ -39,9 +39,21 @@ const tabButtonInner: ComponentThemeConfig = {
   },
 };
 
+const tabList: ComponentThemeConfig = {
+  baseStyle: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    '> :not([hidden]) ~ :not([hidden])': {
+      marginLeft: 2,
+    },
+  },
+};
+
 const tabs = {
   tabButton,
   tabButtonInner,
+  tabList,
 };
 
 export default tabs;

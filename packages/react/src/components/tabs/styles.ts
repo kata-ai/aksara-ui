@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { Box, BoxProps } from '../../layout';
 import { UnstyledButtonProps } from '../button';
-import { tabListSizeVariants, TabsSizeVariants, tabPanelsSizeVariants } from './variants';
+import { TabsSizeVariants, tabPanelsSizeVariants } from './variants';
 
 export interface BaseTabsProps {
   /** Size of the tabs. */
@@ -16,10 +16,6 @@ export type BaseBoxProps = BaseTabsProps & BoxProps;
 export interface BaseButtonProps extends BaseTabsProps, UnstyledButtonProps {
   active?: boolean;
 }
-
-export const BaseTabList = styled(Box)<BaseBoxProps>`
-  ${variant({ prop: 'tabsSize', variants: tabListSizeVariants })}
-`;
 
 export const BaseTabPanels = styled(Box)<BaseBoxProps>`
   ${variant({ prop: 'tabsSize', variants: tabPanelsSizeVariants })}
