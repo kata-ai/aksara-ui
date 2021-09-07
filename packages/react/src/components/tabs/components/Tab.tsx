@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { BaseTabButton, BaseButtonProps } from '../styles';
+import { useComponentStyles } from '../../../system';
+import { Text } from '../../../layout';
+import { UnstyledButton } from '../../button';
+import { BaseButtonProps } from '../styles';
 import { useTabs } from '../context';
 
 export interface TabProps extends BaseButtonProps {
@@ -7,26 +10,16 @@ export interface TabProps extends BaseButtonProps {
 }
 
 const Tab: React.FC<TabProps> = ({ children, index = 0, ...rest }) => {
-  const { currentPage, setPage, size } = useTabs();
+  const { currentPage, setPage } = useTabs();
+  const isActive = React.useMemo(() => currentPage === index, [currentPage, index]);
+
+  const tabButtonStyles = useComponentStyles('tabButton', { isActive });
+  const tabButtonInnerStyles = useComponentStyles('tabButtonInner');
 
   return (
-    <BaseTabButton
-      type="button"
-      display="inline-flex"
-      alignItems="center"
-      className="tabbutton"
-      py="sm"
-      px="xs"
-      fontSize={14}
-      fontWeight={400}
-      gridGap="sm"
-      onClick={() => setPage(index)}
-      active={currentPage === index}
-      tabsSize={size}
-      {...rest}
-    >
-      {children}
-    </BaseTabButton>
+    <UnstyledButton type="button" onClick={() => setPage(index)} sx={tabButtonStyles} {...rest}>
+      <Text sx={tabButtonInnerStyles}>{children}</Text>
+    </UnstyledButton>
   );
 };
 
