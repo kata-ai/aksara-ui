@@ -38,7 +38,7 @@ export const BodyCard = () => {
 export const WithHeader = () => {
   return (
     <Box display="inline-flex">
-      <Card p="lg" maxWidth={360}>
+      <Card p="lg" width={300}>
         <Stack spacing="md">
           <CardHeader
             title="Deno"
@@ -52,31 +52,13 @@ export const WithHeader = () => {
           <Stack spacing="xs">
             <Box display="flex" flexWrap="wrap" mx="-4px">
               <Box m={4}>
-                <Badge>Badge</Badge>
+                <Badge>Badge 1</Badge>
               </Box>
               <Box m={4}>
-                <Badge>Badge</Badge>
+                <Badge>Badge 2</Badge>
               </Box>
               <Box m={4}>
-                <Badge>Badge</Badge>
-              </Box>
-              <Box m={4}>
-                <Badge>Badge</Badge>
-              </Box>
-              <Box m={4}>
-                <Badge>Badge</Badge>
-              </Box>
-              <Box m={4}>
-                <Badge>Badge</Badge>
-              </Box>
-              <Box m={4}>
-                <Badge>Badge</Badge>
-              </Box>
-              <Box m={4}>
-                <Badge>Badge</Badge>
-              </Box>
-              <Box m={4}>
-                <Badge>Badge</Badge>
+                <Badge>Badge 3</Badge>
               </Box>
             </Box>
           </Stack>
