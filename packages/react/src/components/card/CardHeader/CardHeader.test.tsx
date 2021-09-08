@@ -8,7 +8,7 @@ describe('components/Card', () => {
       const { getByRole } = render(<CardHeader title="example" />);
 
       const heading = getByRole('heading', {
-        name: /deno/i,
+        name: /example/i,
       });
       expect(heading).toBeVisible();
     });
