@@ -1,7 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import { Properties } from 'csstype';
 import * as React from 'react';
-import { Theme, theme, useTheme } from '../../../theme';
+import { DefaultTheme } from 'styled-components';
+import { theme } from '../../../theme';
 import { Box, BoxProps } from '../../box';
 import WrapItem from './WrapItem';
 
@@ -20,8 +21,6 @@ export interface WrapProps extends BoxProps, React.ComponentPropsWithoutRef<'div
 
 const Wrap = React.forwardRef<HTMLDivElement, WrapProps>(
   ({ children, spacing = 'xs', alignItems, justifyContent, shouldWrapChildren, ...rest }, ref) => {
-    const themeObject: Theme = useTheme();
-
     const childrenToRender = shouldWrapChildren
       ? React.Children.map(children, (child, index) => <WrapItem key={`wrap-child-${index}`}>{child}</WrapItem>)
       : children;
@@ -31,7 +30,7 @@ const Wrap = React.forwardRef<HTMLDivElement, WrapProps>(
         <Box
           as="ul"
           sx={{
-            '--aksara-wrap-spacing': themeObject.space[spacing as Space] || spacing,
+            '--aksara-wrap-spacing': (t: DefaultTheme) => t.space[spacing as Space] || spacing,
             '--wrap-spacing': 'calc(var(--aksara-wrap-spacing) / 2)',
             display: 'flex',
             flexWrap: 'wrap',

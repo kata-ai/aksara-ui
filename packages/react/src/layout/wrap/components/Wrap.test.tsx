@@ -5,6 +5,8 @@ import { Box } from '../../box';
 import Wrap from './Wrap';
 import WrapItem from './WrapItem';
 
+jest.mock('../../../theme');
+
 describe('layout/wrap', () => {
   test('renders <Wrap /> correctly', () => {
     const { getByRole } = render(
