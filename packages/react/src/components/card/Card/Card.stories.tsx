@@ -10,7 +10,7 @@ import { CardHeader } from '../CardHeader';
 import { Badge } from '../../badge';
 
 export default {
-  title: 'Core/Components/Card/Card',
+  title: 'Core/Components/Card',
   component: Card,
 };
 
