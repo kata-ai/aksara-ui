@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ElevationDetail, ElevationGrid } from '../../utils/storybook';
+import { Card } from '../../components';
 import { Box } from '../box';
-import { Card } from '../card';
 
 export default {
   title: 'Core/Foundations/Elevation',

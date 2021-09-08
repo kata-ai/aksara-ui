@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Card } from '../../../layout';
+import { Card } from '../../card';
 import { Button } from '../../button';
 import { DropdownMenu, DropdownMenuItem } from '../../dropdown';
 import Popover from './Popover';

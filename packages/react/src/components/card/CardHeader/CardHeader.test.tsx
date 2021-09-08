@@ -4,10 +4,13 @@ import CardHeader from './CardHeader';
 
 describe('components/Card', () => {
   describe('CardHeader', () => {
-    test('renders correctly', () => {
-      const { container } = render(<CardHeader>example</CardHeader>);
+    test('renders heading correctly', () => {
+      const { getByRole } = render(<CardHeader title="example" />);
 
-      expect(container.firstChild).toBeInTheDocument();
+      const heading = getByRole('heading', {
+        name: /example/i,
+      });
+      expect(heading).toBeVisible();
     });
   });
 });

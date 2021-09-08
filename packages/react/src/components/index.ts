@@ -9,7 +9,6 @@ export * from './dialog';
 export * from './dropdown';
 export * from './empty-state';
 export * from './form';
-export * from './interactive-card';
 export * from './loading';
 export * from './message';
 export * from './navigation';

@@ -6,8 +6,9 @@ import { TransitionStatus } from 'react-transition-group/Transition';
 import { IconClose } from '@aksara-ui/icons';
 
 import { Portal, FocusTrap } from '../../../helpers';
-import { Box, BoxProps, Card } from '../../../layout';
+import { Box, BoxProps } from '../../../layout';
 import { IconButton } from '../../button';
+import { Card } from '../../card';
 import { ANIMATION_DURATION } from '../constants';
 import SideSheetOverlay from './SideSheetOverlay';
 

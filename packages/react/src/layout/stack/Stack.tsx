@@ -11,31 +11,38 @@ export interface StackProps extends Omit<BoxProps, 'color'> {
   className?: string;
   style?: React.CSSProperties;
   color?: string;
+  direction?: 'horizontal' | 'vertical';
   spacing?: Space;
   children?: React.ReactNode;
 }
 
-const Stack = React.forwardRef<HTMLDivElement, StackProps>(({ children, spacing, ...rest }, ref) => {
-  const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
+const Stack = React.forwardRef<HTMLDivElement, StackProps>(
+  ({ children, spacing, direction = 'vertical', ...rest }, ref) => {
+    const validChildrenArray = React.Children.toArray(children).filter(React.isValidElement);
 
-  return (
-    <Box ref={ref} {...rest}>
-      {validChildrenArray.map((child, i) => {
-        const isLastChild = validChildrenArray.length === i + 1;
-        const spacingProps = { mb: isLastChild ? 0 : spacing };
-        if (typeof child === 'string' || child.type === React.Fragment) {
-          return (
-            <Box key={`stack-child-${i}`} {...spacingProps}>
-              {child}
-            </Box>
-          );
-        }
+    return (
+      <Box
+        ref={ref}
+        sx={{
+          display: 'flex',
+          flexDirection: direction === 'horizontal' ? 'row' : 'column',
+          '> :not([hidden]) ~ :not([hidden])': {
+            ...(direction === 'horizontal' ? { ml: spacing } : { mt: spacing }),
+          },
+        }}
+        {...rest}
+      >
+        {validChildrenArray.map((child, i) => {
+          if (typeof child === 'string' || child.type === React.Fragment) {
+            return <Box key={`stack-child-${i}`}>{child}</Box>;
+          }
 
-        return React.cloneElement(child, spacingProps);
-      })}
-    </Box>
-  );
-});
+          return React.cloneElement(child);
+        })}
+      </Box>
+    );
+  }
+);
 
 Stack.displayName = 'Stack';
 

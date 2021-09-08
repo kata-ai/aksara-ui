@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import CardFooter from './CardFooter';
+import { Card } from './index';
 
 describe('components/Card', () => {
-  describe('CardFooter', () => {
+  describe('Card', () => {
     test('renders correctly', () => {
-      const { container } = render(<CardFooter>example</CardFooter>);
+      const { container } = render(<Card>example</Card>);
 
       expect(container.firstChild).toBeInTheDocument();
     });

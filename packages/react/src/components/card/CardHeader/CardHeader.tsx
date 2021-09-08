@@ -5,14 +5,23 @@ import { Box, Heading, BoxProps } from '../../../layout';
 export interface CardHeaderProps extends BoxProps {
   className?: string;
   style?: React.CSSProperties;
+  title: string;
+  actions?: React.ReactNode;
+  avatar?: React.ReactNode;
 }
 
-const CardHeader: React.FC<CardHeaderProps> = ({ className, style, children, ...rest }) => {
+const CardHeader: React.FC<CardHeaderProps> = ({ className, style, avatar, title, actions, ...rest }) => {
   return (
-    <Box className={className} style={style} display="flex" flexDirection="column" pt="lg" px="lg" pb="md" {...rest}>
-      <Heading scale={500} m={0}>
-        {children}
+    <Box className={className} style={style} display="flex" flexDirection="row" alignItems="center" {...rest}>
+      {avatar && <Box mr="md">{avatar}</Box>}
+      <Heading scale={500} flex="1 1 auto" m={0} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
+        {title}
       </Heading>
+      {actions && (
+        <Box flex="none" ml="md">
+          {actions}
+        </Box>
+      )}
     </Box>
   );
 };
