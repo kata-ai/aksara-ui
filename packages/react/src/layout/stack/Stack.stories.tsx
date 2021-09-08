@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import { SystemBlock, ComponentBlock } from '../../utils/storybook';
+import { Card } from '../../components';
 import { Box } from '../box';
-import { Card } from '../card';
 import { Text } from '../typography';
 import { Stack } from '.';
 

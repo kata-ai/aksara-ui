@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 import InteractiveCard from './InteractiveCard';
-import { Button } from '../../../button';
+import { Button } from '../../button';
 
 describe('components/InteractiveCard', () => {
   describe('<InteractiveCard />', () => {

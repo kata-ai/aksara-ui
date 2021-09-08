@@ -2,6 +2,13 @@ import { ComponentThemeConfig } from '../types';
 
 const card: ComponentThemeConfig = {
   propToScaleMap: [['elevation', 'elevations']],
+  baseStyle: {
+    borderRadius: 12,
+    backgroundColor: 'greylight01',
+    border: '1px solid',
+    borderColor: 'greylight04',
+    overflow: 'hidden',
+  },
   scales: {
     elevations: {
       1: {

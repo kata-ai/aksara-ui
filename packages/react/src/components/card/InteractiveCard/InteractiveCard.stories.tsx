@@ -2,8 +2,8 @@ import * as React from 'react';
 import { IconTrash } from '@aksara-ui/icons';
 
 import InteractiveCard from './InteractiveCard';
-import { Text, Box, Heading, UnstyledAnchor, Stack } from '../../../../layout';
-import { IconButton } from '../../../button';
+import { Text, Box, Heading, UnstyledAnchor, Stack } from '../../../layout';
+import { IconButton } from '../../button';
 
 const ExampleGrid: React.FC = ({ children }) => {
   return (
@@ -20,7 +20,7 @@ const ExampleGrid: React.FC = ({ children }) => {
 };
 
 export default {
-  title: 'Core/Components/Interactive Card',
+  title: 'Core/Components/Card/InteractiveCard',
   component: InteractiveCard,
 };
 

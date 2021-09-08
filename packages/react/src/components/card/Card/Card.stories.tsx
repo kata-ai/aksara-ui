@@ -1,18 +1,15 @@
 import * as React from 'react';
 import { IconInfo, IconTrash } from '@aksara-ui/icons';
 
-import { Badge } from '../../components/badge';
-import { IconButton } from '../../components/button';
-import { SystemBlock } from '../../utils/storybook';
-import { Box } from '../box';
-import { Stack } from '../stack';
-import { Heading, Paragraph, Text, UnstyledAnchor } from '../typography';
-
+import { SystemBlock } from '../../../utils/storybook';
+import { Box, Stack, Heading, Paragraph, Text, UnstyledAnchor } from '../../../layout';
+import { Badge } from '../../badge';
+import { IconButton } from '../../button';
+import { Tooltip } from '../../tooltip';
 import { Card } from './index';
-import { Tooltip } from '../../components';
 
 export default {
-  title: 'Core/Layout/Card',
+  title: 'Core/Components/Card/Card',
   component: Card,
 };
 
