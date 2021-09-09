@@ -9,7 +9,7 @@ export interface BadgeProps extends Omit<BoxProps, 'size'> {
   /** Additional CSS properties to give to the component. */
   style?: React.CSSProperties;
   /** The variant options available for a badge. Defaults to 'grey' */
-  variant?: 'default' | 'grey' | 'indigo' | 'yellow' | 'red' | 'green' | 'blue';
+  variant?: 'default' | 'info' | 'warning' | 'critical' | 'success' | 'active';
   /** Size of the badge. Defaults to 'md' */
   size?: 'sm' | 'md' | 'lg';
   /** The icon that renders with the badge */

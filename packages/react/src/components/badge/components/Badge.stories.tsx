@@ -9,7 +9,7 @@ export default {
   component: Badge,
   argTypes: {
     variant: {
-      options: ['default', 'grey', 'indigo', 'yellow', 'red', 'green', 'blue'],
+      options: ['default', 'info', 'warning', 'critical', 'success', 'active'],
     },
     size: {
       options: ['sm', 'md', 'lg'],
@@ -33,7 +33,7 @@ export const WithIcon: Story<React.PropsWithChildren<BadgeProps>> = args => {
   return <Badge icon={IconClose} {...args} />;
 };
 WithIcon.args = {
-  variant: 'red',
+  variant: 'critical',
   size: 'md',
   children: 'example',
 };
