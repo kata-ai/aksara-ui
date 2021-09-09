@@ -59,3 +59,4 @@ export const WithCustomIcon: Story<PillProps> = ({ variant, withCloseIcon, onCli
     </Pill>
   </Box>
 );
+WithCustomIcon.args = defaultArgs;
