@@ -11,7 +11,7 @@ describe('components/Pill', () => {
     });
 
     test('renders with additional variants', () => {
-      const { container } = render(<Pill variant="green">test pill</Pill>);
+      const { container } = render(<Pill variant="success">test pill</Pill>);
 
       expect(container.firstChild).toMatchSnapshot();
     });
