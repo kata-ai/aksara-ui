@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { IconBriefcase } from '@aksara-ui/icons';
 import { Story, Meta } from '@storybook/react';
 import { Box } from '../../../layout';
 import Pill, { PillProps } from './Pill';
@@ -44,3 +45,17 @@ WithCloseIcon.args = {
   ...defaultArgs,
   withCloseIcon: true,
 };
+
+export const WithCustomIcon: Story<PillProps> = ({ variant, withCloseIcon, onClick, disabled, children }) => (
+  <Box display="flex">
+    <Pill
+      variant={variant}
+      withCloseIcon={withCloseIcon}
+      onClick={onClick}
+      icon={<IconBriefcase aria-hidden fill="currentColor" size={16} />}
+      disabled={disabled}
+    >
+      {children}
+    </Pill>
+  </Box>
+);

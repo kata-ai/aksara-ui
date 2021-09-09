@@ -12,6 +12,8 @@ export interface PillProps extends Omit<UnstyledButtonProps, 'size'>, React.Comp
   className?: string;
   /** Additional CSS properties to give to the component. */
   style?: React.CSSProperties;
+  /** Add a custom icon to the left of the icon. */
+  icon?: React.ReactNode;
   /** Set `true` to display the Close icon in the Pill. */
   withCloseIcon?: boolean;
   /** Triggers when the pill is clicked. */
@@ -20,7 +22,18 @@ export interface PillProps extends Omit<UnstyledButtonProps, 'size'>, React.Comp
 
 const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
   (
-    { className, style, children, variant = 'default', withCloseIcon = false, onClick, sx, type = 'button', ...rest },
+    {
+      className,
+      style,
+      children,
+      variant = 'default',
+      icon,
+      withCloseIcon = false,
+      onClick,
+      sx,
+      type = 'button',
+      ...rest
+    },
     ref
   ) => {
     const boxStyles = useComponentStyles('pillRoot', { variant });
@@ -35,6 +48,7 @@ const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
         onClick={onClick}
         {...rest}
       >
+        {icon}
         <Box as="span" display="inline-blick" px="xxs" fontSize="12px" lineHeight="18px">
           {children}
         </Box>
