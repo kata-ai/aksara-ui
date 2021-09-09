@@ -54,7 +54,7 @@ const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
         </Box>
         {withCloseIcon && (
           <Box display="flex" alignItems="center" justifyContent="center">
-            <IconClose size={12} fill="currentColor" aria-hidden="true" display="inline-block" />
+            <IconClose size={16} fill="currentColor" aria-hidden="true" display="inline-block" />
           </Box>
         )}
       </UnstyledButton>
