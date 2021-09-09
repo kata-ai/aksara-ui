@@ -33,27 +33,23 @@ const badge: ComponentThemeConfig = {
         backgroundColor: 'greylight04',
         color: 'greymed04',
       },
-      grey: {
-        backgroundColor: 'greylight04',
-        color: 'greymed04',
-      },
-      indigo: {
+      info: {
         backgroundColor: 'indigo01',
         color: 'indigo06',
       },
-      yellow: {
+      warning: {
         backgroundColor: 'yellow01',
         color: 'yellow08',
       },
-      red: {
+      critical: {
         backgroundColor: 'red01',
         color: 'red07',
       },
-      green: {
+      success: {
         backgroundColor: 'green01',
         color: 'green07',
       },
-      blue: {
+      active: {
         backgroundColor: 'blue01',
         color: 'blue07',
       },
