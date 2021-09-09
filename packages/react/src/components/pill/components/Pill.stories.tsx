@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { IconBriefcase } from '@aksara-ui/icons';
 import { Story, Meta } from '@storybook/react';
 import { Box } from '../../../layout';
 import Pill, { PillProps } from './Pill';
@@ -7,22 +7,56 @@ import Pill, { PillProps } from './Pill';
 export default {
   title: 'Core/Components/Pill',
   component: Pill,
+  argTypes: {
+    variant: {
+      options: ['default', 'info', 'critical', 'success', 'active'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    children: {
+      control: 'text',
+    },
+    onClick: {
+      action: 'clicked',
+    },
+  },
 } as Meta;
 
-const Template: Story<PillProps> = args => (
+const defaultArgs: PillProps = {
+  variant: 'default',
+  disabled: false,
+  children: 'Keyword',
+};
+
+const Template: Story<PillProps> = ({ variant, withCloseIcon, onClick, disabled, children }) => (
   <Box display="flex">
-    <Pill {...args}>Keyword item 1</Pill>
+    <Pill variant={variant} withCloseIcon={withCloseIcon} onClick={onClick} disabled={disabled}>
+      {children}
+    </Pill>
   </Box>
 );
 
 export const BasicExample = Template.bind({});
-BasicExample.args = {
-  variant: 'default',
+BasicExample.args = defaultArgs;
+
+export const WithCloseIcon = Template.bind({});
+WithCloseIcon.args = {
+  ...defaultArgs,
+  withCloseIcon: true,
 };
 
-export const ClosableExample = Template.bind({});
-ClosableExample.args = {
-  variant: 'default',
-  closable: true,
-  onClose: action('pill-close'),
-};
+export const WithCustomIcon: Story<PillProps> = ({ variant, withCloseIcon, onClick, disabled, children }) => (
+  <Box display="flex">
+    <Pill
+      variant={variant}
+      withCloseIcon={withCloseIcon}
+      onClick={onClick}
+      icon={<IconBriefcase aria-hidden fill="currentColor" size={16} />}
+      disabled={disabled}
+    >
+      {children}
+    </Pill>
+  </Box>
+);
+WithCustomIcon.args = defaultArgs;

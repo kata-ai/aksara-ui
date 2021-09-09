@@ -9,11 +9,5 @@ describe('components/Pill', () => {
 
       expect(container).toHaveTextContent('test pill');
     });
-
-    test('renders with additional variants', () => {
-      const { container } = render(<Pill variant="green">test pill</Pill>);
-
-      expect(container.firstChild).toMatchSnapshot();
-    });
   });
 });

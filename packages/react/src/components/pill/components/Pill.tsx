@@ -1,76 +1,66 @@
 import * as React from 'react';
-import { IconCloseRounded } from '@aksara-ui/icons';
+import { IconClose } from '@aksara-ui/icons';
 
-import { Box, BoxProps } from '../../../layout';
+import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
-import { UnstyledButton } from '../../button';
+import { UnstyledButton, UnstyledButtonProps } from '../../button';
 
-export interface PillProps extends Omit<BoxProps, 'size'> {
+export interface PillProps extends Omit<UnstyledButtonProps, 'size'>, React.ComponentPropsWithoutRef<'button'> {
   /** The variant options available for a pill. */
-  variant?: 'default' | 'grey' | 'indigo' | 'yellow' | 'red' | 'green' | 'blue';
+  variant?: 'default' | 'info' | 'critical' | 'success' | 'active';
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Additional CSS properties to give to the component. */
   style?: React.CSSProperties;
-  /** Set `true` to display the Close button. */
-  closable?: boolean;
-  /** Triggers when the Close button is clicked. */
-  onClose?: () => void;
+  /** Add a custom icon to the left of the icon. */
+  icon?: React.ReactNode;
+  /** Set `true` to display the Close icon in the Pill. */
+  withCloseIcon?: boolean;
+  /** Triggers when the pill is clicked. */
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Pill: React.FC<PillProps> = ({
-  className,
-  style,
-  children,
-  variant = 'default',
-  closable = false,
-  onClose,
-  sx,
-  ...rest
-}) => {
-  const boxStyles = useComponentStyles('pillRoot', { variant });
+const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
+  (
+    {
+      className,
+      style,
+      children,
+      variant = 'default',
+      icon,
+      withCloseIcon = false,
+      onClick,
+      sx,
+      type = 'button',
+      ...rest
+    },
+    ref
+  ) => {
+    const boxStyles = useComponentStyles('pillRoot', { variant });
 
-  const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    if (onClose) {
-      onClose();
-    }
-  };
-
-  return (
-    <Box
-      display="flex"
-      flexDirection="row"
-      borderRadius={9999}
-      justifyContent="space-between"
-      style={style}
-      className={className}
-      sx={{ ...boxStyles, ...sx }}
-      {...rest}
-    >
-      <Box as="span" px="xs" py={2}>
-        {children}
-      </Box>
-      {closable && onClose && (
-        <Box display="flex" alignItems="center" justifyContent="center">
-          <UnstyledButton
-            display="inline-flex"
-            alignItems="center"
-            justifyContent="center"
-            height="100%"
-            pl="xxs"
-            pr="xs"
-            aria-label="Close"
-            onClick={handleClose}
-          >
-            <IconCloseRounded size={16} fill="currentColor" aria-hidden="true" display="inline-block" />
-          </UnstyledButton>
+    return (
+      <UnstyledButton
+        ref={ref}
+        style={style}
+        className={className}
+        sx={{ ...boxStyles, ...sx }}
+        type={type}
+        onClick={onClick}
+        {...rest}
+      >
+        {icon}
+        <Box as="span" display="inline-blick" px="xxs" fontSize="12px" lineHeight="18px">
+          {children}
         </Box>
-      )}
-    </Box>
-  );
-};
+        {withCloseIcon && (
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <IconClose size={16} fill="currentColor" aria-hidden="true" display="inline-block" />
+          </Box>
+        )}
+      </UnstyledButton>
+    );
+  }
+);
 
 Pill.displayName = 'Pill';
 
