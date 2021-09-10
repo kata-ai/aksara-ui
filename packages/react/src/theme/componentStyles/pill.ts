@@ -50,7 +50,7 @@ const pillRoot: ComponentThemeConfig = {
       },
       active: {
         '&:not([disabled])': {
-          backgroundColor: 'blue01',
+          backgroundColor: 'blue02',
           color: 'blue07',
         },
       },

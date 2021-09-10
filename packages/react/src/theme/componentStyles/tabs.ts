@@ -10,18 +10,22 @@ const tabButton: ComponentThemeConfig = {
     transition: 'all 0.2s ease 0s',
     borderBottom: '2px solid',
     borderBottomColor: isActive ? 'blue07' : 'transparent',
-    '> span': {
+    '> :not([hidden])': {
       backgroundColor: isActive ? 'blue01' : 'transparent',
       color: isActive ? 'blue07' : 'greydark02',
     },
     '&:hover': {
-      '> span': {
-        backgroundColor: isActive ? 'blue01' : 'greylight03',
+      '> :not([hidden])': {
+        backgroundColor: isActive ? 'blue01' : 'greylight01',
         color: isActive ? 'blue07' : 'greydark02',
       },
     },
-    '&:active': {
+    '&:focus, &:active': {
       borderBottomColor: isActive ? 'blue07' : '#3797FF',
+      '> :not([hidden])': {
+        backgroundColor: isActive ? 'blue01' : 'greylight03',
+        color: isActive ? 'blue07' : 'greydark02',
+      },
     },
   }),
 };

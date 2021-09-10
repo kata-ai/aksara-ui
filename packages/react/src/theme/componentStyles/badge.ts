@@ -5,7 +5,6 @@ const badge: ComponentThemeConfig = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 200,
     fontWeight: 500,
     px: 'xs',
   },
@@ -16,14 +15,23 @@ const badge: ComponentThemeConfig = {
   scales: {
     sizes: {
       sm: {
+        fontSize: '10px',
+        lineHeight: '16px',
+        fontWeight: 400,
         height: '16px',
         borderRadius: '16px',
       },
       md: {
+        fontSize: '12px',
+        lineHeight: '20px',
+        fontWeight: 500,
         height: '24px',
         borderRadius: '24px',
       },
       lg: {
+        fontSize: '12px',
+        lineHeight: '20px',
+        fontWeight: 500,
         height: '32px',
         borderRadius: '32px',
       },
@@ -50,7 +58,7 @@ const badge: ComponentThemeConfig = {
         color: 'green07',
       },
       active: {
-        backgroundColor: 'blue01',
+        backgroundColor: 'blue02',
         color: 'blue07',
       },
     },
