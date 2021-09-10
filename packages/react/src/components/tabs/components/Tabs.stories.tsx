@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { IconGrid } from '@aksara-ui/icons';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Tabs, { TabsProps } from './Tabs';
 import TabList from './TabList';
@@ -15,8 +16,8 @@ const Template: Story<TabsProps> = args => (
   <Tabs {...args}>
     <TabList>
       <Tab>Tab Item 1</Tab>
-      <Tab>Tab Item 2</Tab>
-      <Tab>Tab Item 3</Tab>
+      <Tab badgeText="Badge">Tab Item 2</Tab>
+      <Tab icon={IconGrid}>Tab Item 3</Tab>
     </TabList>
     <TabPanels>
       <TabPanel>
