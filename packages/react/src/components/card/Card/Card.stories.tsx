@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { IconBriefcase, IconKebab } from '@aksara-ui/icons';
+import { IconBriefcase, IconClock, IconKebab } from '@aksara-ui/icons';
 import { action } from '@storybook/addon-actions';
 
 import Card from './Card';
-import { Paragraph, Box, Heading, Stack } from '../../../layout';
+import { Box, Heading, Paragraph, Stack, Wrap, WrapItem } from '../../../layout';
 import { Button, IconButton } from '../../button';
 import { Avatar } from '../../avatar';
 import { CardHeader } from '../CardHeader';
@@ -26,7 +26,7 @@ export const BodyCard = () => {
               A secure runtime for JavaScript and TypeScript
             </Paragraph>
           </Stack>
-          <Button block onClick={action('click')}>
+          <Button block size="lg" onClick={action('click')}>
             Select
           </Button>
         </Stack>
@@ -35,7 +35,7 @@ export const BodyCard = () => {
   );
 };
 
-export const WithHeader = () => {
+export const WithPills = () => {
   return (
     <Box display="inline-flex">
       <Card p="lg" width={300}>
@@ -44,26 +44,58 @@ export const WithHeader = () => {
             title="Deno"
             avatar={<Avatar icon={IconBriefcase} bg="yellow01" color="yellow07" />}
             actions={
-              <IconButton variant="plain" size="lg" onClick={action('click')}>
+              <IconButton variant="plain" size="sm" onClick={action('click')}>
                 <IconKebab fill="currentColor" aria-hidden />
               </IconButton>
             }
           />
           <Stack spacing="xs">
-            <Box display="flex" flexWrap="wrap" mx="-4px">
-              <Box m={4}>
+            <Wrap spacing="xxs">
+              <WrapItem>
                 <Badge>Badge 1</Badge>
-              </Box>
-              <Box m={4}>
+              </WrapItem>
+              <WrapItem>
                 <Badge>Badge 2</Badge>
-              </Box>
-              <Box m={4}>
+              </WrapItem>
+              <WrapItem>
                 <Badge>Badge 3</Badge>
-              </Box>
-            </Box>
+              </WrapItem>
+            </Wrap>
           </Stack>
         </Stack>
       </Card>
     </Box>
+  );
+};
+
+export const HorizontalCard = () => {
+  return (
+    <Card p="xl">
+      <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-between">
+        <Stack spacing="md" direction="horizontal" alignItems="center">
+          <Avatar size={64} name="Title" src="https://picsum.photos/id/2/400/400" />
+          <Box>
+            <Stack spacing="xs">
+              <Heading scale={400}>Title</Heading>
+              <Badge variant="info">Badge</Badge>
+            </Stack>
+          </Box>
+        </Stack>
+        <Stack spacing="20px" direction="horizontal" alignItems="center" ml="md">
+          <Stack spacing="xs" direction="horizontal" alignItems="center" color="greymed04">
+            <IconBriefcase size={16} fill="currentColor" aria-hidden />
+            <Paragraph as="span" scale={300}>
+              tri@kata.ai
+            </Paragraph>
+          </Stack>
+          <Stack spacing="xs" direction="horizontal" alignItems="center" color="greymed04">
+            <IconClock size={16} fill="currentColor" aria-hidden />
+            <Paragraph as="span" scale={300}>
+              Jakarta (Asia)
+            </Paragraph>
+          </Stack>
+        </Stack>
+      </Box>
+    </Card>
   );
 };

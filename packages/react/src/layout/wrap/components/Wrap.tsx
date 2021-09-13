@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { Properties } from 'csstype';
+import * as CSS from 'csstype';
 import * as React from 'react';
 import { DefaultTheme } from 'styled-components';
 import { theme } from '../../../theme';
@@ -10,11 +10,11 @@ type Space = keyof typeof theme['space'];
 
 export interface WrapProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
   /** `align-items` value. */
-  alignItems?: Properties['alignItems'];
+  alignItems?: CSS.Property.AlignItems;
   /** `justify-content` value. */
-  justifyContent?: Properties['justifyContent'];
+  justifyContent?: CSS.Property.JustifyContent;
   /** The space between each child element. */
-  spacing?: Space | Properties['margin'];
+  spacing?: Space | CSS.Property.Margin;
   /** If `true`, the children will be wrapped with a `WrapItem`. */
   shouldWrapChildren?: boolean;
 }
