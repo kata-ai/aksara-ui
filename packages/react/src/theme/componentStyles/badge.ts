@@ -47,7 +47,7 @@ const badge: ComponentThemeConfig = {
       },
       warning: {
         backgroundColor: 'yellow01',
-        color: 'yellow08',
+        color: 'yellow09',
       },
       critical: {
         backgroundColor: 'red01',

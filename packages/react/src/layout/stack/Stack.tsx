@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import * as React from 'react';
+import * as CSS from 'csstype';
 
 import { theme } from '../../theme';
 import { Box, BoxProps } from '../box';
@@ -12,7 +13,7 @@ export interface StackProps extends Omit<BoxProps, 'color'> {
   style?: React.CSSProperties;
   color?: string;
   direction?: 'horizontal' | 'vertical';
-  spacing?: Space;
+  spacing?: Space | CSS.Property.Margin;
   children?: React.ReactNode;
 }
 
