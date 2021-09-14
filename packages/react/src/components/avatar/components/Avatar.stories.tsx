@@ -26,8 +26,8 @@ export default {
 
 const Template: Story<AvatarProps> = args => <Avatar {...args} />;
 
-export const Example = Template.bind({});
-Example.args = {
+export const WithInitialName = Template.bind({});
+WithInitialName.args = {
   size: 40,
   name: 'Adry Muhammad',
   bg: 'indigo05',
