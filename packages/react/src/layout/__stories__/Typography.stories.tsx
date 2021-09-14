@@ -12,24 +12,24 @@ export default {
 };
 
 const headingScales: HeadingScale[] = [900, 800, 700, 600, 500, 400, 300, 200, 100];
-const textScales: TextScale[] = [900, 800, 700, 600, 500, 400, 300, 200, 100];
+const textScales: TextScale[] = [500, 400, 300, 200];
 const paragraphScales: ParagraphScale[] = [400, 300];
 
 export const BrandFonts = () => (
   <Stack spacing="md" p="md" backgroundColor="grey02">
-    <Text display="block" scale={800} fontFamily="brand" fontWeight={300}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="brand" fontWeight={300}>
       Inter Light
     </Text>
-    <Text display="block" scale={800} fontFamily="brand" fontWeight={400}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="brand" fontWeight={400}>
       Inter Regular
     </Text>
-    <Text display="block" scale={800} fontFamily="brand" fontWeight={500}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="brand" fontWeight={500}>
       Inter Medium
     </Text>
-    <Text display="block" scale={800} fontFamily="brand" fontWeight={600}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="brand" fontWeight={600}>
       Inter SemiBold
     </Text>
-    <Text display="block" scale={800} fontFamily="brand" fontWeight={700}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="brand" fontWeight={700}>
       Inter Bold
     </Text>
   </Stack>
@@ -37,16 +37,16 @@ export const BrandFonts = () => (
 
 export const SystemFonts = () => (
   <Stack spacing="md" p="md" backgroundColor="grey02">
-    <Text display="block" scale={800} fontFamily="system" fontWeight={300}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="system" fontWeight={300}>
       System Light
     </Text>
-    <Text display="block" scale={800} fontFamily="system" fontWeight={400}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="system" fontWeight={400}>
       System Regular
     </Text>
-    <Text display="block" scale={800} fontFamily="system" fontWeight={500}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="system" fontWeight={500}>
       System Medium
     </Text>
-    <Text display="block" scale={800} fontFamily="system" fontWeight={700}>
+    <Text display="block" fontSize={700} lineHeight={700} fontFamily="system" fontWeight={700}>
       System Bold
     </Text>
   </Stack>
@@ -86,16 +86,13 @@ export const ParagraphScales = () => (
 
 export const AnchorScales = () => (
   <Stack spacing="md" p="md" backgroundColor="grey02">
-    {textScales.map(scale => (
-      <Anchor
-        display="block"
-        scale={scale}
-        href="https://www.youtube.com/watch?v=wQ2YjYGqL8I"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        We are making AI technology accessible to everyone
-      </Anchor>
-    ))}
+    <Anchor
+      display="block"
+      href="https://www.youtube.com/watch?v=wQ2YjYGqL8I"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      We are making AI technology accessible to everyone
+    </Anchor>
   </Stack>
 );
