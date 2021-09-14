@@ -26,16 +26,16 @@ export interface AvatarProps extends Omit<BoxProps, 'size'> {
 function iconSizes(size: AvatarProps['size'] = 40) {
   switch (size) {
     case 24: {
-      return 12;
-    }
-    case 32: {
       return 16;
     }
+    case 32: {
+      return 24;
+    }
     case 40: {
-      return 20;
+      return 32;
     }
     default: {
-      return size / 2;
+      return size - 8;
     }
   }
 }
