@@ -16,7 +16,7 @@ const tabButton: ComponentThemeConfig = {
     },
     '&:hover': {
       '> :not([hidden])': {
-        backgroundColor: isActive ? 'blue01' : 'greylight01',
+        backgroundColor: isActive ? 'blue01' : 'greylight03',
         color: isActive ? 'blue07' : 'greydark02',
       },
     },
