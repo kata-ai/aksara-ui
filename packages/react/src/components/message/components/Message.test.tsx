@@ -5,32 +5,32 @@ import Message from './Message';
 
 const handleClose = jest.fn();
 
-describe('components/Banner', () => {
-  describe('<Banner />', () => {
+describe('components/Message', () => {
+  describe('<Message />', () => {
     test('renders correctly', () => {
-      const { container } = render(<Message variant="success" message="test banner" />);
+      const { getByText } = render(<Message variant="success" message="test message" />);
 
-      expect(container.firstChild).toMatchSnapshot();
+      const messageText = getByText(/test message/i);
+      expect(messageText).toBeVisible();
     });
 
     test('renders with title', () => {
-      const { getByText } = render(<Message variant="success" title="test title" message="test banner" />);
+      const { getByRole } = render(<Message variant="success" title="test title" message="test message" />);
 
-      const titleText = getByText('test title');
-      expect(titleText).toBeInTheDocument();
+      const titleText = getByRole('heading', {
+        name: /test title/i,
+      });
+      expect(titleText).toBeVisible();
     });
 
-    test('renders close button with onClose', () => {
-      const { getByTestId } = render(<Message variant="success" message="test banner" onClose={handleClose} />);
+    test('renders close button with onClose and fires onClose event correctly', () => {
+      const { getByRole } = render(<Message variant="success" message="test message" onClose={handleClose} />);
 
-      const closeButton = getByTestId('Banner-closeButton');
-      expect(closeButton).toBeInTheDocument();
-    });
+      const closeButton = getByRole('button', {
+        name: /close/i,
+      });
+      expect(closeButton).toBeVisible();
 
-    test('fires the onClose event', () => {
-      const { getByTestId } = render(<Message variant="success" message="test banner" onClose={handleClose} />);
-
-      const closeButton = getByTestId('Banner-closeButton');
       fireEvent.click(closeButton);
       expect(handleClose).toBeCalledTimes(1);
     });
