@@ -3,14 +3,15 @@ import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 
 import { theme } from '../../../../theme';
-import { textScaleOptions } from '../../utils/storybook';
 import Text, { TextProps } from './Text';
 
 export default {
   title: 'Core/Typography/Text',
   component: Text,
   argTypes: {
-    scale: textScaleOptions,
+    scale: {
+      options: [200, 300, 400, 500],
+    },
     fontFamily: {
       options: Object.keys(theme.fonts),
     },

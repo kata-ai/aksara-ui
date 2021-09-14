@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ResponsiveValue, Theme, RequiredTheme, variant } from 'styled-system';
+import { ResponsiveValue, Theme, RequiredTheme } from 'styled-system';
 
 import {
   sfp,
@@ -29,27 +29,7 @@ export interface AnchorProps<ThemeType extends Theme = RequiredTheme>
  */
 const Anchor = styled('a').withConfig<AnchorProps>({
   shouldForwardProp: sfp(textProps),
-})(
-  componentStylesMixin('anchor'),
-  variant({
-    prop: 'scale',
-    scale: 'variants.text',
-    variants: {
-      900: {},
-      800: {},
-      700: {},
-      600: {},
-      500: {},
-      400: {},
-      300: {},
-      200: {},
-      100: {},
-    },
-  }),
-  allSystemProps,
-  pseudoSystemProps,
-  sxMixin
-);
+})(componentStylesMixin('anchor'), allSystemProps, pseudoSystemProps, sxMixin);
 
 Anchor.displayName = 'Anchor';
 
