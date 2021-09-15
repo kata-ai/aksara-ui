@@ -5,22 +5,20 @@ import Avatar from './Avatar';
 
 describe('components/Avatar', () => {
   describe('<Avatar />', () => {
-    test('renders on large size by default', () => {
-      const { container } = render(<Avatar src="" />);
+    test('renders image correctly', () => {
+      const { getByRole } = render(<Avatar name="Adry Muhammad" src="https://picsum.photos/id/2/400/400" />);
 
-      expect(container.firstChild).toMatchSnapshot();
-    });
-
-    test('renders in correct sizes', () => {
-      const { container } = render(<Avatar size={24} src="" />);
-
-      expect(container.firstChild).toMatchSnapshot();
+      const image = getByRole('img', {
+        name: /adry muhammad/i,
+      });
+      expect(image).toBeVisible();
     });
 
     test('renders initials correctly', () => {
-      const { getByText } = render(<Avatar name="Adry Muhammad" />);
+      const { getByText, getByRole } = render(<Avatar name="Adry Muhammad" />);
 
-      expect(getByText('AM')).toBeInTheDocument();
+      expect(getByText(/adry muhammad/i)).toBeInTheDocument();
+      expect(getByRole('presentation')).toBeVisible();
     });
   });
 });

@@ -15,17 +15,17 @@ const avatar: ComponentThemeConfig = {
   },
   scales: {
     sizes: {
-      24: {
+      sm: {
         width: '24px',
         height: '24px',
         borderRadius: '24px',
       },
-      32: {
+      md: {
         width: '32px',
         height: '32px',
         borderRadius: '32px',
       },
-      40: {
+      lg: {
         width: '40px',
         height: '40px',
         borderRadius: '40px',

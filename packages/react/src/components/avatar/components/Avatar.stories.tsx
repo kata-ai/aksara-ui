@@ -25,14 +25,14 @@ const Template: Story<AvatarProps> = args => <Avatar {...args} />;
 
 export const WithInitialName = Template.bind({});
 WithInitialName.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
   bg: 'indigo05',
 };
 
 export const WithImage = Template.bind({});
 WithImage.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
   bg: 'indigo05',
   src: 'https://picsum.photos/id/2/400/400',
@@ -40,7 +40,7 @@ WithImage.args = {
 
 export const WithIcons: Story<AvatarProps> = args => <Avatar icon={IconUser} {...args} />;
 WithIcons.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
   color: 'greymed04',
   bg: 'greylight03',
@@ -55,7 +55,7 @@ export const WithLabel: Story<AvatarProps> = ({ name, ...args }) => (
   </Box>
 );
 WithLabel.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
   bg: 'indigo05',
   src: 'https://picsum.photos/id/2/400/400',

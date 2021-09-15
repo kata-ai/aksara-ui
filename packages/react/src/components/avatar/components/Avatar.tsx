@@ -1,3 +1,4 @@
+import VisuallyHidden from '@reach/visually-hidden';
 import * as React from 'react';
 
 import { Box, BoxProps, Text } from '../../../layout';
@@ -42,11 +43,18 @@ function iconSizes(size: AvatarProps['size'] = 'lg') {
 
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
-  ({ className, style, src, alt = '', name, size = 'lg', color = 'white', bg = 'indigo05', icon, ...rest }, ref) => {
-    const styles = useComponentStyles('avatar');
+  (
+    { className, style, src, alt = undefined, name, size = 'lg', color = 'white', bg = 'indigo05', icon, ...rest },
+    ref
+  ) => {
+    const styles = useComponentStyles('avatar', { size: typeof size === 'string' ? size : undefined });
 
     const renderInitials = () => {
-      return <Text scale={300}>{name ? getInitials(name) : '??'}</Text>;
+      return (
+        <Text scale={300} role="presentation">
+          {name ? getInitials(name) : '??'}
+        </Text>
+      );
     };
 
     const renderImage = () => {
@@ -56,7 +64,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
             as="img"
             sx={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }}
             src={src}
-            alt={alt}
+            alt={name || alt}
           />
         );
       }
@@ -77,11 +85,12 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
         color={color}
         bg={bg}
         sx={{ ...styles }}
-        width={size}
-        height={size}
-        borderRadius={size}
+        width={typeof size === 'number' ? size : undefined}
+        height={typeof size === 'number' ? size : undefined}
+        borderRadius={9999}
         {...rest}
       >
+        {name && <VisuallyHidden>{name}</VisuallyHidden>}
         {renderImage()}
       </Box>
     );
