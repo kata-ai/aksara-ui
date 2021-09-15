@@ -10,10 +10,7 @@ export default {
   component: Avatar,
   argTypes: {
     size: {
-      control: {
-        type: 'select',
-        options: [24, 32, 40],
-      },
+      options: ['sm', 'md', 'lg'],
     },
     name: {
       control: 'text',
@@ -28,14 +25,14 @@ const Template: Story<AvatarProps> = args => <Avatar {...args} />;
 
 export const WithInitialName = Template.bind({});
 WithInitialName.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
   bg: 'indigo05',
 };
 
 export const WithImage = Template.bind({});
 WithImage.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
   bg: 'indigo05',
   src: 'https://picsum.photos/id/2/400/400',
@@ -43,9 +40,10 @@ WithImage.args = {
 
 export const WithIcons: Story<AvatarProps> = args => <Avatar icon={IconUser} {...args} />;
 WithIcons.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
-  bg: 'indigo05',
+  color: 'greymed04',
+  bg: 'greylight03',
 };
 
 export const WithLabel: Story<AvatarProps> = ({ name, ...args }) => (
@@ -57,7 +55,7 @@ export const WithLabel: Story<AvatarProps> = ({ name, ...args }) => (
   </Box>
 );
 WithLabel.args = {
-  size: 40,
+  size: 'lg',
   name: 'Adry Muhammad',
   bg: 'indigo05',
   src: 'https://picsum.photos/id/2/400/400',
