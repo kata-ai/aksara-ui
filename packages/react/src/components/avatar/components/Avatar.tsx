@@ -20,18 +20,18 @@ export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** The icon that renders with the avatar. */
   icon?: React.ComponentType<any>;
   /** Size of the avatar. */
-  size?: 24 | 32 | 40 | number;
+  size?: 'sm' | 'md' | 'lg' | number;
 }
 
-function iconSizes(size: AvatarProps['size'] = 40) {
+function iconSizes(size: AvatarProps['size'] = 'lg') {
   switch (size) {
-    case 24: {
+    case 'sm': {
       return 16;
     }
-    case 32: {
+    case 'md': {
       return 24;
     }
-    case 40: {
+    case 'lg': {
       return 32;
     }
     default: {
@@ -42,7 +42,7 @@ function iconSizes(size: AvatarProps['size'] = 40) {
 
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
-  ({ className, style, src, alt = '', name, size = 40, color = 'white', bg = 'indigo05', icon, ...rest }, ref) => {
+  ({ className, style, src, alt = '', name, size = 'lg', color = 'white', bg = 'indigo05', icon, ...rest }, ref) => {
     const styles = useComponentStyles('avatar');
 
     const renderInitials = () => {

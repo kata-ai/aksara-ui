@@ -10,10 +10,7 @@ export default {
   component: Avatar,
   argTypes: {
     size: {
-      control: {
-        type: 'select',
-        options: [24, 32, 40],
-      },
+      options: ['sm', 'md', 'lg'],
     },
     name: {
       control: 'text',
@@ -45,7 +42,7 @@ export const WithIcons: Story<AvatarProps> = args => <Avatar icon={IconUser} {..
 WithIcons.args = {
   size: 40,
   name: 'Adry Muhammad',
-  bg: 'indigo05',
+  bg: 'greylight03',
 };
 
 export const WithLabel: Story<AvatarProps> = ({ name, ...args }) => (
