@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { Box, Text } from '../../../../layout';
+import { Box } from '../../../../layout';
+import { Text } from '../../../../typography';
 import InputRadioLabel from './InputRadioLabel';
 import InputRadio, { InputRadioProps } from './InputRadio';
 

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import VisuallyHidden from '@reach/visually-hidden';
 import { useComponentStyles } from '../../../system';
-import { Box, Text } from '../../../layout';
+import { Box } from '../../../layout';
+import { Text } from '../../../typography';
 import { UnstyledButton } from '../../button';
 import { Badge } from '../../badge';
 import { BaseButtonProps } from '../styles';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box } from '../../../box';
+import { Box } from '../../../layout/box';
 import { Anchor } from '../..';
 import { UnstyledAnchor } from '.';
 

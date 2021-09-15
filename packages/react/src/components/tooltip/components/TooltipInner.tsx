@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import * as popper from '@popperjs/core';
 import { usePopperTooltip } from 'react-popper-tooltip';
 
-import { Text, Paragraph, Box } from '../../../layout';
+import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
+import { Text, Paragraph } from '../../../typography';
 
 export type TooltipPlacement = popper.Placement;
 export type TooltipSize = 'sm' | 'md' | 'lg';

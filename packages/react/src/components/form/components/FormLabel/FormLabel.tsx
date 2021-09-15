@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Text, TextProps } from '../../../../layout';
+import { Text, TextProps } from '../../../../typography';
 
 export interface FormLabelProps extends TextProps, React.LabelHTMLAttributes<HTMLLabelElement> {}
 

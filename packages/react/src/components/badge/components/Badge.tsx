@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import { Box, BoxProps, Text } from '../../../layout';
+import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
+import { Text } from '../../../typography';
 
 export interface BadgeProps extends Omit<BoxProps, 'size'> {
   /** Additional CSS classes to give to the component. */

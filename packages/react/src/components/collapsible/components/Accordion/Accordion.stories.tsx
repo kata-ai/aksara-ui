@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Paragraph } from '../../../../layout';
+import { Paragraph } from '../../../../typography';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '.';
 
 export default {

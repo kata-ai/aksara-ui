@@ -1,8 +1,9 @@
 import VisuallyHidden from '@reach/visually-hidden';
 import * as React from 'react';
 
-import { Box, BoxProps, Text } from '../../../layout';
+import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
+import { Text } from '../../../typography';
 import getInitials from '../utils/getInitials';
 
 export interface AvatarProps extends Omit<BoxProps, 'size'> {

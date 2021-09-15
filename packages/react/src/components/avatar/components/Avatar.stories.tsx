@@ -2,7 +2,8 @@ import { IconUser } from '@aksara-ui/icons';
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { Box, Heading } from '../../../layout';
+import { Box } from '../../../layout';
+import { Heading } from '../../../typography';
 import Avatar, { AvatarProps } from './Avatar';
 
 export default {

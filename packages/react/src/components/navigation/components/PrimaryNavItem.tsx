@@ -1,7 +1,7 @@
 import * as React from 'react';
 import VisuallyHidden from '@reach/visually-hidden';
 import { useComponentStyles } from '../../../system';
-import { UnstyledAnchor, UnstyledAnchorProps } from '../../../layout';
+import { UnstyledAnchor, UnstyledAnchorProps } from '../../../typography';
 
 export interface PrimaryNavItemProps extends UnstyledAnchorProps, React.ComponentPropsWithoutRef<'a'> {
   size?: 'sm' | 'md' | 'lg';

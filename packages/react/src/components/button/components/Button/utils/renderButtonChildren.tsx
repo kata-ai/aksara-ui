@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Box, Text } from '../../../../../layout';
+import { Box } from '../../../../../layout';
 import { theme } from '../../../../../theme';
+import { Text } from '../../../../../typography';
 import { Spinner } from '../../../../loading';
 import { ButtonBaseProps } from '../types';
 

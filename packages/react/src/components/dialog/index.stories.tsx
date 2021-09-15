@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { Text, Paragraph, Stack, Box, Anchor } from '../../layout';
+import { Stack, Box } from '../../layout';
+import { Text, Paragraph, Anchor } from '../../typography';
 
 import Dialog from './components/Dialog';
 import DialogHeader from './components/DialogHeader';

@@ -8,8 +8,9 @@ import {
   IconConversation,
 } from '@aksara-ui/icons';
 
-import { Box, Heading, Paragraph } from '../../../layout';
+import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
+import { Heading, Paragraph } from '../../../typography';
 import { UnstyledButton } from '../../button';
 
 export type MessageStates = 'default' | 'info' | 'warning' | 'critical' | 'success';

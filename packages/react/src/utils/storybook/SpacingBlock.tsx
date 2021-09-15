@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, Text, BoxProps } from '../../layout';
+import { Box, BoxProps } from '../../layout';
+import { Text } from '../../typography';
 import { theme } from '../../theme';
 
 interface SpacingBlockProps extends BoxProps {
