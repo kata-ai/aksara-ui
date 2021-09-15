@@ -12,7 +12,7 @@ export interface PaginationDetailProps extends TextProps {
   length: number;
 }
 
-const PaginationDetails: React.FC<PaginationDetailProps> = ({ page, limit, total, length, ...rest }) => {
+const PaginationDetail: React.FC<PaginationDetailProps> = ({ page, limit, total, length, ...rest }) => {
   return (
     <Text {...rest}>
       {`Showing ${page * limit - limit + 1}-${length === limit ? length * page : total} of ${total} data`}
@@ -20,4 +20,4 @@ const PaginationDetails: React.FC<PaginationDetailProps> = ({ page, limit, total
   );
 };
 
-export default PaginationDetails;
+export default PaginationDetail;

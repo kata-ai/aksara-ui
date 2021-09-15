@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 
 import Pagination from './Pagination';
 import { Box } from '../../../layout';
-import PaginationDetails from './PaginationDetails';
+import PaginationDetail from './PaginationDetail';
 
 export default {
   title: 'Core/Components/Pagination',
@@ -46,7 +46,7 @@ export const WithPaginationDetail = () => {
 
   return (
     <Box display="flex" justifyContent="space-between">
-      <PaginationDetails page={currentPage} limit={limit} total={50 * limit} length={10} />
+      <PaginationDetail page={currentPage} limit={limit} total={50 * limit} length={10} />
       <Pagination
         current={currentPage}
         total={50}
