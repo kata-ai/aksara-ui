@@ -42,6 +42,7 @@ export const WithIcons: Story<AvatarProps> = args => <Avatar icon={IconUser} {..
 WithIcons.args = {
   size: 40,
   name: 'Adry Muhammad',
+  color: 'greymed04',
   bg: 'greylight03',
 };
 
