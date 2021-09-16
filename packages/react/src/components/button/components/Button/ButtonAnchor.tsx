@@ -1,8 +1,8 @@
 import * as React from 'react';
 import clsx from 'clsx';
 
-import { UnstyledAnchor } from '../../../../layout';
 import { useComponentStyles } from '../../../../system';
+import { UnstyledAnchor } from '../../../../typography';
 import { ButtonBaseProps, ButtonSizes } from './types';
 import { renderButtonChildren, renderButtonIcon } from './utils';
 

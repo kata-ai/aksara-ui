@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Anchor, AnchorProps } from '../../layout';
+import { Anchor, AnchorProps } from '../../typography';
 
 export type BreadcrumbItemProps = AnchorProps & React.ComponentPropsWithoutRef<'a'>;
 

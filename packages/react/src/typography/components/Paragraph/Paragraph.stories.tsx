@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { theme } from '../../../../theme';
+import { theme } from '../../../theme';
 import Paragraph, { ParagraphProps } from './Paragraph';
 
 export default {

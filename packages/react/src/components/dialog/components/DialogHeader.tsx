@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, Heading } from '../../../layout';
+import { Box } from '../../../layout';
+import { Heading } from '../../../typography';
 
 export interface DialogHeaderProps {
   id?: string;

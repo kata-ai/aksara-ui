@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, Text } from '../../layout';
+import { Box } from '../../layout';
+import { Text } from '../../typography';
 
 const ElevationDetail: React.FC<{ title: string; description: string }> = ({ title, description }) => {
   return (

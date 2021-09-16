@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Box, Text } from '../../../../layout';
+import { Box } from '../../../../layout';
+import { Text } from '../../../../typography';
 
 export interface DropdownMenuHeaderProps {
   className?: string;

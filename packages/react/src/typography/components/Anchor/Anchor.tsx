@@ -9,7 +9,7 @@ import {
   sxMixin,
   SxProps,
   componentStylesMixin,
-} from '../../../../system';
+} from '../../../system';
 import { textProps } from '../../utils';
 
 export type AnchorScale = 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 
 import { Box } from '../box';
-import { Text } from '../typography';
+import { Text } from '../../typography';
 import Stack, { StackProps } from './Stack';
 
 export default {

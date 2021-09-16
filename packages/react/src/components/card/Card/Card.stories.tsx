@@ -3,7 +3,8 @@ import { IconBriefcase, IconClock, IconKebab } from '@aksara-ui/icons';
 import { action } from '@storybook/addon-actions';
 
 import Card from './Card';
-import { Box, Heading, Paragraph, Stack, Wrap, WrapItem } from '../../../layout';
+import { Box, Stack, Wrap, WrapItem } from '../../../layout';
+import { Heading, Paragraph } from '../../../typography';
 import { Button, IconButton } from '../../button';
 import { Avatar } from '../../avatar';
 import { CardHeader } from '../CardHeader';
@@ -42,7 +43,7 @@ export const WithPills = () => {
         <Stack spacing="md">
           <CardHeader
             title="Deno"
-            avatar={<Avatar icon={IconBriefcase} bg="yellow01" color="yellow07" />}
+            avatar={<Avatar size="md" icon={IconBriefcase} bg="yellow01" color="yellow07" />}
             actions={
               <IconButton variant="plain" size="sm" onClick={action('click')}>
                 <IconKebab fill="currentColor" aria-hidden />

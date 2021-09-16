@@ -25,7 +25,7 @@ exports[`components/Button <Button /> renders block buttons correctly 1`] = `
   type="button"
 >
   <span
-    class="Text-sc-1e9atua-0"
+    class="Text-sc-18vu504-0"
   >
     test button
   </span>
@@ -56,7 +56,7 @@ exports[`components/Button <Button /> renders colors correctly by variant 1`] = 
   type="button"
 >
   <span
-    class="Text-sc-1e9atua-0"
+    class="Text-sc-18vu504-0"
   >
     test button
   </span>

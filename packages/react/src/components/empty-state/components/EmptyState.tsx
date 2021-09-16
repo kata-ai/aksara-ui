@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { Box, BoxProps, Heading, Paragraph, Stack } from '../../../layout';
+import { Box, BoxProps, Stack } from '../../../layout';
+import { Heading, Paragraph } from '../../../typography';
 
 export interface BlankslateProps {
   /** Additional CSS classes to give to the component. */

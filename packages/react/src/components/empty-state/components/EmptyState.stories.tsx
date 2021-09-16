@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Paragraph, Anchor } from '../../../layout';
+import { Paragraph, Anchor } from '../../../typography';
 import { Button } from '../../button';
 import { ButtonGroup } from '../../button-group';
 import EmptyState from './EmptyState';

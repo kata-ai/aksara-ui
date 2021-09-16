@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Paragraph, Anchor } from '../../layout/typography';
+import { Paragraph, Anchor } from '../../typography';
 import { SystemBlock } from '../../utils/storybook';
 import FocusTrap from './FocusTrap';
 

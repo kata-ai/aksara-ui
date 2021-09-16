@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, TextProps } from '../../../layout/typography';
+import { Text, TextProps } from '../../../typography';
 
 export interface PaginationDetailProps extends TextProps {
   // Current page of pages

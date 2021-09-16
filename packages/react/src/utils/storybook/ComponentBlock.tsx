@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, Heading, Stack, StackProps } from '../../layout';
+import { Box, Stack, StackProps } from '../../layout';
+import { Heading } from '../../typography';
 
 interface ComponentBlockProps extends Omit<StackProps, 'spacing'> {
   title: string;
