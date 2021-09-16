@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, BoxProps, Heading } from '../../layout';
+import { Box, BoxProps } from '../../layout';
+import { Heading } from '../../typography';
 
 export interface PageHeaderProps extends BoxProps {
   className?: string;

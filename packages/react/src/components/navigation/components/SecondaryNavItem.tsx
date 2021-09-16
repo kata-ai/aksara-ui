@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { IconChevronRight } from '@aksara-ui/icons';
-import { Box, Text, UnstyledAnchor, UnstyledAnchorProps } from '../../../layout';
+import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
+import { Text, UnstyledAnchor, UnstyledAnchorProps } from '../../../typography';
 
 export interface SecondaryNavItemProps extends UnstyledAnchorProps, React.ComponentPropsWithoutRef<'a'> {
   variant?: 'default' | 'disclosure';

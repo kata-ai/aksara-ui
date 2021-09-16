@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { IconCloseRounded, IconTickRounded, IconInfo, IconWarningTriangle } from '@aksara-ui/icons';
 
-import { Text, Box, BoxProps } from '../../../../layout';
+import { Box, BoxProps } from '../../../../layout';
+import { Text } from '../../../../typography';
 
 export type InputMessageVariants = 'success' | 'warning' | 'info' | 'critical';
 

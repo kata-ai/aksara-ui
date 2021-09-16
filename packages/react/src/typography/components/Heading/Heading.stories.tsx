@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { theme } from '../../../../theme';
+import { theme } from '../../../theme';
 import Heading, { HeadingProps } from './Heading';
 
 export default {

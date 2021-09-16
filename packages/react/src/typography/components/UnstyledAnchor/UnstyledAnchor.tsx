@@ -8,7 +8,7 @@ import {
   sxMixin,
   SxProps,
   componentStylesMixin,
-} from '../../../../system';
+} from '../../../system';
 
 export interface UnstyledAnchorProps extends AllSystemProps, PseudoSystemProps, SxProps {
   /**

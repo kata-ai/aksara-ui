@@ -5,7 +5,8 @@ import { Transition } from 'react-transition-group';
 import { IconTickSingle, IconWarningTriangle, IconCloseRounded } from '@aksara-ui/icons';
 
 import { Card } from '../../card';
-import { Text, Heading, Box } from '../../../layout';
+import { Box } from '../../../layout';
+import { Text, Heading } from '../../../typography';
 import { ToasterSettings, NotificationStatus } from '../utils/types';
 import { ANIMATION_DURATION, TOASTER_WIDTH } from '../utils/constants';
 import { toasterVariants, toasterTextVariants } from './variants';

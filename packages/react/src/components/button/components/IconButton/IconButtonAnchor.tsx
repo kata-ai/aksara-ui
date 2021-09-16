@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 
-import { UnstyledAnchor } from '../../../../layout';
+import { UnstyledAnchor } from '../../../../typography';
 import { useComponentStyles } from '../../../../system';
 import { IconButtonBaseProps, IconButtonSizes } from './types';
 

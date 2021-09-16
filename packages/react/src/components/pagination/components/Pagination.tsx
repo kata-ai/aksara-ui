@@ -4,7 +4,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import VisuallyHidden from '@reach/visually-hidden';
 import PaginationButton from './PaginationButton';
-import { Text } from '../../../layout';
+import { Text } from '../../../typography';
 import IconChevronLeft from './IconChevronLeft';
 import IconChevronRight from './IconChevronRight';
 import { theme } from '../../../theme';

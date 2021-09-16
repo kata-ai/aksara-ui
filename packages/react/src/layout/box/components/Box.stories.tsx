@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Heading } from '../../typography';
+import { Heading } from '../../../typography';
 
 import Box from './Box';
 
