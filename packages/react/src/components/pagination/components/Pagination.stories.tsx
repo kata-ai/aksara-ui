@@ -45,7 +45,7 @@ export const WithPaginationDetail = () => {
   const [limit] = React.useState(10);
 
   return (
-    <Box display="flex" justifyContent="space-between">
+    <Box display="flex" justifyContent="space-between" alignItems="center">
       <PaginationDetail page={currentPage} limit={limit} total={50 * limit} length={10} />
       <Pagination
         current={currentPage}
