@@ -22,20 +22,20 @@ const DefaultStyles = css`
 `;
 
 const IsActiveStyles = css`
-  background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
-  border-color: ${themeGet('colors.blue01', theme.colors.blue01)};
-  color: ${themeGet('colors.blue06', theme.colors.blue06)};
+  background-color: ${themeGet('colors.blue07', theme.colors.blue07)};
+  border-color: ${themeGet('colors.blue07', theme.colors.blue07)};
+  color: ${themeGet('colors.white', theme.colors.white)};
 
   &:hover,
   &.hover {
-    background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
+    background-color: ${themeGet('colors.blue07', theme.colors.blue07)};
   }
 
   &:active,
   &.active {
-    background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
-    border-color: ${themeGet('colors.blue01', theme.colors.blue01)};
-    color: ${themeGet('colors.blue06', theme.colors.blue06)};
+    background-color: ${themeGet('colors.blue07', theme.colors.blue07)};
+    border-color: ${themeGet('colors.blue07', theme.colors.blue07)};
+    color: ${themeGet('colors.white', theme.colors.white)};
   }
 `;
 
