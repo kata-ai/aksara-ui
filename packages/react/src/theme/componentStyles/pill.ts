@@ -27,7 +27,7 @@ const pillRoot: ComponentThemeConfig = {
       default: {
         '&:not([disabled])': {
           backgroundColor: 'greylight04',
-          color: 'greymed04',
+          color: 'greydark02',
         },
       },
       info: {
