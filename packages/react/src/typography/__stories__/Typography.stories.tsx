@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Stack } from '../stack';
-import { Anchor, Heading, Paragraph, Text, HeadingScale, TextScale, ParagraphScale } from '../../typography';
+import { Stack } from '../../layout/stack';
+import { Anchor, Heading, Paragraph, Text, HeadingScale, TextScale, ParagraphScale } from '..';
 
 export default {
   title: 'Core/Foundations/Typography',
@@ -97,6 +97,35 @@ export const ParagraphText = () => (
         </Heading>
       </Stack>
     ))}
+  </Stack>
+);
+
+export const LabelText = () => (
+  <Stack spacing="md">
+    <Stack spacing="sm" padding="md" backgroundColor="grey02">
+      <Text display="block" fontSize="14px" lineHeight="16px" letterSpacing="-0.05px">
+        We are making AI technology accessible to everyone
+      </Text>
+      <Heading as="p" scale={100} color="greymed04">
+        Button Label
+      </Heading>
+    </Stack>
+    <Stack spacing="sm" padding="md" backgroundColor="grey02">
+      <Text display="block" fontSize="16px" lineHeight="20px" letterSpacing="-0.05px">
+        We are making AI technology accessible to everyone
+      </Text>
+      <Heading as="p" scale={100} color="greymed04">
+        Input Label
+      </Heading>
+    </Stack>
+    <Stack spacing="sm" padding="md" backgroundColor="grey02">
+      <Text display="block" fontSize="10px" lineHeight="16px">
+        We are making AI technology accessible to everyone
+      </Text>
+      <Heading as="p" scale={100} color="greymed04">
+        Caption
+      </Heading>
+    </Stack>
   </Stack>
 );
 

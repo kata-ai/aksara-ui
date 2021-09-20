@@ -32,7 +32,7 @@ export const heading: ComponentThemeConfig = {
         fontSize: 500,
         lineHeight: 500,
         fontWeight: 700,
-        letterSpacing: '-0.02px',
+        letterSpacing: '-0.05px',
       },
       400: {
         fontSize: 400,
