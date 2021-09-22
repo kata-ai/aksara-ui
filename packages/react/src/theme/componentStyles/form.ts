@@ -7,12 +7,13 @@ const inputBase = (theme: DefaultTheme) => ({
   backgroundColor: `var(--aks-form-bg-color, ${theme.colors.greylight01})`,
   borderColor: `var(--aks-form-border-color, ${theme.colors.greylight05})`,
   borderWidth: '1px',
-  borderRadius: 0,
+  borderRadius: 8,
   borderStyle: 'solid',
   color: theme.colors.greydark02,
+  display: 'block',
+  fontSize: '12px',
+  lineHeight: '18px',
   padding: 0,
-  fontSize: '1rem',
-  lineHeight: '1.5rem',
   '--aks-shadow': '0 0 #0000',
 });
 
@@ -32,10 +33,6 @@ const inputFocusBase = (theme: DefaultTheme) => ({
 const inputText: ComponentThemeConfig = {
   baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputBase(theme),
-    display: 'block',
-    borderRadius: 8,
-    fontSize: '12px',
-    lineHeight: '18px',
     '&:focus': {
       ...inputFocusBase(theme),
     },
@@ -103,6 +100,65 @@ const inputText: ComponentThemeConfig = {
   },
 };
 
+const inputTextarea: ComponentThemeConfig = {
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
+    ...inputBase(theme),
+    '&:focus': {
+      ...inputFocusBase(theme),
+    },
+    '&[disabled]': {
+      '--aks-form-bg-color': theme.colors.greylight02,
+      '--aks-form-border-color': transparentize(0.5, theme.colors.greylight05),
+      color: theme.colors.greymed01,
+      cursor: 'not-allowed',
+      '&::placeholder': {
+        color: theme.colors.greymed01,
+      },
+    },
+  }),
+  propToScaleMap: [['variant', 'variants']],
+  scales: {
+    variants: {
+      default: ({ theme }: { theme: DefaultTheme }) => ({
+        '&:not([disabled])': {
+          '--aks-form-bg-color': theme.colors.greylight01,
+          '--aks-form-border-color': theme.colors.greylight05,
+          '&:hover': {
+            '--aks-form-bg-color': theme.colors.greylight03,
+            '--aks-form-border-color': theme.colors.greymed01,
+          },
+          '&:focus, &:active': {
+            '--aks-form-bg-color': theme.colors.greylight01,
+            '--aks-form-border-color': theme.colors.blue07,
+            '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+          },
+          '&::placeholder': {
+            color: theme.colors.greymed01,
+          },
+        },
+      }),
+      error: ({ theme }: { theme: DefaultTheme }) => ({
+        '&:not([disabled])': {
+          '--aks-form-bg-color': theme.colors.red01,
+          '--aks-form-border-color': theme.colors.red07,
+          '&:hover': {
+            '--aks-form-bg-color': theme.colors.red01,
+            '--aks-form-border-color': theme.colors.red07,
+          },
+          '&:focus, &:active': {
+            '--aks-form-bg-color': theme.colors.red01,
+            '--aks-form-border-color': theme.colors.red07,
+            '--aks-ring-color': transparentize(0.7, theme.colors.red07),
+          },
+          '&::placeholder': {
+            color: theme.colors.greymed01,
+          },
+        },
+      }),
+    },
+  },
+};
+
 const inputMessage: ComponentThemeConfig = {
   propToScaleMap: [['variant', 'variants']],
   scales: {
@@ -128,6 +184,7 @@ const inputMessage: ComponentThemeConfig = {
 
 const form = {
   inputText,
+  inputTextarea,
   inputMessage,
 };
 
