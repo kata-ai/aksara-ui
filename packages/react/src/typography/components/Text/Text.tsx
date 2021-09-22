@@ -9,12 +9,13 @@ import {
   sxMixin,
   SxProps,
   componentStylesMixin,
+  PseudoSystemProps,
 } from '../../../system';
 import { textProps } from '../../utils';
 
 export type TextScale = 500 | 400 | 300 | 200;
 
-export interface TextProps<ThemeType extends Theme = RequiredTheme> extends AllSystemProps, SxProps {
+export interface TextProps<ThemeType extends Theme = RequiredTheme> extends SxProps, AllSystemProps, PseudoSystemProps {
   color?: string;
   children?: React.ReactNode;
   /** Size value of the text. */
@@ -26,7 +27,7 @@ export interface TextProps<ThemeType extends Theme = RequiredTheme> extends AllS
  */
 const Text = styled('span').withConfig<TextProps>({
   shouldForwardProp: sfp(textProps),
-})(componentStylesMixin('text'), allSystemProps, pseudoSystemProps, sxMixin);
+})(componentStylesMixin('text'), sxMixin, allSystemProps, pseudoSystemProps);
 
 Text.displayName = 'Text';
 

@@ -19,6 +19,7 @@ export interface InputElementBaseProps {
   children: React.ReactNode;
 }
 
+/** @deprecated - use `InputIcon` instead */
 const InputElement = React.forwardRef<HTMLDivElement, InputElementBaseProps>(
   ({ inputSize, children, placement = 'left', ...props }, ref) => {
     const placementProp = { [placement]: '0' };
