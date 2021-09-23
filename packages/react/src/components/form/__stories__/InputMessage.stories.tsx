@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
 
-import InputMessage, { InputMessageProps } from './InputMessage';
+import { InputMessage, InputMessageProps } from '../components/InputMessage';
 
 export default {
   title: 'Core/Components/Form/InputMessage',

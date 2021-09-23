@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconCloseRounded, IconTickRounded, IconInfo, IconWarningTriangle } from '@aksara-ui/icons';
+import { IconTickRounded, IconInfo, IconWarningTriangle, IconWarningRounded } from '@aksara-ui/icons';
 
 import { Box, BoxProps } from '../../../../layout';
 import { Text } from '../../../../typography';
@@ -26,7 +26,7 @@ function messageIcon(variant: InputMessageVariants = 'info') {
       return <IconWarningTriangle size={16} fill="currentColor" />;
     }
     case 'critical': {
-      return <IconCloseRounded size={16} fill="currentColor" />;
+      return <IconWarningRounded size={16} fill="currentColor" />;
     }
     default: {
       return <IconInfo size={16} fill="currentColor" />;
@@ -43,7 +43,7 @@ function messageColors(variant: InputMessageVariants = 'info') {
       return 'indigo06';
     }
     case 'warning': {
-      return 'yellow08';
+      return 'yellow09';
     }
     case 'critical': {
       return 'red07';
@@ -64,7 +64,6 @@ const InputMessage = React.forwardRef<HTMLDivElement, InputMessageProps>(
         display="flex"
         flexDirection="row"
         alignItems="center"
-        mt="xs"
         color={messageColors(variant)}
         {...rest}
       >
