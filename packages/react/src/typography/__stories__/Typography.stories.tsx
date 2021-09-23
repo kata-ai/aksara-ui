@@ -119,6 +119,14 @@ export const LabelText = () => (
       </Heading>
     </Stack>
     <Stack spacing="sm" padding="md" backgroundColor="grey02">
+      <Text display="block" fontSize="12px" lineHeight="18px" letterSpacing="-0.05px">
+        We are making AI technology accessible to everyone
+      </Text>
+      <Heading as="p" scale={100} color="greymed04">
+        Helper
+      </Heading>
+    </Stack>
+    <Stack spacing="sm" padding="md" backgroundColor="grey02">
       <Text display="block" fontSize="10px" lineHeight="16px">
         We are making AI technology accessible to everyone
       </Text>
