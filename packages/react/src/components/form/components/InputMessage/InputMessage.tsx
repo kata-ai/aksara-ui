@@ -71,7 +71,7 @@ const InputMessage = React.forwardRef<HTMLDivElement, InputMessageProps>(
           {messageIcon(variant)}
         </Box>
         <Box display="flex" flex="1 1 auto" alignItems="center">
-          <Text display="block" scale={200}>
+          <Text display="block" scale={200} fontWeight={500}>
             {children}
           </Text>
         </Box>
