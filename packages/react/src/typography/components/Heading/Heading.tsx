@@ -9,12 +9,16 @@ import {
   sxMixin,
   SxProps,
   componentStylesMixin,
+  PseudoSystemProps,
 } from '../../../system';
 import { textProps } from '../../utils';
 
 export type HeadingScale = 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100;
 
-export interface HeadingProps<ThemeType extends Theme = RequiredTheme> extends AllSystemProps, SxProps {
+export interface HeadingProps<ThemeType extends Theme = RequiredTheme>
+  extends SxProps,
+    AllSystemProps,
+    PseudoSystemProps {
   color?: string;
   children?: React.ReactNode;
   /** Size value of the heading. */
@@ -26,7 +30,7 @@ export interface HeadingProps<ThemeType extends Theme = RequiredTheme> extends A
  */
 const Heading = styled('h2').withConfig<HeadingProps>({
   shouldForwardProp: sfp(textProps),
-})(componentStylesMixin('heading'), allSystemProps, pseudoSystemProps, sxMixin);
+})(componentStylesMixin('heading'), sxMixin, allSystemProps, pseudoSystemProps);
 
 Heading.defaultProps = {
   scale: 800,

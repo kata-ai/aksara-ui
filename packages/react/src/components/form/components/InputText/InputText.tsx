@@ -1,37 +1,37 @@
 import * as React from 'react';
 
-import { InputBase } from '../../styles';
-import { InputSizes } from '../../types';
+import { Box, BoxProps } from '../../../../layout';
+import { useComponentStyles } from '../../../../system';
 
-export interface InputTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputTextProps
+  extends Omit<BoxProps, 'height' | 'width' | 'size'>,
+    React.ComponentPropsWithoutRef<'input'> {
   /** True if this text input has an addon style */
   addon?: boolean;
   /** True if the input has errors. */
   errors?: boolean;
   /** Form size */
-  inputSize?: InputSizes;
+  inputSize?: 'md' | 'lg';
 }
 
 const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
-  ({ className, errors, addon, size, ...rest }, ref) => {
+  ({ className, errors, addon, inputSize = 'md', sx, pl, pr, ...rest }, ref) => {
+    const styles = useComponentStyles('inputText', { size: inputSize, variant: errors ? 'error' : 'default' });
+
     return (
-      <InputBase
+      <Box
+        as="input"
+        type="text"
         className={className}
-        inputVariant={errors ? 'errors' : 'base'}
-        inputSize={size as InputSizes}
-        addon={addon}
         ref={ref}
+        sx={{ ...styles, ...sx }}
+        pl={pl || 'sm'}
+        pr={pr || 'sm'}
         {...rest}
       />
     );
   }
 );
-
-InputText.defaultProps = {
-  errors: false,
-  addon: false,
-  size: 40,
-};
 
 InputText.displayName = 'InputText';
 

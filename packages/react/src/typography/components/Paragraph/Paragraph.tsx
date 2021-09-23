@@ -9,12 +9,16 @@ import {
   sxMixin,
   SxProps,
   componentStylesMixin,
+  PseudoSystemProps,
 } from '../../../system';
 import { textProps } from '../../utils';
 
 export type ParagraphScale = 500 | 400 | 300 | 200;
 
-export interface ParagraphProps<ThemeType extends Theme = RequiredTheme> extends AllSystemProps, SxProps {
+export interface ParagraphProps<ThemeType extends Theme = RequiredTheme>
+  extends SxProps,
+    AllSystemProps,
+    PseudoSystemProps {
   color?: string;
   children?: React.ReactNode;
   /** Size value of the text. */
@@ -26,7 +30,7 @@ export interface ParagraphProps<ThemeType extends Theme = RequiredTheme> extends
  */
 const Paragraph = styled('p').withConfig<ParagraphProps>({
   shouldForwardProp: sfp(textProps),
-})(componentStylesMixin('text'), allSystemProps, pseudoSystemProps, sxMixin);
+})(componentStylesMixin('text'), sxMixin, allSystemProps, pseudoSystemProps);
 
 Paragraph.defaultProps = {
   scale: 400,
