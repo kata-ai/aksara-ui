@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import { IconPen } from '@aksara-ui/icons';
+import { IconChevronDown, IconPen } from '@aksara-ui/icons';
 import * as React from 'react';
 
 import PlainButton, { PlainButtonProps } from './PlainButton';
@@ -9,7 +9,7 @@ export default {
   component: PlainButton,
   argTypes: {
     variant: {
-      options: ['primary', 'destructive'],
+      options: ['primary', 'destructive', 'disclosure'],
     },
     size: {
       options: ['sm', 'md'],
@@ -47,6 +47,27 @@ Example.args = {
 export const WithIcon: Story<PlainButtonProps> = Template.bind({});
 WithIcon.args = {
   ...Example.args,
+  icon: IconPen,
+  iconPosition: 'left',
+};
+
+export const DisclosureButton: Story<PlainButtonProps> = ({ variant, size, disabled, isLoading, onClick }) => (
+  <PlainButton
+    type="button"
+    variant={variant}
+    size={size}
+    disabled={disabled}
+    isLoading={isLoading}
+    icon={IconChevronDown}
+    iconPosition="right"
+    onClick={onClick}
+  >
+    Push Me
+  </PlainButton>
+);
+DisclosureButton.args = {
+  ...Example.args,
+  variant: 'disclosure',
   icon: IconPen,
   iconPosition: 'left',
 };

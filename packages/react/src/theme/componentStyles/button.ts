@@ -219,11 +219,11 @@ export const plainButton: ComponentThemeConfig = {
     sizes: {
       sm: {
         fontSize: '14px',
-        lineHeight: '24px',
+        lineHeight: '22px',
       },
       md: {
         fontSize: '16px',
-        lineHeight: '24px',
+        lineHeight: '22px',
       },
     },
     variants: {
@@ -239,6 +239,24 @@ export const plainButton: ComponentThemeConfig = {
           '&:focus': {
             backgroundColor: 'greylight03',
             color: 'blue09',
+            '> span': {
+              textDecoration: 'underline',
+            },
+          },
+        },
+      },
+      disclosure: {
+        '&:not(:disabled)': {
+          color: 'greydark02',
+          '&:hover': {
+            color: 'greydark02',
+            '> span': {
+              textDecoration: 'underline',
+            },
+          },
+          '&:focus': {
+            backgroundColor: 'greylight03',
+            color: 'greydark02',
             '> span': {
               textDecoration: 'underline',
             },

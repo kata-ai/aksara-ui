@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { IconPen } from '@aksara-ui/icons';
+import { IconChevronDown, IconPen } from '@aksara-ui/icons';
 
 import Button, { ButtonProps } from './Button';
 
@@ -63,3 +63,18 @@ WithIcon.args = {
   icon: IconPen,
   iconPosition: 'left',
 };
+
+export const DisclosureButton: Story<ButtonProps> = ({ size, block, disabled, isLoading, onClick }) => (
+  <Button
+    type="button"
+    size={size}
+    block={block}
+    disabled={disabled}
+    isLoading={isLoading}
+    icon={IconChevronDown}
+    iconPosition="right"
+    onClick={onClick}
+  >
+    Push Me
+  </Button>
+);

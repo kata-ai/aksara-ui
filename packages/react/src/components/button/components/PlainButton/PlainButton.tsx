@@ -25,12 +25,13 @@ const PlainButton = React.forwardRef<HTMLButtonElement, PlainButtonProps>(
         disabled={disabled || isLoading}
         ref={ref}
         display="inline-flex"
+        flexDirection={iconPosition === 'left' ? 'row' : 'row-reverse'}
         alignItems="center"
         justifyContent="center"
         sx={plainButtonStyles}
         {...rest}
       >
-        {renderButtonIcon({ icon, iconPosition, isLoading })}
+        {renderButtonIcon({ icon, iconPosition, size, isLoading })}
         {renderButtonChildren({ isLoading, variant, children })}
       </UnstyledButton>
     );

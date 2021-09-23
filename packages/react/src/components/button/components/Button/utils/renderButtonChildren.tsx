@@ -3,11 +3,11 @@ import { Box } from '../../../../../layout';
 import { theme } from '../../../../../theme';
 import { Text } from '../../../../../typography';
 import { Spinner } from '../../../../loading';
-import { ButtonBaseProps } from '../types';
 
-interface ButtonChildrenProps extends Pick<ButtonBaseProps, 'variant'> {
+interface ButtonChildrenProps {
   isLoading?: boolean;
   children?: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'outline' | 'destructive' | 'disclosure';
 }
 
 const renderButtonChildren = ({ isLoading, variant, children }: ButtonChildrenProps) => {
