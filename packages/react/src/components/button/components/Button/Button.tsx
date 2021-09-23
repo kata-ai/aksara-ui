@@ -59,7 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         sx={buttonBaseStyles}
         {...rest}
       >
-        {renderButtonIcon({ icon, iconPosition, isLoading })}
+        {renderButtonIcon({ icon, iconPosition, size, isLoading })}
         {renderButtonChildren({ isLoading, variant, children })}
       </UnstyledButton>
     );

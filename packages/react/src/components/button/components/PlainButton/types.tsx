@@ -1,6 +1,6 @@
 import { ButtonBaseProps } from '../Button/types';
 
-export type PlainButtonVariants = 'primary' | 'destructive';
+export type PlainButtonVariants = 'primary' | 'destructive' | 'disclosure';
 export type PlainButtonSizes = 'sm' | 'md';
 
 export interface PlainButtonBaseProps extends Omit<ButtonBaseProps, 'size' | 'block' | 'variant'> {
