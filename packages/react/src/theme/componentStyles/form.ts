@@ -70,8 +70,8 @@ const inputText: ComponentThemeConfig = {
           },
           '&:focus, &:active': {
             '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue07,
-            '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+            '--aks-form-border-color': theme.colors.blue06,
+            '--aks-ring-color': transparentize(0.3, theme.colors.blue03),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -129,8 +129,8 @@ const inputTextarea: ComponentThemeConfig = {
           },
           '&:focus, &:active': {
             '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue07,
-            '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+            '--aks-form-border-color': theme.colors.blue06,
+            '--aks-ring-color': transparentize(0.3, theme.colors.blue03),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
