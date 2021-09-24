@@ -20,7 +20,7 @@ const inputBase = (theme: DefaultTheme) => ({
 const inputFocusBase = (theme: DefaultTheme) => ({
   outline: '2px solid transparent',
   'outline-offset': '2px',
-  '--aks-ring-inset': 'var(--tw-empty,/*!*/ /*!*/)',
+  '--aks-ring-inset': 'var(--empty,/*!*/ /*!*/)',
   '--aks-ring-width': '2px',
   '--aks-ring-offset-width': '0px',
   '--aks-ring-offset-color': '#fff',
@@ -70,8 +70,8 @@ const inputText: ComponentThemeConfig = {
           },
           '&:focus, &:active': {
             '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue07,
-            '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+            '--aks-form-border-color': theme.colors.blue06,
+            '--aks-ring-color': transparentize(0.3, theme.colors.blue03),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
@@ -129,8 +129,8 @@ const inputTextarea: ComponentThemeConfig = {
           },
           '&:focus, &:active': {
             '--aks-form-bg-color': theme.colors.greylight01,
-            '--aks-form-border-color': theme.colors.blue07,
-            '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+            '--aks-form-border-color': theme.colors.blue06,
+            '--aks-ring-color': transparentize(0.3, theme.colors.blue03),
           },
           '&::placeholder': {
             color: theme.colors.greymed01,
