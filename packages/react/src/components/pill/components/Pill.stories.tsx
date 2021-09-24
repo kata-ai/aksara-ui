@@ -29,9 +29,9 @@ const defaultArgs: PillProps = {
   children: 'Keyword',
 };
 
-const Template: Story<PillProps> = ({ variant, withCloseIcon, onClick, disabled, children }) => (
+const Template: Story<PillProps> = ({ variant, hasCloseIcon, onClick, disabled, children }) => (
   <Box display="flex">
-    <Pill variant={variant} withCloseIcon={withCloseIcon} onClick={onClick} disabled={disabled}>
+    <Pill variant={variant} hasCloseIcon={hasCloseIcon} onClick={onClick} disabled={disabled}>
       {children}
     </Pill>
   </Box>
@@ -43,14 +43,20 @@ BasicExample.args = defaultArgs;
 export const WithCloseIcon = Template.bind({});
 WithCloseIcon.args = {
   ...defaultArgs,
-  withCloseIcon: true,
+  hasCloseIcon: true,
 };
 
-export const WithCustomIcon: Story<PillProps> = ({ variant, withCloseIcon, onClick, disabled, children }) => (
+export const WithCustomIcon: Story<PillProps> = ({
+  variant,
+  hasCloseIcon: withCloseIcon,
+  onClick,
+  disabled,
+  children,
+}) => (
   <Box display="flex">
     <Pill
       variant={variant}
-      withCloseIcon={withCloseIcon}
+      hasCloseIcon={withCloseIcon}
       onClick={onClick}
       icon={<IconWhatsapp aria-hidden fill="currentColor" size={16} />}
       disabled={disabled}

@@ -159,6 +159,65 @@ const inputTextarea: ComponentThemeConfig = {
   },
 };
 
+const inputTags: ComponentThemeConfig = {
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
+    ...inputBase(theme),
+    '&:focus-within': {
+      ...inputFocusBase(theme),
+    },
+    '&[disabled]': {
+      '--aks-form-bg-color': theme.colors.greylight02,
+      '--aks-form-border-color': transparentize(0.5, theme.colors.greylight05),
+      color: theme.colors.greymed01,
+      cursor: 'not-allowed',
+      '&::placeholder': {
+        color: theme.colors.greymed01,
+      },
+    },
+  }),
+  propToScaleMap: [['variant', 'variants']],
+  scales: {
+    variants: {
+      default: ({ theme }: { theme: DefaultTheme }) => ({
+        '&:not([disabled])': {
+          '--aks-form-bg-color': theme.colors.greylight01,
+          '--aks-form-border-color': theme.colors.greylight05,
+          '&:hover': {
+            '--aks-form-bg-color': theme.colors.greylight03,
+            '--aks-form-border-color': theme.colors.greymed01,
+          },
+          '&:focus, &:active': {
+            '--aks-form-bg-color': theme.colors.greylight01,
+            '--aks-form-border-color': theme.colors.blue07,
+            '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+          },
+          '&::placeholder': {
+            color: theme.colors.greymed01,
+          },
+        },
+      }),
+      error: ({ theme }: { theme: DefaultTheme }) => ({
+        '&:not([disabled])': {
+          '--aks-form-bg-color': theme.colors.red01,
+          '--aks-form-border-color': theme.colors.red07,
+          '&:hover': {
+            '--aks-form-bg-color': theme.colors.red01,
+            '--aks-form-border-color': theme.colors.red07,
+          },
+          '&:focus, &:active': {
+            '--aks-form-bg-color': theme.colors.red01,
+            '--aks-form-border-color': theme.colors.red07,
+            '--aks-ring-color': transparentize(0.7, theme.colors.red07),
+          },
+          '&::placeholder': {
+            color: theme.colors.greymed01,
+          },
+        },
+      }),
+    },
+  },
+};
+
 const inputMessage: ComponentThemeConfig = {
   propToScaleMap: [['variant', 'variants']],
   scales: {
@@ -185,6 +244,7 @@ const inputMessage: ComponentThemeConfig = {
 const form = {
   inputText,
   inputTextarea,
+  inputTags,
   inputMessage,
 };
 
