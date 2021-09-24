@@ -6,11 +6,14 @@ export default {
   title: 'Core/Components/Form/InputTags',
   component: InputTags,
   argTypes: {
-    errors: {
-      control: 'boolean',
+    value: {
+      control: 'object',
     },
     placeholder: {
       control: 'text',
+    },
+    errors: {
+      control: 'boolean',
     },
     disabled: {
       control: 'boolean',
