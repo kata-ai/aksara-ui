@@ -46,6 +46,19 @@ export const Example = () => {
       >
         Multiple line with action
       </button>
+
+      <button
+        type="button"
+        onClick={() =>
+          addToast({
+            message: 'Error',
+            status: 'error',
+            dismissible: true,
+          })
+        }
+      >
+        Error with action
+      </button>
     </Box>
   );
 };
