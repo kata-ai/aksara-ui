@@ -17,11 +17,11 @@ function inputTagsVariant({
   disabled,
   errors,
 }: Pick<InputTagsProps, 'disabled' | 'errors'> & { focused?: boolean }) {
-  if (errors) {
-    return 'error';
-  }
-
   if (!disabled) {
+    if (errors) {
+      return 'error';
+    }
+
     if (focused) {
       return 'focused';
     }
