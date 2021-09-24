@@ -186,7 +186,7 @@ const inputTags: ComponentThemeConfig = {
             '--aks-form-bg-color': theme.colors.greylight03,
             '--aks-form-border-color': theme.colors.greymed01,
           },
-          '&:focus, &:active': {
+          '&:focus-within, &:focus, &:active': {
             '--aks-form-bg-color': theme.colors.greylight01,
             '--aks-form-border-color': theme.colors.blue07,
             '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
@@ -201,7 +201,7 @@ const inputTags: ComponentThemeConfig = {
           '--aks-form-bg-color': theme.colors.greylight01,
           '--aks-form-border-color': theme.colors.blue07,
           '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
-          '&:hover, &:focus, &:active': {
+          '&:hover, &:focus-within, &:focus, &:active': {
             '--aks-form-bg-color': theme.colors.greylight01,
             '--aks-form-border-color': theme.colors.blue07,
             '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
@@ -219,7 +219,7 @@ const inputTags: ComponentThemeConfig = {
             '--aks-form-bg-color': theme.colors.red01,
             '--aks-form-border-color': theme.colors.red07,
           },
-          '&:focus, &:active': {
+          '&:focus-within, &:focus, &:active': {
             '--aks-form-bg-color': theme.colors.red01,
             '--aks-form-border-color': theme.colors.red07,
             '--aks-ring-color': transparentize(0.7, theme.colors.red07),
@@ -227,6 +227,15 @@ const inputTags: ComponentThemeConfig = {
           '&::placeholder': {
             color: theme.colors.greymed01,
           },
+        },
+      }),
+      disabled: ({ theme }: { theme: DefaultTheme }) => ({
+        '--aks-form-bg-color': theme.colors.greylight02,
+        '--aks-form-border-color': transparentize(0.5, theme.colors.greylight05),
+        color: theme.colors.greymed01,
+        cursor: 'not-allowed',
+        '&::placeholder': {
+          color: theme.colors.greymed01,
         },
       }),
     },
