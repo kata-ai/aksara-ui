@@ -6,10 +6,11 @@ import { Pill } from '../../../pill';
 export interface InputTagsProps {
   value?: string[];
   onChange?: (value: string[]) => void;
+  placeholder?: string;
   onInputChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange }) => {
+const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, onChange, onInputChange }) => {
   const [tags, setTags] = React.useState(value || []);
   const [focused, setFocused] = React.useState(false);
 
@@ -91,10 +92,14 @@ const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange })
               lineHeight: '20px',
               outline: 'none',
               width: '100%',
+              '&::placeholder': {
+                color: 'greymed01',
+              },
             }}
             onKeyDown={inputKeyDown}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
+            placeholder={placeholder}
             ref={tagInputRef}
             onChange={onInputChange}
           />
