@@ -8,6 +8,7 @@ export * from './InputMessage';
 export * from './InputPrefix';
 export * from './InputRadio';
 export * from './InputSuffix';
+export * from './InputTags';
 export * from './InputText';
 export * from './InputTextarea';
 export * from './InputToggle';
