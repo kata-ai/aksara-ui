@@ -162,7 +162,7 @@ const inputTextarea: ComponentThemeConfig = {
 const inputTags: ComponentThemeConfig = {
   baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputBase(theme),
-    '&:focus-within': {
+    '&:focus-within, &:focus, &:active': {
       ...inputFocusBase(theme),
     },
     '&[disabled]': {
@@ -187,6 +187,21 @@ const inputTags: ComponentThemeConfig = {
             '--aks-form-border-color': theme.colors.greymed01,
           },
           '&:focus, &:active': {
+            '--aks-form-bg-color': theme.colors.greylight01,
+            '--aks-form-border-color': theme.colors.blue07,
+            '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+          },
+          '&::placeholder': {
+            color: theme.colors.greymed01,
+          },
+        },
+      }),
+      focused: ({ theme }: { theme: DefaultTheme }) => ({
+        '&:not([disabled])': {
+          '--aks-form-bg-color': theme.colors.greylight01,
+          '--aks-form-border-color': theme.colors.blue07,
+          '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
+          '&:hover, &:focus, &:active': {
             '--aks-form-bg-color': theme.colors.greylight01,
             '--aks-form-border-color': theme.colors.blue07,
             '--aks-ring-color': transparentize(0.7, theme.colors.blue07),
