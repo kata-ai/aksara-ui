@@ -15,29 +15,34 @@ const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange })
 
   const [tags, setTags] = React.useState(value || []);
 
+  const handleChange = (newTags: string[]) => {
+    if (onChange) {
+      onChange(newTags);
+    }
+  };
+
   const removeTag = (i: number) => {
     const newTags = [...tags];
     newTags.splice(i, 1);
 
     // Call the defined function setTags which will replace tags with the new value.
     setTags(newTags);
-    if (onChange) {
-      onChange(newTags);
-    }
+    handleChange(newTags);
   };
 
   const inputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const val = e.currentTarget.value || '';
+
     if (e.key === 'Enter' && val) {
       if (tags.find(tag => tag.toLowerCase() === val.toLowerCase())) {
         return;
       }
-      setTags([...tags, val]);
+      const newTags = [...tags, val];
+      setTags(newTags);
+      handleChange(newTags);
+
       if (tagInputRef.current) {
         tagInputRef.current.value = '';
-      }
-      if (onChange) {
-        onChange([...tags, val]);
       }
     } else if (e.key === 'Backspace' && !val) {
       removeTag(tags.length - 1);
@@ -60,7 +65,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange })
             </Pill>
           </WrapItem>
         ))}
-        <WrapItem flexGrow={1}>
+        <WrapItem display="flex" flexGrow={1} alignItems="center">
           <Box
             as="input"
             type="text"
@@ -73,7 +78,6 @@ const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange })
               width: '100%',
               fontSize: '12px',
               lineHeight: '20px',
-              ml: 'xxs',
               outline: 'none',
             }}
             onKeyDown={inputKeyDown}
