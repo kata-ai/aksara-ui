@@ -20,7 +20,7 @@ const inputBase = (theme: DefaultTheme) => ({
 const inputFocusBase = (theme: DefaultTheme) => ({
   outline: '2px solid transparent',
   'outline-offset': '2px',
-  '--aks-ring-inset': 'var(--tw-empty,/*!*/ /*!*/)',
+  '--aks-ring-inset': 'var(--empty,/*!*/ /*!*/)',
   '--aks-ring-width': '2px',
   '--aks-ring-offset-width': '0px',
   '--aks-ring-offset-color': '#fff',
