@@ -7,15 +7,37 @@ export interface InputTagsProps {
   value?: string[];
   onChange?: (value: string[]) => void;
   placeholder?: string;
+  disabled?: boolean;
+  errors?: boolean;
   onInputChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, onChange, onInputChange }) => {
+function inputTagsVariant({
+  focused,
+  disabled,
+  errors,
+}: Pick<InputTagsProps, 'disabled' | 'errors'> & { focused?: boolean }) {
+  if (!disabled) {
+    if (errors) {
+      return 'error';
+    }
+
+    if (focused) {
+      return 'focused';
+    }
+
+    return 'default';
+  }
+
+  return 'disabled';
+}
+
+const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, errors, onChange, onInputChange }) => {
   const [tags, setTags] = React.useState(value || []);
   const [focused, setFocused] = React.useState(false);
 
   const tagInputRef = React.useRef<HTMLInputElement>(null);
-  const inputTagsStyles = useComponentStyles('inputTags', { variant: focused ? 'focused' : 'default' });
+  const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ focused, errors, disabled }) });
 
   const handleFocusInput = (e: React.MouseEvent<HTMLDivElement>) => {
     // Prevent accidentally focusing on the input text when tag pills are clicked
@@ -62,13 +84,20 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, onChange, onI
   };
 
   return (
-    <Box sx={inputTagsStyles} display="flex" p="md" cursor="text" onClick={handleFocusInput}>
+    <Box
+      sx={inputTagsStyles}
+      display="flex"
+      p="md"
+      cursor={disabled ? 'not-allowed' : 'text'}
+      onClick={handleFocusInput}
+    >
       <Wrap spacing="xxs" display="inline-flex">
         {tags.map((tag, i) => (
           <WrapItem key={tag}>
             <Pill
               variant="active"
               hasCloseIcon
+              disabled={disabled}
               onClick={() => {
                 removeTag(i);
               }}
@@ -89,7 +118,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, onChange, onI
               cursor: 'inherit',
               display: 'inline-block',
               fontSize: '12px',
-              lineHeight: '20px',
+              height: '24px',
               outline: 'none',
               width: '100%',
               '&::placeholder': {
@@ -100,6 +129,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, onChange, onI
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             placeholder={placeholder}
+            disabled={disabled}
             ref={tagInputRef}
             onChange={onInputChange}
           />
