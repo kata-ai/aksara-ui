@@ -6,9 +6,10 @@ import { Pill } from '../../../pill';
 export interface InputTagsProps {
   value?: string[];
   onChange?: (value: string[]) => void;
+  onInputChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const InputTags: React.FC<InputTagsProps> = ({ value, onChange }) => {
+const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange }) => {
   const tagInputRef = React.useRef<HTMLInputElement>(null);
   const inputTagsStyles = useComponentStyles('inputTags', { variant: 'default' });
 
@@ -59,27 +60,28 @@ const InputTags: React.FC<InputTagsProps> = ({ value, onChange }) => {
             </Pill>
           </WrapItem>
         ))}
+        <WrapItem flexGrow={1}>
+          <Box
+            as="input"
+            type="text"
+            sx={{
+              appearance: 'none',
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: 'greydark02',
+              display: 'inline-block',
+              width: '100%',
+              fontSize: '12px',
+              lineHeight: '20px',
+              ml: 'xxs',
+              outline: 'none',
+            }}
+            onKeyDown={inputKeyDown}
+            ref={tagInputRef}
+            onChange={onInputChange}
+          />
+        </WrapItem>
       </Wrap>
-      <Box display="inline-flex" alignItems="center" flexGrow={1}>
-        <Box
-          as="input"
-          type="text"
-          sx={{
-            appearance: 'none',
-            backgroundColor: 'transparent',
-            border: 'none',
-            color: 'greydark02',
-            display: 'inline-block',
-            width: '100%',
-            fontSize: '12px',
-            lineHeight: '20px',
-            ml: 'xxs',
-            outline: 'none',
-          }}
-          onKeyDown={inputKeyDown}
-          ref={tagInputRef}
-        />
-      </Box>
     </Box>
   );
 };
