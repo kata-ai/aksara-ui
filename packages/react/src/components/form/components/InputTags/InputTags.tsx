@@ -17,7 +17,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange })
   const inputTagsStyles = useComponentStyles('inputTags', { variant: focused ? 'focused' : 'default' });
 
   const handleFocusInput = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Prevent accidentally focusing on the input text when tags/actual input are clicked
+    // Prevent accidentally focusing on the input text when tag pills are clicked
     if (e.target !== e.currentTarget) {
       return;
     }
@@ -37,7 +37,6 @@ const InputTags: React.FC<InputTagsProps> = ({ value, onChange, onInputChange })
     const newTags = [...tags];
     newTags.splice(i, 1);
 
-    // Call the defined function setTags which will replace tags with the new value.
     setTags(newTags);
     handleChange(newTags);
   };
