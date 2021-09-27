@@ -14,6 +14,8 @@ export interface BlankslateProps {
   title?: string;
   /** Render any image inside the image block up to 155px height. */
   image?: React.ReactNode;
+  /** Render any icon inside the icon block. */
+  icon?: React.ComponentType<any>;
   /** Blankslate text content. */
   content: React.ReactNode;
   /** Any available actions for the blankslate. */
@@ -40,8 +42,46 @@ const ImageWrapper: React.FC<BoxProps> = ({ children, sx, ...rest }) => {
   );
 };
 
+const IconWrapper: React.FC<Pick<BlankslateProps, 'variant' | 'icon'>> = ({ variant, icon, ...rest }) => {
+  const wrapperSize = React.useMemo(() => {
+    if (variant === 'inner') {
+      return 72;
+    }
+
+    return 96;
+  }, [variant]);
+
+  const iconSize = React.useMemo(() => {
+    if (variant === 'inner') {
+      return 48;
+    }
+
+    return 64;
+  }, [variant]);
+
+  if (icon) {
+    return (
+      <Box
+        display="inline-flex"
+        alignItems="center"
+        justifyContent="center"
+        mx="auto"
+        backgroundColor="greylight03"
+        color="greymed04"
+        size={wrapperSize}
+        borderRadius={9999}
+        {...rest}
+      >
+        {React.createElement(icon, { 'aria-hidden': true, fill: 'currentColor', size: iconSize })}
+      </Box>
+    );
+  }
+
+  return null;
+};
+
 const EmptyState = React.forwardRef<HTMLDivElement, BlankslateProps>(
-  ({ className, style, variant, image, title, content, actions, my }, ref) => {
+  ({ className, style, variant, image, icon, title, content, actions, my }, ref) => {
     const renderContent = () => {
       if (typeof content === 'string') {
         return (
@@ -54,11 +94,23 @@ const EmptyState = React.forwardRef<HTMLDivElement, BlankslateProps>(
       return content;
     };
 
+    const renderImageOrIcon = () => {
+      if (image) {
+        return <ImageWrapper>{image}</ImageWrapper>;
+      }
+
+      if (icon) {
+        return <IconWrapper variant={variant} icon={icon} />;
+      }
+
+      return null;
+    };
+
     const renderWrapper = () => {
       if (variant === 'inner') {
         return (
           <Stack spacing="md">
-            {image && <ImageWrapper>{image}</ImageWrapper>}
+            {renderImageOrIcon()}
             {title && (
               <Heading scale={400} mt={0}>
                 {title}
@@ -74,7 +126,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, BlankslateProps>(
       if (variant === 'section') {
         return (
           <Stack spacing="md">
-            {image && <ImageWrapper>{image}</ImageWrapper>}
+            {renderImageOrIcon()}
             {title && (
               <Heading scale={400} mt={0}>
                 {title}
@@ -89,7 +141,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, BlankslateProps>(
 
       return (
         <Stack spacing="md">
-          {image && <ImageWrapper>{image}</ImageWrapper>}
+          {renderImageOrIcon()}
           {title && (
             <Heading scale={600} mt={0}>
               {title}
