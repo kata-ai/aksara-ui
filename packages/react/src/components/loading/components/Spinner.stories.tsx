@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
 
+import { Stack } from '../../../layout';
 import Spinner, { SpinnerProps } from './Spinner';
 
 export default {
@@ -8,16 +9,7 @@ export default {
   component: Spinner,
   argTypes: {
     size: {
-      control: {
-        type: 'select',
-        options: [16, 24, 32, 48],
-      },
-    },
-    spinnerColor: {
-      control: 'text',
-    },
-    number: {
-      control: 'text',
+      options: [16, 24, 32, 48],
     },
     label: {
       control: 'text',
@@ -25,11 +17,18 @@ export default {
   },
 };
 
-const Template: Story<SpinnerProps> = args => <Spinner {...args} />;
+const Template: Story<SpinnerProps> = ({ size, label }) => {
+  return (
+    <Stack direction="horizontal" spacing="lg">
+      <Spinner size={size} spinnerColor="blue07" label={label} />
+      <Spinner size={size} spinnerColor="greylight01" label={label} />
+      <Spinner size={size} spinnerColor="greylight05" label={label} />
+    </Stack>
+  );
+};
 
 export const Example = Template.bind({});
 Example.args = {
-  spinnerColor: 'blue07',
   size: 24,
   label: 'Loading...',
 };
