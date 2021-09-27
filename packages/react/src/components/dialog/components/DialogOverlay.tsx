@@ -28,7 +28,7 @@ const FadeOut = keyframes`
   }
 `;
 
-const DialogOverlay = styled('div')`
+const ModalOverlay = styled('div')`
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -77,6 +77,9 @@ const DialogOverlay = styled('div')`
   }
 `;
 
-DialogOverlay.displayName = 'DialogOverlay';
+ModalOverlay.displayName = 'DialogOverlay';
 
-export default DialogOverlay;
+/** @deprecated - use `ModalOverlay` instead */
+export const DialogOverlay = ModalOverlay;
+
+export default ModalOverlay;

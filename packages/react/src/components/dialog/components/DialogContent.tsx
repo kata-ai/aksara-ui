@@ -6,23 +6,17 @@ export interface DialogContentProps {
   style?: React.CSSProperties;
 }
 
-const DialogContent: React.FC<DialogContentProps> = ({ className, style, children }) => {
+const ModalContent: React.FC<DialogContentProps> = ({ className, style, children }) => {
   return (
-    <Box
-      className={className}
-      style={style}
-      display="flex"
-      flexDirection="column"
-      flex="1 1 auto"
-      pt="md"
-      px="xl"
-      pb="xl"
-    >
+    <Box className={className} style={style} display="flex" flexDirection="column" flex="1 1 auto" px="lg" py="md">
       {children}
     </Box>
   );
 };
 
-DialogContent.displayName = 'DialogContent';
+ModalContent.displayName = 'ModalContent';
 
-export default DialogContent;
+/** @deprecated - use `ModalContent` instead */
+export const DialogContent = ModalContent;
+
+export default ModalContent;

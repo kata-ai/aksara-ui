@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { DialogFooter, DialogFooterProps } from '../../dialog';
+import { ModalFooter, DialogFooterProps } from '../../dialog';
 
 export type SideSheetFooterProps = DialogFooterProps;
 
-const SideSheetFooter: React.FC<SideSheetFooterProps> = DialogFooter;
+const SideSheetFooter: React.FC<SideSheetFooterProps> = ModalFooter;
 
 SideSheetFooter.displayName = 'SideSheetFooter';
 

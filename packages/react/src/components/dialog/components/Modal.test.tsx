@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import Dialog from './Dialog';
+import Modal from './Modal';
 
-describe('components/Dialog', () => {
-  describe('<Dialog />', () => {
+describe('components/Modal', () => {
+  describe('<Modal />', () => {
     test('renders correctly', () => {
       const { getByText } = render(
-        <Dialog labelledById="test-title" isOpen>
+        <Modal labelledById="test-title" isOpen>
           <p id="test-title">Basic Example</p>
-        </Dialog>
+        </Modal>
       );
 
       expect(getByText('Basic Example')).toBeInTheDocument();
@@ -18,9 +18,9 @@ describe('components/Dialog', () => {
     test('handles onClose', () => {
       const handleClose = jest.fn();
       const { getByLabelText } = render(
-        <Dialog labelledById="test-title" isOpen onClose={handleClose}>
+        <Modal labelledById="test-title" isOpen onClose={handleClose}>
           <p id="test-title">Basic Example</p>
-        </Dialog>
+        </Modal>
       );
 
       const closeButton = getByLabelText('Close');
@@ -31,9 +31,9 @@ describe('components/Dialog', () => {
     test('closes the drawer on when disableOverlayClick is not set', () => {
       const handleClose = jest.fn();
       render(
-        <Dialog labelledById="test-title" isOpen onClose={handleClose}>
+        <Modal labelledById="test-title" isOpen onClose={handleClose}>
           <p id="test-title">Basic Example</p>
-        </Dialog>
+        </Modal>
       );
 
       const overlay = document.querySelector('[data-aksara-portal] > div');
@@ -48,9 +48,9 @@ describe('components/Dialog', () => {
     test("doesn't close the drawer on when disableOverlayClick is set", () => {
       const handleClose = jest.fn();
       render(
-        <Dialog labelledById="test-title" isOpen disableOverlayClick onClose={handleClose}>
+        <Modal labelledById="test-title" isOpen disableOverlayClick onClose={handleClose}>
           <p id="test-title">Basic Example</p>
-        </Dialog>
+        </Modal>
       );
 
       const overlay = document.querySelector('[data-aksara-portal] > div');
