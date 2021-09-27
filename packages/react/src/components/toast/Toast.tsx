@@ -132,11 +132,11 @@ const Toast: React.FC<ToastProps> = ({
                 display="flex"
                 alignItems="center"
                 flex="1 1 auto"
-                minHeight={24}
+                minHeight={18}
                 dangerouslySetInnerHTML={{ __html: message }}
               />
             ) : (
-              <Box display="flex" alignItems="center" flex="1 1 auto" minHeight={24}>
+              <Box display="flex" alignItems="center" flex="1 1 auto" minHeight={18}>
                 <Text display="block" scale={200}>
                   {message}
                 </Text>
@@ -150,7 +150,7 @@ const Toast: React.FC<ToastProps> = ({
                   alignItems="center"
                   justifyContent="center"
                   fontSize="12px"
-                  lineHeight="20px"
+                  lineHeight="18px"
                   onClick={() => {
                     if (onAction) {
                       onAction();
@@ -165,7 +165,7 @@ const Toast: React.FC<ToastProps> = ({
               </Box>
             )}
             {dismissible && (
-              <Box display="flex" height={24} ml="md">
+              <Box display="flex" alignItems="start" minHeight={18} ml="md">
                 <UnstyledButton
                   type="button"
                   display="inline-flex"
@@ -174,7 +174,7 @@ const Toast: React.FC<ToastProps> = ({
                   sx={toastCloseButtonStyles}
                   onClick={() => close()}
                 >
-                  <IconClose aria-hidden fill="currentColor" />
+                  <IconClose aria-hidden fill="currentColor" size={16} />
                 </UnstyledButton>
               </Box>
             )}
