@@ -26,6 +26,17 @@ export const Example = () => {
         type="button"
         onClick={() =>
           addToast({
+            message: 'Single line',
+            dismissible: true,
+          })
+        }
+      >
+        Single line dismissable
+      </button>
+      <button
+        type="button"
+        onClick={() =>
+          addToast({
             message:
               'Multiple line. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras morbi enim, nisl in.',
           })
