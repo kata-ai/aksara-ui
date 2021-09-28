@@ -13,6 +13,9 @@ export default {
     disabled: {
       control: 'boolean',
     },
+    label: {
+      control: 'text',
+    },
   },
 };
 
@@ -35,7 +38,7 @@ export const Example: Story<InputToggleProps> = ({ label, disabled }) => {
   );
 };
 Example.args = {
-  label: 'Checkbox input',
+  label: 'Label',
   disabled: false,
 };
 
@@ -49,7 +52,7 @@ export const WithLabel: Story<InputToggleProps> = ({ label, disabled }) => {
   return (
     <Box>
       <Stack direction="horizontal" spacing="xs" alignItems="center">
-        <FormLabel htmlFor="toggleDummy">Label</FormLabel>
+        <FormLabel htmlFor="toggleDummy">{label}</FormLabel>
         <InputToggle
           id="toggleDummy"
           name="toggleDummy"
@@ -62,6 +65,7 @@ export const WithLabel: Story<InputToggleProps> = ({ label, disabled }) => {
     </Box>
   );
 };
+WithLabel.args = Example.args;
 
 export const WithLabelAndDescription: Story<InputToggleProps> = ({ label, disabled }) => {
   const [enabled, setEnabled] = React.useState<boolean>(false);
@@ -73,7 +77,7 @@ export const WithLabelAndDescription: Story<InputToggleProps> = ({ label, disabl
   return (
     <Stack spacing="xs">
       <Stack direction="horizontal" spacing="xs" alignItems="center">
-        <FormLabel htmlFor="toggleDummy">Label</FormLabel>
+        <FormLabel htmlFor="toggleDummy">{label}</FormLabel>
         <InputToggle
           id="toggleDummy"
           name="toggleDummy"
@@ -87,6 +91,7 @@ export const WithLabelAndDescription: Story<InputToggleProps> = ({ label, disabl
     </Stack>
   );
 };
+WithLabelAndDescription.args = Example.args;
 
 export const WithDescription: Story<InputToggleProps> = ({ label, disabled }) => {
   const [enabled, setEnabled] = React.useState<boolean>(false);
@@ -109,3 +114,4 @@ export const WithDescription: Story<InputToggleProps> = ({ label, disabled }) =>
     </Stack>
   );
 };
+WithDescription.args = Example.args;
