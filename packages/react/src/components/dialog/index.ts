@@ -9,3 +9,6 @@ export * from './components/DialogFooter';
 
 export { default as ModalHeader } from './components/DialogHeader';
 export * from './components/DialogHeader';
+
+export { default as ModalHeaderIcon } from './components/ModalHeaderIcon';
+export * from './components/ModalHeaderIcon';
