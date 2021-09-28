@@ -1,17 +1,19 @@
 import * as React from 'react';
+import { IconTrash } from '@aksara-ui/icons';
 
 import { Stack, Box } from '../../layout';
-import { Text, Paragraph, Anchor } from '../../typography';
+import { Heading, Text, Paragraph } from '../../typography';
 
-import Dialog from './components/Dialog';
-import DialogHeader from './components/DialogHeader';
-import DialogContent from './components/DialogContent';
-import DialogFooter from './components/DialogFooter';
+import Modal from './components/Modal';
+import ModalHeader from './components/DialogHeader';
+import ModalHeaderIcon from './components/ModalHeaderIcon';
+import ModalContent from './components/DialogContent';
+import ModalFooter from './components/DialogFooter';
 import { Button } from '../button';
 
 export default {
-  title: 'Core/Components/Dialog',
-  component: [Dialog, DialogHeader, DialogContent, DialogFooter],
+  title: 'Core/Components/Modal',
+  component: Modal,
 };
 
 export const BasicExample = () => {
@@ -19,31 +21,67 @@ export const BasicExample = () => {
 
   return (
     <Box p="md">
-      <Text as="p">Click the button below to open the dialog.</Text>
+      <Text as="p">Click the button below to open the modal.</Text>
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
-        Toggle Dialog
+        Toggle Modal
       </button>
-      <Dialog labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <DialogHeader id="stories-title">Basic Example</DialogHeader>
-        <DialogContent>
-          <Stack>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
-              versuta.{' '}
-              <Anchor href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
-                Quamquam tu hanc copiosiorem etiam soles dicere
-              </Anchor>
-              . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
-              doloris, divitiae, valitudo.
-            </Paragraph>
+      <Modal labelledById="stories-title" hideCloseButton isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ModalHeader>
+          <Heading scale={500} id="stories-title" textAlign="center">
+            Basic Example
+          </Heading>
+        </ModalHeader>
+        <ModalContent>
+          <Stack textAlign="center">
+            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
           </Stack>
-        </DialogContent>
-        <DialogFooter>
-          <Box display="flex" flexDirection="row-reverse">
-            <Button onClick={() => setIsOpen(false)}>Close</Button>
+        </ModalContent>
+        <ModalFooter>
+          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
+            <Button block size="lg" onClick={() => setIsOpen(false)}>
+              Close
+            </Button>
+            <Button block variant="primary" size="lg">
+              Confirm
+            </Button>
           </Box>
-        </DialogFooter>
-      </Dialog>
+        </ModalFooter>
+      </Modal>
+    </Box>
+  );
+};
+
+export const WithCloseButton = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <Box p="md">
+      <Text as="p">Click the button below to open the modal.</Text>
+      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+        Toggle Modal
+      </button>
+      <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ModalHeader>
+          <Heading scale={500} id="stories-title">
+            Basic Example
+          </Heading>
+        </ModalHeader>
+        <ModalContent>
+          <Stack textAlign="center">
+            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
+          </Stack>
+        </ModalContent>
+        <ModalFooter>
+          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
+            <Button block size="lg" onClick={() => setIsOpen(false)}>
+              Close
+            </Button>
+            <Button block variant="primary" size="lg">
+              Confirm
+            </Button>
+          </Box>
+        </ModalFooter>
+      </Modal>
     </Box>
   );
 };
@@ -53,26 +91,69 @@ export const WithFocusTrap = () => {
 
   return (
     <Box p="md">
-      <Text as="p">Click the button below to open the dialog.</Text>
+      <Text as="p">Click the button below to open the modal.</Text>
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
-        Toggle Dialog
+        Toggle Modal
       </button>
-      <Dialog labelledById="stories-title" enableFocusTrap isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <DialogHeader id="stories-title">Focus Trap Example</DialogHeader>
-        <DialogContent>
-          <Stack>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
-              versuta.{' '}
-              <Anchor href="https://www.youtube.com/watch?v=DvKhRkE4VlY" target="_blank" rel="noopener noreferrer">
-                Quamquam tu hanc copiosiorem etiam soles dicere
-              </Anchor>
-              . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
-              doloris, divitiae, valitudo.
-            </Paragraph>
+      <Modal
+        labelledById="stories-title"
+        enableFocusTrap
+        hideCloseButton
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
+        <ModalHeader>
+          <Heading scale={500} id="stories-title" textAlign="center">
+            Focus Trap Example
+          </Heading>
+        </ModalHeader>
+        <ModalContent>
+          <Stack textAlign="center">
+            <Paragraph scale={300}>If you repeatedly press tab, the focus will not leave this modal.</Paragraph>
           </Stack>
-        </DialogContent>
-      </Dialog>
+        </ModalContent>
+        <ModalFooter>
+          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
+            <Button block size="lg" onClick={() => setIsOpen(false)}>
+              Close
+            </Button>
+            <Button block variant="primary" size="lg">
+              Confirm
+            </Button>
+          </Box>
+        </ModalFooter>
+      </Modal>
+    </Box>
+  );
+};
+
+export const WithIcon = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <Box p="md">
+      <Text as="p">Click the button below to open the modal.</Text>
+      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+        Toggle Modal
+      </button>
+      <Modal labelledById="stories-title" hideCloseButton isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ModalHeaderIcon id="stories-title" title="Delete item?" icon={IconTrash} />
+        <ModalContent>
+          <Stack textAlign="center">
+            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
+          </Stack>
+        </ModalContent>
+        <ModalFooter>
+          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
+            <Button block size="lg" onClick={() => setIsOpen(false)}>
+              Close
+            </Button>
+            <Button block variant="primary" size="lg">
+              Confirm
+            </Button>
+          </Box>
+        </ModalFooter>
+      </Modal>
     </Box>
   );
 };

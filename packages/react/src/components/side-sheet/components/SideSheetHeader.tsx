@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { DialogHeader, DialogHeaderProps } from '../../dialog';
+import { ModalHeader, DialogHeaderProps } from '../../dialog';
 
 export type SideSheetHeaderProps = DialogHeaderProps;
 
-const SideSheetHeader: React.FC<SideSheetHeaderProps> = DialogHeader;
+const SideSheetHeader: React.FC<SideSheetHeaderProps> = ModalHeader;
 
 SideSheetHeader.displayName = 'SideSheetHeader';
 

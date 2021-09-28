@@ -6,14 +6,17 @@ export interface DialogFooterProps {
   style?: React.CSSProperties;
 }
 
-const DialogFooter: React.FC<DialogFooterProps> = ({ className, style, children }) => {
+const ModalFooter: React.FC<DialogFooterProps> = ({ className, style, children }) => {
   return (
-    <Box className={className} style={style} pt="md" px="xl" pb="xl">
+    <Box className={className} style={style} p="lg">
       {children}
     </Box>
   );
 };
 
-DialogFooter.displayName = 'DialogFooter';
+ModalFooter.displayName = 'ModalFooter';
 
-export default DialogFooter;
+/** @deprecated - use `ModalFooter` instead */
+export const DialogFooter = ModalFooter;
+
+export default ModalFooter;

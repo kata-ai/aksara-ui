@@ -1,25 +1,22 @@
 import * as React from 'react';
-import { Box } from '../../../layout';
-import { Heading } from '../../../typography';
+import { Box, BoxProps } from '../../../layout';
 
-export interface DialogHeaderProps {
-  id?: string;
+export interface DialogHeaderProps extends BoxProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const DialogHeader: React.FC<DialogHeaderProps> = ({ id, className, style, children }) => {
+const ModalHeader: React.FC<DialogHeaderProps> = ({ className, style, children, ...rest }) => {
   return (
-    <Box className={className} style={style} display="flex" flexDirection="column" pt="xl" px="xl" pb="md">
-      <Box display="flex" flexDirection="row" alignItems="center" height={32}>
-        <Heading id={id} scale={500} m={0}>
-          {children}
-        </Heading>
-      </Box>
+    <Box className={className} style={style} display="flex" flexDirection="column" p="lg" {...rest}>
+      {children}
     </Box>
   );
 };
 
-DialogHeader.displayName = 'DialogHeader';
+ModalHeader.displayName = 'ModalHeader';
 
-export default DialogHeader;
+/** @deprecated - use `ModalHeader` instead */
+export const DialogHeader = ModalHeader;
+
+export default ModalHeader;

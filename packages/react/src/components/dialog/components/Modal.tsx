@@ -6,10 +6,10 @@ import { TransitionStatus } from 'react-transition-group/Transition';
 import { IconClose } from '@aksara-ui/icons';
 
 import { Portal, FocusTrap } from '../../../helpers';
-import { Card, CardProps } from '../../card';
-import { IconButton } from '../../button';
+import { Box, BoxProps } from '../../../layout';
+import { UnstyledButton } from '../../button';
 import { ANIMATION_DURATION } from '../constants';
-import DialogOverlay from './DialogOverlay';
+import ModalOverlay from './DialogOverlay';
 
 const DialogIn = keyframes`
   0% {
@@ -35,7 +35,7 @@ const DialogOut = keyframes`
   }
 `;
 
-const DialogWrapper = styled(Card)`
+const DialogWrapper = styled(Box)`
   &[data-state='entering'],
   &[data-state='entered'] {
     animation-fill-mode: forwards;
@@ -50,13 +50,7 @@ const DialogWrapper = styled(Card)`
   }
 `;
 
-const CloseButton = styled(IconButton)`
-  position: absolute;
-  top: 32px;
-  right: 32px;
-`;
-
-export interface DialogProps extends CardProps {
+export interface ModalProps extends BoxProps {
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Additional CSS properties to give to the drawer. */
@@ -87,15 +81,15 @@ export interface DialogProps extends CardProps {
   onClose?: () => void;
 }
 
-interface DialogState {
+interface ModalState {
   isOpen: boolean;
 }
 
 /**
  * Display a modal interface that will block interaction with the rest of the page with an overlay.
  */
-class Dialog extends React.Component<DialogProps, DialogState> {
-  static displayName = 'Dialog';
+class Modal extends React.Component<ModalProps, ModalState> {
+  static displayName = 'Modal';
 
   static defaultProps = {
     className: undefined,
@@ -105,7 +99,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
     isOpen: false,
   };
 
-  constructor(props: DialogProps) {
+  constructor(props: ModalProps) {
     super(props);
     this.state = {
       isOpen: props.isOpen,
@@ -116,13 +110,13 @@ class Dialog extends React.Component<DialogProps, DialogState> {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  static getDerivedStateFromProps(props: DialogProps) {
+  static getDerivedStateFromProps(props: ModalProps) {
     return {
       isOpen: props.isOpen,
     };
   }
 
-  componentDidUpdate(prev: DialogProps) {
+  componentDidUpdate(prev: ModalProps) {
     const { isOpen } = this.props;
 
     if (prev.isOpen !== isOpen) {
@@ -178,7 +172,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
     const { isOpen } = this.state;
 
     return (
-      <DialogOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
+      <ModalOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <DialogWrapper
           className={clsx(isOpen && 'entered', className)}
           style={style}
@@ -186,13 +180,13 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           display="flex"
           flexDirection="column"
           backgroundColor="white"
-          borderRadius="md"
+          borderRadius={16}
           overflow={overflow}
           height={height}
           width={width || '100%'}
           maxWidth={maxWidth || '500px'}
           maxHeight={maxHeight || 'calc(100% - 24vmin)'}
-          elevation={4}
+          boxShadow={4}
           my="12vmin"
           mx="md"
           role="dialog"
@@ -210,13 +204,28 @@ class Dialog extends React.Component<DialogProps, DialogState> {
           {...rest}
         >
           {!hideCloseButton && (
-            <CloseButton type="button" aria-label="Close" variant="plain" onClick={this.handleCloseSideSheet}>
-              <IconClose aria-hidden fill="currentColor" />
-            </CloseButton>
+            <UnstyledButton
+              type="button"
+              aria-label="Close"
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'absolute',
+                top: 24,
+                right: 24,
+                width: 24,
+                height: 24,
+                color: 'greydark02',
+              }}
+              onClick={this.handleCloseSideSheet}
+            >
+              <IconClose aria-hidden size={24} fill="currentColor" />
+            </UnstyledButton>
           )}
           {children}
         </DialogWrapper>
-      </DialogOverlay>
+      </ModalOverlay>
     );
   };
 
@@ -264,4 +273,7 @@ class Dialog extends React.Component<DialogProps, DialogState> {
   }
 }
 
-export default Dialog;
+/** @deprecated - use `Modal` instead */
+export const Dialog = Modal;
+
+export default Modal;

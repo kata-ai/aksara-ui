@@ -21,7 +21,7 @@ export const BasicExample = () => {
         Toggle Side Sheet
       </button>
       <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <SideSheetHeader id="stories-title">Basic Example</SideSheetHeader>
+        <SideSheetHeader>Basic Example</SideSheetHeader>
         <SideSheetContent>
           <Stack>
             <Paragraph>
