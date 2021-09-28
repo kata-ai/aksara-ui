@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import InputToggle, { InputToggleProps } from './InputToggle';
+import { InputToggle, InputToggleProps } from '../components/InputToggle';
 
 export default {
   title: 'Core/Components/Form/InputToggle',
