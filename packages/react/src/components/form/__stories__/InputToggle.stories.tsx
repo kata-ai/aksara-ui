@@ -13,7 +13,7 @@ export default {
   },
 };
 
-const Template: Story<InputToggleProps> = ({ label, disabled }) => {
+export const Example: Story<InputToggleProps> = ({ label, disabled }) => {
   const [enabled, setEnabled] = React.useState<boolean>(false);
 
   const handleChange = (value: boolean) => {
@@ -31,8 +31,6 @@ const Template: Story<InputToggleProps> = ({ label, disabled }) => {
     />
   );
 };
-
-export const Example: Story<InputToggleProps> = Template.bind({});
 Example.args = {
   label: 'Checkbox input',
   disabled: false,
