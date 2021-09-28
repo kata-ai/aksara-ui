@@ -1,7 +1,10 @@
+// TODO: rename to `componentStyles/form/index.ts`
 import { transparentize } from 'polished';
 import { DefaultTheme } from 'styled-components';
 import { ComponentThemeConfig } from '../types';
+import formToggle from './form/toggle';
 
+// TODO: move to `componentStyles/form/utils.ts`
 const inputBase = (theme: DefaultTheme) => ({
   appearance: 'none',
   backgroundColor: `var(--aks-form-bg-color, ${theme.colors.greylight01})`,
@@ -17,6 +20,7 @@ const inputBase = (theme: DefaultTheme) => ({
   '--aks-shadow': '0 0 #0000',
 });
 
+// TODO: move to `componentStyles/form/utils.ts`
 const inputFocusBase = (theme: DefaultTheme) => ({
   outline: '2px solid transparent',
   'outline-offset': '2px',
@@ -30,6 +34,7 @@ const inputFocusBase = (theme: DefaultTheme) => ({
   'box-shadow': 'var(--aks-ring-offset-shadow), var(--aks-ring-shadow), var(--aks-shadow)',
 });
 
+// TODO: move to `componentStyles/form/text.ts`
 const inputText: ComponentThemeConfig = {
   baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputBase(theme),
@@ -100,6 +105,7 @@ const inputText: ComponentThemeConfig = {
   },
 };
 
+// TODO: move to `componentStyles/form/textarea.ts`
 const inputTextarea: ComponentThemeConfig = {
   baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputBase(theme),
@@ -159,6 +165,7 @@ const inputTextarea: ComponentThemeConfig = {
   },
 };
 
+// TODO: move to `componentStyles/form/tags.ts`
 const inputTags: ComponentThemeConfig = {
   baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
     ...inputBase(theme),
@@ -242,6 +249,7 @@ const inputTags: ComponentThemeConfig = {
   },
 };
 
+// TODO: move to `componentStyles/form/message.ts`
 const inputMessage: ComponentThemeConfig = {
   propToScaleMap: [['variant', 'variants']],
   scales: {
@@ -270,6 +278,7 @@ const form = {
   inputTextarea,
   inputTags,
   inputMessage,
+  ...formToggle,
 };
 
 export default form;

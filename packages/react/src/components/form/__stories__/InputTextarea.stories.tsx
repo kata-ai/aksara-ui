@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 
-import { Box } from '../../../layout';
+import { Stack } from '../../../layout';
 import { FormLabel } from '../components';
 import { InputTextarea, InputTextareaProps } from '../components/InputTextarea';
 
@@ -23,7 +23,7 @@ export default {
 
 export const Example: Story<InputTextareaProps> = ({ errors, disabled, rows }) => {
   return (
-    <Box>
+    <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>
       <InputTextarea
         id="textDummy"
@@ -34,7 +34,7 @@ export const Example: Story<InputTextareaProps> = ({ errors, disabled, rows }) =
         disabled={disabled}
         width="100%"
       />
-    </Box>
+    </Stack>
   );
 };
 Example.args = {

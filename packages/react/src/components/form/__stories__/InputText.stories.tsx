@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import { IconLock, IconWarningTriangle } from '@aksara-ui/icons';
 import * as React from 'react';
 
-import { Box } from '../../../layout';
+import { Stack } from '../../../layout';
 import { InputGroup, InputIcon, FormLabel, InputPrefix, InputSuffix } from '../components';
 import { InputText, InputTextProps } from '../components/InputText';
 
@@ -24,7 +24,7 @@ export default {
 
 export const Example: Story<InputTextProps> = ({ errors, inputSize, disabled }) => {
   return (
-    <Box>
+    <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>
       <InputText
         id="textDummy"
@@ -34,7 +34,7 @@ export const Example: Story<InputTextProps> = ({ errors, inputSize, disabled }) 
         inputSize={inputSize}
         disabled={disabled}
       />
-    </Box>
+    </Stack>
   );
 };
 Example.args = {
@@ -45,7 +45,7 @@ Example.args = {
 
 export const WithIcons: Story<InputTextProps> = ({ errors, inputSize, disabled }) => {
   return (
-    <Box>
+    <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>
       <InputGroup width="100%" maxWidth={360}>
         <InputIcon icon={IconLock} iconPosition="left" iconText="Username" disabled={disabled} />
@@ -62,7 +62,7 @@ export const WithIcons: Story<InputTextProps> = ({ errors, inputSize, disabled }
         />
         <InputIcon icon={IconWarningTriangle} iconPosition="right" iconText="Username" disabled={disabled} />
       </InputGroup>
-    </Box>
+    </Stack>
   );
 };
 WithIcons.args = {
@@ -73,7 +73,7 @@ WithIcons.args = {
 
 export const WithPrefixSuffix: Story<InputTextProps> = ({ errors, inputSize, disabled }) => {
   return (
-    <Box>
+    <Stack spacing="xs">
       <FormLabel htmlFor="textDummy">Text input</FormLabel>
       <InputGroup width="100%" maxWidth={360}>
         <InputPrefix disabled={disabled}>Prefix</InputPrefix>
@@ -90,7 +90,7 @@ export const WithPrefixSuffix: Story<InputTextProps> = ({ errors, inputSize, dis
         />
         <InputSuffix disabled={disabled}>Suffix</InputSuffix>
       </InputGroup>
-    </Box>
+    </Stack>
   );
 };
 WithIcons.args = {

@@ -9,7 +9,6 @@ const FormLabel = React.forwardRef<HTMLLabelElement, FormLabelProps>(({ classNam
     <Text
       as="label"
       display="inline-block"
-      mb="xs"
       fontWeight={500}
       fontSize="12px"
       lineHeight="18px"
