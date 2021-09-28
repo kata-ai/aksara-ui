@@ -1,87 +1,57 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
 import VisuallyHidden from '@reach/visually-hidden';
 
 import { Box } from '../../../../layout';
-import { ToggleSizes, InputToggleInnerProps } from './types';
-import { toggleButtonSizes } from './utils';
+import { useComponentStyles } from '../../../../system';
+import { UnstyledButton } from '../../../button';
 
-export interface InputToggleProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface InputToggleProps
+  extends Omit<React.ComponentPropsWithoutRef<'button'>, 'size' | 'onClick' | 'onChange'> {
   className?: string;
   style?: React.CSSProperties;
   label: string;
-  size?: ToggleSizes;
+  checked?: boolean;
+  onChange?: (value: boolean) => void;
 }
 
-const Toggle = styled('span')<InputToggleInnerProps>`
-  display: block;
-  position: relative;
-  width: ${props => props.inputSize.width}px;
-  height: ${props => props.inputSize.height}px;
-  background-color: ${themeGet('colors.grey04')};
-  border-radius: ${props => props.inputSize.height}px;
-  transition: background-color 0.3s ease;
+const InputToggle = React.forwardRef<HTMLButtonElement, InputToggleProps>(
+  ({ id, className, style, label, checked, onChange, disabled, ...rest }, ref) => {
+    const inputToggleButtonStyles = useComponentStyles('inputToggleButton');
+    const inputToggleCircleStyles = useComponentStyles('inputToggleCircle');
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: ${props => props.inputSize.switch}px;
-    height: ${props => props.inputSize.switch}px;
-    background: ${themeGet('colors.white')};
-    border-radius: ${props => props.inputSize.switch}px;
-    transition: 0.3s ease;
+    const toggle = React.useCallback(() => onChange?.(!checked), [onChange, checked]);
+    const handleClick = React.useCallback(
+      (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        toggle();
+      },
+      [toggle]
+    );
+
+    return (
+      <UnstyledButton
+        type="button"
+        id={id}
+        className={className}
+        style={style}
+        role="switch"
+        aria-checked={checked}
+        tabIndex={0}
+        onClick={handleClick}
+        disabled={disabled}
+        sx={inputToggleButtonStyles}
+        ref={ref}
+        {...rest}
+      >
+        <Box
+          as="span"
+          sx={{ ...inputToggleCircleStyles, transform: checked ? 'translateX(20px)' : 'translateX(0px)' }}
+          aria-hidden
+        />
+        <VisuallyHidden>{label}</VisuallyHidden>
+      </UnstyledButton>
+    );
   }
-`;
+);
 
-const Input = styled('input')<InputToggleInnerProps>`
-  height: 100%;
-  left: 0;
-  opacity: 0.0001;
-  position: absolute;
-  top: 0;
-  width: 100%;
-
-  &:not([role='button']) {
-    pointer-events: none;
-  }
-
-  &:checked + ${Toggle} {
-    background: ${themeGet('colors.green06')};
-  }
-
-  &:checked + ${Toggle}:after {
-    left: ${props => props.inputSize.height + 2}px;
-  }
-
-  &:disabled + ${Toggle}, &.disabled + ${Toggle} {
-    opacity: 0.4;
-  }
-`;
-
-const InputToggle: React.RefForwardingComponent<HTMLInputElement, InputToggleProps> = (
-  { id, className, style, size = 'md', label, ...rest },
-  ref
-) => {
-  const inputSize = toggleButtonSizes(size);
-
-  return (
-    <Box
-      as="label"
-      htmlFor={id}
-      className={className}
-      style={style}
-      display="inline-flex"
-      position="relative"
-      alignItems="center"
-    >
-      <Input id={id} type="checkbox" role="switch" inputSize={inputSize} ref={ref} {...rest} />
-      <Toggle inputSize={inputSize} aria-hidden />
-      <VisuallyHidden>{label}</VisuallyHidden>
-    </Box>
-  );
-};
-
-export default React.forwardRef(InputToggle);
+export default InputToggle;

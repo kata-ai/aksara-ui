@@ -7,25 +7,33 @@ export default {
   title: 'Core/Components/Form/InputToggle',
   component: InputToggle,
   argTypes: {
-    size: {
-      control: {
-        type: 'select',
-        options: ['sm', 'md'],
-      },
-    },
     disabled: {
       control: 'boolean',
     },
   },
 };
 
-const Template: Story<InputToggleProps> = args => {
-  return <InputToggle id="toggleDummy" name="toggleDummy" {...args} />;
+const Template: Story<InputToggleProps> = ({ label, disabled }) => {
+  const [enabled, setEnabled] = React.useState<boolean>(false);
+
+  const handleChange = (value: boolean) => {
+    setEnabled(value);
+  };
+
+  return (
+    <InputToggle
+      id="toggleDummy"
+      name="toggleDummy"
+      label={label}
+      disabled={disabled}
+      checked={enabled}
+      onChange={handleChange}
+    />
+  );
 };
 
 export const Example: Story<InputToggleProps> = Template.bind({});
 Example.args = {
   label: 'Checkbox input',
-  size: 'md',
   disabled: false,
 };

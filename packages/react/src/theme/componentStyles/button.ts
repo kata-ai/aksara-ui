@@ -15,8 +15,10 @@ const baseStyle = {
   letterSpacing: '0.2px',
   border: '1px solid transparent',
   borderRadius: 8,
-  '&:focus': {
-    boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+  '&:not([disabled])': {
+    '&:focus': {
+      boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+    },
   },
   '&:disabled': {
     cursor: 'not-allowed',
