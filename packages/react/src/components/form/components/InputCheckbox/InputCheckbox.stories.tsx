@@ -23,10 +23,24 @@ export default {
 };
 
 export const Example: Story<InputCheckboxProps> = ({ id, value, ...rest }) => {
+  const checkboxRef = React.useRef<HTMLInputElement>(null);
+
+  const toggle = React.useCallback(() => {
+    if (checkboxRef.current) {
+      if (checkboxRef.current.readOnly) {
+        checkboxRef.current.checked = false;
+        checkboxRef.current.readOnly = false;
+      } else if (!checkboxRef.current.checked) {
+        checkboxRef.current.readOnly = true;
+        checkboxRef.current.indeterminate = true;
+      }
+    }
+  }, [checkboxRef]);
+
   return (
     <Box>
       <InputCheckboxLabel htmlFor={id}>
-        <InputCheckbox id={id} name={id} value={value} {...rest} />
+        <InputCheckbox ref={checkboxRef} id={id} name={id} value={value} onClick={toggle} {...rest} />
         <Text scale={300} ml="xs">
           Checkbox
         </Text>
