@@ -1,13 +1,6 @@
-import * as React from 'react';
-import { BoxProps } from '../../../../layout';
-import InputElement, { InputElementBaseProps } from './InputElement';
+import InputElement from './InputElement';
 
-type InputElementProps = InputElementBaseProps & BoxProps;
-
-const InputRightElement = React.forwardRef<HTMLDivElement, InputElementProps>((props, ref) => (
-  <InputElement ref={ref} placement="right" {...props} />
-));
-
-InputRightElement.displayName = 'InputRightElement';
+/** @deprecated - use `InputIcon` instead */
+const InputRightElement = InputElement;
 
 export default InputRightElement;

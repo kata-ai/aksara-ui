@@ -1,138 +1,29 @@
-import styled, { css } from 'styled-components';
-import { layout, position, flexbox, grid, space, variant } from 'styled-system';
+import styled from 'styled-components';
+import {
+  layout,
+  position,
+  flexbox,
+  grid,
+  space,
+  variant,
+  LayoutProps,
+  PositionProps,
+  FlexboxProps,
+  GridProps,
+  SpaceProps,
+} from 'styled-system';
 
-import { inputThemeBase, inputThemeHover, inputThemeFocus } from './themes/input';
-import { InputBaseProps, CheckRadioBaseProps } from './types';
 import { checkboxThemeBase, checkboxThemeChecked, checkboxThemeHover } from './themes/checkbox';
 import { theme } from '../../theme';
 
-const WithAddonStyles = css`
-  position: relative;
-  flex: 1 1 auto;
-  width: 1%;
-  margin-bottom: 0;
+export interface InputBaseProps extends LayoutProps, PositionProps, FlexboxProps, GridProps, SpaceProps {
+  /** True if this text input has an addon style */
+  addon?: boolean;
+  /** True if the input has errors. */
+  inputVariant?: 'base' | 'errors';
+}
 
-  /* TODO: prepend/append */
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-`;
-
-export const TextAreaBase = styled('textarea')<InputBaseProps>`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  padding: 9px 16px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  font-size: 14px;
-  line-height: ${props => props.inputSize}px;
-  outline: none;
-
-  ${variant({
-    prop: 'inputVariant',
-    variants: inputThemeBase,
-  })}
-
-  &::placeholder {
-    color: ${theme.colors.grey06};
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: ${theme.colors.grey03};
-    color: ${theme.colors.grey06};
-    border-color: ${theme.colors.grey04};
-    cursor: not-allowed;
-  }
-
-  &:not(:disabled):not(.disabled) {
-    &:hover,
-    &.hover {
-      ${variant({
-        prop: 'inputVariant',
-        variants: inputThemeHover,
-      })}
-    }
-
-    &:active,
-    &.active,
-    &:focus,
-    &.focus {
-      ${variant({
-        prop: 'inputVariant',
-        variants: inputThemeFocus,
-      })}
-    }
-  }
-
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
-`;
-
-export const InputBase = styled('input')<InputBaseProps>`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  padding: 9px 16px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  font-size: 14px;
-  line-height: ${props => props.inputSize}px;
-  outline: none;
-  height: ${props => props.inputSize}px;
-
-  ${props => props.addon && WithAddonStyles};
-
-  ${variant({
-    prop: 'inputVariant',
-    variants: inputThemeBase,
-  })}
-
-  &::placeholder {
-    color: ${theme.colors.grey06};
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: ${theme.colors.grey03};
-    color: ${theme.colors.grey06};
-    border-color: ${theme.colors.grey04};
-    cursor: not-allowed;
-  }
-
-  &:not(:disabled):not(.disabled) {
-    &:hover,
-    &.hover {
-      ${variant({
-        prop: 'inputVariant',
-        variants: inputThemeHover,
-      })}
-    }
-
-    &:active,
-    &.active,
-    &:focus,
-    &.focus {
-      ${variant({
-        prop: 'inputVariant',
-        variants: inputThemeFocus,
-      })}
-    }
-  }
-
-  ${layout}
-  ${position}
-  ${flexbox}
-  ${grid}
-  ${space}
-`;
+export type CheckRadioBaseProps = Omit<InputBaseProps, 'inputSize' | 'addon'>;
 
 export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
   @supports (-webkit-appearance: none) or (-moz-appearance: none) {
@@ -177,6 +68,20 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
       })}
     }
 
+    &:indeterminate {
+      --r: 0deg;
+
+      &::after {
+        border-right: 0;
+        height: 7px;
+      }
+
+      ${variant({
+        prop: 'inputVariant',
+        variants: checkboxThemeChecked,
+      })}
+    }
+
     &:disabled {
       background-color: ${theme.colors.greylight02};
       cursor: not-allowed;
@@ -189,7 +94,7 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
     }
 
     &:hover {
-      &:not(:checked) {
+      &:not(:checked):not(:indeterminate) {
         &:not(:disabled) {
           ${variant({
             prop: 'inputVariant',
@@ -207,7 +112,8 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
       opacity: var(--o, 0);
     }
 
-    &:checked {
+    &:checked,
+    &:indeterminate {
       --o: 1;
     }
   }
