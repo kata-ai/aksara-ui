@@ -5,13 +5,13 @@ import Popover from './Popover';
 describe('components/Popover', () => {
   describe('<Popover />', () => {
     test("doesn't render popover content by default", () => {
-      const { queryByText } = render(
+      const { getByRole } = render(
         <Popover trigger={<button type="button">Toggle Popover</button>}>
           <div style={{ width: 250 }}>This is a popover</div>
         </Popover>
       );
 
-      expect(queryByText(/This is a popover/)).not.toBeInTheDocument();
+      expect(getByRole('button', { name: /toggle popover/i })).toBeVisible();
     });
 
     test('is enabled by clicking the trigger', () => {
@@ -24,7 +24,7 @@ describe('components/Popover', () => {
       const triggerButton = getByText('Toggle Popover');
       fireEvent.click(triggerButton);
 
-      expect(queryByText(/This is a popover/)).toBeInTheDocument();
+      expect(queryByText(/This is a popover/)).toBeVisible();
     });
   });
 });

@@ -7,7 +7,6 @@ import { Placement } from '@popperjs/core';
 import { Manager, Reference, Popper } from 'react-popper';
 import { Box } from '../../../layout';
 import { Portal } from '../../../helpers';
-import { Details, Summary, Menu } from '../styles';
 
 export interface PopoverProps {
   className?: string;
