@@ -1,47 +1,80 @@
+import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 
-import { Card } from '../../card';
+import { Box, Stack } from '../../../layout';
+import { Heading, Paragraph } from '../../../typography';
 import { Button } from '../../button';
-import { DropdownMenu, DropdownMenuItem } from '../../dropdown';
-import Popover from './Popover';
+import Popover, { PopoverProps } from './Popover';
 
 export default {
   title: 'Core/Components/Popover',
   component: Popover,
-};
+  argTypes: {
+    placement: {
+      options: [
+        'auto',
+        'auto-start',
+        'auto-end',
+        'top',
+        'top-start',
+        'top-end',
+        'bottom',
+        'bottom-start',
+        'bottom-end',
+        'left',
+        'left-start',
+        'left-end',
+        'right',
+        'right-start',
+        'right-end',
+      ],
+    },
+  },
+} as Meta<PopoverProps>;
 
-export const BasicExample = () => {
+export const Example: Story<PopoverProps> = ({ placement }) => {
   return (
-    <Popover
-      trigger={
-        <Button block variant="primary">
-          Toggle Popover
-        </Button>
-      }
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      backgroundColor="greylight03"
+      width="100%"
+      height={640}
     >
-      <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
-        This is a popover
-      </Card>
-    </Popover>
+      <Popover placement={placement} trigger={<Button variant="primary">Toggle Popover</Button>}>
+        <Box>
+          <Box py="md" px="lg" borderBottom="1px solid" borderBottomColor="greylight04">
+            <Heading scale={300}>Add agent to your team</Heading>
+          </Box>
+          <Box p="lg">
+            <Paragraph scale={200}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. A diam sollicitudin tempor id eu nisl nunc mi. Auctor augue mauris augue neque
+              gravida in fermentum.
+            </Paragraph>
+          </Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="flex-end"
+            py="sm"
+            px="lg"
+            borderTop="1px solid"
+            borderTopColor="greylight04"
+          >
+            <Stack spacing="xs" direction="horizontal">
+              <Button size="sm">Label</Button>
+              <Button size="sm" variant="primary">
+                Label
+              </Button>
+            </Stack>
+          </Box>
+        </Box>
+      </Popover>
+    </Box>
   );
 };
-
-export const WithDropdownMenu = () => {
-  return (
-    <Popover
-      trigger={
-        <Button block variant="primary">
-          Toggle Popover
-        </Button>
-      }
-      placement="bottom-start"
-    >
-      <DropdownMenu width={200}>
-        <DropdownMenuItem>Menu Item One</DropdownMenuItem>
-        <DropdownMenuItem>Menu Item Two</DropdownMenuItem>
-        <DropdownMenuItem>Menu Item Three</DropdownMenuItem>
-        <DropdownMenuItem>Menu Item Four</DropdownMenuItem>
-      </DropdownMenu>
-    </Popover>
-  );
+Example.args = {
+  placement: 'bottom',
 };
