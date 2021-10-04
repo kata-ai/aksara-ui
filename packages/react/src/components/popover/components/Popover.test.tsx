@@ -15,13 +15,13 @@ describe('components/Popover', () => {
     });
 
     test('is enabled by clicking the trigger', () => {
-      const { getByText, queryByText } = render(
+      const { getByRole, queryByText } = render(
         <Popover trigger={<button type="button">Toggle Popover</button>}>
           <div style={{ width: 250 }}>This is a popover</div>
         </Popover>
       );
 
-      const triggerButton = getByText('Toggle Popover');
+      const triggerButton = getByRole('button', { name: /toggle popover/i });
       fireEvent.click(triggerButton);
 
       expect(queryByText(/This is a popover/)).toBeVisible();
