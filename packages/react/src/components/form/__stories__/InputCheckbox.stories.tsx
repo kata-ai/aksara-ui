@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { Box } from '../../../../layout';
-import { Text } from '../../../../typography';
-import InputCheckboxLabel from './InputCheckboxLabel';
-import InputCheckbox, { InputCheckboxProps } from './InputCheckbox';
+import { Box } from '../../../layout';
+import { Text } from '../../../typography';
+import { InputCheckboxLabel, InputCheckbox, InputCheckboxProps } from '../components/InputCheckbox';
 
 export default {
   title: 'Core/Components/Form/InputCheckbox',
@@ -22,7 +21,7 @@ export default {
   },
 };
 
-export const Example: Story<InputCheckboxProps> = ({ id, value, ...rest }) => {
+export const Example: Story<InputCheckboxProps> = ({ id, value, disabled, ...rest }) => {
   const checkboxRef = React.useRef<HTMLInputElement>(null);
 
   const toggle = React.useCallback(() => {
@@ -40,8 +39,16 @@ export const Example: Story<InputCheckboxProps> = ({ id, value, ...rest }) => {
   return (
     <Box>
       <InputCheckboxLabel htmlFor={id}>
-        <InputCheckbox ref={checkboxRef} id={id} name={id} value={value} onClick={toggle} {...rest} />
-        <Text scale={300} ml="xs">
+        <InputCheckbox
+          ref={checkboxRef}
+          id={id}
+          name={id}
+          value={value}
+          disabled={disabled}
+          onClick={toggle}
+          {...rest}
+        />
+        <Text scale={200} color={disabled ? 'greymed01' : 'greydark02'} ml="xs">
           Checkbox
         </Text>
       </InputCheckboxLabel>
