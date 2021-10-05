@@ -45,9 +45,19 @@ const Arrow = styled(Box)`
   }
 `;
 
+// TODO: use base `react-popper` instead of `react-popper-tooltip`
 const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
   ({ className, style, content, size, placement, getArrowProps, ...rest }, ref) => {
     const tooltipRootStyles = useComponentStyles('tooltipRoot', { size });
+
+    const renderArrow = () => {
+      if (getArrowProps) {
+        const { style: arrowStyle, ...arrowRest } = getArrowProps({ className: 'tooltip-arrow' });
+        return <Arrow style={{ ...style, ...arrowStyle } as React.CSSProperties} {...arrowRest} />;
+      }
+
+      return null;
+    };
 
     const renderContent = () => {
       if (typeof content === 'string') {
@@ -76,7 +86,7 @@ const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
         {...rest}
       >
         {renderContent()}
-        {getArrowProps && <Arrow {...getArrowProps({ className: 'tooltip-arrow' })} />}
+        {renderArrow()}
       </Box>
     );
   }

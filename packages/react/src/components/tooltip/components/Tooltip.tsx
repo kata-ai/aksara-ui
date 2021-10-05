@@ -14,11 +14,14 @@ export interface TooltipProps {
   children: React.ReactElement;
 }
 
+// TODO: use base `react-popper` instead of `react-popper-tooltip`
 const Tooltip: React.FC<TooltipProps> = ({ className, style, delay, placement, size, content, children }) => {
   const { getTooltipProps, getArrowProps, setTooltipRef, setTriggerRef, visible } = usePopperTooltip({
     placement,
     delayShow: delay ? 300 : 0,
   });
+  // separate this to cast the type
+  const { style: tooltipStyle, ...rest } = getTooltipProps({ size });
 
   return (
     <>
@@ -28,11 +31,10 @@ const Tooltip: React.FC<TooltipProps> = ({ className, style, delay, placement, s
       {visible && (
         <TooltipInner
           ref={setTooltipRef}
-          {...getTooltipProps({
-            size,
-          })}
+          style={{ ...style, tooltipStyle } as React.CSSProperties}
           content={content}
           getArrowProps={getArrowProps}
+          {...rest}
         />
       )}
     </>
