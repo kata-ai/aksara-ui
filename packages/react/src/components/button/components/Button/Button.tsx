@@ -1,5 +1,4 @@
 import * as React from 'react';
-import clsx from 'clsx';
 
 import { useComponentStyles } from '../../../../system';
 import { ButtonBaseProps, ButtonSizes } from './types';
@@ -42,11 +41,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant });
+    const buttonBaseStyles = useComponentStyles('buttonBase', { size, variant, selected });
 
     return (
       <UnstyledButton
-        className={clsx(selected && 'selected', className)}
+        className={className}
         style={style}
         disabled={disabled || isLoading}
         ref={ref}

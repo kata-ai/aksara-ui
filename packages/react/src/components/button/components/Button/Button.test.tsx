@@ -42,7 +42,7 @@ describe('components/Button', () => {
         </Button>
       );
 
-      expect(container.firstChild).toHaveClass('selected');
+      expect(container.firstChild).toMatchSnapshot();
     });
   });
 });
