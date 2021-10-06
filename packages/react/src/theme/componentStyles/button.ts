@@ -57,19 +57,20 @@ const primaryAndSecondaryVariants = {
       color: 'greymed01',
     },
   },
-  'segment-item': {
+  'segment-item': ({ selected }: { selected?: boolean }) => ({
     '&:not(:disabled)': {
-      backgroundColor: 'greylight03',
-      color: 'greymed04',
+      backgroundColor: selected ? 'blue01' : 'greylight03',
+      borderColor: selected ? 'blue07' : 'transparent',
+      color: selected ? 'blue07' : 'greymed04',
       '&:hover': {
-        backgroundColor: 'greylight04',
+        backgroundColor: selected ? 'blue01' : 'greylight04',
       },
     },
     '&:disabled': {
       backgroundColor: 'greylight03',
       color: 'greymed01',
     },
-  },
+  }),
 };
 
 export const buttonBase: ComponentThemeConfig = {

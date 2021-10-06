@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { IconPlus } from '@aksara-ui/icons';
+import { IconChevronDown, IconPlus } from '@aksara-ui/icons';
 
 import ButtonGroup, { ButtonGroupProps } from './ButtonGroup';
 import { Button } from '../../../button';
@@ -43,10 +43,10 @@ export const Segmented: Story<ButtonGroupProps> = args => {
 
   return (
     <ButtonGroup {...args}>
-      <Button icon={IconPlus} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+      <Button selected={selected === 'page1'} onClick={() => setSelected('page1')}>
         Label
       </Button>
-      <Button icon={IconPlus} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+      <Button selected={selected === 'page2'} onClick={() => setSelected('page2')}>
         Label
       </Button>
     </ButtonGroup>
@@ -57,3 +57,45 @@ Segmented.args = {
   segmented: true,
   fullWidth: false,
 };
+
+export const SegmentedWithIcon: Story<ButtonGroupProps> = args => {
+  const [selected, setSelected] = React.useState('');
+
+  return (
+    <ButtonGroup {...args}>
+      <Button icon={IconPlus} selected={selected === 'page1'} onClick={() => setSelected('page1')}>
+        Label
+      </Button>
+      <Button icon={IconPlus} selected={selected === 'page2'} onClick={() => setSelected('page2')}>
+        Label
+      </Button>
+    </ButtonGroup>
+  );
+};
+SegmentedWithIcon.args = Segmented.args;
+
+export const SegmentedDisclosure: Story<ButtonGroupProps> = args => {
+  const [selected, setSelected] = React.useState('');
+
+  return (
+    <ButtonGroup {...args}>
+      <Button
+        icon={IconChevronDown}
+        iconPosition="right"
+        selected={selected === 'page1'}
+        onClick={() => setSelected('page1')}
+      >
+        Label
+      </Button>
+      <Button
+        icon={IconChevronDown}
+        iconPosition="right"
+        selected={selected === 'page2'}
+        onClick={() => setSelected('page2')}
+      >
+        Label
+      </Button>
+    </ButtonGroup>
+  );
+};
+SegmentedDisclosure.args = Segmented.args;
