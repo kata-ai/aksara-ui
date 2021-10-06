@@ -5,12 +5,12 @@ import { ComponentThemeConfig } from '../types';
 import formToggle from './form/toggle';
 
 // TODO: move to `componentStyles/form/utils.ts`
-const inputBase = (theme: DefaultTheme) => ({
+const inputBase = (theme: DefaultTheme, rounded = false) => ({
   appearance: 'none',
   backgroundColor: `var(--aks-form-bg-color, ${theme.colors.greylight01})`,
   borderColor: `var(--aks-form-border-color, ${theme.colors.greylight05})`,
   borderWidth: '1px',
-  borderRadius: 8,
+  borderRadius: rounded ? 9999 : 8,
   borderStyle: 'solid',
   color: theme.colors.greydark02,
   display: 'block',
@@ -36,8 +36,8 @@ const inputFocusBase = (theme: DefaultTheme) => ({
 
 // TODO: move to `componentStyles/form/text.ts`
 const inputText: ComponentThemeConfig = {
-  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
-    ...inputBase(theme),
+  baseStyle: ({ theme, rounded }: { theme: DefaultTheme; rounded?: boolean }) => ({
+    ...inputBase(theme, rounded),
     '&:focus': {
       ...inputFocusBase(theme),
     },
