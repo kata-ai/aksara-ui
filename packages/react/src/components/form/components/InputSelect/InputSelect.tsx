@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-nested-ternary */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import * as React from 'react';
@@ -6,7 +8,7 @@ import { IconChevronStepper } from '@aksara-ui/icons';
 
 import { Text } from '../../../../typography';
 import { Box, Stack } from '../../../../layout';
-import { FormLabel, UnstyledButton, Card } from '../../../../';
+import { FormLabel, UnstyledButton, Card } from '../../..';
 import { useComponentStyles } from '../../../../system';
 
 export interface InputSelectProps<T> {
@@ -26,7 +28,7 @@ export interface InputSelectProps<T> {
   handleSelectedItemChange?: (changes: UseSelectStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
   itemRenderer?: (item: T) => React.ReactNode;
-  /**Name of the field form */
+  /** Name of the field form */
   name?: string;
   /** Logic on focus */
   onFocus?: () => void;
