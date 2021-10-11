@@ -23,14 +23,14 @@ export default {
       control: 'text',
     },
   },
-} as Meta<InputSelectProps>;
+} as Meta<InputSelectProps<any>>;
 
 interface ValueSchema {
   label: string;
   value: string;
 }
 
-export const Example: Story<InputSelectProps> = ({ placeholder, disabled, size, label, errors }) => {
+export const Example: Story<InputSelectProps<any>> = ({ placeholder, disabled, size, label, errors }) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
   return (
     <InputSelect

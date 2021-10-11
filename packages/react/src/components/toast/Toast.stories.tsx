@@ -64,7 +64,7 @@ export const Example = () => {
           addToast({
             message: 'Error',
             status: 'error',
-            dismissible: true,
+            dismissAfter: 5000,
           })
         }
       >
