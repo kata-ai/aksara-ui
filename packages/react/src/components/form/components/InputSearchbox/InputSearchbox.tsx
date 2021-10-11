@@ -5,20 +5,31 @@ import { InputGroup } from '../InputGroup';
 import { InputIcon, InputIconButton } from '../InputIcon';
 import { InputText, InputTextProps } from '../InputText';
 
-export interface InputSearchboxProps extends InputTextProps, React.ComponentPropsWithoutRef<'input'> {
+export interface InputSearchboxProps extends InputTextProps, Omit<React.ComponentPropsWithoutRef<'input'>, 'value'> {
   groupId?: string;
   groupClassName?: string;
   groupStyle?: React.CSSProperties;
-  onClear?: () => void;
 }
 
 const InputSearchbox = React.forwardRef<HTMLInputElement, InputSearchboxProps>(
-  ({ id, className, groupId, groupClassName, groupStyle, errors, disabled, onClear, ...rest }, ref) => {
-    const handleClearButtonClick = React.useCallback(() => {
-      if (onClear) {
-        onClear();
-      }
-    }, [onClear]);
+  ({ id, className, groupId, groupClassName, groupStyle, errors, disabled, onChange, ...rest }, ref) => {
+    const [value, setValue] = React.useState<string>('');
+
+    const handleChange = React.useCallback(
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(e.target.value);
+
+        if (onChange) {
+          onChange(e);
+        }
+      },
+      [onChange]
+    );
+
+    const handleClearButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      setValue('');
+    };
 
     return (
       <InputGroup id={groupId} className={groupClassName} style={groupStyle} width="100%" maxWidth={360}>
@@ -33,16 +44,20 @@ const InputSearchbox = React.forwardRef<HTMLInputElement, InputSearchboxProps>(
           width="100%"
           pl={36}
           pr={36}
+          value={value}
+          onChange={handleChange}
           {...rest}
         />
-        <InputIconButton
-          type="button"
-          icon={IconCloseRounded}
-          iconPosition="right"
-          iconText="Clear"
-          disabled={disabled}
-          onClick={handleClearButtonClick}
-        />
+        {value.length > 0 && (
+          <InputIconButton
+            type="button"
+            icon={IconCloseRounded}
+            iconPosition="right"
+            iconText="Clear"
+            disabled={disabled}
+            onClick={handleClearButtonClick}
+          />
+        )}
       </InputGroup>
     );
   }
