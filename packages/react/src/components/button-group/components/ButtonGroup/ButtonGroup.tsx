@@ -14,9 +14,19 @@ export interface ButtonGroupProps extends BoxProps {
   size?: IconButtonSizes | ButtonSizes;
   /** Base variant of all the buttons in the group. */
   variant?: ButtonVariants | 'IconButtonVariants';
+  /** True if all buttons in the group are disabled. */
+  disabled?: boolean;
 }
 
-const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, segmented, fullWidth, size = 'md', sx, ...rest }) => {
+const ButtonGroup: React.FC<ButtonGroupProps> = ({
+  children,
+  segmented,
+  fullWidth,
+  size = 'md',
+  sx,
+  disabled,
+  ...rest
+}) => {
   const validChildren = React.Children.toArray(children).filter(React.isValidElement);
 
   return (
@@ -36,7 +46,11 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, segmented, fullWidt
       {validChildren.map((child, i) => {
         return (
           <Box key={i}>
-            {React.cloneElement(child, { size, ...(segmented ? { variant: 'segment-item' } : {}) } as ButtonProps)}
+            {React.cloneElement(child, {
+              size,
+              disabled,
+              ...(segmented ? { variant: 'segment-item' } : {}),
+            } as ButtonProps)}
           </Box>
         );
       })}
