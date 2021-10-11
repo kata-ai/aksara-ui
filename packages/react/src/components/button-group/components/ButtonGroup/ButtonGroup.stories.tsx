@@ -21,6 +21,9 @@ export default {
     fullWidth: {
       control: 'boolean',
     },
+    disabled: {
+      control: 'boolean',
+    },
   },
 };
 
@@ -36,6 +39,7 @@ BasicExample.args = {
   size: 'md',
   segmented: false,
   fullWidth: false,
+  disabled: false,
 };
 
 export const Segmented: Story<ButtonGroupProps> = args => {
@@ -56,6 +60,7 @@ Segmented.args = {
   size: 'md',
   segmented: true,
   fullWidth: false,
+  disabled: false,
 };
 
 export const SegmentedWithIcon: Story<ButtonGroupProps> = args => {
