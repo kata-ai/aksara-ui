@@ -2,33 +2,18 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 
 import { Stack, Box } from '../../../layout';
+import { Anchor, Paragraph } from '../../../typography';
+import { Button } from '../../button';
 import Message, { MessageProps } from './Message';
 
 export default {
   title: 'Core/Components/Message',
   component: Message,
   argTypes: {
-    style: {
-      control: null,
+    variant: {
+      options: ['default', 'info', 'critical', 'success', 'warning'],
     },
   },
-};
-
-const Template: Story<MessageProps> = args => <Message {...args} />;
-
-export const BasicExample = Template.bind({});
-
-BasicExample.args = {
-  message: 'Trying to tell short and helpful information just in 1 sentence.',
-  variant: 'default',
-};
-
-export const SectionLevel = Template.bind({});
-
-SectionLevel.args = {
-  ...BasicExample.args,
-  message: 'You can learn how to improve your Natural Language by reading our documentation.',
-  title: 'Check out our Natural Language documentation',
 };
 
 interface VisibleProps {
@@ -51,7 +36,7 @@ const Visible: React.FC<VisibleProps> = ({ render, children, ...rest }) => {
             render(handleClose)
           ) : (
             <button type="button" onClick={() => setIsOpen(true)}>
-              Toggle banner
+              Toggle message
             </button>
           )}
         </Box>
@@ -65,7 +50,7 @@ const Visible: React.FC<VisibleProps> = ({ render, children, ...rest }) => {
             children(handleClose)
           ) : (
             <button type="button" onClick={() => setIsOpen(true)}>
-              Toggle banner
+              Toggle message
             </button>
           )}
         </Box>
@@ -78,62 +63,78 @@ const Visible: React.FC<VisibleProps> = ({ render, children, ...rest }) => {
   return renderInner();
 };
 
-export const Closable = () => {
+export const Example: Story<MessageProps> = ({ message, variant }) => {
   return (
     <Stack spacing="md">
-      <Visible
-        render={handleClose => (
-          <Message
-            title="Check out our Natural Language documentation"
-            message="You can learn how to improve your Natural Language by reading our documentation."
-            onClose={handleClose}
-          />
-        )}
+      <Message message={message} variant={variant} />
+      <Message
+        message={
+          <Paragraph display="inline-block" scale={200}>
+            {message}{' '}
+            <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+              Random link
+            </Anchor>
+          </Paragraph>
+        }
+        variant={variant}
+      />
+      <Message
+        message={
+          <Stack spacing="xs">
+            <Paragraph scale={200}>{message}</Paragraph>
+            <Box>
+              <Button>Label</Button>
+            </Box>
+          </Stack>
+        }
+        variant={variant}
+      />
+      <Visible render={handleClose => <Message message={message} variant={variant} onClose={handleClose} />} />
+    </Stack>
+  );
+};
+
+Example.args = {
+  message: 'Trying to tell short and helpful information just in 1 sentence.',
+  variant: 'default',
+};
+
+export const WithTitle: Story<MessageProps> = ({ title, message, variant }) => {
+  return (
+    <Stack spacing="md">
+      <Message title={title} message={message} variant={variant} />
+      <Message
+        title={title}
+        message={
+          <Paragraph display="inline-block" scale={200}>
+            {message}{' '}
+            <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+              Random link
+            </Anchor>
+          </Paragraph>
+        }
+        variant={variant}
+      />
+      <Message
+        title={title}
+        message={
+          <Stack spacing="xs">
+            <Paragraph scale={200}>{message}</Paragraph>
+            <Box>
+              <Button>Label</Button>
+            </Box>
+          </Stack>
+        }
+        variant={variant}
       />
       <Visible
-        render={handleClose => (
-          <Message
-            title="Prediction results will show up here after you submit a sentence"
-            message="Before train your prediction sentence, please learn how to use prediction in order to train your natural language."
-            variant="info"
-            onClose={handleClose}
-          />
-        )}
-      />
-      <Visible
-        render={handleClose => (
-          <Message
-            title="Your project is ready to deploy"
-            message="This project has been completed and ready to live. Latest changes on Saturday, 21 March 2020 by Adri Muhammad."
-            variant="success"
-            onClose={handleClose}
-          />
-        )}
-      />
-      <Visible
-        render={handleClose => (
-          <Message
-            title="Risk action of updating training data"
-            message="You intent to delete several training data, please learn how to utilize data set to improve your project performance."
-            variant="critical"
-            onClose={handleClose}
-          />
-        )}
-      />
-      <Visible
-        render={handleClose => (
-          <Message
-            title="Rollback to previous version"
-            message="This action will rollback all of your configurations into version 3.0.1, please learn how deployment version works."
-            variant="warning"
-            onClose={handleClose}
-          />
-        )}
+        render={handleClose => <Message title={title} message={message} variant={variant} onClose={handleClose} />}
       />
     </Stack>
   );
 };
 
-Closable.parameters = {
-  controls: { hideNoControlsWarning: true },
+WithTitle.args = {
+  ...Example.args,
+  title: 'Message Title',
 };
