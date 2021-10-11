@@ -75,7 +75,7 @@ const Message: React.FC<MessageProps> = ({
   };
 
   const renderMessage = () => {
-    if (typeof message === 'function') {
+    if (typeof message !== 'string') {
       return message;
     }
 

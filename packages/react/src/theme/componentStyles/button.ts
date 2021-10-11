@@ -17,6 +17,7 @@ const baseStyle = {
   borderRadius: 8,
   '&:not([disabled])': {
     '&:focus': {
+      outline: 'none',
       boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
     },
   },
@@ -30,7 +31,7 @@ const primaryAndSecondaryVariants = {
     '&:not(:disabled)': {
       backgroundColor: 'blue07',
       color: 'greylight01',
-      '&:hover': {
+      '&:hover, &:focus': {
         backgroundColor: 'blue08',
       },
       '&:active': {
@@ -47,7 +48,7 @@ const primaryAndSecondaryVariants = {
       borderColor: 'greylight04',
       backgroundColor: 'greylight03',
       color: 'greydark02',
-      '&:hover': {
+      '&:hover, &:focus': {
         backgroundColor: 'greylight04',
       },
     },
@@ -62,7 +63,8 @@ const primaryAndSecondaryVariants = {
       backgroundColor: selected ? 'blue01' : 'greylight03',
       borderColor: selected ? 'blue07' : 'transparent',
       color: selected ? 'blue07' : 'greymed04',
-      '&:hover': {
+      '&:hover, &:focus': {
+        color: selected ? 'blue07' : 'greydark02',
         backgroundColor: selected ? 'blue01' : 'greylight04',
       },
     },
@@ -165,7 +167,7 @@ export const iconButton: ComponentThemeConfig = {
         '&:not(:disabled)': {
           borderColor: 'red07',
           color: 'red07',
-          '&:hover': {
+          '&:hover, &:focus': {
             backgroundColor: 'rgba(255, 219, 214, 0.8)',
           },
         },
@@ -177,7 +179,7 @@ export const iconButton: ComponentThemeConfig = {
       plain: {
         '&:not(:disabled)': {
           color: 'greymed04',
-          '&:hover': {
+          '&:hover, &:focus': {
             backgroundColor: 'greylight03',
           },
         },
