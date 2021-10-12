@@ -19,6 +19,7 @@ export * from './panel';
 export * from './pill';
 export * from './popover';
 export * from './side-sheet';
+export * from './slider';
 export * from './skeleton';
 export * from './table';
 export * from './tabs';

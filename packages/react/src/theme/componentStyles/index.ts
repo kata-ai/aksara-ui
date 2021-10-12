@@ -7,6 +7,7 @@ import form from './form';
 import message from './message';
 import navigation from './navigation';
 import pill from './pill';
+import slider from './slider';
 import typography from './typography';
 import tabs from './tabs';
 import toast from './toast';
@@ -25,6 +26,7 @@ const componentStyles = {
   ...message,
   ...navigation,
   ...pill,
+  ...slider,
   ...typography,
   ...tabs,
   ...toast,
