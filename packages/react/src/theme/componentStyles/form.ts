@@ -20,6 +20,19 @@ const inputBase = (theme: DefaultTheme, rounded = false) => ({
   '--aks-shadow': '0 0 #0000',
 });
 
+const inputSelectBase = (theme: DefaultTheme) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  width: '100%',
+  paddingLeft: '16px',
+  backgroundColor: theme.colors.grey01,
+  border: '1px solid',
+  borderColor: theme.colors.grey04,
+  borderRadius: '8px',
+  outline: 'none',
+});
+
 // TODO: move to `componentStyles/form/utils.ts`
 const inputFocusBase = (theme: DefaultTheme) => ({
   outline: '2px solid transparent',
@@ -249,6 +262,54 @@ const inputTags: ComponentThemeConfig = {
   },
 };
 
+const inputSelect: ComponentThemeConfig = {
+  baseStyle: ({ theme }: { theme: DefaultTheme }) => ({
+    ...inputSelectBase(theme),
+    '&[disabled]': {
+      background: theme.colors.greylight02,
+      border: '1px solid',
+      borderColor: transparentize(0.5, theme.colors.greylight05),
+      color: theme.colors.greymed01,
+      cursor: 'not-allowed',
+    },
+  }),
+  propToScaleMap: [
+    ['size', 'sizes'],
+    ['variant', 'variants'],
+  ],
+  scales: {
+    sizes: {
+      md: {
+        height: '32px',
+      },
+      lg: {
+        height: '40px',
+      },
+    },
+    variants: {
+      default: ({ theme }: { theme: DefaultTheme }) => ({
+        '&:not([disabled])': {
+          '&:focus, &:active': {
+            outline: 'none',
+            borderColor: theme.colors.blue06,
+            boxShadow: `0 0 0 2px ${transparentize(0.7, theme.colors.blue03)}`,
+          },
+          '&:hover': {
+            borderColor: theme.colors.greymed01,
+            background: theme.colors.greylight03,
+          },
+        },
+      }),
+      error: ({ theme }: { theme: DefaultTheme }) => ({
+        '&:not([disabled])': {
+          background: theme.colors.red01,
+          borderColor: theme.colors.red07,
+        },
+      }),
+    },
+  },
+};
+
 // TODO: move to `componentStyles/form/message.ts`
 const inputMessage: ComponentThemeConfig = {
   propToScaleMap: [['variant', 'variants']],
@@ -278,6 +339,7 @@ const form = {
   inputTextarea,
   inputTags,
   inputMessage,
+  inputSelect,
   ...formToggle,
 };
 
