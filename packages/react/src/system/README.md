@@ -1,4 +1,4 @@
-# System
+# @aksara-ui/system
 
 Base library for extending themes/styles in aksara-ui.
 
@@ -14,7 +14,7 @@ This documentation is a work in progress. Bear with us.
 
 The theme config for styling a component is as follows:
 
-```ts
+```tsx
 export type ComponentThemeConfig<Props = Record<string, any>> = {
   propToScaleMap?: Array<[string, string]>;
   baseStyle?: ComponentThemeScale<Props>;
@@ -26,7 +26,7 @@ export type ComponentThemeConfig<Props = Record<string, any>> = {
 };
 ```
 
-```ts
+```tsx
 export default {
   // Base styles of the component
   baseStyle: {},
@@ -48,11 +48,11 @@ const styles = useComponentStyles(componentKey, props);
 Parameters:
 
 - `componentKey`: the key in the `theme.componentStyles` object that corresponds to the component.
-- `props`: any props used to compute the component styles. This is usually `size` or `variant`, but can be added to include more properties as defined by the component's `propToStyleMap`.
+- `props`: any props used to compute the component styles. This is usually `size` or `variant`, but can be added to include more properties as defined by the component's `propToScaleMap`.
 
-### componentStylesMixin
+#### componentStylesMixin
 
-Parser for resolving a component's styles. This can be used to directly inject component styles to any styled component.
+Parser for resolving a component's styles. This can be used to directly inject component styles to any styled component. All props passed to the styled component will also be passed into `componentStylesMixin`.
 
 ```ts
 import styled from 'styled-components';
