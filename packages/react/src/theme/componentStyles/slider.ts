@@ -33,8 +33,8 @@ const sliderHandle: ComponentThemeConfig = {
 };
 
 const slider = {
-  inputSliderTrack: sliderTrack,
-  inputSliderHandle: sliderHandle,
+  sliderTrack,
+  sliderHandle,
 };
 
 export default slider;
