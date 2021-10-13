@@ -40,6 +40,8 @@ export interface InputSelectProps<T> {
   size?: 'md' | 'lg';
 
   errors?: boolean;
+
+  width?: string | number;
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
@@ -57,6 +59,7 @@ function InputSelect<T>({
   disabled,
   errors,
   size = 'md',
+  width = '100%',
 }: InputSelectProps<T>) {
   const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } = useSelect<T>({
     items,
@@ -69,7 +72,7 @@ function InputSelect<T>({
   const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : 'default' });
 
   return (
-    <Stack spacing="xs" display="block" position="relative" width="100%" zIndex={10}>
+    <Stack spacing="xs" display="block" position="relative" width={width} zIndex={10}>
       {label && (
         <FormLabel display="block" {...getLabelProps()}>
           {label}
@@ -113,7 +116,7 @@ function InputSelect<T>({
         top="100%"
         left={0}
         mt="xs"
-        width="100%"
+        width={width}
         p={0}
         m={0}
         {...getMenuProps()}

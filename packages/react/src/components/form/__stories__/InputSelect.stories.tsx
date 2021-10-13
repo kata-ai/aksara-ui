@@ -22,6 +22,9 @@ export default {
     label: {
       control: 'text',
     },
+    width: {
+      control: 'number',
+    },
   },
 } as Meta<InputSelectProps<any>>;
 
@@ -30,7 +33,7 @@ interface ValueSchema {
   value: string;
 }
 
-export const Example: Story<InputSelectProps<any>> = ({ placeholder, disabled, size, label, errors }) => {
+export const Example: Story<InputSelectProps<any>> = ({ placeholder, disabled, size, label, errors, width }) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
   return (
     <InputSelect
@@ -40,6 +43,7 @@ export const Example: Story<InputSelectProps<any>> = ({ placeholder, disabled, s
       placeholder={placeholder}
       disabled={disabled}
       errors={errors}
+      width={width}
       itemToString={item => (item ? `${item.label}` : '')}
       itemRenderer={item => (
         <>
@@ -65,4 +69,5 @@ Example.args = {
   disabled: false,
   label: 'Label input',
   errors: false,
+  width: '100%',
 };
