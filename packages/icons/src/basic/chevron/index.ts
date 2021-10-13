@@ -10,3 +10,4 @@ export { default as IconChevronRightRounded } from './IconChevronRightRounded';
 export { default as IconChevronUp } from './IconChevronUp';
 export { default as IconChevronUpFilled } from './IconChevronUpFilled';
 export { default as IconChevronUpRounded } from './IconChevronUpRounded';
+export { default as IconChevronStepper } from './IconChevronStepper';
