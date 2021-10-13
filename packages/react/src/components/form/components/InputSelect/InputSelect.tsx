@@ -72,84 +72,86 @@ function InputSelect<T>({
   const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : 'default' });
 
   return (
-    <Stack spacing="xs" display="block" position="relative" width={width} zIndex={10}>
-      {label && (
-        <FormLabel display="block" {...getLabelProps()}>
-          {label}
-        </FormLabel>
-      )}
-      <UnstyledButton
-        type="button"
-        disabled={disabled}
-        sx={{ ...styles }}
-        onFocus={() => {
-          if (onFocus) {
-            onFocus();
-          }
-        }}
-        onBlur={() => {
-          if (onBlur) {
-            onBlur();
-          }
-        }}
-        {...getToggleButtonProps()}
-      >
-        <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
-          {selectedItem
-            ? itemRenderer
-              ? itemRenderer(selectedItem)
-              : itemToString
-              ? itemToString(selectedItem)
-              : selectedItem
-            : placeholder}
-        </Text>
-        <Box display="flex" alignItems="center" justifyContent="center" width={40} height={40}>
-          <IconChevronStepper aria-hidden size={16} />
-        </Box>
-      </UnstyledButton>
-      <Card
-        as="ul"
-        elevation={3}
-        display={isOpen ? 'block' : 'none'}
-        position="absolute"
-        float="left"
-        top="100%"
-        left={0}
-        mt="xs"
-        width={width}
-        p={0}
-        m={0}
-        {...getMenuProps()}
-      >
-        {items && items.length !== 0 ? (
-          items.map((item, index) => (
-            <Box
-              as="li"
-              px="md"
-              py="xs"
-              _hover={{
-                backgroundColor: 'blue01',
-              }}
-              cursor="pointer"
-              textAlign="left"
-              lineHeight="20px"
-              fontSize={14}
-              sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
-              key={`${item}_${index}`}
-              {...getItemProps({ item, index })}
-            >
-              {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
-            </Box>
-          ))
-        ) : (
-          <Box as="li" px="md" py="xs" color="grey06" cursor="pointer" textAlign="left" lineHeight="20px">
-            No items.
-          </Box>
+    <Box>
+      <Stack spacing="xs" display="block" position="relative" width={width} zIndex={10}>
+        {label && (
+          <FormLabel display="block" {...getLabelProps()}>
+            {label}
+          </FormLabel>
         )}
-      </Card>
+        <UnstyledButton
+          type="button"
+          disabled={disabled}
+          sx={{ ...styles }}
+          onFocus={() => {
+            if (onFocus) {
+              onFocus();
+            }
+          }}
+          onBlur={() => {
+            if (onBlur) {
+              onBlur();
+            }
+          }}
+          {...getToggleButtonProps()}
+        >
+          <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
+            {selectedItem
+              ? itemRenderer
+                ? itemRenderer(selectedItem)
+                : itemToString
+                ? itemToString(selectedItem)
+                : selectedItem
+              : placeholder}
+          </Text>
+          <Box display="flex" alignItems="center" justifyContent="center" width={40} height={40}>
+            <IconChevronStepper aria-hidden size={16} />
+          </Box>
+        </UnstyledButton>
+        <Card
+          as="ul"
+          elevation={3}
+          display={isOpen ? 'block' : 'none'}
+          position="absolute"
+          float="left"
+          top="100%"
+          left={0}
+          mt="xs"
+          width={width}
+          p={0}
+          m={0}
+          {...getMenuProps()}
+        >
+          {items && items.length !== 0 ? (
+            items.map((item, index) => (
+              <Box
+                as="li"
+                px="md"
+                py="xs"
+                _hover={{
+                  backgroundColor: 'blue01',
+                }}
+                cursor="pointer"
+                textAlign="left"
+                lineHeight="20px"
+                fontSize={14}
+                sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
+                key={`${item}_${index}`}
+                {...getItemProps({ item, index })}
+              >
+                {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
+              </Box>
+            ))
+          ) : (
+            <Box as="li" px="md" py="xs" color="grey06" cursor="pointer" textAlign="left" lineHeight="20px">
+              No items.
+            </Box>
+          )}
+        </Card>
+      </Stack>
       {/* if you Tab from menu, focus goes on button, and it shouldn't. only happens here. */}
       <div tabIndex={0} />
-    </Stack>
+    </Box>
   );
 }
 
