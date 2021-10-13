@@ -93,7 +93,27 @@ export const WithFilterSection = () => {
         </IconButton>
       }
     >
-      <FilterPageHeader filterData={[{ label: 'tes_label', value: 'tes_value' }]} />
+      <FilterPageHeader
+        filterData={[{ label: 'tes_label', value: 'tes_value' }]}
+        orderByOptions={[
+          {
+            key: 'created_date',
+            label: 'Date',
+            options: [
+              { label: 'Newest', value: 'created_date-desc' },
+              { label: 'Oldest', value: 'created_date-asc' },
+            ],
+          },
+          {
+            key: 'transaction',
+            label: 'Transaction',
+            options: [
+              { label: 'Highest', value: 'transaction_value-desc' },
+              { label: 'Lowest', value: 'transaction_value-asc' },
+            ],
+          },
+        ]}
+      />
     </PageHeader>
   );
 };

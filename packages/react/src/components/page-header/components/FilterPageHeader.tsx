@@ -3,13 +3,14 @@ import { IconCloseRounded, IconFilter } from '@aksara-ui/icons';
 import { Box, BoxProps } from '../../../layout';
 import { Button } from '../../button';
 import { InputSearchbox } from '../../form/components/InputSearchbox';
+import { InputSelect } from '../../form/components/InputSelect';
 
 export interface FilterPageHeaderProps extends BoxProps {
   onClearFilter?: () => void;
   onSearch?: () => void;
   onChangeFilter?: () => void;
   onChangeOrder?: () => void;
-  orderByOptions?: { key: string; options: { label: string; value: string }[] }[];
+  orderByOptions?: { key: string; label: string; options: { label: string; value: string }[] }[];
   filterData: { label: string; value: string }[];
   onRemoveFilter?: (key: string, value: string) => void;
 }
@@ -40,7 +41,35 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
     };
   }, [filterData.length]);
   const renderOrderOptions = () => {
-    return <Box marginLeft={[0, 'xxs']}> OrderOption </Box>;
+    if (!orderByOptions?.length) {
+      return null;
+    }
+    return (
+      <Box display="flex" flexDirection="row">
+        {orderByOptions.map(orderItem => {
+          return (
+            <Box marginLeft={[0, 'xxs']}>
+              <InputSelect
+                placeholder={orderItem.label}
+                itemToString={item => (item ? `${item.label}` : '')}
+                itemRenderer={item => (
+                  <>
+                    <Box width={15} mr="sm" />
+                    {`${item.label}`}
+                  </>
+                )}
+                handleSelectedItemChange={({ selectedItem }) => {
+                  if (selectedItem) {
+                    console.log(selectedItem);
+                  }
+                }}
+                items={orderItem.options}
+              />
+            </Box>
+          );
+        })}
+      </Box>
+    );
   };
   const renderTagFilter = () => {
     console.log(listShownFilter);
