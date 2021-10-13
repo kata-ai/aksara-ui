@@ -72,8 +72,8 @@ function InputSelect<T>({
   const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : 'default' });
 
   return (
-    <Box>
-      <Stack spacing="xs" display="block" position="relative" width={width} zIndex={10}>
+    <Box width={width} zIndex={10}>
+      <Stack spacing="xs" display="block" position="relative">
         {label && (
           <FormLabel display="block" {...getLabelProps()}>
             {label}
