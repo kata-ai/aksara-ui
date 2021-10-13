@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IconCloseRounded, IconFilter } from '@aksara-ui/icons';
-import { Box, BoxProps } from '../../../layout';
+import { Box, BoxProps, Stack } from '../../../layout';
 import { Button } from '../../button';
 import { InputSearchbox } from '../../form/components/InputSearchbox';
 import { InputSelect } from '../../form/components/InputSelect';
@@ -62,10 +62,10 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
       return null;
     }
     return (
-      <Box display="flex" flexDirection="row">
+      <Box display="flex" flexDirection="row" marginTop={['md', 0]}>
         {orderByOptions.slice(0, MAX_ORDER_OPTIONS).map(orderItem => {
           return (
-            <Box marginLeft={[0, 'xxs']}>
+            <Box marginLeft={['xxs']}>
               <InputSelect
                 selectedItem={orderOption[orderItem.key]}
                 width="300px"
@@ -103,9 +103,9 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
       );
     });
     return (
-      <Box display={['block', 'flex']} justifyContent={[null, 'flex-end']} marginTop={['md', 'md']}>
+      <Stack direction="horizontal" justifyContent="flex-end" marginTop={['md']} spacing="xxs">
         {listFilterTag}
-      </Box>
+      </Stack>
     );
   };
   return (
@@ -127,10 +127,8 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
           />
           {renderOrderOptions()}
         </Box>
-        <Box marginTop={['md', 0]}>
+        <Stack direction="horizontal" marginTop={['md', 0]} spacing="xxs">
           <Button
-            flex="1 1 0%"
-            alignItems="items-end"
             variant="destructive"
             type="button"
             icon={IconCloseRounded}
@@ -139,19 +137,10 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
           >
             Clear all
           </Button>
-          <Button
-            marginLeft={[0, 'xxs']}
-            flex="1 1 0%"
-            alignItems="items-end"
-            variant="secondary"
-            type="button"
-            icon={IconFilter}
-            iconPosition="left"
-            onClick={onClearFilter}
-          >
+          <Button variant="secondary" type="button" icon={IconFilter} iconPosition="left" onClick={onClearFilter}>
             Filter
           </Button>
-        </Box>
+        </Stack>
       </Box>
       {renderTagFilter()}
     </>
