@@ -17,10 +17,10 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
   const breadcrumbListItemStyles = useComponentStyles('breadcrumbListItem');
 
   const [first, rest, last] = React.useMemo(() => {
-    const [first, ...rest] = items;
-    const popped = rest.splice(-2, 2);
+    const [firstItem, ...everythingElse] = items;
+    const popped = everythingElse.splice(-2, 2);
 
-    return [first, rest, popped];
+    return [firstItem, everythingElse, popped];
   }, [items]);
 
   return (
@@ -45,6 +45,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
                     .map((item, i) => {
                       if (React.isValidElement(item)) {
                         return (
+                          // eslint-disable-next-line react/no-array-index-key
                           <Box key={`breadcrumb_overflow_${i}`}>
                             {React.cloneElement(item, { isOverflowItem: true })}
                           </Box>
