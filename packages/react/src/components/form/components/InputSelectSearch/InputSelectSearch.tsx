@@ -3,15 +3,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import * as React from 'react';
-import { useSelect, UseSelectStateChange } from 'downshift';
+import { useCombobox, UseComboboxStateChange, useSelect, UseSelectStateChange } from 'downshift';
 import { IconChevronStepper } from '@aksara-ui/icons';
 
 import { Text } from '../../../../typography';
 import { Box, Stack } from '../../../../layout';
-import { FormLabel, UnstyledButton, Card } from '../../..';
+import { FormLabel, UnstyledButton, Card, InputText } from '../../..';
 import { useComponentStyles } from '../../../../system';
 
-export interface InputSelectProps<T> {
+export interface InputSelectSearchProps<T> {
   /** The input select label */
   label?: string;
   /** Placeholder text for select label */
@@ -25,7 +25,7 @@ export interface InputSelectProps<T> {
   /** If the item list is an object/shape, use this to map it into string. */
   itemToString?: (item: T | null) => string;
   /** The change handler for the select. */
-  handleSelectedItemChange?: (changes: UseSelectStateChange<T>) => void;
+  handleSelectedItemChange?: (changes: UseComboboxStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
   itemRenderer?: (item: T) => React.ReactNode;
   /** Name of the field form */
@@ -40,8 +40,6 @@ export interface InputSelectProps<T> {
   size?: 'md' | 'lg';
 
   errors?: boolean;
-
-  width?: string | number;
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
@@ -59,54 +57,49 @@ function InputSelect<T>({
   disabled,
   errors,
   size = 'md',
-  width = '100%',
-}: InputSelectProps<T>) {
-  const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } = useSelect<T>({
-    items,
-    itemToString,
-    selectedItem,
-    onSelectedItemChange: handleSelectedItemChange,
-    initialSelectedItem,
-  });
+}: InputSelectSearchProps<T>) {
+  const [inputItems, setInputItems] = React.useState(items);
+  const { isOpen, getLabelProps, getMenuProps, highlightedIndex, getItemProps, getInputProps, getComboboxProps } =
+    useCombobox<T>({
+      items: inputItems,
+      itemToString,
+      selectedItem,
+      initialSelectedItem,
+      onSelectedItemChange: handleSelectedItemChange,
+      onInputValueChange: ({ inputValue }) => {
+        setInputItems(items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())));
+      },
+    });
 
   const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : 'default' });
 
   return (
-    <Stack spacing="xs" display="block" position="relative" width={width} zIndex={10}>
+    <Stack spacing="xs" display="block" position="relative" width="100%" zIndex={10}>
       {label && (
         <FormLabel display="block" {...getLabelProps()}>
           {label}
         </FormLabel>
       )}
-      <UnstyledButton
-        type="button"
-        disabled={disabled}
-        sx={{ ...styles }}
-        onFocus={() => {
-          if (onFocus) {
-            onFocus();
-          }
-        }}
-        onBlur={() => {
-          if (onBlur) {
-            onBlur();
-          }
-        }}
-        {...getToggleButtonProps()}
-      >
-        <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
-          {selectedItem
-            ? itemRenderer
-              ? itemRenderer(selectedItem)
-              : itemToString
-              ? itemToString(selectedItem)
-              : selectedItem
-            : placeholder}
-        </Text>
-        <Box display="flex" alignItems="center" justifyContent="center" width={40} height={40}>
-          <IconChevronStepper aria-hidden size={16} />
-        </Box>
-      </UnstyledButton>
+      <Box display="flex" {...getComboboxProps()}>
+        <InputText
+          disabled={disabled}
+          placeholder={placeholder}
+          sx={{ ...styles }}
+          onFocus={() => {
+            if (onFocus) {
+              onFocus();
+            }
+          }}
+          onBlur={() => {
+            if (onBlur) {
+              onBlur();
+            }
+          }}
+          {...getInputProps()}
+        />
+        <IconChevronStepper />
+      </Box>
+
       <Card
         as="ul"
         elevation={3}
@@ -116,13 +109,13 @@ function InputSelect<T>({
         top="100%"
         left={0}
         mt="xs"
-        width={width}
+        width="100%"
         p={0}
         m={0}
         {...getMenuProps()}
       >
-        {items && items.length !== 0 ? (
-          items.map((item, index) => (
+        {inputItems.length !== 0 ? (
+          inputItems.map((item, index) => (
             <Box
               as="li"
               px="md"
@@ -147,8 +140,6 @@ function InputSelect<T>({
           </Box>
         )}
       </Card>
-      {/* if you Tab from menu, focus goes on button, and it shouldn't. only happens here. */}
-      <div tabIndex={0} />
     </Stack>
   );
 }
