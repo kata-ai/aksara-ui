@@ -4395,6 +4395,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-ranger@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-ranger/-/react-ranger-2.0.1.tgz#63f1b7d71b7b3e666a1a62a0482470d965b66aa6"
+  integrity sha512-q+vEB4N38b/x3jpqUns05/7QoggT/A3WKVD7X153InQdlhuwYEZ1KxrlNoJLrMpQvB6sDru8+Gq9bGcndU6yMA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-syntax-highlighter@11.0.5":
   version "11.0.5"
   resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.5.tgz#0d546261b4021e1f9d85b50401c0a42acb106087"
@@ -14016,6 +14023,11 @@ react-popper@^2.2.4, react-popper@^2.2.5:
   dependencies:
     react-fast-compare "^3.0.1"
     warning "^4.0.2"
+
+react-ranger@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-ranger/-/react-ranger-2.1.0.tgz#a9007d67a7871736fffc5fe0d7c54a736771e9a1"
+  integrity sha512-d8ezhyX3v/KlN8SkyoE5e8Dybsdmn94eUAqBDsAPrVhZde8sVt6pLJw4fC784KiMmS4LyAjvtjGxhAEqjjGYgw==
 
 react-refresh@^0.8.3:
   version "0.8.3"

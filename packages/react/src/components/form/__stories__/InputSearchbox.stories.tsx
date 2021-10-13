@@ -16,13 +16,10 @@ export default {
     inputSize: {
       options: ['md', 'lg'],
     },
-    onClear: {
-      action: 'clicked',
-    },
   },
 } as Meta<InputSearchboxProps>;
 
-export const Example: Story<InputSearchboxProps> = ({ errors, disabled, inputSize, onClear }) => {
+export const Example: Story<InputSearchboxProps> = ({ errors, disabled, inputSize }) => {
   return (
     <InputSearchbox
       id="textDummy"
@@ -32,7 +29,6 @@ export const Example: Story<InputSearchboxProps> = ({ errors, disabled, inputSiz
       errors={errors}
       disabled={disabled}
       inputSize={inputSize}
-      onClear={onClear}
     />
   );
 };
