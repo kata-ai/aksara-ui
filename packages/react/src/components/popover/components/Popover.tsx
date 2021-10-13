@@ -13,8 +13,9 @@ export interface PopoverProps {
   style?: React.CSSProperties;
   summaryClassName?: string;
   summaryStyle?: React.CSSProperties;
-  maxWidth?: CSS.Property.MaxHeight;
-  maxHeight?: CSS.Property.MaxWidth;
+  width?: CSS.Property.Width;
+  maxWidth?: CSS.Property.MaxWidth;
+  maxHeight?: CSS.Property.MaxHeight;
   trigger: React.ReactElement;
   children: React.ReactElement;
   placement?: Placement;
@@ -45,6 +46,7 @@ const Popover: React.FC<PopoverProps> = ({
   style,
   trigger,
   children,
+  width,
   maxWidth = 320,
   maxHeight,
   placement = 'bottom',
@@ -80,6 +82,7 @@ const Popover: React.FC<PopoverProps> = ({
                     backgroundColor: 'greylight01',
                     borderRadius: 12,
                     boxShadow: 4,
+                    width,
                     maxWidth,
                     maxHeight,
                     zIndex: 1000,
