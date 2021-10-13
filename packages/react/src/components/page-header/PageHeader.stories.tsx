@@ -94,7 +94,10 @@ export const WithFilterSection = () => {
       }
     >
       <FilterPageHeader
-        filterData={[{ label: 'tes_label', value: 'tes_value' }]}
+        filterData={[
+          { label: 'Filter A', value: 'filter_a' },
+          { label: 'Keyword B', value: 'keyword_b' },
+        ]}
         orderByOptions={[
           {
             key: 'created_date',
