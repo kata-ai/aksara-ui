@@ -1,10 +1,12 @@
-import * as React from 'react';
 import { IconCloseRounded, IconFilter } from '@aksara-ui/icons';
+import * as React from 'react';
 import { Box, BoxProps, Stack } from '../../../layout';
+import { Text } from '../../../typography';
 import { Button } from '../../button';
 import { InputSearchbox } from '../../form/components/InputSearchbox';
 import { InputSelect } from '../../form/components/InputSelect';
 import { Pill } from '../../pill';
+import { Popover } from '../../popover';
 
 export interface FilterPageHeaderProps extends BoxProps {
   /** callback function onClear action */
@@ -102,6 +104,30 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
     });
     return (
       <Stack direction="horizontal" justifyContent="flex-end" marginTop={['md']} spacing="xxs">
+        {listShownFilter.more.length && (
+          <Popover
+            placement="bottom"
+            trigger={
+              <Text display="block" scale={300} color="blue07">
+                {listShownFilter.more.length}+ Filter
+              </Text>
+            }
+          >
+            <Stack py="xs" px="xxs" direction="horizontal" spacing="xxs">
+              {listShownFilter.more.map(item => {
+                return (
+                  <Pill
+                    hasCloseIcon
+                    onClick={() => onRemoveFilter({ label: item.label, value: item.value })}
+                    variant="active"
+                  >
+                    {item.label}
+                  </Pill>
+                );
+              })}
+            </Stack>
+          </Popover>
+        )}
         {listFilterTag}
       </Stack>
     );

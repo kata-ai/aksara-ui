@@ -97,6 +97,12 @@ export const WithFilterSection = () => {
         filterData={[
           { label: 'Filter A', value: 'filter_a' },
           { label: 'Keyword B', value: 'keyword_b' },
+          { label: 'Filter C', value: 'filter_c' },
+          { label: 'Order D', value: 'order_d' },
+          { label: 'Order E', value: 'order_e' },
+          { label: 'Filter F', value: 'filter f' },
+          { label: 'Filter G', value: 'filter_g' },
+          { label: 'Filter H', value: 'keyword_h' },
         ]}
         onRemoveFilter={action('remove filter')}
         orderByOptions={[
