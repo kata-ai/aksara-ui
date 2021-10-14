@@ -13,9 +13,10 @@ const TableBodyRow = React.forwardRef<HTMLTableRowElement, TableBodyRowProps>(
       <Box
         as="tr"
         ref={ref}
-        _hover={{ backgroundColor: selected ? 'turquoise02' : 'grey03' }}
-        _active={{ backgroundColor: 'turquoise02', outline: '2px solid rgba(0, 111, 230, 0.4)' }}
-        outline={selected ? '2px solid rgba(0, 111, 230, 0.4)' : 'none'}
+        backgroundColor={selected ? 'blue01' : 'greylight01'}
+        _hover={{ backgroundColor: selected ? 'blue01' : 'greylight03' }}
+        _focus={{ backgroundColor: 'blue01', outline: '2px solid rgba(0, 111, 230, 0.4)' }}
+        _active={{ backgroundColor: 'blue01', outline: '2px solid rgba(0, 111, 230, 0.4)' }}
         {...rest}
       >
         {children}
@@ -24,6 +25,6 @@ const TableBodyRow = React.forwardRef<HTMLTableRowElement, TableBodyRowProps>(
   }
 );
 
-TableBodyRow.displayName = 'TableBody';
+TableBodyRow.displayName = 'TableBodyRow';
 
 export default TableBodyRow;
