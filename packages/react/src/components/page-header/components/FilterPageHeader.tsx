@@ -5,7 +5,6 @@ import { Button } from '../../button';
 import { InputSearchbox } from '../../form/components/InputSearchbox';
 import { InputSelect } from '../../form/components/InputSelect';
 import { Pill } from '../../pill';
-import { action } from '@storybook/addon-actions';
 
 export interface FilterPageHeaderProps extends BoxProps {
   /** callback function onClear action */
@@ -14,7 +13,7 @@ export interface FilterPageHeaderProps extends BoxProps {
   onSearch?: React.ChangeEventHandler<HTMLInputElement>;
   // TODO filter panel is not implemented yet
   /** callback function onFilter action  */
-  onChangeFilter?: () => void;
+  onClickFilter?: () => void;
   /** callback function onChangeOrder action  */
   onChangeOrder?: (orderOption: Record<string, { label: string; value: string }>) => void;
   /** order config, for now maximum order config is 2   */
@@ -22,14 +21,14 @@ export interface FilterPageHeaderProps extends BoxProps {
   /** filter data used to show filter tag   */
   filterData: { label: string; value: string }[];
   /** callback function when one of filter tag was removed   */
-  onRemoveFilter?: (key: string, value: string) => void;
+  onRemoveFilter: (data: { label: string; value: string }) => void;
 }
 const MAX_TAG_FILTER = 6;
 const MAX_ORDER_OPTIONS = 2;
 
 const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
   onSearch,
-  onChangeFilter, // TODO change filter need to be integrated with filter panel
+  onClickFilter, // TODO change filter need to be integrated with filter panel
   onChangeOrder,
   orderByOptions,
   filterData,
@@ -96,8 +95,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
   const renderTagFilter = () => {
     const listFilterTag = listShownFilter.show.map(item => {
       return (
-        // TODO Pill onRemove action not available yet
-        <Pill hasCloseIcon onClick={action(`pill clicked ${item.value}`)} variant="active">
+        <Pill hasCloseIcon onClick={() => onRemoveFilter({ label: item.label, value: item.value })} variant="active">
           {item.label}
         </Pill>
       );
@@ -137,7 +135,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
           >
             Clear all
           </Button>
-          <Button variant="secondary" type="button" icon={IconFilter} iconPosition="left" onClick={onClearFilter}>
+          <Button variant="secondary" type="button" icon={IconFilter} iconPosition="left" onClick={onClickFilter}>
             Filter
           </Button>
         </Stack>
