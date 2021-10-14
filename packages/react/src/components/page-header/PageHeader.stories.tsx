@@ -98,6 +98,7 @@ export const WithFilterSection = () => {
           { label: 'Filter A', value: 'filter_a' },
           { label: 'Keyword B', value: 'keyword_b' },
         ]}
+        onRemoveFilter={action('remove filter')}
         orderByOptions={[
           {
             key: 'created_date',
