@@ -22,6 +22,9 @@ export default {
     label: {
       control: 'text',
     },
+    width: {
+      control: 'number',
+    },
   },
 } as Meta<InputSelectSearchProps<ValueSchema>>;
 
@@ -30,7 +33,14 @@ interface ValueSchema {
   value: string;
 }
 
-export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({ placeholder, disabled, size, label, errors }) => {
+export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({
+  placeholder,
+  disabled,
+  size,
+  label,
+  errors,
+  width,
+}) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
   const [items] = React.useState([
     { label: 'One', value: 'one' },
@@ -57,6 +67,7 @@ export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({ placeholde
         }
       }}
       items={items}
+      width={width}
     />
   );
 };
@@ -66,4 +77,5 @@ Example.args = {
   disabled: false,
   label: 'Label input',
   errors: false,
+  width: '100%',
 };
