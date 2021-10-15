@@ -12,6 +12,7 @@ import typography from './typography';
 import tabs from './tabs';
 import toast from './toast';
 import tooltip from './tooltip';
+import subHeader from './subHeader';
 
 /**
  * Custom theme props based on custom component variants.
@@ -31,6 +32,7 @@ const componentStyles = {
   ...tabs,
   ...toast,
   ...tooltip,
+  ...subHeader,
 };
 
 export default componentStyles;
