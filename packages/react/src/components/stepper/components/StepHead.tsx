@@ -20,7 +20,11 @@ const StepHead: React.FC<StepInternalConfig> = ({ isCompletedStep, isCurrentStep
 
   const renderIcon = () => {
     if (isCompletedStep) {
-      return <IconTickRounded width={16} height={16} fill="green07" />;
+      return (
+        <Box color="green07">
+          <IconTickRounded width={16} height={16} fill="currentColor" />
+        </Box>
+      );
     }
     if (!isCompletedStep && !isCurrentStep) {
       return <Box sx={circleIconStyles} />;
