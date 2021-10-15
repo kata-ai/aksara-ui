@@ -20,12 +20,25 @@ export default {
 };
 
 export const Example: Story<any> = () => {
-  const steps = new Array(3).fill(null).map((data, index) => {
-    return {
-      label: `Step ${index + 1}`,
-      content: ({ activeStep }) => <Box>content {activeStep + 1}</Box>,
-    };
-  });
+  const steps = [
+    {
+      label: 'Step 1',
+      content: <Box>content 1</Box>,
+    },
+    {
+      label: 'Step 2',
+      content: <Box>content 2</Box>,
+    },
+    {
+      label: 'Step 3',
+      content: <Box>content 3</Box>,
+    },
+    {
+      label: 'Step 4',
+      content: <Box>content 4</Box>,
+    },
+  ];
+
   const stepLabel = steps.map(({ label }) => label);
   const { nextStep, prevStep, reset, activeStep } = useSteps({
     initialStep: 0,
@@ -33,9 +46,9 @@ export const Example: Story<any> = () => {
   return (
     <>
       <Stepper activeStep={activeStep} title="Title" labels={stepLabel}>
-        {steps.map(({ content }) => content({ activeStep }))}
+        {steps.map(({ content }) => content)}
       </Stepper>
-      <Box>
+      <Box display="grid" gridGap="md" gridTemplateColumns="repeat(3, 1fr)">
         <Button disabled={activeStep === 0} onClick={prevStep}>
           Prev
         </Button>
