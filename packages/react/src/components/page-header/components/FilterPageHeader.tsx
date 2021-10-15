@@ -103,7 +103,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
       );
     });
     return (
-      <Stack direction="horizontal" justifyContent="flex-end" marginTop={['md']} spacing="xxs">
+      <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" marginTop={['md']} spacing="xxs">
         {listShownFilter.more.length && (
           <Popover
             placement="bottom"
