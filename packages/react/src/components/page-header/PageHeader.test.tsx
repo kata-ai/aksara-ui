@@ -1,11 +1,13 @@
 import { render } from '@testing-library/react';
-import { IconArrowLeft } from '@aksara-ui/icons';
+import { IconArrowLeft, IconChevronDown } from '@aksara-ui/icons';
 import * as React from 'react';
 import { Button, IconButton } from '../button';
 import PageHeader from './PageHeader';
+import { ButtonGroup } from '../button-group';
+import FilterPageHeader from './components/FilterPageHeader';
 
-describe('Components/Navigation', () => {
-  describe('PrimaryNavItem', () => {
+describe('Components/PageHeader', () => {
+  describe('PageHeader', () => {
     test('renders title correctly', () => {
       const { getByRole } = render(<PageHeader title="Title" />);
 
@@ -41,6 +43,30 @@ describe('Components/Navigation', () => {
         name: /back/i,
       });
       expect(backButton).toBeVisible();
+    });
+
+    test('render children correctly', () => {
+      const { getByText } = render(
+        <PageHeader
+          title="Title"
+          actions={
+            <ButtonGroup size="md">
+              <Button type="button" icon={IconChevronDown} iconPosition="right">
+                Label
+              </Button>
+              <Button variant="primary">Label</Button>
+            </ButtonGroup>
+          }
+          backButton={
+            <IconButton variant="plain" aria-label="Back">
+              <IconArrowLeft aria-hidden fill="currentColor" />
+            </IconButton>
+          }
+        >
+          Children
+        </PageHeader>
+      );
+      expect(getByText('Children')).toBeInTheDocument();
     });
   });
 });
