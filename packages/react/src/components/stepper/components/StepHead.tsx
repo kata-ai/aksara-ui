@@ -21,7 +21,7 @@ const StepHead: React.FC<StepInternalConfig> = ({ isCompletedStep, isCurrentStep
   const renderIcon = () => {
     if (isCompletedStep) {
       return (
-        <Box color="green07">
+        <Box display="flex" alignItems="center" color="green07">
           <IconTickRounded width={16} height={16} fill="currentColor" />
         </Box>
       );

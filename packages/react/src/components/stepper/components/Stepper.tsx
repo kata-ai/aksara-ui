@@ -10,6 +10,11 @@ export interface StepsProps {
   title?: string;
 }
 
+export interface Steps {
+  label: string;
+  content: React.ReactNode;
+}
+
 const Stepper: React.FC<StepsProps> = ({ children, activeStep, title, labels }) => {
   const childArr = React.Children.toArray(children);
   const stepCount = childArr.length;
@@ -19,7 +24,7 @@ const Stepper: React.FC<StepsProps> = ({ children, activeStep, title, labels }) 
     if (activeStep <= childArr.length) {
       return React.Children.map(childArr[activeStep], node => {
         if (!React.isValidElement(node)) return null;
-        return React.Children.map(node.props.children, childNode => childNode);
+        return React.cloneElement(node, node.props);
       });
     }
     return null;
