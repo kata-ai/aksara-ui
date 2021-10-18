@@ -67,5 +67,28 @@ describe('Components/PageHeader', () => {
       );
       expect(getByText('Children')).toBeInTheDocument();
     });
+    test('render children correctly', () => {
+      const { getByText } = render(
+        <PageHeader
+          title="Title"
+          actions={
+            <ButtonGroup size="md">
+              <Button type="button" icon={IconChevronDown} iconPosition="right">
+                Label
+              </Button>
+              <Button variant="primary">Label</Button>
+            </ButtonGroup>
+          }
+          backButton={
+            <IconButton variant="plain" aria-label="Back">
+              <IconArrowLeft aria-hidden fill="currentColor" />
+            </IconButton>
+          }
+        >
+          Children
+        </PageHeader>
+      );
+      expect(getByText('Children')).toBeInTheDocument();
+    });
   });
 });
