@@ -4,7 +4,6 @@ import * as React from 'react';
 import { Button, IconButton } from '../button';
 import PageHeader from './PageHeader';
 import { ButtonGroup } from '../button-group';
-import FilterPageHeader from './components/FilterPageHeader';
 
 describe('Components/PageHeader', () => {
   describe('PageHeader', () => {
