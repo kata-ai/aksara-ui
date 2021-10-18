@@ -1,14 +1,19 @@
 import * as React from 'react';
-import { Anchor, AnchorProps } from '../../typography';
+import { useComponentStyles } from '../../system';
+import { UnstyledAnchor, UnstyledAnchorProps } from '../../typography';
 
-export type BreadcrumbItemProps = AnchorProps & React.ComponentPropsWithoutRef<'a'>;
+export interface BreadcrumbItemProps extends UnstyledAnchorProps, React.ComponentPropsWithoutRef<'a'> {
+  active?: boolean;
+  isOverflowItem?: boolean;
+}
 
 const BreadcrumbItem = React.forwardRef<HTMLAnchorElement, BreadcrumbItemProps>(
-  ({ className, children, ...rest }, ref) => {
+  ({ className, children, sx, active, isOverflowItem, ...rest }, ref) => {
+    const styles = useComponentStyles('breadcrumbItem', { active, variant: isOverflowItem ? 'overflow' : 'default' });
     return (
-      <Anchor ref={ref} className={className} {...rest}>
+      <UnstyledAnchor ref={ref} className={className} sx={{ ...styles, ...sx }} {...rest}>
         {children}
-      </Anchor>
+      </UnstyledAnchor>
     );
   }
 );

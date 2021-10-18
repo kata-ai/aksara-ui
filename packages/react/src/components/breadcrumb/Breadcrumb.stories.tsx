@@ -9,25 +9,32 @@ export default {
   component: Breadcrumb,
 } as Meta;
 
-export const BasicExample = () => {
+export const Example = () => {
   return (
     <Breadcrumb
       items={[
         <BreadcrumbItem href="/">Home</BreadcrumbItem>,
         <BreadcrumbItem href="/item-1">Item 1</BreadcrumbItem>,
-        <BreadcrumbItem href="/item-2">Item 2</BreadcrumbItem>,
+        <BreadcrumbItem href="/item-2" active>
+          Item 2
+        </BreadcrumbItem>,
       ]}
+      separator={IconChevronRight}
     />
   );
 };
 
-export const CustomSeparator = () => {
+export const Overflow = () => {
   return (
     <Breadcrumb
       items={[
         <BreadcrumbItem href="/">Home</BreadcrumbItem>,
         <BreadcrumbItem href="/item-1">Item 1</BreadcrumbItem>,
         <BreadcrumbItem href="/item-2">Item 2</BreadcrumbItem>,
+        <BreadcrumbItem href="/item-3">Item 3</BreadcrumbItem>,
+        <BreadcrumbItem href="/item-4" active>
+          Item 4
+        </BreadcrumbItem>,
       ]}
       separator={IconChevronRight}
     />
