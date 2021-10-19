@@ -1,8 +1,9 @@
 import { IconChevronDown, IconPen } from '@aksara-ui/icons';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { Stack } from '../../layout';
 import { Box } from '../../layout/box';
-import { Heading } from '../../typography';
+import { Heading, Text } from '../../typography';
 import { Button, IconButton } from '../button';
 import { ButtonGroup } from '../button-group';
 import { InputSelect } from '../form/components/InputSelect';
@@ -59,12 +60,17 @@ export const StandSubHeader = () => {
       }
       variant="stand"
       actions={
-        <ButtonGroup size="md">
-          <Button type="button" icon={IconChevronDown} iconPosition="right" onClick={action('click')}>
-            Label
-          </Button>
-          <Button variant="primary">Label</Button>
-        </ButtonGroup>
+        <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" marginTop={['md']} spacing="md">
+          <Text fontSize="12px" lineHeight="18px" color="greymed04">
+            Caption
+          </Text>
+          <ButtonGroup size="md">
+            <Button type="button" icon={IconChevronDown} iconPosition="right" onClick={action('click')}>
+              Label
+            </Button>
+            <Button variant="primary">Label</Button>
+          </ButtonGroup>
+        </Stack>
       }
     />
   );
