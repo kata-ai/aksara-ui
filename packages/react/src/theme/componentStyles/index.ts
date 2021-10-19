@@ -8,6 +8,7 @@ import message from './message';
 import navigation from './navigation';
 import pill from './pill';
 import slider from './slider';
+import stepper from './stepper';
 import typography from './typography';
 import tabs from './tabs';
 import toast from './toast';
@@ -28,6 +29,7 @@ const componentStyles = {
   ...navigation,
   ...pill,
   ...slider,
+  ...stepper,
   ...typography,
   ...tabs,
   ...toast,
