@@ -3,8 +3,6 @@ import { Box, BoxProps } from '../../layout';
 import { Heading } from '../../typography';
 
 export interface PageHeaderProps extends BoxProps {
-  className?: string;
-  style?: React.CSSProperties;
   title: string;
   backButton?: React.ReactNode;
   actions?: React.ReactNode;

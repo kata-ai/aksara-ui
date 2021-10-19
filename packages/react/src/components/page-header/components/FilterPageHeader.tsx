@@ -25,8 +25,8 @@ export interface FilterPageHeaderProps extends BoxProps {
   /** callback function when one of filter tag was removed   */
   onRemoveFilter: (data: { label: string; value: string }) => void;
 }
-const MAX_TAG_FILTER = 6;
-const MAX_ORDER_OPTIONS = 2;
+export const MAX_TAG_FILTER = 6;
+export const MAX_ORDER_OPTIONS = 2;
 
 const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
   onSearch,
@@ -49,8 +49,8 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
   const listShownFilter = React.useMemo(() => {
     if (filterData.length > MAX_TAG_FILTER) {
       return {
-        show: filterData.slice(0, MAX_TAG_FILTER - 1),
-        more: filterData.slice(MAX_TAG_FILTER - 1),
+        show: filterData.slice(0, MAX_TAG_FILTER),
+        more: filterData.slice(MAX_TAG_FILTER),
       };
     }
     return {
@@ -66,7 +66,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
       <Box display="flex" flexDirection="row" marginTop={['md', 0]}>
         {orderByOptions.slice(0, MAX_ORDER_OPTIONS).map(orderItem => {
           return (
-            <Box marginLeft={['xxs']}>
+            <Box marginLeft={['xxs']} key={orderItem.key} data-testid="orderOption">
               <InputSelect
                 selectedItem={orderOption[orderItem.key]}
                 width="300px"
@@ -97,7 +97,13 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
   const renderTagFilter = () => {
     const listFilterTag = listShownFilter.show.map(item => {
       return (
-        <Pill hasCloseIcon onClick={() => onRemoveFilter({ label: item.label, value: item.value })} variant="active">
+        <Pill
+          data-testid="filter-tag"
+          key={item.value}
+          hasCloseIcon
+          onClick={() => onRemoveFilter({ label: item.label, value: item.value })}
+          variant="active"
+        >
           {item.label}
         </Pill>
       );
@@ -117,6 +123,8 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
               {listShownFilter.more.map(item => {
                 return (
                   <Pill
+                    key={`${item.value}`}
+                    data-testid="filter-tag-more"
                     hasCloseIcon
                     onClick={() => onRemoveFilter({ label: item.label, value: item.value })}
                     variant="active"
@@ -161,7 +169,14 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
           >
             Clear all
           </Button>
-          <Button variant="secondary" type="button" icon={IconFilter} iconPosition="left" onClick={onClickFilter}>
+          <Button
+            data-testid="filter"
+            variant="secondary"
+            type="button"
+            icon={IconFilter}
+            iconPosition="left"
+            onClick={onClickFilter}
+          >
             Filter
           </Button>
         </Stack>

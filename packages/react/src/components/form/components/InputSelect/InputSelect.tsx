@@ -8,8 +8,10 @@ import { IconChevronStepper } from '@aksara-ui/icons';
 
 import { Text } from '../../../../typography';
 import { Box, Stack } from '../../../../layout';
-import { FormLabel, UnstyledButton, Card } from '../../..';
 import { useComponentStyles } from '../../../../system';
+import { FormLabel } from '../FormLabel';
+import { UnstyledButton } from '../../../button';
+import { Card } from '../../../card';
 
 export interface InputSelectProps<T> {
   /** The input select label */
