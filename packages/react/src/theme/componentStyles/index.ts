@@ -14,6 +14,7 @@ import tabs from './tabs';
 import toast from './toast';
 import tooltip from './tooltip';
 import subHeader from './subHeader';
+import topbar from './topbar';
 
 /**
  * Custom theme props based on custom component variants.
@@ -30,11 +31,12 @@ const componentStyles = {
   ...pill,
   ...slider,
   ...stepper,
+  ...subHeader,
   ...typography,
   ...tabs,
   ...toast,
   ...tooltip,
-  ...subHeader,
+  ...topbar,
 };
 
 export default componentStyles;
