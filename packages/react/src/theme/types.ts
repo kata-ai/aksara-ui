@@ -1,7 +1,22 @@
+import {
+  CSSPseudoSelectorProps,
+  CSSSelectorObject,
+  EmotionLabel,
+  SystemCssProperties,
+  VariantProperty,
+} from '@styled-system/css';
 import { RequiredTheme } from 'styled-system';
+import { AllSystemProps, PseudoSystemProps } from '../system';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type CSSObject = object; // TODO
+export type CSSObject =
+  | AllSystemProps
+  | PseudoSystemProps
+  | SystemCssProperties
+  | CSSPseudoSelectorProps
+  | CSSSelectorObject
+  | VariantProperty
+  | EmotionLabel
+  | Record<string, any>; // fallback handler, type variable css
 
 export type ComponentThemeScaleFn<P> = (props: P & { theme: RequiredTheme }) => CSSObject;
 
