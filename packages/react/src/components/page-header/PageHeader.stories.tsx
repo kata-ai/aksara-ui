@@ -44,7 +44,7 @@ export const WithBackButton = () => {
         </ButtonGroup>
       }
       backButton={
-        <IconButton variant="plain" aria-label="Back">
+        <IconButton variant="plain" aria-label="Back" size="lg">
           <IconArrowLeft aria-hidden fill="currentColor" />
         </IconButton>
       }
@@ -65,7 +65,7 @@ export const WithChildren = () => {
         </ButtonGroup>
       }
       backButton={
-        <IconButton variant="plain" aria-label="Back">
+        <IconButton variant="plain" aria-label="Back" size="lg">
           <IconArrowLeft aria-hidden fill="currentColor" />
         </IconButton>
       }
@@ -88,7 +88,7 @@ export const WithFilterSection = () => {
         </ButtonGroup>
       }
       backButton={
-        <IconButton variant="plain" aria-label="Back">
+        <IconButton variant="plain" aria-label="Back" size="lg">
           <IconArrowLeft aria-hidden fill="currentColor" />
         </IconButton>
       }

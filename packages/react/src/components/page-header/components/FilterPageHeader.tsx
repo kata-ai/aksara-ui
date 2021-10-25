@@ -119,7 +119,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
               </Text>
             }
           >
-            <Stack py="xs" px="xxs" direction="horizontal" spacing="xxs">
+            <Stack py="sm" px="xs" direction="horizontal" spacing="xxs">
               {listShownFilter.more.map(item => {
                 return (
                   <Pill
