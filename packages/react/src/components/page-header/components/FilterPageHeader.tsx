@@ -1,8 +1,7 @@
 import { IconCloseRounded, IconFilter } from '@aksara-ui/icons';
 import * as React from 'react';
 import { Box, BoxProps, Stack } from '../../../layout';
-import { Text } from '../../../typography';
-import { Button } from '../../button';
+import { Button, PlainButton } from '../../button';
 import { InputSearchbox } from '../../form/components/InputSearchbox';
 import { InputSelect } from '../../form/components/InputSelect';
 import { Pill } from '../../pill';
@@ -114,9 +113,9 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
           <Popover
             placement="bottom"
             trigger={
-              <Text display="block" scale={300} color="blue07">
+              <PlainButton display="block" color="blue07">
                 {listShownFilter.more.length}+ Filter
-              </Text>
+              </PlainButton>
             }
           >
             <Stack py="sm" px="xs" direction="horizontal" spacing="xxs">
