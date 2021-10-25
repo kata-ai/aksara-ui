@@ -1,6 +1,6 @@
 import { SystemStyleObject } from '@styled-system/css';
 import { RequiredTheme } from 'styled-system';
-import { AllSystemProps, PseudoSystemProps } from '../system';
+import { AllSystemProps, PseudoSystemProps } from '../system/props';
 
 export type CSSObject = AllSystemProps | PseudoSystemProps | SystemStyleObject | Record<string, any>; // fallback handler, type variable css
 
