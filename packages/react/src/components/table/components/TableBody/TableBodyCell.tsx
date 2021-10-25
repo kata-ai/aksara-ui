@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Box, BoxProps } from '../../../../layout';
 import { Paragraph } from '../../../../typography';
-import { theme } from '../../../../theme';
 
 export interface TableBodyCellProps
   extends React.TdHTMLAttributes<HTMLTableCellElement>,
@@ -26,11 +25,11 @@ const TableBodyCell = React.forwardRef<HTMLTableCellElement, TableBodyCellProps>
         as="td"
         className={className}
         style={style}
-        px="lg"
+        px="md"
         py="sm"
         fontSize="14px"
-        lineHeight="24px"
-        sx={{ boxShadow: `0px 0px 0px rgba(0, 0, 0, 0.25), inset 0px -1px 0px ${theme.colors.grey03}` }}
+        lineHeight="20px"
+        sx={{ boxShadow: `inset 0px -1px 0px #EFF2F5` }}
         {...rest}
       >
         {renderContent()}

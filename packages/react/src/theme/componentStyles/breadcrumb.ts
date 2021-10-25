@@ -35,6 +35,8 @@ const breadcrumbListItem: ComponentThemeConfig = {
 
 const breadcrumbItem: ComponentThemeConfig = {
   baseStyle: {
+    fontSize: '14px',
+    lineHeight: '20px',
     borderRadius: 4,
     outline: 'none',
     '&:focus': {
@@ -57,14 +59,22 @@ const breadcrumbItem: ComponentThemeConfig = {
           color: active ? 'greydark02' : 'blue09',
         },
       }),
-      overflow: {
+      overflow: ({ active }: { theme: DefaultTheme; active?: boolean }) => ({
         display: 'block',
         py: 10,
         px: 12,
+        color: active ? 'greydark02' : 'blue07',
+        '&:hover, &:focus': {
+          textDecoration: active ? 'none' : 'underline',
+        },
         '&:hover': {
           backgroundColor: 'greylight03',
+          color: active ? 'greydark02' : 'blue08',
         },
-      },
+        '&:focus, &:active': {
+          color: active ? 'greydark02' : 'blue09',
+        },
+      }),
     },
   },
 };

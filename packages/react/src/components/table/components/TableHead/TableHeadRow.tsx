@@ -13,6 +13,6 @@ const TableHeadRow = React.forwardRef<HTMLTableRowElement, TableHeadRowProps>(
   }
 );
 
-TableHeadRow.displayName = 'TableBody';
+TableHeadRow.displayName = 'TableHeadRow';
 
 export default TableHeadRow;

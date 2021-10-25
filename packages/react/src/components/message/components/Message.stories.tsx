@@ -63,7 +63,7 @@ const Visible: React.FC<VisibleProps> = ({ render, children, ...rest }) => {
   return renderInner();
 };
 
-export const Example: Story<MessageProps> = ({ message, variant }) => {
+export const InSection: Story<MessageProps> = ({ message, variant }) => {
   return (
     <Stack spacing="md">
       <Message message={message} variant={variant} />
@@ -89,17 +89,16 @@ export const Example: Story<MessageProps> = ({ message, variant }) => {
         }
         variant={variant}
       />
-      <Visible render={handleClose => <Message message={message} variant={variant} onClose={handleClose} />} />
     </Stack>
   );
 };
 
-Example.args = {
+InSection.args = {
   message: 'Trying to tell short and helpful information just in 1 sentence.',
   variant: 'default',
 };
 
-export const WithTitle: Story<MessageProps> = ({ title, message, variant }) => {
+export const Page: Story<MessageProps> = ({ title, message, variant }) => {
   return (
     <Stack spacing="md">
       <Message title={title} message={message} variant={variant} />
@@ -127,14 +126,94 @@ export const WithTitle: Story<MessageProps> = ({ title, message, variant }) => {
         }
         variant={variant}
       />
+    </Stack>
+  );
+};
+
+Page.args = {
+  ...InSection.args,
+  title: 'Message Title',
+};
+
+export const Closable: Story<MessageProps> = ({ message, title, variant }) => {
+  return (
+    <Stack spacing="md">
+      <Visible render={handleClose => <Message message={message} variant={variant} onClose={handleClose} />} />
+      <Visible
+        render={handleClose => (
+          <Message
+            message={
+              <Paragraph display="inline-block" scale={200}>
+                {message}{' '}
+                <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+                  Random link
+                </Anchor>
+              </Paragraph>
+            }
+            variant={variant}
+            onClose={handleClose}
+          />
+        )}
+      />
+      <Visible
+        render={handleClose => (
+          <Message
+            message={
+              <Stack spacing="xs">
+                <Paragraph scale={200}>{message}</Paragraph>
+                <Box>
+                  <Button>Label</Button>
+                </Box>
+              </Stack>
+            }
+            variant={variant}
+            onClose={handleClose}
+          />
+        )}
+      />
       <Visible
         render={handleClose => <Message title={title} message={message} variant={variant} onClose={handleClose} />}
+      />
+      <Visible
+        render={handleClose => (
+          <Message
+            title={title}
+            message={
+              <Paragraph display="inline-block" scale={200}>
+                {message}{' '}
+                <Anchor href="https://www.youtube.com/watch?v=P_mQpbCSQOo" target="_blank" rel="noopener noreferrer">
+                  Random link
+                </Anchor>
+              </Paragraph>
+            }
+            variant={variant}
+            onClose={handleClose}
+          />
+        )}
+      />
+      <Visible
+        render={handleClose => (
+          <Message
+            title={title}
+            message={
+              <Stack spacing="xs">
+                <Paragraph scale={200}>{message}</Paragraph>
+                <Box>
+                  <Button>Label</Button>
+                </Box>
+              </Stack>
+            }
+            variant={variant}
+            onClose={handleClose}
+          />
+        )}
       />
     </Stack>
   );
 };
 
-WithTitle.args = {
-  ...Example.args,
-  title: 'Message Title',
+Closable.args = {
+  message: 'Trying to tell short and helpful information just in 1 sentence.',
+  title: 'Message title',
+  variant: 'default',
 };
