@@ -1,5 +1,5 @@
-import { Box } from '@aksara-ui/react';
 import * as React from 'react';
+import Box from '../../../layout/box/components/Box';
 import { Text } from '../../../typography';
 import { InputSelect, InputSelectProps } from '../../form';
 
