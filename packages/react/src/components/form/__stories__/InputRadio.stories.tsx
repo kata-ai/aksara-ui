@@ -28,7 +28,12 @@ export default {
 export const Example: Story<InputRadioProps> = ({ id, value, checked, disabled }) => {
   return (
     <Box>
-      <InputRadio id={id} name={id} value={value} checked={checked} disabled={disabled} />
+      <InputRadioLabel htmlFor={id}>
+        <InputRadio id={id} name={id} value={value} checked={checked} disabled={disabled} />
+        <Text scale={300} ml="xs">
+          Radio 1
+        </Text>
+      </InputRadioLabel>
     </Box>
   );
 };
