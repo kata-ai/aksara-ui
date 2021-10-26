@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/core",
-  "version": "1.0.1-canary.1",
+  "version": "1.0.1-canary.2",
   "description": "Core design tokens for the Aksara design system.",
   "sideEffects": false,
   "main": "dist/index.js",
