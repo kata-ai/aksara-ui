@@ -2,6 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 import { InputSelect, InputSelectProps } from '../components/InputSelect';
 import { Box } from '../../../layout';
+import { InputSelectTags } from '../components/InputSelectTags';
 
 export default {
   title: 'Core/Components/Form/InputSelect',
@@ -69,6 +70,10 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
       ]}
     />
   );
+};
+
+export const TagSelect: Story = () => {
+  return <InputSelectTags />;
 };
 Example.args = {
   placeholder: 'Select...',
