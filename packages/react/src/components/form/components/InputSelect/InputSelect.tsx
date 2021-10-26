@@ -145,7 +145,16 @@ function InputSelect<T>({
               </Box>
             ))
           ) : (
-            <Box as="li" px="md" py="xs" color="grey06" cursor="pointer" textAlign="left" lineHeight="20px">
+            <Box
+              as="li"
+              px="md"
+              py="xs"
+              color="grey06"
+              cursor="pointer"
+              fontSize={14}
+              textAlign="left"
+              lineHeight="20px"
+            >
               No items.
             </Box>
           )}
