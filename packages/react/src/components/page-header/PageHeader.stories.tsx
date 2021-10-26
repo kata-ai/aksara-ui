@@ -103,6 +103,7 @@ export const WithFilterSection = () => {
           { label: 'Filter F', value: 'filter f' },
           { label: 'Filter G', value: 'filter_g' },
           { label: 'Filter H', value: 'keyword_h' },
+          { label: 'Filter I', value: 'keyword_i' },
         ]}
         onRemoveFilter={action('remove filter')}
         orderByOptions={[
