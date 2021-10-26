@@ -7,6 +7,7 @@ export * from './InputIcon';
 export * from './InputMessage';
 export * from './InputPrefix';
 export * from './InputRadio';
+export * from './InputSelect';
 export * from './InputSuffix';
 export * from './InputTags';
 export * from './InputText';

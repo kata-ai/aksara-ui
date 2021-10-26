@@ -1,9 +1,10 @@
-import { RequiredTheme } from 'styled-system';
+import { SystemStyleObject } from '@styled-system/css';
+import { DefaultTheme } from 'styled-components';
+import { AllSystemProps, PseudoSystemProps } from '../system/props';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type CSSObject = object; // TODO
+export type CSSObject = AllSystemProps | PseudoSystemProps | SystemStyleObject | Record<string, any>; // fallback handler, type variable css
 
-export type ComponentThemeScaleFn<P> = (props: P & { theme: RequiredTheme }) => CSSObject;
+export type ComponentThemeScaleFn<P = Record<string, any>> = (props: P & { theme: DefaultTheme }) => CSSObject;
 
 // FIXME was SystemStyleObject
 export type ComponentThemeScale<P> = CSSObject | ComponentThemeScaleFn<P>;
