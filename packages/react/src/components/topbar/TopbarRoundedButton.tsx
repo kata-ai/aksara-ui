@@ -2,11 +2,13 @@ import * as React from 'react';
 import { useComponentStyles } from '../../system';
 import { UnstyledButton, UnstyledButtonProps } from '../button';
 
-export type TopbarRoundedButtonProps = UnstyledButtonProps & React.ComponentPropsWithoutRef<'button'>;
+export interface TopbarRoundedButtonProps extends UnstyledButtonProps, React.ComponentPropsWithoutRef<'button'> {
+  isActive?: boolean;
+}
 
 const TopbarRoundedButton = React.forwardRef<HTMLButtonElement, TopbarRoundedButtonProps>(
-  ({ className, style, sx, children, ...rest }, ref) => {
-    const topbarRoundedButtonStyles = useComponentStyles('topbarRoundedButton');
+  ({ className, style, sx, isActive, children, ...rest }, ref) => {
+    const topbarRoundedButtonStyles = useComponentStyles('topbarRoundedButton', { isActive });
 
     return (
       <UnstyledButton
