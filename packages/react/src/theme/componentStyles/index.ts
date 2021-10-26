@@ -15,6 +15,7 @@ import toast from './toast';
 import tooltip from './tooltip';
 import subHeader from './subHeader';
 import topbar from './topbar';
+import inputRadio from './form/inputRadio';
 
 /**
  * Custom theme props based on custom component variants.
@@ -37,6 +38,8 @@ const componentStyles = {
   ...toast,
   ...tooltip,
   ...topbar,
+  ...subHeader,
+  ...inputRadio,
 };
 
 export default componentStyles;

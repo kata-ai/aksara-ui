@@ -1,21 +1,30 @@
 import * as React from 'react';
+import { Box, BoxProps } from '../../../../layout';
+import { useComponentStyles } from '../../../../system';
 
-import { RadioBase } from '../../styles';
+export interface InputRadioProps
+  extends Omit<BoxProps, 'height' | 'width' | 'size'>,
+    React.ComponentPropsWithoutRef<'input'> {}
 
-export interface InputRadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  /** True if the input has errors. */
-  errors?: boolean;
-}
+const InputRadio = React.forwardRef<HTMLInputElement, InputRadioProps>(
+  ({ className, checked, value, disabled, ...rest }, ref) => {
+    const inputRadiostyle = useComponentStyles('inputRadioBase');
+    return (
+      <Box
+        as="input"
+        type="radio"
+        className={className}
+        ref={ref}
+        sx={inputRadiostyle}
+        checked={checked}
+        value={value}
+        disabled={disabled}
+        {...rest}
+      />
+    );
+  }
+);
 
-const InputRadio = React.forwardRef<HTMLInputElement, InputRadioProps>(({ className, errors, ...rest }, ref) => {
-  return <RadioBase className={className} inputVariant={errors ? 'errors' : 'base'} type="radio" ref={ref} {...rest} />;
-});
-
-InputRadio.defaultProps = {
-  errors: false,
-  size: 40,
-};
-
-InputRadio.displayName = 'InputText';
+InputRadio.displayName = 'InputRadio';
 
 export default InputRadio;
