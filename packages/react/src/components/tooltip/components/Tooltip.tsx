@@ -4,7 +4,7 @@ import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 import TooltipInner, { TooltipSize } from './TooltipInner';
 
-export interface TooltipProps {
+export interface TooltipProps extends Omit<TooltipPrimitive.TooltipContentProps, 'asChild' | 'side' | 'align'> {
   className?: string;
   style?: React.CSSProperties;
   delay?: boolean;
@@ -28,13 +28,14 @@ const Tooltip: React.FC<TooltipProps> = ({
   content,
   size,
   children,
+  ...rest
 }) => {
   return (
     <TooltipPrimitive.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
       <TooltipPrimitive.Trigger asChild className={clsx('trigger', className)} style={style}>
         {children}
       </TooltipPrimitive.Trigger>
-      <TooltipPrimitive.Content asChild side={placement} align="center">
+      <TooltipPrimitive.Content asChild side={placement} align="center" {...rest}>
         <TooltipInner
           content={content}
           size={size}
