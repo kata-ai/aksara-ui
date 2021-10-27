@@ -14,9 +14,8 @@ export default {
     notes: { markdown: readme },
   },
   argTypes: {
-    children: { control: null },
-    className: { control: null },
-    style: { control: null },
+    placement: { options: ['top', 'bottom', 'left', 'right'] },
+    size: { options: ['sm', 'md', 'lg'] },
   },
 };
 

@@ -1,43 +1,47 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { usePopperTooltip } from 'react-popper-tooltip';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
-import TooltipInner, { TooltipPlacement, TooltipSize } from './TooltipInner';
+import TooltipInner, { TooltipSize } from './TooltipInner';
 
 export interface TooltipProps {
   className?: string;
   style?: React.CSSProperties;
   delay?: boolean;
   content: string | React.ReactNode;
-  placement?: TooltipPlacement;
+  open?: boolean;
+  defaultOpen?: boolean;
+  placement?: TooltipPrimitive.TooltipContentProps['side'];
+  onOpenChange?: (open: boolean) => void;
   size?: TooltipSize;
   children: React.ReactElement;
 }
 
 // TODO: use base `react-popper` instead of `react-popper-tooltip`
-const Tooltip: React.FC<TooltipProps> = ({ className, style, delay, placement, size, content, children }) => {
-  const { getTooltipProps, getArrowProps, setTooltipRef, setTriggerRef, visible } = usePopperTooltip({
-    placement,
-    delayShow: delay ? 300 : 0,
-  });
-  // separate this to cast the type
-  const { style: tooltipStyle, ...rest } = getTooltipProps({ size });
-
+const Tooltip: React.FC<TooltipProps> = ({
+  className,
+  style,
+  open,
+  defaultOpen,
+  placement,
+  onOpenChange,
+  content,
+  size,
+  children,
+}) => {
   return (
-    <>
-      <span ref={setTriggerRef} className={clsx('trigger', className)} style={style}>
+    <TooltipPrimitive.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
+      <TooltipPrimitive.Trigger asChild className={clsx('trigger', className)} style={style}>
         {children}
-      </span>{' '}
-      {visible && (
+      </TooltipPrimitive.Trigger>
+      <TooltipPrimitive.Content asChild side={placement} align="center">
         <TooltipInner
-          ref={setTooltipRef}
-          style={{ ...style, tooltipStyle } as React.CSSProperties}
           content={content}
-          getArrowProps={getArrowProps}
-          {...rest}
+          size={size}
+          arrow={<TooltipPrimitive.Arrow offset={5} width={11} height={5} fill="var(--tooltip-border)" />}
         />
-      )}
-    </>
+      </TooltipPrimitive.Content>
+    </TooltipPrimitive.Root>
   );
 };
 
