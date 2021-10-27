@@ -10,5 +10,3 @@ export const theme = {
 export type Theme = typeof theme;
 
 export const useTheme = defaultUseTheme;
-
-export * from './types';

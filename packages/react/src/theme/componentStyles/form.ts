@@ -1,7 +1,7 @@
 // TODO: rename to `componentStyles/form/index.ts`
 import { transparentize } from 'polished';
-import { DefaultTheme } from 'styled-components';
-import { ComponentThemeConfig } from '../types';
+import type { DefaultTheme } from 'styled-components';
+import type { ComponentThemeConfig } from '../../system';
 import formToggle from './form/toggle';
 
 // TODO: move to `componentStyles/form/utils.ts`
