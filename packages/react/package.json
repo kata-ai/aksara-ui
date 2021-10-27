@@ -33,6 +33,7 @@
   "dependencies": {
     "@aksara-ui/core": "^1.0.1-canary.2",
     "@popperjs/core": "^2.10.2",
+    "@radix-ui/react-id": "^0.1.1",
     "@reach/accordion": "^0.16.1",
     "@reach/visually-hidden": "^0.16.0",
     "@styled-system/css": "^5.1.5",
