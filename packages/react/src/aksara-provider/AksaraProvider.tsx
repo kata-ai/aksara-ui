@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { IdProvider } from '@radix-ui/react-id';
 import { ThemeProvider } from 'styled-components';
 import { ToastProvider } from '../components/toast/internals';
 
@@ -20,10 +21,12 @@ const { GlobalStyles } = injectGlobalStyles();
 const AksaraProvider: React.FC<AksaraProviderProps> = ({ children, disableInjection, theme = defaultTheme }) => {
   return (
     <ThemeProvider theme={theme}>
-      <ToastProvider>
-        {!disableInjection && <GlobalStyles />}
-        {children}
-      </ToastProvider>
+      <IdProvider>
+        <ToastProvider>
+          {!disableInjection && <GlobalStyles />}
+          {children}
+        </ToastProvider>
+      </IdProvider>
     </ThemeProvider>
   );
 };
