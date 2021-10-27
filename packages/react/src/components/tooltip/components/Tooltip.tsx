@@ -17,7 +17,6 @@ export interface TooltipProps extends Omit<TooltipPrimitive.TooltipContentProps,
   children: React.ReactElement;
 }
 
-// TODO: use base `react-popper` instead of `react-popper-tooltip`
 const Tooltip: React.FC<TooltipProps> = ({
   className,
   style,

@@ -16,7 +16,6 @@ export interface TooltipInnerProps extends React.HTMLAttributes<HTMLDivElement> 
   arrow: React.ReactNode;
 }
 
-// TODO: use base `react-popper` instead of `react-popper-tooltip`
 const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
   ({ className, style, content, size, arrow, ...rest }, ref) => {
     const tooltipRootStyles = useComponentStyles('tooltipRoot', { size });
