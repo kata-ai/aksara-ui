@@ -1,4 +1,4 @@
-import { ComponentThemeConfig, CSSObject } from '../../system';
+import type { ComponentThemeConfig, CSSObject } from '../../system';
 
 const baseStyle: CSSObject = {
   margin: 0,
