@@ -70,6 +70,7 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
     />
   );
 };
+
 Example.args = {
   placeholder: 'Select...',
   size: 'md',
