@@ -44,7 +44,7 @@ export const WithBackButton = () => {
         </ButtonGroup>
       }
       backButton={
-        <IconButton variant="plain" aria-label="Back">
+        <IconButton variant="plain" aria-label="Back" size="lg">
           <IconArrowLeft aria-hidden fill="currentColor" />
         </IconButton>
       }
@@ -65,7 +65,7 @@ export const WithChildren = () => {
         </ButtonGroup>
       }
       backButton={
-        <IconButton variant="plain" aria-label="Back">
+        <IconButton variant="plain" aria-label="Back" size="lg">
           <IconArrowLeft aria-hidden fill="currentColor" />
         </IconButton>
       }
@@ -88,7 +88,7 @@ export const WithFilterSection = () => {
         </ButtonGroup>
       }
       backButton={
-        <IconButton variant="plain" aria-label="Back">
+        <IconButton variant="plain" aria-label="Back" size="lg">
           <IconArrowLeft aria-hidden fill="currentColor" />
         </IconButton>
       }
@@ -103,6 +103,7 @@ export const WithFilterSection = () => {
           { label: 'Filter F', value: 'filter f' },
           { label: 'Filter G', value: 'filter_g' },
           { label: 'Filter H', value: 'keyword_h' },
+          { label: 'Filter I', value: 'keyword_i' },
         ]}
         onRemoveFilter={action('remove filter')}
         orderByOptions={[
