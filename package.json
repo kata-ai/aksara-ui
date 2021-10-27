@@ -37,6 +37,10 @@
     "canary:release": "lerna version prerelease --preid=canary",
     "canary:publish": "lerna publish from-git --npm-tag canary --yes"
   },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
