@@ -64,7 +64,6 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@aksara-ui/icons": "^1.0.1-canary.0",
     "@babel/core": "^7.15.0",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
