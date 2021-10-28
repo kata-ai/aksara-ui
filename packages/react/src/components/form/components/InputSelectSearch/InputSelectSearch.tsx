@@ -143,7 +143,16 @@ function InputSelect<T extends { value: string }>({
               </Box>
             ))
           ) : (
-            <Box as="li" px="md" py="xs" color="grey06" cursor="pointer" textAlign="left" lineHeight="20px">
+            <Box
+              as="li"
+              px="md"
+              py="xs"
+              color="grey06"
+              cursor="pointer"
+              textAlign="left"
+              fontSize={14}
+              lineHeight="20px"
+            >
               No items.
             </Box>
           )}
