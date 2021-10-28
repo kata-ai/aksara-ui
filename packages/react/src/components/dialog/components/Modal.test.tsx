@@ -36,7 +36,7 @@ describe('components/Modal', () => {
         </Modal>
       );
 
-      const overlay = document.querySelector('[data-aksara-portal] > div');
+      const overlay = document.querySelector('[data-radix-portal] > div');
       if (overlay) {
         fireEvent.click(overlay);
         expect(handleClose).toHaveBeenCalledTimes(1);
@@ -53,7 +53,7 @@ describe('components/Modal', () => {
         </Modal>
       );
 
-      const overlay = document.querySelector('[data-aksara-portal] > div');
+      const overlay = document.querySelector('[data-radix-portal] > div');
       if (overlay) {
         fireEvent.click(overlay);
         expect(handleClose).toHaveBeenCalledTimes(0);
