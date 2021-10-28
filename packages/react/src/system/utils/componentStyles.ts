@@ -4,7 +4,7 @@ import * as React from 'react';
 import isEqual from 'react-fast-compare';
 import { useTheme } from 'styled-components';
 import { get } from 'styled-system';
-import { ComponentThemeConfig } from '../../theme';
+import type { ComponentThemeConfig } from './types';
 import { runIfFn } from '../../utils';
 
 function getStyles(config?: ComponentThemeConfig, props: any = {}) {

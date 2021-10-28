@@ -1,5 +1,5 @@
 import { TOASTER_WIDTH } from '../../components/toast/internals/constants';
-import { ComponentThemeConfig } from '../types';
+import type { ComponentThemeConfig } from '../../system';
 
 const toastInner: ComponentThemeConfig = {
   baseStyle: {

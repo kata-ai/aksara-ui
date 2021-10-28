@@ -1,4 +1,4 @@
-import { ComponentThemeConfig } from '../types';
+import type { ComponentThemeConfig } from '../../system';
 
 const avatar: ComponentThemeConfig = {
   propToScaleMap: [['size', 'sizes']],

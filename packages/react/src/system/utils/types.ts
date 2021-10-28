@@ -1,5 +1,5 @@
-import { SystemStyleObject } from '@styled-system/css';
-import { DefaultTheme } from 'styled-components';
+import type { SystemStyleObject } from '@styled-system/css';
+import type { DefaultTheme } from 'styled-components';
 
 export type CSSObject = SystemStyleObject | Record<string, any>; // fallback handler, type variable css
 
