@@ -3,10 +3,9 @@ import { Story } from '@storybook/react';
 
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
-import InputRadioLabel from '../components/InputRadio/InputRadioLabel';
-import { RadioGroupOption, RadioGroupItem, RadioGroupLabel, RadioGroupOptionProps } from '../components/RadioGroup';
+import { RadioGroupOption, RadioGroupItem, RadioGroupOptionProps } from '../components/RadioGroup';
 import { InputRadio } from '../components/InputRadio';
-import CheckboxDemo from '../components/RadioGroup/RadioGroup';
+import RadioGroup from '../components/RadioGroup/RadioGroup';
 
 export default {
   title: 'Core/Components/Form/Radio/RadioGroup',
@@ -75,4 +74,15 @@ Example.args = {
   disabled: false,
 };
 
-export const RadixDemo = () => <CheckboxDemo />;
+export const RadixDemo = () => (
+  <RadioGroup.Root>
+    <Box>
+      <RadioGroup.Item asChild value="value1">
+        <Box>value 1</Box>
+      </RadioGroup.Item>
+      <RadioGroup.Item asChild value="value2">
+        <Box>value 2</Box>
+      </RadioGroup.Item>
+    </Box>
+  </RadioGroup.Root>
+);
