@@ -6,7 +6,7 @@
   "module": "dist/core.esm.js",
   "typings": "dist/index.d.ts",
   "aksara:src": "./src/index.ts",
-  "repository": "https://github.com/kata-ai/wicara.git",
+  "repository": "https://github.com/kata-ai/aksara-ui.git",
   "author": "Kata.ai <dev@kata.ai>",
   "license": "Apache-2.0",
   "files": [
