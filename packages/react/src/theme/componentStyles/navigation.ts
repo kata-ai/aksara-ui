@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
-import { DefaultTheme } from 'styled-components';
-import { ComponentThemeConfig } from '../types';
+import type { DefaultTheme } from 'styled-components';
+import type { ComponentThemeConfig } from '../../system';
 
 const primaryNavItem: ComponentThemeConfig = {
   baseStyle: ({ disabled, isActive }: { theme: DefaultTheme; disabled?: boolean; isActive?: boolean }) => ({

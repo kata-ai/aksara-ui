@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import * as CSS from 'csstype';
 import * as React from 'react';
-import { DefaultTheme } from 'styled-components';
+import type { DefaultTheme } from 'styled-components';
 import { theme } from '../../../theme';
 import { Box, BoxProps } from '../../box';
 import WrapItem from './WrapItem';

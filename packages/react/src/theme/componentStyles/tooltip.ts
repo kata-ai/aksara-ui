@@ -1,5 +1,5 @@
-import { DefaultTheme } from 'styled-components';
-import { ComponentThemeConfig, ComponentThemeScaleFn } from '../types';
+import type { DefaultTheme } from 'styled-components';
+import { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
 const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }) => ({
   '--tooltip-foreground': theme.colors.greylight01,
