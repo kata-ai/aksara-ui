@@ -7,7 +7,7 @@ import InputRadioLabel from '../components/InputRadio/InputRadioLabel';
 import InputRadio, { InputRadioProps } from '../components/InputRadio/InputRadio';
 
 export default {
-  title: 'Core/Components/Form/InputRadio',
+  title: 'Core/Components/Form/Radio/InputRadio',
   component: InputRadio,
   argTypes: {
     disabled: {
