@@ -15,7 +15,7 @@ export const RadixDemo = () => (
     <Stack direction="vertical" spacing="xs" width="300px">
       <RadioGroup.Item asChild value="value1">
         <RadioInputBox>
-          <InputRadio />
+          <InputRadio readOnly checked={false} />
           <Text scale={300} ml="xs">
             Radio 1
           </Text>
@@ -23,7 +23,7 @@ export const RadixDemo = () => (
       </RadioGroup.Item>
       <RadioGroup.Item asChild value="value2">
         <RadioInputBox>
-          <InputRadio />
+          <InputRadio readOnly checked={false} />
           <Text scale={300} ml="xs">
             Radio 2
           </Text>
