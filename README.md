@@ -106,7 +106,7 @@ export default function Component() {
 }
 ```
 
-Read the [Storybook](https://wicara.now.sh/) for more examples.
+Read the [Storybook](https://aksara-ui.now.sh/) for more examples.
 
 ## Fonts
 
