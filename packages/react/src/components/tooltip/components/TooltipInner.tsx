@@ -1,7 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import * as popper from '@popperjs/core';
-import { usePopperTooltip } from 'react-popper-tooltip';
 
 import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
@@ -14,50 +12,13 @@ export interface TooltipInnerProps extends React.HTMLAttributes<HTMLDivElement> 
   className?: string;
   style?: React.CSSProperties;
   content: string | React.ReactNode;
-  placement?: TooltipPlacement;
   size?: TooltipSize;
-  getArrowProps?: ReturnType<typeof usePopperTooltip>['getArrowProps'];
+  arrow: React.ReactNode;
 }
 
-const Arrow = styled(Box)`
-  height: 1rem;
-  position: absolute;
-  width: 1rem;
-  pointer-events: none;
-
-  &::before {
-    border-style: solid;
-    content: '';
-    display: block;
-    height: 0;
-    margin: auto;
-    width: 0;
-  }
-
-  &::after {
-    border-style: solid;
-    content: '';
-    display: block;
-    height: 0;
-    margin: auto;
-    position: absolute;
-    width: 0;
-  }
-`;
-
-// TODO: use base `react-popper` instead of `react-popper-tooltip`
 const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
-  ({ className, style, content, size, placement, getArrowProps, ...rest }, ref) => {
+  ({ className, style, content, size, arrow, ...rest }, ref) => {
     const tooltipRootStyles = useComponentStyles('tooltipRoot', { size });
-
-    const renderArrow = () => {
-      if (getArrowProps) {
-        const { style: arrowStyle, ...arrowRest } = getArrowProps({ className: 'tooltip-arrow' });
-        return <Arrow style={{ ...style, ...arrowStyle } as React.CSSProperties} {...arrowRest} />;
-      }
-
-      return null;
-    };
 
     const renderContent = () => {
       if (typeof content === 'string') {
@@ -76,17 +37,9 @@ const TooltipInner = React.forwardRef<HTMLDivElement, TooltipInnerProps>(
     };
 
     return (
-      <Box
-        zIndex={9999}
-        className={className}
-        style={style}
-        ref={ref}
-        data-popper-placement={placement}
-        sx={tooltipRootStyles}
-        {...rest}
-      >
+      <Box zIndex={9999} className={className} style={style} ref={ref} sx={tooltipRootStyles} {...rest}>
         {renderContent()}
-        {renderArrow()}
+        {arrow}
       </Box>
     );
   }

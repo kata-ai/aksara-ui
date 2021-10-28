@@ -1,8 +1,7 @@
-import { SystemStyleObject } from '@styled-system/css';
-import { DefaultTheme } from 'styled-components';
-import { AllSystemProps, PseudoSystemProps } from '../system/props';
+import type { SystemStyleObject } from '@styled-system/css';
+import type { DefaultTheme } from 'styled-components';
 
-export type CSSObject = AllSystemProps | PseudoSystemProps | SystemStyleObject | Record<string, any>; // fallback handler, type variable css
+export type CSSObject = SystemStyleObject | Record<string, any>; // fallback handler, type variable css
 
 export type ComponentThemeScaleFn<P = Record<string, any>> = (props: P & { theme: DefaultTheme }) => CSSObject;
 

@@ -1,5 +1,5 @@
-import { DefaultTheme } from 'styled-components';
-import { ComponentThemeConfig } from '../types';
+import type { DefaultTheme } from 'styled-components';
+import type { ComponentThemeConfig } from '../../system';
 
 const tabButton: ComponentThemeConfig = {
   baseStyle: ({ isActive }: { theme: DefaultTheme; isActive: boolean }) => ({

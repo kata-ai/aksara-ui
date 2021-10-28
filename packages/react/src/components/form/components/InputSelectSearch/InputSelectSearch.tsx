@@ -61,19 +61,26 @@ function InputSelect<T extends { value: string }>({
   width = '100%',
 }: InputSelectSearchProps<T>) {
   const [inputItems, setInputItems] = React.useState(items);
-  const { isOpen, getLabelProps, getMenuProps, highlightedIndex, getItemProps, getInputProps, getComboboxProps } =
-    useCombobox<T>({
-      items: inputItems,
-      itemToString,
-      selectedItem,
-      initialSelectedItem,
-      onSelectedItemChange: handleSelectedItemChange,
-      onInputValueChange: ({ inputValue }) => {
-        if (inputValue) {
-          setInputItems(items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())));
-        }
-      },
-    });
+  const {
+    isOpen,
+    getLabelProps,
+    getMenuProps,
+    highlightedIndex,
+    getItemProps,
+    getInputProps,
+    getComboboxProps,
+  } = useCombobox<T>({
+    items: inputItems,
+    itemToString,
+    selectedItem,
+    initialSelectedItem,
+    onSelectedItemChange: handleSelectedItemChange,
+    onInputValueChange: ({ inputValue }) => {
+      if (inputValue) {
+        setInputItems(items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())));
+      }
+    },
+  });
 
   const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : 'default' });
 
@@ -143,7 +150,16 @@ function InputSelect<T extends { value: string }>({
               </Box>
             ))
           ) : (
-            <Box as="li" px="md" py="xs" color="grey06" cursor="pointer" textAlign="left" lineHeight="20px">
+            <Box
+              as="li"
+              px="md"
+              py="xs"
+              color="grey06"
+              cursor="pointer"
+              textAlign="left"
+              fontSize={14}
+              lineHeight="20px"
+            >
               No items.
             </Box>
           )}

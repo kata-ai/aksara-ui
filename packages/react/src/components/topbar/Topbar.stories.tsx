@@ -1,12 +1,15 @@
 import { Story } from '@storybook/react';
-import { IconChevronRight } from '@aksara-ui/icons';
+import { IconBell, IconBubble, IconChevronRight } from '@aksara-ui/icons';
+import VisuallyHidden from '@reach/visually-hidden';
 import * as React from 'react';
 import { Breadcrumb, BreadcrumbItem } from '..';
-import { Box } from '../../layout';
+import { Box, Stack } from '../../layout';
 import Topbar, { TopbarProps } from './Topbar';
+import TopbarRoundedButton from './TopbarRoundedButton';
+import { Avatar } from '../avatar';
 
 export default {
-  title: 'Core/Layout/Topbar',
+  title: 'Core/Components/Topbar',
   component: Topbar,
 };
 
@@ -30,7 +33,19 @@ export const Example: Story<TopbarProps> = () => {
           Workspace Switcher
         </Box>
         <Box display="flex" alignItems="center">
-          Status
+          <Stack direction="horizontal" spacing="md" alignItems="center">
+            <TopbarRoundedButton>
+              <VisuallyHidden>Messages</VisuallyHidden>
+              <IconBubble aria-hidden fill="currentColor" />
+            </TopbarRoundedButton>
+            <TopbarRoundedButton>
+              <VisuallyHidden>Notifications</VisuallyHidden>
+              <IconBell aria-hidden fill="currentColor" />
+            </TopbarRoundedButton>
+            <TopbarRoundedButton>
+              <Avatar name="Adry Muhammad" size="md" />
+            </TopbarRoundedButton>
+          </Stack>
         </Box>
       </Topbar>
     </Box>
