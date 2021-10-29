@@ -22,7 +22,9 @@ export default {
   component: Table,
 };
 
-const ExampleTable = ({ columns, data }: { columns: Column[]; data: DummyData[] }) => {
+export const Example = () => {
+  const data = React.useMemo(() => dummyData, []);
+  const columns = React.useMemo(() => dummyColumns, []);
   const headerCheckboxRef = React.useRef<HTMLInputElement>(null);
   const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
 
@@ -163,10 +165,4 @@ const ExampleTable = ({ columns, data }: { columns: Column[]; data: DummyData[] 
       </Table>
     </TableContainer>
   );
-};
-
-export const Example = () => {
-  const data = React.useMemo(() => dummyData, []);
-  const columns = React.useMemo(() => dummyColumns, []);
-  return <ExampleTable columns={columns} data={data} />;
 };
