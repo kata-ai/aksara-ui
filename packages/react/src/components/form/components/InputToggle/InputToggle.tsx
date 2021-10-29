@@ -1,6 +1,6 @@
 import * as React from 'react';
-import VisuallyHidden from '@reach/visually-hidden';
 
+import { VisuallyHidden } from '../../../../helpers';
 import { Box } from '../../../../layout';
 import { useComponentStyles } from '../../../../system';
 import { UnstyledButton } from '../../../button';

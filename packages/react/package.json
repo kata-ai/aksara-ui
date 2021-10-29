@@ -6,7 +6,7 @@
   "module": "dist/core.esm.js",
   "typings": "dist/index.d.ts",
   "aksara:src": "./src/index.ts",
-  "repository": "https://github.com/kata-ai/wicara.git",
+  "repository": "https://github.com/kata-ai/aksara-ui.git",
   "author": "Kata.ai <dev@kata.ai>",
   "license": "Apache-2.0",
   "files": [
@@ -35,9 +35,10 @@
     "@popperjs/core": "^2.10.2",
     "@radix-ui/react-id": "^0.1.1",
     "@radix-ui/react-radio-group": "^0.1.1",
+    "@radix-ui/react-portal": "^0.1.1",
     "@radix-ui/react-tooltip": "^0.1.1",
+    "@radix-ui/react-visually-hidden": "^0.1.1",
     "@reach/accordion": "^0.16.1",
-    "@reach/visually-hidden": "^0.16.0",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
@@ -64,7 +65,6 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@aksara-ui/icons": "^1.0.1-canary.0",
     "@babel/core": "^7.15.0",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
