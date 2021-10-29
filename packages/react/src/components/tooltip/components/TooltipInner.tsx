@@ -1,11 +1,9 @@
 import * as React from 'react';
-import * as popper from '@popperjs/core';
 
 import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text, Paragraph } from '../../../typography';
 
-export type TooltipPlacement = popper.Placement;
 export type TooltipSize = 'sm' | 'md' | 'lg';
 
 export interface TooltipInnerProps extends React.HTMLAttributes<HTMLDivElement> {
