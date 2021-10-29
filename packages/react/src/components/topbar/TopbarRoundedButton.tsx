@@ -7,7 +7,7 @@ export interface TopbarRoundedButtonProps extends UnstyledButtonProps, React.Com
 }
 
 const TopbarRoundedButton = React.forwardRef<HTMLButtonElement, TopbarRoundedButtonProps>(
-  ({ className, style, sx, isActive, children, ...rest }, ref) => {
+  ({ className, style, sx, isActive, type = 'button', children, ...rest }, ref) => {
     const topbarRoundedButtonStyles = useComponentStyles('topbarRoundedButton', { isActive });
 
     return (
@@ -15,6 +15,7 @@ const TopbarRoundedButton = React.forwardRef<HTMLButtonElement, TopbarRoundedBut
         ref={ref}
         className={className}
         style={style}
+        type={type}
         sx={{ ...topbarRoundedButtonStyles, ...sx }}
         {...rest}
       >
