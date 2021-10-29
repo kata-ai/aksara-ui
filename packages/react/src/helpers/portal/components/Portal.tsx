@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as PortalPrimitive from '@radix-ui/react-portal';
 
-const Portal: React.FC<PortalPrimitive.PortalProps> = ({ children, ...rest }) => {
+export type PortalProps = PortalPrimitive.PortalProps;
+
+const Portal: React.FC<PortalProps> = ({ children, ...rest }) => {
   return <PortalPrimitive.Root {...rest}>{children}</PortalPrimitive.Root>;
 };
 
