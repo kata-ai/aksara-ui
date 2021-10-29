@@ -64,6 +64,7 @@ const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ th
   cursor: 'pointer',
   outline: 'none',
   borderRadius: '12px',
+  border: '1px solid transparent',
   background: theme.colors.grey01,
   [pseudoSelectors._checked]: {
     background: theme.colors.blue01,
@@ -71,11 +72,7 @@ const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ th
       borderWidth: '5px',
       borderColor: theme.colors.blue07,
       '&:hover': {
-        '&:not(:checked)': {
-          '&:not(:disabled)': {
-            borderColor: theme.colors.blue08,
-          },
-        },
+        borderColor: theme.colors.blue08,
       },
       '&:focus': {
         borderColor: theme.colors.blue09,
@@ -94,11 +91,18 @@ const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ th
     },
   },
   '&:focus': {
+    border: '1px solid rgba(175, 214, 255, 0.7)',
     borderColor: theme.colors.blue06,
   },
-  '&:disabled': {
+  [pseudoSelectors._disabled]: {
     cursor: 'not-allowed',
     background: theme.colors.greylight01,
+    color: 'greymed01',
+    '& > input': {
+      cursor: 'not-allowed',
+      borderColor: 'rgba(198, 208, 219, 0.5)',
+      background: theme.colors.greylight02,
+    },
   },
 });
 

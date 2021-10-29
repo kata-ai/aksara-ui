@@ -1,16 +1,16 @@
 import * as React from 'react';
 
-import { Box, BoxProps } from '../../../../../layout';
+import { UnstyledButton, UnstyledButtonProps } from '../../../../../components/button';
 import { useComponentStyles } from '../../../../../system';
 
-export interface RadioInputBoxProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {}
+export interface RadioInputBoxProps extends UnstyledButtonProps, React.ComponentPropsWithoutRef<'button'> {}
 
-const RadioInputBox = React.forwardRef<HTMLDivElement, RadioInputBoxProps>(({ children, ...rest }, ref) => {
+const RadioInputBox = React.forwardRef<HTMLButtonElement, RadioInputBoxProps>(({ children, ...rest }, ref) => {
   const radioInputBoxStyle = useComponentStyles('radioInputBox');
   return (
-    <Box ref={ref} sx={radioInputBoxStyle} {...rest}>
+    <UnstyledButton ref={ref} sx={radioInputBoxStyle} {...rest}>
       {children}
-    </Box>
+    </UnstyledButton>
   );
 });
 
