@@ -1,7 +1,7 @@
 import { Column, DummyData } from 'packages/react/dist/components/table/data';
 import * as React from 'react';
 
-import { InputCheckbox, InputSelect } from '../form';
+import { InputCheckbox } from '../form';
 import {
   Table,
   TableContainer,
@@ -14,7 +14,7 @@ import {
 } from './components';
 import { dummyColumns, dummyData } from './data';
 import { useTable, useSortBy } from 'react-table';
-import { Avatar, Badge, Box, Button, Heading, Stack, Text } from '@aksara-ui/react';
+import { Avatar, Badge, Box, Button, Text } from '@aksara-ui/react';
 import { IconInstagram, IconShirt, IconWhatsapp } from '@aksara-ui/icons';
 
 export default {
