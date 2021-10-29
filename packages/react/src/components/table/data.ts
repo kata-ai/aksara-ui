@@ -31,7 +31,6 @@ export interface AgentMeta {
 }
 
 export const dummyColumns: Column[] = [
-  { Header: '', accessor: 'id', isSortActive: false },
   { Header: 'Contact', accessor: 'contactMeta', isSortActive: true },
   { Header: 'Channel', accessor: 'channelMeta', isSortActive: false },
   { Header: 'Received at', accessor: 'receivedAt', isSortActive: true },
