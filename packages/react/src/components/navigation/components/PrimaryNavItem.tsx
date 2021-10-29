@@ -1,5 +1,5 @@
 import * as React from 'react';
-import VisuallyHidden from '@reach/visually-hidden';
+import { VisuallyHidden } from '../../../helpers';
 import { useComponentStyles } from '../../../system';
 import { UnstyledAnchor, UnstyledAnchorProps } from '../../../typography';
 

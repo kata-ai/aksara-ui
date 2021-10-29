@@ -1,6 +1,6 @@
-import VisuallyHidden from '@reach/visually-hidden';
 import * as React from 'react';
 import { RangerOptions, useRanger } from 'react-ranger';
+import { VisuallyHidden } from '../../helpers';
 import { Box, BoxProps } from '../../layout';
 import { useComponentStyles } from '../../system';
 import { UnstyledButton } from '../button';
