@@ -52,7 +52,8 @@ export const Example: Story<UploadBoxProps> = ({
         height={height}
         maxFileSize={maxFileSize}
         templateUrl={templateUrl}
-        onFileAccepted={() => setTimeout(() => setSuccess(true), 3000)}
+        onFileAccepted={() => setTimeout(() => setSuccess(true), 5000)}
+        percentage={50}
         successUpload={() => {
           return success;
         }}

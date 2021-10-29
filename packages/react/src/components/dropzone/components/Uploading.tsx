@@ -5,13 +5,19 @@ import { Text, Heading } from '../../../typography';
 import { Spinner } from '../../loading';
 import { Box } from '../../../layout';
 import { theme } from '../../../theme';
+import Progress from './Progress';
 
-interface Props {
+interface UploadingProps {
   file?: File;
   success?: boolean;
+  percentage?: number;
 }
 
-const DisplayFileName: React.FC<{ fileName?: string }> = ({ fileName }) => {
+interface DisplayFileNameProps {
+  fileName?: string;
+}
+
+const DisplayFileName: React.FC<DisplayFileNameProps> = ({ fileName }) => {
   return (
     <Text display="flex" scale={300} justifyContent="center" fontFamily="brand" color="grey07">
       <IconPage style={{ marginRight: '8px' }} /> {fileName}
@@ -19,15 +25,15 @@ const DisplayFileName: React.FC<{ fileName?: string }> = ({ fileName }) => {
   );
 };
 
-const Uploading: React.FC<Props> = ({ file, success }) => {
+const Uploading: React.FC<UploadingProps> = ({ file, success, percentage }) => {
   const fileName = file && (file.name.length > 50 ? `${file.name.substring(0, 50)}...` : file.name);
 
   return (
-    <Box display="flex" flexDirection="column" height={180} justifyContent="center">
+    <Box display="flex" flexDirection="column" width="inherit" height={180} justifyContent="center">
       {success ? (
         <Box padding="lg">
           <IconTickRounded size={68} fill={theme.colors.green07} />
-          <Heading fontFamily="brand" color={theme.colors.grey07} scale={500} fontWeight={700} mt={24}>
+          <Heading fontFamily="brand" color={theme.colors.greydark02} scale={500} fontWeight={700} mt={24}>
             File has been uploaded
           </Heading>
           <Box mt={32}>
@@ -35,8 +41,11 @@ const Uploading: React.FC<Props> = ({ file, success }) => {
           </Box>
         </Box>
       ) : (
-        <Box>
-          <Spinner />
+        <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+          <Text color={theme.colors.greydark02}>{percentage && `${percentage}% Uploading...`}</Text>
+          <Box width="100%" mt={12}>
+            {percentage ? <Progress percentage={percentage} /> : <Spinner />}
+          </Box>
           <Box mt={24}>
             <DisplayFileName fileName={fileName} />
           </Box>

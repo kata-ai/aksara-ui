@@ -42,12 +42,14 @@ export interface UploadBoxProps extends DropzoneProps {
   height?: number | string;
   /** set max files, default 0 (unlimited) */
   maxFiles?: number;
+  /** set percentage of progress upload */
+  percentage?: number;
 }
 
 export const UploadBox: React.FC<UploadBoxProps> = ({
   allowFileType,
   maxFileSize,
-  minFileSize = 0.1,
+  minFileSize = 0.01,
   onFileAccepted,
   onFileRejected,
   successUpload,
@@ -61,16 +63,16 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
   width,
   height,
   maxFiles = 0,
+  percentage,
   ...rest
 }) => {
-  const [fileEmpty, setFileEmpty] = React.useState(false);
   const [uploading, setUploading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState('');
   const [fileHover, setFileHover] = React.useState(false);
   const [file, setFile] = React.useState<File>();
 
-  const errorUpload = fileEmpty || errorMessage !== '';
+  const errorUpload = errorMessage !== '';
 
   const maxFileSizeText = (fileSize: number) => {
     const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'ZB', 'YB'];
@@ -80,18 +82,16 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
 
   function onDropRejected(files: FileRejection[]) {
     setFileHover(false);
-    setFileEmpty(false);
     setErrorMessage('');
     if (onFileRejected) {
       onFileRejected();
     }
-    switch (files !== null) {
-      case files[0].errors !== []:
-        return setErrorMessage(files[0].errors[0].message);
-      case files[0].file.size === 0:
-        return setFileEmpty(true);
-      default:
-        return null;
+    if (files[0] !== null) {
+      if (files[0].errors.length === 2) {
+        setErrorMessage(files[0].errors[1].message);
+      } else {
+        setErrorMessage(files[0].errors[0].message);
+      }
     }
   }
 
@@ -100,7 +100,6 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
     setFileHover(false);
     setFile(files[0]);
     setSuccess(false);
-    setFileEmpty(false);
     setUploading(true);
     onFileAccepted();
   }
@@ -125,7 +124,6 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
 
   function onResetUpload() {
     setFileHover(false);
-    setFileEmpty(false);
     setErrorMessage('');
     setSuccess(false);
     setUploading(false);
@@ -144,6 +142,22 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
     }
   }, [successUpload, failedUpload, resetUpload]);
 
+  function fileValidator(fileParam: File) {
+    if (maxFileSize && fileParam.size > maxFileSize) {
+      return {
+        code: 'file-too-large',
+        message: `File size is larger than ${maxFileSize && maxFileSizeText(maxFileSize)}`,
+      };
+    }
+    if (fileParam.size < minFileSize) {
+      return {
+        code: 'file-too-small',
+        message: `File is empty`,
+      };
+    }
+    return null;
+  }
+
   const { getRootProps, getInputProps, open } = useDropzone({
     onDropAccepted,
     onDropRejected,
@@ -157,6 +171,7 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
     noKeyboard,
     noDrag,
     maxFiles,
+    validator: fileValidator,
     ...rest,
   });
 
@@ -182,7 +197,7 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
         {...getRootProps()}
       >
         {uploading ? (
-          <Uploading file={file} success={success} />
+          <Uploading file={file} success={success} percentage={percentage} />
         ) : (
           <>
             <Box width={'inherit'}>
@@ -191,22 +206,24 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
               <Heading pt="lg" scale={600} fontWeight={700} color="grey08">
                 Drop file here or <Anchor onClick={open}>browse</Anchor>
               </Heading>
-              <Text as="p" scale={300} fontWeight={400} mt="lg" color="grey07" lineHeight="20px">
-                {allowFileType && `Allowed file extensions: ${allowFileType}`}{' '}
-                {maxFileSize && `| Max file size: ${maxFileSizeText(maxFileSize)}`}{' '}
-              </Text>
-              {templateUrl && (
-                <Text as="p" scale={300} fontWeight={400} color="grey07" lineHeight="20px">
-                  Download the{' '}
-                  <Anchor href={templateUrl} target="_blank">
-                    template file
-                  </Anchor>{' '}
-                  to see the format required.
+              <Box width="80%" m="0 auto">
+                <Text as="p" scale={300} fontWeight={400} mt="lg" color="grey07" lineHeight="20px">
+                  {allowFileType && `Allowed file extensions: ${allowFileType}`}{' '}
+                  {maxFileSize && `| Max file size: ${maxFileSizeText(maxFileSize)}`}{' '}
                 </Text>
-              )}
+                {templateUrl && (
+                  <Text as="p" scale={300} fontWeight={400} color="grey07" lineHeight="20px">
+                    Download the{' '}
+                    <Anchor href={templateUrl} target="_blank">
+                      template file
+                    </Anchor>{' '}
+                    to see the format required.
+                  </Text>
+                )}
+              </Box>
             </Box>
             <Box mt="md">
-              <ErrorMessage error={errorUpload} fileEmpty={fileEmpty} errorMessage={errorMessage} />
+              <ErrorMessage error={errorUpload} errorMessage={errorMessage} />
             </Box>
           </>
         )}
