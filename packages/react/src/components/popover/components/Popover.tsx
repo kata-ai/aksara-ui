@@ -17,9 +17,6 @@ export interface PopoverProps extends PopoverPrimitive.PopoverProps, SxProps {
   align?: PopoverPrimitive.PopoverContentProps['align'];
 }
 
-// TODO: Clicking outside popover should also hide it
-// TODO: Rewrite into `react-popper` hooks API
-// https://popper.js.org/react-popper/v2/hook/
 const Popover: React.FC<PopoverProps> = ({
   className,
   style,
