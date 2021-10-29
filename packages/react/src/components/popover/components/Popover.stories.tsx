@@ -63,6 +63,6 @@ export const Example: Story<PopoverProps> = ({ placement }) => {
   );
 };
 Example.args = {
-  placement: 'bottom',
+  placement: 'top',
   align: 'center',
 };
