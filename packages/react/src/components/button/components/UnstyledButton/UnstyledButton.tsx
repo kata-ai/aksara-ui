@@ -20,9 +20,9 @@ export interface UnstyledButtonProps extends AllSystemProps, PseudoSystemProps, 
 /** A button element with all styling elements removed (incl. hover/focus effects). */
 const UnstyledButton = styled('button').withConfig<UnstyledButtonProps>({ shouldForwardProp })(
   componentStylesMixin('unstyledButton'),
+  sxMixin,
   allSystemProps,
-  pseudoSystemProps,
-  sxMixin
+  pseudoSystemProps
 );
 
 UnstyledButton.displayName = 'UnstyledButton';

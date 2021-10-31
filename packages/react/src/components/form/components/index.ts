@@ -13,3 +13,4 @@ export * from './InputTags';
 export * from './InputText';
 export * from './InputTextarea';
 export * from './InputToggle';
+export * from './RadioGroup';

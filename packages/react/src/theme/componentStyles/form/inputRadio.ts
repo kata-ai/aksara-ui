@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { DefaultTheme } from 'styled-components';
 import { ComponentThemeConfig, ComponentThemeScaleFn, pseudoSelectors } from '../../../system';
 
@@ -84,15 +85,13 @@ const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ th
     },
   },
   '&:hover': {
-    '&:not(:checked)': {
-      '&:not(:disabled)': {
-        background: theme.colors.greylight03,
-      },
+    [`&:not([aria-checked=true])`]: {
+      borderColor: 'transparent',
+      background: theme.colors.greylight03,
     },
   },
   '&:focus': {
     border: '1px solid rgba(175, 214, 255, 0.7)',
-    borderColor: theme.colors.blue06,
   },
   [pseudoSelectors._disabled]: {
     cursor: 'not-allowed',
@@ -106,8 +105,32 @@ const radioInputBoxStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ th
   },
 });
 
+const withIndicatorStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { theme: DefaultTheme }) => ({
+  border: `1px solid ${theme.colors.greylight04}`,
+  borderRadius: 'lg',
+  py: 'xs',
+  px: 'sm',
+  [pseudoSelectors._checked]: {
+    borderColor: 'transparent',
+  },
+  '&:focus': {
+    border: '1px solid rgba(175, 214, 255, 0.7)',
+  },
+  [pseudoSelectors._disabled]: {
+    borderColor: 'transparent',
+    cursor: 'not-allowed',
+    background: theme.colors.greylight02,
+  },
+});
 const radioInputBox: ComponentThemeConfig = {
   baseStyle: radioInputBoxStyle,
+  propToScaleMap: [['variant', 'variants']],
+  scales: {
+    variants: {
+      simple: {},
+      'with-indicator': withIndicatorStyle,
+    },
+  },
 };
 
 const inputRadio = {
