@@ -43,8 +43,8 @@ export const dummyColumns: Column[] = [
   { Header: 'Channel', accessor: 'channelMeta', canSort: false },
   { Header: 'Received at', accessor: 'receivedAt', canSort: true },
   { Header: 'Last updated at', accessor: 'lastUpdatedAt', canSort: true },
-  { Header: 'Status', accessor: 'statusMeta', canSort: false, style: { width: '150px' } },
-  { Header: 'Agent', accessor: 'agentMeta', canSort: false, style: { width: '150px' } },
+  { Header: 'Status', accessor: 'statusMeta', canSort: false, style: { width: '130px' } },
+  { Header: 'Agent', accessor: 'agentMeta', canSort: false, style: { width: '130px' } },
 ];
 
 export interface Column {
@@ -151,7 +151,7 @@ export const dummyData: DummyData[] = [
     id: 6,
     contactMeta: {
       name: 'Jacqueline Zimmerman',
-      link: 'www.reddit.com',
+      link: 'www.kata.ai',
       avatarColor: 'red07',
     },
     channelMeta: {

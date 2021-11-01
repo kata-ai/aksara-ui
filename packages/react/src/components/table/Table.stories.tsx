@@ -20,7 +20,7 @@ import { Box } from '../../layout';
 import { Avatar } from '../avatar';
 import { Button } from '../button';
 import { Badge } from '../badge';
-import { Text } from '../../typography';
+import { Text, Anchor } from '../../typography';
 
 export default {
   title: 'Core/Components/Table',
@@ -116,7 +116,13 @@ export const Example = () => {
                   <Box alignItems="center" display="inline-flex">
                     <Avatar bg={contactMeta.avatarColor} name={contactMeta.name} size="lg" />
                     <Text as="span" ml="xs" scale={300}>
-                      {contactMeta.name}
+                      {contactMeta.link ? (
+                        <Anchor href={`https://${contactMeta.link}`} target="_blank" rel="noopener noreferrer">
+                          {contactMeta.name}
+                        </Anchor>
+                      ) : (
+                        contactMeta.name
+                      )}
                     </Text>
                   </Box>
                 </TableBodyCell>
