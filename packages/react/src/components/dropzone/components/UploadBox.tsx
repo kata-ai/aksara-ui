@@ -212,7 +212,14 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
                   {maxFileSize && `| Max file size: ${maxFileSizeText(maxFileSize)}`}{' '}
                 </Text>
                 {templateUrl && (
-                  <Text as="p" scale={300} fontWeight={400} color="grey07" lineHeight="20px">
+                  <Text
+                    data-testid="download-template"
+                    as="p"
+                    scale={300}
+                    fontWeight={400}
+                    color="grey07"
+                    lineHeight="20px"
+                  >
                     Download the{' '}
                     <Anchor href={templateUrl} target="_blank">
                       template file
