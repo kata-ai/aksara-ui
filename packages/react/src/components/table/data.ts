@@ -43,8 +43,8 @@ export const dummyColumns: Column[] = [
   { Header: 'Channel', accessor: 'channelMeta', canSort: false },
   { Header: 'Received at', accessor: 'receivedAt', canSort: true },
   { Header: 'Last updated at', accessor: 'lastUpdatedAt', canSort: true },
-  { Header: 'Status', accessor: 'statusMeta', canSort: false },
-  { Header: 'Agent', accessor: 'agentMeta', canSort: false },
+  { Header: 'Status', accessor: 'statusMeta', canSort: false, style: { width: '150px' } },
+  { Header: 'Agent', accessor: 'agentMeta', canSort: false, style: { width: '150px' } },
 ];
 
 export interface Column {
@@ -52,6 +52,7 @@ export interface Column {
   accessor: string;
   canSort: boolean;
   sortType?: (rowA: any, rowB: any) => 1 | -1;
+  style?: any;
 }
 export const dummyData: DummyData[] = [
   {

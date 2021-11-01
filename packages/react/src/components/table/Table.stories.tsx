@@ -82,6 +82,7 @@ export const Example = () => {
               <TableHeadCell
                 sortType={getSortTypeValue(column)}
                 {...column.getHeaderProps(column.getSortByToggleProps())}
+                {...column.style}
               >
                 {column.render('Header')}
               </TableHeadCell>
