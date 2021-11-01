@@ -11,23 +11,10 @@ export default {
   component: Popover,
   argTypes: {
     placement: {
-      options: [
-        'auto',
-        'auto-start',
-        'auto-end',
-        'top',
-        'top-start',
-        'top-end',
-        'bottom',
-        'bottom-start',
-        'bottom-end',
-        'left',
-        'left-start',
-        'left-end',
-        'right',
-        'right-start',
-        'right-end',
-      ],
+      options: ['top', 'bottom', 'left', 'right'],
+    },
+    align: {
+      options: ['start', 'center', 'end'],
     },
   },
 } as Meta<PopoverProps>;
@@ -43,7 +30,7 @@ export const Example: Story<PopoverProps> = ({ placement }) => {
       height={640}
     >
       <Popover placement={placement} trigger={<Button variant="primary">Toggle Popover</Button>}>
-        <Box>
+        <Box width="100%" maxWidth={300}>
           <Box py="md" px="lg" borderBottom="1px solid" borderBottomColor="greylight04">
             <Heading scale={300}>Add agent to your team</Heading>
           </Box>
@@ -76,5 +63,6 @@ export const Example: Story<PopoverProps> = ({ placement }) => {
   );
 };
 Example.args = {
-  placement: 'bottom',
+  placement: 'top',
+  align: 'center',
 };
