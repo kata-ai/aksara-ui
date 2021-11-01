@@ -4,7 +4,7 @@ interface UploadIconProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-const UploadIcon: React.FC<UploadIconProps> = ({ size = 24, ...rest }) => (
+const UploadIcon: React.FC<UploadIconProps> = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 89 87" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
