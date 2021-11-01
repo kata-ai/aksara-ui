@@ -82,6 +82,7 @@
     "copee": "^1.0.6",
     "jest": "^26.6.3",
     "jest-styled-components": "^7.0.5",
-    "react-docgen-typescript-loader": "^3.6.0"
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-table": "^7.7.0"
   }
 }
