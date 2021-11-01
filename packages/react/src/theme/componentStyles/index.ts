@@ -7,6 +7,7 @@ import form from './form';
 import message from './message';
 import navigation from './navigation';
 import pill from './pill';
+import popover from './popover';
 import slider from './slider';
 import stepper from './stepper';
 import typography from './typography';
@@ -29,6 +30,7 @@ const componentStyles = {
   ...message,
   ...navigation,
   ...pill,
+  ...popover,
   ...slider,
   ...stepper,
   ...subHeader,
