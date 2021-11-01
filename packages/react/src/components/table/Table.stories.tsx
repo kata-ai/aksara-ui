@@ -20,7 +20,7 @@ import { Box } from '../../layout';
 import { Avatar } from '../avatar';
 import { Button } from '../button';
 import { Badge } from '../badge';
-import { Text, Anchor } from '../../typography';
+import { Text, Anchor, Heading } from '../../typography';
 
 export default {
   title: 'Core/Components/Table',
@@ -143,14 +143,14 @@ export const Example = () => {
                 </TableBodyCell>
                 <TableBodyCell>
                   <Box>
-                    <Text as="span" ml="xs" scale={300}>
+                    <Text as="span" scale={300}>
                       {receivedAt}
                     </Text>
                   </Box>
                 </TableBodyCell>
                 <TableBodyCell>
                   <Box>
-                    <Text as="span" ml="xs" scale={300}>
+                    <Text as="span" scale={300}>
                       {lastUpdatedAt}
                     </Text>
                   </Box>
@@ -166,9 +166,9 @@ export const Example = () => {
                   <Box>
                     {agentMeta ? (
                       agentMeta.agents.map(agent => (
-                        <Badge size="md" variant="success">
+                        <Heading ml="xs" scale={200}>
                           {agent}
-                        </Badge>
+                        </Heading>
                       ))
                     ) : (
                       <Button size="md" type="button" variant="primary">

@@ -44,7 +44,7 @@ export const dummyColumns: Column[] = [
   { Header: 'Received at', accessor: 'receivedAt', canSort: true },
   { Header: 'Last updated at', accessor: 'lastUpdatedAt', canSort: true },
   { Header: 'Status', accessor: 'statusMeta', canSort: false, style: { width: '130px' } },
-  { Header: 'Agent', accessor: 'agentMeta', canSort: false, style: { width: '130px' } },
+  { Header: 'Agent', accessor: 'agentMeta', canSort: false },
 ];
 
 export interface Column {
@@ -126,7 +126,7 @@ export const dummyData: DummyData[] = [
       name: 'Pending',
       variant: 'warning',
     },
-    agentMeta: { disabled: false, agents: ['Destriana Orchidea'] },
+    agentMeta: { disabled: false, agents: ['Destriana'] },
   },
   {
     id: 5,
@@ -145,7 +145,7 @@ export const dummyData: DummyData[] = [
       name: '10 new replies',
       variant: 'active',
     },
-    agentMeta: { disabled: false, agents: ['Destriana Orchidea'] },
+    agentMeta: { disabled: false, agents: ['Destriana'] },
   },
   {
     id: 6,
@@ -164,7 +164,7 @@ export const dummyData: DummyData[] = [
       name: 'Replied',
       variant: 'default',
     },
-    agentMeta: { disabled: false, agents: ['Destriana Orchidea'] },
+    agentMeta: { disabled: false, agents: ['Destriana'] },
   },
   {
     id: 7,
@@ -183,7 +183,7 @@ export const dummyData: DummyData[] = [
       name: 'Replied',
       variant: 'default',
     },
-    agentMeta: { disabled: false, agents: ['Rizyan Gaut.. (You)'] },
+    agentMeta: { disabled: false, agents: ['(You)'] },
   },
   {
     id: 8,
