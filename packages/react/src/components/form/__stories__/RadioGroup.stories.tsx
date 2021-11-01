@@ -3,13 +3,13 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import { Stack } from '../../../layout';
 import { InputRadio } from '../components';
-import RadioGroup from '../components/RadioGroup/RadioGroup';
+import { RadioGroupRoot, RadioGroupItem } from '../components/RadioGroup/RadioGroup';
 import { Text } from '../../../typography';
-import { RadioInputBox, RadioInputBoxProps } from '../components/RadioGroup/components';
+import { OptionListItemBox, OptionListItemBoxProps } from '../../button';
 
 export default {
   title: 'Core/Components/Form/Radio/RadioGroup',
-  component: RadioGroup,
+  component: RadioGroupRoot,
   argTypes: {
     disabled: {
       control: 'boolean',
@@ -17,52 +17,56 @@ export default {
   },
 };
 
-interface RadioInputBoxStoryProps extends RadioInputBoxProps {
-  disabled?: boolean;
-}
+export const RadioInputBoxSample: Story<OptionListItemBoxProps> = ({ disabled, variant }) => {
+  return (
+    <OptionListItemBox variant={variant} disabled={disabled}>
+      Label 1
+    </OptionListItemBox>
+  );
+};
 
-export const RadioWithBox: Story<RadioInputBoxStoryProps> = ({ disabled }) => (
-  <RadioGroup.Root>
+export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => (
+  <RadioGroupRoot>
     <Stack direction="vertical" spacing="xs" width="300px">
-      <RadioGroup.Item asChild value="value1" disabled={disabled}>
-        <RadioInputBox disabled={disabled}>
+      <RadioGroupItem value="value1" disabled={disabled}>
+        <OptionListItemBox disabled={disabled} p="xs">
           <InputRadio readOnly checked={false} />
           <Text scale={300} ml="xs">
             Radio 1
           </Text>
-        </RadioInputBox>
-      </RadioGroup.Item>
-      <RadioGroup.Item asChild value="value2" disabled={disabled}>
-        <RadioInputBox disabled={disabled}>
+        </OptionListItemBox>
+      </RadioGroupItem>
+      <RadioGroupItem value="value2" disabled={disabled}>
+        <OptionListItemBox disabled={disabled} p="xs">
           <InputRadio readOnly checked={false} />
           <Text scale={300} ml="xs">
             Radio 2
           </Text>
-        </RadioInputBox>
-      </RadioGroup.Item>
+        </OptionListItemBox>
+      </RadioGroupItem>
     </Stack>
-  </RadioGroup.Root>
+  </RadioGroupRoot>
 );
 
-export const RadioWithAvatar: Story<RadioInputBoxStoryProps> = ({ disabled }) => (
-  <RadioGroup.Root>
+export const RadioWithAvatar: Story<{ disabled: boolean }> = ({ disabled }) => (
+  <RadioGroupRoot>
     <Stack direction="vertical" spacing="xs" width="300px">
-      <RadioGroup.Item asChild value="value1" disabled={disabled}>
-        <RadioInputBox disabled={disabled} variant="with-indicator">
+      <RadioGroupItem asChild value="value1" disabled={disabled}>
+        <OptionListItemBox disabled={disabled} variant="bordered" p="md">
           <InputRadio readOnly checked={false} />
           <Text scale={300} ml="xs">
             Radio 1
           </Text>
-        </RadioInputBox>
-      </RadioGroup.Item>
-      <RadioGroup.Item asChild value="value2" disabled={disabled}>
-        <RadioInputBox disabled={disabled} variant="with-indicator">
+        </OptionListItemBox>
+      </RadioGroupItem>
+      <RadioGroupItem asChild value="value2" disabled={disabled}>
+        <OptionListItemBox disabled={disabled} variant="bordered" p="md">
           <InputRadio readOnly checked={false} />
           <Text scale={300} ml="xs">
             Radio 2
           </Text>
-        </RadioInputBox>
-      </RadioGroup.Item>
+        </OptionListItemBox>
+      </RadioGroupItem>
     </Stack>
-  </RadioGroup.Root>
+  </RadioGroupRoot>
 );

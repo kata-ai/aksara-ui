@@ -16,6 +16,7 @@ import tooltip from './tooltip';
 import subHeader from './subHeader';
 import topbar from './topbar';
 import inputRadio from './form/inputRadio';
+import optionItem from './optionItem';
 
 /**
  * Custom theme props based on custom component variants.
@@ -40,6 +41,7 @@ const componentStyles = {
   ...topbar,
   ...subHeader,
   ...inputRadio,
+  ...optionItem,
 };
 
 export default componentStyles;
