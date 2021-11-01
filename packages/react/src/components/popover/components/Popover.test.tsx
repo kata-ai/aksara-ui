@@ -24,7 +24,7 @@ describe('components/Popover', () => {
       const triggerButton = getByRole('button', { name: /toggle popover/i });
       fireEvent.click(triggerButton);
 
-      expect(queryByText(/This is a popover/)).toBeVisible();
+      expect(queryByText(/This is a popover/)).toBeInTheDocument();
     });
   });
 });

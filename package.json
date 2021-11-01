@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "description": "Aksara Design System, from Kata.ai.",
   "main": "N/A",
-  "repository": "https://github.com/kata-ai/wicara.git",
+  "repository": "https://github.com/kata-ai/aksara-ui.git",
   "author": "Kata.ai <dev@kata.ai>",
   "contributors": [
     {
@@ -38,6 +38,7 @@
     "canary:publish": "lerna publish from-git --npm-tag canary --yes"
   },
   "dependencies": {
+    "@aksara-ui/icons": "^1.0.1-canary.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.1"

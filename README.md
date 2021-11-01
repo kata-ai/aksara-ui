@@ -30,10 +30,6 @@ This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Usage
 
-### Quickstart
-
-Check out [kata-ai/wicara-starter](https://github.com/kata-ai/wicara-starter).
-
 ### Prerequisites
 
 Aksara UI requires `styled-components` v4+. First, install the core Aksara UI package, Aksara UI React icon library, and `styled-components`.
@@ -106,7 +102,7 @@ export default function Component() {
 }
 ```
 
-Read the [Storybook](https://wicara.now.sh/) for more examples.
+Read the [Storybook](https://aksara-ui.now.sh/) for more examples.
 
 ## Fonts
 

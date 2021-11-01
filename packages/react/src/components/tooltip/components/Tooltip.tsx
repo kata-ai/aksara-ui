@@ -38,7 +38,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         <TooltipInner
           content={content}
           size={size}
-          arrow={<TooltipPrimitive.Arrow offset={5} width={11} height={5} fill="var(--tooltip-border)" />}
+          arrow={<TooltipPrimitive.Arrow offset={12} width={20} height={8} fill="var(--tooltip-border)" />}
         />
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Root>

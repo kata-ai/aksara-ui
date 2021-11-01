@@ -1,6 +1,6 @@
 # Form
 
-> Basic form elements used with Wicara.
+> Basic form elements used with Aksara UI.
 
 ## Usage
 

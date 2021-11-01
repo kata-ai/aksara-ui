@@ -1,149 +1,47 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import clsx from 'clsx';
-import * as CSS from 'csstype';
+import * as PopoverPrimitive from '@radix-ui/react-popover';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Placement } from '@popperjs/core';
-import { Manager, Reference, Popper } from 'react-popper';
 import { Box } from '../../../layout';
-import { Portal } from '../../../helpers';
+import { SxProps, useComponentStyles } from '../../../system';
 
-export interface PopoverProps {
+export interface PopoverProps extends PopoverPrimitive.PopoverProps, SxProps {
+  /** Classname to pass to the popover content. */
   className?: string;
+  /** CSS properties to pass to the popover content. */
   style?: React.CSSProperties;
-  summaryClassName?: string;
-  summaryStyle?: React.CSSProperties;
-  width?: CSS.Property.Width;
-  maxWidth?: CSS.Property.MaxWidth;
-  maxHeight?: CSS.Property.MaxHeight;
+  /** The element which triggers the popover content. */
   trigger: React.ReactElement;
-  children: React.ReactElement;
-  placement?: Placement;
+  /** Popover placement. Uses the `side` props from `radix-ui` */
+  placement?: PopoverPrimitive.PopoverContentProps['side'];
+  /** Popover alignment. Uses the `alignment` props from `radix-ui` */
+  align?: PopoverPrimitive.PopoverContentProps['align'];
 }
 
-const Arrow = styled(Box)`
-  height: 20px;
-  position: absolute;
-  width: 20px;
-  pointer-events: none;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent;
-  }
-`;
-
-// TODO: Clicking outside popover should also hide it
-// TODO: Rewrite into `react-popper` hooks API
-// https://popper.js.org/react-popper/v2/hook/
 const Popover: React.FC<PopoverProps> = ({
   className,
   style,
+  sx,
   trigger,
   children,
-  width,
-  maxWidth = 320,
-  maxHeight,
+  defaultOpen,
+  open,
+  onOpenChange,
+  modal,
   placement = 'bottom',
+  align = 'center',
 }) => {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const popoverContentStyles = useComponentStyles('popoverContent');
 
   return (
-    <Manager>
-      <Reference>
-        {({ ref }) => {
-          const innerClassName = clsx(trigger.props.className, isVisible && 'active');
-
-          return React.cloneElement(trigger, {
-            className: innerClassName,
-            ref,
-            role: 'button',
-            onClick: () => {
-              setIsVisible(!isVisible);
-            },
-          });
-        }}
-      </Reference>
-      <Portal>
-        {isVisible && (
-          <Popper placement={placement}>
-            {({ ref, style: menuStyle, placement: innerPlacement, arrowProps }) => {
-              const innerStyle = { ...children.props.style, ...menuStyle };
-              return (
-                <Box
-                  className={className}
-                  style={{ ...innerStyle, ...style }}
-                  sx={{
-                    backgroundColor: 'greylight01',
-                    borderRadius: 12,
-                    boxShadow: 4,
-                    width,
-                    maxWidth,
-                    maxHeight,
-                    zIndex: 1000,
-                    '&[data-placement*="bottom"]': {
-                      marginTop: 'md',
-                    },
-                    '&[data-placement*="top"]': {
-                      marginBottom: 'md',
-                    },
-                    '&[data-placement*="right"]': {
-                      marginLeft: 'md',
-                    },
-                    '&[data-placement*="left"]': {
-                      marginRight: 'md',
-                    },
-                  }}
-                  ref={ref}
-                  data-placement={innerPlacement}
-                >
-                  {children}
-                  <Arrow
-                    data-placement={innerPlacement}
-                    sx={{
-                      '&[data-placement*="bottom"]': {
-                        top: 0,
-                        marginTop: -18,
-                        '&::after': {
-                          borderBottomColor: 'greylight01',
-                        },
-                      },
-                      '&[data-placement*="top"]': {
-                        bottom: 0,
-                        marginBottom: -18,
-                        '&::after': {
-                          borderTopColor: 'greylight01',
-                        },
-                      },
-                      '&[data-placement*="right"]': {
-                        left: 0,
-                        marginLeft: -18,
-                        '&::after': {
-                          borderRightColor: 'greylight01',
-                        },
-                      },
-                      '&[data-placement*="left"]': {
-                        right: 0,
-                        marginRight: -18,
-                        '&::after': {
-                          borderLeftColor: 'greylight01',
-                        },
-                      },
-                    }}
-                    {...arrowProps}
-                  />
-                </Box>
-              );
-            }}
-          </Popper>
-        )}
-      </Portal>
-    </Manager>
+    <PopoverPrimitive.Root defaultOpen={defaultOpen} open={open} onOpenChange={onOpenChange} modal={modal}>
+      <PopoverPrimitive.Trigger asChild>{trigger}</PopoverPrimitive.Trigger>
+      <PopoverPrimitive.Content asChild side={placement} sideOffset={8} align={align}>
+        <Box className={className} style={style} sx={{ ...popoverContentStyles, ...sx }}>
+          {children}
+          <PopoverPrimitive.Arrow offset={22} width={20} height={8} fill="var(--popover-border)" />
+        </Box>
+      </PopoverPrimitive.Content>
+    </PopoverPrimitive.Root>
   );
 };
 

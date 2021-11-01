@@ -4,13 +4,13 @@ import { Box } from '../../../layout';
 import Portal from './Portal';
 
 export default {
-  title: 'Core/Others/Portal',
+  title: 'Core/Helpers/Portal',
   component: Portal,
 };
 
 export const Example = () => (
   <Portal>
-    <Box position="absolute" bottom={0} right={0} padding="sm" color="grey01" bg="blue06">
+    <Box position="fixed" bottom={0} right={0} padding="sm" color="grey01" bg="blue07">
       I&apos;m a box inside a portal!
     </Box>
   </Portal>
@@ -19,12 +19,12 @@ export const Example = () => (
 export const MultiplePortals = () => (
   <>
     <Portal>
-      <Box position="absolute" bottom={0} right={0} padding="sm" color="grey01" bg="blue06">
+      <Box position="fixed" bottom={0} left={0} padding="sm" color="grey01" bg="blue07">
         I&apos;m a box inside a portal!
       </Box>
     </Portal>
     <Portal>
-      <Box position="absolute" bottom={0} left={0} padding="sm" color="grey01" bg="red06">
+      <Box position="fixed" bottom={0} right={0} padding="sm" color="grey01" bg="red07">
         I&apos;m a box inside a portal!
       </Box>
     </Portal>
