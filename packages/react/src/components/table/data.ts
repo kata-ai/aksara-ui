@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface DummyData {
   [key: string]: any;
   id: number;
@@ -31,18 +32,26 @@ export interface AgentMeta {
 }
 
 export const dummyColumns: Column[] = [
-  { Header: 'Contact', accessor: 'contactMeta', isSortActive: true },
-  { Header: 'Channel', accessor: 'channelMeta', isSortActive: false },
-  { Header: 'Received at', accessor: 'receivedAt', isSortActive: true },
-  { Header: 'Last updated at', accessor: 'lastUpdatedAt', isSortActive: true },
-  { Header: 'Status', accessor: 'statusMeta', isSortActive: false },
-  { Header: 'Agent', accessor: 'agentMeta', isSortActive: false },
+  {
+    Header: 'Contact',
+    accessor: 'contactMeta',
+    canSort: true,
+    sortType: (rowA, rowB) => {
+      return rowA.values.contactMeta.name > rowB.values.contactMeta.name ? 1 : -1;
+    },
+  }, // custom function
+  { Header: 'Channel', accessor: 'channelMeta', canSort: false },
+  { Header: 'Received at', accessor: 'receivedAt', canSort: true },
+  { Header: 'Last updated at', accessor: 'lastUpdatedAt', canSort: true },
+  { Header: 'Status', accessor: 'statusMeta', canSort: false },
+  { Header: 'Agent', accessor: 'agentMeta', canSort: false },
 ];
 
 export interface Column {
   Header: string;
   accessor: string;
-  isSortActive: boolean;
+  canSort: boolean;
+  sortType?: (rowA: any, rowB: any) => 1 | -1;
 }
 export const dummyData: DummyData[] = [
   {

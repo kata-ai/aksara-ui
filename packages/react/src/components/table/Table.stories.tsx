@@ -1,6 +1,9 @@
-import { Column, DummyData } from 'packages/react/dist/components/table/data';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { DummyData } from 'packages/react/dist/components/table/data';
 import * as React from 'react';
 
+import { IconInstagram, IconWhatsapp } from '@aksara-ui/icons';
+import { useTable, useSortBy } from 'react-table';
 import { InputCheckbox } from '../form';
 import {
   Table,
@@ -13,9 +16,11 @@ import {
   TableBodyCell,
 } from './components';
 import { dummyColumns, dummyData } from './data';
-import { useTable, useSortBy } from 'react-table';
-import { Avatar, Badge, Box, Button, Text } from '@aksara-ui/react';
-import { IconInstagram, IconShirt, IconWhatsapp } from '@aksara-ui/icons';
+import { Box } from '../../layout';
+import { Avatar } from '../avatar';
+import { Button } from '../button';
+import { Badge } from '../badge';
+import { Text } from '../../typography';
 
 export default {
   title: 'Core/Components/Table',
@@ -51,6 +56,11 @@ export const Example = () => {
       }
     }
   }, [selectedRows, headerCheckboxRef]);
+
+  const getSortTypeValue = (column: any) => {
+    if (!column.canSort || !column.isSorted) return '';
+    return column.isSortedDesc ? 'desc' : 'asc';
+  };
   return (
     <TableContainer>
       <Table {...getTableProps()}>
@@ -70,7 +80,7 @@ export const Example = () => {
             </TableHeadCell>
             {headers.map((column: any) => (
               <TableHeadCell
-                sortType={column.isSortActive && column.isSorted ? (column.isSortedDesc ? 'desc' : 'asc') : ''}
+                sortType={getSortTypeValue(column)}
                 {...column.getHeaderProps(column.getSortByToggleProps())}
               >
                 {column.render('Header')}
@@ -85,10 +95,13 @@ export const Example = () => {
             const { id, contactMeta, channelMeta, receivedAt, lastUpdatedAt, statusMeta, agentMeta } = rowValues;
 
             return (
-              <TableBodyRow {...row.getRowProps()} selected={selectedRows.findIndex(row => row === id) !== -1}>
+              <TableBodyRow
+                {...row.getRowProps()}
+                selected={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
+              >
                 <TableBodyCell>
                   <InputCheckbox
-                    checked={selectedRows.findIndex(row => row === id) !== -1}
+                    checked={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
                     onChange={e => {
                       if (e.target.checked) {
                         setSelectedRows(prev => [...prev, id]);
@@ -111,8 +124,7 @@ export const Example = () => {
                     <Avatar
                       icon={() => {
                         if (channelMeta.icon === 'wa') return <IconWhatsapp />;
-                        else if (channelMeta.icon === 'ig') return <IconInstagram />;
-                        else return <IconShirt />;
+                        return <IconInstagram />;
                       }}
                       name={channelMeta.name}
                       size="lg"
