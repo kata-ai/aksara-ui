@@ -37,9 +37,34 @@ const topbarRoundedButton: ComponentThemeConfig = {
   }),
 };
 
+const topbarDisclosureButton: ComponentThemeConfig = {
+  baseStyle: ({ theme, isActive }: { theme: DefaultTheme; isActive?: boolean }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '40px',
+    px: 'xs',
+    backgroundColor: isActive ? theme.colors.blue01 : theme.colors.greylight01,
+    color: isActive ? theme.colors.blue07 : theme.colors.greydark02,
+    borderRadius: 8,
+    outline: 'none',
+    '&:hover': {
+      backgroundColor: isActive ? theme.colors.blue01 : theme.colors.greylight03,
+    },
+    '&:active': {
+      backgroundColor: isActive ? theme.colors.blue01 : theme.colors.blue02,
+    },
+    '&:focus': {
+      outline: 'none',
+      boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+    },
+  }),
+};
+
 const topbar = {
   topbarBase,
   topbarRoundedButton,
+  topbarDisclosureButton,
 };
 
 export default topbar;

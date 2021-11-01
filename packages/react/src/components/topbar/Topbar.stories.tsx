@@ -1,12 +1,14 @@
 import { Story } from '@storybook/react';
-import { IconBell, IconBubble, IconChevronRight } from '@aksara-ui/icons';
-import VisuallyHidden from '@reach/visually-hidden';
+import { IconBell, IconBubble, IconChevronDown, IconChevronRight, IconFlowerGrid } from '@aksara-ui/icons';
 import * as React from 'react';
-import { Breadcrumb, BreadcrumbItem } from '..';
+import { VisuallyHidden } from '../../helpers';
 import { Box, Stack } from '../../layout';
+import { Avatar } from '../avatar';
+import { Breadcrumb, BreadcrumbItem } from '../breadcrumb';
 import Topbar, { TopbarProps } from './Topbar';
 import TopbarRoundedButton from './TopbarRoundedButton';
-import { Avatar } from '../avatar';
+import TopbarDisclosureButton from './TopbarDisclosureButton';
+import { Heading } from '../../typography';
 
 export default {
   title: 'Core/Components/Topbar',
@@ -30,7 +32,23 @@ export const Example: Story<TopbarProps> = () => {
           />
         </Box>
         <Box display="flex" alignItems="center">
-          Workspace Switcher
+          <TopbarDisclosureButton>
+            <Stack spacing="xs" direction="horizontal" alignItems="center">
+              <Avatar
+                size="md"
+                backgroundColor="greylight03"
+                color="greymed04"
+                icon={IconFlowerGrid}
+                name="Workspace"
+              />
+              <Stack spacing="xxs" direction="horizontal" alignItems="center" color="greymed04">
+                <Heading as="span" scale={200} color="greydark02">
+                  Workspace
+                </Heading>
+                <IconChevronDown aria-hidden size={12} fill="currentColor" />
+              </Stack>
+            </Stack>
+          </TopbarDisclosureButton>
         </Box>
         <Box display="flex" alignItems="center">
           <Stack direction="horizontal" spacing="md" alignItems="center">

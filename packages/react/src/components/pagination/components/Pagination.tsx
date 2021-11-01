@@ -2,12 +2,12 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
-import VisuallyHidden from '@reach/visually-hidden';
-import PaginationButton from './PaginationButton';
+import { VisuallyHidden } from '../../../helpers';
 import { Text } from '../../../typography';
+import { theme } from '../../../theme';
+import PaginationButton from './PaginationButton';
 import IconChevronLeft from './IconChevronLeft';
 import IconChevronRight from './IconChevronRight';
-import { theme } from '../../../theme';
 
 const PaginationBase = styled('div')`
   display: inline-flex;

@@ -7,7 +7,7 @@ import FocusTrap from './FocusTrap';
 const readme = require('./README.md');
 
 export default {
-  title: 'Core/Others/FocusTrap',
+  title: 'Core/Helpers/FocusTrap',
   component: FocusTrap,
   parameters: {
     notes: { markdown: readme },
