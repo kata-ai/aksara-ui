@@ -58,6 +58,6 @@ export const WithLabel: Story<AvatarProps> = ({ name, ...args }) => (
 WithLabel.args = {
   size: 'lg',
   name: 'Adry Muhammad',
-  bg: 'indigo05',
+  bg: 'indigo06',
   src: 'https://picsum.photos/id/2/400/400',
 };
