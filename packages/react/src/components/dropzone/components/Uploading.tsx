@@ -17,12 +17,23 @@ interface DisplayFileNameProps {
   fileName?: string;
 }
 
+interface LoadingProps {
+  percentage?: number;
+}
+
 const DisplayFileName: React.FC<DisplayFileNameProps> = ({ fileName }) => {
   return (
     <Text display="flex" scale={300} justifyContent="center" fontFamily="brand" color="grey07">
       <IconPage style={{ marginRight: '8px' }} /> {fileName}
     </Text>
   );
+};
+
+const DisplayLoading: React.FC<LoadingProps> = ({ percentage }) => {
+  if (percentage) {
+    return <Progress percentage={percentage} />;
+  }
+  return <Spinner />;
 };
 
 const Uploading: React.FC<UploadingProps> = ({ file, success, percentage }) => {
@@ -44,7 +55,7 @@ const Uploading: React.FC<UploadingProps> = ({ file, success, percentage }) => {
         <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
           <Text color={theme.colors.greydark02}>{percentage && `${percentage}% Uploading...`}</Text>
           <Box width="100%" mt={12}>
-            {percentage ? <Progress percentage={percentage} /> : <Spinner />}
+            {<DisplayLoading percentage={percentage} />}
           </Box>
           <Box mt={24}>
             <DisplayFileName fileName={fileName} />

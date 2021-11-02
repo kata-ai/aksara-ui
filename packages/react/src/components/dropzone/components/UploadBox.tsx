@@ -146,7 +146,7 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
     if (maxFileSize && fileParam.size > maxFileSize) {
       return {
         code: 'file-too-large',
-        message: `File size is larger than ${maxFileSize && maxFileSizeText(maxFileSize)}`,
+        message: `File size is larger than ${maxFileSizeText(maxFileSize)}`,
       };
     }
     if (fileParam.size < minFileSize) {
