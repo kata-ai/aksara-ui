@@ -12,20 +12,6 @@ const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { 
   background: theme.colors.grey01,
   [pseudoSelectors._checked]: {
     background: theme.colors.blue01,
-    '& > input': {
-      borderWidth: '5px',
-      borderColor: theme.colors.blue07,
-      '&:hover': {
-        borderColor: theme.colors.blue08,
-      },
-      '&:focus': {
-        borderColor: theme.colors.blue09,
-      },
-      '&:disabled': {
-        borderColor: theme.colors.greylight05,
-        background: theme.colors.greylight02,
-      },
-    },
   },
   '&:hover': {
     [`&:not([aria-checked=true])`]: {
