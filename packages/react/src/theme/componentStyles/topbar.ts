@@ -15,20 +15,22 @@ const topbarBase: ComponentThemeConfig = {
 
 const topbarRoundedButton: ComponentThemeConfig = {
   baseStyle: ({ theme, isActive }: { theme: DefaultTheme; isActive?: boolean }) => ({
+    '--topbar-disclosure-button-bg-color': isActive ? theme.colors.blue01 : theme.colors.greylight01,
+    '--topbar-disclosure-button-foreground-color': isActive ? theme.colors.blue07 : theme.colors.greydark02,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     width: '40px',
     height: '40px',
-    backgroundColor: isActive ? theme.colors.blue01 : theme.colors.greylight01,
-    color: isActive ? theme.colors.blue07 : theme.colors.greydark02,
+    backgroundColor: 'var(--topbar-disclosure-button-bg-color)',
+    color: 'var(--topbar-disclosure-button-foreground-color)',
     borderRadius: 9999,
     outline: 'none',
     '&:hover': {
-      backgroundColor: isActive ? theme.colors.blue01 : theme.colors.greylight03,
+      '--topbar-disclosure-button-bg-color': isActive ? theme.colors.blue01 : theme.colors.greylight03,
     },
     '&:active': {
-      backgroundColor: isActive ? theme.colors.blue01 : theme.colors.blue02,
+      '--topbar-disclosure-button-bg-color': isActive ? theme.colors.blue01 : theme.colors.blue02,
     },
     '&:focus': {
       outline: 'none',
@@ -39,20 +41,22 @@ const topbarRoundedButton: ComponentThemeConfig = {
 
 const topbarDisclosureButton: ComponentThemeConfig = {
   baseStyle: ({ theme, isActive }: { theme: DefaultTheme; isActive?: boolean }) => ({
+    '--topbar-disclosure-button-bg-color': isActive ? theme.colors.blue01 : theme.colors.greylight01,
+    '--topbar-disclosure-button-foreground-color': isActive ? theme.colors.blue07 : theme.colors.greydark02,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     height: '40px',
     px: 'xs',
-    backgroundColor: isActive ? theme.colors.blue01 : theme.colors.greylight01,
-    color: isActive ? theme.colors.blue07 : theme.colors.greydark02,
+    backgroundColor: 'var(--topbar-disclosure-button-bg-color)',
+    color: 'var(--topbar-disclosure-button-foreground-color)',
     borderRadius: 8,
     outline: 'none',
     '&:hover': {
-      backgroundColor: isActive ? theme.colors.blue01 : theme.colors.greylight03,
+      '--topbar-disclosure-button-bg-color': isActive ? theme.colors.blue01 : theme.colors.greylight03,
     },
     '&:active': {
-      backgroundColor: isActive ? theme.colors.blue01 : theme.colors.blue02,
+      '--topbar-disclosure-button-bg-color': isActive ? theme.colors.blue01 : theme.colors.blue02,
     },
     '&:focus': {
       outline: 'none',

@@ -15,6 +15,8 @@ export interface PopoverProps extends PopoverPrimitive.PopoverProps, SxProps {
   placement?: PopoverPrimitive.PopoverContentProps['side'];
   /** Popover alignment. Uses the `alignment` props from `radix-ui` */
   align?: PopoverPrimitive.PopoverContentProps['align'];
+  /** Offset for "start" or "end" alignment options. Uses the `alignOffset` props from `radix-ui` */
+  alignOffset?: PopoverPrimitive.PopoverContentProps['alignOffset'];
 }
 
 const Popover: React.FC<PopoverProps> = ({
@@ -29,13 +31,14 @@ const Popover: React.FC<PopoverProps> = ({
   modal,
   placement = 'bottom',
   align = 'center',
+  alignOffset = 0,
 }) => {
   const popoverContentStyles = useComponentStyles('popoverContent');
 
   return (
     <PopoverPrimitive.Root defaultOpen={defaultOpen} open={open} onOpenChange={onOpenChange} modal={modal}>
       <PopoverPrimitive.Trigger asChild>{trigger}</PopoverPrimitive.Trigger>
-      <PopoverPrimitive.Content asChild side={placement} sideOffset={8} align={align}>
+      <PopoverPrimitive.Content asChild side={placement} sideOffset={8} align={align} alignOffset={alignOffset}>
         <Box className={className} style={style} sx={{ ...popoverContentStyles, ...sx }}>
           {children}
           <PopoverPrimitive.Arrow offset={22} width={20} height={8} fill="var(--popover-border)" />
