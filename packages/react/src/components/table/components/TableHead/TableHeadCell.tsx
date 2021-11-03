@@ -4,7 +4,7 @@ import { Box, BoxProps, Stack } from '../../../../layout';
 import { Text } from '../../../../typography';
 
 interface TableHeadCellSortProps {
-  sortType?: 'asc' | 'desc';
+  sortType?: 'asc' | 'desc' | 'noSort';
 }
 
 export type TableHeadCellProps = React.ThHTMLAttributes<HTMLTableHeaderCellElement> &
@@ -12,7 +12,7 @@ export type TableHeadCellProps = React.ThHTMLAttributes<HTMLTableHeaderCellEleme
   TableHeadCellSortProps;
 
 const TableHeadCell = React.forwardRef<HTMLTableHeaderCellElement, TableHeadCellProps>(
-  ({ className, style, sortType, children, ...rest }, ref) => {
+  ({ className, style, sortType = null, children, ...rest }, ref) => {
     return (
       <Box
         ref={ref}
@@ -28,15 +28,22 @@ const TableHeadCell = React.forwardRef<HTMLTableHeaderCellElement, TableHeadCell
         {...rest}
       >
         <Stack direction="horizontal">
-          {sortType && (
+          {sortType && sortType === 'noSort' ? (
+            <Stack direction="vertical" marginRight={5.5} paddingTop={2}>
+              <IconDropUp style={{ marginBottom: '-2px' }} size={9} />
+              <IconDropDown style={{ marginTop: '-2px' }} size={9} />
+            </Stack>
+          ) : (
             <Box marginRight={5.5}>
               {sortType === 'asc' && <IconDropUp size={9} />}
               {sortType === 'desc' && <IconDropDown size={9} />}
             </Box>
           )}
-          <Text marginRight={10} fontSize="12px" lineHeight="16px" fontWeight={700} color="greydark02">
-            {children}
-          </Text>
+          <Box>
+            <Text marginRight={10} fontSize="12px" lineHeight="16px" fontWeight={700} color="greydark02">
+              {children}
+            </Text>
+          </Box>
         </Stack>
       </Box>
     );
