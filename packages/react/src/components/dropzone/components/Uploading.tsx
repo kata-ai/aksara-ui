@@ -11,14 +11,11 @@ interface UploadingProps {
   file?: File;
   success?: boolean;
   percentage?: number;
+  variant: 'small' | 'large';
 }
 
 interface DisplayFileNameProps {
   fileName?: string;
-}
-
-interface LoadingProps {
-  percentage?: number;
 }
 
 const DisplayFileName: React.FC<DisplayFileNameProps> = ({ fileName }) => {
@@ -29,37 +26,51 @@ const DisplayFileName: React.FC<DisplayFileNameProps> = ({ fileName }) => {
   );
 };
 
-const DisplayLoading: React.FC<LoadingProps> = ({ percentage }) => {
-  if (percentage) {
-    return <Progress percentage={percentage} />;
-  }
-  return <Spinner />;
-};
-
-const Uploading: React.FC<UploadingProps> = ({ file, success, percentage }) => {
+const Uploading: React.FC<UploadingProps> = ({ file, success, percentage, variant }) => {
   const fileName = file && (file.name.length > 50 ? `${file.name.substring(0, 50)}...` : file.name);
 
   return (
-    <Box display="flex" flexDirection="column" width="inherit" height={180} justifyContent="center">
+    <Box
+      display="flex"
+      flexDirection="column"
+      width="inherit"
+      height="inherit"
+      minHeight={variant === 'large' ? 180 : null}
+      justifyContent="center"
+    >
       {success ? (
         <Box padding="lg">
-          <IconTickRounded size={68} fill={theme.colors.green07} />
-          <Heading fontFamily="brand" color={theme.colors.greydark02} scale={500} fontWeight={700} mt={24}>
+          {variant === 'large' && <IconTickRounded size={68} fill={theme.colors.green07} />}
+          <Heading
+            fontFamily="brand"
+            color={theme.colors.greydark02}
+            scale={500}
+            fontWeight={700}
+            mt={variant === 'large' ? 24 : null}
+          >
             File has been uploaded
           </Heading>
-          <Box mt={32}>
+          <Box mt={variant === 'large' ? 24 : 8}>
             <DisplayFileName fileName={fileName} />
           </Box>
         </Box>
       ) : (
         <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-          <Text color={theme.colors.greydark02}>{percentage && `${percentage}% Uploading...`}</Text>
+          {variant === 'small' && <Spinner />}
+          {variant === 'large' && (
+            <Text color={theme.colors.greydark02}>{percentage && `${percentage}% Uploading...`}</Text>
+          )}
           <Box width="100%" mt={12}>
-            {<DisplayLoading percentage={percentage} />}
+            {percentage && variant === 'large' && <Progress percentage={percentage} />}
+            {variant === 'small' && (
+              <Text color={theme.colors.greydark02}>{percentage && `Uploading... ${percentage}%`}</Text>
+            )}
           </Box>
-          <Box mt={24}>
-            <DisplayFileName fileName={fileName} />
-          </Box>
+          {variant === 'large' && (
+            <Box mt={24}>
+              <DisplayFileName fileName={fileName} />
+            </Box>
+          )}
         </Box>
       )}
     </Box>

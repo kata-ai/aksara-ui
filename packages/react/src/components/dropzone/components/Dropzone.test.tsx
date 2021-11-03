@@ -8,6 +8,7 @@ describe('components/UploadBox', () => {
     test('renders correctly', () => {
       const { container } = render(
         <UploadBox
+          variant="large"
           allowFileType={'.txt'}
           onFileAccepted={() => {
             return true;
@@ -27,6 +28,7 @@ describe('components/UploadBox', () => {
     test('renders allowed file extensions', () => {
       const { getByText } = render(
         <UploadBox
+          variant="large"
           allowFileType={'.txt'}
           onFileAccepted={() => {
             return true;
@@ -45,6 +47,7 @@ describe('components/UploadBox', () => {
     test('renders template url', () => {
       const { getByTestId } = render(
         <UploadBox
+          variant="large"
           allowFileType={'.txt'}
           templateUrl="https://kata.ai"
           onFileAccepted={() => {
@@ -64,6 +67,7 @@ describe('components/UploadBox', () => {
     test('renders max file size', () => {
       const { getByText } = render(
         <UploadBox
+          variant="large"
           allowFileType={'.txt'}
           maxFileSize={15 * 100000}
           templateUrl="https://kata.ai"
@@ -83,19 +87,19 @@ describe('components/UploadBox', () => {
   });
   describe('<Uploading />', () => {
     test('renders correctly', () => {
-      const { container } = render(<Uploading success={false} />);
+      const { container } = render(<Uploading variant="large" success={false} />);
 
       expect(container.firstChild).toBeInTheDocument();
     });
 
     test('renders file has been uploaded', () => {
-      const { getByText } = render(<Uploading success />);
+      const { getByText } = render(<Uploading variant="large" success />);
 
       expect(getByText('File has been uploaded')).toBeInTheDocument();
     });
 
     test('renders percentage uploading', () => {
-      const { getByText } = render(<Uploading success={false} percentage={60} />);
+      const { getByText } = render(<Uploading variant="large" success={false} percentage={60} />);
 
       expect(getByText('60% Uploading...')).toBeInTheDocument();
     });
