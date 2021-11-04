@@ -8,6 +8,8 @@ import { Heading, Text, Anchor } from '../../../typography';
 import { Box } from '../../../layout';
 
 export interface UploadBoxProps extends DropzoneProps {
+  /** Set variant for upload box either large (with icons) or small (without icons and no drag 'n drop) */
+  variant: 'small' | 'large';
   /** allowed file type refer to https://react-dropzone.js.org/#section-accepting-specific-file-types required */
   allowFileType: string;
   /** on Drop function */
@@ -47,6 +49,7 @@ export interface UploadBoxProps extends DropzoneProps {
 }
 
 export const UploadBox: React.FC<UploadBoxProps> = ({
+  variant,
   allowFileType,
   maxFileSize,
   minFileSize = 0.01,
@@ -70,6 +73,7 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
   const [success, setSuccess] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState('');
   const [fileHover, setFileHover] = React.useState(false);
+  const [mouseHover, setMouseHover] = React.useState(false);
   const [file, setFile] = React.useState<File>();
 
   const errorUpload = errorMessage !== '';
@@ -97,6 +101,7 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
 
   async function onDropAccepted(files: File[]) {
     setErrorMessage('');
+    setMouseHover(false);
     setFileHover(false);
     setFile(files[0]);
     setSuccess(false);
@@ -120,6 +125,16 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
       return 'blue02';
     }
     return 'grey03';
+  };
+
+  const setBackgroundColor = () => {
+    if (fileHover) {
+      return 'blue01';
+    }
+    if (mouseHover) {
+      return 'greylight03';
+    }
+    return 'white';
   };
 
   function onResetUpload() {
@@ -169,7 +184,7 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
     multiple: allowMultiple,
     noClick,
     noKeyboard,
-    noDrag,
+    noDrag: variant === 'small',
     maxFiles,
     validator: fileValidator,
     ...rest,
@@ -186,8 +201,9 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
         height={height || 'inherit'}
         color="grey06"
         borderStyle="dashed"
+        borderWidth="2px"
         borderColor={setBorderColor()}
-        backgroundColor={fileHover ? 'blue01' : 'white'}
+        backgroundColor={setBackgroundColor()}
         textAlign="center"
         position="relative"
         outline="none"
@@ -197,17 +213,53 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
         {...getRootProps()}
       >
         {uploading ? (
-          <Uploading file={file} success={success} percentage={percentage} />
+          <Uploading variant={variant} file={file} success={success} percentage={percentage} />
         ) : (
           <>
-            <Box width={'inherit'}>
+            <Box
+              width={'inherit'}
+              cursor="default"
+              onMouseEnter={() => {
+                setMouseHover(true);
+              }}
+              onMouseLeave={() => {
+                setMouseHover(false);
+              }}
+            >
               <input {...getInputProps()} />
-              <UploadIcon size={85} />
-              <Heading pt="lg" scale={600} fontWeight={700} color="grey08">
-                Drop file here or <Anchor onClick={open}>browse</Anchor>
+              {variant === 'large' && <UploadIcon size={85} />}
+              <Heading
+                pt={variant === 'large' ? 'lg' : null}
+                scale={variant === 'large' ? 500 : 400}
+                fontWeight={700}
+                color="grey08"
+              >
+                {variant === 'large' && (
+                  <Box>
+                    Drop file here or{' '}
+                    <Anchor
+                      cursor="pointer"
+                      onClick={() => {
+                        open();
+                      }}
+                    >
+                      browse
+                    </Anchor>
+                  </Box>
+                )}
+                {variant === 'small' && (
+                  <Anchor
+                    cursor="pointer"
+                    onClick={() => {
+                      open();
+                    }}
+                  >
+                    Add file
+                  </Anchor>
+                )}
               </Heading>
               <Box width="80%" m="0 auto">
-                <Text as="p" scale={300} fontWeight={400} mt="lg" color="grey07" lineHeight="20px">
+                <Text as="p" scale={200} fontWeight={400} mt="sm" color="grey07" lineHeight="20px">
                   {allowFileType && `Allowed file extensions: ${allowFileType}`}{' '}
                   {maxFileSize && `| Max file size: ${maxFileSizeText(maxFileSize)}`}{' '}
                 </Text>
@@ -215,7 +267,7 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
                   <Text
                     data-testid="download-template"
                     as="p"
-                    scale={300}
+                    scale={200}
                     fontWeight={400}
                     color="grey07"
                     lineHeight="20px"
@@ -229,12 +281,19 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
                 )}
               </Box>
             </Box>
-            <Box mt="md">
-              <ErrorMessage error={errorUpload} errorMessage={errorMessage} />
-            </Box>
+            {errorMessage && variant === 'large' && (
+              <Box mt="md">
+                <ErrorMessage error={errorUpload} errorMessage={errorMessage} />
+              </Box>
+            )}
           </>
         )}
       </Box>
+      {errorMessage && variant === 'small' && (
+        <Box mt="md" width="100%">
+          <ErrorMessage error={errorUpload} errorMessage={errorMessage} />
+        </Box>
+      )}
     </>
   );
 };
