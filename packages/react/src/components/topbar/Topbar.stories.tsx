@@ -9,6 +9,7 @@ import Topbar, { TopbarProps } from './Topbar';
 import TopbarRoundedButton from './TopbarRoundedButton';
 import TopbarDisclosureButton from './TopbarDisclosureButton';
 import { Heading } from '../../typography';
+import { Popover } from '../popover';
 
 export default {
   title: 'Core/Components/Topbar',
@@ -16,6 +17,8 @@ export default {
 };
 
 export const Example: Story<TopbarProps> = () => {
+  const [popoverOpen, setPopoverOpen] = React.useState(false);
+
   return (
     <Box width="100%" height="100%" maxHeight={360} backgroundColor="greylight03">
       <Topbar display="flex" alignItems="center" justifyContent="space-between">
@@ -52,14 +55,60 @@ export const Example: Story<TopbarProps> = () => {
         </Box>
         <Box display="flex" alignItems="center">
           <Stack direction="horizontal" spacing="md" alignItems="center">
+            <TopbarDisclosureButton>
+              <Stack spacing="xs" direction="horizontal" alignItems="center">
+                <Box role="presentation" size={8} borderRadius={8} backgroundColor="green07" />
+                <Stack spacing="xxs" direction="horizontal" alignItems="center" color="greymed04">
+                  <Heading as="span" scale={200}>
+                    Online
+                  </Heading>
+                  <IconChevronDown aria-hidden size={12} fill="currentColor" />
+                </Stack>
+              </Stack>
+            </TopbarDisclosureButton>
             <TopbarRoundedButton>
               <VisuallyHidden>Messages</VisuallyHidden>
               <IconBubble aria-hidden fill="currentColor" />
             </TopbarRoundedButton>
-            <TopbarRoundedButton>
-              <VisuallyHidden>Notifications</VisuallyHidden>
-              <IconBell aria-hidden fill="currentColor" />
-            </TopbarRoundedButton>
+            <Popover
+              open={popoverOpen}
+              onOpenChange={setPopoverOpen}
+              placement="bottom"
+              align="end"
+              alignOffset={-12}
+              trigger={
+                <TopbarRoundedButton isActive={popoverOpen}>
+                  <Box role="presentation" position="relative">
+                    <IconBell aria-hidden fill="currentColor" />
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      position="absolute"
+                      top={0}
+                      right={0}
+                      size={12}
+                      borderWidth="2px"
+                      borderStyle="solid"
+                      borderColor="var(--topbar-disclosure-button-bg-color)"
+                      borderRadius={12}
+                      color="greylight01"
+                      backgroundColor="red07"
+                      fontSize="8px"
+                      lineHeight={1}
+                      overflow="hidden"
+                    >
+                      1
+                    </Box>
+                  </Box>
+                  <VisuallyHidden>Notifications</VisuallyHidden>
+                </TopbarRoundedButton>
+              }
+            >
+              <Box width={240} px="lg" py="md">
+                Notification content
+              </Box>
+            </Popover>
             <TopbarRoundedButton>
               <Avatar name="Adry Muhammad" size="md" />
             </TopbarRoundedButton>
