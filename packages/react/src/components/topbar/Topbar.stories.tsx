@@ -9,7 +9,7 @@ import Topbar, { TopbarProps } from './Topbar';
 import TopbarRoundedButton from './TopbarRoundedButton';
 import TopbarDisclosureButton from './TopbarDisclosureButton';
 import { Heading } from '../../typography';
-import { Popover } from '../popover';
+import { Popover, PopoverContent } from '../popover';
 
 export default {
   title: 'Core/Components/Topbar',
@@ -73,9 +73,6 @@ export const Example: Story<TopbarProps> = () => {
             <Popover
               open={popoverOpen}
               onOpenChange={setPopoverOpen}
-              placement="bottom"
-              align="end"
-              alignOffset={-12}
               trigger={
                 <TopbarRoundedButton isActive={popoverOpen}>
                   <Box role="presentation" position="relative">
@@ -105,9 +102,11 @@ export const Example: Story<TopbarProps> = () => {
                 </TopbarRoundedButton>
               }
             >
-              <Box width={240} px="lg" py="md">
-                Notification content
-              </Box>
+              <PopoverContent placement="bottom" align="end" alignOffset={-12}>
+                <Box width={240} px="lg" py="md">
+                  Notification content
+                </Box>
+              </PopoverContent>
             </Popover>
             <TopbarRoundedButton>
               <Avatar name="Adry Muhammad" size="md" />
