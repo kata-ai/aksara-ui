@@ -7,8 +7,11 @@ import { UploadBox, UploadBoxProps } from './components/UploadBox';
 
 export default {
   title: 'Core/Components/Dropzone',
-  component: [UploadBox],
+  component: UploadBox,
   argTypes: {
+    variant: {
+      options: ['small', 'large'],
+    },
     width: {
       control: 'number',
     },
@@ -41,12 +44,14 @@ export const Example: Story<UploadBoxProps> = ({
   templateUrl,
   noClick,
   noDrag,
+  variant,
 }) => {
   const [success, setSuccess] = React.useState(false);
   const [resetUpload, setResetUpload] = React.useState(false);
   return (
     <Box width={500} display="flex" flexDirection="column" alignItems="center">
       <UploadBox
+        variant={variant}
         allowFileType={allowFileType}
         width={width}
         height={height}
@@ -85,6 +90,9 @@ export const Example: Story<UploadBoxProps> = ({
 };
 
 Example.args = {
+  variant: 'large',
+  width: 500,
+  height: 300,
   maxFileSize: 15 * 100000,
   noClick: true,
   noDrag: false,
