@@ -8,6 +8,7 @@ import { Heading, Text, Anchor } from '../../../typography';
 import { Box } from '../../../layout';
 
 export interface UploadBoxProps extends DropzoneProps {
+  /** Set variant for upload box either large (with icons) or small (without icons and no drag 'n drop) */
   variant: 'small' | 'large';
   /** allowed file type refer to https://react-dropzone.js.org/#section-accepting-specific-file-types required */
   allowFileType: string;
@@ -227,7 +228,12 @@ export const UploadBox: React.FC<UploadBoxProps> = ({
             >
               <input {...getInputProps()} />
               {variant === 'large' && <UploadIcon size={85} />}
-              <Heading pt={variant === 'large' ? 'lg' : null} scale={500} fontWeight={700} color="grey08">
+              <Heading
+                pt={variant === 'large' ? 'lg' : null}
+                scale={variant === 'large' ? 500 : 400}
+                fontWeight={700}
+                color="grey08"
+              >
                 {variant === 'large' && (
                   <Box>
                     Drop file here or{' '}

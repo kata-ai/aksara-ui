@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import Uploading from './Uploading';
 import { UploadBox } from './UploadBox';
+import ErrorMessage from './ErrorMessage';
 
 describe('components/UploadBox', () => {
   describe('<UploadBox />', () => {
@@ -64,6 +65,26 @@ describe('components/UploadBox', () => {
       expect(getByTestId('download-template')).toBeInTheDocument();
     });
 
+    test('renders add file button text', () => {
+      const { getByText } = render(
+        <UploadBox
+          variant="small"
+          allowFileType={'.txt'}
+          templateUrl="https://kata.ai"
+          onFileAccepted={() => {
+            return true;
+          }}
+          successUpload={() => {
+            return true;
+          }}
+          failedUpload={() => {
+            return true;
+          }}
+        />
+      );
+      expect(getByText('Add file')).toBeInTheDocument();
+    });
+
     test('renders max file size', () => {
       const { getByText } = render(
         <UploadBox
@@ -85,6 +106,7 @@ describe('components/UploadBox', () => {
       expect(getByText('Allowed file extensions: .txt | Max file size: 1.50 MB')).toBeInTheDocument();
     });
   });
+
   describe('<Uploading />', () => {
     test('renders correctly', () => {
       const { container } = render(<Uploading variant="large" success={false} />);
@@ -102,6 +124,15 @@ describe('components/UploadBox', () => {
       const { getByText } = render(<Uploading variant="large" success={false} percentage={60} />);
 
       expect(getByText('60% Uploading...')).toBeInTheDocument();
+    });
+  });
+
+  describe('<ErrorMessage />', () => {
+    test('renders correctly', () => {
+      const { container, getByText } = render(<ErrorMessage errorMessage="Error!" error />);
+
+      expect(container.firstChild).toBeInTheDocument();
+      expect(getByText('Error!')).toBeInTheDocument();
     });
   });
 });
