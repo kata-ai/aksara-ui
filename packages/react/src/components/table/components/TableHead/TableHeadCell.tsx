@@ -3,15 +3,16 @@ import { IconDropDown, IconDropUp } from '@aksara-ui/icons';
 import { Box, BoxProps, Stack } from '../../../../layout';
 import { Text } from '../../../../typography';
 
+type SortType = 'asc' | 'desc' | 'noSort' | undefined;
 interface TableHeadCellSortProps {
-  sortType?: 'asc' | 'desc' | 'noSort' | undefined;
+  sortType?: SortType;
 }
 
 export type TableHeadCellProps = React.ThHTMLAttributes<HTMLTableHeaderCellElement> &
   Omit<BoxProps, 'width' | 'height'> &
   TableHeadCellSortProps;
 
-const renderIconSort = (sortType: 'asc' | 'desc' | 'noSort' | undefined) => {
+const renderIconSort = (sortType: SortType) => {
   if (typeof sortType === 'undefined') return '';
   if (sortType === 'noSort') {
     return (
