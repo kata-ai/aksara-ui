@@ -5,7 +5,7 @@ import { Button, PlainButton } from '../../button';
 import { InputSearchbox } from '../../form/components/InputSearchbox';
 import { InputSelect } from '../../form/components/InputSelect';
 import { Pill } from '../../pill';
-import { Popover } from '../../popover';
+import { Popover, PopoverContent } from '../../popover';
 
 export interface FilterPageHeaderProps extends BoxProps {
   /** callback function onClear action */
@@ -111,29 +111,30 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
       <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" marginTop={['md']} spacing="xxs">
         {listShownFilter.more.length && (
           <Popover
-            placement="bottom"
             trigger={
               <PlainButton display="block" color="blue07">
                 {listShownFilter.more.length}+ Filter
               </PlainButton>
             }
           >
-            <Stack direction="horizontal" p="xs" spacing="xxs" flexWrap="wrap">
-              {listShownFilter.more.map(item => {
-                return (
-                  <Pill
-                    my="xxs"
-                    key={`${item.value}`}
-                    data-testid="filter-tag-more"
-                    hasCloseIcon
-                    onClick={() => onRemoveFilter({ label: item.label, value: item.value })}
-                    variant="active"
-                  >
-                    {item.label}
-                  </Pill>
-                );
-              })}
-            </Stack>
+            <PopoverContent placement="bottom">
+              <Stack direction="horizontal" p="xs" spacing="xxs" flexWrap="wrap">
+                {listShownFilter.more.map(item => {
+                  return (
+                    <Pill
+                      my="xxs"
+                      key={`${item.value}`}
+                      data-testid="filter-tag-more"
+                      hasCloseIcon
+                      onClick={() => onRemoveFilter({ label: item.label, value: item.value })}
+                      variant="active"
+                    >
+                      {item.label}
+                    </Pill>
+                  );
+                })}
+              </Stack>
+            </PopoverContent>
           </Popover>
         )}
         {listFilterTag}
