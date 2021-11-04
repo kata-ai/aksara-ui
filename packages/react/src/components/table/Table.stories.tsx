@@ -16,7 +16,7 @@ import {
 import { dummyColumns, dummyData, DummyData } from './data';
 import { Box } from '../../layout';
 import { Avatar } from '../avatar';
-import { Button } from '../button';
+import { Button, PlainButton } from '../button';
 import { Badge } from '../badge';
 import { Text, Anchor } from '../../typography';
 import IconColorfulInstagram from './IconColorfulInstagram';
@@ -106,12 +106,7 @@ export const Example = () => {
             const { id, contactMeta, channelMeta, receivedAt, lastUpdatedAt, statusMeta, agentMeta } = rowValues;
 
             return (
-              <TableBodyRow
-                {...row.getRowProps()}
-                maxHeight={48}
-                minHeight={48}
-                selected={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
-              >
+              <TableBodyRow selected={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}>
                 <TableBodyCell>
                   <InputCheckbox
                     checked={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
@@ -179,9 +174,16 @@ export const Example = () => {
                   <Box>
                     {agentMeta ? (
                       agentMeta.agents.map(agent => (
-                        <Button type="button" size="sm" icon={IconChevronDown} iconPosition="right">
+                        <PlainButton
+                          type="button"
+                          size="sm"
+                          icon={IconChevronDown}
+                          iconPosition="right"
+                          variant="disclosure"
+                          disabled={agentMeta.disabled}
+                        >
                           {agent}
-                        </Button>
+                        </PlainButton>
                       ))
                     ) : (
                       <Button size="sm" type="button" variant="primary">
