@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { DummyData } from 'packages/react/dist/components/table/data';
 import * as React from 'react';
-
-import { IconInstagram, IconWhatsapp } from '@aksara-ui/icons';
 import { useTable, useSortBy } from 'react-table';
+import { IconChevronDown } from '@aksara-ui/icons';
 import { InputCheckbox } from '../form';
 import {
   Table,
@@ -15,12 +13,14 @@ import {
   TableBodyRow,
   TableBodyCell,
 } from './components';
-import { dummyColumns, dummyData } from './data';
+import { dummyColumns, dummyData, DummyData } from './data';
 import { Box } from '../../layout';
 import { Avatar } from '../avatar';
-import { Button } from '../button';
+import { Button, PlainButton } from '../button';
 import { Badge } from '../badge';
-import { Text, Anchor, Heading } from '../../typography';
+import { Text, Anchor } from '../../typography';
+import IconColorfulInstagram from './IconColorfulInstagram';
+import IconColorfulWhatsapp from './IconColorfulWhatsapp';
 
 export default {
   title: 'Core/Components/Table',
@@ -58,7 +58,8 @@ export const Example = () => {
   }, [selectedRows, headerCheckboxRef]);
 
   const getSortTypeValue = (column: any) => {
-    if (!column.canSort || !column.isSorted) return '';
+    if (!column.canSortHeader) return '';
+    if (!column.isSorted) return 'noSort';
     return column.isSortedDesc ? 'desc' : 'asc';
   };
   return (
@@ -78,15 +79,24 @@ export const Example = () => {
                 }}
               />
             </TableHeadCell>
-            {headers.map((column: any) => (
-              <TableHeadCell
-                sortType={getSortTypeValue(column)}
-                {...column.getHeaderProps(column.getSortByToggleProps())}
-                {...column.style}
-              >
-                {column.render('Header')}
-              </TableHeadCell>
-            ))}
+            {headers.map((column: any) => {
+              if (column.canSortHeader) {
+                return (
+                  <TableHeadCell
+                    sortType={getSortTypeValue(column)}
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                    {...column.style}
+                  >
+                    {column.render('Header')}
+                  </TableHeadCell>
+                );
+              }
+              return (
+                <TableHeadCell {...column.getHeaderProps()} {...column.style}>
+                  {column.render('Header')}
+                </TableHeadCell>
+              );
+            })}
           </TableHeadRow>
         </TableHead>
         <TableBody {...getTableBodyProps()}>
@@ -96,10 +106,7 @@ export const Example = () => {
             const { id, contactMeta, channelMeta, receivedAt, lastUpdatedAt, statusMeta, agentMeta } = rowValues;
 
             return (
-              <TableBodyRow
-                {...row.getRowProps()}
-                selected={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
-              >
+              <TableBodyRow selected={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}>
                 <TableBodyCell>
                   <InputCheckbox
                     checked={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
@@ -114,7 +121,7 @@ export const Example = () => {
                 </TableBodyCell>
                 <TableBodyCell>
                   <Box alignItems="center" display="inline-flex">
-                    <Avatar bg={contactMeta.avatarColor} name={contactMeta.name} size="lg" />
+                    <Avatar bg={contactMeta.avatarColor} name={contactMeta.name} size="sm" />
                     <Text as="span" ml="xs" scale={300}>
                       {contactMeta.link ? (
                         <Anchor href={`https://${contactMeta.link}`} target="_blank" rel="noopener noreferrer">
@@ -129,12 +136,13 @@ export const Example = () => {
                 <TableBodyCell>
                   <Box alignItems="center" display="inline-flex">
                     <Avatar
-                      icon={() => {
-                        if (channelMeta.icon === 'wa') return <IconWhatsapp />;
-                        return <IconInstagram />;
-                      }}
+                      bg="transparent"
                       name={channelMeta.name}
-                      size="lg"
+                      size="sm"
+                      icon={() => {
+                        if (channelMeta.icon === 'wa') return <IconColorfulWhatsapp />;
+                        return <IconColorfulInstagram />;
+                      }}
                     />
                     <Text as="span" ml="xs" scale={300}>
                       {channelMeta.name}
@@ -166,12 +174,19 @@ export const Example = () => {
                   <Box>
                     {agentMeta ? (
                       agentMeta.agents.map(agent => (
-                        <Heading ml="xs" scale={200}>
+                        <PlainButton
+                          type="button"
+                          size="sm"
+                          icon={IconChevronDown}
+                          iconPosition="right"
+                          variant="disclosure"
+                          disabled={agentMeta.disabled}
+                        >
                           {agent}
-                        </Heading>
+                        </PlainButton>
                       ))
                     ) : (
-                      <Button size="md" type="button" variant="primary">
+                      <Button size="sm" type="button" variant="primary">
                         Assign
                       </Button>
                     )}

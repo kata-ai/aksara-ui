@@ -35,22 +35,22 @@ export const dummyColumns: Column[] = [
   {
     Header: 'Contact',
     accessor: 'contactMeta',
-    canSort: true,
+    canSortHeader: true,
     sortType: (rowA, rowB) => {
       return rowA.values.contactMeta.name > rowB.values.contactMeta.name ? 1 : -1;
     },
   }, // custom function
-  { Header: 'Channel', accessor: 'channelMeta', canSort: false },
-  { Header: 'Received at', accessor: 'receivedAt', canSort: true },
-  { Header: 'Last updated at', accessor: 'lastUpdatedAt', canSort: true },
-  { Header: 'Status', accessor: 'statusMeta', canSort: false, style: { width: '130px' } },
-  { Header: 'Agent', accessor: 'agentMeta', canSort: false },
+  { Header: 'Channel', accessor: 'channelMeta', canSortHeader: false },
+  { Header: 'Received at', accessor: 'receivedAt', canSortHeader: true },
+  { Header: 'Last updated at', accessor: 'lastUpdatedAt', canSortHeader: true },
+  { Header: 'Status', accessor: 'statusMeta', canSortHeader: false, style: { width: '150px' } },
+  { Header: 'Agent', accessor: 'agentMeta', canSortHeader: false },
 ];
 
 export interface Column {
   Header: string;
   accessor: string;
-  canSort: boolean;
+  canSortHeader: boolean;
   sortType?: (rowA: any, rowB: any) => 1 | -1;
   style?: any;
 }
