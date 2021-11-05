@@ -28,14 +28,14 @@ export const WithInitialName = Template.bind({});
 WithInitialName.args = {
   size: 'lg',
   name: 'Adry Muhammad',
-  bg: 'indigo05',
+  bg: 'indigo06',
 };
 
 export const WithImage = Template.bind({});
 WithImage.args = {
   size: 'lg',
   name: 'Adry Muhammad',
-  bg: 'indigo05',
+  bg: 'indigo06',
   src: 'https://picsum.photos/id/2/400/400',
 };
 
@@ -58,6 +58,6 @@ export const WithLabel: Story<AvatarProps> = ({ name, ...args }) => (
 WithLabel.args = {
   size: 'lg',
   name: 'Adry Muhammad',
-  bg: 'indigo05',
+  bg: 'indigo06',
   src: 'https://picsum.photos/id/2/400/400',
 };

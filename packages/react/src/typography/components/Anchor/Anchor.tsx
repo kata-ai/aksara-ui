@@ -29,7 +29,7 @@ export interface AnchorProps<ThemeType extends Theme = RequiredTheme>
  */
 const Anchor = styled('a').withConfig<AnchorProps>({
   shouldForwardProp: sfp(textProps),
-})(componentStylesMixin('anchor'), sxMixin, allSystemProps, pseudoSystemProps);
+})(componentStylesMixin('anchor'), allSystemProps, pseudoSystemProps, sxMixin);
 
 Anchor.displayName = 'Anchor';
 

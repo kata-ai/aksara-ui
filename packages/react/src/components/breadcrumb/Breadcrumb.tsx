@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box } from '../../layout';
 import { useComponentStyles } from '../../system';
-import { Popover } from '../popover';
+import { Popover, PopoverContent } from '../popover';
 import BreadcrumbOverflow from './BreadcrumbOverflow';
 
 export interface BreadcrumbProps {
@@ -39,23 +39,25 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
               )}
             </Box>
             <Box>
-              <Popover placement="bottom" trigger={<BreadcrumbOverflow>...</BreadcrumbOverflow>}>
-                <Box p="xs" width="160px">
-                  {rest
-                    .map((item, i) => {
-                      if (React.isValidElement(item)) {
-                        return (
-                          // eslint-disable-next-line react/no-array-index-key
-                          <Box key={`breadcrumb_overflow_${i}`}>
-                            {React.cloneElement(item, { isOverflowItem: true })}
-                          </Box>
-                        );
-                      }
+              <Popover trigger={<BreadcrumbOverflow>...</BreadcrumbOverflow>}>
+                <PopoverContent placement="bottom">
+                  <Box p="xs" width="160px">
+                    {rest
+                      .map((item, i) => {
+                        if (React.isValidElement(item)) {
+                          return (
+                            // eslint-disable-next-line react/no-array-index-key
+                            <Box key={`breadcrumb_overflow_${i}`}>
+                              {React.cloneElement(item, { isOverflowItem: true })}
+                            </Box>
+                          );
+                        }
 
-                      return undefined;
-                    })
-                    .filter(Boolean)}
-                </Box>
+                        return undefined;
+                      })
+                      .filter(Boolean)}
+                  </Box>
+                </PopoverContent>
               </Popover>
             </Box>
           </Box>

@@ -36,9 +36,8 @@ const stepHeaderBorder: ComponentThemeConfig = {
     }
     return {
       width: '100%',
-      borderWidth: theme.sizes.xxs,
-      borderStyle: 'solid',
-      borderColor: color,
+      height: theme.sizes.xxs,
+      backgroundColor: color,
       mb: theme.space.xxs,
       borderRadius: theme.sizes.xxs,
     };
@@ -83,19 +82,20 @@ const stepHeaderLabel: ComponentThemeConfig = {
     isCompletedStep: boolean;
     isCurrentStep: boolean;
   }) => {
-    let color = theme.colors.green07;
+    let color = theme.colors.green08;
     let fontWeight = 500;
     if (isCurrentStep) {
-      color = theme.colors.blue07;
+      color = theme.colors.blue08;
       fontWeight = 700;
     } else if (!isCurrentStep && !isCompletedStep) {
-      color = theme.colors.greylight05;
+      color = theme.colors.greymed04;
     }
     return {
       flex: 1,
       ml: theme.space.xs,
       color,
       fontWeight,
+      fontSize: theme.fontSizes[300],
     };
   },
 };
