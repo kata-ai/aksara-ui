@@ -1,6 +1,6 @@
-import VisuallyHidden from '@reach/visually-hidden';
 import * as React from 'react';
 
+import { VisuallyHidden } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text } from '../../../typography';
@@ -42,17 +42,34 @@ function iconSizes(size: AvatarProps['size'] = 'lg') {
   }
 }
 
+function initialSizes(size: AvatarProps['size'] = 'lg') {
+  switch (size) {
+    case 'sm': {
+      return '8px';
+    }
+    case 'md': {
+      return '12px';
+    }
+    case 'lg': {
+      return '14px';
+    }
+    default: {
+      return '12px';
+    }
+  }
+}
+
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
   (
-    { className, style, src, alt = undefined, name, size = 'lg', color = 'white', bg = 'indigo05', icon, ...rest },
+    { className, style, src, alt = undefined, name, size = 'lg', color = 'white', bg = 'indigo06', icon, ...rest },
     ref
   ) => {
     const styles = useComponentStyles('avatar', { size: typeof size === 'string' ? size : undefined });
 
     const renderInitials = () => {
       return (
-        <Text scale={300} role="presentation">
+        <Text fontSize={initialSizes(size)} lineHeight={1} role="presentation">
           {name ? getInitials(name) : '??'}
         </Text>
       );

@@ -7,7 +7,7 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Popover, Button, Card } from '@aksara-ui/react';
+import { Popover, PopoverContent, Button, Card } from '@aksara-ui/react';
 
 export default function Component() {
   return (
@@ -18,9 +18,11 @@ export default function Component() {
         </Button>
       }
     >
-      <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
-        This is a popover
-      </Card>
+      <PopoverContent>
+        <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
+          This is a popover
+        </Card>
+      </PopoverContent>
     </Popover>
   );
 }
@@ -28,12 +30,22 @@ export default function Component() {
 
 ## Props
 
-| Property         | Type                 | Required | Default          | Description                                                                                                           |
-| ---------------- | -------------------- | -------- | ---------------- | --------------------------------------------------------------------------------------------------------------------- |
-| className        | `string`             | -        | undefined        | Additional CSS classes to give to the component.                                                                      |
-| style            | `CSSProperties`      | -        | undefined        | Additional CSS properties to give to the component.                                                                   |
-| summaryClassName | `string`             | -        | undefined        | Additional CSS classes to give to the inner summary block.                                                            |
-| summaryStyle     | `CSSProperties`      | -        | undefined        | Additional CSS properties to give to the inner summary block.                                                         |
-| trigger          | `React.ReactElement` | **Yes**  | -                | Element that triggers the popover content.                                                                            |
-| children         | `React.ReactElement` | **Yes**  | -                | Inner popover content.                                                                                                |
-| placement        | `PopperJS.Placement` | -        | `'bottom-start'` | Callback to run when a page number is selected. You can use this to e.g. run setState on your component's page state. |
+### `<Popover />`
+
+This component extends the `Popover.Root` prop types from [radix-ui](https://www.radix-ui.com/docs/primitives/components/popover).
+
+| Property | Type                 | Required | Default | Description                                |
+| -------- | -------------------- | -------- | ------- | ------------------------------------------ |
+| trigger  | `React.ReactElement` | **Yes**  | -       | Element that triggers the popover content. |
+| children | `React.ReactElement` | **Yes**  | -       | Inner popover content.                     |
+
+### `<PopoverContent />`
+
+This component extends the `Popover.Content` prop types from [radix-ui](https://www.radix-ui.com/docs/primitives/components/popover).
+
+| Property  | Type                          | Required | Default   | Description                                              |
+| --------- | ----------------------------- | -------- | --------- | -------------------------------------------------------- |
+| className | `string`                      | -        | undefined | Additional CSS classes to give to the component.         |
+| style     | `CSSProperties`               | -        | undefined | Additional CSS properties to give to the component.      |
+| children  | `React.ReactElement`          | **Yes**  | -         | Inner popover content.                                   |
+| placement | `PopoverContentProps['side']` | -        | "bottom"  | Popover placement. Uses the `side` props from `radix-ui` |

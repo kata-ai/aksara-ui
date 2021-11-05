@@ -1,6 +1,6 @@
 import { transparentize } from 'polished';
-import { DefaultTheme } from 'styled-components';
-import { ComponentThemeConfig } from '../types';
+import type { DefaultTheme } from 'styled-components';
+import type { ComponentThemeConfig } from '../../system';
 
 const sliderTrack: ComponentThemeConfig = {
   baseStyle: ({ theme }: { theme: DefaultTheme }) => ({

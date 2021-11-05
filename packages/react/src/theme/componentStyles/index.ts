@@ -7,6 +7,7 @@ import form from './form';
 import message from './message';
 import navigation from './navigation';
 import pill from './pill';
+import popover from './popover';
 import slider from './slider';
 import stepper from './stepper';
 import typography from './typography';
@@ -14,6 +15,7 @@ import tabs from './tabs';
 import toast from './toast';
 import tooltip from './tooltip';
 import subHeader from './subHeader';
+import topbar from './topbar';
 
 /**
  * Custom theme props based on custom component variants.
@@ -28,13 +30,15 @@ const componentStyles = {
   ...message,
   ...navigation,
   ...pill,
+  ...popover,
   ...slider,
   ...stepper,
+  ...subHeader,
   ...typography,
   ...tabs,
   ...toast,
   ...tooltip,
-  ...subHeader,
+  ...topbar,
 };
 
 export default componentStyles;

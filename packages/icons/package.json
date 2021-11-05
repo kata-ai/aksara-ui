@@ -1,13 +1,13 @@
 {
   "name": "@aksara-ui/icons",
-  "version": "1.0.0",
+  "version": "1.0.1-canary.0",
   "description": "React icon library for the Aksara design system.",
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/icons.esm.js",
   "typings": "dist/index.d.ts",
   "aksara:src": "./src/index.ts",
-  "repository": "https://github.com/kata-ai/wicara.git",
+  "repository": "https://github.com/kata-ai/aksara-ui.git",
   "author": "Kata.ai <dev@kata.ai>",
   "license": "Apache-2.0",
   "files": [
@@ -32,8 +32,5 @@
     "react": "^16.10.0 || ^17.0.0",
     "react-dom": "^16.10.0 || ^17.0.0"
   },
-  "devDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  }
+  "devDependencies": {}
 }

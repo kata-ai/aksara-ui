@@ -1,6 +1,6 @@
-import VisuallyHidden from '@reach/visually-hidden';
 import * as React from 'react';
 
+import { VisuallyHidden } from '../../../helpers';
 import { theme } from '../../../theme';
 import { Box, BoxProps } from '../../../layout';
 

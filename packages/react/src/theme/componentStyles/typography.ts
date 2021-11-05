@@ -1,4 +1,4 @@
-import { ComponentThemeConfig } from '../types';
+import type { ComponentThemeConfig } from '../../system';
 
 export const heading: ComponentThemeConfig = {
   propToScaleMap: [['scale', 'scales']],

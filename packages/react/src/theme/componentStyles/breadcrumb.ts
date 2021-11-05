@@ -1,5 +1,5 @@
-import { DefaultTheme } from 'styled-components';
-import { ComponentThemeConfig } from '../types';
+import type { DefaultTheme } from 'styled-components';
+import type { ComponentThemeConfig } from '../../system';
 
 const breadcrumbBase: ComponentThemeConfig = {
   baseStyle: {
@@ -50,7 +50,7 @@ const breadcrumbItem: ComponentThemeConfig = {
         display: 'inline-block',
         color: active ? 'greydark02' : 'blue07',
         '&:hover, &:focus': {
-          textDecoration: active ? 'none' : 'underline',
+          textDecoration: 'underline',
         },
         '&:hover': {
           color: active ? 'greydark02' : 'blue08',
@@ -65,7 +65,7 @@ const breadcrumbItem: ComponentThemeConfig = {
         px: 12,
         color: active ? 'greydark02' : 'blue07',
         '&:hover, &:focus': {
-          textDecoration: active ? 'none' : 'underline',
+          textDecoration: 'underline',
         },
         '&:hover': {
           backgroundColor: 'greylight03',

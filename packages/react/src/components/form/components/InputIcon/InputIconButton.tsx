@@ -1,5 +1,5 @@
 import * as React from 'react';
-import VisuallyHidden from '@reach/visually-hidden';
+import { VisuallyHidden } from '../../../../helpers';
 import { UnstyledButton, UnstyledButtonProps } from '../../../button';
 
 export interface InputIconButtonProps extends UnstyledButtonProps, React.ComponentPropsWithoutRef<'button'> {

@@ -1,6 +1,6 @@
-import { ComponentThemeConfig } from '../types';
+import type { ComponentThemeConfig, CSSObject } from '../../system';
 
-const baseStyle = {
+const baseStyle: CSSObject = {
   margin: 0,
   padding: 0,
   textAlign: 'center',
@@ -26,7 +26,7 @@ const baseStyle = {
   },
 };
 
-const primaryAndSecondaryVariants = {
+const primaryAndSecondaryVariants: Record<string, CSSObject> = {
   primary: {
     '&:not(:disabled)': {
       backgroundColor: 'blue07',
@@ -306,11 +306,11 @@ export const unstyledButton: ComponentThemeConfig = {
     textAlign: 'inherit',
 
     // Corrects font smoothing for webkit
-    '-webkit-font-smoothing': 'inherit',
-    '-moz-osx-font-smoothing': 'inherit',
+    WebkitFontSmoothing: 'inherit',
+    MozOsxFontSmoothing: 'inherit',
 
     // Corrects inability to style clickable \`input\` types in iOS
-    '-webkit-appearance': 'none',
+    WebkitAppearance: 'none',
 
     // Remove excess padding and border in Firefox 4+
     '&::-moz-focus-inner': {

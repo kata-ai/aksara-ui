@@ -1,13 +1,13 @@
 {
   "name": "@aksara-ui/core",
-  "version": "1.0.1-canary.1",
+  "version": "1.0.1-canary.2",
   "description": "Core design tokens for the Aksara design system.",
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/icons.esm.js",
   "typings": "dist/index.d.ts",
   "aksara:src": "./src/index.ts",
-  "repository": "https://github.com/kata-ai/wicara.git",
+  "repository": "https://github.com/kata-ai/aksara-ui.git",
   "author": "Kata.ai <dev@kata.ai>",
   "license": "Apache-2.0",
   "files": [

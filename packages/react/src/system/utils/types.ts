@@ -1,9 +1,9 @@
-import { RequiredTheme } from 'styled-system';
+import type { SystemStyleObject } from '@styled-system/css';
+import type { DefaultTheme } from 'styled-components';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type CSSObject = object; // TODO
+export type CSSObject = SystemStyleObject | Record<string, any>; // fallback handler, type variable css
 
-export type ComponentThemeScaleFn<P> = (props: P & { theme: RequiredTheme }) => CSSObject;
+export type ComponentThemeScaleFn<P = Record<string, any>> = (props: P & { theme: DefaultTheme }) => CSSObject;
 
 // FIXME was SystemStyleObject
 export type ComponentThemeScale<P> = CSSObject | ComponentThemeScaleFn<P>;
