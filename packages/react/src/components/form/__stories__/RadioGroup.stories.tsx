@@ -29,6 +29,7 @@ export const RadioInputBoxSample: Story<OptionListItemBoxProps> = ({ disabled, v
 };
 
 const inputRadioItemStyle = {
+  p: 'xs',
   [pseudoSelectors._checked]: {
     background: theme.colors.blue01,
     '& > input': {
@@ -51,21 +52,17 @@ const inputRadioItemStyle = {
 export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => (
   <RadioGroupRoot>
     <Stack direction="vertical" spacing="xs" width="300px">
-      <RadioGroupItem value="value1" disabled={disabled}>
-        <OptionListItemBox disabled={disabled} p="xs" sx={inputRadioItemStyle}>
-          <InputRadio readOnly checked={false} />
-          <Text scale={300} ml="xs">
-            Radio 1
-          </Text>
-        </OptionListItemBox>
+      <RadioGroupItem value="value1" disabled={disabled} sx={inputRadioItemStyle}>
+        <InputRadio readOnly checked={false} />
+        <Text scale={300} ml="xs">
+          Radio 1
+        </Text>
       </RadioGroupItem>
-      <RadioGroupItem value="value2" disabled={disabled}>
-        <OptionListItemBox disabled={disabled} p="xs" sx={inputRadioItemStyle}>
-          <InputRadio readOnly checked={false} />
-          <Text scale={300} ml="xs">
-            Radio 2
-          </Text>
-        </OptionListItemBox>
+      <RadioGroupItem value="value2" disabled={disabled} sx={inputRadioItemStyle}>
+        <InputRadio readOnly checked={false} />
+        <Text scale={300} ml="xs">
+          Radio 2
+        </Text>
       </RadioGroupItem>
     </Stack>
   </RadioGroupRoot>
@@ -74,21 +71,17 @@ export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => (
 export const RadioWithAvatar: Story<{ disabled: boolean }> = ({ disabled }) => (
   <RadioGroupRoot>
     <Stack direction="vertical" spacing="xs" width="300px">
-      <RadioGroupItem asChild value="value1" disabled={disabled}>
-        <OptionListItemBox disabled={disabled} variant="bordered" p="md">
-          <InputRadio readOnly checked={false} />
-          <Text scale={300} ml="xs">
-            Radio 1
-          </Text>
-        </OptionListItemBox>
+      <RadioGroupItem asChild value="value1" disabled={disabled} variant="bordered" sx={{ p: 'md' }}>
+        <InputRadio readOnly checked={false} />
+        <Text scale={300} ml="xs">
+          Radio 1
+        </Text>
       </RadioGroupItem>
-      <RadioGroupItem asChild value="value2" disabled={disabled}>
-        <OptionListItemBox disabled={disabled} variant="bordered" p="md">
-          <InputRadio readOnly checked={false} />
-          <Text scale={300} ml="xs">
-            Radio 2
-          </Text>
-        </OptionListItemBox>
+      <RadioGroupItem asChild value="value2" disabled={disabled} variant="bordered" sx={{ p: 'md' }}>
+        <InputRadio readOnly checked={false} />
+        <Text scale={300} ml="xs">
+          Radio 2
+        </Text>
       </RadioGroupItem>
     </Stack>
   </RadioGroupRoot>
