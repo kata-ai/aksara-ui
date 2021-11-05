@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Box, Stack } from '../../../layout';
 import { Heading, Paragraph } from '../../../typography';
 import { Button } from '../../button';
-import { Popover, PopoverProps, PopoverContent, PopoverContentProps } from './Popover';
+import { Popover, PopoverProps, PopoverTrigger, PopoverContent, PopoverContentProps } from './Popover';
 
 export default {
   title: 'Core/Components/Popover',
@@ -32,7 +32,10 @@ export const Example: Story<PopoverProps & Pick<PopoverContentProps, 'placement'
       width="100%"
       height={640}
     >
-      <Popover trigger={<Button variant="primary">Toggle Popover</Button>}>
+      <Popover>
+        <PopoverTrigger>
+          <Button variant="primary">Toggle Popover</Button>
+        </PopoverTrigger>
         <PopoverContent placement={placement} align={align}>
           <Box width="100%" maxWidth={300}>
             <Box py="md" px="lg" borderBottom="1px solid" borderBottomColor="greylight04">
