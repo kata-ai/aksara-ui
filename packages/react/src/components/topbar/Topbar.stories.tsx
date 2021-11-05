@@ -9,7 +9,7 @@ import Topbar, { TopbarProps } from './Topbar';
 import TopbarRoundedButton from './TopbarRoundedButton';
 import TopbarDisclosureButton from './TopbarDisclosureButton';
 import { Heading } from '../../typography';
-import { Popover, PopoverContent } from '../popover';
+import { Popover, PopoverTrigger, PopoverContent } from '../popover';
 
 export default {
   title: 'Core/Components/Topbar',
@@ -70,10 +70,8 @@ export const Example: Story<TopbarProps> = () => {
               <VisuallyHidden>Messages</VisuallyHidden>
               <IconBubble aria-hidden fill="currentColor" />
             </TopbarRoundedButton>
-            <Popover
-              open={popoverOpen}
-              onOpenChange={setPopoverOpen}
-              trigger={
+            <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+              <PopoverTrigger>
                 <TopbarRoundedButton isActive={popoverOpen}>
                   <Box role="presentation" position="relative">
                     <IconBell aria-hidden fill="currentColor" />
@@ -100,8 +98,7 @@ export const Example: Story<TopbarProps> = () => {
                   </Box>
                   <VisuallyHidden>Notifications</VisuallyHidden>
                 </TopbarRoundedButton>
-              }
-            >
+              </PopoverTrigger>
               <PopoverContent placement="bottom" align="end" alignOffset={-12}>
                 <Box width={240} px="lg" py="md">
                   Notification content

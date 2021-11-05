@@ -7,17 +7,16 @@
 To use this component within your React app, import as follows:
 
 ```jsx
-import { Popover, PopoverContent, Button, Card } from '@aksara-ui/react';
+import { Popover, PopoverTrigger, PopoverContent, Button, Card } from '@aksara-ui/react';
 
 export default function Component() {
   return (
-    <Popover
-      trigger={
+    <Popover>
+      <PopoverTrigger>
         <Button block variant="primary">
           Toggle Popover
         </Button>
-      }
-    >
+      </PopoverTrigger>
       <PopoverContent>
         <Card mt="xs" p="md" style={{ width: 250 }} elevation={3}>
           This is a popover
@@ -34,10 +33,17 @@ export default function Component() {
 
 This component extends the `Popover.Root` prop types from [radix-ui](https://www.radix-ui.com/docs/primitives/components/popover).
 
-| Property | Type                 | Required | Default | Description                                |
-| -------- | -------------------- | -------- | ------- | ------------------------------------------ |
-| trigger  | `React.ReactElement` | **Yes**  | -       | Element that triggers the popover content. |
-| children | `React.ReactElement` | **Yes**  | -       | Inner popover content.                     |
+| Property | Type                 | Required | Default | Description            |
+| -------- | -------------------- | -------- | ------- | ---------------------- |
+| children | `React.ReactElement` | **Yes**  | -       | Inner popover content. |
+
+### `<PopoverTrigger />`
+
+This component extends the `Popover.Trigger` prop types from [radix-ui](https://www.radix-ui.com/docs/primitives/components/popover).
+
+| Property | Type                 | Required | Default | Description            |
+| -------- | -------------------- | -------- | ------- | ---------------------- |
+| children | `React.ReactElement` | **Yes**  | -       | Inner popover content. |
 
 ### `<PopoverContent />`
 
