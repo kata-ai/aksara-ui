@@ -8,10 +8,10 @@ export interface OptionListItemBoxProps extends UnstyledButtonProps, React.Compo
 }
 
 const OptionListItemBox = React.forwardRef<HTMLButtonElement, OptionListItemBoxProps>(
-  ({ children, variant = 'simple', sx, ...rest }, ref) => {
-    const radioInputBoxStyle = useComponentStyles('optionItem', { variant });
+  ({ children, variant = 'default', sx, ...rest }, ref) => {
+    const optionItemStyle = useComponentStyles('optionItem', { variant });
     return (
-      <UnstyledButton ref={ref} sx={{ ...radioInputBoxStyle, ...sx }} {...rest}>
+      <UnstyledButton ref={ref} sx={{ ...optionItemStyle, ...sx }} {...rest}>
         {children}
       </UnstyledButton>
     );
