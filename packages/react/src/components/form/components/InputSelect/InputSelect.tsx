@@ -71,7 +71,7 @@ function InputSelect<T>({
     initialSelectedItem,
   });
 
-  const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : 'default' });
+  const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
   return (
     <Box width={width} zIndex={10}>
