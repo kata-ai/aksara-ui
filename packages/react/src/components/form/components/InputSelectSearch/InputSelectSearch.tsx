@@ -75,7 +75,7 @@ function InputSelect<T extends { value: string }>({
       },
     });
 
-  const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : 'default' });
+  const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
   return (
     <Box width={width} zIndex={10}>
