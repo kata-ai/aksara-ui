@@ -3058,7 +3058,6 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-context" "0.1.1"
 
-<<<<<<< HEAD
 "@radix-ui/react-label@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-label/-/react-label-0.1.1.tgz#c2970b19214248c2b3a0425c3c0d299290b559a5"
@@ -3070,8 +3069,6 @@
     "@radix-ui/react-id" "0.1.1"
     "@radix-ui/react-primitive" "0.1.1"
 
-=======
->>>>>>> 96cef36391820f80ebbd92fd4ac776078ff38191
 "@radix-ui/react-popover@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-popover/-/react-popover-0.1.1.tgz#99951e10d70c3855b7a7db52f7f15af684e47848"
