@@ -5,7 +5,7 @@ import { Button, PlainButton } from '../../button';
 import { InputSearchbox } from '../../form/components/InputSearchbox';
 import { InputSelect } from '../../form/components/InputSelect';
 import { Pill } from '../../pill';
-import { Popover, PopoverContent } from '../../popover';
+import { Popover, PopoverTrigger, PopoverContent } from '../../popover';
 
 export interface FilterPageHeaderProps extends BoxProps {
   /** callback function onClear action */
@@ -110,13 +110,12 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
     return (
       <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" marginTop={['md']} spacing="xxs">
         {listShownFilter.more.length && (
-          <Popover
-            trigger={
+          <Popover>
+            <PopoverTrigger>
               <PlainButton display="block" color="blue07">
                 {listShownFilter.more.length}+ Filter
               </PlainButton>
-            }
-          >
+            </PopoverTrigger>
             <PopoverContent placement="bottom">
               <Stack direction="horizontal" p="xs" spacing="xxs" flexWrap="wrap">
                 {listShownFilter.more.map(item => {
