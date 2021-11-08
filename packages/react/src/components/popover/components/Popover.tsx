@@ -4,10 +4,9 @@ import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { Box } from '../../../layout';
 import { SxProps, useComponentStyles } from '../../../system';
 
-export interface PopoverProps extends PopoverPrimitive.PopoverProps {
-  /** The element which triggers the popover content. */
-  trigger: React.ReactElement;
-}
+export type PopoverProps = PopoverPrimitive.PopoverProps;
+
+export type PopoverTriggerProps = Omit<PopoverPrimitive.PopoverTriggerProps, 'asChild'>;
 
 export interface PopoverContentProps extends Omit<PopoverPrimitive.PopoverContentProps, 'side'>, SxProps {
   /** Classname to pass to the popover content. */
@@ -18,24 +17,23 @@ export interface PopoverContentProps extends Omit<PopoverPrimitive.PopoverConten
   placement?: PopoverPrimitive.PopoverContentProps['side'];
 }
 
-export const Popover: React.FC<PopoverProps> = ({
-  trigger,
-  children,
-  defaultOpen,
-  open,
-  onOpenChange,
-  modal,
-  ...rest
-}) => {
+export const Popover: React.FC<PopoverProps> = ({ children, defaultOpen, open, onOpenChange, modal, ...rest }) => {
   return (
     <PopoverPrimitive.Root defaultOpen={defaultOpen} open={open} onOpenChange={onOpenChange} modal={modal} {...rest}>
-      <PopoverPrimitive.Trigger asChild>{trigger}</PopoverPrimitive.Trigger>
       {children}
     </PopoverPrimitive.Root>
   );
 };
 
 Popover.displayName = 'Popover';
+
+export const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children, ...rest }) => {
+  return (
+    <PopoverPrimitive.Trigger asChild {...rest}>
+      {children}
+    </PopoverPrimitive.Trigger>
+  );
+};
 
 export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>(
   (
