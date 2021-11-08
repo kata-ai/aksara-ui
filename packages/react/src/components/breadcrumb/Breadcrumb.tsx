@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box } from '../../layout';
 import { useComponentStyles } from '../../system';
-import { Popover, PopoverContent } from '../popover';
+import { Popover, PopoverTrigger, PopoverContent } from '../popover';
 import BreadcrumbOverflow from './BreadcrumbOverflow';
 
 export interface BreadcrumbProps {
@@ -39,7 +39,10 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, separator }) => {
               )}
             </Box>
             <Box>
-              <Popover trigger={<BreadcrumbOverflow>...</BreadcrumbOverflow>}>
+              <Popover>
+                <PopoverTrigger>
+                  <BreadcrumbOverflow>...</BreadcrumbOverflow>
+                </PopoverTrigger>
                 <PopoverContent placement="bottom">
                   <Box p="xs" width="160px">
                     {rest
