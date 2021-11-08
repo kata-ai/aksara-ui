@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+import { Space } from '@aksara-ui/core';
 import * as React from 'react';
 
 import { Box, BoxProps } from '../../../../layout';
@@ -10,6 +11,8 @@ export interface ButtonGroupProps extends BoxProps {
   segmented?: boolean;
   /** Stretch the buttons to fit the containing element. */
   fullWidth?: boolean;
+  /** Space between buttons. */
+  spacing?: keyof Space;
   /** The size of butttons in this button group. */
   size?: IconButtonSizes | ButtonSizes;
   /** Base variant of all the buttons in the group. */
@@ -23,6 +26,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
   segmented,
   fullWidth,
   size = 'md',
+  spacing = 'xxs',
   sx,
   disabled,
   ...rest
@@ -38,7 +42,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
       borderRadius={8}
       sx={{
         '> :not([hidden]) ~ :not([hidden])': {
-          marginLeft: 'xxs',
+          marginLeft: spacing,
         },
       }}
       {...rest}
