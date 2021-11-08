@@ -58,50 +58,38 @@ function InputSelectTags<T>({
   const tagInputRef = React.useRef<HTMLInputElement>(null);
   const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ focused, errors, disabled }) });
 
-  const {
-    getSelectedItemProps,
-    getDropdownProps,
-    addSelectedItem,
-    removeSelectedItem,
-    selectedItems,
-  } = useMultipleSelection({ initialSelectedItems: value, onSelectedItemsChange: hadleInputChange });
+  const { getSelectedItemProps, getDropdownProps, addSelectedItem, removeSelectedItem, selectedItems } =
+    useMultipleSelection({ initialSelectedItems: value, onSelectedItemsChange: hadleInputChange });
 
   const getFilteredItems = (items: any) =>
     items.filter(
       (item: any) => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())
     );
 
-  const {
-    isOpen,
-    getLabelProps,
-    getMenuProps,
-    getInputProps,
-    getComboboxProps,
-    highlightedIndex,
-    getItemProps,
-  } = useCombobox<T>({
-    inputValue,
-    items: getFilteredItems(items),
-    onStateChange: ({ inputValue, type, selectedItem }) => {
-      switch (type) {
-        case useCombobox.stateChangeTypes.InputChange:
-          setInputValue(inputValue || '');
-          break;
-        case useCombobox.stateChangeTypes.InputKeyDownEnter:
-        case useCombobox.stateChangeTypes.ItemClick:
-        case useCombobox.stateChangeTypes.InputBlur:
-          if (selectedItem) {
-            setInputValue('');
-            addSelectedItem(selectedItem);
-            // selectItem(null);
-          }
+  const { isOpen, getLabelProps, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } =
+    useCombobox<T>({
+      inputValue,
+      items: getFilteredItems(items),
+      onStateChange: ({ inputValue, type, selectedItem }) => {
+        switch (type) {
+          case useCombobox.stateChangeTypes.InputChange:
+            setInputValue(inputValue || '');
+            break;
+          case useCombobox.stateChangeTypes.InputKeyDownEnter:
+          case useCombobox.stateChangeTypes.ItemClick:
+          case useCombobox.stateChangeTypes.InputBlur:
+            if (selectedItem) {
+              setInputValue('');
+              addSelectedItem(selectedItem);
+              // selectItem(null);
+            }
 
-          break;
-        default:
-          break;
-      }
-    },
-  });
+            break;
+          default:
+            break;
+        }
+      },
+    });
 
   const handleFocusInput = (e: React.MouseEvent<HTMLDivElement>) => {
     // Prevent accidentally focusing on the input text when tag pills are clicked
