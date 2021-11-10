@@ -4,6 +4,7 @@ import { Button } from '../../button';
 import { InputText } from '../../form';
 import { Popover, PopoverTrigger, PopoverContent } from '../../popover';
 import PaginationButton from './PaginationButton';
+import { theme } from '../../../theme';
 
 export interface PaginationJumpToProps {
   total?: number;
@@ -26,11 +27,14 @@ const PaginationJumpTo: React.FC<PaginationJumpToProps> = ({ children, total, on
       setIsOpen(false);
     }
   };
-
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger>
-        <PaginationButton>{children}</PaginationButton>
+        <PaginationButton
+          sx={isOpen ? { border: `1px solid ${theme.colors.blue07}`, backgroundColor: theme.colors.blue01 } : {}}
+        >
+          {children}
+        </PaginationButton>
       </PopoverTrigger>
       <PopoverContent placement="top" align="center">
         <Box width={190}>
