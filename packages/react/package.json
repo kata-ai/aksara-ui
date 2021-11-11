@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/react",
-  "version": "1.0.1-canary.5",
+  "version": "1.0.1-canary.6",
   "description": "React implementation of Aksara Design System, from Kata.ai.",
   "main": "dist/index.js",
   "module": "dist/core.esm.js",
@@ -31,11 +31,11 @@
     "type-check": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "@aksara-ui/core": "^1.0.1-canary.2",
+    "@aksara-ui/core": "^1.0.1-canary.3",
     "@radix-ui/react-id": "^0.1.1",
     "@radix-ui/react-popover": "^0.1.1",
-    "@radix-ui/react-radio-group": "^0.1.1",
     "@radix-ui/react-portal": "^0.1.1",
+    "@radix-ui/react-radio-group": "^0.1.1",
     "@radix-ui/react-tooltip": "^0.1.1",
     "@radix-ui/react-visually-hidden": "^0.1.1",
     "@reach/accordion": "^0.16.1",
