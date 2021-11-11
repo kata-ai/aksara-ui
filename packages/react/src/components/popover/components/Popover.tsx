@@ -15,6 +15,7 @@ export interface PopoverContentProps extends Omit<PopoverPrimitive.PopoverConten
   style?: React.CSSProperties;
   /** Popover placement. Uses the `side` props from `radix-ui` */
   placement?: PopoverPrimitive.PopoverContentProps['side'];
+  arrowOffset?: PopoverPrimitive.PopoverArrowProps['offset'];
   /** `true` to hide the arrow in the popover */
   disableArrow?: boolean;
 }
@@ -48,6 +49,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
       sideOffset = 8,
       align = 'center',
       alignOffset = 0,
+      arrowOffset = 22,
       disableArrow = false,
       ...rest
     },
@@ -65,7 +67,9 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
       >
         <Box ref={ref} className={className} style={style} sx={{ ...popoverContentStyles, ...sx }}>
           {children}
-          {!disableArrow && <PopoverPrimitive.Arrow offset={22} width={20} height={8} fill="var(--popover-border)" />}
+          {!disableArrow && (
+            <PopoverPrimitive.Arrow offset={arrowOffset} width={20} height={8} fill="var(--popover-border)" />
+          )}
         </Box>
       </PopoverPrimitive.Content>
     );
