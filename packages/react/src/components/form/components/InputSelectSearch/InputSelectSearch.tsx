@@ -29,6 +29,8 @@ export interface InputSelectSearchProps<T extends { value: string }> {
   itemRenderer?: (item: T) => React.ReactNode;
   /** Name of the field form */
   name?: string;
+  /** open list when onfocus */
+  openOnFocus?: boolean;
   /** Logic on focus */
   onFocus?: () => void;
   /** Logic on blue */
@@ -56,24 +58,33 @@ function InputSelect<T extends { value: string }>({
   onBlur,
   onFocus,
   disabled,
+  openOnFocus = false,
   errors,
   size = 'md',
   width = '100%',
 }: InputSelectSearchProps<T>) {
   const [inputItems, setInputItems] = React.useState(items);
-  const { isOpen, getLabelProps, getMenuProps, highlightedIndex, getItemProps, getInputProps, getComboboxProps } =
-    useCombobox<T>({
-      items: inputItems,
-      itemToString,
-      selectedItem,
-      initialSelectedItem,
-      onSelectedItemChange: handleSelectedItemChange,
-      onInputValueChange: ({ inputValue }) => {
-        if (inputValue) {
-          setInputItems(items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())));
-        }
-      },
-    });
+  const {
+    isOpen,
+    getLabelProps,
+    getMenuProps,
+    highlightedIndex,
+    getItemProps,
+    getInputProps,
+    getComboboxProps,
+    openMenu,
+  } = useCombobox<T>({
+    items: inputItems,
+    itemToString,
+    selectedItem,
+    initialSelectedItem,
+    onSelectedItemChange: handleSelectedItemChange,
+    onInputValueChange: ({ inputValue }) => {
+      if (inputValue) {
+        setInputItems(items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())));
+      }
+    },
+  });
 
   const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
@@ -94,6 +105,9 @@ function InputSelect<T extends { value: string }>({
             onFocus={() => {
               if (onFocus) {
                 onFocus();
+              }
+              if (openOnFocus) {
+                openMenu();
               }
             }}
             onBlur={() => {
