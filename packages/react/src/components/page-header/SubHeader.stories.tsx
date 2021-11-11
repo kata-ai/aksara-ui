@@ -35,9 +35,18 @@ export const StandSubHeader = () => {
   return (
     <SubHeader
       label={
-        <Stack direction="horizontal" spacing="md" alignItems="center">
-          <Heading scale={400}>Title</Heading>
-          <IconButton aria-label="Push Me" onClick={action('pen icon clicked')} size="md" type="button" variant="plain">
+        <Box display="flex" alignItems="center">
+          <Heading scale={400} mr="xs">
+            Title
+          </Heading>
+          <IconButton
+            mr="md"
+            aria-label="Push Me"
+            onClick={action('pen icon clicked')}
+            size="md"
+            type="button"
+            variant="plain"
+          >
             <IconPen aria-hidden fill="currentColor" />
           </IconButton>
           <InputSelect
@@ -56,11 +65,11 @@ export const StandSubHeader = () => {
               { label: 'options 2', value: 'value_2' },
             ]}
           />
-        </Stack>
+        </Box>
       }
       variant="stand"
       actions={
-        <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" marginTop={['md']} spacing="md">
+        <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" spacing="md">
           <Text fontSize="12px" lineHeight="18px" color="greymed04">
             Caption
           </Text>
