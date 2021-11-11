@@ -17,20 +17,81 @@ export default {
   },
 };
 
-export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side }) => (
-  <DropdownMenu>
-    <DropdownMenuTrigerer>
-      <Box>Hello</Box>
-    </DropdownMenuTrigerer>
-    <DropdownMenuContent side={side}>
-      <DropdownMenuItem disabled>Hello again</DropdownMenuItem>
-      <DropdownMenuDivider />
-      <DropdownMenuItem>Hello again 2</DropdownMenuItem>
-      <DropdownMenuDivider />
-      <DropdownMenuItem>Hello again 3</DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
-);
+interface Obj {
+  header?: string;
+  label?: string;
+  value?: string;
+}
+
+const dropdownList: Obj[] = [
+  { header: 'Group one' },
+  { label: 'Item one', value: 'itemOne' },
+  { label: 'Item two', value: 'itemTwo' },
+  { label: 'Item three', value: 'itemThree' },
+  { header: 'Group two' },
+  { label: 'Item one-one', value: 'itemOneOne' },
+  { label: 'Item one-two', value: 'itemOneTwo' },
+];
+
+export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side }) => {
+  const [selected, setSelected] = React.useState<Obj>(dropdownList[1]);
+
+  return (
+    <DropdownMenu width={200}>
+      <DropdownMenuTrigerer>
+        <Box cursor="pointer" border="1px solid #494949" p={12} borderRadius={8}>
+          {selected.label}
+        </Box>
+      </DropdownMenuTrigerer>
+      <DropdownMenuContent width={200} side={side}>
+        {dropdownList.map((val, idx) => (
+          <Box key={val.header || val.value}>
+            {val.header ? (
+              <>
+                {idx !== 0 && <DropdownMenuDivider />}
+                <DropdownMenuHeader>{val.header}</DropdownMenuHeader>
+              </>
+            ) : (
+              <DropdownMenuItem onClick={() => setSelected(val)} isActive={selected.value === val.value}>
+                {val.label}
+              </DropdownMenuItem>
+            )}
+          </Box>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
+
+export const WithArrow: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side }) => {
+  const [selected, setSelected] = React.useState<Obj>(dropdownList[1]);
+
+  return (
+    <DropdownMenu width={200}>
+      <DropdownMenuTrigerer>
+        <Box cursor="pointer" border="1px solid #494949" p={12} borderRadius={8}>
+          {selected.label}
+        </Box>
+      </DropdownMenuTrigerer>
+      <DropdownMenuContent offset={14} width={200} side={side}>
+        {dropdownList.map((val, idx) => (
+          <Box key={val.header || val.value}>
+            {val.header ? (
+              <>
+                {idx !== 0 && <DropdownMenuDivider />}
+                <DropdownMenuHeader>{val.header}</DropdownMenuHeader>
+              </>
+            ) : (
+              <DropdownMenuItem onClick={() => setSelected(val)} isActive={selected.value === val.value}>
+                {val.label}
+              </DropdownMenuItem>
+            )}
+          </Box>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
 
 Example.args = {
   side: 'bottom',

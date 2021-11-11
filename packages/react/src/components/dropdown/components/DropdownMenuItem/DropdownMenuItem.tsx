@@ -18,10 +18,17 @@ export interface DropdownMenuItemProps extends RadixDropdownMenu.MenuItemProps {
 const Root = styled(RadixDropdownMenu.Item)`
   border: 1px solid transparent;
   background-color: ${themeGet('colors.grey01', theme.colors.grey01)};
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 8px;
   cursor: pointer;
 
   &[data-disabled] {
     color: ${themeGet('colors.greymed01', theme.colors.greymed01)};
+  }
+
+  &:focus-visible {
+    outline: 0px;
   }
 
   &:focus,
@@ -34,7 +41,6 @@ const Root = styled(RadixDropdownMenu.Item)`
     background-color: ${themeGet('colors.greylight03', theme.colors.greylight03)};
   }
 
-  &:active,
   &.active {
     border-left: 4px solid ${themeGet('colors.blue07', theme.colors.blue07)};
     background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
@@ -46,9 +52,15 @@ const DropdownMenuItem: React.ForwardRefRenderFunction<HTMLDivElement, DropdownM
   ref
 ) => {
   return (
-    <Root ref={ref} {...rest}>
-      <Box py="xs" px="md" className={clsx(isActive && 'active', className)} style={style}>
-        {typeof children === 'string' ? <Text scale={300}>{children}</Text> : children}
+    <Root className={clsx(isActive && 'active', className)} ref={ref} {...rest}>
+      <Box py="xs" px="md" style={style}>
+        {typeof children === 'string' ? (
+          <Text scale={300} marginLeft={isActive ? '-4px' : ''}>
+            {children}
+          </Text>
+        ) : (
+          children
+        )}
       </Box>
     </Root>
   );
