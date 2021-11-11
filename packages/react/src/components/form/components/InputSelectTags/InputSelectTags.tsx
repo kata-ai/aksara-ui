@@ -16,6 +16,8 @@ export interface InputSelectTagsProps<T> {
   disabled?: boolean;
   errors?: boolean;
   hadleInputChange?: (changes: UseMultipleSelectionStateChange<T>) => void;
+  /** open list when onfocus */
+  openOnFocus?: boolean;
   label?: string;
   width?: string | number;
   items: T[];
@@ -50,13 +52,14 @@ function InputSelectTags<T>({
   items,
   value,
   hadleInputChange,
+  openOnFocus = false,
   width = '100%',
 }: InputSelectTagsProps<T>) {
   const [inputValue, setInputValue] = React.useState('');
-  const [focused, setFocused] = React.useState(false);
+  const [, setFocused] = React.useState(false);
 
   const tagInputRef = React.useRef<HTMLInputElement>(null);
-  const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ focused, errors, disabled }) });
+  const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ errors, disabled }) });
 
   const { getSelectedItemProps, getDropdownProps, addSelectedItem, removeSelectedItem, selectedItems } =
     useMultipleSelection({ initialSelectedItems: value, onSelectedItemsChange: hadleInputChange });
@@ -66,30 +69,38 @@ function InputSelectTags<T>({
       (item: any) => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())
     );
 
-  const { isOpen, getLabelProps, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } =
-    useCombobox<T>({
-      inputValue,
-      items: getFilteredItems(items),
-      onStateChange: ({ inputValue, type, selectedItem }) => {
-        switch (type) {
-          case useCombobox.stateChangeTypes.InputChange:
-            setInputValue(inputValue || '');
-            break;
-          case useCombobox.stateChangeTypes.InputKeyDownEnter:
-          case useCombobox.stateChangeTypes.ItemClick:
-          case useCombobox.stateChangeTypes.InputBlur:
-            if (selectedItem) {
-              setInputValue('');
-              addSelectedItem(selectedItem);
-              // selectItem(null);
-            }
+  const {
+    isOpen,
+    getLabelProps,
+    getMenuProps,
+    getInputProps,
+    getComboboxProps,
+    highlightedIndex,
+    getItemProps,
+    openMenu,
+  } = useCombobox<T>({
+    inputValue,
+    items: getFilteredItems(items),
+    onStateChange: ({ inputValue, type, selectedItem }) => {
+      switch (type) {
+        case useCombobox.stateChangeTypes.InputChange:
+          setInputValue(inputValue || '');
+          break;
+        case useCombobox.stateChangeTypes.InputKeyDownEnter:
+        case useCombobox.stateChangeTypes.ItemClick:
+        case useCombobox.stateChangeTypes.InputBlur:
+          if (selectedItem) {
+            setInputValue('');
+            addSelectedItem(selectedItem);
+            // selectItem(null);
+          }
 
-            break;
-          default:
-            break;
-        }
-      },
-    });
+          break;
+        default:
+          break;
+      }
+    },
+  });
 
   const handleFocusInput = (e: React.MouseEvent<HTMLDivElement>) => {
     // Prevent accidentally focusing on the input text when tag pills are clicked
@@ -153,7 +164,12 @@ function InputSelectTags<T>({
                     color: 'greymed01',
                   },
                 }}
-                onFocus={() => setFocused(true)}
+                onFocus={() => {
+                  setFocused(true);
+                  if (openOnFocus) {
+                    openMenu();
+                  }
+                }}
                 onBlur={() => setFocused(false)}
                 placeholder={placeholder}
                 disabled={disabled}

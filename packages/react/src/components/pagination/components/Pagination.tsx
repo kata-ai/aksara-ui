@@ -6,6 +6,7 @@ import { VisuallyHidden } from '../../../helpers';
 import { Text } from '../../../typography';
 import { theme } from '../../../theme';
 import PaginationButton from './PaginationButton';
+import PaginationJumpTo from './PaginationJumpTo';
 import IconChevronLeft from './IconChevronLeft';
 import IconChevronRight from './IconChevronRight';
 
@@ -98,18 +99,27 @@ class Pagination extends React.Component<PaginationProps> {
           <VisuallyHidden>Previous Page</VisuallyHidden>
           <IconChevronLeft aria-hidden size={16} fill={theme.colors.grey08} />
         </PaginationButton>
-        {pages.map((page, index) => (
-          <PaginationButton
-            key={index.toString()}
-            isActive={page === current}
-            onClick={() => (typeof page === 'number' ? this.handleSelectPage(page) : null)}
-            disabled={typeof page !== 'number'}
-          >
-            <Text scale={300} fontWeight={500}>
-              {page}
-            </Text>
-          </PaginationButton>
-        ))}
+        {pages.map((page, index) => {
+          if (typeof page !== 'number') {
+            return (
+              <PaginationJumpTo total={total} onSelectPage={this.handleSelectPage}>
+                {page}
+              </PaginationJumpTo>
+            );
+          }
+
+          return (
+            <PaginationButton
+              key={index.toString()}
+              isActive={page === current}
+              onClick={() => (typeof page === 'number' ? this.handleSelectPage(page) : null)}
+            >
+              <Text scale={300} fontWeight={500}>
+                {page}
+              </Text>
+            </PaginationButton>
+          );
+        })}
         <PaginationButton disabled={current === total} onClick={() => this.handleSelectPage(current + 1)}>
           <VisuallyHidden>Next Page</VisuallyHidden>
           <IconChevronRight aria-hidden size={16} fill={theme.colors.grey08} />
