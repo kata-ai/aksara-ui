@@ -69,7 +69,7 @@ export const StandSubHeader = () => {
       }
       variant="stand"
       actions={
-        <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" marginTop={['md']} spacing="md">
+        <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" spacing="md">
           <Text fontSize="12px" lineHeight="18px" color="greymed04">
             Caption
           </Text>

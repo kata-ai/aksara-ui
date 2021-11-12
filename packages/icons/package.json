@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/icons",
-  "version": "1.0.1-canary.0",
+  "version": "1.0.1-canary.1",
   "description": "React icon library for the Aksara design system.",
   "sideEffects": false,
   "main": "dist/index.js",
@@ -31,6 +31,5 @@
   "peerDependencies": {
     "react": "^16.10.0 || ^17.0.0",
     "react-dom": "^16.10.0 || ^17.0.0"
-  },
-  "devDependencies": {}
+  }
 }

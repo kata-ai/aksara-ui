@@ -18,6 +18,7 @@ import subHeader from './subHeader';
 import topbar from './topbar';
 import inputRadio from './form/inputRadio';
 import optionItem from './optionItem';
+import pagination from './pagination';
 
 /**
  * Custom theme props based on custom component variants.
@@ -44,6 +45,7 @@ const componentStyles = {
   ...subHeader,
   ...inputRadio,
   ...optionItem,
+  ...pagination,
 };
 
 export default componentStyles;

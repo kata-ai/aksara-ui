@@ -1,67 +1,22 @@
-import styled, { css } from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
-import { UnstyledButton } from '../../button';
-import { theme } from '../../../theme';
+import React from 'react';
+import { UnstyledButton, UnstyledButtonProps } from '../../button';
+import { useComponentStyles } from '../../../system';
 
-interface PaginationButtonProps {
+export interface PaginationButtonProps extends UnstyledButtonProps, React.ComponentPropsWithoutRef<'button'> {
   isActive?: boolean;
 }
 
-const DefaultStyles = css`
-  color: inherit;
+const PaginationButton = React.forwardRef<HTMLButtonElement, PaginationButtonProps>(
+  ({ className, style, sx, isActive, children, ...rest }, ref) => {
+    const paginationButtonStyle = useComponentStyles('paginationButton', { isActive });
 
-  &:focus,
-  &.focus {
-    background-color: ${themeGet('colors.grey02', theme.colors.grey02)};
+    return (
+      <UnstyledButton ref={ref} className={className} style={style} sx={{ ...paginationButtonStyle, ...sx }} {...rest}>
+        {children}
+      </UnstyledButton>
+    );
   }
-
-  &:active,
-  &.active {
-    border-color: ${themeGet('colors.blue05', theme.colors.blue05)};
-  }
-`;
-
-const IsActiveStyles = css`
-  background-color: ${themeGet('colors.blue07', theme.colors.blue07)};
-  border-color: ${themeGet('colors.blue07', theme.colors.blue07)};
-  color: ${themeGet('colors.white', theme.colors.white)};
-
-  &:hover,
-  &.hover {
-    background-color: ${themeGet('colors.blue07', theme.colors.blue07)};
-  }
-
-  &:active,
-  &.active {
-    background-color: ${themeGet('colors.blue07', theme.colors.blue07)};
-    border-color: ${themeGet('colors.blue07', theme.colors.blue07)};
-    color: ${themeGet('colors.white', theme.colors.white)};
-  }
-`;
-
-const PaginationButton = styled(UnstyledButton)<PaginationButtonProps>`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 32px;
-  width: 32px;
-  text-align: center;
-  border-radius: 4px;
-  border: 1px solid transparent;
-
-  user-select: none;
-
-  &:not(:first-of-type) {
-    margin-left: 4px;
-  }
-
-  &:disabled,
-  &[disabled] {
-    opacity: 0.3;
-  }
-
-  ${props => (props.isActive ? IsActiveStyles : DefaultStyles)}
-`;
+);
 
 PaginationButton.displayName = 'PaginationButton';
 
