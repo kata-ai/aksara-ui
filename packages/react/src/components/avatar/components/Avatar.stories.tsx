@@ -61,3 +61,19 @@ WithLabel.args = {
   bg: 'indigo06',
   src: 'https://picsum.photos/id/2/400/400',
 };
+
+export const WithPresence: Story<AvatarProps> = ({ name, ...args }) => (
+  <Box display="inline-flex" alignItems="center">
+    <Avatar name={name} {...args} />
+  </Box>
+);
+WithPresence.args = {
+  size: 'lg',
+  name: 'Adry Muhammad',
+  bg: 'indigo06',
+  src: 'https://picsum.photos/id/2/400/400',
+  presence: {
+    position: 'top',
+    label: '3',
+  },
+};
