@@ -51,16 +51,21 @@ const DropdownMenuItem: React.ForwardRefRenderFunction<HTMLDivElement, DropdownM
   { className, style, children, isActive, ...rest },
   ref
 ) => {
+  const renderLabel = () => {
+    if (typeof children === 'string') {
+      return (
+        <Text scale={300} marginLeft={isActive ? '-4px' : ''}>
+          {children}
+        </Text>
+      );
+    } else {
+      return children;
+    }
+  };
   return (
     <Root className={clsx(isActive && 'active', className)} ref={ref} {...rest}>
       <Box py="xs" px="md" style={style}>
-        {typeof children === 'string' ? (
-          <Text scale={300} marginLeft={isActive ? '-4px' : ''}>
-            {children}
-          </Text>
-        ) : (
-          children
-        )}
+        {renderLabel()}
       </Box>
     </Root>
   );
