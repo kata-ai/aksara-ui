@@ -5,6 +5,7 @@ import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text } from '../../../typography';
 import getInitials from '../utils/getInitials';
+import Presence, { PresenceProps } from './Presence';
 
 export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** Additional CSS classes to give to the component. */
@@ -23,6 +24,8 @@ export interface AvatarProps extends Omit<BoxProps, 'size'> {
   icon?: React.ComponentType<any>;
   /** Size of the avatar. */
   size?: 'sm' | 'md' | 'lg' | number;
+  /** Presence option */
+  presence?: PresenceProps;
 }
 
 function iconSizes(size: AvatarProps['size'] = 'lg') {
@@ -62,7 +65,19 @@ function initialSizes(size: AvatarProps['size'] = 'lg') {
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
   (
-    { className, style, src, alt = undefined, name, size = 'lg', color = 'white', bg = 'indigo06', icon, ...rest },
+    {
+      className,
+      style,
+      src,
+      alt = undefined,
+      name,
+      size = 'lg',
+      color = 'white',
+      bg = 'indigo06',
+      icon,
+      presence,
+      ...rest
+    },
     ref
   ) => {
     const styles = useComponentStyles('avatar', { size: typeof size === 'string' ? size : undefined });
@@ -94,24 +109,40 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       return renderInitials();
     };
 
-    return (
-      <Box
-        as="span"
-        ref={ref}
-        className={className}
-        style={style}
-        color={color}
-        bg={bg}
-        sx={{ ...styles }}
-        width={typeof size === 'number' ? size : undefined}
-        height={typeof size === 'number' ? size : undefined}
-        borderRadius={9999}
-        {...rest}
-      >
-        {name && <VisuallyHidden>{name}</VisuallyHidden>}
-        {renderImage()}
-      </Box>
-    );
+    const renderPresence = (option: PresenceProps) => {
+      const precenseSize = size !== 'sm' && size !== 'md' ? 'md' : size;
+      return <Presence {...option} size={precenseSize} />;
+    };
+
+    const renderAvatar = () => {
+      return (
+        <Box
+          as="span"
+          ref={ref}
+          className={className}
+          style={style}
+          color={color}
+          bg={bg}
+          sx={{ ...styles }}
+          width={typeof size === 'number' ? size : undefined}
+          height={typeof size === 'number' ? size : undefined}
+          borderRadius={9999}
+          {...rest}
+        >
+          {name && <VisuallyHidden>{name}</VisuallyHidden>}
+          {renderImage()}
+        </Box>
+      );
+    };
+    if (presence) {
+      return (
+        <Box position="relative">
+          {renderAvatar()}
+          {renderPresence(presence)}
+        </Box>
+      );
+    }
+    return renderAvatar();
   }
 );
 
