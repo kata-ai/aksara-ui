@@ -58,9 +58,8 @@ const DropdownMenuItem: React.ForwardRefRenderFunction<HTMLDivElement, DropdownM
           {children}
         </Text>
       );
-    } else {
-      return children;
     }
+    return children;
   };
   return (
     <Root className={clsx(isActive && 'active', className)} ref={ref} {...rest}>

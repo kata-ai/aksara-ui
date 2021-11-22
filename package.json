@@ -71,10 +71,5 @@
     "tsdx": "0.14.1",
     "typeface-inter": "^3.18.1",
     "typescript": "~4.4.4"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx,css,scss,md,html,json}": [
-      "prettier --write"
-    ]
   }
 }
