@@ -50,11 +50,12 @@ const avatarPresenceBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = 
   overflow: 'hidden',
   userSelect: 'none',
   position: 'absolute',
-  right: '0',
+  left: '60%',
   background: theme.colors.red07,
   fontSize: '8px',
   fontWeight: '400',
   color: 'white',
+  boxSizing: 'content-box',
 });
 
 const avatarPresence: ComponentThemeConfig = {
@@ -66,13 +67,13 @@ const avatarPresence: ComponentThemeConfig = {
   scales: {
     sizes: {
       sm: {
-        width: '8px',
+        minWidth: '8px',
         height: '8px',
         borderWidth: '1px',
         borderRadius: '8px',
       },
       md: {
-        width: '12px',
+        minWidth: '12px',
         height: '12px',
         borderWidth: '2px',
         borderRadius: '12px',
