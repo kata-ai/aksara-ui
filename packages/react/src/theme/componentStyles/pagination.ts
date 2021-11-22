@@ -1,7 +1,10 @@
 import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
-const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isActive: boolean }> = ({ theme, isActive }) => ({
+const paginationButtonBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isActive: boolean }> = ({
+  theme,
+  isActive,
+}) => ({
   display: 'inline-flex',
   outline: 'none',
   alignItems: 'center',
@@ -12,6 +15,9 @@ const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isActive: boolean 
   borderRadius: '8px',
   border: '1px solid transparent',
   userSelect: 'none',
+  '&:hover': {
+    backgroundColor: theme.colors.greylight03,
+  },
   '&:focus': {
     backgroundColor: theme.colors.grey01,
     border: '2px solid rgba(175, 214, 255, 0.7)',
@@ -28,6 +34,9 @@ const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isActive: boolean 
         '&:focus': {
           backgroundColor: theme.colors.blue07,
         },
+        '&:active': {
+          backgroundColor: theme.colors.blue07,
+        },
       }
     : {}),
   backgroundColor: isActive ? theme.colors.blue07 : theme.colors.grey01,
@@ -35,7 +44,7 @@ const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isActive: boolean 
 });
 
 const paginationButton: ComponentThemeConfig = {
-  baseStyle,
+  baseStyle: paginationButtonBaseStyle,
 };
 const pagination = {
   paginationButton,
