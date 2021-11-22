@@ -1,19 +1,14 @@
 // eslint-disable react/no-array-index-key
 
 import * as React from 'react';
-import styled from 'styled-components';
 import { VisuallyHidden } from '../../../helpers';
-import { Text } from '../../../typography';
+import { Box } from '../../../layout';
 import { theme } from '../../../theme';
-import PaginationButton from './PaginationButton';
-import PaginationJumpTo from './PaginationJumpTo';
+import { Text } from '../../../typography';
 import IconChevronLeft from './IconChevronLeft';
 import IconChevronRight from './IconChevronRight';
-
-const PaginationBase = styled('div')`
-  display: inline-flex;
-  align-items: center;
-`;
+import PaginationButton from './PaginationButton';
+import PaginationJumpTo from './PaginationJumpTo';
 
 export interface PaginationProps {
   /** Additional CSS classes to give to the pagination. */
@@ -94,7 +89,16 @@ class Pagination extends React.Component<PaginationProps> {
     const pages = this.generatePages();
 
     return (
-      <PaginationBase className={className}>
+      <Box
+        className={className}
+        display="inline-flex"
+        alignItems="center"
+        sx={{
+          '> :not([hidden]) ~ :not([hidden])': {
+            ml: '6px',
+          },
+        }}
+      >
         <PaginationButton color="white" disabled={current === 1} onClick={() => this.handleSelectPage(current - 1)}>
           <VisuallyHidden>Previous Page</VisuallyHidden>
           <IconChevronLeft aria-hidden size={16} fill={theme.colors.grey08} />
@@ -124,7 +128,7 @@ class Pagination extends React.Component<PaginationProps> {
           <VisuallyHidden>Next Page</VisuallyHidden>
           <IconChevronRight aria-hidden size={16} fill={theme.colors.grey08} />
         </PaginationButton>
-      </PaginationBase>
+      </Box>
     );
   }
 }
