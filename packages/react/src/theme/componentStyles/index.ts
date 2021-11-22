@@ -24,7 +24,7 @@ import pagination from './pagination';
  * Custom theme props based on custom component variants.
  */
 const componentStyles = {
-  avatar,
+  ...avatar,
   badge,
   ...breadcrumb,
   ...button,
