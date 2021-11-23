@@ -1,11 +1,11 @@
 import * as React from 'react';
-
+import { avatarSizeOptions } from '../../../theme/componentStyles/avatar';
 import { VisuallyHidden } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text } from '../../../typography';
 import getInitials from '../utils/getInitials';
-import Presence, { PresenceProps } from './Presence';
+import Presence, { PresenceProps, PresenceSizeType } from './Presence';
 
 export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** Additional CSS classes to give to the component. */
@@ -110,8 +110,19 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
     };
 
     const renderPresence = (option: PresenceProps) => {
-      const precenseSize = size !== 'sm' && size !== 'md' ? 'md' : size;
-      return <Presence {...option} size={precenseSize} />;
+      let sizeOption: PresenceSizeType;
+      let avatarSize: number;
+      if (typeof size === 'string') {
+        avatarSize = avatarSizeOptions[size];
+      } else {
+        avatarSize = size;
+      }
+      if (avatarSize < 32) {
+        sizeOption = 'sm';
+      } else {
+        sizeOption = 'md';
+      }
+      return <Presence {...option} size={sizeOption} />;
     };
 
     const renderAvatar = () => {

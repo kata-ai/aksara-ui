@@ -1,6 +1,11 @@
 import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
+export const avatarSizeOptions = {
+  sm: 24,
+  md: 32,
+  lg: 40,
+};
 const avatar: ComponentThemeConfig = {
   propToScaleMap: [['size', 'sizes']],
   baseStyle: {
@@ -50,7 +55,7 @@ const avatarPresenceBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = 
   overflow: 'hidden',
   userSelect: 'none',
   position: 'absolute',
-  left: '60%',
+  left: '65%',
   background: theme.colors.red07,
   fontSize: '8px',
   fontWeight: '400',
@@ -69,22 +74,24 @@ const avatarPresence: ComponentThemeConfig = {
       sm: {
         minWidth: '8px',
         height: '8px',
+        padding: '1px',
         borderWidth: '1px',
         borderRadius: '8px',
       },
       md: {
-        minWidth: '12px',
-        height: '12px',
+        minWidth: '10px',
+        height: '10px',
+        padding: '1px',
         borderWidth: '2px',
         borderRadius: '12px',
       },
     },
     positions: {
       top: {
-        top: '0',
+        top: 0,
       },
       bottom: {
-        bottom: '0',
+        bottom: 0,
       },
     },
   },
