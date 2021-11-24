@@ -38,7 +38,7 @@ export const Example: Story<TopbarProps> = () => {
           <TopbarDisclosureButton>
             <Stack spacing="xs" direction="horizontal" alignItems="center">
               <Avatar
-                size="md"
+                size="sm"
                 backgroundColor="greylight03"
                 color="greymed04"
                 icon={IconFlowerGrid}
