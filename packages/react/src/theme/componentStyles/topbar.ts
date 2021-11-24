@@ -40,7 +40,7 @@ const topbarDisclosureButton: ComponentThemeConfig = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '40px',
+    height: '32px',
     px: 'xs',
     backgroundColor: 'var(--topbar-disclosure-button-bg-color)',
     color: 'var(--topbar-disclosure-button-foreground-color)',
