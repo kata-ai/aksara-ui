@@ -17,7 +17,11 @@ export interface DropdownMenuItemProps extends RadixDropdownMenu.MenuItemProps {
 
 const Root = styled(RadixDropdownMenu.Item)`
   border: 1px solid transparent;
+  height: auto;
+  display: flex;
+  align-items: stretch;
   background-color: ${themeGet('colors.grey01', theme.colors.grey01)};
+  margin-top: 2px;
   margin-left: 8px;
   margin-right: 8px;
   border-radius: 8px;
@@ -33,17 +37,19 @@ const Root = styled(RadixDropdownMenu.Item)`
 
   &:focus,
   &.focus {
-    background-color: ${themeGet('colors.blue02', theme.colors.blue02)};
+    border: 1px solid ${themeGet('colors.blue03', theme.colors.blue03)};
   }
 
   &:hover,
   &.hover {
+    border: 1px solid transparent;
     background-color: ${themeGet('colors.greylight03', theme.colors.greylight03)};
   }
 
   &.active {
-    border-left: 4px solid ${themeGet('colors.blue07', theme.colors.blue07)};
+    /* border-left: 4px solid ${themeGet('colors.blue07', theme.colors.blue07)}; */
     background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
+    color: ${themeGet('colors.blue07', theme.colors.blue07)};
   }
 `;
 
@@ -63,6 +69,15 @@ const DropdownMenuItem: React.ForwardRefRenderFunction<HTMLDivElement, DropdownM
   };
   return (
     <Root className={clsx(isActive && 'active', className)} ref={ref} {...rest}>
+      {isActive && (
+        <Box
+          width={4}
+          borderTopLeftRadius={4}
+          borderBottomLeftRadius={4}
+          height="inherit"
+          backgroundColor={theme.colors.blue07}
+        />
+      )}
       <Box py="xs" px="md" style={style}>
         {renderLabel()}
       </Box>
