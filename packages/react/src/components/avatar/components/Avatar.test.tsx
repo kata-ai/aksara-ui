@@ -20,5 +20,17 @@ describe('components/Avatar', () => {
       expect(getByText(/adry muhammad/i)).toBeInTheDocument();
       expect(getByRole('presentation')).toBeVisible();
     });
+
+    test('render presence correctly', () => {
+      const { getByTestId } = render(<Avatar name="Adry Muhammad" presence={{ label: '3', position: 'top' }} />);
+      const presence = getByTestId('avatar-presence');
+      expect(presence).toBeInTheDocument();
+    });
+
+    test('not render presence', () => {
+      const { queryByTestId } = render(<Avatar name="Adry Muhammad" />);
+      const presence = queryByTestId('avatar-presence');
+      expect(presence).not.toBeInTheDocument();
+    });
   });
 });
