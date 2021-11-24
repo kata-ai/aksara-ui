@@ -74,7 +74,7 @@ export const HorizontalCard = () => {
     <Card p="xl">
       <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-between">
         <Stack spacing="md" direction="horizontal" alignItems="center">
-          <Avatar size={64} name="Title" src="https://picsum.photos/id/2/400/400" />
+          <Avatar size={'xl'} name="Title" src="https://picsum.photos/id/2/400/400" />
           <Box>
             <Stack spacing="xs">
               <Heading scale={400}>Title</Heading>
