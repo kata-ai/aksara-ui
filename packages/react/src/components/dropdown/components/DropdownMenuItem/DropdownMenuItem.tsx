@@ -47,7 +47,6 @@ const Root = styled(RadixDropdownMenu.Item)`
   }
 
   &.active {
-    /* border-left: 4px solid ${themeGet('colors.blue07', theme.colors.blue07)}; */
     background-color: ${themeGet('colors.blue01', theme.colors.blue01)};
     color: ${themeGet('colors.blue07', theme.colors.blue07)};
   }
