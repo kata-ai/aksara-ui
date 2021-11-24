@@ -12,7 +12,7 @@ export default {
   component: Avatar,
   argTypes: {
     size: {
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md', 'lg', 'xl'],
     },
     name: {
       control: 'text',

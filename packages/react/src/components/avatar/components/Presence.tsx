@@ -3,7 +3,7 @@ import { Box } from '../../../layout/box';
 import { useComponentStyles } from '../../../system';
 
 export type PresencePositionType = 'top' | 'bottom';
-export type PresenceSizeType = 'sm' | 'md';
+export type PresenceSizeType = 'sm' | 'md' | 'lg' | 'xl';
 export interface PresenceProps {
   label: string;
   position: PresencePositionType;

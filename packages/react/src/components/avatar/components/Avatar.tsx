@@ -5,8 +5,9 @@ import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text } from '../../../typography';
 import getInitials from '../utils/getInitials';
-import Presence, { PresenceProps, PresenceSizeType } from './Presence';
+import Presence, { PresenceProps } from './Presence';
 
+type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';
 export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** Additional CSS classes to give to the component. */
   className?: string;
@@ -23,44 +24,21 @@ export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** The icon that renders with the avatar. */
   icon?: React.ComponentType<any>;
   /** Size of the avatar. */
-  size?: 'sm' | 'md' | 'lg' | number;
+  size?: AvatarSize;
   /** Presence option */
   presence?: PresenceProps;
 }
 
-function iconSizes(size: AvatarProps['size'] = 'lg') {
-  switch (size) {
-    case 'sm': {
-      return 16;
-    }
-    case 'md': {
-      return 24;
-    }
-    case 'lg': {
-      return 32;
-    }
-    default: {
-      return size - 8;
-    }
-  }
+function iconSizes(size: AvatarSize = 'lg') {
+  return avatarSizeOptions[size] - 8;
 }
 
-function initialSizes(size: AvatarProps['size'] = 'lg') {
-  switch (size) {
-    case 'sm': {
-      return '8px';
-    }
-    case 'md': {
-      return '12px';
-    }
-    case 'lg': {
-      return '14px';
-    }
-    default: {
-      return '12px';
-    }
-  }
-}
+const initialSizes: Record<AvatarSize, string> = {
+  sm: '8px',
+  md: '12px',
+  lg: '14px',
+  xl: '20px',
+};
 
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
@@ -84,7 +62,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
 
     const renderInitials = () => {
       return (
-        <Text fontSize={initialSizes(size)} lineHeight={1} role="presentation">
+        <Text fontSize={initialSizes[size]} lineHeight={1} role="presentation">
           {name ? getInitials(name) : '??'}
         </Text>
       );
@@ -110,19 +88,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
     };
 
     const renderPresence = (option: PresenceProps) => {
-      let sizeOption: PresenceSizeType;
-      let avatarSize: number;
-      if (typeof size === 'string') {
-        avatarSize = avatarSizeOptions[size];
-      } else {
-        avatarSize = size;
-      }
-      if (avatarSize < 32) {
-        sizeOption = 'sm';
-      } else {
-        sizeOption = 'md';
-      }
-      return <Presence {...option} size={sizeOption} />;
+      return <Presence {...option} size={size} />;
     };
 
     const renderAvatar = () => {
