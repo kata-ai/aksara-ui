@@ -87,17 +87,17 @@ const avatarPresence: ComponentThemeConfig = {
         // sizePresence 8px + 2px (both side padding 1px)
       },
       md: {
-        minWidth: '10px',
-        height: '10px',
-        padding: '1px',
+        minWidth: '8px',
+        height: '8px',
+        padding: '2px',
         borderWidth: '2px',
         borderRadius: '12px',
         left: '20px',
       },
       lg: {
-        minWidth: '10px',
-        height: '10px',
-        padding: '1px',
+        minWidth: '8px',
+        height: '8px',
+        padding: '2px',
         borderWidth: '2px',
         borderRadius: '12px',
         left: '28px',
@@ -109,6 +109,7 @@ const avatarPresence: ComponentThemeConfig = {
         borderWidth: '2px',
         borderRadius: '16px',
         left: '48px',
+        fontSize: '12px',
       },
     },
     positions: {
