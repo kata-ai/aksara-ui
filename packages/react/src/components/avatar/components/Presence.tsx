@@ -12,6 +12,10 @@ export interface PresenceProps {
 
 const Presence = ({ size, position = 'top', label }: PresenceProps) => {
   const presenceStyle = useComponentStyles('avatarPresence', { size, position });
-  return <Box sx={presenceStyle}>{label}</Box>;
+  return (
+    <Box data-testid="avatar-presence" sx={presenceStyle}>
+      {label}
+    </Box>
+  );
 };
 export default Presence;

@@ -113,7 +113,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
     };
     if (presence) {
       return (
-        <Box position="relative">
+        <Box position="relative" data-testid="avatar-with-presence">
           {renderAvatar()}
           {renderPresence(presence)}
         </Box>
