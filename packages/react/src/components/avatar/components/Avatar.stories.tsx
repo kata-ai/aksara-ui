@@ -5,18 +5,26 @@ import { Story } from '@storybook/react';
 import { Box } from '../../../layout';
 import { Heading } from '../../../typography';
 import Avatar, { AvatarProps } from './Avatar';
+import { PresenceProps } from './Presence';
 
 export default {
   title: 'Core/Components/Avatar',
   component: Avatar,
   argTypes: {
     size: {
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md', 'lg', 'xl'],
     },
     name: {
       control: 'text',
     },
     src: {
+      control: 'text',
+    },
+    presencePosition: {
+      options: ['top', 'bottom'],
+      control: { type: 'radio' },
+    },
+    presenceLabel: {
       control: 'text',
     },
   },
@@ -62,18 +70,33 @@ WithLabel.args = {
   src: 'https://picsum.photos/id/2/400/400',
 };
 
-export const WithPresence: Story<AvatarProps> = ({ name, ...args }) => (
-  <Box display="inline-flex" alignItems="center">
-    <Avatar name={name} {...args} />
-  </Box>
-);
+interface AvatarWithPresenceProps extends AvatarProps {
+  presencePosition: 'top' | 'bottom';
+  presenceLabel: string;
+}
+
+export const WithPresence: Story<AvatarWithPresenceProps> = ({ name, presence, ...args }) => {
+  const presenceOption: PresenceProps = presence
+    ? {
+        ...presence,
+        position: args.presencePosition,
+        label: args.presenceLabel,
+      }
+    : {
+        position: args.presencePosition,
+        label: args.presenceLabel,
+      };
+  return (
+    <Box display="inline-flex" alignItems="center">
+      <Avatar name={name} presence={{ ...presenceOption }} {...args} />
+    </Box>
+  );
+};
 WithPresence.args = {
   size: 'lg',
   name: 'Adry Muhammad',
   bg: 'indigo06',
   src: 'https://picsum.photos/id/2/400/400',
-  presence: {
-    position: 'top',
-    label: '3',
-  },
+  presencePosition: 'top',
+  presenceLabel: '3',
 };

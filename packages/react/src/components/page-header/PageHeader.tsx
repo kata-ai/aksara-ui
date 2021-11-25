@@ -23,11 +23,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, actions, backButton, chi
             {title}
           </Heading>
         </Box>
-        {actions && (
-          <Box marginTop={['md', 0]} marginLeft={[0, 'md']}>
-            {actions}
-          </Box>
-        )}
+        {actions && <Box marginTop={['md', 0]}>{actions}</Box>}
       </Box>
       {children}
     </Box>

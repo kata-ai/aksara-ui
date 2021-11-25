@@ -38,7 +38,7 @@ export const Example: Story<TopbarProps> = () => {
           <TopbarDisclosureButton>
             <Stack spacing="xs" direction="horizontal" alignItems="center">
               <Avatar
-                size="md"
+                size="sm"
                 backgroundColor="greylight03"
                 color="greymed04"
                 icon={IconFlowerGrid}
@@ -68,33 +68,22 @@ export const Example: Story<TopbarProps> = () => {
             </TopbarDisclosureButton>
             <TopbarRoundedButton>
               <VisuallyHidden>Messages</VisuallyHidden>
-              <IconBubble aria-hidden fill="currentColor" />
+              <Avatar icon={IconBubble} size="md" color="greymed04" bg="greylight03" />
             </TopbarRoundedButton>
             <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
               <PopoverTrigger>
                 <TopbarRoundedButton isActive={popoverOpen}>
                   <Box role="presentation" position="relative">
-                    <IconBell aria-hidden fill="currentColor" />
-                    <Box
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="center"
-                      position="absolute"
-                      top={0}
-                      right={0}
-                      size={12}
-                      borderWidth="2px"
-                      borderStyle="solid"
-                      borderColor="var(--topbar-disclosure-button-bg-color)"
-                      borderRadius={12}
-                      color="greylight01"
-                      backgroundColor="red07"
-                      fontSize="8px"
-                      lineHeight={1}
-                      overflow="hidden"
-                    >
-                      1
-                    </Box>
+                    <Avatar
+                      icon={IconBell}
+                      size="md"
+                      color="greymed04"
+                      bg="greylight03"
+                      presence={{
+                        label: '99+',
+                        position: 'top',
+                      }}
+                    />
                   </Box>
                   <VisuallyHidden>Notifications</VisuallyHidden>
                 </TopbarRoundedButton>

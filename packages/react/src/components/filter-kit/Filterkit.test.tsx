@@ -1,6 +1,9 @@
+import { IconFilter } from '@aksara-ui/icons';
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import * as React from 'react';
-import FilterPageHeader, { FilterPageHeaderProps, MAX_TAG_FILTER } from './FilterPageHeader';
+import { ButtonGroup } from '../button-group/components/ButtonGroup';
+import { Button } from '../button/components/Button';
+import FilterPageHeader, { FilterPageHeaderProps, MAX_TAG_FILTER } from './FilterKit';
 
 describe('Components/PageHeader/FilterPageHeader', () => {
   const FilterPageHeaderTemplate = (
@@ -37,20 +40,6 @@ describe('Components/PageHeader/FilterPageHeader', () => {
     />
   );
   describe('FilterPageHeader', () => {
-    test('onClickFilter should be called when user click Button Filter', () => {
-      const filterMockHandler = jest.fn();
-      const { getByTestId } = render(
-        React.cloneElement<FilterPageHeaderProps>(FilterPageHeaderTemplate, {
-          onClickFilter: filterMockHandler,
-        })
-      );
-
-      const filter = getByTestId('filter');
-      expect(filter).toBeVisible();
-      fireEvent.click(filter);
-      expect(filterMockHandler).toHaveBeenCalled();
-    });
-
     test('it should render order input based on orderByOptions', () => {
       const { getAllByTestId } = render(
         React.cloneElement<FilterPageHeaderProps>(FilterPageHeaderTemplate, {
@@ -103,6 +92,29 @@ describe('Components/PageHeader/FilterPageHeader', () => {
       });
       const filterTagMore = getAllByTestId('filter-tag-more');
       await waitFor(() => expect(filterTagMore.length).toBe(2));
+    });
+    test(`it should render ations `, async () => {
+      const { getByText } = render(
+        React.cloneElement<FilterPageHeaderProps>(FilterPageHeaderTemplate, {
+          actions: (
+            <ButtonGroup>
+              <Button
+                data-testid="filter"
+                variant="secondary"
+                type="button"
+                icon={IconFilter}
+                iconPosition="left"
+                onClick={() => console.log('action')}
+              >
+                Filter
+              </Button>
+            </ButtonGroup>
+          ),
+        })
+      );
+
+      const filterButton = getByText(/\+ Filter/i);
+      expect(filterButton).toBeInTheDocument();
     });
   });
 });

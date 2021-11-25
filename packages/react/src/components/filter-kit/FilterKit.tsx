@@ -1,11 +1,11 @@
-import { IconCloseRounded, IconFilter } from '@aksara-ui/icons';
+import { IconCloseRounded } from '@aksara-ui/icons';
 import * as React from 'react';
-import { Box, BoxProps, Stack } from '../../../layout';
-import { Button, PlainButton } from '../../button';
-import { InputSearchbox } from '../../form/components/InputSearchbox';
-import { InputSelect } from '../../form/components/InputSelect';
-import { Pill } from '../../pill';
-import { Popover, PopoverTrigger, PopoverContent } from '../../popover';
+import { Box, BoxProps, Stack } from '../../layout';
+import { Button, PlainButton } from '../button';
+import { InputSearchbox } from '../form/components/InputSearchbox';
+import { InputSelect } from '../form/components/InputSelect';
+import { Pill } from '../pill';
+import { Popover, PopoverContent, PopoverTrigger } from '../popover';
 
 export interface FilterPageHeaderProps extends BoxProps {
   /** callback function onClear action */
@@ -14,7 +14,7 @@ export interface FilterPageHeaderProps extends BoxProps {
   onSearch?: React.ChangeEventHandler<HTMLInputElement>;
   // TODO filter panel is not implemented yet
   /** callback function onFilter action  */
-  onClickFilter?: () => void;
+  actions?: React.ReactNode;
   /** callback function onChangeOrder action  */
   onChangeOrder?: (orderOption: Record<string, { label: string; value: string }>) => void;
   /** order config, for now maximum order config is 2   */
@@ -29,12 +29,12 @@ export const MAX_ORDER_OPTIONS = 2;
 
 const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
   onSearch,
-  onClickFilter, // TODO change filter need to be integrated with filter panel
   onChangeOrder,
   orderByOptions,
   filterData,
   onRemoveFilter,
   onClearFilter,
+  actions,
 }) => {
   const [orderOption, setOrderOption] = React.useState<Record<string, { label: string; value: string }>>({});
   React.useEffect(() => {
@@ -108,7 +108,8 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
       );
     });
     return (
-      <Stack direction="horizontal" alignItems="center" justifyContent="flex-end" marginTop={['md']} spacing="xxs">
+      <Stack direction="horizontal" alignItems="center" justifyContent="flex-start" spacing="xxs">
+        {listFilterTag}
         {listShownFilter.more.length && (
           <Popover>
             <PopoverTrigger>
@@ -136,7 +137,6 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
             </PopoverContent>
           </Popover>
         )}
-        {listFilterTag}
       </Stack>
     );
   };
@@ -159,29 +159,14 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
           />
           {renderOrderOptions()}
         </Box>
-        <Stack direction="horizontal" marginTop={['md', 0]} spacing="xxs">
-          <Button
-            variant="destructive"
-            type="button"
-            icon={IconCloseRounded}
-            iconPosition="left"
-            onClick={onClearFilter}
-          >
-            Clear all
-          </Button>
-          <Button
-            data-testid="filter"
-            variant="secondary"
-            type="button"
-            icon={IconFilter}
-            iconPosition="left"
-            onClick={onClickFilter}
-          >
-            Filter
-          </Button>
-        </Stack>
+        {actions && <Box marginTop={['md', 0]}>{actions}</Box>}
       </Box>
-      {renderTagFilter()}
+      <Box display="flex" justifyContent="space-between" alignItems="center" marginTop={['md']}>
+        {renderTagFilter()}
+        <Button variant="destructive" type="button" icon={IconCloseRounded} iconPosition="left" onClick={onClearFilter}>
+          Clear all
+        </Button>
+      </Box>
     </>
   );
 };

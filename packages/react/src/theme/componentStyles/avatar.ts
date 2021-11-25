@@ -1,6 +1,12 @@
 import { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
+export const avatarSizeOptions = {
+  sm: 24,
+  md: 32,
+  lg: 40,
+  xl: 64,
+};
 const avatar: ComponentThemeConfig = {
   propToScaleMap: [['size', 'sizes']],
   baseStyle: {
@@ -18,19 +24,24 @@ const avatar: ComponentThemeConfig = {
   scales: {
     sizes: {
       sm: {
-        width: '24px',
-        height: '24px',
-        borderRadius: '24px',
+        width: avatarSizeOptions.sm,
+        height: avatarSizeOptions.sm,
+        borderRadius: avatarSizeOptions.sm,
       },
       md: {
-        width: '32px',
-        height: '32px',
-        borderRadius: '32px',
+        width: avatarSizeOptions.md,
+        height: avatarSizeOptions.md,
+        borderRadius: avatarSizeOptions.md,
       },
       lg: {
-        width: '40px',
-        height: '40px',
-        borderRadius: '40px',
+        width: avatarSizeOptions.lg,
+        height: avatarSizeOptions.lg,
+        borderRadius: avatarSizeOptions.lg,
+      },
+      xl: {
+        width: avatarSizeOptions.xl,
+        height: avatarSizeOptions.xl,
+        borderRadius: avatarSizeOptions.xl,
       },
     },
   },
@@ -50,7 +61,6 @@ const avatarPresenceBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = 
   overflow: 'hidden',
   userSelect: 'none',
   position: 'absolute',
-  left: '60%',
   background: theme.colors.red07,
   fontSize: '8px',
   fontWeight: '400',
@@ -66,25 +76,48 @@ const avatarPresence: ComponentThemeConfig = {
   baseStyle: avatarPresenceBaseStyle,
   scales: {
     sizes: {
+      // size = 10px (width + padding)
       sm: {
         minWidth: '8px',
         height: '8px',
+        padding: '1px',
         borderWidth: '1px',
         borderRadius: '8px',
+        left: '14px', // avatarSize.sm - sizePresence
+        // sizePresence 8px + 2px (both side padding 1px)
       },
       md: {
-        minWidth: '12px',
-        height: '12px',
+        minWidth: '8px',
+        height: '8px',
+        padding: '2px',
         borderWidth: '2px',
         borderRadius: '12px',
+        left: '20px',
+      },
+      lg: {
+        minWidth: '8px',
+        height: '8px',
+        padding: '2px',
+        borderWidth: '2px',
+        borderRadius: '12px',
+        left: '28px',
+      },
+      xl: {
+        minWidth: '12px',
+        height: '12px',
+        padding: '2px',
+        borderWidth: '2px',
+        borderRadius: '16px',
+        left: '48px',
+        fontSize: '12px',
       },
     },
     positions: {
       top: {
-        top: '0',
+        top: 0,
       },
       bottom: {
-        bottom: '0',
+        bottom: 0,
       },
     },
   },
