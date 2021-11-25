@@ -10,6 +10,7 @@ const topbarBase: ComponentThemeConfig = {
     backgroundColor: theme.colors.greylight01,
     px: 'lg',
     py: 'xs',
+    boxShadow: 'inset 0px -1px 0px #E5EAEF',
   }),
 };
 
