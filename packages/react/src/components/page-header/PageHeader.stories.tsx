@@ -1,6 +1,7 @@
 import { IconArrowLeft, IconChevronDown } from '@aksara-ui/icons';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { theme } from '../../theme';
 import { Button, IconButton } from '../button';
 import { ButtonGroup } from '../button-group';
 import PageHeader from './PageHeader';
@@ -13,7 +14,6 @@ export default {
 export const Example = () => {
   return <PageHeader title="Title" />;
 };
-
 export const WithActions = () => {
   return (
     <PageHeader
@@ -44,7 +44,7 @@ export const WithBackButton = () => {
       }
       backButton={
         <IconButton variant="plain" aria-label="Back" size="lg">
-          <IconArrowLeft aria-hidden fill="currentColor" />
+          <IconArrowLeft aria-hidden fill={theme.colors.greydark02} />
         </IconButton>
       }
     />
