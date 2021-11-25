@@ -117,6 +117,7 @@ function InputSelect<T>({
           position="absolute"
           float="left"
           top="100%"
+          zIndex="2"
           left={0}
           mt="xs"
           width={width}
