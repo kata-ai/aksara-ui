@@ -7,7 +7,7 @@ const inputSelectBase = (theme: DefaultTheme) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
-  paddingLeft: '16px',
+  paddingLeft: '12px',
   backgroundColor: theme.colors.grey01,
   border: '1px solid',
   borderColor: theme.colors.grey04,
