@@ -43,6 +43,8 @@ export interface InputSelectSearchProps<T extends { value: string }> {
   errors?: boolean;
 
   width?: string | number;
+  /** Max height for list box */
+  maxHeight?: string | number;
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
@@ -62,6 +64,7 @@ function InputSelect<T extends { value: string }>({
   errors,
   size = 'md',
   width = '100%',
+  maxHeight,
 }: InputSelectSearchProps<T>) {
   const [inputItems, setInputItems] = React.useState(items);
   const {
@@ -89,7 +92,7 @@ function InputSelect<T extends { value: string }>({
   const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
   return (
-    <Box width={width} zIndex={10}>
+    <Box width={width}>
       <Stack spacing="xs" display="block" position="relative">
         {label && (
           <FormLabel display="block" {...getLabelProps()}>
@@ -129,11 +132,14 @@ function InputSelect<T extends { value: string }>({
           position="absolute"
           float="left"
           top="100%"
+          zIndex="1"
           left={0}
           mt="xs"
           width={width}
+          maxHeight={maxHeight}
           p={0}
           m={0}
+          overflowY="scroll"
           {...getMenuProps()}
         >
           {inputItems.length !== 0 ? (

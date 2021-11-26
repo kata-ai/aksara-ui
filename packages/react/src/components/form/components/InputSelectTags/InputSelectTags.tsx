@@ -22,6 +22,8 @@ export interface InputSelectTagsProps<T> {
   width?: string | number;
   items: T[];
   value: T[];
+  /** Max height for list box */
+  maxHeight?: string | number;
 }
 
 function inputTagsVariant<T>({
@@ -54,6 +56,7 @@ function InputSelectTags<T>({
   hadleInputChange,
   openOnFocus = false,
   width = '100%',
+  maxHeight,
 }: InputSelectTagsProps<T>) {
   const [inputValue, setInputValue] = React.useState('');
   const [, setFocused] = React.useState(false);
@@ -114,7 +117,7 @@ function InputSelectTags<T>({
   };
 
   return (
-    <Box width={width} zIndex={10}>
+    <Box width={width}>
       <Stack spacing="xs" display="block" position="relative">
         {label && (
           <FormLabel display="block" {...getLabelProps()}>
@@ -191,9 +194,12 @@ function InputSelectTags<T>({
           top="100%"
           left={0}
           mt="xs"
+          zIndex="1"
           width={width}
+          maxHeight={maxHeight}
           p={0}
           m={0}
+          overflowY="scroll"
           {...getMenuProps()}
         >
           {isOpen && getFilteredItems(items).length !== 0 ? (
