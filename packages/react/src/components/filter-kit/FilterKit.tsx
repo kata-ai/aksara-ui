@@ -118,11 +118,10 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
               </PlainButton>
             </PopoverTrigger>
             <PopoverContent placement="bottom">
-              <Stack direction="horizontal" p="xs" spacing="xxs" flexWrap="wrap">
+              <Stack direction="horizontal" p="xs" spacing="xxs">
                 {listShownFilter.more.map(item => {
                   return (
                     <Pill
-                      my="xxs"
                       key={`${item.value}`}
                       data-testid="filter-tag-more"
                       hasCloseIcon
