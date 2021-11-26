@@ -44,6 +44,8 @@ export interface InputSelectProps<T> {
   errors?: boolean;
 
   width?: string | number;
+  /** Max height for list box */
+  maxHeight?: string | number;
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
@@ -62,6 +64,7 @@ function InputSelect<T>({
   errors,
   size = 'md',
   width = '100%',
+  maxHeight,
 }: InputSelectProps<T>) {
   const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } = useSelect<T>({
     items,
@@ -74,7 +77,7 @@ function InputSelect<T>({
   const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
   return (
-    <Box width={width} zIndex={10}>
+    <Box width={width}>
       <Stack spacing="xs" display="block" position="relative">
         {label && (
           <FormLabel display="block" {...getLabelProps()}>
@@ -117,12 +120,14 @@ function InputSelect<T>({
           position="absolute"
           float="left"
           top="100%"
-          zIndex="2"
+          zIndex="1"
           left={0}
           mt="xs"
           width={width}
           p={0}
           m={0}
+          maxHeight={maxHeight}
+          overflowY="scroll"
           {...getMenuProps()}
         >
           {items && items.length !== 0 ? (
