@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box } from '../../../../layout';
-import { Text } from '../../../../typography';
+import { Heading } from '../../../../typography';
 
 export interface DropdownMenuHeaderProps {
   className?: string;
@@ -14,9 +14,9 @@ const DropdownMenuHeader: React.ForwardRefRenderFunction<HTMLDivElement, Dropdow
 ) => {
   return (
     <Box ref={ref} py="xs" px="md" backgroundColor="grey01" className={className} style={style}>
-      <Text scale={200} fontWeight={600} lineHeight="16px" color="greymed01">
+      <Heading scale={200} fontWeight={600} lineHeight="16px" fontSize={12} color="greydark02">
         {children}
-      </Text>
+      </Heading>
     </Box>
   );
 };
