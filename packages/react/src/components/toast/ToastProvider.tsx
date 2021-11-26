@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { ToastSettings } from '../types';
-import ToastContainer from './ToastContainer';
-import ToastContext from './ToastContext';
+import { ToastSettings } from './types';
+import { ToastContainer, ToastContext } from './internals';
 
 let toastCount = 0;
 
