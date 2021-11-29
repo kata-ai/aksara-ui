@@ -109,8 +109,8 @@ function InputSelect<T>({
                 : selectedItem
               : placeholder}
           </Text>
-          <Box display="flex" alignItems="center" justifyContent="center" width={40} height={40}>
-            <IconChevronStepper aria-hidden size={16} />
+          <Box position="absolute" right={8}>
+            <IconChevronStepper size={16} />
           </Box>
         </UnstyledButton>
         <Card

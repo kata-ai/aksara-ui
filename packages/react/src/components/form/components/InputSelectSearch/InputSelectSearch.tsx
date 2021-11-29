@@ -99,7 +99,7 @@ function InputSelect<T extends { value: string }>({
             {label}
           </FormLabel>
         )}
-        <Box display="flex" position="relative" {...getComboboxProps()}>
+        <Box display="flex" position="relative" alignItems="center" {...getComboboxProps()}>
           <InputText
             disabled={disabled}
             placeholder={placeholder}
@@ -120,7 +120,8 @@ function InputSelect<T extends { value: string }>({
             }}
             {...getInputProps()}
           />
-          <Box position="absolute" right={8} top={size === 'md' ? 8 : 12}>
+          {/* right 9, because container box doesn't have border 1 */}
+          <Box position="absolute" right={9} lineHeight="normal">
             <IconChevronStepper size={16} />
           </Box>
         </Box>
