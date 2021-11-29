@@ -1,37 +1,62 @@
+import { IconChevronDown } from '@aksara-ui/icons';
 import * as React from 'react';
 import Box from '../../../layout/box/components/Box';
 import { Text } from '../../../typography';
-import { InputSelect, InputSelectProps } from '../../form';
+import { Button } from '../../button';
+import ActionList from '../../dropdown/components/DropdownMenuItem/ActionList';
+import { Popover, PopoverContent, PopoverTrigger } from '../../popover';
 
-export interface PaginationFilterProps extends InputSelectProps<number> {
+export interface PaginationFilterProps<T> {
   /** Total limit of pages. */
   limit?: number;
   /** Label in front of select input */
   label?: string;
+  /** Label items. */
+  items: T[];
+  /** Selected item. */
+  selectedItem?: T | null;
+  /** The change handler for the select. */
+  onChange: (changes: T) => void;
 }
 
-const PaginationFilter: React.FC<PaginationFilterProps> = ({
+const PaginationFilter = ({
   limit,
   label = 'Show rows',
   items,
-  placeholder,
   selectedItem = limit,
-  width = 100,
-  handleSelectedItemChange,
+  onChange,
   ...rest
-}) => {
+}: PaginationFilterProps<number>) => {
   return (
     <Box display="flex" flexDirection="row" alignItems="center">
       <Text scale={300} mr={10} {...rest}>
         {label}
       </Text>
-      <InputSelect
-        selectedItem={selectedItem}
-        placeholder={placeholder}
-        width={width}
-        items={items}
-        handleSelectedItemChange={handleSelectedItemChange}
-      />
+      <Popover>
+        <PopoverTrigger>
+          <Button type="button" size="md" icon={IconChevronDown} iconPosition="right">
+            {selectedItem}
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent placement="top">
+          <Box width="100%" maxWidth={300} padding="md">
+            {items.map(item => {
+              return (
+                <ActionList
+                  key={item}
+                  onClick={() => {
+                    console.log('item', item);
+                    onChange(item);
+                  }}
+                  isActive={item === selectedItem}
+                >
+                  {item}
+                </ActionList>
+              );
+            })}
+          </Box>
+        </PopoverContent>
+      </Popover>
     </Box>
   );
 };
