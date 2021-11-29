@@ -93,7 +93,7 @@ function InputSelect<T extends { value: string }>({
 
   return (
     <Box width={width}>
-      <Stack spacing="xs" display="block" position="relative">
+      <Stack spacing="xxs" display="block" position="relative">
         {label && (
           <FormLabel display="block" {...getLabelProps()}>
             {label}
