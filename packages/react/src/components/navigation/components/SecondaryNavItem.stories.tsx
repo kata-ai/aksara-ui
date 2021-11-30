@@ -8,7 +8,16 @@ export default {
 };
 
 export const Example = () => {
-  return <SecondaryNavItem title="Profile" icon={IconGrid} />;
+  return (
+    <SecondaryNavItem
+      title="Flow"
+      icon={IconGrid}
+      href="https://www.youtube.com/watch?v=QjGYHf0jTRA"
+      target="_blank"
+      rel="noopener noreferrer"
+      labelText="Label"
+    />
+  );
 };
 
 export const IsActive = () => {
