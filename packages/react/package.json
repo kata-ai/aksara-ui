@@ -1,6 +1,6 @@
 {
   "name": "@aksara-ui/react",
-  "version": "1.0.1-canary.10",
+  "version": "1.0.1-canary.11",
   "description": "React implementation of Aksara Design System, from Kata.ai.",
   "main": "dist/index.js",
   "module": "dist/core.esm.js",
