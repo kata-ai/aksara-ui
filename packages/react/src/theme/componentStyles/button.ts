@@ -26,7 +26,7 @@ const baseStyle: CSSObject = {
   },
 };
 
-const primaryAndSecondaryVariants: Record<string, CSSObject> = {
+const buttonVariantsStyle: Record<string, CSSObject> = {
   primary: {
     '&:not(:disabled)': {
       backgroundColor: 'blue07',
@@ -50,6 +50,13 @@ const primaryAndSecondaryVariants: Record<string, CSSObject> = {
       color: 'greydark02',
       '&:hover, &:focus': {
         backgroundColor: 'greylight04',
+      },
+      '&:active': {
+        border: `1px solid `,
+        borderColor: 'blue07',
+        backgroundColor: 'blue01',
+        color: 'blue07',
+        boxShadow: 'none',
       },
     },
     '&:disabled': {
@@ -100,7 +107,7 @@ export const buttonBase: ComponentThemeConfig = {
       },
     },
     variants: {
-      ...primaryAndSecondaryVariants,
+      ...buttonVariantsStyle,
       destructive: {
         '&:not(:disabled)': {
           backgroundColor: 'red07',
@@ -162,7 +169,7 @@ export const iconButton: ComponentThemeConfig = {
       },
     },
     variants: {
-      ...primaryAndSecondaryVariants,
+      ...buttonVariantsStyle,
       'outline-destructive': {
         '&:not(:disabled)': {
           borderColor: 'red07',
