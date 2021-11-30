@@ -18,7 +18,7 @@ const DropdownMenuContent: React.ForwardRefRenderFunction<HTMLDivElement, Dropdo
   ref
 ) => {
   return (
-    <RadixDropdownMenu.Content side={side} ref={ref}>
+    <RadixDropdownMenu.Content side={side} ref={ref} sideOffset={4}>
       <Box
         display="inline-block"
         textAlign="left"
