@@ -5,9 +5,10 @@ import type { ComponentThemeConfig } from '../../../system';
 const inputSelectBase = (theme: DefaultTheme) => ({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  position: 'relative',
   width: '100%',
   paddingLeft: '12px',
+  paddingRight: '12px',
   backgroundColor: theme.colors.grey01,
   border: '1px solid',
   borderColor: theme.colors.grey04,

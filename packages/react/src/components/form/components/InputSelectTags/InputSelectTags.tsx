@@ -118,7 +118,7 @@ function InputSelectTags<T>({
 
   return (
     <Box width={width}>
-      <Stack spacing="xs" display="block" position="relative">
+      <Stack spacing="xxs" display="block" position="relative">
         {label && (
           <FormLabel display="block" {...getLabelProps()}>
             {label}
@@ -128,6 +128,7 @@ function InputSelectTags<T>({
           sx={inputTagsStyles}
           display="flex"
           position="relative"
+          alignItems="center"
           py={9}
           px="sm"
           cursor={disabled ? 'not-allowed' : 'text'}
@@ -181,7 +182,7 @@ function InputSelectTags<T>({
               />
             </WrapItem>
           </Wrap>
-          <Box position="absolute" right={8} top={12}>
+          <Box position="absolute" right={8} lineHeight="normal">
             <IconChevronStepper size={16} />
           </Box>
         </Box>
