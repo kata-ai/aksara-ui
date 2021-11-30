@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PortalPrimitive from '@radix-ui/react-portal';
-import { useOnMount } from 'packages/react/src/utils';
+import { useOnMount } from '../../../utils';
 
 export type PortalProps = PortalPrimitive.PortalProps;
 
@@ -12,11 +12,11 @@ const Portal: React.FC<PortalProps> = ({ children, ...rest }) => {
     setIsMounted(true);
   });
 
-  if (!isMounted) {
-    return null;
+  if (isMounted) {
+    return <PortalPrimitive.Root {...rest}>{children}</PortalPrimitive.Root>;
   }
 
-  return <PortalPrimitive.Root {...rest}>{children}</PortalPrimitive.Root>;
+  return null;
 };
 
 export default Portal;
