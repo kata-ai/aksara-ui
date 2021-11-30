@@ -1,13 +1,5 @@
+import { IconClose, IconInfo, IconTickRounded, IconWarningRounded, IconWarningTriangle } from '@aksara-ui/icons';
 import * as React from 'react';
-import {
-  IconTickRounded,
-  IconInfo,
-  IconWarningRounded,
-  IconCloseRounded,
-  IconClose,
-  IconConversation,
-} from '@aksara-ui/icons';
-
 import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Heading, Paragraph } from '../../../typography';
@@ -54,7 +46,7 @@ const Message: React.FC<MessageProps> = ({
   const renderIconStates = () => {
     switch (variant) {
       case 'default': {
-        return <IconConversation size={24} aria-hidden fill="currentColor" />;
+        return <IconInfo size={24} aria-hidden fill="currentColor" />;
       }
       case 'success': {
         return <IconTickRounded size={24} aria-hidden fill="currentColor" />;
@@ -63,10 +55,10 @@ const Message: React.FC<MessageProps> = ({
         return <IconInfo size={24} aria-hidden fill="currentColor" />;
       }
       case 'warning': {
-        return <IconWarningRounded size={24} aria-hidden fill="currentColor" />;
+        return <IconWarningTriangle size={24} aria-hidden fill="currentColor" />;
       }
       case 'critical': {
-        return <IconCloseRounded size={24} aria-hidden fill="currentColor" />;
+        return <IconWarningRounded size={24} aria-hidden fill="currentColor" />;
       }
       default: {
         return null;
