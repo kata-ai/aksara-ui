@@ -24,10 +24,12 @@ const SecondaryNavItem = React.forwardRef<HTMLAnchorElement, SecondaryNavItemPro
         <Text scale={300} display="block" flex="1 1 auto" ml="xs">
           {title}
         </Text>
-        {variant === 'default' && labelText ? (
-          <Text ml="md" sx={navItemBadgeStyles}>
-            {labelText}
-          </Text>
+        {variant === 'default' ? (
+          labelText && (
+            <Text ml="md" sx={navItemBadgeStyles}>
+              {labelText}
+            </Text>
+          )
         ) : (
           <Box width={16} height={16} ml="md">
             <IconChevronRight fill="currentColor" aria-hidden size={16} />
