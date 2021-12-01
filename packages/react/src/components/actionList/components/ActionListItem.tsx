@@ -1,6 +1,5 @@
-import { BoxProps } from 'packages/react/dist';
 import * as React from 'react';
-import { Box } from '../../../layout';
+import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { theme } from '../../../theme';
 import { Text } from '../../../typography';
@@ -29,13 +28,7 @@ const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
       <Box ref={ref} sx={styles} {...rest}>
         {isActive && (
           // Indicator
-          <Box
-            width={4}
-            borderTopLeftRadius={4}
-            borderBottomLeftRadius={4}
-            height="inherit"
-            backgroundColor={theme.colors.blue07}
-          />
+          <Box width={4} position="absolute" left="0" top="0" height="100%" backgroundColor={theme.colors.blue07} />
         )}
         <Box py="xs" px="md" style={style}>
           {renderLabel()}

@@ -7,7 +7,7 @@ export interface DropdownMenuProps extends RadixDropdownMenu.DropdownMenuProps {
   width?: number;
 }
 
-const DropdownMenu: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuProps> = ({ children, width }) => {
+const DropdownMenu: React.FC<DropdownMenuProps> = ({ children, width }) => {
   return (
     <RadixDropdownMenu.Root>
       <Box width={width}>{children}</Box>
@@ -17,4 +17,4 @@ const DropdownMenu: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuP
 
 DropdownMenu.displayName = 'DropdownMenu';
 
-export default React.forwardRef(DropdownMenu);
+export default DropdownMenu;
