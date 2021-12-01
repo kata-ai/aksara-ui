@@ -10,27 +10,28 @@ import { FormLabel } from '../FormLabel';
 import { useComponentStyles } from '../../../../system';
 import { Box, Wrap, WrapItem, Stack } from '../../../../layout';
 
-export interface InputSelectTagsProps<T> {
+export interface InputSelectTagsProps {
   onChange?: (value: string[]) => void;
   placeholder?: string;
   disabled?: boolean;
   errors?: boolean;
-  hadleInputChange?: (changes: UseMultipleSelectionStateChange<T>) => void;
+  hadleInputChange?: (changes: UseMultipleSelectionStateChange<string>) => void;
   /** open list when onfocus */
   openOnFocus?: boolean;
   label?: string;
   width?: string | number;
-  items: T[];
-  value: T[];
+  items: string[];
+  value: string[];
   /** Max height for list box */
   maxHeight?: string | number;
 }
+// TODO : onChange inputText will filter option
 
-function inputTagsVariant<T>({
+function inputTagsVariant({
   focused,
   disabled,
   errors,
-}: Pick<InputSelectTagsProps<T>, 'disabled' | 'errors'> & { focused?: boolean }) {
+}: Pick<InputSelectTagsProps, 'disabled' | 'errors'> & { focused?: boolean }) {
   if (!disabled) {
     if (errors) {
       return 'error';
@@ -46,7 +47,7 @@ function inputTagsVariant<T>({
   return 'disabled';
 }
 
-function InputSelectTags<T>({
+function InputSelectTags({
   label,
   errors,
   disabled,
@@ -57,7 +58,7 @@ function InputSelectTags<T>({
   openOnFocus = false,
   width = '100%',
   maxHeight,
-}: InputSelectTagsProps<T>) {
+}: InputSelectTagsProps) {
   const [inputValue, setInputValue] = React.useState('');
   const [, setFocused] = React.useState(false);
 
@@ -67,10 +68,11 @@ function InputSelectTags<T>({
   const { getSelectedItemProps, getDropdownProps, addSelectedItem, removeSelectedItem, selectedItems } =
     useMultipleSelection({ initialSelectedItems: value, onSelectedItemsChange: hadleInputChange });
 
-  const getFilteredItems = (items: any) =>
-    items.filter(
-      (item: any) => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())
-    );
+  const getFilteredItems = React.useMemo(
+    () =>
+      items.filter(item => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())),
+    [items]
+  );
 
   const {
     isOpen,
@@ -81,9 +83,9 @@ function InputSelectTags<T>({
     highlightedIndex,
     getItemProps,
     openMenu,
-  } = useCombobox<T>({
+  } = useCombobox<string>({
     inputValue,
-    items: getFilteredItems(items),
+    items: getFilteredItems,
     onStateChange: ({ inputValue, type, selectedItem }) => {
       switch (type) {
         case useCombobox.stateChangeTypes.InputChange:
@@ -200,11 +202,11 @@ function InputSelectTags<T>({
           maxHeight={maxHeight}
           p={0}
           m={0}
-          overflowY="scroll"
+          overflowY="auto"
           {...getMenuProps()}
         >
-          {isOpen && getFilteredItems(items).length !== 0 ? (
-            getFilteredItems(items).map((item: T, index: number) => (
+          {isOpen && getFilteredItems.length !== 0 ? (
+            getFilteredItems.map((item: string, index: number) => (
               <Box
                 as="li"
                 px="md"
