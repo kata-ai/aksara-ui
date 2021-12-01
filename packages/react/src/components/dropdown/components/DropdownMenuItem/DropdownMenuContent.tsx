@@ -22,7 +22,7 @@ const DropdownMenuContent: React.ForwardRefRenderFunction<HTMLDivElement, Dropdo
 }) => {
   return (
     <RadixDropdownMenu.Content side={side} sideOffset={4}>
-      <Box textAlign="left" width={width} maxWidth="100vw" borderRadius="lg" overflow="hidden" boxShadow={3} py="xs">
+      <Box textAlign="left" width={width} maxWidth="100vw" borderRadius="lg" overflow="hidden" boxShadow={3}>
         <ActionList>{children}</ActionList>
       </Box>
       {offset && <Arrow offset={offset} width={20} height={8} />}
