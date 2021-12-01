@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import styled from 'styled-components';
-import { Box } from '../../../../layout';
+import { Stack } from '../../../../layout';
 
 export interface DropdownMenuContentProps extends RadixDropdownMenu.DropdownMenuArrowProps {
   children?: React.ReactNode;
@@ -18,9 +18,10 @@ const DropdownMenuContent: React.ForwardRefRenderFunction<HTMLDivElement, Dropdo
   ref
 ) => {
   return (
-    <RadixDropdownMenu.Content side={side} ref={ref}>
-      <Box
-        display="inline-block"
+    <RadixDropdownMenu.Content side={side} sideOffset={4} ref={ref}>
+      <Stack
+        spacing="xxs"
+        direction="vertical"
         textAlign="left"
         width={width}
         maxWidth="100vw"
@@ -30,7 +31,7 @@ const DropdownMenuContent: React.ForwardRefRenderFunction<HTMLDivElement, Dropdo
         py="xs"
       >
         {children}
-      </Box>
+      </Stack>
       {offset && <Arrow offset={offset} width={20} height={8} />}
     </RadixDropdownMenu.Content>
   );

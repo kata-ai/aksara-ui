@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from '../../../layout/box/components/Box';
 import { Text } from '../../../typography';
 import { Button } from '../../button';
-import ActionList from '../../dropdown/components/DropdownMenuItem/ActionList';
+import { ActionListItem } from '../../actionList';
 import { Popover, PopoverContent, PopoverTrigger } from '../../popover';
 
 export interface PaginationFilterProps<T> {
@@ -42,7 +42,7 @@ const PaginationFilter = ({
           <Box width="100%" maxWidth={300} padding="md">
             {items.map(item => {
               return (
-                <ActionList
+                <ActionListItem
                   key={item}
                   onClick={() => {
                     console.log('item', item);
@@ -51,7 +51,7 @@ const PaginationFilter = ({
                   isActive={item === selectedItem}
                 >
                   {item}
-                </ActionList>
+                </ActionListItem>
               );
             })}
           </Box>

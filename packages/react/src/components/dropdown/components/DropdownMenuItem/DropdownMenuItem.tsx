@@ -1,6 +1,6 @@
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import * as React from 'react';
-import ActionList from './ActionList';
+import { ActionListItem } from '../../../actionList';
 
 export interface DropdownMenuItemProps extends RadixDropdownMenu.MenuItemProps {
   className?: string;
@@ -15,9 +15,9 @@ const DropdownMenuItem: React.ForwardRefRenderFunction<HTMLDivElement, DropdownM
 ) => {
   return (
     <RadixDropdownMenu.Item asChild>
-      <ActionList className={className} ref={ref} style={style} isActive={isActive} onClick={onClick}>
+      <ActionListItem className={className} ref={ref} style={style} isActive={isActive} onClick={onClick}>
         {children}
-      </ActionList>
+      </ActionListItem>
     </RadixDropdownMenu.Item>
   );
 };

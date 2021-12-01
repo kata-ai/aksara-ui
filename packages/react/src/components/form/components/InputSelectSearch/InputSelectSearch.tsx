@@ -140,7 +140,7 @@ function InputSelect<T extends { value: string }>({
           maxHeight={maxHeight}
           p={0}
           m={0}
-          overflowY="scroll"
+          overflowY="auto"
           {...getMenuProps()}
         >
           {inputItems.length !== 0 ? (

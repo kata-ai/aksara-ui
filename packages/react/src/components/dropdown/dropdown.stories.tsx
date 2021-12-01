@@ -6,7 +6,6 @@ import { DropdownMenuItem, DropdownMenuDivider, DropdownMenuHeader } from './com
 import DropdownMenuTrigerer from './components/DropdownMenuItem/DropdownMenuTrigerer';
 import { Box } from '../../layout';
 import DropdownMenuContent, { DropdownMenuContentProps } from './components/DropdownMenuItem/DropdownMenuContent';
-import ActionList from './components/DropdownMenuItem/ActionList';
 
 export default {
   title: 'Core/Components/Dropdown/DropdownMenu',
@@ -33,14 +32,6 @@ const dropdownList: Obj[] = [
   { label: 'Item one-one', value: 'itemOneOne' },
   { label: 'Item one-two', value: 'itemOneTwo' },
 ];
-
-export const ActionListExample: Story = () => {
-  return (
-    <Box width="200px">
-      <ActionList>item sample 1</ActionList>
-    </Box>
-  );
-};
 
 export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side }) => {
   const [selected, setSelected] = React.useState<Obj>(dropdownList[1]);

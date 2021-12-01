@@ -12,6 +12,7 @@ import { useComponentStyles } from '../../../../system';
 import { FormLabel } from '../FormLabel';
 import { UnstyledButton } from '../../../button';
 import { Card } from '../../../card';
+import { ActionListItem } from '../../../actionList';
 
 export interface InputSelectProps<T> {
   /** The input select label */
@@ -132,23 +133,14 @@ function InputSelect<T>({
         >
           {items && items.length !== 0 ? (
             items.map((item, index) => (
-              <Box
+              <ActionListItem
                 as="li"
-                px="md"
-                py="xs"
-                _hover={{
-                  backgroundColor: 'blue01',
-                }}
-                cursor="pointer"
-                textAlign="left"
-                lineHeight="20px"
-                fontSize={14}
                 sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
                 key={`${item}_${index}`}
                 {...getItemProps({ item, index })}
               >
                 {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
-              </Box>
+              </ActionListItem>
             ))
           ) : (
             <Box
@@ -166,8 +158,6 @@ function InputSelect<T>({
           )}
         </Card>
       </Stack>
-      {/* if you Tab from menu, focus goes on button, and it shouldn't. only happens here. */}
-      <div tabIndex={0} />
     </Box>
   );
 }

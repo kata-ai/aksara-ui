@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { BoxProps } from 'packages/react/dist';
 import * as React from 'react';
 import styled from 'styled-components';
-import { Box } from '../../../../layout';
-import { theme } from '../../../../theme';
-import { Text } from '../../../../typography';
+import { Box } from '../../../layout';
+import { theme } from '../../../theme';
+import { Text } from '../../../typography';
 
 export interface ActionListProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
   className?: string;
