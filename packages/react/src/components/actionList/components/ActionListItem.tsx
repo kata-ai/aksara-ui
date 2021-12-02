@@ -9,10 +9,11 @@ export interface ActionListItemProps extends BoxProps, React.ComponentPropsWitho
   style?: React.CSSProperties;
   isActive?: boolean;
   children?: React.ReactNode;
+  disabled?: boolean;
 }
 
 const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
-  ({ style, children, isActive, ...rest }, ref) => {
+  ({ style, children, isActive, disabled, ...rest }, ref) => {
     const styles = useComponentStyles('actionListItem', { isActive });
     const renderLabel = () => {
       if (typeof children === 'string') {
@@ -25,7 +26,7 @@ const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
       return children;
     };
     return (
-      <Box ref={ref} sx={styles} {...rest}>
+      <Box aria-disabled={disabled} data-disabled={disabled} ref={ref} sx={styles} {...rest}>
         {isActive && (
           // Indicator
           <Box width={4} position="absolute" left="0" top="0" height="100%" backgroundColor={theme.colors.blue07} />

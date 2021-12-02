@@ -86,12 +86,16 @@ function InputSelect<T extends { value: string }>({
     itemToString,
     selectedItem,
     initialSelectedItem,
-    onSelectedItemChange: handleSelectedItemChange,
+    onSelectedItemChange: changes => {
+      if (handleSelectedItemChange) {
+        handleSelectedItemChange(changes);
+      }
+      closeMenu();
+    },
     onInputValueChange: ({ inputValue }) => {
       setInputItems(
         inputValue ? items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())) : items
       );
-      closeMenu();
     },
   });
 
@@ -136,16 +140,14 @@ function InputSelect<T extends { value: string }>({
           position="absolute"
           float="left"
           top="100%"
-          zIndex="1"
           left={0}
           width={width}
           maxHeight={maxHeight}
           display={isOpen ? 'block' : 'none'}
           elevation={3}
           overflowY="auto"
-          {...getMenuProps()}
         >
-          <ActionList px="sm">
+          <ActionList px="sm" {...getMenuProps()}>
             {inputItems.length !== 0 ? (
               inputItems.map((item, index) => (
                 <ActionListItem
@@ -157,18 +159,7 @@ function InputSelect<T extends { value: string }>({
                 </ActionListItem>
               ))
             ) : (
-              <Box
-                as="li"
-                px="md"
-                py="xs"
-                color="grey06"
-                cursor="pointer"
-                textAlign="left"
-                fontSize={14}
-                lineHeight="20px"
-              >
-                No items.
-              </Box>
+              <ActionListItem disabled>No items.</ActionListItem>
             )}
           </ActionList>
         </Card>

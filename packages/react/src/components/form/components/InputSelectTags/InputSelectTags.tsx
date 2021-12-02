@@ -9,6 +9,7 @@ import { Card } from '../../../card';
 import { FormLabel } from '../FormLabel';
 import { useComponentStyles } from '../../../../system';
 import { Box, Wrap, WrapItem, Stack } from '../../../../layout';
+import { ActionList, ActionListItem } from '../../../actionList';
 
 export interface InputSelectTagsProps {
   onChange?: (value: string[]) => void;
@@ -189,56 +190,31 @@ function InputSelectTags({
           </Box>
         </Box>
         <Card
-          as="ul"
-          elevation={3}
-          display={isOpen ? 'block' : 'none'}
           position="absolute"
           float="left"
           top="100%"
           left={0}
-          mt="xs"
-          zIndex="1"
           width={width}
           maxHeight={maxHeight}
-          p={0}
-          m={0}
+          display={isOpen ? 'block' : 'none'}
+          elevation={3}
           overflowY="auto"
-          {...getMenuProps()}
         >
-          {isOpen && getFilteredItems.length !== 0 ? (
-            getFilteredItems.map((item: string, index: number) => (
-              <Box
-                as="li"
-                px="md"
-                py="xs"
-                _hover={{
-                  backgroundColor: 'blue01',
-                }}
-                cursor="pointer"
-                textAlign="left"
-                lineHeight="20px"
-                fontSize={14}
-                sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
-                key={`${item}_${index}`}
-                {...getItemProps({ item, index })}
-              >
-                {item}
-              </Box>
-            ))
-          ) : (
-            <Box
-              as="li"
-              px="md"
-              py="xs"
-              color="grey06"
-              cursor="pointer"
-              textAlign="left"
-              fontSize={14}
-              lineHeight="20px"
-            >
-              No items.
-            </Box>
-          )}
+          <ActionList px="sm" {...getMenuProps()}>
+            {isOpen && getFilteredItems.length !== 0 ? (
+              getFilteredItems.map((item: string, index: number) => (
+                <ActionListItem
+                  sx={highlightedIndex === index ? { backgroundColor: 'blue01', borderRadius: 'lg' } : {}}
+                  key={`${item}_${index}`}
+                  {...getItemProps({ item, index })}
+                >
+                  {item}
+                </ActionListItem>
+              ))
+            ) : (
+              <ActionListItem>No items.</ActionListItem>
+            )}
+          </ActionList>
         </Card>
       </Stack>
     </Box>
