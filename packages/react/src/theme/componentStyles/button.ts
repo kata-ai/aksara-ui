@@ -48,14 +48,13 @@ const buttonVariantsStyle: Record<string, CSSObject> = {
       borderColor: 'greylight04',
       backgroundColor: 'greylight03',
       color: 'greydark02',
-      '&:hover, &:focus': {
+      '&:hover': {
         backgroundColor: 'greylight04',
       },
       '&:active': {
         border: `1px solid `,
-        borderColor: 'blue07',
-        backgroundColor: 'blue01',
-        color: 'blue07',
+        borderColor: 'greylight04',
+        backgroundColor: 'greylight04',
         boxShadow: 'none',
       },
     },

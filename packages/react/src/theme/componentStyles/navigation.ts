@@ -9,9 +9,9 @@ const primaryNavItem: ComponentThemeConfig = {
     justifyContent: 'center',
     cursor: disabled ? 'not-allowed' : 'pointer',
     backgroundColor: disabled ? 'greylight01' : isActive ? 'blue01' : 'transparent',
-    color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greymed04',
+    color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
     '&:hover, &:focus': {
-      color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greymed04',
+      color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
     },
     ...(!disabled
       ? {
@@ -58,9 +58,9 @@ const secondaryNavItem: ComponentThemeConfig = {
     borderRadius: 12,
     cursor: disabled ? 'not-allowed' : 'pointer',
     backgroundColor: disabled ? 'greylight01' : isActive ? 'blue01' : 'transparent',
-    color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greymed04',
+    color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
     '&:hover, &:focus': {
-      color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greymed04',
+      color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
     },
     px: 'md',
     ...(!disabled
