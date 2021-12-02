@@ -19,12 +19,14 @@ import topbar from './topbar';
 import inputRadio from './form/inputRadio';
 import optionItem from './optionItem';
 import pagination from './pagination';
+import actionList from './actionList';
 
 /**
  * Custom theme props based on custom component variants.
  */
 const componentStyles = {
   ...avatar,
+  ...actionList,
   badge,
   ...breadcrumb,
   ...button,

@@ -3,8 +3,7 @@ import * as React from 'react';
 import Box from '../../../layout/box/components/Box';
 import { Text } from '../../../typography';
 import { Button } from '../../button';
-import ActionList from '../../dropdown/components/DropdownMenuItem/ActionList';
-import { Popover, PopoverContent, PopoverTrigger } from '../../popover';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigerer } from '../../dropdown';
 
 export interface PaginationFilterProps<T> {
   /** Total limit of pages. */
@@ -32,30 +31,28 @@ const PaginationFilter = ({
       <Text scale={300} mr={10} {...rest}>
         {label}
       </Text>
-      <Popover>
-        <PopoverTrigger>
-          <Button type="button" size="md" icon={IconChevronDown} iconPosition="right" variant="secondary">
+      <DropdownMenu maxWidth={300}>
+        <DropdownMenuTrigerer>
+          <Button type="button" size="md" icon={IconChevronDown} iconPosition="right">
             {selectedItem}
           </Button>
-        </PopoverTrigger>
-        <PopoverContent placement="top">
-          <Box width="100%" maxWidth={300} padding="md">
-            {items.map(item => {
-              return (
-                <ActionList
-                  key={item}
-                  onClick={() => {
-                    onChange(item);
-                  }}
-                  isActive={item === selectedItem}
-                >
-                  {item}
-                </ActionList>
-              );
-            })}
-          </Box>
-        </PopoverContent>
-      </Popover>
+        </DropdownMenuTrigerer>
+        <DropdownMenuContent side={'bottom'}>
+          {items.map(item => {
+            return (
+              <DropdownMenuItem
+                key={item}
+                onClick={() => {
+                  onChange(item);
+                }}
+                isActive={item === selectedItem}
+              >
+                {item}
+              </DropdownMenuItem>
+            );
+          })}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </Box>
   );
 };

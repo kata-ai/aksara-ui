@@ -25,9 +25,9 @@ export default {
       control: 'number',
     },
   },
-} as Meta<InputSelectTagsProps<string[]>>;
+} as Meta<InputSelectTagsProps>;
 
-export const Example: Story<InputSelectTagsProps<string[]>> = ({ placeholder, disabled, label, errors, width }) => {
+export const Example: Story<InputSelectTagsProps> = ({ placeholder, disabled, label, errors, width }) => {
   const [value, setValue] = React.useState<string[]>(['Test']);
   return (
     <InputSelectTags

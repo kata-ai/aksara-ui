@@ -8,12 +8,9 @@ export interface DropdownMenuHeaderProps {
   children?: React.ReactNode;
 }
 
-const DropdownMenuHeader: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuHeaderProps> = (
-  { className, style, children },
-  ref
-) => {
+const DropdownMenuHeader: React.FC<DropdownMenuHeaderProps> = ({ className, style, children }) => {
   return (
-    <Box ref={ref} py="xs" px="md" backgroundColor="grey01" className={className} style={style}>
+    <Box py="xs" px="md" backgroundColor="grey01" className={className} style={style}>
       <Heading scale={200} fontWeight={600} lineHeight="16px" fontSize={12} color="greydark02">
         {children}
       </Heading>
@@ -23,4 +20,4 @@ const DropdownMenuHeader: React.ForwardRefRenderFunction<HTMLDivElement, Dropdow
 
 DropdownMenuHeader.displayName = 'DropdownMenuItem';
 
-export default React.forwardRef(DropdownMenuHeader);
+export default DropdownMenuHeader;

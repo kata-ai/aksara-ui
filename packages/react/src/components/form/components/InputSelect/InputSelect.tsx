@@ -3,17 +3,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import * as React from 'react';
-import { useSelect, UseSelectStateChange } from 'downshift';
+import { useCombobox, UseComboboxStateChange } from 'downshift';
 import { IconChevronStepper } from '@aksara-ui/icons';
 
-import { Text } from '../../../../typography';
 import { Box, Stack } from '../../../../layout';
-import { useComponentStyles } from '../../../../system';
+import { InputText } from '../InputText';
 import { FormLabel } from '../FormLabel';
-import { UnstyledButton } from '../../../button';
 import { Card } from '../../../card';
+import { ActionList, ActionListItem } from '../../../actionList';
 
-export interface InputSelectProps<T> {
+import { useComponentStyles } from '../../../../system';
+
+export interface InputSelectProps<T extends { value: string }> {
   /** The input select label */
   label?: string;
   /** Placeholder text for select label */
@@ -27,11 +28,13 @@ export interface InputSelectProps<T> {
   /** If the item list is an object/shape, use this to map it into string. */
   itemToString?: (item: T | null) => string;
   /** The change handler for the select. */
-  handleSelectedItemChange?: (changes: UseSelectStateChange<T>) => void;
+  handleSelectedItemChange?: (changes: UseComboboxStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
   itemRenderer?: (item: T) => React.ReactNode;
   /** Name of the field form */
   name?: string;
+  /** open list when onfocus */
+  openOnFocus?: boolean;
   /** Logic on focus */
   onFocus?: () => void;
   /** Logic on blue */
@@ -49,7 +52,7 @@ export interface InputSelectProps<T> {
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
-function InputSelect<T>({
+function InputSelect<T extends { value: string }>({
   label,
   placeholder = 'Select an item',
   items,
@@ -61,20 +64,42 @@ function InputSelect<T>({
   onBlur,
   onFocus,
   disabled,
+  openOnFocus = false,
   errors,
   size = 'md',
   width = '100%',
   maxHeight,
 }: InputSelectProps<T>) {
-  const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } = useSelect<T>({
-    items,
+  const [inputItems, setInputItems] = React.useState(items);
+  const {
+    isOpen,
+    getLabelProps,
+    getMenuProps,
+    highlightedIndex,
+    getItemProps,
+    getInputProps,
+    getComboboxProps,
+    openMenu,
+    closeMenu,
+  } = useCombobox<T>({
+    items: inputItems,
     itemToString,
     selectedItem,
-    onSelectedItemChange: handleSelectedItemChange,
     initialSelectedItem,
+    onSelectedItemChange: changes => {
+      if (handleSelectedItemChange) {
+        handleSelectedItemChange(changes);
+      }
+      closeMenu();
+    },
+    onInputValueChange: ({ inputValue }) => {
+      setInputItems(
+        inputValue ? items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())) : items
+      );
+    },
   });
 
-  const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
+  const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
   return (
     <Box width={width}>
@@ -84,90 +109,61 @@ function InputSelect<T>({
             {label}
           </FormLabel>
         )}
-        <UnstyledButton
-          type="button"
-          disabled={disabled}
-          sx={{ ...styles }}
-          onFocus={() => {
-            if (onFocus) {
-              onFocus();
-            }
-          }}
-          onBlur={() => {
-            if (onBlur) {
-              onBlur();
-            }
-          }}
-          {...getToggleButtonProps()}
-        >
-          <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
-            {selectedItem
-              ? itemRenderer
-                ? itemRenderer(selectedItem)
-                : itemToString
-                ? itemToString(selectedItem)
-                : selectedItem
-              : placeholder}
-          </Text>
-          <Box position="absolute" right={8}>
+        <Box display="flex" position="relative" alignItems="center" {...getComboboxProps()}>
+          <InputText
+            disabled={disabled}
+            placeholder={placeholder}
+            width="100%"
+            sx={{ ...styles }}
+            onFocus={() => {
+              if (onFocus) {
+                onFocus();
+              }
+              if (openOnFocus) {
+                openMenu();
+              }
+            }}
+            onBlur={() => {
+              if (onBlur) {
+                onBlur();
+              }
+            }}
+            {...getInputProps()}
+          />
+          {/* right 9, because container box doesn't have border 1 */}
+          <Box position="absolute" right={9} lineHeight="normal">
             <IconChevronStepper size={16} />
           </Box>
-        </UnstyledButton>
+        </Box>
+
         <Card
-          as="ul"
-          elevation={3}
-          display={isOpen ? 'block' : 'none'}
           position="absolute"
           float="left"
           top="100%"
-          zIndex="1"
           left={0}
-          mt="xs"
           width={width}
-          p={0}
-          m={0}
           maxHeight={maxHeight}
+          display={isOpen ? 'block' : 'none'}
+          elevation={3}
           overflowY="auto"
-          {...getMenuProps()}
         >
-          {items && items.length !== 0 ? (
-            items.map((item, index) => (
-              <Box
-                as="li"
-                px="md"
-                py="xs"
-                _hover={{
-                  backgroundColor: 'blue01',
-                }}
-                cursor="pointer"
-                textAlign="left"
-                lineHeight="20px"
-                fontSize={14}
-                sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
-                key={`${item}_${index}`}
-                {...getItemProps({ item, index })}
-              >
-                {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
-              </Box>
-            ))
-          ) : (
-            <Box
-              as="li"
-              px="md"
-              py="xs"
-              color="grey06"
-              cursor="pointer"
-              fontSize={14}
-              textAlign="left"
-              lineHeight="20px"
-            >
-              No items.
-            </Box>
-          )}
+          <ActionList px="sm" {...getMenuProps()}>
+            {inputItems.length !== 0 ? (
+              inputItems.map((item, index) => (
+                <ActionListItem
+                  sx={highlightedIndex === index ? { backgroundColor: 'blue01', borderRadius: 'lg' } : {}}
+                  key={`${item}_${index}`}
+                  {...getItemProps({ item, index })}
+                >
+                  {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
+                </ActionListItem>
+              ))
+            ) : (
+              <ActionListItem disabled>No items.</ActionListItem>
+            )}
+          </ActionList>
         </Card>
       </Stack>
-      {/* if you Tab from menu, focus goes on button, and it shouldn't. only happens here. */}
-      <div tabIndex={0} />
     </Box>
   );
 }
