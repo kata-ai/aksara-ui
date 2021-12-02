@@ -41,6 +41,7 @@ const PaginationFilter = ({
           {items.map(item => {
             return (
               <DropdownMenuItem
+                key={item}
                 onClick={() => {
                   onChange(item);
                 }}
