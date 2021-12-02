@@ -13,6 +13,7 @@ const actionListItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isAc
   backgroundColor: isActive ? theme.colors.blue01 : theme.colors.grey01,
   color: isActive ? theme.colors.blue07 : theme.colors.greydark02,
   borderRadius: '8px',
+  cursor: 'pointer',
 
   '&:focus-visible': {
     outline: 'none',
