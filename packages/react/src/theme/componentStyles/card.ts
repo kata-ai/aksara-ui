@@ -3,7 +3,7 @@ import type { ComponentThemeConfig } from '../../system';
 const card: ComponentThemeConfig = {
   propToScaleMap: [['elevation', 'elevations']],
   baseStyle: {
-    borderRadius: 12,
+    borderRadius: 'lg',
     backgroundColor: 'greylight01',
     border: '1px solid',
     borderColor: 'greylight04',
