@@ -31,7 +31,7 @@ const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
           // Indicator
           <Box width={4} position="absolute" left="0" top="0" height="100%" backgroundColor={theme.colors.blue07} />
         )}
-        <Box py="xs" px="md" style={style}>
+        <Box py="xs" px="sm" style={style}>
           {renderLabel()}
         </Box>
       </Box>
