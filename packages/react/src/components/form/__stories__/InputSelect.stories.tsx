@@ -43,16 +43,29 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
   maxHeight,
 }) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
+  const [items] = React.useState([
+    { label: 'One', value: 'one' },
+    { label: 'Two', value: 'two' },
+    { label: 'One', value: 'one' },
+    { label: 'Two', value: 'two' },
+    { label: 'One', value: 'one' },
+    { label: 'Two', value: 'two' },
+    { label: 'One', value: 'one' },
+    { label: 'Two', value: 'two' },
+    { label: 'One', value: 'one' },
+    { label: 'Two', value: 'two' },
+    { label: 'One', value: 'one' },
+    { label: 'Two', value: 'two' },
+  ]);
   return (
     <InputSelect
       label={label}
       size={size}
       selectedItem={selected}
       placeholder={placeholder}
+      openOnFocus
       disabled={disabled}
       errors={errors}
-      width={width}
-      maxHeight={maxHeight}
       itemToString={item => (item ? `${item.label}` : '')}
       itemRenderer={item => (
         <>
@@ -65,36 +78,12 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
           setSelected(selectedItem);
         }
       }}
-      items={[
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-        { label: 'One', value: 'one' },
-        { label: 'Two', value: 'two' },
-      ]}
+      items={items}
+      width={width}
+      maxHeight={maxHeight}
     />
   );
 };
-
 Example.args = {
   placeholder: 'Select...',
   size: 'md',
@@ -102,62 +91,4 @@ Example.args = {
   label: 'Label input',
   errors: false,
   width: '100%',
-  maxHeight: '250px',
-};
-
-export const MutlipleInputSelect: Story<InputSelectProps<ValueSchema>> = () => {
-  const [selected1, setSelected1] = React.useState<ValueSchema | null>(null);
-  const [selected2, setSelected2] = React.useState<ValueSchema | null>(null);
-  return (
-    <>
-      <InputSelect
-        label={'label-1'}
-        size="md"
-        selectedItem={selected1}
-        placeholder="Select..."
-        errors={false}
-        width="100%"
-        itemToString={item => (item ? `${item.label}` : '')}
-        itemRenderer={item => (
-          <>
-            <Box width={15} mr="sm" />
-            {`${item.label}`}
-          </>
-        )}
-        handleSelectedItemChange={({ selectedItem }) => {
-          if (selectedItem) {
-            setSelected1(selectedItem);
-          }
-        }}
-        items={[
-          { label: 'One', value: 'one' },
-          { label: 'Two', value: 'two' },
-        ]}
-      />
-      <InputSelect
-        label={'label-2'}
-        size="md"
-        selectedItem={selected2}
-        placeholder="Select..."
-        errors={false}
-        width="100%"
-        itemToString={item => (item ? `${item.label}` : '')}
-        itemRenderer={item => (
-          <>
-            <Box width={15} mr="sm" />
-            {`${item.label}`}
-          </>
-        )}
-        handleSelectedItemChange={({ selectedItem }) => {
-          if (selectedItem) {
-            setSelected2(selectedItem);
-          }
-        }}
-        items={[
-          { label: 'One', value: 'one' },
-          { label: 'Two', value: 'two' },
-        ]}
-      />
-    </>
-  );
 };

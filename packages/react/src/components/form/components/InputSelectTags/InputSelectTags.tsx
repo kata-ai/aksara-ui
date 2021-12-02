@@ -9,28 +9,30 @@ import { Card } from '../../../card';
 import { FormLabel } from '../FormLabel';
 import { useComponentStyles } from '../../../../system';
 import { Box, Wrap, WrapItem, Stack } from '../../../../layout';
+import { ActionList, ActionListItem } from '../../../actionList';
 
-export interface InputSelectTagsProps<T> {
+export interface InputSelectTagsProps {
   onChange?: (value: string[]) => void;
   placeholder?: string;
   disabled?: boolean;
   errors?: boolean;
-  hadleInputChange?: (changes: UseMultipleSelectionStateChange<T>) => void;
+  hadleInputChange?: (changes: UseMultipleSelectionStateChange<string>) => void;
   /** open list when onfocus */
   openOnFocus?: boolean;
   label?: string;
   width?: string | number;
-  items: T[];
-  value: T[];
+  items: string[];
+  value: string[];
   /** Max height for list box */
   maxHeight?: string | number;
 }
+// TODO : onChange inputText will filter option
 
-function inputTagsVariant<T>({
+function inputTagsVariant({
   focused,
   disabled,
   errors,
-}: Pick<InputSelectTagsProps<T>, 'disabled' | 'errors'> & { focused?: boolean }) {
+}: Pick<InputSelectTagsProps, 'disabled' | 'errors'> & { focused?: boolean }) {
   if (!disabled) {
     if (errors) {
       return 'error';
@@ -46,7 +48,7 @@ function inputTagsVariant<T>({
   return 'disabled';
 }
 
-function InputSelectTags<T>({
+function InputSelectTags({
   label,
   errors,
   disabled,
@@ -57,7 +59,7 @@ function InputSelectTags<T>({
   openOnFocus = false,
   width = '100%',
   maxHeight,
-}: InputSelectTagsProps<T>) {
+}: InputSelectTagsProps) {
   const [inputValue, setInputValue] = React.useState('');
   const [, setFocused] = React.useState(false);
 
@@ -67,10 +69,11 @@ function InputSelectTags<T>({
   const { getSelectedItemProps, getDropdownProps, addSelectedItem, removeSelectedItem, selectedItems } =
     useMultipleSelection({ initialSelectedItems: value, onSelectedItemsChange: hadleInputChange });
 
-  const getFilteredItems = (items: any) =>
-    items.filter(
-      (item: any) => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())
-    );
+  const getFilteredItems = React.useMemo(
+    () =>
+      items.filter(item => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())),
+    [items]
+  );
 
   const {
     isOpen,
@@ -81,9 +84,9 @@ function InputSelectTags<T>({
     highlightedIndex,
     getItemProps,
     openMenu,
-  } = useCombobox<T>({
+  } = useCombobox<string>({
     inputValue,
-    items: getFilteredItems(items),
+    items: getFilteredItems,
     onStateChange: ({ inputValue, type, selectedItem }) => {
       switch (type) {
         case useCombobox.stateChangeTypes.InputChange:
@@ -187,56 +190,31 @@ function InputSelectTags<T>({
           </Box>
         </Box>
         <Card
-          as="ul"
-          elevation={3}
-          display={isOpen ? 'block' : 'none'}
           position="absolute"
           float="left"
           top="100%"
           left={0}
-          mt="xs"
-          zIndex="1"
           width={width}
           maxHeight={maxHeight}
-          p={0}
-          m={0}
-          overflowY="scroll"
-          {...getMenuProps()}
+          display={isOpen ? 'block' : 'none'}
+          elevation={3}
+          overflowY="auto"
         >
-          {isOpen && getFilteredItems(items).length !== 0 ? (
-            getFilteredItems(items).map((item: T, index: number) => (
-              <Box
-                as="li"
-                px="md"
-                py="xs"
-                _hover={{
-                  backgroundColor: 'blue01',
-                }}
-                cursor="pointer"
-                textAlign="left"
-                lineHeight="20px"
-                fontSize={14}
-                sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
-                key={`${item}_${index}`}
-                {...getItemProps({ item, index })}
-              >
-                {item}
-              </Box>
-            ))
-          ) : (
-            <Box
-              as="li"
-              px="md"
-              py="xs"
-              color="grey06"
-              cursor="pointer"
-              textAlign="left"
-              fontSize={14}
-              lineHeight="20px"
-            >
-              No items.
-            </Box>
-          )}
+          <ActionList px="sm" {...getMenuProps()}>
+            {isOpen && getFilteredItems.length !== 0 ? (
+              getFilteredItems.map((item: string, index: number) => (
+                <ActionListItem
+                  sx={highlightedIndex === index ? { backgroundColor: 'blue01', borderRadius: 'lg' } : {}}
+                  key={`${item}_${index}`}
+                  {...getItemProps({ item, index })}
+                >
+                  {item}
+                </ActionListItem>
+              ))
+            ) : (
+              <ActionListItem>No items.</ActionListItem>
+            )}
+          </ActionList>
         </Card>
       </Stack>
     </Box>

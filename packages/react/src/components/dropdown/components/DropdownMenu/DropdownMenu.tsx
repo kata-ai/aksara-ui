@@ -5,16 +5,19 @@ import { Box } from '../../../../layout';
 export interface DropdownMenuProps extends RadixDropdownMenu.DropdownMenuProps {
   children?: React.ReactNode;
   width?: number;
+  maxWidth?: number;
 }
 
-const DropdownMenu: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuProps> = ({ children, width }) => {
+const DropdownMenu: React.FC<DropdownMenuProps> = ({ children, width, maxWidth }) => {
   return (
     <RadixDropdownMenu.Root>
-      <Box width={width}>{children}</Box>
+      <Box width={width} maxWidth={maxWidth}>
+        {children}
+      </Box>
     </RadixDropdownMenu.Root>
   );
 };
 
 DropdownMenu.displayName = 'DropdownMenu';
 
-export default React.forwardRef(DropdownMenu);
+export default DropdownMenu;
