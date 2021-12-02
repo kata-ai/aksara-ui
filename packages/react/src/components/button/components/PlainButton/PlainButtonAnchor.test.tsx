@@ -27,11 +27,5 @@ describe('components/Button', () => {
 
       expect(icon).toBeInTheDocument();
     });
-
-    test('renders selected styles correctly', () => {
-      const { container } = render(<PlainButtonAnchor selected>test button</PlainButtonAnchor>);
-
-      expect(container.firstChild).toHaveClass('selected');
-    });
   });
 });
