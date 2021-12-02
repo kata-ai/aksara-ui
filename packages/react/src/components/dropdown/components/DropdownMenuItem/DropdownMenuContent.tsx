@@ -7,6 +7,7 @@ import { ActionList } from '../../../actionList';
 export interface DropdownMenuContentProps extends RadixDropdownMenu.DropdownMenuArrowProps {
   children?: React.ReactNode;
   side?: 'top' | 'right' | 'bottom' | 'left';
+  align?: 'start' | 'center' | 'end';
   width?: number | string;
 }
 
@@ -17,15 +18,16 @@ const Arrow = styled(RadixDropdownMenu.Arrow)`
 const DropdownMenuContent: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuContentProps> = ({
   children,
   side,
-  offset,
+  offset = 14,
   width,
+  align,
 }) => {
   return (
-    <RadixDropdownMenu.Content side={side} sideOffset={4}>
+    <RadixDropdownMenu.Content side={side} align={align} sideOffset={4}>
       <Box textAlign="left" width={width} maxWidth="100vw" borderRadius="lg" overflow="hidden" boxShadow={3}>
         <ActionList>{children}</ActionList>
       </Box>
-      {offset && <Arrow offset={offset} width={20} height={8} />}
+      <Arrow offset={offset} width={20} height={8} />
     </RadixDropdownMenu.Content>
   );
 };

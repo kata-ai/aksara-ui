@@ -15,6 +15,9 @@ export default {
     side: {
       control: { type: 'select', options: ['top', 'bottom', 'left', 'right'] },
     },
+    align: {
+      control: { type: 'select', options: ['start', 'center', 'end'] },
+    },
   },
 };
 
@@ -35,68 +38,47 @@ const dropdownList: Obj[] = [
   { label: 'Item one-two', value: 'itemOneTwo' },
 ];
 
-export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side }) => {
+export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side, align }) => {
   const [selected, setSelected] = React.useState<Obj>(dropdownList[1]);
 
   return (
-    <DropdownMenu width={200}>
-      <DropdownMenuTrigerer>
-        <Button>Trigger</Button>
-      </DropdownMenuTrigerer>
-      <DropdownMenuContent width={200} side={side}>
-        {dropdownList.map((val, idx) => (
-          <Box key={val.header || val.value}>
-            {val.header ? (
-              <>
-                {idx !== 0 && <DropdownMenuDivider />}
-                <DropdownMenuHeader>{val.header}</DropdownMenuHeader>
-              </>
-            ) : (
-              <DropdownMenuItem
-                onClick={() => setSelected(val)}
-                isActive={selected.value === val.value}
-                disabled={val.disabled}
-              >
-                {val.label}
-              </DropdownMenuItem>
-            )}
-          </Box>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      backgroundColor="greylight03"
+      width="100%"
+      height={640}
+    >
+      <DropdownMenu width={200}>
+        <DropdownMenuTrigerer>
+          <Button>Trigger</Button>
+        </DropdownMenuTrigerer>
+        <DropdownMenuContent width={200} side={side} align={align}>
+          {dropdownList.map((val, idx) => (
+            <Box key={val.header || val.value}>
+              {val.header ? (
+                <>
+                  {idx !== 0 && <DropdownMenuDivider />}
+                  <DropdownMenuHeader>{val.header}</DropdownMenuHeader>
+                </>
+              ) : (
+                <DropdownMenuItem
+                  onClick={() => setSelected(val)}
+                  isActive={selected.value === val.value}
+                  disabled={val.disabled}
+                >
+                  {val.label}
+                </DropdownMenuItem>
+              )}
+            </Box>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </Box>
   );
 };
-
-export const WithArrow: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ side }) => {
-  const [selected, setSelected] = React.useState<Obj>(dropdownList[1]);
-
-  return (
-    <DropdownMenu width={200}>
-      <DropdownMenuTrigerer>
-        <Button>Trigger</Button>
-      </DropdownMenuTrigerer>
-      <DropdownMenuContent offset={14} width={200} side={side}>
-        {dropdownList.map((val, idx) =>
-          val.header ? (
-            <>
-              {idx !== 0 && <DropdownMenuDivider />}
-              <DropdownMenuHeader>{val.header}</DropdownMenuHeader>
-            </>
-          ) : (
-            <DropdownMenuItem
-              onClick={() => setSelected(val)}
-              isActive={selected.value === val.value}
-              disabled={val.disabled}
-            >
-              {val.label}
-            </DropdownMenuItem>
-          )
-        )}
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-};
-
 Example.args = {
-  side: 'bottom',
+  side: 'right',
+  align: 'start',
 };
