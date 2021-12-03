@@ -17,10 +17,10 @@ const Arrow = styled(RadixDropdownMenu.Arrow)`
 
 const DropdownMenuContent: React.ForwardRefRenderFunction<HTMLDivElement, DropdownMenuContentProps> = ({
   children,
-  side,
+  side = 'bottom',
   offset = 14,
   width,
-  align,
+  align = 'start',
 }) => {
   return (
     <RadixDropdownMenu.Content side={side} align={align} sideOffset={4}>

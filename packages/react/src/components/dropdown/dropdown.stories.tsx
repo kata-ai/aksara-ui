@@ -79,6 +79,6 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
   );
 };
 Example.args = {
-  side: 'right',
+  side: 'bottom',
   align: 'start',
 };
