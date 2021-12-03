@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/react';
 import * as React from 'react';
 import { Box } from '../../layout';
@@ -13,7 +12,7 @@ export default {
 export const ActionListItemExample: Story = () => {
   return (
     <Box width="200px">
-      <ActionListItem onClick={action('click')}>item sample 1</ActionListItem>
+      <ActionListItem>item sample 1</ActionListItem>
     </Box>
   );
 };
@@ -21,15 +20,11 @@ export const ActionListItemExample: Story = () => {
 export const ActionListExample: Story = () => {
   return (
     <ActionList width="200px">
-      <ActionListItem marginX="sm" isActive onClick={action('click')}>
+      <ActionListItem marginX="sm" isActive>
         item sample 1
       </ActionListItem>
-      <ActionListItem marginX="sm" onClick={action('click')}>
-        item sample 2
-      </ActionListItem>
-      <ActionListItem marginX="sm" onClick={action('click')}>
-        item sample 3
-      </ActionListItem>
+      <ActionListItem marginX="sm">item sample 2</ActionListItem>
+      <ActionListItem marginX="sm">item sample 3</ActionListItem>
     </ActionList>
   );
 };
