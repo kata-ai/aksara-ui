@@ -20,6 +20,9 @@ export default {
     disabled: {
       control: 'boolean',
     },
+    selected: {
+      control: 'boolean',
+    },
     isLoading: {
       control: 'boolean',
     },
@@ -32,7 +35,17 @@ export default {
   },
 };
 
-const Template: Story<ButtonProps> = ({ variant, size, block, disabled, isLoading, icon, iconPosition, onClick }) => (
+const Template: Story<ButtonProps> = ({
+  variant,
+  size,
+  block,
+  disabled,
+  isLoading,
+  selected,
+  icon,
+  iconPosition,
+  onClick,
+}) => (
   <Button
     type="button"
     variant={variant}
@@ -40,6 +53,7 @@ const Template: Story<ButtonProps> = ({ variant, size, block, disabled, isLoadin
     block={block}
     disabled={disabled}
     isLoading={isLoading}
+    selected={selected}
     icon={icon}
     iconPosition={iconPosition}
     onClick={onClick}
@@ -55,6 +69,7 @@ Example.args = {
   block: false,
   disabled: false,
   isLoading: false,
+  selected: false,
 };
 
 export const WithIcon: Story<ButtonProps> = Template.bind({});

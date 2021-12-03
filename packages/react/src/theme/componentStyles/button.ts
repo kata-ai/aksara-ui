@@ -43,13 +43,13 @@ const buttonVariantsStyle: Record<string, CSSObject> = {
       color: 'greylight01',
     },
   },
-  secondary: {
+  secondary: ({ selected }: { selected?: boolean }) => ({
     '&:not(:disabled)': {
-      borderColor: 'greylight04',
-      backgroundColor: 'greylight03',
-      color: 'greydark02',
+      borderColor: selected ? 'blue07' : 'greylight04',
+      backgroundColor: selected ? 'blue01' : 'greylight03',
+      color: selected ? 'blue07' : 'greydark02',
       '&:hover': {
-        backgroundColor: 'greylight04',
+        backgroundColor: selected ? 'blue01' : 'greylight04',
       },
       '&:active': {
         border: `1px solid `,
@@ -63,7 +63,7 @@ const buttonVariantsStyle: Record<string, CSSObject> = {
       borderColor: 'greylight04',
       color: 'greymed01',
     },
-  },
+  }),
   'segment-item': ({ selected }: { selected?: boolean }) => ({
     '&:not(:disabled)': {
       backgroundColor: selected ? 'blue01' : 'greylight03',
