@@ -22,7 +22,7 @@ const actionListItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isAc
   },
 
   '&:hover': {
-    backgroundColor: theme.colors.greylight03,
+    backgroundColor: isActive ? theme.colors.blue01 : theme.colors.greylight03,
     boxShadow: 'none',
   },
   '&:active': {
