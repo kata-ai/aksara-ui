@@ -17,11 +17,7 @@ const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
     const styles = useComponentStyles('actionListItem', { isActive });
     const renderLabel = () => {
       if (typeof children === 'string' || typeof children === 'number') {
-        return (
-          <Text scale={300} marginLeft={isActive ? '-4px' : ''}>
-            {children}
-          </Text>
-        );
+        return <Text scale={300}>{children}</Text>;
       }
       return children;
     };
