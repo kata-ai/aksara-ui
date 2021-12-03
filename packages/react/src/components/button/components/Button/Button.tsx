@@ -14,6 +14,8 @@ export interface ButtonProps extends ButtonBaseProps, React.ComponentPropsWithou
   size?: ButtonSizes;
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
+  /** indicate button is selected */
+  selected?: boolean;
 }
 
 /**
