@@ -158,9 +158,9 @@ function InputSelect<T extends { value: string }>({
           maxHeight={maxHeight}
           display={isOpen ? 'block' : 'none'}
           elevation={3}
-          overflowY="auto"
+          overflow="hidden"
         >
-          <ActionList px="sm" {...getMenuProps()}>
+          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
             {inputItems.length !== 0 ? (
               inputItems.map((item, index) => (
                 <ActionListItem

@@ -198,9 +198,9 @@ function InputSelectTags({
           maxHeight={maxHeight}
           display={isOpen ? 'block' : 'none'}
           elevation={3}
-          overflowY="auto"
+          overflowY="hidden"
         >
-          <ActionList px="sm" {...getMenuProps()}>
+          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
             {isOpen && getFilteredItems.length !== 0 ? (
               getFilteredItems.map((item: string, index: number) => (
                 <ActionListItem
