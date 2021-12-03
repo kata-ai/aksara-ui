@@ -2,6 +2,7 @@ import { Story } from '@storybook/react';
 import * as React from 'react';
 
 import { Button } from '../button';
+import { ButtonGroup } from '../button-group';
 import { DropdownMenu, DropdownMenuProps } from './components/DropdownMenu';
 import { DropdownMenuItem, DropdownMenuDivider, DropdownMenuHeader } from './components/DropdownMenuItem';
 import DropdownMenuTrigerer from './components/DropdownMenuItem/DropdownMenuTrigerer';
@@ -73,12 +74,21 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
               )}
             </Box>
           ))}
+          <Box>
+            <DropdownMenuDivider />
+            <Box display="flex" justifyContent="flex-end" px="xs">
+              <ButtonGroup>
+                <Button>Action</Button>
+                <Button variant="primary">Action</Button>
+              </ButtonGroup>
+            </Box>
+          </Box>
         </DropdownMenuContent>
       </DropdownMenu>
     </Box>
   );
 };
 Example.args = {
-  side: 'right',
+  side: 'bottom',
   align: 'start',
 };
