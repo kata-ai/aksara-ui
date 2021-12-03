@@ -92,6 +92,19 @@ function InputSelect<T extends { value: string }>({
       }
       closeMenu();
     },
+    onStateChange: ({ type, inputValue }) => {
+      switch (type) {
+        case useCombobox.stateChangeTypes.FunctionOpenMenu: {
+          if (inputValue) {
+            closeMenu();
+          }
+          break;
+        }
+
+        default:
+          break;
+      }
+    },
     onInputValueChange: ({ inputValue }) => {
       setInputItems(
         inputValue ? items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())) : items
