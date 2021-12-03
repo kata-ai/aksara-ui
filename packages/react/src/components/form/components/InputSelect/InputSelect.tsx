@@ -92,6 +92,19 @@ function InputSelect<T extends { value: string }>({
       }
       closeMenu();
     },
+    onStateChange: ({ type, inputValue }) => {
+      switch (type) {
+        case useCombobox.stateChangeTypes.FunctionOpenMenu: {
+          if (inputValue) {
+            closeMenu();
+          }
+          break;
+        }
+
+        default:
+          break;
+      }
+    },
     onInputValueChange: ({ inputValue }) => {
       setInputItems(
         inputValue ? items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())) : items
@@ -151,7 +164,7 @@ function InputSelect<T extends { value: string }>({
             {inputItems.length !== 0 ? (
               inputItems.map((item, index) => (
                 <ActionListItem
-                  sx={highlightedIndex === index ? { backgroundColor: 'blue01', borderRadius: 'lg' } : {}}
+                  sx={highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}}
                   key={`${item}_${index}`}
                   {...getItemProps({ item, index })}
                 >

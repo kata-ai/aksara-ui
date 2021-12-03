@@ -44,18 +44,17 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
 }) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
   const [items] = React.useState([
-    { label: 'One', value: 'one' },
-    { label: 'Two', value: 'two' },
-    { label: 'One', value: 'one' },
-    { label: 'Two', value: 'two' },
-    { label: 'One', value: 'one' },
-    { label: 'Two', value: 'two' },
-    { label: 'One', value: 'one' },
-    { label: 'Two', value: 'two' },
-    { label: 'One', value: 'one' },
-    { label: 'Two', value: 'two' },
-    { label: 'One', value: 'one' },
-    { label: 'Two', value: 'two' },
+    { label: 'a', value: 'a' },
+    { label: 'b', value: 'b' },
+    { label: 'c', value: 'c' },
+    { label: 'd', value: 'd' },
+    { label: 'e', value: 'e' },
+    { label: 'f', value: 'f' },
+    { label: 'g', value: 'g' },
+    { label: 'h', value: 'h' },
+    { label: 'i', value: 'i' },
+    { label: 'j', value: 'j' },
+    { label: 'k', value: 'k' },
   ]);
   return (
     <InputSelect
@@ -91,4 +90,5 @@ Example.args = {
   label: 'Label input',
   errors: false,
   width: '100%',
+  maxHeight: '250px',
 };
