@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/ActionList <ActionList /> renders actionList with item correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: lg;
+  padding-top: sm;
+  padding-bottom: sm;
+  background-color: greylight01;
+}
+
+.c0 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: xxs;
+}
+
+.c1 {
+  width: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #006FE6;
+}
+
+.c2 {
+  padding-top: xs;
+  padding-bottom: xs;
+  padding-left: sm;
+  padding-right: sm;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class=""
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    >
+      <span
+        class="Text-sc-18vu504-0"
+      >
+        Label 1
+      </span>
+    </div>
+  </div>
+  <div
+    aria-disabled="true"
+    class=""
+    data-disabled="true"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="Text-sc-18vu504-0"
+      >
+        Label 2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-disabled="true"
+    class=""
+    data-disabled="true"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="Text-sc-18vu504-0"
+      >
+        Label 2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/ActionList <ActionList /> renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: lg;
+  padding-top: sm;
+  padding-bottom: sm;
+  background-color: greylight01;
+}
+
+.c0 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: xxs;
+}
+
+<div
+  class="c0"
+/>
+`;
