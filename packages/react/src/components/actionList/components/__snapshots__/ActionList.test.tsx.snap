@@ -9,6 +9,7 @@ exports[`components/ActionList <ActionList /> renders actionList with item corre
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  display: block;
   border-radius: lg;
   padding-top: sm;
   padding-bottom: sm;
@@ -96,6 +97,7 @@ exports[`components/ActionList <ActionList /> renders correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  display: block;
   border-radius: lg;
   padding-top: sm;
   padding-bottom: sm;
