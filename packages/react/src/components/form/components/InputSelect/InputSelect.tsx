@@ -172,7 +172,7 @@ function InputSelect<T>({
             {inputItems.length !== 0 ? (
               inputItems.map((item, index) => (
                 <ActionListItem
-                  style={highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}}
+                  sx={highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}}
                   isActive={selectedItem?.value === item.value}
                   key={`${item}_${index}`}
                   {...getItemProps({ item, index })}

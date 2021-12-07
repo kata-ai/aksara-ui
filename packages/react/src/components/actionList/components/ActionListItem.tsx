@@ -13,7 +13,7 @@ export interface ActionListItemProps extends BoxProps, React.ComponentPropsWitho
 }
 
 const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
-  ({ style, children, isActive, disabled, ...rest }, ref) => {
+  ({ style, children, isActive, disabled, sx, ...rest }, ref) => {
     const styles = useComponentStyles('actionListItem', { isActive });
     const renderLabel = () => {
       if (typeof children === 'string' || typeof children === 'number') {
@@ -22,7 +22,7 @@ const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
       return children;
     };
     return (
-      <Box aria-disabled={disabled} data-disabled={disabled} ref={ref} sx={styles} {...rest}>
+      <Box aria-disabled={disabled} data-disabled={disabled} ref={ref} sx={{ ...styles, ...sx }} {...rest}>
         {isActive && (
           // Indicator
           <Box width={4} position="absolute" left="0" top="0" height="100%" backgroundColor={theme.colors.blue07} />
