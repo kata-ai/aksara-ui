@@ -44,17 +44,17 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
 }) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
   const [items] = React.useState([
-    { label: 'a', value: 'a' },
-    { label: 'b', value: 'b' },
-    { label: 'c', value: 'c' },
-    { label: 'd', value: 'd' },
-    { label: 'e', value: 'e' },
-    { label: 'f', value: 'f' },
-    { label: 'g', value: 'g' },
-    { label: 'h', value: 'h' },
-    { label: 'i', value: 'i' },
-    { label: 'j', value: 'j' },
-    { label: 'k', value: 'k' },
+    { label: 'ab', value: 'a' },
+    { label: 'abc', value: 'b' },
+    { label: 'bcd', value: 'c' },
+    { label: 'cde', value: 'd' },
+    { label: 'def', value: 'e' },
+    { label: 'efg', value: 'f' },
+    { label: 'fgh', value: 'g' },
+    { label: 'ghi', value: 'h' },
+    { label: 'hij', value: 'i' },
+    { label: 'ijk', value: 'j' },
+    { label: 'jkl', value: 'k' },
   ]);
   return (
     <InputSelect

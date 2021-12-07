@@ -6,7 +6,15 @@ export interface ActionListProps extends StackProps, React.ComponentPropsWithout
 
 const ActionList = React.forwardRef<HTMLDivElement, ActionListProps>(({ children, ...rest }, ref) => {
   return (
-    <Stack spacing="xxs" borderRadius="lg" paddingY="sm" backgroundColor="greylight01" ref={ref} {...rest}>
+    <Stack
+      display="block"
+      spacing="xxs"
+      borderRadius="lg"
+      paddingY="sm"
+      backgroundColor="greylight01"
+      ref={ref}
+      {...rest}
+    >
       {children}
     </Stack>
   );

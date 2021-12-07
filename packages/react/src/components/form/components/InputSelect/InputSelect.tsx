@@ -14,23 +14,27 @@ import { ActionList, ActionListItem } from '../../../actionList';
 
 import { useComponentStyles } from '../../../../system';
 
-export interface InputSelectProps<T extends { value: string }> {
+type SelectItem<T> = {
+  label: string;
+  value: T;
+};
+export interface InputSelectProps<T> {
   /** The input select label */
   label?: string;
   /** Placeholder text for select label */
   placeholder?: string;
   /** Label items. */
-  items: T[];
+  items: Array<SelectItem<T>>;
   /** Selected item. */
-  selectedItem?: T | null;
+  selectedItem?: SelectItem<T> | null;
 
-  initialSelectedItem?: T | null;
+  initialSelectedItem?: SelectItem<T> | null;
   /** If the item list is an object/shape, use this to map it into string. */
-  itemToString?: (item: T | null) => string;
+  itemToString?: (item: SelectItem<T> | null) => string;
   /** The change handler for the select. */
-  handleSelectedItemChange?: (changes: UseComboboxStateChange<T>) => void;
+  handleSelectedItemChange?: (changes: UseComboboxStateChange<SelectItem<T>>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
-  itemRenderer?: (item: T) => React.ReactNode;
+  itemRenderer?: (item: SelectItem<T>) => React.ReactNode;
   /** Name of the field form */
   name?: string;
   /** open list when onfocus */
@@ -52,7 +56,7 @@ export interface InputSelectProps<T extends { value: string }> {
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
-function InputSelect<T extends { value: string }>({
+function InputSelect<T>({
   label,
   placeholder = 'Select an item',
   items,
@@ -64,7 +68,6 @@ function InputSelect<T extends { value: string }>({
   onBlur,
   onFocus,
   disabled,
-  openOnFocus = false,
   errors,
   size = 'md',
   width = '100%',
@@ -79,9 +82,9 @@ function InputSelect<T extends { value: string }>({
     getItemProps,
     getInputProps,
     getComboboxProps,
-    openMenu,
     closeMenu,
-  } = useCombobox<T>({
+    toggleMenu,
+  } = useCombobox<{ label: string; value: T }>({
     items: inputItems,
     itemToString,
     selectedItem,
@@ -107,10 +110,15 @@ function InputSelect<T extends { value: string }>({
     },
     onInputValueChange: ({ inputValue }) => {
       setInputItems(
-        inputValue ? items.filter(item => item.value.toLowerCase().startsWith(inputValue.toLowerCase())) : items
+        inputValue ? items.filter(item => item.label.toLowerCase().includes(inputValue.toLowerCase())) : items
       );
     },
   });
+  React.useEffect(() => {
+    if (isOpen) {
+      setInputItems(items);
+    }
+  }, [isOpen]);
 
   const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
@@ -128,12 +136,12 @@ function InputSelect<T extends { value: string }>({
             placeholder={placeholder}
             width="100%"
             sx={{ ...styles }}
+            onClick={() => {
+              toggleMenu();
+            }}
             onFocus={() => {
               if (onFocus) {
                 onFocus();
-              }
-              if (openOnFocus) {
-                openMenu();
               }
             }}
             onBlur={() => {
@@ -165,6 +173,7 @@ function InputSelect<T extends { value: string }>({
               inputItems.map((item, index) => (
                 <ActionListItem
                   sx={highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}}
+                  isActive={selectedItem?.value === item.value}
                   key={`${item}_${index}`}
                   {...getItemProps({ item, index })}
                 >
