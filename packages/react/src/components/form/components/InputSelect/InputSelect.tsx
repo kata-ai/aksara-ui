@@ -76,6 +76,8 @@ function InputSelect<T>({
   const [inputItems, setInputItems] = React.useState(items);
   const {
     isOpen,
+    inputValue,
+    setInputValue,
     getLabelProps,
     getMenuProps,
     highlightedIndex,
@@ -95,10 +97,10 @@ function InputSelect<T>({
       }
       closeMenu();
     },
-    onStateChange: ({ type, inputValue }) => {
+    onStateChange: ({ type, inputValue: _inputValue }) => {
       switch (type) {
         case useCombobox.stateChangeTypes.FunctionOpenMenu: {
-          if (inputValue) {
+          if (_inputValue) {
             closeMenu();
           }
           break;
@@ -108,15 +110,30 @@ function InputSelect<T>({
           break;
       }
     },
-    onInputValueChange: ({ inputValue }) => {
+    onInputValueChange: ({ inputValue: _inputValue }) => {
       setInputItems(
-        inputValue ? items.filter(item => item.label.toLowerCase().includes(inputValue.toLowerCase())) : items
+        _inputValue ? items.filter(item => item.label.toLowerCase().includes(_inputValue.toLowerCase())) : items
       );
     },
   });
   React.useEffect(() => {
-    if (isOpen) {
+    if (isOpen && inputValue) {
       setInputItems(items);
+    } else if (handleSelectedItemChange) {
+      // if inputValue not listed on option
+      // then reset
+      const itemFindIndex = items.findIndex(item => item.label.includes(inputValue));
+      if (itemFindIndex < 0 && selectedItem?.label) {
+        setInputValue(selectedItem.label);
+      }
+      // else found in option
+      // then set first index
+      else {
+        handleSelectedItemChange({
+          selectedItem: items[itemFindIndex],
+          type: useCombobox.stateChangeTypes.FunctionCloseMenu,
+        });
+      }
     }
   }, [isOpen]);
 
@@ -174,7 +191,7 @@ function InputSelect<T>({
                 <ActionListItem
                   sx={highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}}
                   isActive={selectedItem?.value === item.value}
-                  key={`${item}_${index}`}
+                  key={`${item.label}_${item.value}`}
                   {...getItemProps({ item, index })}
                 >
                   {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
