@@ -97,6 +97,11 @@ function InputSelect<T>({
       }
       closeMenu();
     },
+    onIsOpenChange: changes => {
+      if (isOpen && !changes.selectedItem) {
+        setInputValue('');
+      }
+    },
     onStateChange: ({ type, inputValue: _inputValue }) => {
       switch (type) {
         case useCombobox.stateChangeTypes.FunctionOpenMenu: {
@@ -122,17 +127,11 @@ function InputSelect<T>({
     } else if (handleSelectedItemChange) {
       // if inputValue not listed on option
       // then reset
-      const itemFindIndex = items.findIndex(item => item.label.includes(inputValue));
+      const itemFindIndex = !inputValue ? -1 : items.findIndex(item => item.label.includes(inputValue));
+      // reset to prev value
       if (itemFindIndex < 0 && selectedItem?.label) {
-        setInputValue(selectedItem.label);
-      }
-      // else found in option
-      // then set first index
-      else {
-        handleSelectedItemChange({
-          selectedItem: items[itemFindIndex],
-          type: useCombobox.stateChangeTypes.FunctionCloseMenu,
-        });
+        setInputValue(selectedItem?.label);
+        // reset to empty string
       }
     }
   }, [isOpen]);
