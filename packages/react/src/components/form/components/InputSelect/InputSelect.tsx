@@ -98,8 +98,8 @@ function InputSelect<T>({
       closeMenu();
     },
     onIsOpenChange: changes => {
-      if (isOpen && !changes.selectedItem) {
-        setInputValue('');
+      if (isOpen) {
+        setInputValue(changes.selectedItem?.label ?? '');
       }
     },
     onStateChange: ({ type, inputValue: _inputValue }) => {
@@ -128,6 +128,7 @@ function InputSelect<T>({
       // if inputValue not listed on option
       // then reset
       // reset to prev value
+      console.log('inputValue', inputValue);
       if (!inputValue && selectedItem?.label) {
         setInputValue(selectedItem?.label);
         // reset to empty string
