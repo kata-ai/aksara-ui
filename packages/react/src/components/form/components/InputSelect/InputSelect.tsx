@@ -91,6 +91,19 @@ function InputSelect<T>({
     itemToString,
     selectedItem,
     initialSelectedItem,
+    stateReducer: (state, actionAndChanges) => {
+      const { type, changes } = actionAndChanges;
+      switch (type) {
+        case useCombobox.stateChangeTypes.InputKeyDownEscape:
+          return {
+            ...changes,
+            isOpen: false,
+            inputValue: state.inputValue, // prevent flickering text when press esc
+          };
+        default:
+          return changes;
+      }
+    },
     onSelectedItemChange: changes => {
       if (handleSelectedItemChange) {
         handleSelectedItemChange(changes);
@@ -128,7 +141,6 @@ function InputSelect<T>({
       // if inputValue not listed on option
       // then reset
       // reset to prev value
-      console.log('inputValue', inputValue);
       if (!inputValue && selectedItem?.label) {
         setInputValue(selectedItem?.label);
         // reset to empty string
@@ -188,7 +200,11 @@ function InputSelect<T>({
             {inputItems.length !== 0 ? (
               inputItems.map((item, index) => (
                 <ActionListItem
-                  sx={highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}}
+                  sx={
+                    highlightedIndex === index && selectedItem?.value !== item.value
+                      ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
+                      : {}
+                  }
                   isActive={selectedItem?.value === item.value}
                   key={`${item.label}_${item.value}`}
                   {...getItemProps({ item, index })}
