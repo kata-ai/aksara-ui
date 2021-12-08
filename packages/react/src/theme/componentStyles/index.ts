@@ -20,6 +20,7 @@ import inputRadio from './form/inputRadio';
 import optionItem from './optionItem';
 import pagination from './pagination';
 import actionList from './actionList';
+import saveBar from './saveBar';
 
 /**
  * Custom theme props based on custom component variants.
@@ -48,6 +49,7 @@ const componentStyles = {
   ...inputRadio,
   ...optionItem,
   ...pagination,
+  ...saveBar,
 };
 
 export default componentStyles;
