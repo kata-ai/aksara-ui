@@ -4,10 +4,13 @@ import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 const saveBarBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { theme: DefaultTheme }) => ({
   display: 'flex',
   position: 'fixed',
+  left: 0,
+  top: 0,
   alignItems: 'center',
   justifyContent: 'center',
   width: '100%',
   height: '56px',
+  px: 'lg',
   backgroundColor: theme.colors.greydark02,
 });
 
