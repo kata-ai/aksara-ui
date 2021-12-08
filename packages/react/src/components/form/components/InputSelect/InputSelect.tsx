@@ -127,9 +127,8 @@ function InputSelect<T>({
     } else if (handleSelectedItemChange) {
       // if inputValue not listed on option
       // then reset
-      const itemFindIndex = !inputValue ? -1 : items.findIndex(item => item.label.includes(inputValue));
       // reset to prev value
-      if (itemFindIndex < 0 && selectedItem?.label) {
+      if (!inputValue && selectedItem?.label) {
         setInputValue(selectedItem?.label);
         // reset to empty string
       }
