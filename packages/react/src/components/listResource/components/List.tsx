@@ -58,15 +58,15 @@ export interface ListProp<T> {
   /** callback when click list item */
   onSelectItem?: (data: T) => void;
   /** keyExtractor will use index value as key value by default */
-  keyExtractor: (data: T) => string;
+  keyExtractor: (data: T, index: React.Key) => string;
 }
 
 const List = <T,>({ items, renderItem, onSelectItem, keyExtractor }: ListProp<T>) => {
   const renderListItem = () => {
     return items.map((item, index) => {
       return (
-        <ListItem<T>
-          key={keyExtractor ? keyExtractor(item.data) : index}
+        <ListItem
+          key={keyExtractor ? keyExtractor(item.data, index) : index}
           isSelected={item.selected}
           onSelected={() => {
             if (onSelectItem) {

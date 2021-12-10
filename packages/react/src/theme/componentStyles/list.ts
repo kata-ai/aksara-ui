@@ -9,7 +9,7 @@ const listItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isSelected
   alignItems: 'center',
   backgroundColor: isSelected ? theme.colors.blue01 : theme.colors.greylight01,
   color: isSelected ? theme.colors.blue07 : theme.colors.greydark02,
-  minHeight: '20px',
+  minHeight: '48px',
   px: 'md',
   // '&:focus-visible': {
   //   outline: 'none',
