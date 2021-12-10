@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box } from '../../../layout';
+import ListHeader from './ListHeader';
 import ListItem from './ListItem';
 // TODO create List Component
 
@@ -55,13 +56,14 @@ export interface ListProp<T> {
     data: T;
   }[];
   renderItem: (data: T, index: number, isSelected?: boolean) => React.ReactElement;
+  header?: React.ReactElement;
   /** callback when click list item */
   onSelectItem?: (data: T) => void;
   /** keyExtractor will use index value as key value by default */
   keyExtractor: (data: T, index: React.Key) => string;
 }
 
-const List = <T,>({ items, renderItem, onSelectItem, keyExtractor }: ListProp<T>) => {
+const List = <T,>({ items, renderItem, header, onSelectItem, keyExtractor }: ListProp<T>) => {
   const renderListItem = () => {
     return items.map((item, index) => {
       return (
@@ -74,12 +76,20 @@ const List = <T,>({ items, renderItem, onSelectItem, keyExtractor }: ListProp<T>
             }
           }}
         >
-          {renderItem(item.data, index, !!item.selected)}
+          <>{renderItem(item.data, index, !!item.selected)}</>
         </ListItem>
       );
     });
   };
-  return <Box>{renderListItem()}</Box>;
+  const renderHeader = () => {
+    return <ListHeader>{header}</ListHeader>;
+  };
+  return (
+    <Box>
+      {renderHeader()}
+      {renderListItem()}
+    </Box>
+  );
 };
 
 export default List;

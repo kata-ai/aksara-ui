@@ -9,13 +9,13 @@ export interface ListItemProp extends BoxProps {
   children?: React.ReactElement;
 }
 
-const List = ({ children, sx, isSelected = false, onSelected, ...rest }: ListItemProp) => {
+const ListItem = ({ children, sx, isSelected = false, onSelected, ...rest }: ListItemProp) => {
   const listItemStyle = useComponentStyles('listItemBase', { isSelected });
   return (
-    <Box sx={{ ...listItemStyle, ...sx }} onClick={onSelected} {...rest}>
+    <Box data-testid="list-item" sx={{ ...listItemStyle, ...sx }} onClick={onSelected} {...rest}>
       {children}
     </Box>
   );
 };
 
-export default List;
+export default ListItem;

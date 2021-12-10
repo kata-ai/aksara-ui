@@ -44,11 +44,29 @@ export const Example = () => {
       </Box>
     </Box>
   );
+  const renderHeader = () => {
+    return (
+      <Box display="flex" width="100%">
+        <Box flex="1">
+          <Text fontWeight="700" fontSize="12px" lineHeight="16px">
+            Name
+          </Text>
+        </Box>
+        <Box width="200px" fontWeight="700" fontSize="12px" lineHeight="16px">
+          <Text>Role</Text>
+        </Box>
+        <Box width="200px" fontWeight="700" fontSize="12px" lineHeight="16px">
+          <Text>Status</Text>
+        </Box>
+      </Box>
+    );
+  };
   return (
     <Box>
       <List
         items={items}
         keyExtractor={(data, index) => `${data.name}-${index}`}
+        header={renderHeader()}
         renderItem={renderListItem}
         onSelectItem={data => console.log('onSelectItem', data)}
       />
