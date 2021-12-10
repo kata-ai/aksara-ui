@@ -37,9 +37,9 @@ const listHeaderBase: ComponentThemeConfig = {
   baseStyle: listHeaderBaseStyle,
 };
 
-const listStyle = {
+const list = {
   listItemBase,
   listHeaderBase,
 };
 
-export default listStyle;
+export default list;
