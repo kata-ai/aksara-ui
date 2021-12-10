@@ -122,6 +122,9 @@ export const buttonBase: ComponentThemeConfig = {
           borderColor: 'red07',
           color: 'red07',
           '&:hover': {
+            backgroundColor: 'red01',
+          },
+          '&:active': {
             backgroundColor: 'rgba(255, 219, 214, 0.8)',
           },
         },
