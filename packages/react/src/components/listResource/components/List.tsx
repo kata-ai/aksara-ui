@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box } from '../../../layout';
+import ListItem from './ListItem';
 // TODO create List Component
 
 /**
@@ -24,19 +25,58 @@ import { Box } from '../../../layout';
  * as array
  * OR
  * as item
- * onSelectionChange will be used to change selectedItems data
+ * onSelectionChange wil l be used to change selectedItems data
+ */
+
+/**
+ * onSelectionChange handler by user seperatly
+ * by adding onClick event into ListItem
  */
 export interface ListProp<T> {
-  items: T[];
-  renderItem: (props: T) => React.ReactElement;
-  selectedItems: T[];
-  onSelectionChange: (change: T) => void;
+  // need map from outside
+  // cons
+
+  // pros
+  // doesn't need find is item is selected or not
+  // if using selectedItem props
+  // need to find item is selected or not
+  // all selected item state was inside selectedItems
+  // but it can be used as initial selectedValue
+
+  // if using seperate item data and selected data
+  // pros
+  // no need map outisde component
+  // cons
+  // need to map inside
+
+  /** items list */
+  items: {
+    selected?: boolean;
+    data: T;
+  }[];
+  renderItem: (data: T, index: number, isSelected?: boolean) => React.ReactElement;
+  /** callback when click list item */
+  onSelectItem?: (data: T) => void;
+  /** keyExtractor will use index value as key value by default */
+  keyExtractor: (data: T) => string;
 }
 
-const List = <T,>({ items, renderItem }: ListProp<T>) => {
+const List = <T,>({ items, renderItem, onSelectItem, keyExtractor }: ListProp<T>) => {
   const renderListItem = () => {
-    return items.map(item => {
-      return renderItem(item);
+    return items.map((item, index) => {
+      return (
+        <ListItem<T>
+          key={keyExtractor ? keyExtractor(item.data) : index}
+          isSelected={item.selected}
+          onSelected={() => {
+            if (onSelectItem) {
+              onSelectItem(item.data);
+            }
+          }}
+        >
+          {renderItem(item.data, index, !!item.selected)}
+        </ListItem>
+      );
     });
   };
   return <Box>{renderListItem()}</Box>;
