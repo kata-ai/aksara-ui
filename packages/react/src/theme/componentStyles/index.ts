@@ -21,7 +21,7 @@ import optionItem from './optionItem';
 import pagination from './pagination';
 import actionList from './actionList';
 import saveBar from './saveBar';
-
+import list from './list';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -50,6 +50,7 @@ const componentStyles = {
   ...optionItem,
   ...pagination,
   ...saveBar,
+  ...list,
 };
 
 export default componentStyles;
