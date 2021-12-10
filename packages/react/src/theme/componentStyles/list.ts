@@ -11,11 +11,7 @@ const listItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isSelected
   color: isSelected ? theme.colors.blue07 : theme.colors.greydark02,
   minHeight: '48px',
   px: 'md',
-  // '&:focus-visible': {
-  //   outline: 'none',
-  //   padding: '0px',
-  //   boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
-  // },
+  boxShadow: 'inset 0px -1px 0px #eff2f5',
 
   '&:hover': {
     backgroundColor: isSelected ? theme.colors.blue01 : theme.colors.greylight03,
