@@ -54,7 +54,7 @@ export interface InputSelectProps<T> {
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
-function InputSelect<T extends { value: any }>({
+function InputSelect<T>({
   label,
   placeholder = 'Select an item',
   items,
