@@ -93,3 +93,49 @@ Example.args = {
   width: '100%',
   maxHeight: '250px',
 };
+
+export const ListOfStringExample: Story<InputSelectProps<ValueSchema>> = ({
+  placeholder,
+  disabled,
+  size,
+  label,
+  errors,
+  width,
+  maxHeight,
+}) => {
+  const [selected, setSelected] = React.useState<string | null>(null);
+  const [items] = React.useState([
+    'apple',
+    'apricot',
+    'avocado',
+    'banana',
+    'bell pepper',
+    'bilberry',
+    'blackberry',
+    'blackcurrant',
+    'blood orange',
+  ]);
+  return (
+    <InputSelect
+      label={label}
+      size={size}
+      selectedItem={selected}
+      placeholder={placeholder}
+      openOnFocus
+      disabled={disabled}
+      errors={errors}
+      handleSelectedItemChange={({ selectedItem }) => {
+        if (selectedItem) {
+          setSelected(selectedItem);
+        }
+      }}
+      items={items}
+      width={width}
+      maxHeight={maxHeight}
+    />
+  );
+};
+
+ListOfStringExample.args = {
+  ...Example.args,
+};
