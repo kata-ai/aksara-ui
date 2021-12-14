@@ -1,6 +1,5 @@
-import { BoxProps } from 'packages/react/dist';
 import * as React from 'react';
-import { Box } from '../../../layout';
+import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 
 export interface ListHeaderProp extends BoxProps {
