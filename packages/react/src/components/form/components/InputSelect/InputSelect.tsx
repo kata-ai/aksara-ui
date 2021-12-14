@@ -14,27 +14,23 @@ import { ActionList, ActionListItem } from '../../../actionList';
 
 import { useComponentStyles } from '../../../../system';
 
-type SelectItem<T> = {
-  label: string;
-  value: T;
-};
-export interface InputSelectProps<T> {
+export interface InputSelectProps<T extends { value: any }> {
   /** The input select label */
   label?: string;
   /** Placeholder text for select label */
   placeholder?: string;
   /** Label items. */
-  items: Array<SelectItem<T>>;
+  items: Array<T>;
   /** Selected item. */
-  selectedItem?: SelectItem<T> | null;
+  selectedItem?: T | null;
 
-  initialSelectedItem?: SelectItem<T> | null;
+  initialSelectedItem?: T | null;
   /** If the item list is an object/shape, use this to map it into string. */
-  itemToString?: (item: SelectItem<T> | null) => string;
+  itemToString?: (item: T | null) => string;
   /** The change handler for the select. */
-  handleSelectedItemChange?: (changes: UseComboboxStateChange<SelectItem<T>>) => void;
+  handleSelectedItemChange?: (changes: UseComboboxStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
-  itemRenderer?: (item: SelectItem<T>) => React.ReactNode;
+  itemRenderer?: (item: T) => React.ReactNode;
   /** Name of the field form */
   name?: string;
   /** open list when onfocus */
@@ -56,12 +52,12 @@ export interface InputSelectProps<T> {
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
-function InputSelect<T>({
+function InputSelect<T extends { value: any }>({
   label,
   placeholder = 'Select an item',
   items,
   selectedItem,
-  itemToString,
+  itemToString = item => (item ? String(item) : ''),
   handleSelectedItemChange,
   itemRenderer,
   initialSelectedItem,
@@ -86,7 +82,7 @@ function InputSelect<T>({
     getComboboxProps,
     closeMenu,
     toggleMenu,
-  } = useCombobox<{ label: string; value: T }>({
+  } = useCombobox<T>({
     items: inputItems,
     itemToString,
     selectedItem,
@@ -112,7 +108,7 @@ function InputSelect<T>({
     },
     onIsOpenChange: changes => {
       if (isOpen) {
-        setInputValue(changes.selectedItem?.label ?? '');
+        setInputValue(changes.selectedItem ? itemToString(changes.selectedItem) : '');
       }
     },
     onStateChange: ({ type, inputValue: _inputValue }) => {
@@ -130,7 +126,7 @@ function InputSelect<T>({
     },
     onInputValueChange: ({ inputValue: _inputValue }) => {
       setInputItems(
-        _inputValue ? items.filter(item => item.label.toLowerCase().includes(_inputValue.toLowerCase())) : items
+        _inputValue ? items.filter(item => itemToString(item).toLowerCase().includes(_inputValue.toLowerCase())) : items
       );
     },
   });
@@ -141,8 +137,8 @@ function InputSelect<T>({
       // if inputValue not listed on option
       // then reset
       // reset to prev value
-      if (!inputValue && selectedItem?.label) {
-        setInputValue(selectedItem?.label);
+      if (!inputValue && selectedItem?.value) {
+        setInputValue(itemToString(selectedItem) ?? '');
         // reset to empty string
       }
     }
@@ -206,7 +202,7 @@ function InputSelect<T>({
                       : {}
                   }
                   isActive={selectedItem?.value === item.value}
-                  key={`${item.label}_${item.value}`}
+                  key={`${itemToString(item)}`}
                   {...getItemProps({ item, index })}
                 >
                   {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}

@@ -1,6 +1,5 @@
-import { StackProps } from 'packages/react/dist';
 import * as React from 'react';
-import { Stack } from '../../../layout';
+import { Stack, StackProps } from '../../../layout';
 
 export interface ActionListProps extends StackProps, React.ComponentPropsWithoutRef<'div'> {}
 
