@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
+import { Button } from '../../button';
+import { ButtonGroup } from '../../button-group';
+import { InputCheckbox } from '../../form/components/InputCheckbox';
 import List from './List';
 
 export default {
@@ -77,38 +80,40 @@ export const Example = () => {
   );
 };
 
-// TODO
-/**
- * create stories for case header with selected item
- *
- * HOW
- * create state to handle state selection
- * item list raw (all data)
- * selected item
- * item list with select value (using map) -> need to add isActive behavior -> time complexity O(n)
- * untuk create data list + selected -> complexity 0 n log n
- * ubah semua selectedItem ke maphash
- * get value selected dari maphashnya
- *
- */
-
+const listItem = [
+  {
+    id: '1',
+    name: 'Name Dummy 1',
+    status: 'approved',
+    role: 'Manager',
+  },
+  {
+    id: '2',
+    name: 'Name Dummy 2',
+    status: 'Pending',
+    role: 'Techinal Support',
+  },
+];
 export const WithSelectedItem = () => {
-  const listItem = [
-    {
-      id: '1',
-      name: 'Name Dummy 1',
-      status: 'approved',
-      role: 'Manager',
-    },
-    {
-      id: '2',
-      name: 'Name Dummy 2',
-      status: 'Pending',
-      role: 'Techinal Support',
-    },
-  ];
+  const headerCheckboxRef = React.useRef<HTMLInputElement>(null);
   const [selectedItem, setSelectedItem] = React.useState<Record<string, boolean>>({});
-  // n
+  React.useEffect(() => {
+    const maxLength = listItem.length;
+    const selectedItemLength = Object.keys(selectedItem).length;
+    if (headerCheckboxRef.current) {
+      if (selectedItemLength === maxLength) {
+        headerCheckboxRef.current.checked = true;
+        headerCheckboxRef.current.indeterminate = false;
+      } else if (selectedItemLength > 0 && selectedItemLength <= maxLength) {
+        headerCheckboxRef.current.checked = false;
+        headerCheckboxRef.current.indeterminate = true;
+      } else {
+        headerCheckboxRef.current.checked = false;
+        headerCheckboxRef.current.indeterminate = false;
+      }
+    }
+  }, [selectedItem, headerCheckboxRef]);
+
   const listItemTable = () => {
     return listItem.map(item => {
       return {
@@ -119,6 +124,23 @@ export const WithSelectedItem = () => {
   };
   const renderListItem = (data: Item) => (
     <Box display="flex" width="100%">
+      <Box width="50px">
+        <InputCheckbox
+          checked={selectedItem[data.id]}
+          onClick={() => {
+            setSelectedItem(prev => {
+              if (prev[data.id]) {
+                const { [data.id]: removedValue, ...rest } = prev;
+                return rest;
+              }
+              return {
+                ...prev,
+                [data.id]: prev[data.id] ? !prev[data.id] : true,
+              };
+            });
+          }}
+        />
+      </Box>
       <Box flex="1">
         <Text>{data.name}</Text>
       </Box>
@@ -130,9 +152,45 @@ export const WithSelectedItem = () => {
       </Box>
     </Box>
   );
+
+  const toggleSelectHeader = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      const selectAll: Record<string, boolean> = {};
+      listItem.forEach(item => {
+        selectAll[item.id] = true;
+      });
+      setSelectedItem(selectAll);
+    } else {
+      setSelectedItem({});
+    }
+  }, []);
   const renderHeader = () => {
+    const hasSelectedItem = Object.keys(selectedItem).length;
+    if (hasSelectedItem) {
+      return (
+        <Box display="flex" width="100%" alignItems="center">
+          <Box width="50px">
+            <InputCheckbox ref={headerCheckboxRef} onChange={toggleSelectHeader} />
+          </Box>
+          <Box flex="1">
+            <Text fontWeight="400" fontSize="12px" lineHeight="16px">
+              {`${hasSelectedItem} selected`}
+            </Text>
+          </Box>
+          <Box alignSelf="flex-end">
+            <ButtonGroup>
+              <Button variant="secondary">Action 1</Button>
+              <Button variant="primary">Action 2</Button>
+            </ButtonGroup>
+          </Box>
+        </Box>
+      );
+    }
     return (
-      <Box display="flex" width="100%">
+      <Box display="flex" width="100%" alignItems="center">
+        <Box width="50px">
+          <InputCheckbox ref={headerCheckboxRef} onChange={toggleSelectHeader} />
+        </Box>
         <Box flex="1">
           <Text fontWeight="700" fontSize="12px" lineHeight="16px">
             Name
@@ -154,12 +212,6 @@ export const WithSelectedItem = () => {
         keyExtractor={(data, index) => `${data.name}-${index}`}
         header={renderHeader()}
         renderItem={renderListItem}
-        onSelectItem={data =>
-          setSelectedItem(prev => ({
-            ...prev,
-            [data.id]: prev[data.id] ? !prev[data.id] : true,
-          }))
-        }
       />
     </Box>
   );
