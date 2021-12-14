@@ -14,7 +14,7 @@ import { ActionList, ActionListItem } from '../../../actionList';
 
 import { useComponentStyles } from '../../../../system';
 
-export interface InputSelectProps<T extends { value: any }> {
+export interface InputSelectProps<T> {
   /** The input select label */
   label?: string;
   /** Placeholder text for select label */
@@ -27,6 +27,8 @@ export interface InputSelectProps<T extends { value: any }> {
   initialSelectedItem?: T | null;
   /** If the item list is an object/shape, use this to map it into string. */
   itemToString?: (item: T | null) => string;
+  /** If the item list is an object/shape, use this to map it into string. */
+  itemValue?: (item: T | null) => string;
   /** The change handler for the select. */
   handleSelectedItemChange?: (changes: UseComboboxStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
@@ -58,6 +60,7 @@ function InputSelect<T extends { value: any }>({
   items,
   selectedItem,
   itemToString = item => (item ? String(item) : ''),
+  itemValue = item => (item ? String(item) : ''),
   handleSelectedItemChange,
   itemRenderer,
   initialSelectedItem,
@@ -137,7 +140,7 @@ function InputSelect<T extends { value: any }>({
       // if inputValue not listed on option
       // then reset
       // reset to prev value
-      if (!inputValue && selectedItem?.value) {
+      if (!inputValue && selectedItem && itemValue(selectedItem)) {
         setInputValue(itemToString(selectedItem) ?? '');
         // reset to empty string
       }
@@ -197,11 +200,11 @@ function InputSelect<T extends { value: any }>({
               inputItems.map((item, index) => (
                 <ActionListItem
                   sx={
-                    highlightedIndex === index && selectedItem?.value !== item.value
+                    highlightedIndex === index && selectedItem && itemValue(selectedItem) !== itemValue(item)
                       ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
                       : {}
                   }
-                  isActive={selectedItem?.value === item.value}
+                  isActive={selectedItem && itemValue(selectedItem) === itemValue(item)}
                   key={`${itemToString(item)}`}
                   {...getItemProps({ item, index })}
                 >
