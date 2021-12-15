@@ -194,6 +194,7 @@ function InputSelect<T>({
           display={isOpen ? 'block' : 'none'}
           elevation={3}
           overflow="hidden"
+          zIndex={1}
         >
           <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
             {inputItems.length !== 0 ? (
