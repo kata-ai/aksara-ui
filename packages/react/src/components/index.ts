@@ -1,4 +1,4 @@
-export * from './actionList';
+export * from './action-list';
 export * from './avatar';
 export * from './badge';
 export * from './breadcrumb';
@@ -12,7 +12,7 @@ export * from './dropzone';
 export * from './empty-state';
 export * from './filter-kit';
 export * from './form';
-export * from './listResource';
+export * from './list-resource';
 export * from './loading';
 export * from './message';
 export * from './navigation';

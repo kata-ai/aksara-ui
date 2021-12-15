@@ -10,7 +10,7 @@ import { Box, Stack } from '../../../../layout';
 import { InputText } from '../InputText';
 import { FormLabel } from '../FormLabel';
 import { Card } from '../../../card';
-import { ActionList, ActionListItem } from '../../../actionList';
+import { ActionList, ActionListItem } from '../../../action-list';
 
 import { useComponentStyles } from '../../../../system';
 
