@@ -142,13 +142,13 @@ export const WithSelectedItem = () => {
         />
       </Box>
       <Box flex="1">
-        <Text>{data.name}</Text>
+        <Text scale={300}>{data.name}</Text>
       </Box>
       <Box width="200px">
-        <Text>{data.role}</Text>
+        <Text scale={300}>{data.role}</Text>
       </Box>
       <Box width="200px">
-        <Text>{data.status}</Text>
+        <Text scale={300}>{data.status}</Text>
       </Box>
     </Box>
   );
@@ -173,12 +173,10 @@ export const WithSelectedItem = () => {
             <InputCheckbox ref={headerCheckboxRef} onChange={toggleSelectHeader} />
           </Box>
           <Box flex="1">
-            <Text fontWeight="400" fontSize="12px" lineHeight="16px">
-              {`${hasSelectedItem} selected`}
-            </Text>
+            <Text scale={300}>{`${hasSelectedItem} selected`}</Text>
           </Box>
           <Box alignSelf="flex-end">
-            <ButtonGroup>
+            <ButtonGroup size="sm">
               <Button variant="secondary">Action 1</Button>
               <Button variant="primary">Action 2</Button>
             </ButtonGroup>

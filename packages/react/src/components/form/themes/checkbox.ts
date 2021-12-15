@@ -24,8 +24,8 @@ export const checkboxThemeHover = {
 
 export const checkboxThemeChecked = {
   base: {
-    backgroundColor: theme.colors.blue08,
-    borderColor: theme.colors.blue08,
+    backgroundColor: theme.colors.blue07,
+    borderColor: theme.colors.blue07,
   },
   errors: {
     backgroundColor: theme.colors.red07,

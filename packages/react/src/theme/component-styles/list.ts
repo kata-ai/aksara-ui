@@ -11,7 +11,7 @@ const listItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isSelected
   color: isSelected ? theme.colors.blue07 : theme.colors.greydark02,
   minHeight: '48px',
   px: 'md',
-  boxShadow: 'inset 0px -1px 0px #eff2f5',
+  boxShadow: isSelected ? 'inset 0px -1px 0px #E5EAEF' : 'inset 0px -1px 0px #eff2f5',
 
   '&:hover': {
     backgroundColor: isSelected ? theme.colors.blue01 : theme.colors.greylight03,
@@ -24,7 +24,7 @@ const listHeaderBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ t
   alignItems: 'center',
   backgroundColor: theme.colors.greylight01,
   color: theme.colors.greydark02,
-  minHeight: '48px',
+  height: '40px',
   px: 'md',
   boxShadow: 'inset 0px -1px 0px #eff2f5',
 });

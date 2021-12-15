@@ -23,7 +23,7 @@ export const Example: Story<TopbarProps> = () => {
     <Box width="100%" height="100%" maxHeight={360} backgroundColor="greylight03">
       <Topbar display="flex" alignItems="center" justifyContent="space-between" position="relative">
         <Box display="flex" alignItems="center">
-          <svg height={40} viewBox="0 0 34 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width={32} height={32} viewBox="0 0 34 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M28.96 33.227l-1.978-2.59a3.312 3.312 0 010-4.026l1.889-2.473c2.194-2.871 1.83-7.028-.963-9.333a6.667 6.667 0 00-9.537 1.098l-1.38 1.793v19.625c0 .663-.1 1.322-.295 1.955l1.596 2.09a6.665 6.665 0 009.369 1.254l.062-.044a6.667 6.667 0 001.238-9.349z"
               fill="#006FE6"
