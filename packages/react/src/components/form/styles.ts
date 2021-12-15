@@ -103,6 +103,11 @@ export const CheckboxBase = styled('input')<CheckRadioBaseProps>`
         }
       }
     }
+    &:hover {
+      &:not(:disabled) {
+        background-color: ${theme.colors.blue08};
+      }
+    }
 
     &:focus {
       box-shadow: 0 0 0 2px ${theme.colors.blue03};
