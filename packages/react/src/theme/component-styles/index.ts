@@ -14,12 +14,12 @@ import typography from './typography';
 import tabs from './tabs';
 import toast from './toast';
 import tooltip from './tooltip';
-import subHeader from './subHeader';
+import subHeader from './sub-header';
 import topbar from './topbar';
-import inputRadio from './form/inputRadio';
+import inputRadio from './form/input-radio';
 import optionItem from './optionItem';
 import pagination from './pagination';
-import actionList from './actionList';
+import actionList from './action-list';
 import saveBar from './saveBar';
 import list from './list';
 /**
@@ -45,7 +45,6 @@ const componentStyles = {
   ...toast,
   ...tooltip,
   ...topbar,
-  ...subHeader,
   ...inputRadio,
   ...optionItem,
   ...pagination,

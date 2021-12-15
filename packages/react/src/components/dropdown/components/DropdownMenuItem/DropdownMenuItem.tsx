@@ -1,6 +1,6 @@
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import * as React from 'react';
-import { ActionListItem } from '../../../actionList';
+import { ActionListItem } from '../../../action-list';
 
 export interface DropdownMenuItemProps extends React.ComponentPropsWithoutRef<'div'> {
   className?: string;

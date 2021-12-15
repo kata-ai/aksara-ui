@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import styled from 'styled-components';
 import { Box } from '../../../../layout';
-import { ActionList } from '../../../actionList';
+import { ActionList } from '../../../action-list';
 
 export interface DropdownMenuContentProps extends RadixDropdownMenu.DropdownMenuArrowProps {
   children?: React.ReactNode;

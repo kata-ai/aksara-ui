@@ -1,2 +1,2 @@
-export * from './componentStyles';
+export * from './component-styles';
 export * from './types';

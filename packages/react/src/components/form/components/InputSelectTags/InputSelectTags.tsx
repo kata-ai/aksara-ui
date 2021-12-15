@@ -9,7 +9,7 @@ import { Card } from '../../../card';
 import { FormLabel } from '../FormLabel';
 import { useComponentStyles } from '../../../../system';
 import { Box, Wrap, WrapItem, Stack } from '../../../../layout';
-import { ActionList, ActionListItem } from '../../../actionList';
+import { ActionList, ActionListItem } from '../../../action-list';
 
 export interface InputSelectTagsProps {
   onChange?: (value: string[]) => void;

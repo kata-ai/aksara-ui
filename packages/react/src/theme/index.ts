@@ -1,6 +1,6 @@
 import { useTheme as defaultUseTheme } from 'styled-components';
 import { foundations } from '@aksara-ui/core';
-import componentStyles from './componentStyles';
+import componentStyles from './component-styles';
 
 export const theme = {
   ...foundations,

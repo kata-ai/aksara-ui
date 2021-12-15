@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { avatarSizeOptions } from '../../../theme/componentStyles/avatar';
+import { avatarSizeOptions } from '../../../theme/component-styles/avatar';
 import { VisuallyHidden } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
