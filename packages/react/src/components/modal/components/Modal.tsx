@@ -9,9 +9,9 @@ import { Portal, FocusTrap } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 import { UnstyledButton } from '../../button';
 import { ANIMATION_DURATION } from '../constants';
-import ModalOverlay from './DialogOverlay';
+import { Overlay } from '../../overlay';
 
-const DialogIn = keyframes`
+const ModalIn = keyframes`
   0% {
     opacity: 0;
     transform: translate(0, -25%);
@@ -23,7 +23,7 @@ const DialogIn = keyframes`
   }
 `;
 
-const DialogOut = keyframes`
+const ModalOut = keyframes`
   0% {
     opacity: 1;
     transform: translateY(0);
@@ -35,17 +35,17 @@ const DialogOut = keyframes`
   }
 `;
 
-const DialogWrapper = styled(Box)`
+const ModalWrapper = styled(Box)`
   &[data-state='entering'],
   &[data-state='entered'] {
     animation-fill-mode: forwards;
-    animation-name: ${DialogIn};
+    animation-name: ${ModalIn};
     animation-duration: ${ANIMATION_DURATION}ms;
   }
 
   &[data-state='exiting'] {
     animation-fill-mode: forwards;
-    animation-name: ${DialogOut};
+    animation-name: ${ModalOut};
     animation-duration: ${ANIMATION_DURATION}ms;
   }
 `;
@@ -63,19 +63,19 @@ export interface ModalProps extends BoxProps {
   hideCloseButton?: boolean;
   /** Set to `true` to disable closing the drawer by clicking the overlay. */
   disableOverlayClick?: boolean;
-  /** Enables focus trap mode. Also enables closing dialog by pressing Escape. */
+  /** Enables focus trap mode. Also enables closing modal by pressing Escape. */
   enableFocusTrap?: boolean;
   /** Used to reference the ID of the title element in the drawer */
   labelledById?: string;
-  /** Set max width of dialog, default of 500px */
+  /** Set max width of modal, default of 500px */
   maxWidth?: string | number;
-  /** Set width of dialog, default of 100% */
+  /** Set width of modal, default of 100% */
   width?: string | number;
-  /** Set max height of dialog, default of calc(100% - 24vmin) */
+  /** Set max height of modal, default of calc(100% - 24vmin) */
   maxHeight?: string | number;
-  /** Set height of dialog */
+  /** Set height of modal */
   height?: string | number;
-  /** Dialog overflow */
+  /** Modal overflow */
   overflow?: string;
   /** Callback method run when the "Close Drawer" button is clicked. */
   onClose?: () => void;
@@ -145,7 +145,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   handleOverlayClick(e: React.MouseEvent<HTMLDivElement>) {
     const { disableOverlayClick } = this.props;
 
-    // Prevent clicking to exit inside the dialog
+    // Prevent clicking to exit inside the modal
     if (e.target !== e.currentTarget) {
       return;
     }
@@ -172,15 +172,15 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const { isOpen } = this.state;
 
     return (
-      <ModalOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
-        <DialogWrapper
+      <Overlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
+        <ModalWrapper
           className={clsx(isOpen && 'entered', className)}
           style={style}
           position="relative"
           display="flex"
           flexDirection="column"
           backgroundColor="white"
-          borderRadius={16}
+          borderRadius={'lg'}
           overflow={overflow}
           height={height}
           width={width || '100%'}
@@ -224,8 +224,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
             </UnstyledButton>
           )}
           {children}
-        </DialogWrapper>
-      </ModalOverlay>
+        </ModalWrapper>
+      </Overlay>
     );
   };
 
@@ -272,8 +272,5 @@ class Modal extends React.Component<ModalProps, ModalState> {
     );
   }
 }
-
-/** @deprecated - use `Modal` instead */
-export const Dialog = Modal;
 
 export default Modal;

@@ -5,10 +5,10 @@ import { Stack, Box } from '../../layout';
 import { Heading, Text, Paragraph } from '../../typography';
 
 import Modal from './components/Modal';
-import ModalHeader from './components/DialogHeader';
+import ModalHeader from './components/ModalHeader';
 import ModalHeaderIcon from './components/ModalHeaderIcon';
-import ModalContent from './components/DialogContent';
-import ModalFooter from './components/DialogFooter';
+import ModalContent from './components/ModalContent';
+import ModalFooter from './components/ModalFooter';
 import { Button } from '../button';
 
 export default {
