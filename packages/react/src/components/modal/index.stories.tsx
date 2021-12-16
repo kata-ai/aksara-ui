@@ -5,10 +5,10 @@ import { Stack, Box } from '../../layout';
 import { Heading, Text, Paragraph } from '../../typography';
 
 import Modal from './components/Modal';
-import ModalHeader from './components/ModalHeader';
+import ModalHeader from '../box-header-footer/components/BoxHeader';
 import ModalHeaderIcon from './components/ModalHeaderIcon';
 import ModalContent from './components/ModalContent';
-import ModalFooter from './components/ModalFooter';
+import BoxFooter from '../box-header-footer/components/BoxFooter';
 import { Button } from '../button';
 
 export default {
@@ -36,7 +36,7 @@ export const BasicExample = () => {
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
           </Stack>
         </ModalContent>
-        <ModalFooter>
+        <BoxFooter>
           <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
             <Button block size="lg" onClick={() => setIsOpen(false)}>
               Close
@@ -45,7 +45,7 @@ export const BasicExample = () => {
               Confirm
             </Button>
           </Box>
-        </ModalFooter>
+        </BoxFooter>
       </Modal>
     </Box>
   );
@@ -71,7 +71,7 @@ export const WithCloseButton = () => {
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
           </Stack>
         </ModalContent>
-        <ModalFooter>
+        <BoxFooter>
           <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
             <Button block size="lg" onClick={() => setIsOpen(false)}>
               Close
@@ -80,7 +80,7 @@ export const WithCloseButton = () => {
               Confirm
             </Button>
           </Box>
-        </ModalFooter>
+        </BoxFooter>
       </Modal>
     </Box>
   );
@@ -112,7 +112,7 @@ export const WithFocusTrap = () => {
             <Paragraph scale={300}>If you repeatedly press tab, the focus will not leave this modal.</Paragraph>
           </Stack>
         </ModalContent>
-        <ModalFooter>
+        <BoxFooter>
           <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
             <Button block size="lg" onClick={() => setIsOpen(false)}>
               Close
@@ -121,7 +121,7 @@ export const WithFocusTrap = () => {
               Confirm
             </Button>
           </Box>
-        </ModalFooter>
+        </BoxFooter>
       </Modal>
     </Box>
   );
@@ -143,7 +143,7 @@ export const WithIcon = () => {
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
           </Stack>
         </ModalContent>
-        <ModalFooter>
+        <BoxFooter>
           <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
             <Button block size="lg" onClick={() => setIsOpen(false)}>
               Close
@@ -152,7 +152,7 @@ export const WithIcon = () => {
               Confirm
             </Button>
           </Box>
-        </ModalFooter>
+        </BoxFooter>
       </Modal>
     </Box>
   );

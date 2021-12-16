@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Box } from '../../../layout';
 
-export interface ModalFooterProps {
+export interface BoxFooterProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const ModalFooter: React.FC<ModalFooterProps> = ({ className, style, children }) => {
+// TODO add variant size
+// TODO useComponentStyles
+const BoxFooter: React.FC<BoxFooterProps> = ({ className, style, children }) => {
   return (
     <Box className={className} style={style} p="lg">
       {children}
@@ -14,6 +16,4 @@ const ModalFooter: React.FC<ModalFooterProps> = ({ className, style, children })
   );
 };
 
-ModalFooter.displayName = 'ModalFooter';
-
-export default ModalFooter;
+export default BoxFooter;

@@ -10,7 +10,7 @@ import { Box, BoxProps } from '../../../layout';
 import { IconButton } from '../../button';
 import { Card } from '../../card';
 import { ANIMATION_DURATION } from '../constants';
-import SideSheetOverlay from './SideSheetOverlay';
+import { Overlay } from '../../overlay';
 
 const SideSheetIn = keyframes`
   0% {
@@ -153,7 +153,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
     const { isOpen } = this.state;
 
     return (
-      <SideSheetOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
+      <Overlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <SideSheetWrapper
           className={clsx(isOpen && 'entered', className)}
           style={style}
@@ -180,7 +180,7 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
             {children}
           </Card>
         </SideSheetWrapper>
-      </SideSheetOverlay>
+      </Overlay>
     );
   };
 

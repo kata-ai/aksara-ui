@@ -3,12 +3,13 @@ import * as React from 'react';
 import { Stack, Box } from '../../layout';
 import { Text, Paragraph, Anchor } from '../../typography';
 
-import { SideSheet, SideSheetHeader, SideSheetContent, SideSheetFooter } from '.';
+import { SideSheet, SideSheetContent } from '.';
+import { BoxFooter, BoxHeader } from '../box-header-footer';
 import { Button } from '../button';
 
 export default {
   title: 'Core/Components/Side Sheet',
-  component: [SideSheet, SideSheetHeader, SideSheetContent, SideSheetFooter],
+  component: [SideSheet, SideSheetContent],
 };
 
 export const BasicExample = () => {
@@ -21,7 +22,7 @@ export const BasicExample = () => {
         Toggle Side Sheet
       </button>
       <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <SideSheetHeader>Basic Example</SideSheetHeader>
+        <BoxHeader>Basic Example</BoxHeader>
         <SideSheetContent>
           <Stack>
             <Paragraph>
@@ -35,11 +36,11 @@ export const BasicExample = () => {
             </Paragraph>
           </Stack>
         </SideSheetContent>
-        <SideSheetFooter>
+        <BoxFooter>
           <Box display="flex" flexDirection="row-reverse">
             <Button>Close</Button>
           </Box>
-        </SideSheetFooter>
+        </BoxFooter>
       </SideSheet>
     </Box>
   );

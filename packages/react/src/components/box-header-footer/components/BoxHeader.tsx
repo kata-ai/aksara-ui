@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Box, BoxProps } from '../../../layout';
 
-export interface ModalHeaderProps extends BoxProps {
+export interface BoxHeaderProps extends BoxProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const ModalHeader: React.FC<ModalHeaderProps> = ({ className, style, children, ...rest }) => {
+// TODO add variant size
+// TODO useComponentStyles
+const BoxHeader: React.FC<BoxHeaderProps> = ({ className, style, children, ...rest }) => {
   return (
     <Box className={className} style={style} display="flex" flexDirection="column" p="lg" {...rest}>
       {children}
@@ -14,6 +16,4 @@ const ModalHeader: React.FC<ModalHeaderProps> = ({ className, style, children, .
   );
 };
 
-ModalHeader.displayName = 'ModalHeader';
-
-export default ModalHeader;
+export default BoxHeader;
