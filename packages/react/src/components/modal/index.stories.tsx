@@ -40,16 +40,20 @@ export const BasicExample = () => {
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
           </Stack>
         </ModalContent>
-        <BoxFooter>
-          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
-            <Button block size="lg" onClick={() => setIsOpen(false)}>
-              Close
-            </Button>
-            <Button block variant="primary" size="lg">
-              Confirm
-            </Button>
-          </Box>
-        </BoxFooter>
+        <BoxFooter
+          size="lg"
+          caption="Caption"
+          actions={
+            <Stack direction="horizontal" spacing="xs">
+              <Button block size="lg" onClick={() => setIsOpen(false)}>
+                Close
+              </Button>
+              <Button block variant="primary" size="lg">
+                Confirm
+              </Button>
+            </Stack>
+          }
+        />
       </Modal>
     </Box>
   );
@@ -79,16 +83,19 @@ export const WithCloseButton = () => {
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
           </Stack>
         </ModalContent>
-        <BoxFooter>
-          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
-            <Button block size="lg" onClick={() => setIsOpen(false)}>
-              Close
-            </Button>
-            <Button block variant="primary" size="lg">
-              Confirm
-            </Button>
-          </Box>
-        </BoxFooter>
+        <BoxFooter
+          size="lg"
+          actions={
+            <Stack direction="horizontal" spacing="xs">
+              <Button block size="lg" onClick={() => setIsOpen(false)}>
+                Close
+              </Button>
+              <Button block variant="primary" size="lg">
+                Confirm
+              </Button>
+            </Stack>
+          }
+        />
       </Modal>
     </Box>
   );
@@ -124,16 +131,19 @@ export const WithFocusTrap = () => {
             <Paragraph scale={300}>If you repeatedly press tab, the focus will not leave this modal.</Paragraph>
           </Stack>
         </ModalContent>
-        <BoxFooter>
-          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
-            <Button block size="lg" onClick={() => setIsOpen(false)}>
-              Close
-            </Button>
-            <Button block variant="primary" size="lg">
-              Confirm
-            </Button>
-          </Box>
-        </BoxFooter>
+        <BoxFooter
+          size="lg"
+          actions={
+            <Stack direction="horizontal" spacing="xs" flex="1">
+              <Button block size="lg" onClick={() => setIsOpen(false)}>
+                Close
+              </Button>
+              <Button block variant="primary" size="lg">
+                Confirm
+              </Button>
+            </Stack>
+          }
+        />
       </Modal>
     </Box>
   );
@@ -155,16 +165,19 @@ export const WithIcon = () => {
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
           </Stack>
         </ModalContent>
-        <BoxFooter>
-          <Box display="grid" gridTemplateColumns="1fr 1fr" gridGap="xs">
-            <Button block size="lg" onClick={() => setIsOpen(false)}>
-              Close
-            </Button>
-            <Button block variant="primary" size="lg">
-              Confirm
-            </Button>
-          </Box>
-        </BoxFooter>
+        <BoxFooter
+          size="lg"
+          actions={
+            <Stack direction="horizontal" spacing="xs">
+              <Button block size="lg" onClick={() => setIsOpen(false)}>
+                Close
+              </Button>
+              <Button block variant="primary" size="lg">
+                Confirm
+              </Button>
+            </Stack>
+          }
+        />
       </Modal>
     </Box>
   );

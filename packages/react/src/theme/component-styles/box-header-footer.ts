@@ -22,7 +22,7 @@ const boxHeader: ComponentThemeConfig = {
 const boxFooter: ComponentThemeConfig = {
   baseStyle: {
     display: 'flex',
-    flexDirection: 'column',
+    justifyContent: 'space-between',
     alignItems: 'center',
     px: 'lg',
   },
