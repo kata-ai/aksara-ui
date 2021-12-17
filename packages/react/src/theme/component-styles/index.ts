@@ -22,6 +22,7 @@ import pagination from './pagination';
 import actionList from './action-list';
 import saveBar from './saveBar';
 import list from './list';
+import boxHeaderParty from './box-header-footer';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -50,6 +51,7 @@ const componentStyles = {
   ...pagination,
   ...saveBar,
   ...list,
+  ...boxHeaderParty,
 };
 
 export default componentStyles;

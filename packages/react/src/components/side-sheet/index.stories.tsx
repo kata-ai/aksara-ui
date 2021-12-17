@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Stack, Box } from '../../layout';
-import { Text, Paragraph, Anchor } from '../../typography';
+import { Text, Paragraph, Anchor, Heading } from '../../typography';
 
 import { SideSheet, SideSheetContent } from '.';
 import { BoxFooter, BoxHeader } from '../box-header-footer';
@@ -22,7 +22,14 @@ export const BasicExample = () => {
         Toggle Side Sheet
       </button>
       <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BoxHeader>Basic Example</BoxHeader>
+        <BoxHeader
+          size="lg"
+          title={
+            <Heading scale={300} id="stories-title" textAlign="center">
+              Title
+            </Heading>
+          }
+        />
         <SideSheetContent>
           <Stack>
             <Paragraph>

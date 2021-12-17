@@ -5,7 +5,7 @@ import { Stack, Box } from '../../layout';
 import { Heading, Text, Paragraph } from '../../typography';
 
 import Modal from './components/Modal';
-import ModalHeader from '../box-header-footer/components/BoxHeader';
+import BoxHeader from '../box-header-footer/components/BoxHeader';
 import ModalHeaderIcon from './components/ModalHeaderIcon';
 import ModalContent from './components/ModalContent';
 import BoxFooter from '../box-header-footer/components/BoxFooter';
@@ -26,11 +26,15 @@ export const BasicExample = () => {
         Toggle Modal
       </button>
       <Modal labelledById="stories-title" hideCloseButton isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ModalHeader>
-          <Heading scale={500} id="stories-title" textAlign="center">
-            Basic Example
-          </Heading>
-        </ModalHeader>
+        <BoxHeader
+          centerTitle
+          size="lg"
+          title={
+            <Heading scale={500} id="stories-title" textAlign="center">
+              Title
+            </Heading>
+          }
+        />
         <ModalContent>
           <Stack textAlign="center">
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
@@ -61,11 +65,15 @@ export const WithCloseButton = () => {
         Toggle Modal
       </button>
       <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ModalHeader>
-          <Heading scale={500} id="stories-title">
-            Basic Example
-          </Heading>
-        </ModalHeader>
+        <BoxHeader
+          centerTitle
+          size="lg"
+          title={
+            <Heading scale={500} id="stories-title" textAlign="center">
+              Title
+            </Heading>
+          }
+        />
         <ModalContent>
           <Stack textAlign="center">
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
@@ -102,11 +110,15 @@ export const WithFocusTrap = () => {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
       >
-        <ModalHeader>
-          <Heading scale={500} id="stories-title" textAlign="center">
-            Focus Trap Example
-          </Heading>
-        </ModalHeader>
+        <BoxHeader
+          centerTitle
+          size="lg"
+          title={
+            <Heading scale={500} id="stories-title" textAlign="center">
+              Title
+            </Heading>
+          }
+        />
         <ModalContent>
           <Stack textAlign="center">
             <Paragraph scale={300}>If you repeatedly press tab, the focus will not leave this modal.</Paragraph>
