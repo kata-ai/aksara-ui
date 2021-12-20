@@ -69,8 +69,7 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
       itemValue={item => item?.value ?? ''}
       itemRenderer={item => (
         <>
-          <Box width={15} mr="sm" />
-          {`${item.label}`}
+          <Box width={15} mr="sm">{`${item.label}`}</Box>
         </>
       )}
       handleSelectedItemChange={({ selectedItem }) => {
