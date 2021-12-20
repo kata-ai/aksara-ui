@@ -25,36 +25,45 @@ export const BasicExample = () => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
       </button>
-      <Modal labelledById="stories-title" hideCloseButton isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BoxHeader
-          centerTitle
-          size="lg"
-          title={
-            <Heading scale={500} id="stories-title" textAlign="center">
-              Title
-            </Heading>
-          }
-        />
-        <ModalContent>
-          <Stack textAlign="center">
-            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
-          </Stack>
-        </ModalContent>
-        <BoxFooter
-          size="lg"
-          caption="Caption"
-          actions={
-            <Stack direction="horizontal" spacing="xs">
-              <Button block size="lg" onClick={() => setIsOpen(false)}>
-                Close
-              </Button>
-              <Button block variant="primary" size="lg">
-                Confirm
-              </Button>
+      <Modal
+        labelledById="stories-title"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        header={
+          <BoxHeader
+            hideCloseButton
+            centerTitle
+            size="lg"
+            title={
+              <Heading scale={500} id="stories-title" textAlign="center">
+                Title
+              </Heading>
+            }
+          />
+        }
+        content={
+          <ModalContent>
+            <Stack textAlign="center">
+              <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
             </Stack>
-          }
-        />
-      </Modal>
+          </ModalContent>
+        }
+        footer={
+          <BoxFooter
+            size="lg"
+            actions={
+              <Stack direction="horizontal" spacing="xs" flex={1}>
+                <Button block size="lg" onClick={() => setIsOpen(false)}>
+                  Close
+                </Button>
+                <Button block variant="primary" size="lg">
+                  Confirm
+                </Button>
+              </Stack>
+            }
+          />
+        }
+      />
     </Box>
   );
 };
@@ -68,35 +77,45 @@ export const WithCloseButton = () => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
       </button>
-      <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BoxHeader
-          centerTitle
-          size="lg"
-          title={
-            <Heading scale={500} id="stories-title" textAlign="center">
-              Title
-            </Heading>
-          }
-        />
-        <ModalContent>
-          <Stack textAlign="center">
-            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
-          </Stack>
-        </ModalContent>
-        <BoxFooter
-          size="lg"
-          actions={
-            <Stack direction="horizontal" spacing="xs">
-              <Button block size="lg" onClick={() => setIsOpen(false)}>
-                Close
-              </Button>
-              <Button block variant="primary" size="lg">
-                Confirm
-              </Button>
+      <Modal
+        labelledById="stories-title"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        header={
+          <BoxHeader
+            closeButtonHandler={() => setIsOpen(false)}
+            centerTitle
+            size="lg"
+            title={
+              <Heading scale={500} id="stories-title" textAlign="center">
+                Title
+              </Heading>
+            }
+          />
+        }
+        content={
+          <ModalContent>
+            <Stack textAlign="center">
+              <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
             </Stack>
-          }
-        />
-      </Modal>
+          </ModalContent>
+        }
+        footer={
+          <BoxFooter
+            size="lg"
+            actions={
+              <Stack direction="horizontal" spacing="xs" flex={1}>
+                <Button block size="lg" onClick={() => setIsOpen(false)}>
+                  Close
+                </Button>
+                <Button block variant="primary" size="lg">
+                  Confirm
+                </Button>
+              </Stack>
+            }
+          />
+        }
+      />
     </Box>
   );
 };
@@ -113,38 +132,43 @@ export const WithFocusTrap = () => {
       <Modal
         labelledById="stories-title"
         enableFocusTrap
-        hideCloseButton
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-      >
-        <BoxHeader
-          centerTitle
-          size="lg"
-          title={
-            <Heading scale={500} id="stories-title" textAlign="center">
-              Title
-            </Heading>
-          }
-        />
-        <ModalContent>
-          <Stack textAlign="center">
-            <Paragraph scale={300}>If you repeatedly press tab, the focus will not leave this modal.</Paragraph>
-          </Stack>
-        </ModalContent>
-        <BoxFooter
-          size="lg"
-          actions={
-            <Stack direction="horizontal" spacing="xs" flex="1">
-              <Button block size="lg" onClick={() => setIsOpen(false)}>
-                Close
-              </Button>
-              <Button block variant="primary" size="lg">
-                Confirm
-              </Button>
+        header={
+          <BoxHeader
+            hideCloseButton
+            centerTitle
+            size="lg"
+            title={
+              <Heading scale={500} id="stories-title" textAlign="center">
+                Title
+              </Heading>
+            }
+          />
+        }
+        content={
+          <ModalContent>
+            <Stack textAlign="center">
+              <Paragraph scale={300}>If you repeatedly press tab, the focus will not leave this modal.</Paragraph>
             </Stack>
-          }
-        />
-      </Modal>
+          </ModalContent>
+        }
+        footer={
+          <BoxFooter
+            size="lg"
+            actions={
+              <Stack direction="horizontal" spacing="xs" flex={1}>
+                <Button block size="lg" onClick={() => setIsOpen(false)}>
+                  Close
+                </Button>
+                <Button block variant="primary" size="lg">
+                  Confirm
+                </Button>
+              </Stack>
+            }
+          />
+        }
+      />
     </Box>
   );
 };
@@ -158,27 +182,34 @@ export const WithIcon = () => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Modal
       </button>
-      <Modal labelledById="stories-title" hideCloseButton isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ModalHeaderIcon id="stories-title" title="Delete item?" icon={IconTrash} />
-        <ModalContent>
-          <Stack textAlign="center">
-            <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
-          </Stack>
-        </ModalContent>
-        <BoxFooter
-          size="lg"
-          actions={
-            <Stack direction="horizontal" spacing="xs">
-              <Button block size="lg" onClick={() => setIsOpen(false)}>
-                Close
-              </Button>
-              <Button block variant="primary" size="lg">
-                Confirm
-              </Button>
+      <Modal
+        labelledById="stories-title"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        header={<ModalHeaderIcon id="stories-title" title="Delete item?" icon={IconTrash} />}
+        content={
+          <ModalContent>
+            <Stack textAlign="center">
+              <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>
             </Stack>
-          }
-        />
-      </Modal>
+          </ModalContent>
+        }
+        footer={
+          <BoxFooter
+            size="lg"
+            actions={
+              <Stack direction="horizontal" spacing="xs" flex={1}>
+                <Button block size="lg" onClick={() => setIsOpen(false)}>
+                  Close
+                </Button>
+                <Button block variant="primary" size="lg">
+                  Confirm
+                </Button>
+              </Stack>
+            }
+          />
+        }
+      />
     </Box>
   );
 };

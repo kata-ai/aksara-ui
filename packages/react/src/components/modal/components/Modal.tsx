@@ -3,11 +3,8 @@ import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
-import { IconClose } from '@aksara-ui/icons';
-
 import { Portal, FocusTrap } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
-import { UnstyledButton } from '../../button';
 import { ANIMATION_DURATION } from '../constants';
 import { Overlay } from '../../overlay';
 
@@ -50,7 +47,13 @@ const ModalWrapper = styled(Box)`
   }
 `;
 
-export interface ModalProps extends BoxProps {
+export interface ModalProps extends Omit<BoxProps, 'children'> {
+  /** Render header */
+  header?: React.ReactNode;
+  /** Render footer. */
+  footer?: React.ReactNode;
+  /** Render content. */
+  content?: React.ReactNode;
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Additional CSS properties to give to the drawer. */
@@ -59,8 +62,6 @@ export interface ModalProps extends BoxProps {
   isOpen: boolean;
   /** Set to `true` if you want to hide the drawer backdrop. */
   noBackdrop?: boolean;
-  /** Hides the default close button. Useful if you want to add custom close behaviour. */
-  hideCloseButton?: boolean;
   /** Set to `true` to disable closing the drawer by clicking the overlay. */
   disableOverlayClick?: boolean;
   /** Enables focus trap mode. Also enables closing modal by pressing Escape. */
@@ -160,8 +161,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
       className,
       style,
       labelledById,
-      hideCloseButton,
-      children,
+      header,
+      content,
+      footer,
       maxWidth,
       width,
       height,
@@ -203,27 +205,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
           }}
           {...rest}
         >
-          {!hideCloseButton && (
-            <UnstyledButton
-              type="button"
-              aria-label="Close"
-              sx={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position: 'absolute',
-                top: 24,
-                right: 24,
-                width: 24,
-                height: 24,
-                color: 'greydark02',
-              }}
-              onClick={this.handleCloseSideSheet}
-            >
-              <IconClose aria-hidden size={24} fill="currentColor" />
-            </UnstyledButton>
-          )}
-          {children}
+          {header}
+          {content}
+          {footer}
         </ModalWrapper>
       </Overlay>
     );

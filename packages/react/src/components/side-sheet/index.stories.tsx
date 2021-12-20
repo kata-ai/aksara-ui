@@ -21,34 +21,51 @@ export const BasicExample = () => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
       </button>
-      <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BoxHeader
-          size="lg"
-          title={
-            <Heading scale={300} id="stories-title" textAlign="center">
-              Title
-            </Heading>
-          }
-        />
-        <SideSheetContent>
-          <Stack>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
-              versuta.{' '}
-              <Anchor href="https://www.youtube.com/watch?v=B7yAiF1lkIw" target="_blank" rel="noopener noreferrer">
-                Quamquam tu hanc copiosiorem etiam soles dicere
-              </Anchor>
-              . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
-              doloris, divitiae, valitudo.
-            </Paragraph>
-          </Stack>
-        </SideSheetContent>
-        <BoxFooter>
-          <Box display="flex" flexDirection="row-reverse">
-            <Button>Close</Button>
-          </Box>
-        </BoxFooter>
-      </SideSheet>
+      <SideSheet
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        header={
+          <BoxHeader
+            size="lg"
+            closeButtonHandler={() => setIsOpen(false)}
+            title={
+              <Heading scale={300} id="stories-title" textAlign="center">
+                Title
+              </Heading>
+            }
+          />
+        }
+        content={
+          <SideSheetContent>
+            <Stack>
+              <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
+                versuta.{' '}
+                <Anchor href="https://www.youtube.com/watch?v=B7yAiF1lkIw" target="_blank" rel="noopener noreferrer">
+                  Quamquam tu hanc copiosiorem etiam soles dicere
+                </Anchor>
+                . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
+                doloris, divitiae, valitudo.
+              </Paragraph>
+            </Stack>
+          </SideSheetContent>
+        }
+        footer={
+          <BoxFooter
+            size="lg"
+            actions={
+              <Stack direction="horizontal" spacing="xs">
+                <Button block size="lg" onClick={() => setIsOpen(false)}>
+                  Label
+                </Button>
+                <Button block variant="primary" size="lg">
+                  Label
+                </Button>
+              </Stack>
+            }
+          />
+        }
+      />
     </Box>
   );
 };
@@ -62,11 +79,52 @@ export const WithFocusTrap = () => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
       </button>
-      <SideSheet isOpen={isOpen} enableFocusTrap onClose={() => setIsOpen(false)}>
-        <Paragraph my={26} mx={48}>
-          Basic Example
-        </Paragraph>
-      </SideSheet>
+      <SideSheet
+        isOpen={isOpen}
+        enableFocusTrap
+        onClose={() => setIsOpen(false)}
+        header={
+          <BoxHeader
+            size="lg"
+            closeButtonHandler={() => setIsOpen(false)}
+            title={
+              <Heading scale={300} id="stories-title" textAlign="center">
+                Title
+              </Heading>
+            }
+          />
+        }
+        content={
+          <SideSheetContent>
+            <Stack>
+              <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
+                versuta.{' '}
+                <Anchor href="https://www.youtube.com/watch?v=B7yAiF1lkIw" target="_blank" rel="noopener noreferrer">
+                  Quamquam tu hanc copiosiorem etiam soles dicere
+                </Anchor>
+                . Sed ego in hoc resisto; Si longus, levis. Roges enim Aristonem, bonane ei videantur haec: vacuitas
+                doloris, divitiae, valitudo.
+              </Paragraph>
+            </Stack>
+          </SideSheetContent>
+        }
+        footer={
+          <BoxFooter
+            size="lg"
+            actions={
+              <Stack direction="horizontal" spacing="xs">
+                <Button block size="lg" onClick={() => setIsOpen(false)}>
+                  Label
+                </Button>
+                <Button block variant="primary" size="lg">
+                  Label
+                </Button>
+              </Stack>
+            }
+          />
+        }
+      />
     </Box>
   );
 };

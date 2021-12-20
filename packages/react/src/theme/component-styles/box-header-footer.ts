@@ -2,6 +2,7 @@ import type { ComponentThemeConfig } from '../../system';
 
 const boxHeader: ComponentThemeConfig = {
   baseStyle: {
+    position: 'relative',
     display: 'flex',
     alignItems: 'center',
     px: 'lg',
