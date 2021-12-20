@@ -42,7 +42,7 @@ const PaginationFilter = ({
             return (
               <DropdownMenuItem
                 key={item}
-                onClick={() => {
+                onSelect={() => {
                   onChange(item);
                 }}
                 isActive={item === selectedItem}
