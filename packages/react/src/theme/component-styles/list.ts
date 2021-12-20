@@ -8,7 +8,7 @@ const listItemBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isSelected
   display: 'flex',
   alignItems: 'center',
   backgroundColor: isSelected ? theme.colors.blue01 : theme.colors.greylight01,
-  color: isSelected ? theme.colors.blue07 : theme.colors.greydark02,
+  color: theme.colors.greydark02,
   minHeight: '48px',
   px: 'md',
   boxShadow: isSelected ? 'inset 0px -1px 0px #E5EAEF' : 'inset 0px -1px 0px #eff2f5',
