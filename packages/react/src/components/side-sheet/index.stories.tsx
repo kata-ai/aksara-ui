@@ -29,7 +29,7 @@ export const BasicExample = () => {
             size="lg"
             closeButtonHandler={() => setIsOpen(false)}
             title={
-              <Heading scale={300} id="stories-title" textAlign="center">
+              <Heading scale={500} id="stories-title" textAlign="center">
                 Title
               </Heading>
             }
@@ -88,7 +88,7 @@ export const WithFocusTrap = () => {
             size="lg"
             closeButtonHandler={() => setIsOpen(false)}
             title={
-              <Heading scale={300} id="stories-title" textAlign="center">
+              <Heading scale={500} id="stories-title" textAlign="center">
                 Title
               </Heading>
             }
