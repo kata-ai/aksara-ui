@@ -57,7 +57,7 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
         </DropdownMenuTrigerer>
         <DropdownMenuContent width={200} side={side} align={align}>
           {dropdownList.map((val, idx) => (
-            <Box key={val.header || val.value}>
+            <Box key={val.header || val.value} px={'sm'}>
               {val.header ? (
                 <>
                   {idx !== 0 && <DropdownMenuDivider />}
