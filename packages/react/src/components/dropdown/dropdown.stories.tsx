@@ -65,7 +65,7 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
                 </>
               ) : (
                 <DropdownMenuItem
-                  onClick={() => setSelected(val)}
+                  onSelect={() => setSelected(val)}
                   isActive={selected.value === val.value}
                   disabled={val.disabled}
                 >
