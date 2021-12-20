@@ -20,13 +20,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
 }) => {
   return (
     <RadixDropdownMenu.Item asChild disabled={disabled}>
-      <ActionListItem
-        marginX="sm"
-        className={className}
-        style={style}
-        isActive={isActive}
-        onClick={disabled ? undefined : onClick}
-      >
+      <ActionListItem className={className} style={style} isActive={isActive} onClick={disabled ? undefined : onClick}>
         {children}
       </ActionListItem>
     </RadixDropdownMenu.Item>
