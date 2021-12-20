@@ -148,7 +148,8 @@ function InputSelect<T>({
   }, [isOpen]);
 
   const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
-
+  const itemRendererAsValueLabel = selectedItem && itemToString(selectedItem) === inputValue;
+  const hideLabelInputValue = itemRendererAsValueLabel && itemRenderer ? { color: 'transparent' } : {};
   return (
     <Box width={width}>
       <Stack spacing="xxs" display="block" position="relative">
@@ -158,11 +159,16 @@ function InputSelect<T>({
           </FormLabel>
         )}
         <Box display="flex" position="relative" alignItems="center" {...getComboboxProps()}>
+          {itemRenderer && itemRendererAsValueLabel ? (
+            <Box position={'absolute'} left="15px">
+              {itemRenderer(selectedItem)}
+            </Box>
+          ) : null}
           <InputText
             disabled={disabled}
             placeholder={placeholder}
             width="100%"
-            sx={{ ...styles }}
+            sx={{ ...styles, ...hideLabelInputValue }}
             onClick={() => {
               toggleMenu();
             }}
