@@ -3,14 +3,12 @@ import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
-import { IconClose } from '@aksara-ui/icons';
 
 import { Portal, FocusTrap } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
-import { IconButton } from '../../button';
 import { Card } from '../../card';
 import { ANIMATION_DURATION } from '../constants';
-import SideSheetOverlay from './SideSheetOverlay';
+import { Overlay } from '../../overlay';
 
 const SideSheetIn = keyframes`
   0% {
@@ -49,21 +47,19 @@ const SideSheetWrapper = styled(Box)`
   }
 `;
 
-const CloseButton = styled(IconButton)`
-  position: absolute;
-  top: 32px;
-  right: 32px;
-`;
-
 export interface SideSheetProps extends BoxProps {
+  /** Render header */
+  header?: React.ReactNode;
+  /** Render footer. */
+  footer?: React.ReactNode;
+  /** Render content. */
+  content?: React.ReactNode;
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Additional CSS properties to give to the drawer. */
   style?: React.CSSProperties;
   /** Whether the side sheet is open or not. */
   isOpen: boolean;
-  /** Hides the default close button. Useful if you want to add custom close behaviour. */
-  hideCloseButton?: boolean;
   /** Set to `true` if you want to hide the drawer backdrop. */
   noBackdrop?: boolean;
   /** Set to `true` to enable closing the drawer by clicking the overlay. */
@@ -149,11 +145,11 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
   }
 
   renderInnerContent = (state: TransitionStatus) => {
-    const { className, style, children, labelledById, hideCloseButton, ...rest } = this.props;
+    const { className, style, children, labelledById, header, content, footer, ...rest } = this.props;
     const { isOpen } = this.state;
 
     return (
-      <SideSheetOverlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
+      <Overlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
         <SideSheetWrapper
           className={clsx(isOpen && 'entered', className)}
           style={style}
@@ -172,15 +168,12 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           {...rest}
         >
           <Card display="flex" flexDirection="column" elevation={4} borderRadius={0} width="500px" height="100vh">
-            {!hideCloseButton && (
-              <CloseButton type="button" aria-label="Close" variant="plain" onClick={this.handleCloseSideSheet}>
-                <IconClose aria-hidden fill="currentColor" />
-              </CloseButton>
-            )}
-            {children}
+            {header}
+            {content}
+            {footer}
           </Card>
         </SideSheetWrapper>
-      </SideSheetOverlay>
+      </Overlay>
     );
   };
 

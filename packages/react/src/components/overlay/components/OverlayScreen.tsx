@@ -4,6 +4,7 @@ import { transparentize } from 'polished';
 import { ANIMATION_DURATION } from '../../notification/utils/constants';
 import { theme } from '../../../theme';
 
+// TODO convert to useComponentStyle
 const FadeIn = keyframes`
   0% {
     visibility: hidden;
@@ -28,7 +29,8 @@ const FadeOut = keyframes`
   }
 `;
 
-const ModalOverlay = styled('div')`
+// TODO conver to useComponentStyle
+const OverlayScreen = styled('div')`
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -77,9 +79,4 @@ const ModalOverlay = styled('div')`
   }
 `;
 
-ModalOverlay.displayName = 'DialogOverlay';
-
-/** @deprecated - use `ModalOverlay` instead */
-export const DialogOverlay = ModalOverlay;
-
-export default ModalOverlay;
+export default OverlayScreen;

@@ -10,6 +10,7 @@ export interface ModalHeaderIconProps extends BoxProps {
   icon: React.ComponentType<any>;
 }
 
+// TODO move to BoxHeader
 const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({ id, className, style, children, title, icon, ...rest }) => {
   return (
     <Box
