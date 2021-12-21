@@ -103,6 +103,7 @@ function InputSelect<T>({
     initialSelectedItem,
     stateReducer: (state, actionAndChanges) => {
       const { type, changes } = actionAndChanges;
+      console.log('changes.highlightedIndex', changes.highlightedIndex);
       switch (type) {
         case useCombobox.stateChangeTypes.InputKeyDownEscape:
           return {
@@ -246,7 +247,7 @@ function InputSelect<T>({
                     <ActionListItem
                       px={'sm'}
                       sx={
-                        highlightedIndex === index && (!selectedItem || !selected)
+                        highlightedIndex === item.index && (!selectedItem || !selected)
                           ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
                           : {}
                       }
