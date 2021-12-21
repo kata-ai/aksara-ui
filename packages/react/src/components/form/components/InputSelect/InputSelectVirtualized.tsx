@@ -22,11 +22,13 @@ export interface InputSelectVirtualizedProps<T> {
   placeholder?: string;
   /** Label items. */
   items: Array<T>;
-  /** Item height */
+  /** Item height used to defined virtualized item height,
+   *  it is required if list item have custom height.
+   *  Default is 36px */
   itemHeight?: number;
   /** Selected item. */
   selectedItem?: T | null;
-
+  /** initial/default selected item */
   initialSelectedItem?: T | null;
   /** If the item list is an object/shape, use this to map it into string. */
   itemToString?: (item: T | null) => string;
@@ -44,13 +46,13 @@ export interface InputSelectVirtualizedProps<T> {
   onFocus?: () => void;
   /** Logic on blue */
   onBlur?: () => void;
-
+  /** disabled input */
   disabled?: boolean;
-
+  /** size of input text */
   size?: 'md' | 'lg';
-
+  /** errors is used to show error variant */
   errors?: boolean;
-
+  /** width of input select box */
   width?: string | number;
   /** Max height for list box */
   maxHeight?: string | number;
@@ -103,6 +105,7 @@ function InputSelect<T>({
     initialSelectedItem,
     stateReducer: (state, actionAndChanges) => {
       const { type, changes } = actionAndChanges;
+      console.log('changes.highlightedIndex', changes.highlightedIndex);
       switch (type) {
         case useCombobox.stateChangeTypes.InputKeyDownEscape:
           return {
@@ -246,7 +249,7 @@ function InputSelect<T>({
                     <ActionListItem
                       px={'sm'}
                       sx={
-                        highlightedIndex === index && (!selectedItem || !selected)
+                        highlightedIndex === item.index && (!selectedItem || !selected)
                           ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
                           : {}
                       }
