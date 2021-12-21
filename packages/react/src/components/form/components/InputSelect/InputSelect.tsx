@@ -23,7 +23,7 @@ export interface InputSelectProps<T> {
   items: Array<T>;
   /** Selected item. */
   selectedItem?: T | null;
-
+  /** initial/default selected item */
   initialSelectedItem?: T | null;
   /** If the item list is an object/shape, use this to map it into string. */
   itemToString?: (item: T | null) => string;
@@ -41,13 +41,13 @@ export interface InputSelectProps<T> {
   onFocus?: () => void;
   /** Logic on blue */
   onBlur?: () => void;
-
+  /** disabled input */
   disabled?: boolean;
-
+  /** size of input text */
   size?: 'md' | 'lg';
-
+  /** errors is used to show error variant */
   errors?: boolean;
-
+  /** width of input select box */
   width?: string | number;
   /** Max height for list box */
   maxHeight?: string | number;
