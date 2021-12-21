@@ -6,6 +6,7 @@ import * as React from 'react';
 import { useCombobox, UseComboboxStateChange } from 'downshift';
 import { IconChevronStepper } from '@aksara-ui/icons';
 
+import { useVirtual } from 'react-virtual';
 import { Box, Stack } from '../../../../layout';
 import { InputText } from '../InputText';
 import { FormLabel } from '../FormLabel';
@@ -14,13 +15,15 @@ import { ActionList, ActionListItem } from '../../../action-list';
 
 import { useComponentStyles } from '../../../../system';
 
-export interface InputSelectProps<T> {
+export interface InputSelectVirtualizedProps<T> {
   /** The input select label */
   label?: string;
   /** Placeholder text for select label */
   placeholder?: string;
   /** Label items. */
   items: Array<T>;
+  /** Item height */
+  itemHeight?: number;
   /** Selected item. */
   selectedItem?: T | null;
 
@@ -53,11 +56,12 @@ export interface InputSelectProps<T> {
   maxHeight?: string | number;
 }
 
-/** Base wrapper for dropdown selector element using Downshift.js */
+/** Base wrapper for dropdown selector element using Downshift.js + React Virtual */
 function InputSelect<T>({
   label,
   placeholder = 'Select an item',
   items,
+  itemHeight = 36,
   selectedItem,
   itemToString = item => (item ? String(item) : ''),
   itemValue = item => (item ? String(item) : ''),
@@ -71,8 +75,15 @@ function InputSelect<T>({
   size = 'md',
   width = '100%',
   maxHeight,
-}: InputSelectProps<T>) {
+}: InputSelectVirtualizedProps<T>) {
   const [inputItems, setInputItems] = React.useState(items);
+  const parentRef = React.useRef<HTMLDivElement>(null);
+  const rowVirtualizer = useVirtual({
+    size: items.length,
+    parentRef,
+    estimateSize: React.useCallback(() => itemHeight, []),
+    overscan: 2,
+  });
   const {
     isOpen,
     inputValue,
@@ -99,6 +110,12 @@ function InputSelect<T>({
             isOpen: false,
             inputValue: state.inputValue, // prevent flickering text when press esc
           };
+        case useCombobox.stateChangeTypes.InputKeyDownArrowDown:
+        case useCombobox.stateChangeTypes.InputKeyDownArrowUp:
+        case useCombobox.stateChangeTypes.InputKeyDownHome:
+        case useCombobox.stateChangeTypes.InputKeyDownEnd:
+          rowVirtualizer.scrollToIndex(changes.highlightedIndex ?? 0);
+          return changes;
         default:
           return changes;
       }
@@ -202,23 +219,51 @@ function InputSelect<T>({
           overflow="hidden"
           zIndex={1}
         >
-          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
+          <ActionList
+            overflowY="auto"
+            position="relative"
+            maxHeight={maxHeight}
+            {...getMenuProps({
+              ref: parentRef,
+            })}
+          >
+            <li style={{ height: rowVirtualizer.totalSize, listStyle: 'none' }} />
             {inputItems.length !== 0 ? (
-              inputItems.map((item, index) => {
-                const selected = selectedItem && itemValue(selectedItem) === itemValue(item);
+              rowVirtualizer.virtualItems.map((item, index) => {
+                const selected = selectedItem && itemValue(selectedItem) === itemValue(items[item.index]);
                 return (
-                  <ActionListItem
-                    sx={
-                      highlightedIndex === index && (!selectedItem || !selected)
-                        ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
-                        : {}
-                    }
-                    isActive={selected}
-                    key={`${itemToString(item)}`}
-                    {...getItemProps({ item, index })}
+                  <Box
+                    sx={{
+                      px: 'sm',
+                      position: 'absolute',
+                      top: 12 + index * 4,
+                      left: 0,
+                      width: '100%',
+                      height: item.size,
+                      transform: `translateY(${item.start}px)`,
+                    }}
                   >
-                    {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
-                  </ActionListItem>
+                    <ActionListItem
+                      px={'sm'}
+                      sx={
+                        highlightedIndex === index && (!selectedItem || !selected)
+                          ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
+                          : {}
+                      }
+                      isActive={selected}
+                      key={item.index}
+                      {...getItemProps({
+                        item: items[item.index],
+                        index: item.index,
+                      })}
+                    >
+                      {itemRenderer
+                        ? itemRenderer(items[item.index])
+                        : itemToString
+                        ? itemToString(items[item.index])
+                        : item}
+                    </ActionListItem>
+                  </Box>
                 );
               })
             ) : (

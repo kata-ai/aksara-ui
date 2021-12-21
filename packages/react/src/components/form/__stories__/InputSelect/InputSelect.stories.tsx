@@ -1,10 +1,10 @@
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 import * as React from 'react';
-import { InputSelect, InputSelectProps } from '../components/InputSelect';
-import { Box } from '../../../layout';
+import { InputSelect, InputSelectProps } from '../../components/InputSelect';
+import { Box } from '../../../../layout';
 
 export default {
-  title: 'Core/Components/Form/InputSelect',
+  title: 'Core/Components/Form/InputSelect/InputSelect',
   component: InputSelect,
   argTypes: {
     placeholder: {
@@ -26,13 +26,11 @@ export default {
       control: 'number',
     },
   },
-} as Meta<InputSelectProps<ValueSchema>>;
-
+};
 interface ValueSchema {
   label: string;
   value: string;
 }
-
 export const Example: Story<InputSelectProps<ValueSchema>> = ({
   placeholder,
   disabled,
