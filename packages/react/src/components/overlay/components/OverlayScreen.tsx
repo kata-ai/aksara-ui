@@ -29,8 +29,11 @@ const FadeOut = keyframes`
   }
 `;
 
+export interface OverlayScreenProps {
+  backdropBlur?: boolean;
+}
 // TODO conver to useComponentStyle
-const OverlayScreen = styled('div')`
+const OverlayScreen = styled('div')<OverlayScreenProps>`
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -40,6 +43,14 @@ const OverlayScreen = styled('div')`
   bottom: 0;
   left: 0;
   right: 0;
+
+  ${({ backdropBlur }) =>
+    backdropBlur &&
+    `
+  @supports (backdrop-filter: blur(4px)) or (--webkit-backdrop-filter: blur(4px)) {
+    backdrop-filter: blur(4px);
+  }
+  `}
 
   &::before {
     display: block;
