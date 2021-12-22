@@ -11,6 +11,33 @@ export default {
   component: FilterKit,
 };
 
+export const WihtoutFilterSection = () => {
+  return (
+    <Box>
+      <FilterKit
+        orderByOptions={[
+          {
+            key: 'created_date',
+            label: 'Date',
+            options: [
+              { label: 'Newest', value: 'created_date-desc' },
+              { label: 'Oldest', value: 'created_date-asc' },
+            ],
+          },
+          {
+            key: 'transaction',
+            label: 'Transaction',
+            options: [
+              { label: 'Highest', value: 'transaction_value-desc' },
+              { label: 'Lowest', value: 'transaction_value-asc' },
+            ],
+          },
+        ]}
+      />
+    </Box>
+  );
+};
+
 export const WithFilterSection = () => {
   return (
     <Box>
