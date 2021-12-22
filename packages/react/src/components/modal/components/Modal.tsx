@@ -47,13 +47,7 @@ const ModalWrapper = styled(Box)`
   }
 `;
 
-export interface ModalProps extends Omit<BoxProps, 'children'> {
-  /** Render header */
-  header?: React.ReactNode;
-  /** Render footer. */
-  footer?: React.ReactNode;
-  /** Render content. */
-  content?: React.ReactNode;
+export interface ModalProps extends BoxProps {
   /** Additional CSS classes to give to the drawer. */
   className?: string;
   /** Additional CSS properties to give to the drawer. */
@@ -163,10 +157,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
       className,
       style,
       labelledById,
-      header,
-      content,
       backdropBlur = true,
-      footer,
+      children,
       maxWidth,
       width,
       height,
@@ -213,9 +205,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           }}
           {...rest}
         >
-          {header}
-          {content}
-          {footer}
+          {children}
         </ModalWrapper>
       </Overlay>
     );

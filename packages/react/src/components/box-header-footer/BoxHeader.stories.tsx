@@ -2,13 +2,13 @@ import * as React from 'react';
 
 import { IconTrash, IconArrowLeft } from '@aksara-ui/icons';
 import { Stack, Box } from '../../layout';
-import { Text } from '../../typography';
+import { Heading, Text } from '../../typography';
 
 import { SideSheet, SideSheetContent } from '../side-sheet';
 import { Button, IconButton } from '../button';
 import { Avatar } from '../avatar';
 import { ModalHeaderIcon } from '../modal';
-import { BoxFooter, BoxHeader } from '.';
+import { BoxFooter, BoxHeader, CloseButton } from '.';
 
 export default {
   title: 'Core/Components/Box Header Footer/Header',
@@ -22,15 +22,7 @@ const argTypes = {
   },
 };
 
-export const BasicExample = ({
-  size,
-  hideCloseButton,
-  centerTitle,
-}: {
-  size: 'sm' | 'lg';
-  hideCloseButton: boolean;
-  centerTitle: boolean;
-}) => {
+export const BasicExample = ({ size, centerTitle }: { size: 'sm' | 'lg'; centerTitle: boolean }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <Box p="md">
@@ -38,19 +30,17 @@ export const BasicExample = ({
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
       </button>
-      <SideSheet
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        header={
-          <BoxHeader
-            size={size}
-            centerTitle={centerTitle}
-            hideCloseButton={hideCloseButton}
-            closeButtonHandler={() => setIsOpen(false)}
-            title={<Text size={size}>Title</Text>}
-          />
-        }
-      />
+      <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <BoxHeader
+          size={size}
+          centerTitle={centerTitle}
+          title={
+            <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+              Title
+            </Heading>
+          }
+        />
+      </SideSheet>
     </Box>
   );
 };
@@ -69,22 +59,22 @@ export const BackAndCloseIcon = ({ size }: { size: 'sm' | 'lg' }) => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
       </button>
-      <SideSheet
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        header={
-          <BoxHeader
-            size={size}
-            closeButtonHandler={() => setIsOpen(false)}
-            backButton={
-              <IconButton variant="plain" size={size}>
-                <IconArrowLeft aria-hidden size={24} fill="currentColor" />
-              </IconButton>
-            }
-            title={<Text size={size}>Title</Text>}
-          />
-        }
-      />
+      <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <BoxHeader
+          size={size}
+          closeButton={<CloseButton onClick={() => setIsOpen(false)} />}
+          backButton={
+            <IconButton variant="plain" size={size}>
+              <IconArrowLeft aria-hidden size={24} fill="currentColor" />
+            </IconButton>
+          }
+          title={
+            <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+              Title
+            </Heading>
+          }
+        />
+      </SideSheet>
     </Box>
   );
 };
@@ -102,22 +92,20 @@ export const AvatarHeader = ({ size }: { size: 'sm' | 'lg' }) => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
       </button>
-      <SideSheet
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        header={
-          <BoxHeader
-            size={size}
-            closeButtonHandler={() => setIsOpen(false)}
-            title={
-              <Stack alignItems="center" direction="horizontal" spacing="sm">
-                <Avatar name="A M" bg="blue07" size={size} />
-                <Text size={size}>Jessica</Text>
-              </Stack>
-            }
-          />
-        }
-      />
+      <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <BoxHeader
+          size={size}
+          closeButton={<CloseButton onClick={() => setIsOpen(false)} />}
+          title={
+            <Stack alignItems="center" direction="horizontal" spacing="sm">
+              <Avatar name="A M" bg="blue07" size={size} />
+              <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+                Jessica
+              </Heading>
+            </Stack>
+          }
+        />
+      </SideSheet>
     </Box>
   );
 };
@@ -135,24 +123,22 @@ export const TitleAndButton = ({ size }: { size: 'sm' | 'lg' }) => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
       </button>
-      <SideSheet
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        header={
-          <BoxHeader
-            hideCloseButton
-            backButton
-            size={size}
-            closeButtonHandler={() => setIsOpen(false)}
-            title={<Text size="sm">Title</Text>}
-            actions={
-              <Button size="sm" variant="primary">
-                Label
-              </Button>
-            }
-          />
-        }
-      />
+      <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <BoxHeader
+          backButton
+          size={size}
+          title={
+            <Heading scale={size === 'sm' ? 300 : 500} id="stories-title" textAlign="center">
+              Title
+            </Heading>
+          }
+          actions={
+            <Button size="sm" variant="primary">
+              Label
+            </Button>
+          }
+        />
+      </SideSheet>
     </Box>
   );
 };
@@ -170,11 +156,9 @@ export const WithIcon = ({ size }: { size: 'sm' | 'lg' }) => {
       <button type="button" onClick={() => setIsOpen(!isOpen)}>
         Toggle Side Sheet
       </button>
-      <SideSheet
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        header={<ModalHeaderIcon size={size} id="stories-title" title="Delete item?" icon={IconTrash} />}
-      />
+      <SideSheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ModalHeaderIcon size={size} id="stories-title" title="Delete item?" icon={IconTrash} />
+      </SideSheet>
     </Box>
   );
 };

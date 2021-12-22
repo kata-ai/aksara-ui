@@ -1,9 +1,6 @@
-import { IconClose } from '@aksara-ui/icons';
 import * as React from 'react';
-// import { Heading } from '../../../typography';
 import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
-import { UnstyledButton } from '../../button/components/UnstyledButton';
 
 export interface BoxHeaderProps extends Omit<BoxProps, 'children'> {
   className?: string;
@@ -13,8 +10,7 @@ export interface BoxHeaderProps extends Omit<BoxProps, 'children'> {
   centerTitle?: boolean;
   backButton?: React.ReactNode;
   actions?: React.ReactNode;
-  hideCloseButton?: boolean;
-  closeButtonHandler?: () => void;
+  closeButton?: React.ReactNode;
 }
 
 const BoxHeader: React.FC<BoxHeaderProps> = ({
@@ -26,35 +22,12 @@ const BoxHeader: React.FC<BoxHeaderProps> = ({
   style,
   children,
   size = 'sm',
-  hideCloseButton,
-  closeButtonHandler,
+  closeButton,
   sx,
   ...rest
 }) => {
   const boxHeaderStyle = useComponentStyles('boxHeader', { size });
-  const renderCloseButton = () => {
-    return (
-      <UnstyledButton
-        type="button"
-        aria-label="Close"
-        sx={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: 24,
-          color: 'greydark02',
-          '&:focus': {
-            outline: 'none',
-            borderRadius: 4,
-            boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
-          },
-        }}
-        onClick={closeButtonHandler}
-      >
-        <IconClose aria-hidden size={24} fill="currentColor" />
-      </UnstyledButton>
-    );
-  };
+
   return (
     <Box sx={{ ...boxHeaderStyle, ...sx }} className={className} style={style} {...rest}>
       {backButton && (
@@ -66,9 +39,9 @@ const BoxHeader: React.FC<BoxHeaderProps> = ({
         {title}
       </Box>
       {actions && <Box marginTop={['md', 0]}>{actions}</Box>}
-      {!hideCloseButton && (
+      {closeButton && (
         <Box display={'flex'} position="absolute" right="24px">
-          {renderCloseButton()}
+          {closeButton}
         </Box>
       )}
     </Box>

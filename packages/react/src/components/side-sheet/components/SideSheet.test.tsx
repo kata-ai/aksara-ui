@@ -2,14 +2,16 @@ import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 import SideSheet from './SideSheet';
-import { BoxHeader } from '../../box-header-footer';
+import { BoxHeader, CloseButton } from '../../box-header-footer';
 import { Heading } from '../../../typography';
 
 describe('components/SideSheet', () => {
   describe('<SideSheet />', () => {
     test('renders correctly', () => {
       const { getByText } = render(
-        <SideSheet labelledById="test-title" isOpen content={<p id="test-title">Basic Example</p>} />
+        <SideSheet labelledById="test-title" isOpen>
+          <p id="test-title">Basic Example</p>
+        </SideSheet>
       );
 
       expect(getByText('Basic Example')).toBeInTheDocument();
@@ -18,23 +20,18 @@ describe('components/SideSheet', () => {
     test('handles onClose', () => {
       const handleClose = jest.fn();
       const { getByLabelText } = render(
-        <SideSheet
-          labelledById="test-title"
-          isOpen
-          onClose={handleClose}
-          header={
-            <BoxHeader
-              size="lg"
-              closeButtonHandler={handleClose}
-              title={
-                <Heading scale={300} id="stories-title" textAlign="center">
-                  Title
-                </Heading>
-              }
-            />
-          }
-          content={<p id="test-title">Basic Example</p>}
-        />
+        <SideSheet labelledById="test-title" isOpen onClose={handleClose}>
+          <BoxHeader
+            size="lg"
+            closeButton={<CloseButton onClick={handleClose} />}
+            title={
+              <Heading scale={300} id="stories-title" textAlign="center">
+                Title
+              </Heading>
+            }
+          />
+          <p id="test-title">Basic Example</p>
+        </SideSheet>
       );
 
       const closeButton = getByLabelText('Close');
@@ -45,12 +42,9 @@ describe('components/SideSheet', () => {
     test("doesn't close the drawer on when isOverlayClickable is not set", () => {
       const handleClose = jest.fn();
       render(
-        <SideSheet
-          labelledById="test-title"
-          isOpen
-          onClose={handleClose}
-          content={<p id="test-title">Basic Example</p>}
-        />
+        <SideSheet labelledById="test-title" isOpen onClose={handleClose}>
+          <p id="test-title">Basic Example</p>
+        </SideSheet>
       );
 
       const overlay = document.querySelector('[data-radix-portal] > div');
@@ -65,13 +59,9 @@ describe('components/SideSheet', () => {
     test('closes the drawer on when isOverlayClickable is set', () => {
       const handleClose = jest.fn();
       render(
-        <SideSheet
-          labelledById="test-title"
-          isOpen
-          isOverlayClickable
-          onClose={handleClose}
-          content={<p id="test-title">Basic Example</p>}
-        />
+        <SideSheet labelledById="test-title" isOpen isOverlayClickable onClose={handleClose}>
+          <p id="test-title">Basic Example</p>
+        </SideSheet>
       );
 
       const overlay = document.querySelector('[data-radix-portal] > div');
