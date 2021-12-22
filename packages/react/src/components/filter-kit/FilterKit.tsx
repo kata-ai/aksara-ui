@@ -144,12 +144,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
   };
   return (
     <>
-      <Box
-        display={['block', 'flex']}
-        marginTop={['md', 'xl']}
-        alignItems={[null, 'center']}
-        justifyContent={[null, 'space-between']}
-      >
+      <Box display={['block', 'flex']} alignItems={[null, 'center']} justifyContent={[null, 'space-between']}>
         <Box display={['block', 'flex']} justifyContent={[null, 'space-between']}>
           <InputSearchbox
             id="textDummy"
