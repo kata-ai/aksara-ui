@@ -6,7 +6,7 @@ import { TransitionStatus } from 'react-transition-group/Transition';
 import { Portal, FocusTrap } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 import { ANIMATION_DURATION } from '../constants';
-import { Overlay } from '../../overlay';
+import { Overlay } from '../../../helpers/overlay';
 
 const ModalIn = keyframes`
   0% {
