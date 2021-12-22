@@ -62,6 +62,8 @@ export interface ModalProps extends Omit<BoxProps, 'children'> {
   isOpen: boolean;
   /** Set to `true` if you want to hide the drawer backdrop. */
   noBackdrop?: boolean;
+  /** backdropBlur used to make blur effect to screen behind overlay, default is true */
+  backdropBlur?: boolean;
   /** Set to `true` to disable closing the drawer by clicking the overlay. */
   disableOverlayClick?: boolean;
   /** Enables focus trap mode. Also enables closing modal by pressing Escape. */
@@ -163,6 +165,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       labelledById,
       header,
       content,
+      backdropBlur = true,
       footer,
       maxWidth,
       width,
@@ -174,7 +177,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const { isOpen } = this.state;
 
     return (
-      <Overlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
+      <Overlay
+        backdropBlur={backdropBlur}
+        className={clsx(isOpen && 'entered')}
+        data-state={state}
+        onClick={this.handleOverlayClick}
+      >
         <ModalWrapper
           className={clsx(isOpen && 'entered', className)}
           style={style}

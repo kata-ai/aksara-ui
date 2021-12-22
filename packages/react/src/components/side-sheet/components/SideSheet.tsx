@@ -62,6 +62,8 @@ export interface SideSheetProps extends BoxProps {
   isOpen: boolean;
   /** Set to `true` if you want to hide the drawer backdrop. */
   noBackdrop?: boolean;
+  /** backdropBlur used to make blur effect to screen behind overlay, default is true */
+  backdropBlur?: boolean;
   /** Set to `true` to enable closing the drawer by clicking the overlay. */
   isOverlayClickable?: boolean;
   /** Enables focus trap mode. Also enables closing side sheet by pressing Escape. */
@@ -145,11 +147,26 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
   }
 
   renderInnerContent = (state: TransitionStatus) => {
-    const { className, style, children, labelledById, header, content, footer, ...rest } = this.props;
+    const {
+      className,
+      style,
+      children,
+      labelledById,
+      header,
+      content,
+      footer,
+      backdropBlur = true,
+      ...rest
+    } = this.props;
     const { isOpen } = this.state;
 
     return (
-      <Overlay className={clsx(isOpen && 'entered')} data-state={state} onClick={this.handleOverlayClick}>
+      <Overlay
+        backdropBlur={backdropBlur}
+        className={clsx(isOpen && 'entered')}
+        data-state={state}
+        onClick={this.handleOverlayClick}
+      >
         <SideSheetWrapper
           className={clsx(isOpen && 'entered', className)}
           style={style}
