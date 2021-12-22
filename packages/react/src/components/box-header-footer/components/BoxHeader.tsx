@@ -43,6 +43,11 @@ const BoxHeader: React.FC<BoxHeaderProps> = ({
           justifyContent: 'center',
           height: 24,
           color: 'greydark02',
+          '&:focus': {
+            outline: 'none',
+            borderRadius: 4,
+            boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+          },
         }}
         onClick={closeButtonHandler}
       >
