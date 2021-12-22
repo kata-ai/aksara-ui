@@ -8,7 +8,7 @@ import { Portal, FocusTrap } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 import { Card } from '../../card';
 import { ANIMATION_DURATION } from '../constants';
-import { Overlay } from '../../overlay';
+import { Overlay } from '../../../helpers/overlay';
 
 const SideSheetIn = keyframes`
   0% {
