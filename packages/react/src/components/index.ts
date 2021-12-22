@@ -17,7 +17,6 @@ export * from './loading';
 export * from './message';
 export * from './navigation';
 export * from './notification';
-export * from './overlay';
 export * from './page-header';
 export * from './pagination';
 export * from './panel';

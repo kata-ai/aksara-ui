@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { transparentize } from 'polished';
 
-import { ANIMATION_DURATION } from '../../notification/utils/constants';
+import { ANIMATION_DURATION } from '../../../components/notification/utils/constants';
 import { theme } from '../../../theme';
 
 // TODO convert to useComponentStyle
@@ -30,6 +30,7 @@ const FadeOut = keyframes`
 `;
 
 export interface OverlayScreenProps {
+  /** backdropBlur used to make blur effect to screen behind overlay, default is true */
   backdropBlur?: boolean;
 }
 // TODO conver to useComponentStyle
@@ -59,7 +60,7 @@ const OverlayScreen = styled('div')<OverlayScreenProps>`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${transparentize(0.35, theme.colors.grey09)};
+    background-color: ${transparentize(0.5, theme.colors.greylight05)};
     content: ' ';
     visibility: hidden;
     opacity: 0;
@@ -89,5 +90,8 @@ const OverlayScreen = styled('div')<OverlayScreenProps>`
     }
   }
 `;
+OverlayScreen.defaultProps = {
+  backdropBlur: true,
+};
 
 export default OverlayScreen;
