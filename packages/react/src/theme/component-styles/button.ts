@@ -31,7 +31,7 @@ const buttonVariantsStyle: Record<string, CSSObject> = {
     '&:not(:disabled)': {
       backgroundColor: 'blue07',
       color: 'greylight01',
-      '&:hover, &:focus': {
+      '&:hover': {
         backgroundColor: 'blue08',
       },
       '&:active': {
