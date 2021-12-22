@@ -30,15 +30,11 @@ const BoxHeader: React.FC<BoxHeaderProps> = ({
 
   return (
     <Box sx={{ ...boxHeaderStyle, ...sx }} className={className} style={style} {...rest}>
-      {backButton && (
-        <Box marginRight={[0, 'md']} marginBottom={['xs', 0]}>
-          {backButton}
-        </Box>
-      )}
+      {backButton && <Box marginRight={'md'}>{backButton}</Box>}
       <Box display={'flex'} flex={1} justifyContent={centerTitle ? 'center' : 'flex-start'}>
         {title}
       </Box>
-      {actions && <Box marginTop={['md', 0]}>{actions}</Box>}
+      {actions && <Box>{actions}</Box>}
       {closeButton && (
         <Box display={'flex'} position="absolute" right="24px">
           {closeButton}
