@@ -1,2 +1,2 @@
-export { default as FilterPageHeader } from './FilterKit';
+export { default as FilterKit } from './FilterKit';
 export * from './FilterKit';
