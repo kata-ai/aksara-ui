@@ -25,14 +25,14 @@ const BoxFooter: React.FC<BoxFooterProps> = ({
   return (
     <Box sx={{ ...boxFooterStyle, ...sx }} className={className} style={style} {...rest}>
       {caption && (
-        <Box marginRight={[0, 'md']} marginBottom={['xs', 0]}>
+        <Box marginRight={'md'}>
           <Heading as="p" scale={100} color="greymed04">
             {caption}
           </Heading>
         </Box>
       )}
       {actions && (
-        <Box display={'flex'} flex="1" justifyContent={'flex-end'} marginTop={['md', 0]}>
+        <Box display={'flex'} flex="1" justifyContent={'flex-end'}>
           {actions}
         </Box>
       )}
