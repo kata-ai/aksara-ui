@@ -12,7 +12,6 @@ import { useComponentStyles } from '../../../../system';
 import { FormLabel } from '../FormLabel';
 import { UnstyledButton } from '../../../button';
 import { Card } from '../../../card';
-import { ActionList, ActionListItem } from '../../../action-list';
 
 export interface InputSelectProps<T> {
   /** The input select label */
@@ -74,6 +73,7 @@ function InputSelect<T>({
     onSelectedItemChange: handleSelectedItemChange,
     initialSelectedItem,
   });
+
   const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
   return (
@@ -114,45 +114,57 @@ function InputSelect<T>({
           </Box>
         </UnstyledButton>
         <Card
+          as="ul"
+          elevation={3}
+          display={isOpen ? 'block' : 'none'}
           position="absolute"
           float="left"
           top="100%"
+          zIndex="1"
           left={0}
+          mt="xs"
           width={width}
-          maxHeight={maxHeight}
-          display={isOpen ? 'block' : 'none'}
-          elevation={3}
-          overflow="hidden"
-          zIndex={1}
+          p={0}
+          m={0}
+          overflowY="hidden"
+          {...getMenuProps()}
         >
-          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
+          <Box overflowY={'auto'} maxHeight={maxHeight}>
             {items && items.length !== 0 ? (
-              items.map((item, index) => {
-                let selected: boolean;
-                if (itemToString && selectedItem) {
-                  selected = itemToString(selectedItem) === itemToString(item);
-                } else {
-                  selected = selectedItem === item;
-                }
-                return (
-                  <ActionListItem
-                    sx={
-                      highlightedIndex === index && (!selectedItem || !selected)
-                        ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
-                        : {}
-                    }
-                    isActive={selected}
-                    key={`${item}_${index}`}
-                    {...getItemProps({ item, index })}
-                  >
-                    {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
-                  </ActionListItem>
-                );
-              })
+              items.map((item, index) => (
+                <Box
+                  as="li"
+                  px="md"
+                  py="xs"
+                  _hover={{
+                    backgroundColor: 'blue01',
+                  }}
+                  cursor="pointer"
+                  textAlign="left"
+                  lineHeight="20px"
+                  fontSize={14}
+                  sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
+                  key={`${item}_${index}`}
+                  {...getItemProps({ item, index })}
+                >
+                  {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
+                </Box>
+              ))
             ) : (
-              <ActionListItem disabled>No items.</ActionListItem>
+              <Box
+                as="li"
+                px="md"
+                py="xs"
+                color="grey06"
+                cursor="pointer"
+                fontSize={14}
+                textAlign="left"
+                lineHeight="20px"
+              >
+                No items.
+              </Box>
             )}
-          </ActionList>
+          </Box>
         </Card>
       </Stack>
       {/* if you Tab from menu, focus goes on button, and it shouldn't. only happens here. */}
