@@ -1,11 +1,11 @@
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 import * as React from 'react';
-import { InputSelect, InputSelectProps } from '../../components/InputSelect';
+import { InputSelectSearch, InputSelectSearchProps } from '../../components/InputSelect';
 import { Box } from '../../../../layout';
 
 export default {
-  title: 'Core/Components/Form/InputSelect',
-  component: InputSelect,
+  title: 'Core/Components/Form/InputSelect/InputSelectSearch',
+  component: InputSelectSearch,
   argTypes: {
     placeholder: {
       control: 'text',
@@ -25,18 +25,13 @@ export default {
     width: {
       control: 'number',
     },
-    maxHeight: {
-      control: 'number',
-    },
   },
-} as Meta<InputSelectProps<ValueSchema>>;
-
+};
 interface ValueSchema {
   label: string;
   value: string;
 }
-
-export const Example: Story<InputSelectProps<ValueSchema>> = ({
+export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({
   placeholder,
   disabled,
   size,
@@ -60,18 +55,19 @@ export const Example: Story<InputSelectProps<ValueSchema>> = ({
     { label: 'jkl', value: 'k' },
   ]);
   return (
-    <InputSelect
+    <InputSelectSearch
       label={label}
       size={size}
       selectedItem={selected}
       placeholder={placeholder}
+      openOnFocus
       disabled={disabled}
       errors={errors}
       itemToString={item => (item ? `${item.label}` : '')}
+      itemValue={item => item?.value ?? ''}
       itemRenderer={item => (
         <>
-          <Box width={15} mr="sm" />
-          {`${item.label}`}
+          <Box width={15} mr="sm">{`${item.label}`}</Box>
         </>
       )}
       handleSelectedItemChange={({ selectedItem }) => {
@@ -92,5 +88,51 @@ Example.args = {
   label: 'Label input',
   errors: false,
   width: '100%',
-  maxHeight: 250,
+  maxHeight: '250px',
+};
+
+export const ListOfStringExample: Story<InputSelectSearchProps<ValueSchema>> = ({
+  placeholder,
+  disabled,
+  size,
+  label,
+  errors,
+  width,
+  maxHeight,
+}) => {
+  const [selected, setSelected] = React.useState<string | null>(null);
+  const [items] = React.useState([
+    'apple',
+    'apricot',
+    'avocado',
+    'banana',
+    'bell pepper',
+    'bilberry',
+    'blackberry',
+    'blackcurrant',
+    'blood orange',
+  ]);
+  return (
+    <InputSelectSearch
+      label={label}
+      size={size}
+      selectedItem={selected}
+      placeholder={placeholder}
+      openOnFocus
+      disabled={disabled}
+      errors={errors}
+      handleSelectedItemChange={({ selectedItem }) => {
+        if (selectedItem) {
+          setSelected(selectedItem);
+        }
+      }}
+      items={items}
+      width={width}
+      maxHeight={maxHeight}
+    />
+  );
+};
+
+ListOfStringExample.args = {
+  ...Example.args,
 };

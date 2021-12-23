@@ -1,4 +1,6 @@
 export { default as InputSelect } from './InputSelect';
-export { default as InputSelectVirtualized } from './InputSelectVirtualized';
+export { default as InputSelectSearch } from './InputSelectSearch';
+export { default as InputSelectSearchVirtualized } from './InputSelectSearchVirtualized';
 export * from './InputSelect';
-export * from './InputSelectVirtualized';
+export * from './InputSelectSearch';
+export * from './InputSelectSearchVirtualized';

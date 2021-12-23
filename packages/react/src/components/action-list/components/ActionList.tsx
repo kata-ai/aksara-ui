@@ -12,6 +12,9 @@ const ActionList = React.forwardRef<HTMLDivElement, ActionListProps>(({ children
       paddingY="sm"
       backgroundColor="greylight01"
       ref={ref}
+      _focusVisible={{
+        outline: '0px',
+      }}
       {...rest}
     >
       {children}

@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
-import { InputSelectVirtualized, InputSelectVirtualizedProps } from '../../components/InputSelect';
+import { InputSelectSearchVirtualized, InputSelectSearchVirtualizedProps } from '../../components/InputSelect';
 import { Box } from '../../../../layout';
 
 const timezone = [
@@ -2383,8 +2383,8 @@ const timezone = [
 ];
 
 export default {
-  title: 'Core/Components/Form/InputSelect/InputSelectVirtualized',
-  component: InputSelectVirtualized,
+  title: 'Core/Components/Form/InputSelect/InputSelectSearchVirtualized',
+  component: InputSelectSearchVirtualized,
   argTypes: {
     placeholder: {
       control: 'text',
@@ -2411,7 +2411,7 @@ interface ValueVirtualizedSchema {
   timezoneDisplay: string;
 }
 
-export const InputSelectVirtualizedExample: Story<InputSelectVirtualizedProps<ValueVirtualizedSchema>> = ({
+export const InputSelectVirtualizedExample: Story<InputSelectSearchVirtualizedProps<ValueVirtualizedSchema>> = ({
   placeholder,
   disabled,
   size,
@@ -2423,7 +2423,7 @@ export const InputSelectVirtualizedExample: Story<InputSelectVirtualizedProps<Va
   const [selected, setSelected] = React.useState<ValueVirtualizedSchema | null>(null);
   const [items] = React.useState(timezone);
   return (
-    <InputSelectVirtualized
+    <InputSelectSearchVirtualized
       label={label}
       size={size}
       selectedItem={selected}
