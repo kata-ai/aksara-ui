@@ -1,12 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import * as React from 'react';
-
 import { Story } from '@storybook/react';
-import { Stack } from '../../../layout';
+import { Box, Stack } from '../../../layout';
 import { InputRadio } from '../components';
-import { RadioGroupRoot, RadioGroupItem } from '../components/RadioGroup/RadioGroup';
+import { RadioGroupRoot, RadioGroupItem, RadioGroupIndicator } from '../components/RadioGroup/RadioGroup';
 import { Text } from '../../../typography';
-import { OptionListItemBox, OptionListItemBoxProps } from '../../button';
+import { OptionListItemBox, OptionListItemBoxProps, UnstyledButton } from '../../button';
 import { pseudoSelectors } from '../../../system';
 import { theme } from '../../../theme';
 
@@ -50,22 +49,66 @@ const inputRadioItemStyle = {
 };
 
 export const RadioWithBox: Story<{ disabled: boolean }> = ({ disabled }) => (
-  <RadioGroupRoot>
-    <Stack direction="vertical" spacing="xs" width="300px">
-      <RadioGroupItem value="value1" disabled={disabled} sx={inputRadioItemStyle}>
-        <InputRadio readOnly checked={false} />
-        <Text scale={300} ml="xs">
-          Radio 1
-        </Text>
-      </RadioGroupItem>
-      <RadioGroupItem value="value2" disabled={disabled} sx={inputRadioItemStyle}>
-        <InputRadio readOnly checked={false} />
-        <Text scale={300} ml="xs">
-          Radio 2
-        </Text>
-      </RadioGroupItem>
-    </Stack>
-  </RadioGroupRoot>
+  <form>
+    <RadioGroupRoot>
+      <Stack direction="vertical" spacing="xs" width="300px">
+        <Box display="flex" alignItems={'center'} p="xs">
+          <RadioGroupItem value="value1" disabled={disabled} sx={inputRadioItemStyle}>
+            <UnstyledButton
+              id="r1"
+              backgroundColor={'greylight01'}
+              width={16}
+              height={16}
+              border={'1px solid'}
+              borderColor={'greylight05'}
+              borderRadius={16}
+            >
+              <RadioGroupIndicator>
+                <Box
+                  backgroundColor={'greylight01'}
+                  width={16}
+                  height={16}
+                  borderRadius={16}
+                  border={'5px solid'}
+                  borderColor={'blue07'}
+                />
+              </RadioGroupIndicator>
+            </UnstyledButton>
+          </RadioGroupItem>
+          <Text as="label" htmlFor="r1" scale={300} ml="xs">
+            Radio 1
+          </Text>
+        </Box>
+        <Box display="flex" alignItems={'center'} p="xs">
+          <RadioGroupItem value="value2" disabled={disabled} sx={inputRadioItemStyle}>
+            <UnstyledButton
+              id="r2"
+              backgroundColor={'greylight01'}
+              width={16}
+              height={16}
+              border={'1px solid'}
+              borderColor={'greylight05'}
+              borderRadius={16}
+            >
+              <RadioGroupIndicator>
+                <Box
+                  backgroundColor={'greylight01'}
+                  width={16}
+                  height={16}
+                  borderRadius={16}
+                  border={'5px solid'}
+                  borderColor={'blue07'}
+                />
+              </RadioGroupIndicator>
+            </UnstyledButton>
+          </RadioGroupItem>
+          <Text as="label" htmlFor="r2" scale={300} ml="xs">
+            Radio 2
+          </Text>
+        </Box>
+      </Stack>
+    </RadioGroupRoot>
+  </form>
 );
 
 export const RadioWithAvatar: Story<{ disabled: boolean }> = ({ disabled }) => (
