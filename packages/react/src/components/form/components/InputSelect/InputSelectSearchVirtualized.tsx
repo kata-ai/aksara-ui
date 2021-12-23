@@ -15,7 +15,7 @@ import { ActionList, ActionListItem } from '../../../action-list';
 
 import { useComponentStyles } from '../../../../system';
 
-export interface InputSelectVirtualizedProps<T> {
+export interface InputSelectSearchVirtualizedProps<T> {
   /** The input select label */
   label?: string;
   /** Placeholder text for select label */
@@ -77,7 +77,7 @@ function InputSelect<T>({
   size = 'md',
   width = '100%',
   maxHeight,
-}: InputSelectVirtualizedProps<T>) {
+}: InputSelectSearchVirtualizedProps<T>) {
   const [inputItems, setInputItems] = React.useState(items);
   const parentRef = React.useRef<HTMLDivElement>(null);
   const rowVirtualizer = useVirtual({
@@ -105,7 +105,6 @@ function InputSelect<T>({
     initialSelectedItem,
     stateReducer: (state, actionAndChanges) => {
       const { type, changes } = actionAndChanges;
-      console.log('changes.highlightedIndex', changes.highlightedIndex);
       switch (type) {
         case useCombobox.stateChangeTypes.InputKeyDownEscape:
           return {
