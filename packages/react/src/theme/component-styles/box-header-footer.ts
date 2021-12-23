@@ -6,6 +6,7 @@ const boxHeader: ComponentThemeConfig = {
     display: 'flex',
     alignItems: 'center',
     px: 'lg',
+    backgroundColor: 'greylight01',
   },
   propToScaleMap: [['size', 'sizes']],
   scales: {
@@ -26,6 +27,7 @@ const boxFooter: ComponentThemeConfig = {
     justifyContent: 'space-between',
     alignItems: 'center',
     px: 'lg',
+    backgroundColor: 'greylight01',
   },
   propToScaleMap: [['size', 'sizes']],
   scales: {
