@@ -68,6 +68,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
     const val = e.currentTarget.value || '';
 
     if (e.key === 'Enter' && val) {
+      e.preventDefault(); // prevent accidently submiting form
       if (tags.find(tag => tag.toLowerCase() === val.toLowerCase())) {
         return;
       }
