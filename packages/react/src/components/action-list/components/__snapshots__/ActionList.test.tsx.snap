@@ -20,6 +20,10 @@ exports[`components/ActionList <ActionList /> renders actionList with item corre
   margin-top: xxs;
 }
 
+.c0:focus-visible {
+  outline: 0px;
+}
+
 .c1 {
   width: 4px;
   position: absolute;
@@ -106,6 +110,10 @@ exports[`components/ActionList <ActionList /> renders correctly 1`] = `
 
 .c0 > :not([hidden]) ~ :not([hidden]) {
   margin-top: xxs;
+}
+
+.c0:focus-visible {
+  outline: 0px;
 }
 
 <div
