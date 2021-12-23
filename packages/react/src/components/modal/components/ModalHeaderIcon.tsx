@@ -22,6 +22,7 @@ const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({ id, className, style,
       justifyContent="center"
       pt="lg"
       px="lg"
+      backgroundColor={'greylight01'}
       {...rest}
     >
       <VisuallyHidden id={id}>{title}</VisuallyHidden>
