@@ -2428,7 +2428,6 @@ export const InputSelectVirtualizedExample: Story<InputSelectSearchVirtualizedPr
       size={size}
       selectedItem={selected}
       placeholder={placeholder}
-      openOnFocus
       disabled={disabled}
       errors={errors}
       itemToString={item => (item ? `${item.timezoneDisplay}` : '')}

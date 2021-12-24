@@ -17,8 +17,6 @@ export interface InputSelectTagsProps {
   disabled?: boolean;
   errors?: boolean;
   hadleInputChange?: (changes: UseMultipleSelectionStateChange<string>) => void;
-  /** open list when onfocus */
-  openOnFocus?: boolean;
   label?: string;
   width?: string | number;
   items: string[];
@@ -56,7 +54,6 @@ function InputSelectTags({
   items,
   value,
   hadleInputChange,
-  openOnFocus = false,
   width = '100%',
   maxHeight,
 }: InputSelectTagsProps) {
@@ -83,7 +80,7 @@ function InputSelectTags({
     getComboboxProps,
     highlightedIndex,
     getItemProps,
-    openMenu,
+    getToggleButtonProps,
   } = useCombobox<string>({
     inputValue,
     items: getFilteredItems,
@@ -108,17 +105,15 @@ function InputSelectTags({
     },
   });
 
-  const handleFocusInput = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleFocusInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     // Prevent accidentally focusing on the input text when tag pills are clicked
     if (e.target !== e.currentTarget) {
       return;
     }
-
     if (tagInputRef.current) {
       tagInputRef.current.focus();
     }
   };
-
   return (
     <Box width={width}>
       <Stack spacing="xxs" display="block" position="relative">
@@ -135,7 +130,9 @@ function InputSelectTags({
           py={9}
           px="sm"
           cursor={disabled ? 'not-allowed' : 'text'}
-          onClick={handleFocusInput}
+          {...getToggleButtonProps({
+            onClick: handleFocusInput,
+          })}
         >
           <Wrap spacing="xxs" display="inline-flex">
             {selectedItems.map((selectedItem, index) => (
@@ -173,15 +170,14 @@ function InputSelectTags({
                 }}
                 onFocus={() => {
                   setFocused(true);
-                  if (openOnFocus) {
-                    openMenu();
-                  }
                 }}
                 onBlur={() => setFocused(false)}
                 placeholder={placeholder}
                 disabled={disabled}
-                ref={tagInputRef}
-                {...getInputProps(getDropdownProps({ preventKeyAction: isOpen }))}
+                {...getInputProps({
+                  ref: tagInputRef,
+                  ...getDropdownProps({ preventKeyAction: isOpen }),
+                })}
               />
             </WrapItem>
           </Wrap>
