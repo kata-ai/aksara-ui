@@ -40,8 +40,6 @@ export interface InputSelectSearchVirtualizedProps<T> {
   itemRenderer?: (item: T) => React.ReactNode;
   /** Name of the field form */
   name?: string;
-  /** open list when onfocus */
-  openOnFocus?: boolean;
   /** Logic on focus */
   onFocus?: () => void;
   /** Logic on blue */

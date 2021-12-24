@@ -36,7 +36,6 @@ export const Example: Story<InputSelectTagsProps> = ({ placeholder, disabled, la
       disabled={disabled}
       errors={errors}
       width={width}
-      openOnFocus
       items={['Test', 'Amd', 'Intel', 'Radeon']}
       value={value}
       hadleInputChange={({ selectedItems }) => {

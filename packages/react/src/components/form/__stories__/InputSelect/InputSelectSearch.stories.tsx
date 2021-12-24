@@ -59,7 +59,6 @@ export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({
       size={size}
       selectedItem={selected}
       placeholder={placeholder}
-      openOnFocus
       disabled={disabled}
       errors={errors}
       itemToString={item => (item ? `${item.label}` : '')}
@@ -113,7 +112,6 @@ export const ListOfStringExample: Story<InputSelectSearchProps<ValueSchema>> = (
       size={size}
       selectedItem={selected}
       placeholder={placeholder}
-      openOnFocus
       disabled={disabled}
       errors={errors}
       handleSelectedItemChange={({ selectedItem }) => {
