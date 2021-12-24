@@ -5,13 +5,15 @@ import { useComponentStyles } from '../../../../system';
 
 export interface OptionListItemBoxProps extends UnstyledButtonProps, React.ComponentPropsWithoutRef<'button'> {
   variant?: 'default' | 'bordered';
+  isActive?: boolean;
+  disabled?: boolean;
 }
 
 const OptionListItemBox = React.forwardRef<HTMLButtonElement, OptionListItemBoxProps>(
-  ({ children, variant = 'default', sx, ...rest }, ref) => {
-    const optionItemStyle = useComponentStyles('optionItem', { variant });
+  ({ children, disabled, isActive, variant = 'default', sx, ...rest }, ref) => {
+    const optionItemStyle = useComponentStyles('optionItem', { variant, isActive, disabled });
     return (
-      <UnstyledButton ref={ref} sx={{ ...optionItemStyle, ...sx }} {...rest}>
+      <UnstyledButton type="button" ref={ref} sx={{ ...optionItemStyle, ...sx }} {...rest}>
         {children}
       </UnstyledButton>
     );
