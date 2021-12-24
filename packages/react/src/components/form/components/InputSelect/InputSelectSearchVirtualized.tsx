@@ -246,7 +246,6 @@ function InputSelect<T>({
                     }}
                   >
                     <ActionListItem
-                      px={'sm'}
                       sx={
                         highlightedIndex === item.index && (!selectedItem || !selected)
                           ? { backgroundColor: 'greylight03', borderRadius: 'lg' }

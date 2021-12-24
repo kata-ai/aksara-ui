@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
 import { InputSelectSearch, InputSelectSearchProps } from '../../components/InputSelect';
-import { Box } from '../../../../layout';
 
 export default {
   title: 'Core/Components/Form/InputSelect/InputSelectSearch',
@@ -65,11 +64,7 @@ export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({
       errors={errors}
       itemToString={item => (item ? `${item.label}` : '')}
       itemValue={item => item?.value ?? ''}
-      itemRenderer={item => (
-        <>
-          <Box width={15} mr="sm">{`${item.label}`}</Box>
-        </>
-      )}
+      itemRenderer={item => item.label}
       handleSelectedItemChange={({ selectedItem }) => {
         if (selectedItem) {
           setSelected(selectedItem);
