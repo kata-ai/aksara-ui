@@ -4,7 +4,7 @@ import { Paragraph } from '../../../../typography';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '.';
 
 export default {
-  title: 'Core/Components/Collapsible/Accordion',
+  title: 'Core/Components/Accordion_Legacy',
   component: [Accordion, AccordionItem],
 };
 
