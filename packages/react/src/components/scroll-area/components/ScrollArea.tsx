@@ -58,7 +58,7 @@ export const ScrollArea: React.FC<ScrollAreaProps> = ({
     <ScrollAreaPrimitive.Root asChild {...rest}>
       <Box style={style} height={height} width={width} overflow={'hidden'}>
         <ScrollAreaPrimitive.Viewport>
-          <Box width={width} height={height}>
+          <Box width={width} height={height} data-testid="scroll-content">
             {children}
           </Box>
         </ScrollAreaPrimitive.Viewport>
