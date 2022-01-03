@@ -2,14 +2,18 @@
 import { DefaultTheme } from 'styled-components';
 import { ComponentThemeConfig, ComponentThemeScaleFn, pseudoSelectors } from '../../system';
 
-const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { theme: DefaultTheme }) => ({
+const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; isActive: boolean; disabled: boolean }> = ({
+  theme,
+  isActive,
+  disabled,
+}) => ({
   display: 'flex',
   alignItems: 'center',
   cursor: 'pointer',
   outline: 'none',
   borderRadius: '12px',
   border: '1px solid transparent',
-  background: theme.colors.grey01,
+  background: isActive ? theme.colors.blue01 : theme.colors.grey01,
   [pseudoSelectors._checked]: {
     background: theme.colors.blue01,
   },
@@ -22,7 +26,7 @@ const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { 
   '&:focus': {
     border: '1px solid rgba(175, 214, 255, 0.7)',
   },
-  [pseudoSelectors._disabled]: {
+  ...(disabled && {
     cursor: 'not-allowed',
     background: theme.colors.greylight01,
     color: 'greymed01',
@@ -31,7 +35,7 @@ const baseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { 
       borderColor: 'rgba(198, 208, 219, 0.5)',
       background: theme.colors.greylight02,
     },
-  },
+  }),
 });
 
 const borderedStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { theme: DefaultTheme }) => ({
@@ -40,7 +44,7 @@ const borderedStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }
   [pseudoSelectors._checked]: {
     borderColor: 'transparent',
   },
-  '&:focus': {
+  '&:focus, &:focus-within': {
     border: '1px solid rgba(175, 214, 255, 0.7)',
   },
   [pseudoSelectors._disabled]: {
