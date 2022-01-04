@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Heading } from '../../../typography';
+import { Text } from '../../../typography';
 import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 
@@ -26,9 +26,9 @@ const BoxFooter: React.FC<BoxFooterProps> = ({
     <Box sx={{ ...boxFooterStyle, ...sx }} className={className} style={style} {...rest}>
       {caption && (
         <Box marginRight={'md'}>
-          <Heading as="p" scale={100} color="greymed04">
+          <Text as="p" scale={200} color="greymed04">
             {caption}
-          </Heading>
+          </Text>
         </Box>
       )}
       {actions && (
