@@ -8,7 +8,7 @@ const TAGS = Array.from({ length: 50 }).map((_, i, a) => `v1.0.1-canary.${a.leng
 
 describe('Component/ScrollArea', () => {
   describe('<ScrollArea/>', () => {
-    test('content is scrollable', () => {
+    test('renders properly', () => {
       const { container } = render(
         <Box backgroundColor={'greylight01'} borderRadius={'sm'} overflow={'hidden'} width={200}>
           <ScrollArea type="always" scroll="vertical" width={200} height={225}>
