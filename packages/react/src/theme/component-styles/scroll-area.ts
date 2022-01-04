@@ -1,7 +1,7 @@
 import type { DefaultTheme } from 'styled-components';
 import type { ComponentThemeConfig, ComponentThemeScaleFn } from '../../system';
 
-const SCROLLBAR_SIZE = 10;
+const SCROLLBAR_SIZE = 8;
 
 const scrollBarThumbsStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ theme }: { theme: DefaultTheme }) => ({
   flex: 1,
