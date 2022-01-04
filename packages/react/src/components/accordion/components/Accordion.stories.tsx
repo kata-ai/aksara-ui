@@ -14,7 +14,7 @@ export default {
       value: [
         {
           name: 'dark',
-          value: '#fcf1f1',
+          value: '#b6b2b2',
         },
       ],
     },
@@ -47,7 +47,7 @@ export const Example = () => {
     <Accordion type="single" defaultValue="item-1" collapsible>
       <Box width={300} backgroundColor={'greylight01'}>
         <AccordionItem value="item-1">
-          <Box borderRadius={'lg'} py="sm" px="xs">
+          <Box py="sm" px="xs">
             <AccordionHeader>
               <Heading as="h3" display={'flex'} scale={300}>
                 <AccordionTrigger>

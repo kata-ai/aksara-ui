@@ -20,7 +20,8 @@ import inputRadio from './form/input-radio';
 import optionItem from './optionItem';
 import pagination from './pagination';
 import actionList from './action-list';
-import saveBar from './saveBar';
+import saveBar from './save-bar';
+import scrollArea from './scroll-area';
 import list from './list';
 import boxHeaderParty from './box-header-footer';
 /**
@@ -50,6 +51,7 @@ const componentStyles = {
   ...optionItem,
   ...pagination,
   ...saveBar,
+  ...scrollArea,
   ...list,
   ...boxHeaderParty,
 };
