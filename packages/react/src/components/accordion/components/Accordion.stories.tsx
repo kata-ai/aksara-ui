@@ -52,7 +52,7 @@ const AccordionChevron = styled(IconChevronUp)`
 export const Example = () => {
   return (
     <Accordion type="single" defaultValue="item-1" collapsible>
-      <Box width={300} backgroundColor={'greylight01'}>
+      <Box width={300} backgroundColor={'greylight01'} p="md">
         <AccordionItem value="item-1">
           <Box>
             <AccordionHeader>
@@ -64,6 +64,7 @@ export const Example = () => {
                     height={40}
                     display={'flex'}
                     flex={1}
+                    borderRadius={'lg'}
                     justifyContent={'space-between'}
                     alignItems={'center'}
                     _hover={{ backgroundColor: 'greylight03' }}
@@ -100,6 +101,7 @@ export const Example = () => {
                     height={40}
                     display={'flex'}
                     flex={1}
+                    borderRadius={'lg'}
                     justifyContent={'space-between'}
                     alignItems={'center'}
                     _hover={{ backgroundColor: 'greylight03' }}
