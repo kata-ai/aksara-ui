@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconChevronRight } from '@aksara-ui/icons';
+import { IconChevronUp } from '@aksara-ui/icons';
 import styled, { keyframes } from 'styled-components';
 import { UnstyledButton } from '../../button';
 import { Box } from '../../../layout';
@@ -42,24 +42,40 @@ const BoxContent = styled(Box)`
   }
 `;
 
+const AccordionChevron = styled(IconChevronUp)`
+  transition: transform 300ms;
+  [data-state='open'] & {
+    transform: rotate(180deg);
+  }
+`;
+
 export const Example = () => {
   return (
     <Accordion type="single" defaultValue="item-1" collapsible>
       <Box width={300} backgroundColor={'greylight01'}>
         <AccordionItem value="item-1">
-          <Box py="sm" px="xs">
+          <Box>
             <AccordionHeader>
               <Heading as="h3" display={'flex'} scale={300}>
                 <AccordionTrigger>
                   <UnstyledButton
+                    py="sm"
+                    px="xs"
                     height={40}
                     display={'flex'}
                     flex={1}
                     justifyContent={'space-between'}
                     alignItems={'center'}
+                    _hover={{ backgroundColor: 'greylight03' }}
+                    _focus={{
+                      boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+                    }}
+                    _focusVisible={{
+                      outline: 'none',
+                    }}
                   >
                     Title
-                    <IconChevronRight size={16} />
+                    <AccordionChevron size={16} />
                   </UnstyledButton>
                 </AccordionTrigger>
               </Heading>
@@ -74,19 +90,28 @@ export const Example = () => {
           </Box>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <Box borderRadius={'lg'} py="sm" px="xs">
+          <Box>
             <AccordionHeader>
               <Heading as="h3" display={'flex'} scale={300}>
                 <AccordionTrigger>
                   <UnstyledButton
+                    py="sm"
+                    px="xs"
                     height={40}
                     display={'flex'}
                     flex={1}
                     justifyContent={'space-between'}
                     alignItems={'center'}
+                    _hover={{ backgroundColor: 'greylight03' }}
+                    _focus={{
+                      boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+                    }}
+                    _focusVisible={{
+                      outline: 'none',
+                    }}
                   >
                     Title
-                    <IconChevronRight size={16} />
+                    <AccordionChevron size={16} />
                   </UnstyledButton>
                 </AccordionTrigger>
               </Heading>
