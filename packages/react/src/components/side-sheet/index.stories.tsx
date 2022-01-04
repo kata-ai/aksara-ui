@@ -31,8 +31,8 @@ export const BasicExample = () => {
             </Heading>
           }
         />
-        <SideSheetContent>
-          <Stack>
+        <SideSheetContent borderTop={'8px solid'} borderBottom={'8px solid'} borderColor={'greylight02'}>
+          <Stack py="md" px="lg">
             <Paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid adiuvas? Illa tamen simplicia, vestra
               versuta.{' '}
@@ -56,6 +56,7 @@ export const BasicExample = () => {
               </Button>
             </Stack>
           }
+          boxShadow="inset 0px 1px 0px #E5EAEF"
         />
       </SideSheet>
     </Box>

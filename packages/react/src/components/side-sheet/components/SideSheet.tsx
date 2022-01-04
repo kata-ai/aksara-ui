@@ -6,7 +6,6 @@ import { TransitionStatus } from 'react-transition-group/Transition';
 
 import { Portal, FocusTrap } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
-import { Card } from '../../card';
 import { ANIMATION_DURATION } from '../constants';
 import { Overlay } from '../../../helpers/overlay';
 
@@ -168,9 +167,16 @@ class SideSheet extends React.Component<SideSheetProps, SideSheetState> {
           }}
           {...rest}
         >
-          <Card display="flex" flexDirection="column" elevation={4} borderRadius={0} width="500px" height="100vh">
+          <Box
+            display="flex"
+            flexDirection="column"
+            borderLeft={'1px solid #E5EAEF'}
+            backgroundColor={'greylight01'}
+            width="500px"
+            height="100vh"
+          >
             {children}
-          </Card>
+          </Box>
         </SideSheetWrapper>
       </Overlay>
     );
