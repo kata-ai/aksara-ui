@@ -4,7 +4,7 @@ import { IconArrowLeft, IconArrowRight } from '@aksara-ui/icons';
 import { Box } from '../../../layout/box';
 import { IconButton } from '../../button';
 import { Text } from '../../../typography';
-import DateNumberButton from './DateNumber';
+import DateNumberButton, { DateNumberVariants } from './DateNumber';
 
 const monthNamesShort = [
   'January',
@@ -57,8 +57,14 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }:
         // let background = today ? 'cornflowerblue' : '';
         // background = selected ? 'purple' : background;
         // background = !selectable ? 'teal' : background;
+        let variant: DateNumberVariants = 'default';
+        if (today) {
+          variant = 'currentDate';
+        } else if (selected) {
+          variant = 'selected';
+        }
         return (
-          <DateNumberButton key={key} {...getDateProps({ dateObj })}>
+          <DateNumberButton key={key} {...getDateProps({ dateObj })} variant={variant}>
             {selectable ? date.getDate() : 'X'}
           </DateNumberButton>
         );
@@ -81,7 +87,7 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }:
   };
   if (calendars.length) {
     return (
-      <Box padding="md" maxWidth="256px">
+      <Box padding="md" maxWidth="256px" boxShadow="4" borderRadius="lg">
         {/* Header */}
         {renderHeader()}
         {calendars.map(calendar => (
@@ -92,7 +98,15 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }:
               display: 'inline-block',
             }}
           >
-            <Box width="100%" position="absolute" textAlign="center" left="0" right="0" top="-27px">
+            <Box
+              width="100%"
+              position="absolute"
+              textAlign="center"
+              left="0"
+              right="0"
+              top="-27px"
+              pointerEvents="none"
+            >
               <Text fontSize="12px" lineHeight="18px" fontWeight="400" color="grey09">
                 {monthNamesShort[calendar.month]} {calendar.year}
               </Text>
