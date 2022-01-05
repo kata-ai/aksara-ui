@@ -29,24 +29,20 @@ export const Example: Story<{ size: 'md' | 'lg' }> = ({ size }) => {
     <Accordion type="single" defaultValue="item-1" collapsible>
       <Box width={300} backgroundColor={'greylight01'} p="md">
         <AccordionItem value="item-1">
-          <Box>
-            <AccordionHeader size={size}>Title</AccordionHeader>
-            <AccordionContent>
-              <Box py="sm" px="xs">
-                This is content
-              </Box>
-            </AccordionContent>
-          </Box>
+          <AccordionHeader size={size}>Title</AccordionHeader>
+          <AccordionContent>
+            <Box py="sm" px="xs">
+              This is content
+            </Box>
+          </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <Box>
-            <AccordionHeader size={size}>Title</AccordionHeader>
-            <AccordionContent>
-              <Box py="sm" px="xs">
-                This is content
-              </Box>
-            </AccordionContent>
-          </Box>
+          <AccordionHeader size={size}>Title</AccordionHeader>
+          <AccordionContent>
+            <Box py="sm" px="xs">
+              This is content
+            </Box>
+          </AccordionContent>
         </AccordionItem>
       </Box>
     </Accordion>

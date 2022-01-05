@@ -3,6 +3,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { AccordionMultipleProps, AccordionSingleProps } from '@radix-ui/react-accordion';
 import styled, { keyframes } from 'styled-components';
 import { IconChevronUp } from '@aksara-ui/icons';
+import { BoxProps } from 'packages/react/dist';
 import { Heading } from '../../../typography';
 import { UnstyledButton } from '../../button';
 import { Box } from '../../../layout';
@@ -15,10 +16,15 @@ export const Accordion: React.FC<AccordionSingleProps | AccordionMultipleProps> 
   );
 };
 
-export const AccordionItem: React.FC<AccordionPrimitive.AccordionItemProps> = ({ children, ...rest }) => {
+export const AccordionItem: React.FC<AccordionPrimitive.AccordionItemProps & BoxProps> = ({
+  children,
+  disabled,
+  value,
+  ...rest
+}) => {
   return (
-    <AccordionPrimitive.Item asChild {...rest}>
-      {children}
+    <AccordionPrimitive.Item asChild disabled={disabled} value={value}>
+      <Box {...rest}>{children}</Box>
     </AccordionPrimitive.Item>
   );
 };
