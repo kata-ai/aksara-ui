@@ -1,84 +1,109 @@
-import { RenderProps } from 'dayzed';
 import React from 'react';
+import { RenderProps, Calendar } from 'dayzed';
+import { IconArrowLeft, IconArrowRight } from '@aksara-ui/icons';
+import { Box } from '../../../layout/box';
+import { IconButton } from '../../button';
+import { Text } from '../../../typography';
+import DateNumberButton from './DateNumber';
 
-const monthNamesShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const monthNamesShort = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'Octtober',
+  'November',
+  'December',
+];
 const weekdayNamesShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const Calendar = ({ calendars, getBackProps, getForwardProps, getDateProps }: RenderProps) => {
+const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }: RenderProps) => {
+  const renderHeader = () => {
+    return (
+      <Box display={['flex']} justifyContent="space-between" alignItems="center">
+        <IconButton variant="plain" aria-label="Back" {...getBackProps({ calendars })}>
+          <IconArrowLeft aria-hidden fill="currentColor" />
+        </IconButton>
+
+        <IconButton variant="plain" aria-label="Next" {...getForwardProps({ calendars })}>
+          <IconArrowRight aria-hidden fill="currentColor" />
+        </IconButton>
+      </Box>
+    );
+  };
+  const renderDateNumber = (calendar: Calendar) => {
+    return calendar.weeks.map((week, weekIndex) =>
+      week.map((dateObj, index) => {
+        const key = `${calendar.month}${calendar.year}${weekIndex}${index}`;
+        if (!dateObj) {
+          return (
+            <div
+              key={key}
+              style={{
+                display: 'inline-block',
+                width: '32px',
+                border: 'none',
+                background: 'transparent',
+              }}
+            />
+          );
+        }
+        const { date, selected, selectable, today } = dateObj;
+        // let background = today ? 'cornflowerblue' : '';
+        // background = selected ? 'purple' : background;
+        // background = !selectable ? 'teal' : background;
+        return (
+          <DateNumberButton key={key} {...getDateProps({ dateObj })}>
+            {selectable ? date.getDate() : 'X'}
+          </DateNumberButton>
+        );
+      })
+    );
+  };
+  const renderWeekLabel = (calendar: Calendar) => {
+    return weekdayNamesShort.map(weekday => (
+      <Box
+        display={['inline-block']}
+        width="32px"
+        key={`${calendar.month}${calendar.year}${weekday}`}
+        textAlign="center"
+      >
+        <Text fontSize="10px" lineHeight="16px" fontWeight="400" color="greymed04" width="32px">
+          {weekday}
+        </Text>
+      </Box>
+    ));
+  };
   if (calendars.length) {
     return (
-      <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
-        <div>
-          <button {...getBackProps({ calendars })}>Back</button>
-          <button {...getForwardProps({ calendars })}>Next</button>
-        </div>
+      <Box padding="md" maxWidth="256px">
+        {/* Header */}
+        {renderHeader()}
         {calendars.map(calendar => (
-          <div
+          <Box
             key={`${calendar.month}${calendar.year}`}
+            position="relative"
             style={{
               display: 'inline-block',
-              width: '50%',
-              padding: '0 10px 30px',
-              boxSizing: 'border-box',
             }}
           >
-            <div>
-              {monthNamesShort[calendar.month]} {calendar.year}
-            </div>
-            {weekdayNamesShort.map(weekday => (
-              <div
-                key={`${calendar.month}${calendar.year}${weekday}`}
-                style={{
-                  display: 'inline-block',
-                  width: 'calc(100% / 7)',
-                  border: 'none',
-                  background: 'transparent',
-                }}
-              >
-                {weekday}
-              </div>
-            ))}
-            {calendar.weeks.map((week, weekIndex) =>
-              week.map((dateObj, index) => {
-                let key = `${calendar.month}${calendar.year}${weekIndex}${index}`;
-                if (!dateObj) {
-                  return (
-                    <div
-                      key={key}
-                      style={{
-                        display: 'inline-block',
-                        width: 'calc(100% / 7)',
-                        border: 'none',
-                        background: 'transparent',
-                      }}
-                    />
-                  );
-                }
-                let { date, selected, selectable, today } = dateObj;
-                let background = today ? 'cornflowerblue' : '';
-                background = selected ? 'purple' : background;
-                background = !selectable ? 'teal' : background;
-                return (
-                  <button
-                    style={{
-                      display: 'inline-block',
-                      width: 'calc(100% / 7)',
-                      border: 'none',
-                      background,
-                    }}
-                    key={key}
-                    {...getDateProps({ dateObj })}
-                  >
-                    {selectable ? date.getDate() : 'X'}
-                  </button>
-                );
-              })
-            )}
-          </div>
+            <Box width="100%" position="absolute" textAlign="center" left="0" right="0" top="-27px">
+              <Text fontSize="12px" lineHeight="18px" fontWeight="400" color="grey09">
+                {monthNamesShort[calendar.month]} {calendar.year}
+              </Text>
+            </Box>
+            {renderWeekLabel(calendar)}
+            {renderDateNumber(calendar)}
+          </Box>
         ))}
-      </div>
+      </Box>
     );
   }
   return null;
 };
-export default Calendar;
+export default CalendarBox;

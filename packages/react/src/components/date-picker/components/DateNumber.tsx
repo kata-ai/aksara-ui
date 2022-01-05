@@ -7,7 +7,7 @@ export type DateNumberVariants = 'currentDate' | 'start' | 'end' | 'selected' | 
 
 export interface DateNumberProps extends React.ComponentPropsWithoutRef<'button'> {
   /** Variant of DateNumber button */
-  variant: DateNumberVariants;
+  variant?: DateNumberVariants;
 }
 
 const DateNumberButton = React.forwardRef<HTMLButtonElement, DateNumberProps>(

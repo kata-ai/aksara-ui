@@ -3,7 +3,7 @@ import { Props, useDayzed } from 'dayzed';
 import { Calendar } from './components';
 
 const Datepicker = (props: Props) => {
-  let dayzedData = useDayzed(props);
+  const dayzedData = useDayzed(props);
 
   return <Calendar {...dayzedData} />;
 };
