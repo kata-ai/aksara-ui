@@ -10,13 +10,17 @@ const primaryNavItem: ComponentThemeConfig = {
     cursor: disabled ? 'not-allowed' : 'pointer',
     backgroundColor: disabled ? 'greylight01' : isActive ? 'blue01' : 'transparent',
     color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
-    '&:hover, &:focus': {
+    '&:hover, &:focus, &:focus-visible': {
       color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
     },
     ...(!disabled
       ? {
           '&:focus': {
             boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+          },
+          '&:focus-visible': {
+            boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+            outline: 'none',
           },
         }
       : {}),
@@ -59,7 +63,7 @@ const secondaryNavItem: ComponentThemeConfig = {
     cursor: disabled ? 'not-allowed' : 'pointer',
     backgroundColor: disabled ? 'greylight01' : isActive ? 'blue01' : 'transparent',
     color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
-    '&:hover, &:focus': {
+    '&:hover, &:focus, &:focus-visible': {
       color: disabled ? 'greymed01' : isActive ? 'blue07' : 'greydark02',
     },
     px: 'md',
@@ -67,6 +71,10 @@ const secondaryNavItem: ComponentThemeConfig = {
       ? {
           '&:focus': {
             boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+          },
+          '&:focus-visible': {
+            boxShadow: `0 0 0 2px rgba(175, 214, 255, 0.7)`,
+            outline: 'none',
           },
         }
       : {}),
