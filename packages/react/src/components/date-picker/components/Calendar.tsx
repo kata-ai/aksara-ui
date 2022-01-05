@@ -5,22 +5,7 @@ import { Box } from '../../../layout/box';
 import { IconButton } from '../../button';
 import { Text } from '../../../typography';
 import DateNumberButton, { DateNumberVariants } from './DateNumber';
-
-const monthNamesShort = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'Octtober',
-  'November',
-  'December',
-];
-const weekdayNamesShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+import { monthNamesFull, weekdayNamesShort } from './calendar-utils';
 
 const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }: RenderProps) => {
   const renderHeader = () => {
@@ -108,7 +93,7 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }:
               pointerEvents="none"
             >
               <Text fontSize="12px" lineHeight="18px" fontWeight="400" color="grey09">
-                {monthNamesShort[calendar.month]} {calendar.year}
+                {monthNamesFull[calendar.month]} {calendar.year}
               </Text>
             </Box>
             {renderWeekLabel(calendar)}

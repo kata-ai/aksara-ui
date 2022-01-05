@@ -1,11 +1,12 @@
 import * as React from 'react';
-import DatePicker from './DatePicker';
+import { SingleDatepicker } from './SingleDatePicker';
 
 export default {
   title: 'Core/Components/Date Picker',
-  component: DatePicker,
+  component: SingleDatepicker,
 };
 
-export const Example = () => {
-  return <DatePicker selected={new Date()} onDateSelected={data => console.log('data', data)} />;
+export const SingleDatePicker = () => {
+  const [selectedDate, setSelectedDate] = React.useState<Date | undefined>();
+  return <SingleDatepicker selected={selectedDate} onDateSelected={data => setSelectedDate(data.date)} />;
 };
