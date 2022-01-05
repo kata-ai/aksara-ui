@@ -1,13 +1,16 @@
 import React from 'react';
 import { RenderProps, Calendar } from 'dayzed';
 import { IconArrowLeft, IconArrowRight } from '@aksara-ui/icons';
-import { Box } from '../../../layout/box';
+import { Box, Stack } from '../../../layout';
 import { IconButton } from '../../button';
 import { Text } from '../../../typography';
 import DateNumberButton, { DateNumberVariants } from './DateNumber';
 import { monthNamesFull, weekdayNamesShort } from './calendar-utils';
 
-const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }: RenderProps) => {
+export interface CalendarProp extends RenderProps {
+  advanceView?: React.ReactNode;
+}
+const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps, advanceView }: CalendarProp) => {
   const renderHeader = () => {
     return (
       <Box display={['flex']} justifyContent="space-between" alignItems="center">
@@ -70,36 +73,43 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps }:
       </Box>
     ));
   };
+
   if (calendars.length) {
     return (
-      <Box padding="md" maxWidth="256px" boxShadow="4" borderRadius="lg">
+      <Box boxShadow="4" borderRadius="lg" display={'inline-flex'}>
+        {advanceView}
         {/* Header */}
-        {renderHeader()}
-        {calendars.map(calendar => (
-          <Box
-            key={`${calendar.month}${calendar.year}`}
-            position="relative"
-            style={{
-              display: 'inline-block',
-            }}
-          >
-            <Box
-              width="100%"
-              position="absolute"
-              textAlign="center"
-              left="0"
-              right="0"
-              top="-27px"
-              pointerEvents="none"
-            >
-              <Text fontSize="12px" lineHeight="18px" fontWeight="400" color="grey09">
-                {monthNamesFull[calendar.month]} {calendar.year}
-              </Text>
-            </Box>
-            {renderWeekLabel(calendar)}
-            {renderDateNumber(calendar)}
-          </Box>
-        ))}
+        <Box padding="md">
+          {renderHeader()}
+          <Stack direction="horizontal" spacing={'xl'}>
+            {calendars.map(calendar => (
+              <Box
+                maxWidth="224px"
+                key={`${calendar.month}${calendar.year}`}
+                position="relative"
+                style={{
+                  display: 'inline-block',
+                }}
+              >
+                <Box
+                  width="100%"
+                  position="absolute"
+                  textAlign="center"
+                  left="0"
+                  right="0"
+                  top="-27px"
+                  pointerEvents="none"
+                >
+                  <Text fontSize="12px" lineHeight="18px" fontWeight="400" color="grey09">
+                    {monthNamesFull[calendar.month]} {calendar.year}
+                  </Text>
+                </Box>
+                {renderWeekLabel(calendar)}
+                {renderDateNumber(calendar)}
+              </Box>
+            ))}
+          </Stack>
+        </Box>
       </Box>
     );
   }
