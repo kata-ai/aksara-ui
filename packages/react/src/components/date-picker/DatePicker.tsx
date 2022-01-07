@@ -1,5 +1,5 @@
-import React from 'react';
 import { DateObj, Props, useDayzed } from 'dayzed';
+import React from 'react';
 import { Calendar } from './components';
 
 // TODO
@@ -27,7 +27,7 @@ export interface DatePickerProps extends Omit<Props, 'onDateSelected' | 'monthsT
   multiDatePicker?: boolean;
 }
 
-const CalendarPicker = ({ multiDatePicker, onChange, advanceView, ...props }: DatePickerImplPickerProps) => {
+const CalendarPicker = ({ multiDatePicker, onChange, advanceView, selected, ...props }: DatePickerImplPickerProps) => {
   const [dateValue, setDateValue] = React.useState<Date>();
   const onDateSelected = (selectedDate: DateObj) => {
     setDateValue(selectedDate.date);
@@ -43,17 +43,38 @@ const CalendarPicker = ({ multiDatePicker, onChange, advanceView, ...props }: Da
     monthsToDisplay: multiDatePicker ? 2 : 1,
     onDateSelected,
   });
+  React.useEffect(() => {
+    if (selected) {
+      setDateValue(selected);
+    }
+  }, [selected]);
+  React.useEffect(() => {
+    if (dateValue && !multiDatePicker && onChange) {
+      onChange(dateValue);
+    }
+  }, [dateValue]);
   return (
     <Calendar
-      onUpdate={multiDatePicker ? () => updateHandler : undefined}
+      onUpdate={multiDatePicker ? updateHandler : undefined}
       selected={dateValue ? [dateValue] : undefined}
       advanceView={advanceView}
       {...dayzedData}
     />
   );
 };
-const CalendarRangePicker = ({ multiDatePicker, onChange, advanceView, ...props }: DatePickerImplRangeProps) => {
+const CalendarRangePicker = ({
+  multiDatePicker,
+  onChange,
+  advanceView,
+  selected,
+  ...props
+}: DatePickerImplRangeProps) => {
   const [dateValue, setDateValue] = React.useState<Date[]>([]);
+  React.useEffect(() => {
+    if (selected) {
+      setDateValue(selected);
+    }
+  }, [selected]);
   const onDateSelected = (selectedDate: DateObj) => {
     if (!dateValue.length || dateValue.length === 2) {
       setDateValue([selectedDate.date]);
@@ -83,7 +104,7 @@ const CalendarRangePicker = ({ multiDatePicker, onChange, advanceView, ...props 
 
   return (
     <Calendar
-      onUpdate={multiDatePicker ? () => updateHandler : undefined}
+      onUpdate={multiDatePicker ? updateHandler : undefined}
       selected={dateValue}
       advanceView={advanceView}
       {...dayzedData}
@@ -97,15 +118,6 @@ export const DatePicker: (props: DatePickerTypePickerProps | DatePickerTypeRange
     const pickerProps = accordionProps as DatePickerImplPickerProps;
     const rangeProps = accordionProps as DatePickerTypeRangeProps;
 
-    // React.useEffect(() => {
-    //   if (selected) {
-    //     if (Array.isArray(selected)) {
-    //       setDateValue(selected);
-    //     } else {
-    //       setDateValue([selected]);
-    //     }
-    //   }
-    // }, [selected]);
     // if range
     // value need to be ordered from start to end date
     // then set as string
@@ -113,12 +125,7 @@ export const DatePicker: (props: DatePickerTypePickerProps | DatePickerTypeRange
 
     // if single date picker
     // value will directyly set to dateValue
-    // React.useEffect(() => {
-    //   if (dateValue && type === 'picker' && onChange) {
-    //     onChange(dateValue);
-    //     if (onClose) onClose();
-    //   }
-    // }, [dateValue]);
+    //
     // TODO
 
     if (type === 'range') {
