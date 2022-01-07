@@ -1,16 +1,56 @@
 import React from 'react';
-import { RenderProps, Calendar } from 'dayzed';
+import { RenderProps, Calendar, DateObj } from 'dayzed';
 import { IconArrowLeft, IconArrowRight } from '@aksara-ui/icons';
 import { Box, Stack } from '../../../layout';
-import { IconButton } from '../../button';
+import { Button, IconButton } from '../../button';
 import { Text } from '../../../typography';
 import DateNumberButton, { DateNumberVariants } from './DateNumber';
 import { monthNamesFull, weekdayNamesShort } from './calendar-utils';
 
 export interface CalendarProp extends RenderProps {
   advanceView?: React.ReactNode;
+  selected?: Date[];
+  onUpdate?: () => void;
+  onCancel?: () => void;
 }
-const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps, advanceView }: CalendarProp) => {
+
+const getVariant = ({ today, selected, date }: DateObj, selectedDate?: Date[]) => {
+  let variant: DateNumberVariants = 'default';
+  if (today) {
+    variant = 'currentDate';
+  }
+  if (selected) {
+    variant = 'selected';
+  }
+  if (selectedDate && selectedDate.length === 2) {
+    if (selectedDate[0].getTime() === date.getTime()) {
+      variant = 'start';
+    } else if (selectedDate[0] < date && date < selectedDate[1]) {
+      variant = 'road';
+    } else if (selectedDate[1].getTime() === date.getTime()) {
+      variant = 'end';
+    }
+  }
+  return variant;
+};
+
+const CalendarBox = ({
+  calendars,
+  getBackProps,
+  getForwardProps,
+  getDateProps,
+  advanceView,
+  onUpdate,
+  onCancel,
+  selected,
+}: CalendarProp) => {
+  const multiDatePicker = calendars.length > 1;
+  // TODO
+  // when multiDatePicker true, callback is called after hit Update Button
+  // if singleDatePicker then callback is called after hit DateNumber
+
+  // Create option autoClose after set value or not
+
   const renderHeader = () => {
     return (
       <Box display={['flex']} justifyContent="space-between" alignItems="center">
@@ -24,6 +64,7 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps, a
       </Box>
     );
   };
+
   const renderDateNumber = (calendar: Calendar) => {
     return calendar.weeks.map((week, weekIndex) =>
       week.map((dateObj, index) => {
@@ -41,18 +82,13 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps, a
             />
           );
         }
-        const { date, selected, selectable, today } = dateObj;
+        const { date, selectable } = dateObj;
         // let background = today ? 'cornflowerblue' : '';
         // background = selected ? 'purple' : background;
         // background = !selectable ? 'teal' : background;
-        let variant: DateNumberVariants = 'default';
-        if (today) {
-          variant = 'currentDate';
-        } else if (selected) {
-          variant = 'selected';
-        }
+
         return (
-          <DateNumberButton key={key} {...getDateProps({ dateObj })} variant={variant}>
+          <DateNumberButton key={key} {...getDateProps({ dateObj })} variant={getVariant(dateObj, selected)}>
             {selectable ? date.getDate() : 'X'}
           </DateNumberButton>
         );
@@ -72,6 +108,22 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps, a
         </Text>
       </Box>
     ));
+  };
+  // TODO
+  // render footer that has cancel and update button
+  const renderFooter = () => {
+    // TODO
+    // call onUpdate()
+    return (
+      <Stack direction="horizontal" spacing="xs" flex={1}>
+        <Button block size="lg" onClick={onCancel}>
+          Cancel
+        </Button>
+        <Button block variant="primary" size="lg" onClick={onUpdate}>
+          Update
+        </Button>
+      </Stack>
+    );
   };
 
   if (calendars.length) {
@@ -109,6 +161,7 @@ const CalendarBox = ({ calendars, getBackProps, getForwardProps, getDateProps, a
               </Box>
             ))}
           </Stack>
+          {multiDatePicker && renderFooter()}
         </Box>
       </Box>
     );
