@@ -8,18 +8,18 @@ export interface OptionAdvancedDatePicker {
   label: string;
   value: string;
 }
-export interface AdvancedOptionProps {
+export interface AdvancedOptionProps<T extends string> {
   options: Array<OptionAdvancedDatePicker>;
-  optionHandler: (value: string) => void;
+  optionHandler: (value: T) => void;
 }
-export const AdvancedOption = ({ options, optionHandler }: AdvancedOptionProps) => {
+export const AdvancedOption = <T extends string>({ options, optionHandler }: AdvancedOptionProps<T>) => {
   return (
     <Box p="md" borderRight={'1px solid'} borderColor={'#E5EAEF'}>
-      <RadioGroupRoot>
-        <Stack direction="vertical" spacing="xs" width="160px">
+      <RadioGroupRoot onValueChange={value => optionHandler(value as T)}>
+        <Stack direction="vertical" spacing="xxs" width="160px">
           {options.map(option => {
             return (
-              <RadioGroupItem value={option.value} onChange={e => optionHandler(e.currentTarget.value)}>
+              <RadioGroupItem value={option.value}>
                 <OptionListItemBox display="flex" alignItems={'center'} p="xs" id={option.value}>
                   <Box backgroundColor={'greylight01'} width={16} height={16} borderRadius={16} position={'relative'}>
                     <Box
