@@ -76,7 +76,7 @@ const CalendarRangePicker = ({
     if (!dateValue.length || dateValue.length === 2) {
       setDateValue([selectedDate.date]);
     } else {
-      if (selectedDate.date.getTime() === dateValue[0].getTime()) {
+      if (selectedDate.date.toDateString() === dateValue[0].toDateString()) {
         return;
       }
       if (new Date(dateValue[0]) > selectedDate.date) {

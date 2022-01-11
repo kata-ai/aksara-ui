@@ -135,48 +135,47 @@ interface DatePickerAction {
   payload?: Date[] | undefined;
 }
 function dateReducer(state: DatePickerState, action: DatePickerAction) {
+  const today = new Date();
   switch (action.type) {
     case DatePickerKind.UPDATE: {
       return { ...state, selectedDate: action.payload };
     }
     case DatePickerKind.TODAY: {
-      return { ...state, selectedDate: [new Date(), new Date()] };
+      return { ...state, selectedDate: [today, today] };
     }
     case DatePickerKind.YESTERDAY: {
       const yesterday = new Date();
-      yesterday.setDate(yesterday.getDate() - 1);
-      return { ...state, selectedDate: [yesterday, new Date()] };
+      yesterday.setDate(today.getDate() - 1);
+      return { ...state, selectedDate: [yesterday, today] };
     }
     case DatePickerKind.LAST_7_DAYS: {
       const last7Days = new Date();
-      last7Days.setDate(last7Days.getDate() - 7);
-      return { ...state, selectedDate: [last7Days, new Date()] };
+      last7Days.setDate(today.getDate() - 7);
+      return { ...state, selectedDate: [last7Days, today] };
     }
     case DatePickerKind.LAST_14_DAYS: {
       const last14Days = new Date();
-      last14Days.setDate(last14Days.getDate() - 14);
-      return { ...state, selectedDate: [last14Days, new Date()] };
+      last14Days.setDate(today.getDate() - 14);
+      return { ...state, selectedDate: [last14Days, today] };
     }
     case DatePickerKind.LAST_28_DAYS: {
       const last28Days = new Date();
-      last28Days.setDate(last28Days.getDate() - 28);
-      return { ...state, selectedDate: [last28Days, new Date()] };
+      last28Days.setDate(today.getDate() - 28);
+      return { ...state, selectedDate: [last28Days, today] };
     }
     case DatePickerKind.THIS_MONTH: {
-      const startThisMonth = new Date();
-      const endThisMonth = new Date(startThisMonth.getFullYear(), startThisMonth.getMonth() + 1, 0);
-      startThisMonth.setDate(1);
+      const startThisMonth = new Date(today.getFullYear(), today.getMonth(), 1, 0);
+      const endThisMonth = new Date(startThisMonth.getFullYear(), startThisMonth.getMonth() + 1, 0, 0);
       return { ...state, selectedDate: [startThisMonth, endThisMonth] };
     }
     case DatePickerKind.THIS_QUARTER: {
-      const startThisQuater = new Date();
+      const startThisQuater = new Date(today.getFullYear(), Math.floor(today.getMonth() / 3) * 3, 1, 0);
       const endThisQuater = new Date(
         startThisQuater.getFullYear(),
         (Math.floor(startThisQuater.getMonth() / 3) + 1) * 3,
+        0,
         0
       );
-      startThisQuater.setMonth(Math.floor(startThisQuater.getMonth() / 3) * 3);
-      startThisQuater.setDate(1);
       return { ...state, selectedDate: [startThisQuater, endThisQuater] };
     }
     default: {
