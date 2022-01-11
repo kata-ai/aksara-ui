@@ -22,13 +22,13 @@ const getVariant = ({ today, selected, date }: DateObj, selectedDate?: Date[]) =
   if (selected) {
     variant = 'selected';
   }
-  if (selectedDate && selectedDate.length === 2 && selectedDate[0].getTime() !== selectedDate[1].getTime()) {
-    if (selectedDate[0].getTime() === date.getTime()) {
+  if (selectedDate && selectedDate.length === 2 && selectedDate[0].toDateString() !== selectedDate[1].toDateString()) {
+    if (selectedDate[0].toDateString() === date.toDateString()) {
       variant = 'start';
+    } else if (selectedDate[1].toDateString() === date.toDateString()) {
+      variant = 'end';
     } else if (selectedDate[0] < date && date < selectedDate[1]) {
       variant = 'road';
-    } else if (selectedDate[1].getTime() === date.getTime()) {
-      variant = 'end';
     }
   }
   return variant;
@@ -45,7 +45,6 @@ const CalendarBox = ({
   selected,
 }: CalendarProp) => {
   const multiDatePicker = calendars.length > 1;
-
   const renderHeader = () => {
     return (
       <Box display={['flex']} justifyContent="space-between" alignItems="center">
@@ -107,7 +106,7 @@ const CalendarBox = ({
 
   const renderFooter = () => {
     return (
-      <Stack direction="horizontal" spacing="xs" flex={1}>
+      <Stack direction="horizontal" spacing="md" flex={1}>
         <Button block size="md" onClick={onCancel}>
           Cancel
         </Button>
