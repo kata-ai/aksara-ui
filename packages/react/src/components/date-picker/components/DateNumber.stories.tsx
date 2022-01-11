@@ -1,6 +1,6 @@
 import * as React from 'react';
-import DateNumber, { DateNumberProps } from './DateNumber';
 import { Story } from '@storybook/react';
+import DateNumber, { DateNumberProps } from './DateNumber';
 
 export default {
   title: 'Core/Components/Date Picker/Date Number',
