@@ -44,14 +44,16 @@ export const LargePageNumbers = () => {
 export const WithPaginationDetail = () => {
   const [currentPage, setCurrentPage] = React.useState(10);
   const [limit, setLimit] = React.useState(10);
+  const length = 475;
+  const totalPages = Math.ceil(length / limit);
 
   return (
     <Box display="flex" flexDirection="column" height="80vh" justifyContent="space-between">
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <PaginationDetail page={currentPage} limit={limit} total={50 * limit} length={limit} />
+        <PaginationDetail page={currentPage} limit={limit} length={length} />
         <Pagination
           current={currentPage}
-          total={50}
+          total={totalPages}
           onSelect={select => {
             setCurrentPage(select);
             action('select-page')(select);
@@ -68,10 +70,10 @@ export const WithPaginationDetail = () => {
         />
       </Box>
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <PaginationDetail page={currentPage} limit={limit} total={50 * limit} length={limit} />
+        <PaginationDetail page={currentPage} limit={limit} length={length} />
         <Pagination
           current={currentPage}
-          total={50}
+          total={totalPages}
           onSelect={select => {
             setCurrentPage(select);
             action('select-page')(select);
