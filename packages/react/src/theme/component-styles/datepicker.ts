@@ -34,6 +34,13 @@ const dateNumber: ComponentThemeConfig = {
     height: '32px',
     fontSize: 200,
     color: 'greydark-02',
+    '&:not([disabled])': {
+      '&:focus': {
+        outline: 'none',
+        border: '1px solid rgba(175, 214, 255, 0.7)',
+        borderRadius: '32px',
+      },
+    },
   },
   propToScaleMap: [['variant', 'variants']],
   scales: {

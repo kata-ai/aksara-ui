@@ -106,7 +106,7 @@ const CalendarBox = ({
 
   const renderFooter = () => {
     return (
-      <Stack direction="horizontal" spacing="xs" flex={1}>
+      <Stack direction="horizontal" spacing="md" flex={1}>
         <Button block size="md" onClick={onCancel}>
           Cancel
         </Button>

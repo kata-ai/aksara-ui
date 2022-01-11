@@ -34,7 +34,7 @@ export const InputSingleDatePicker = () => {
             <InputText
               id="textDummy"
               name="textDummy"
-              placeholder="Type here..."
+              placeholder="Select Date"
               readOnly
               inputSize={'md'}
               value={selectedDate && Intl.DateTimeFormat('en-US').format(selectedDate)}
@@ -44,7 +44,7 @@ export const InputSingleDatePicker = () => {
             <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent placement={'bottom'} align={'end'}>
+        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} onOpenAutoFocus={e => e.preventDefault()}>
           <DatePicker
             type="picker"
             selected={selectedDate}
@@ -83,7 +83,7 @@ export const InputMultipleDateRangePicker = () => {
             <InputText
               id="textDummy"
               name="textDummy"
-              placeholder="Type here..."
+              placeholder="Select Date"
               readOnly
               inputSize={'md'}
               value={
@@ -98,7 +98,7 @@ export const InputMultipleDateRangePicker = () => {
             <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent placement={'bottom'} align={'end'}>
+        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} onOpenAutoFocus={e => e.preventDefault()}>
           <DatePicker
             type="range"
             multiDatePicker
@@ -228,7 +228,7 @@ export const InputAdvancedDatePickerRange = () => {
             <InputText
               id="textDummy"
               name="textDummy"
-              placeholder="Type here..."
+              placeholder="Select Date"
               readOnly
               inputSize={'md'}
               value={
@@ -243,7 +243,7 @@ export const InputAdvancedDatePickerRange = () => {
             <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent placement={'bottom'} align={'end'}>
+        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'}>
           <DatePicker
             advanceView={<AdvancedOption options={options} optionHandler={optionHandler} />}
             type="range"
