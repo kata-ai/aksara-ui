@@ -23,37 +23,6 @@ export const SingleDatePicker = () => {
     />
   );
 };
-
-export const MultipleDatePicker = () => {
-  const [selectedDate, setSelectedDate] = React.useState<Date | undefined>();
-  return (
-    <DatePicker
-      type="picker"
-      multiDatePicker
-      selected={selectedDate}
-      onChange={date => {
-        console.log(date);
-        setSelectedDate(date);
-      }}
-    />
-  );
-};
-
-export const MultipleDateRangePicker = () => {
-  const [selectedDate, setSelectedDate] = React.useState<Date[] | undefined>();
-  return (
-    <DatePicker
-      type="range"
-      multiDatePicker
-      selected={selectedDate}
-      onChange={date => {
-        console.log(date);
-        setSelectedDate(date);
-      }}
-    />
-  );
-};
-
 export const InputSingleDatePicker = () => {
   const [selectedDate, setSelectedDate] = React.useState<Date | undefined>();
   return (
@@ -88,8 +57,65 @@ export const InputSingleDatePicker = () => {
     </Stack>
   );
 };
+
+export const MultipleDateRangePicker = () => {
+  const [selectedDate, setSelectedDate] = React.useState<Date[] | undefined>();
+  return (
+    <DatePicker
+      type="range"
+      multiDatePicker
+      selected={selectedDate}
+      onChange={date => {
+        console.log(date);
+        setSelectedDate(date);
+      }}
+    />
+  );
+};
+export const InputMultipleDateRangePicker = () => {
+  const [selectedDate, setSelectedDate] = React.useState<Date[] | undefined>();
+  return (
+    <Stack spacing="xs">
+      <FormLabel htmlFor="textDummy">Date Input</FormLabel>
+      <Popover>
+        <PopoverTrigger>
+          <InputGroup width="100%" maxWidth={360}>
+            <InputText
+              id="textDummy"
+              name="textDummy"
+              placeholder="Type here..."
+              readOnly
+              inputSize={'md'}
+              value={
+                selectedDate &&
+                `${Intl.DateTimeFormat('en-US').format(selectedDate[0])} - ${Intl.DateTimeFormat('en-US').format(
+                  selectedDate[1]
+                )}`
+              }
+              width="100%"
+              pr={36}
+            />
+            <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
+          </InputGroup>
+        </PopoverTrigger>
+        <PopoverContent placement={'bottom'} align={'end'}>
+          <DatePicker
+            type="range"
+            multiDatePicker
+            selected={selectedDate}
+            onChange={date => {
+              console.log(date);
+              setSelectedDate(date);
+            }}
+          />
+        </PopoverContent>
+      </Popover>
+    </Stack>
+  );
+};
+
 interface DatePickerState {
-  selectedDate?: Date;
+  selectedDate?: Date[];
 }
 // eslint-disable-next-line no-shadow
 enum DatePickerKind {
@@ -106,7 +132,7 @@ enum DatePickerKind {
 type DatePickerKindValue = `${DatePickerKind}`;
 interface DatePickerAction {
   type: DatePickerKindValue;
-  payload?: Date | undefined;
+  payload?: Date[] | undefined;
 }
 function dateReducer(state: DatePickerState, action: DatePickerAction) {
   switch (action.type) {
@@ -114,67 +140,71 @@ function dateReducer(state: DatePickerState, action: DatePickerAction) {
       return { ...state, selectedDate: action.payload };
     }
     case DatePickerKind.TODAY: {
-      return { ...state, selectedDate: new Date() };
+      return { ...state, selectedDate: [new Date(), new Date()] };
     }
     case DatePickerKind.YESTERDAY: {
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
-      return { ...state, selectedDate: yesterday };
+      return { ...state, selectedDate: [yesterday, new Date()] };
     }
     case DatePickerKind.LAST_7_DAYS: {
       const last7Days = new Date();
       last7Days.setDate(last7Days.getDate() - 7);
-      return { ...state, selectedDate: last7Days };
+      return { ...state, selectedDate: [last7Days, new Date()] };
     }
     case DatePickerKind.LAST_14_DAYS: {
       const last14Days = new Date();
       last14Days.setDate(last14Days.getDate() - 14);
-      return { ...state, selectedDate: last14Days };
+      return { ...state, selectedDate: [last14Days, new Date()] };
     }
     case DatePickerKind.LAST_28_DAYS: {
       const last28Days = new Date();
       last28Days.setDate(last28Days.getDate() - 28);
-      return { ...state, selectedDate: last28Days };
+      return { ...state, selectedDate: [last28Days, new Date()] };
     }
     case DatePickerKind.THIS_MONTH: {
-      const thisMonth = new Date();
-      thisMonth.setDate(1);
-      return { ...state, selectedDate: thisMonth };
+      const startThisMonth = new Date();
+      const endThisMonth = new Date(startThisMonth.getFullYear(), startThisMonth.getMonth() + 1, 0);
+      startThisMonth.setDate(1);
+      return { ...state, selectedDate: [startThisMonth, endThisMonth] };
     }
     case DatePickerKind.THIS_QUARTER: {
-      const thisQuater = new Date();
-      thisQuater.setMonth(Math.floor(thisQuater.getMonth() / 3) * 3);
-      thisQuater.setDate(1);
-      return { ...state, selectedDate: thisQuater };
+      const startThisQuater = new Date();
+      const endThisQuater = new Date(
+        startThisQuater.getFullYear(),
+        (Math.floor(startThisQuater.getMonth() / 3) + 1) * 3,
+        0
+      );
+      startThisQuater.setMonth(Math.floor(startThisQuater.getMonth() / 3) * 3);
+      startThisQuater.setDate(1);
+      return { ...state, selectedDate: [startThisQuater, endThisQuater] };
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
   }
 }
+const options: OptionAdvancedDatePicker[] = [
+  { label: 'Today', value: DatePickerKind.TODAY },
+  { label: 'Yesterday', value: DatePickerKind.YESTERDAY },
+  { label: 'Last 7 days', value: DatePickerKind.LAST_7_DAYS },
+  { label: 'Last 14 days', value: DatePickerKind.LAST_14_DAYS },
+  { label: 'Last 28 days', value: DatePickerKind.LAST_28_DAYS },
+  { label: 'This Month', value: DatePickerKind.THIS_MONTH },
+  { label: 'This Quarter', value: DatePickerKind.THIS_QUARTER },
+];
 
-export const AdvancedDatePicker = () => {
+export const AdvancedDatePickerRange = () => {
   const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, { selectedDate: undefined });
 
-  const options: OptionAdvancedDatePicker[] = [
-    { label: 'Today', value: DatePickerKind.TODAY },
-    { label: 'Yesterday', value: DatePickerKind.YESTERDAY },
-    { label: 'Last 7 days', value: DatePickerKind.LAST_7_DAYS },
-    { label: 'Last 14 days', value: DatePickerKind.LAST_14_DAYS },
-    { label: 'Last 28 days', value: DatePickerKind.LAST_28_DAYS },
-    { label: 'This Month', value: DatePickerKind.THIS_MONTH },
-    { label: 'This Quarter', value: DatePickerKind.THIS_QUARTER },
-  ];
   const optionHandler = (value: DatePickerKindValue) => {
-    // TODO useReducer to handle state update
-    console.log('value', value);
     dispatch({ type: value });
   };
   return (
     <DatePicker
       advanceView={<AdvancedOption options={options} optionHandler={optionHandler} />}
-      type="picker"
-      date={selectedDate}
+      type="range"
+      date={selectedDate?.[1]}
       selected={selectedDate}
       multiDatePicker
       onChange={date => {
@@ -182,5 +212,52 @@ export const AdvancedDatePicker = () => {
         dispatch({ type: DatePickerKind.UPDATE, payload: date });
       }}
     />
+  );
+};
+
+export const InputAdvancedDatePickerRange = () => {
+  const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, { selectedDate: undefined });
+  const optionHandler = (value: DatePickerKindValue) => {
+    dispatch({ type: value });
+  };
+  return (
+    <Stack spacing="xs">
+      <FormLabel htmlFor="textDummy">Date Input</FormLabel>
+      <Popover>
+        <PopoverTrigger>
+          <InputGroup width="100%" maxWidth={360}>
+            <InputText
+              id="textDummy"
+              name="textDummy"
+              placeholder="Type here..."
+              readOnly
+              inputSize={'md'}
+              value={
+                selectedDate &&
+                `${Intl.DateTimeFormat('en-US').format(selectedDate[0])} - ${Intl.DateTimeFormat('en-US').format(
+                  selectedDate[1]
+                )}`
+              }
+              width="100%"
+              pr={36}
+            />
+            <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
+          </InputGroup>
+        </PopoverTrigger>
+        <PopoverContent placement={'bottom'} align={'end'}>
+          <DatePicker
+            advanceView={<AdvancedOption options={options} optionHandler={optionHandler} />}
+            type="range"
+            date={selectedDate?.[1]}
+            selected={selectedDate}
+            multiDatePicker
+            onChange={date => {
+              console.log(date);
+              dispatch({ type: DatePickerKind.UPDATE, payload: date });
+            }}
+          />
+        </PopoverContent>
+      </Popover>
+    </Stack>
   );
 };

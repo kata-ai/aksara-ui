@@ -2,9 +2,6 @@ import { DateObj, Props, useDayzed } from 'dayzed';
 import React from 'react';
 import { Calendar } from './components';
 
-// TODO
-// make 2 interface for picker and range
-
 interface DatePickerTypePickerProps extends DatePickerImplPickerProps {
   type: 'picker';
 }
@@ -98,7 +95,11 @@ const CalendarRangePicker = ({
 
   const updateHandler = () => {
     if (dateValue && onChange) {
-      onChange(dateValue);
+      if (dateValue.length === 1) {
+        onChange([dateValue[0], dateValue[0]]);
+      } else {
+        onChange(dateValue);
+      }
     }
   };
 
@@ -118,29 +119,8 @@ export const DatePicker: (props: DatePickerTypePickerProps | DatePickerTypeRange
     const pickerProps = accordionProps as DatePickerImplPickerProps;
     const rangeProps = accordionProps as DatePickerTypeRangeProps;
 
-    // if range
-    // value need to be ordered from start to end date
-    // then set as string
-    // if click again, then reset value first then set first value again
-
-    // if single date picker
-    // value will directyly set to dateValue
-    //
-    // TODO
-
     if (type === 'range') {
       return <CalendarRangePicker {...rangeProps} />;
     }
     return <CalendarPicker {...pickerProps} />;
-
-    // TODO
-    // handle range state value
-    // handle selected state
-
-    // useEffect
-    // every value change
-    // execute callback
-    // callback : (data:Object)=>void
-    // range : {start:Date,end:Date}
-    // single: Date
   };

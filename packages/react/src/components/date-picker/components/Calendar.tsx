@@ -22,7 +22,7 @@ const getVariant = ({ today, selected, date }: DateObj, selectedDate?: Date[]) =
   if (selected) {
     variant = 'selected';
   }
-  if (selectedDate && selectedDate.length === 2) {
+  if (selectedDate && selectedDate.length === 2 && selectedDate[0].getTime() !== selectedDate[1].getTime()) {
     if (selectedDate[0].getTime() === date.getTime()) {
       variant = 'start';
     } else if (selectedDate[0] < date && date < selectedDate[1]) {
@@ -45,11 +45,6 @@ const CalendarBox = ({
   selected,
 }: CalendarProp) => {
   const multiDatePicker = calendars.length > 1;
-  // TODO
-  // when multiDatePicker true, callback is called after hit Update Button
-  // if singleDatePicker then callback is called after hit DateNumber
-
-  // Create option autoClose after set value or not
 
   const renderHeader = () => {
     return (
@@ -109,17 +104,14 @@ const CalendarBox = ({
       </Box>
     ));
   };
-  // TODO
-  // render footer that has cancel and update button
+
   const renderFooter = () => {
-    // TODO
-    // call onUpdate()
     return (
       <Stack direction="horizontal" spacing="xs" flex={1}>
-        <Button block size="lg" onClick={onCancel}>
+        <Button block size="md" onClick={onCancel}>
           Cancel
         </Button>
-        <Button block variant="primary" size="lg" onClick={onUpdate}>
+        <Button block variant="primary" size="md" onClick={onUpdate}>
           Update
         </Button>
       </Stack>
