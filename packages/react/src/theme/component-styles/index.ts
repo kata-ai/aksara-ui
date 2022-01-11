@@ -24,6 +24,7 @@ import saveBar from './save-bar';
 import scrollArea from './scroll-area';
 import list from './list';
 import boxHeaderParty from './box-header-footer';
+import datepicker from './datepicker';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -54,6 +55,7 @@ const componentStyles = {
   ...scrollArea,
   ...list,
   ...boxHeaderParty,
+  ...datepicker,
 };
 
 export default componentStyles;

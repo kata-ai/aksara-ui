@@ -50,6 +50,7 @@
     "@types/styled-system__theme-get": "^5.0.2",
     "clsx": "^1.1.1",
     "csstype": "^3.0.9",
+    "dayzed": "^3.2.2",
     "deepmerge": "^4.2.2",
     "downshift": "^6.1.7",
     "focus-trap": "^6.6.0",
