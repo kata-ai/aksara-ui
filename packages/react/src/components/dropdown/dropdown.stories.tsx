@@ -4,8 +4,12 @@ import * as React from 'react';
 import { Button } from '../button';
 import { ButtonGroup } from '../button-group';
 import { DropdownMenu, DropdownMenuProps } from './components/DropdownMenu';
-import { DropdownMenuItem, DropdownMenuDivider, DropdownMenuHeader } from './components/DropdownMenuItem';
-import DropdownMenuTrigerer from './components/DropdownMenuItem/DropdownMenuTrigerer';
+import {
+  DropdownMenuItem,
+  DropdownMenuDivider,
+  DropdownMenuHeader,
+  DropdownMenuTriger,
+} from './components/DropdownMenuItem';
 import { Box } from '../../layout';
 import DropdownMenuContent, { DropdownMenuContentProps } from './components/DropdownMenuItem/DropdownMenuContent';
 
@@ -52,9 +56,9 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
       height={640}
     >
       <DropdownMenu width={200}>
-        <DropdownMenuTrigerer>
+        <DropdownMenuTriger>
           <Button>Trigger</Button>
-        </DropdownMenuTrigerer>
+        </DropdownMenuTriger>
         <DropdownMenuContent width={200} side={side} align={align}>
           {dropdownList.map((val, idx) => (
             <Box key={val.header || val.value} px={'sm'}>
