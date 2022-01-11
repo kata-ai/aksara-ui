@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import PaginationDetail from './PaginationDetail';
+import { PaginationDetail } from '..';
 
 describe('components/PaginationDetail', () => {
   test('renders correctly', () => {
