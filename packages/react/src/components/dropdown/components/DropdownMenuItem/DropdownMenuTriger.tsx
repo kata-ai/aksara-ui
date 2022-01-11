@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import styled from 'styled-components';
 
-export interface DropdownTriggererProps {
+export interface DropdownTriggerProps {
   children?: React.ReactNode;
 }
 
@@ -13,8 +13,8 @@ const Trigger = styled(RadixDropdownMenu.Trigger)`
   }
 `;
 
-const DropdownMenuTriggerer: React.FC<DropdownTriggererProps> = ({ children }) => {
+const DropdownMenuTrigger: React.FC<DropdownTriggerProps> = ({ children }) => {
   return <Trigger asChild>{children}</Trigger>;
 };
 
-export default DropdownMenuTriggerer;
+export default DropdownMenuTrigger;
