@@ -9,6 +9,7 @@ describe('Components/PageHeader', () => {
     test('renders title correctly', () => {
       const { getByText } = render(
         <SaveBar
+          isShow
           maxWidth="800px"
           label="Unsaved Changes"
           actions={
@@ -26,6 +27,7 @@ describe('Components/PageHeader', () => {
     test('renders actions correctly', () => {
       const { getAllByRole } = render(
         <SaveBar
+          isShow
           maxWidth="800px"
           label="Unsaved Changes"
           actions={
@@ -39,6 +41,25 @@ describe('Components/PageHeader', () => {
 
       const actions = getAllByRole('button');
       expect(actions).toHaveLength(2);
+    });
+
+    test('hide savebar', () => {
+      const { queryByText } = render(
+        <SaveBar
+          isShow={false}
+          maxWidth="800px"
+          label="Unsaved Changes"
+          actions={
+            <ButtonGroup size="md">
+              <Button type="button">Label</Button>
+              <Button variant="primary">Label</Button>
+            </ButtonGroup>
+          }
+        />
+      );
+
+      const title = queryByText(/Unsaved Changes/i);
+      expect(title).toBeNull();
     });
   });
 });
