@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from '../../../layout/box/components/Box';
 import { Text } from '../../../typography';
 import { Button } from '../../button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTriger } from '../../dropdown';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../../dropdown';
 
 export interface PaginationFilterProps<T> {
   /** Total limit of pages. */
@@ -32,11 +32,11 @@ const PaginationFilter = ({
         {label}
       </Text>
       <DropdownMenu maxWidth={300}>
-        <DropdownMenuTriger>
+        <DropdownMenuTrigger>
           <Button type="button" size="md" icon={IconChevronDown} iconPosition="right">
             {selectedItem}
           </Button>
-        </DropdownMenuTriger>
+        </DropdownMenuTrigger>
         <DropdownMenuContent side={'bottom'}>
           {items.map(item => {
             return (

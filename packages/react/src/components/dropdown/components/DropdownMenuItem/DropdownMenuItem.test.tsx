@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { DropdownMenuContent, DropdownMenuDivider, DropdownMenuItem, DropdownMenuTriger } from '.';
+import { DropdownMenuContent, DropdownMenuDivider, DropdownMenuItem, DropdownMenuTrigger } from '.';
 import { DropdownMenu } from '../DropdownMenu';
 import { Box } from '../../../../layout';
 
@@ -9,9 +9,9 @@ describe('components/Dropdown', () => {
     test('renders correctly', () => {
       const { container } = render(
         <DropdownMenu width={200}>
-          <DropdownMenuTriger>
+          <DropdownMenuTrigger>
             <Box>Hello</Box>
-          </DropdownMenuTriger>
+          </DropdownMenuTrigger>
           <DropdownMenuContent side={'bottom'}>
             <DropdownMenuItem disabled>Hello again</DropdownMenuItem>
             <DropdownMenuDivider />

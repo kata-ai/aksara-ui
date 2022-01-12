@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuDivider,
   DropdownMenuHeader,
-  DropdownMenuTriger,
+  DropdownMenuTrigger,
 } from './components/DropdownMenuItem';
 import { Box } from '../../layout';
 import DropdownMenuContent, { DropdownMenuContentProps } from './components/DropdownMenuItem/DropdownMenuContent';
@@ -56,9 +56,9 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
       height={640}
     >
       <DropdownMenu width={200}>
-        <DropdownMenuTriger>
+        <DropdownMenuTrigger>
           <Button>Trigger</Button>
-        </DropdownMenuTriger>
+        </DropdownMenuTrigger>
         <DropdownMenuContent width={200} side={side} align={align}>
           {dropdownList.map((val, idx) => (
             <Box key={val.header || val.value} px={'sm'}>
