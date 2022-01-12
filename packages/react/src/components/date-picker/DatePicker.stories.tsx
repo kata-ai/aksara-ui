@@ -243,7 +243,7 @@ export const InputAdvancedDatePickerRange = () => {
             <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'}>
+        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} onOpenAutoFocus={e => e.preventDefault()}>
           <DatePicker
             advanceView={<AdvancedOption options={options} optionHandler={optionHandler} />}
             type="range"
