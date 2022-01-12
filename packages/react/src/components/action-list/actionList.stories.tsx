@@ -1,6 +1,8 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
-import { Box } from '../../layout';
+import { IconPen } from '@aksara-ui/icons';
+import { Stack, Box } from '../../layout';
+import { Text } from '../../typography';
 import ActionListItem from './components/ActionListItem';
 import ActionList from './components/ActionList';
 
@@ -25,6 +27,31 @@ export const ActionListExample: Story = () => {
       </ActionListItem>
       <ActionListItem marginX="sm">item sample 2</ActionListItem>
       <ActionListItem marginX="sm">item sample 3</ActionListItem>
+    </ActionList>
+  );
+};
+
+export const ActionListWithIconExample: Story = () => {
+  return (
+    <ActionList width="200px">
+      <ActionListItem marginX="sm" isActive>
+        <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
+          <IconPen width={16} height={16} fill="currentColor" aria-hidden />
+          <Text scale={300}>item sample 1</Text>
+        </Stack>
+      </ActionListItem>
+      <ActionListItem marginX="sm">
+        <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
+          <IconPen width={16} height={16} fill="currentColor" aria-hidden />
+          <Text scale={300}>item sample 1</Text>
+        </Stack>
+      </ActionListItem>
+      <ActionListItem marginX="sm">
+        <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
+          <IconPen width={16} height={16} fill="currentColor" aria-hidden />
+          <Text scale={300}>item sample 1</Text>
+        </Stack>
+      </ActionListItem>
     </ActionList>
   );
 };
