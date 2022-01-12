@@ -47,7 +47,7 @@ const CalendarBox = ({
   const multiDatePicker = calendars.length > 1;
   const renderHeader = () => {
     return (
-      <Box display={['flex']} justifyContent="space-between" alignItems="center">
+      <Box display={['flex']} justifyContent="space-between" alignItems="center" pt="xs" px="md" pb="0px">
         <IconButton variant="plain" aria-label="Back" {...getBackProps({ calendars })}>
           <IconArrowLeft aria-hidden fill="currentColor" />
         </IconButton>
@@ -106,7 +106,7 @@ const CalendarBox = ({
 
   const renderFooter = () => {
     return (
-      <Stack direction="horizontal" spacing="md" flex={1}>
+      <Stack direction="horizontal" spacing="md" flex={1} pt="xs" px="md" pb="md">
         <Button block size="md" onClick={onCancel}>
           Cancel
         </Button>
@@ -122,9 +122,9 @@ const CalendarBox = ({
       <Box borderRadius="lg" display={'inline-flex'}>
         {advanceView}
         {/* Header */}
-        <Box padding="md">
+        <Box>
           {renderHeader()}
-          <Stack direction="horizontal" spacing={'xl'}>
+          <Stack direction="horizontal" spacing={'xl'} p="md">
             {calendars.map(calendar => (
               <Box
                 maxWidth="224px"
@@ -140,7 +140,7 @@ const CalendarBox = ({
                   textAlign="center"
                   left="0"
                   right="0"
-                  top="-27px"
+                  top="-43px"
                   pointerEvents="none"
                 >
                   <Text fontSize="12px" lineHeight="18px" fontWeight="400" color="grey09">
