@@ -21,7 +21,7 @@ const DatePickerTest = () => {
 };
 describe('components/DatePicker', () => {
   describe('DatePicker', () => {
-    test('renders correctly', () => {
+    test('datepicker successfuly select today ', () => {
       const { getByText } = render(<DatePickerTest />);
       const ThisDay = getByText(today.getDate().toString());
       act(() => {
