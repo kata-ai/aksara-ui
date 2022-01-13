@@ -4,17 +4,19 @@ import { useComponentStyles } from '../../../system';
 import { theme } from '../../../theme';
 import { Text } from '../../../typography';
 
+export type ActionListItemVariant = 'default' | 'destructive';
 export interface ActionListItemProps extends BoxProps, React.ComponentPropsWithoutRef<'div'> {
   className?: string;
   style?: React.CSSProperties;
   isActive?: boolean;
   children?: React.ReactNode;
   disabled?: boolean;
+  variant?: ActionListItemVariant;
 }
 
 const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
-  ({ style, children, isActive, disabled, sx, ...rest }, ref) => {
-    const styles = useComponentStyles('actionListItem', { isActive });
+  ({ style, children, isActive, disabled, sx, variant = 'default', ...rest }, ref) => {
+    const styles = useComponentStyles('actionListItem', { isActive, variant });
     const renderLabel = () => {
       if (typeof children === 'string' || typeof children === 'number') {
         return <Text scale={300}>{children}</Text>;

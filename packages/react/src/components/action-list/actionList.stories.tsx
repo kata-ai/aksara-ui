@@ -3,20 +3,39 @@ import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
 import { Stack, Box } from '../../layout';
 import { Text } from '../../typography';
-import ActionListItem from './components/ActionListItem';
+import ActionListItem, { ActionListItemVariant } from './components/ActionListItem';
 import ActionList from './components/ActionList';
 
 export default {
   title: 'Core/Components/ActionList',
-  component: ActionListItem,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      value: [
+        {
+          name: 'dark',
+          value: '#e5e5e5',
+        },
+      ],
+    },
+  },
 };
 
-export const ActionListItemExample: Story = () => {
+export const ActionListItemExample: Story<{ variant: ActionListItemVariant }> = ({ variant }) => {
   return (
     <Box width="200px">
-      <ActionListItem>item sample 1</ActionListItem>
+      <ActionListItem variant={variant}>item sample 1</ActionListItem>
     </Box>
   );
+};
+ActionListItemExample.argTypes = {
+  variant: {
+    options: ['default', 'destructive'],
+    control: { type: 'radio' },
+  },
+};
+ActionListItemExample.args = {
+  variant: 'default',
 };
 
 export const ActionListExample: Story = () => {
