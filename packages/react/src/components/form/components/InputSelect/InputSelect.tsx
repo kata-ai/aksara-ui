@@ -5,10 +5,9 @@
 import * as React from 'react';
 import { useSelect, UseSelectStateChange } from 'downshift';
 import { IconChevronStepper } from '@aksara-ui/icons';
-
 import { Text } from '../../../../typography';
 import { Box, Stack } from '../../../../layout';
-import { useComponentStyles } from '../../../../system';
+import { CSSObject, useComponentStyles } from '../../../../system';
 import { FormLabel } from '../FormLabel';
 import { UnstyledButton } from '../../../button';
 import { Card } from '../../../card';
@@ -46,6 +45,9 @@ export interface InputSelectProps<T> {
   width?: string | number;
   /** Max height for list box */
   maxHeight?: string | number;
+
+  /** input text style */
+  inputStyle?: CSSObject;
 }
 
 /** Base wrapper for dropdown selector element using Downshift.js */
@@ -65,6 +67,7 @@ function InputSelect<T>({
   size = 'md',
   width = '100%',
   maxHeight,
+  inputStyle,
 }: InputSelectProps<T>) {
   const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps } = useSelect<T>({
     items,
@@ -87,7 +90,7 @@ function InputSelect<T>({
         <UnstyledButton
           type="button"
           disabled={disabled}
-          sx={{ ...styles }}
+          sx={{ ...styles, ...inputStyle }}
           onFocus={() => {
             if (onFocus) {
               onFocus();
