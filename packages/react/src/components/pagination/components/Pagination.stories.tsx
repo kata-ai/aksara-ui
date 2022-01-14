@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 
+import { Story } from '@storybook/react';
 import Pagination from './Pagination';
 import { Box } from '../../../layout';
-import PaginationDetail from './PaginationDetail';
+import PaginationDetail, { PaginationDetailProps } from './PaginationDetail';
 import PaginationFilter from './PaginationFilter';
 
 export default {
   title: 'Core/Components/Pagination',
-  component: Pagination,
 };
 
 export const Example = () => {
@@ -39,6 +39,31 @@ export const LargePageNumbers = () => {
       }}
     />
   );
+};
+export const PaginationFilterSample = () => {
+  const [limit, setLimit] = React.useState(10);
+  return (
+    <Box mt={64}>
+      <PaginationFilter
+        selectedItem={limit}
+        onChange={selectedItem => {
+          if (selectedItem) {
+            setLimit(selectedItem);
+          }
+        }}
+        items={[10, 20, 30, 40, 50]}
+      />
+    </Box>
+  );
+};
+
+export const PaginationDetailSample: Story<PaginationDetailProps> = ({ page, limit, length }) => {
+  return <PaginationDetail page={page} limit={limit} length={length} />;
+};
+PaginationDetailSample.args = {
+  page: 1,
+  limit: 10,
+  length: 98,
 };
 
 export const WithPaginationDetail = () => {

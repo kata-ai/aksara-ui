@@ -40,15 +40,19 @@ const PaginationFilter = ({
         <DropdownMenuContent side={'bottom'}>
           {items.map(item => {
             return (
-              <DropdownMenuItem
-                key={item}
-                onSelect={() => {
-                  onChange(item);
-                }}
-                isActive={item === selectedItem}
-              >
-                {item}
-              </DropdownMenuItem>
+              <Box key={item} px={'md'}>
+                <DropdownMenuItem
+                  itemStyle={{
+                    minWidth: 64,
+                  }}
+                  onSelect={() => {
+                    onChange(item);
+                  }}
+                  isActive={item === selectedItem}
+                >
+                  {item}
+                </DropdownMenuItem>
+              </Box>
             );
           })}
         </DropdownMenuContent>

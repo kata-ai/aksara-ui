@@ -1,10 +1,11 @@
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import * as React from 'react';
+import { CSSObject } from '../../../../system';
 import { ActionListItem } from '../../../action-list';
 
 export interface DropdownMenuItemProps extends RadixDropdownMenu.MenuItemProps {
   className?: string;
-  style?: React.CSSProperties;
+  itemStyle?: CSSObject;
   isActive?: boolean;
   children?: React.ReactNode;
   disabled?: boolean;
@@ -17,11 +18,12 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   isActive,
   onSelect,
   disabled,
+  itemStyle,
   ...rest
 }) => {
   return (
     <RadixDropdownMenu.Item asChild disabled={disabled} onSelect={onSelect} {...rest}>
-      <ActionListItem className={className} style={style} isActive={isActive}>
+      <ActionListItem className={className} style={style} sx={{ ...itemStyle }} isActive={isActive}>
         {children}
       </ActionListItem>
     </RadixDropdownMenu.Item>
