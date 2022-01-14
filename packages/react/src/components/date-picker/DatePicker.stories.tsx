@@ -195,6 +195,7 @@ const options: OptionAdvancedDatePicker[] = [
 
 export const AdvancedDatePickerRange = () => {
   const [{ selectedDate }, dispatch] = React.useReducer(dateReducer, { selectedDate: undefined });
+  console.log('selectedDate', selectedDate);
 
   const optionHandler = (value: DatePickerKindValue) => {
     dispatch({ type: value });

@@ -19,7 +19,7 @@ export const AdvancedOption = <T extends string>({ options, optionHandler }: Adv
         <Stack direction="vertical" spacing="xxs" width="160px">
           {options.map(option => {
             return (
-              <RadioGroupItem value={option.value}>
+              <RadioGroupItem value={option.value} key={option.value}>
                 <OptionListItemBox display="flex" alignItems={'center'} p="xs" id={option.value}>
                   <Box backgroundColor={'greylight01'} width={16} height={16} borderRadius={16} position={'relative'}>
                     <Box

@@ -6,7 +6,7 @@ export interface PaginationDetailProps extends TextProps {
   page: number;
   /** Total limit of pages. */
   limit: number;
-  // Length of data per pages
+  // Length of data
   length: number;
 }
 

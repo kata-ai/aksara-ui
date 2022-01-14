@@ -1,6 +1,7 @@
 import React from 'react';
 import { RenderProps, Calendar, DateObj } from 'dayzed';
 import { IconArrowLeft, IconArrowRight } from '@aksara-ui/icons';
+import { CSSObject } from '../../../system';
 import { Box, Stack } from '../../../layout';
 import { Button, IconButton } from '../../button';
 import { Text } from '../../../typography';
@@ -8,6 +9,7 @@ import DateNumberButton, { DateNumberVariants } from './DateNumber';
 import { monthNamesFull, weekdayNamesShort } from './calendar-utils';
 
 export interface CalendarProp extends RenderProps {
+  containerStyle?: CSSObject;
   advanceView?: React.ReactNode;
   selected?: Date[];
   onUpdate?: () => void;
@@ -43,6 +45,7 @@ const CalendarBox = ({
   onUpdate,
   onCancel,
   selected,
+  containerStyle,
 }: CalendarProp) => {
   const multiDatePicker = calendars.length > 1;
   const renderHeader = () => {
@@ -119,7 +122,7 @@ const CalendarBox = ({
 
   if (calendars.length) {
     return (
-      <Box borderRadius="lg" display={'inline-flex'}>
+      <Box borderRadius="lg" display={'inline-flex'} backgroundColor={'greylight01'} sx={{ ...containerStyle }}>
         {advanceView}
         {/* Header */}
         <Box>
