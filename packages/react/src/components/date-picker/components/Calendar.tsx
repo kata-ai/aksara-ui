@@ -119,7 +119,7 @@ const CalendarBox = ({
 
   if (calendars.length) {
     return (
-      <Box borderRadius="lg" display={'inline-flex'}>
+      <Box borderRadius="lg" display={'inline-flex'} backgroundColor={'greylight01'}>
         {advanceView}
         {/* Header */}
         <Box>
