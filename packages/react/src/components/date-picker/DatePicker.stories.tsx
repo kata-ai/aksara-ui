@@ -44,7 +44,13 @@ export const InputSingleDatePicker = () => {
             <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} onOpenAutoFocus={e => e.preventDefault()}>
+        <PopoverContent
+          sideOffset={4}
+          placement={'bottom'}
+          align={'end'}
+          onOpenAutoFocus={e => e.preventDefault()}
+          disableArrow
+        >
           <DatePicker
             type="picker"
             selected={selectedDate}
@@ -98,7 +104,13 @@ export const InputMultipleDateRangePicker = () => {
             <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} onOpenAutoFocus={e => e.preventDefault()}>
+        <PopoverContent
+          sideOffset={4}
+          placement={'bottom'}
+          align={'end'}
+          onOpenAutoFocus={e => e.preventDefault()}
+          disableArrow
+        >
           <DatePicker
             type="range"
             multiDatePicker
@@ -244,7 +256,7 @@ export const InputAdvancedDatePickerRange = () => {
             <InputIcon icon={IconCalendar} iconPosition="right" iconText="calendar" />
           </InputGroup>
         </PopoverTrigger>
-        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'}>
+        <PopoverContent sideOffset={4} placement={'bottom'} align={'end'} disableArrow>
           <DatePicker
             advanceView={<AdvancedOption options={options} optionHandler={optionHandler} />}
             type="range"
