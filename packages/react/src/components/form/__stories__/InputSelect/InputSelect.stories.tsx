@@ -69,6 +69,7 @@ export const InputSelectExample: Story<InputSelectProps<ValueSchema>> = ({
       disabled={disabled}
       errors={errors}
       itemToString={item => (item ? `${item.label}` : '')}
+      itemValue={item => (item ? `${item.label}` : '')}
       itemRenderer={item => (
         <>
           <Box width={15} mr="sm" />

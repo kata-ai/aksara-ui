@@ -26,9 +26,9 @@ export interface InputSelectSearchProps<T> {
   selectedItem?: T | null;
   /** initial/default selected item */
   initialSelectedItem?: T | null;
-  /** If the item list is an object/shape, use this to map it into string. */
+  /** If the item list is an object/shape, use this to map it into string as list option item. */
   itemToString?: (item: T | null) => string;
-  /** If the item list is an object/shape, use this to map it into string. */
+  /** If the item list is an object/shape, use this to map it into string as value item. */
   itemValue?: (item: T | null) => string;
   /** The change handler for the select. */
   handleSelectedItemChange?: (changes: UseComboboxStateChange<T>) => void;
