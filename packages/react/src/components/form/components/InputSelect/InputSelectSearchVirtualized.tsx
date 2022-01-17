@@ -12,7 +12,7 @@ import { InputText } from '../InputText';
 import { FormLabel } from '../FormLabel';
 import { Card } from '../../../card';
 import { ActionList, ActionListItem } from '../../../action-list';
-
+import { Text } from '../../../../typography';
 import { useComponentStyles } from '../../../../system';
 
 export interface InputSelectSearchVirtualizedProps<T> {
@@ -87,7 +87,6 @@ function InputSelect<T>({
   const {
     isOpen,
     inputValue,
-    setInputValue,
     getLabelProps,
     getMenuProps,
     highlightedIndex,
@@ -101,21 +100,32 @@ function InputSelect<T>({
     itemToString,
     selectedItem,
     initialSelectedItem,
-    stateReducer: (state, actionAndChanges) => {
+    stateReducer: (_, actionAndChanges) => {
       const { type, changes } = actionAndChanges;
       switch (type) {
         case useCombobox.stateChangeTypes.InputKeyDownEscape:
           return {
             ...changes,
             isOpen: false,
-            inputValue: state.inputValue, // prevent flickering text when press esc
+            inputValue: '', // prevent flickering text when press esc
           };
-        case useCombobox.stateChangeTypes.InputKeyDownArrowDown:
-        case useCombobox.stateChangeTypes.InputKeyDownArrowUp:
-        case useCombobox.stateChangeTypes.InputKeyDownHome:
-        case useCombobox.stateChangeTypes.InputKeyDownEnd:
-          rowVirtualizer.scrollToIndex(changes.highlightedIndex ?? 0);
-          return changes;
+        case useCombobox.stateChangeTypes.ControlledPropUpdatedSelectedItem:
+        case useCombobox.stateChangeTypes.FunctionSetInputValue:
+          return {
+            ...changes,
+            inputValue: '',
+          };
+        case useCombobox.stateChangeTypes.InputChange:
+          return {
+            ...changes,
+            inputValue: changes.inputValue,
+          };
+        case useCombobox.stateChangeTypes.InputBlur:
+        case useCombobox.stateChangeTypes.FunctionCloseMenu:
+          return {
+            ...changes,
+            inputValue: '',
+          };
         default:
           return changes;
       }
@@ -125,11 +135,6 @@ function InputSelect<T>({
         handleSelectedItemChange(changes);
       }
       closeMenu();
-    },
-    onIsOpenChange: changes => {
-      if (isOpen) {
-        setInputValue(changes.selectedItem ? itemToString(changes.selectedItem) : '');
-      }
     },
     onStateChange: ({ type, inputValue: _inputValue }) => {
       switch (type) {
@@ -150,23 +155,29 @@ function InputSelect<T>({
       );
     },
   });
-  React.useEffect(() => {
-    if (isOpen && inputValue) {
-      setInputItems(items);
-    } else if (handleSelectedItemChange) {
-      // if inputValue not listed on option
-      // then reset
-      // reset to prev value
-      if (!inputValue && selectedItem && itemValue(selectedItem)) {
-        setInputValue(itemToString(selectedItem) ?? '');
-        // reset to empty string
-      }
+  const renderValueLabel = () => {
+    if (!selectedItem) {
+      return null;
     }
-  }, [isOpen]);
-
+    if (inputValue && selectedItem) {
+      return null;
+    }
+    if (itemRenderer) {
+      return (
+        <Box position={'absolute'} left="15px">
+          {itemRenderer(selectedItem)}
+        </Box>
+      );
+    }
+    return (
+      <Box position={'absolute'} left="15px">
+        <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
+          {itemToString(selectedItem)}
+        </Text>
+      </Box>
+    );
+  };
   const styles = useComponentStyles('inputText', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
-  const itemRendererAsValueLabel = selectedItem && itemToString(selectedItem) === inputValue;
-  const hideLabelInputValue = itemRendererAsValueLabel && itemRenderer ? { color: 'transparent' } : {};
   return (
     <Box width={width}>
       <Stack spacing="xxs" display="block" position="relative">
@@ -176,16 +187,12 @@ function InputSelect<T>({
           </FormLabel>
         )}
         <Box display="flex" position="relative" alignItems="center" {...getComboboxProps()}>
-          {itemRenderer && itemRendererAsValueLabel ? (
-            <Box position={'absolute'} left="15px">
-              {itemRenderer(selectedItem)}
-            </Box>
-          ) : null}
+          {renderValueLabel()}
           <InputText
             disabled={disabled}
-            placeholder={placeholder}
+            placeholder={!selectedItem ? placeholder : ''}
             width="100%"
-            sx={{ ...styles, ...hideLabelInputValue }}
+            sx={{ ...styles }}
             onClick={() => {
               toggleMenu();
             }}

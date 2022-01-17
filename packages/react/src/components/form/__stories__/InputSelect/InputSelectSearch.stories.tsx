@@ -41,17 +41,15 @@ export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({
 }) => {
   const [selected, setSelected] = React.useState<ValueSchema | null>(null);
   const [items] = React.useState([
-    { label: 'ab', value: 'a' },
-    { label: 'abc', value: 'b' },
-    { label: 'bcd', value: 'c' },
-    { label: 'cde', value: 'd' },
-    { label: 'def', value: 'e' },
-    { label: 'efg', value: 'f' },
-    { label: 'fgh', value: 'g' },
-    { label: 'ghi', value: 'h' },
-    { label: 'hij', value: 'i' },
-    { label: 'ijk', value: 'j' },
-    { label: 'jkl', value: 'k' },
+    { label: 'apple', value: 'a' },
+    { label: 'apricot', value: 'b' },
+    { label: 'avocado', value: 'c' },
+    { label: 'banana', value: 'd' },
+    { label: 'bell pepper', value: 'e' },
+    { label: 'bilberry', value: 'f' },
+    { label: 'blackberry', value: 'g' },
+    { label: 'blackcurrant', value: 'h' },
+    { label: 'blood orange', value: 'i' },
   ]);
   return (
     <InputSelectSearch
