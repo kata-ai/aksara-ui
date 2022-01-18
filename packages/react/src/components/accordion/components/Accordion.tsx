@@ -3,28 +3,32 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { AccordionMultipleProps, AccordionSingleProps } from '@radix-ui/react-accordion';
 import styled, { keyframes } from 'styled-components';
 import { IconChevronUp } from '@aksara-ui/icons';
-import { BoxProps } from 'packages/react/dist';
 import { Heading } from '../../../typography';
 import { UnstyledButton } from '../../button';
 import { Box } from '../../../layout';
+import { CSSObject } from '../../../system';
 
-export const Accordion: React.FC<AccordionSingleProps | AccordionMultipleProps> = ({ children, ...rest }) => {
+export const Accordion: React.FC<(AccordionSingleProps | AccordionMultipleProps) & { style?: CSSObject }> = ({
+  children,
+  style,
+  ...rest
+}) => {
   return (
     <AccordionPrimitive.Root asChild {...rest}>
-      {children}
+      <Box sx={{ ...style }}>{children}</Box>
     </AccordionPrimitive.Root>
   );
 };
 
-export const AccordionItem: React.FC<AccordionPrimitive.AccordionItemProps & BoxProps> = ({
+export const AccordionItem: React.FC<AccordionPrimitive.AccordionItemProps & { style?: CSSObject }> = ({
   children,
   disabled,
   value,
-  ...rest
+  style,
 }) => {
   return (
     <AccordionPrimitive.Item asChild disabled={disabled} value={value}>
-      <Box {...rest}>{children}</Box>
+      <Box sx={{ ...style }}>{children}</Box>
     </AccordionPrimitive.Item>
   );
 };
@@ -58,7 +62,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({ children, size
           <UnstyledButton
             py={size === 'md' ? 'sm' : 'md'}
             px={'xs'}
-            height={size === 'md' ? 40 : 48}
+            minHeight={size === 'md' ? 40 : 48}
             display={'flex'}
             flex={1}
             borderRadius={'lg'}
@@ -73,7 +77,9 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({ children, size
             }}
           >
             {children}
-            <AccordionChevron size={16} />
+            <Box width={16} height={16}>
+              <AccordionChevron size={16} />
+            </Box>
           </UnstyledButton>
         </AccordionTrigger>
       </Heading>
