@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
 import { InputSelectSearchVirtualized, InputSelectSearchVirtualizedProps } from '../../components/InputSelect';
+import { Text } from '../../../../typography';
 
 const timezone = [
   {
@@ -2431,7 +2432,11 @@ export const InputSelectVirtualizedExample: Story<InputSelectSearchVirtualizedPr
       errors={errors}
       itemToString={item => (item ? `${item.timezoneDisplay}` : '')}
       itemValue={item => item?.timezoneId ?? ''}
-      itemRenderer={item => item.timezoneDisplay}
+      itemRenderer={item => (
+        <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
+          {item.timezoneDisplay}
+        </Text>
+      )}
       handleSelectedItemChange={({ selectedItem }) => {
         if (selectedItem) {
           setSelected(selectedItem);
