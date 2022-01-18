@@ -20,6 +20,13 @@ if (global.document) {
   });
 }
 
+if (typeof global.TextEncoder === 'undefined') {
+  import('util').then(({ TextEncoder }) => {
+    global.TextEncoder = TextEncoder;
+  });
+}
+// fix jsdom TextEncoder not defined
+
 // https://github.com/radix-ui/primitives/issues/420#issuecomment-771615182
 global.ResizeObserver = class ResizeObserver {
   cb: any;
