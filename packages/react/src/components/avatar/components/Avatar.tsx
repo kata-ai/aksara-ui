@@ -8,6 +8,7 @@ import getInitials from '../utils/getInitials';
 import Presence, { PresenceProps } from './Presence';
 
 type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';
+const bgColors = ['indigo06', 'red07', 'yellow07', 'blue07', 'green07'];
 export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** Additional CSS classes to give to the component. */
   className?: string;
@@ -43,19 +44,7 @@ const initialSizes: Record<AvatarSize, string> = {
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
   (
-    {
-      className,
-      style,
-      src,
-      alt = undefined,
-      name,
-      size = 'lg',
-      color = 'white',
-      bg = 'indigo06',
-      icon,
-      presence,
-      ...rest
-    },
+    { className, style, src, alt = undefined, name, size = 'lg', color = 'white', bg, icon, presence, ...rest },
     ref
   ) => {
     const styles = useComponentStyles('avatar', { size: typeof size === 'string' ? size : undefined });
@@ -91,6 +80,19 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       return <Presence {...option} size={size} />;
     };
 
+    const bgColorsRandomizer = () => {
+      if (!name) {
+        return 'indigo06';
+      }
+      const names = name.split(' ');
+      let totalValue = 0;
+      names.forEach(item => {
+        totalValue += new TextEncoder().encode(item[0])[0];
+      });
+      const indexColor = totalValue % bgColors.length;
+      return bgColors[indexColor];
+    };
+
     const renderAvatar = () => {
       return (
         <Box
@@ -99,7 +101,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
           className={className}
           style={style}
           color={color}
-          bg={bg}
+          bg={bg || bgColorsRandomizer()}
           sx={{ ...styles }}
           width={typeof size === 'number' ? size : undefined}
           height={typeof size === 'number' ? size : undefined}
