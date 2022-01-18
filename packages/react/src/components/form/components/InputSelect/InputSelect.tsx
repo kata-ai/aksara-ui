@@ -11,6 +11,7 @@ import { CSSObject, useComponentStyles } from '../../../../system';
 import { FormLabel } from '../FormLabel';
 import { UnstyledButton } from '../../../button';
 import { Card } from '../../../card';
+import { ActionList, ActionListItem } from '../../../action-list';
 
 export interface InputSelectProps<T> {
   /** The input select label */
@@ -23,8 +24,10 @@ export interface InputSelectProps<T> {
   selectedItem?: T | null;
 
   initialSelectedItem?: T | null;
-  /** If the item list is an object/shape, use this to map it into string. */
+  /** If the item list is an object/shape, use this to map it into string as list option item. */
   itemToString?: (item: T | null) => string;
+  /** If the item list is an object/shape, use this to map it into string as value item. */
+  itemValue?: (item: T | null) => string;
   /** The change handler for the select. */
   handleSelectedItemChange?: (changes: UseSelectStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
@@ -56,7 +59,8 @@ function InputSelect<T>({
   placeholder = 'Select an item',
   items,
   selectedItem,
-  itemToString,
+  itemToString = item => (item ? String(item) : ''),
+  itemValue = item => (item ? String(item) : ''),
   handleSelectedItemChange,
   itemRenderer,
   initialSelectedItem,
@@ -168,6 +172,42 @@ function InputSelect<T>({
               </Box>
             )}
           </Box>
+        </Card>
+        <Card
+          position="absolute"
+          float="left"
+          top="100%"
+          left={0}
+          width={width}
+          maxHeight={maxHeight}
+          display={isOpen ? 'block' : 'none'}
+          elevation={3}
+          overflow="hidden"
+          zIndex={1}
+        >
+          <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
+            {items.length !== 0 ? (
+              items.map((item, index) => {
+                const selected = selectedItem && itemValue(selectedItem) === itemValue(item);
+                return (
+                  <ActionListItem
+                    sx={
+                      highlightedIndex === index && (!selectedItem || !selected)
+                        ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
+                        : {}
+                    }
+                    isActive={selected}
+                    key={`${itemToString(item)}`}
+                    {...getItemProps({ item, index })}
+                  >
+                    {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
+                  </ActionListItem>
+                );
+              })
+            ) : (
+              <ActionListItem disabled>No items.</ActionListItem>
+            )}
+          </ActionList>
         </Card>
       </Stack>
       {/* if you Tab from menu, focus goes on button, and it shouldn't. only happens here. */}
