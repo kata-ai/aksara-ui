@@ -34,6 +34,8 @@ export interface InputSelectSearchProps<T> {
   handleSelectedItemChange?: (changes: UseComboboxStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
   itemRenderer?: (item: T) => React.ReactNode;
+  /**  use this customize element to render input value. */
+  inputValueRenderer?: (item: T) => React.ReactNode;
   /** Name of the field form */
   name?: string;
   /** Logic on focus */
@@ -62,6 +64,7 @@ function InputSelect<T>({
   itemValue = item => (item ? String(item) : ''),
   handleSelectedItemChange,
   itemRenderer,
+  inputValueRenderer,
   initialSelectedItem,
   onBlur,
   onFocus,
@@ -151,12 +154,10 @@ function InputSelect<T>({
     if (inputValue && selectedItem) {
       return null;
     }
-    if (itemRenderer) {
-      return (
-        <Box position={'absolute'} left="12px">
-          {itemRenderer(selectedItem)}
-        </Box>
-      );
+    if (inputValueRenderer) {
+      <Box position={'absolute'} left="12px">
+        {inputValueRenderer(selectedItem)}
+      </Box>;
     }
     return (
       <Box position={'absolute'} left="12px">
