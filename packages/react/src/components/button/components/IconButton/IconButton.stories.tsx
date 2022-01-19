@@ -17,11 +17,22 @@ export default {
     onClick: {
       action: 'clicked',
     },
+    selected: {
+      control: 'boolean',
+    },
   },
 };
 
-export const Example: Story<IconButtonProps> = ({ variant, size, disabled, onClick }) => (
-  <IconButton type="button" aria-label="Push Me" onClick={onClick} variant={variant} size={size} disabled={disabled}>
+export const Example: Story<IconButtonProps> = ({ variant, size, disabled, onClick, selected }) => (
+  <IconButton
+    type="button"
+    aria-label="Push Me"
+    onClick={onClick}
+    variant={variant}
+    size={size}
+    disabled={disabled}
+    selected={selected}
+  >
     <IconPen fill="currentColor" aria-hidden />
   </IconButton>
 );

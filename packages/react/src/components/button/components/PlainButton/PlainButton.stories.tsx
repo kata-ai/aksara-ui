@@ -20,10 +20,13 @@ export default {
     onClick: {
       action: 'clicked',
     },
+    selected: {
+      control: 'boolean',
+    },
   },
 };
 
-const Template: Story<PlainButtonProps> = ({ variant, size, isLoading, icon, iconPosition, onClick }) => (
+const Template: Story<PlainButtonProps> = ({ variant, size, isLoading, icon, iconPosition, onClick, selected }) => (
   <PlainButton
     type="button"
     variant={variant}
@@ -32,6 +35,7 @@ const Template: Story<PlainButtonProps> = ({ variant, size, isLoading, icon, ico
     icon={icon}
     iconPosition={iconPosition}
     onClick={onClick}
+    selected={selected}
   >
     Push Me
   </PlainButton>
@@ -51,7 +55,14 @@ WithIcon.args = {
   iconPosition: 'left',
 };
 
-export const DisclosureButton: Story<PlainButtonProps> = ({ variant, size, disabled, isLoading, onClick }) => (
+export const DisclosureButton: Story<PlainButtonProps> = ({
+  variant,
+  size,
+  disabled,
+  isLoading,
+  onClick,
+  selected,
+}) => (
   <PlainButton
     type="button"
     variant={variant}
@@ -61,6 +72,7 @@ export const DisclosureButton: Story<PlainButtonProps> = ({ variant, size, disab
     icon={IconChevronDown}
     iconPosition="right"
     onClick={onClick}
+    selected={selected}
   >
     Push Me
   </PlainButton>

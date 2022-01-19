@@ -185,9 +185,11 @@ export const iconButton: ComponentThemeConfig = {
           color: 'greymed01',
         },
       },
-      plain: {
+      plain: ({ selected }: { selected?: boolean }) => ({
         '&:not(:disabled)': {
-          color: 'greymed04',
+          color: selected ? 'blue07' : 'greydark02',
+          borderColor: selected ? 'blue07' : 'transparent',
+          backgroundColor: selected ? 'blue01' : 'transparent',
           '&:hover, &:focus': {
             backgroundColor: 'greylight03',
           },
@@ -195,7 +197,7 @@ export const iconButton: ComponentThemeConfig = {
         '&:disabled': {
           color: 'greymed01',
         },
-      },
+      }),
       'plain-destructive': {
         '&:not(:disabled)': {
           color: 'red07',
@@ -217,6 +219,8 @@ export const iconButton: ComponentThemeConfig = {
 export const plainButton: ComponentThemeConfig = {
   baseStyle: {
     ...baseStyle,
+    py: 'xxs',
+    px: 'xs',
     '> svg': {
       width: '16px',
       height: '16px',
@@ -259,9 +263,11 @@ export const plainButton: ComponentThemeConfig = {
           },
         },
       },
-      disclosure: {
+      disclosure: ({ selected }: { selected?: boolean }) => ({
         '&:not(:disabled)': {
-          color: 'greydark02',
+          borderColor: selected ? 'blue07' : 'transparent',
+          backgroundColor: selected ? 'blue01' : 'transparent',
+          color: selected ? 'blue07' : 'greydark02',
           '&:hover': {
             color: 'greydark02',
             '> span': {
@@ -276,7 +282,7 @@ export const plainButton: ComponentThemeConfig = {
             },
           },
         },
-      },
+      }),
       destructive: {
         '&:not(:disabled)': {
           color: 'red07',
