@@ -12,6 +12,7 @@ import {
 } from './components/DropdownMenuItem';
 import { Box } from '../../layout';
 import DropdownMenuContent, { DropdownMenuContentProps } from './components/DropdownMenuItem/DropdownMenuContent';
+import { ActionListItemVariant } from '../action-list';
 
 export default {
   title: 'Core/Components/Dropdown/DropdownMenu',
@@ -31,13 +32,14 @@ interface Obj {
   label?: string;
   value?: string;
   disabled?: boolean;
+  variant?: ActionListItemVariant;
 }
 
 const dropdownList: Obj[] = [
   { header: 'Group one' },
   { label: 'Item one', value: 'itemOne' },
   { label: 'Item two', value: 'itemTwo', disabled: true },
-  { label: 'Item three', value: 'itemThree' },
+  { label: 'Item three', value: 'itemThree', variant: 'destructive' },
   { header: 'Group two' },
   { label: 'Item one-one', value: 'itemOneOne' },
   { label: 'Item one-two', value: 'itemOneTwo' },
@@ -72,6 +74,7 @@ export const Example: Story<DropdownMenuProps & DropdownMenuContentProps> = ({ s
                   onSelect={() => setSelected(val)}
                   isActive={selected.value === val.value}
                   disabled={val.disabled}
+                  variant={val.variant}
                 >
                   {val.label}
                 </DropdownMenuItem>

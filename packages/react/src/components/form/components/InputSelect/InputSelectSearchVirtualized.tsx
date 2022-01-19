@@ -252,7 +252,7 @@ function InputSelect<T>({
                     }}
                   >
                     <ActionListItem
-                      sx={
+                      containerStyle={
                         highlightedIndex === item.index && (!selectedItem || !selected)
                           ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
                           : {}
