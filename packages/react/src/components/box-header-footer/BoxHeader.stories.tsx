@@ -134,7 +134,14 @@ TitleAndButton.args = {
 export const WithIcon = ({ size }: { size: 'sm' | 'lg' }) => {
   return (
     <Box p="md" width={400}>
-      <ModalHeaderIcon size={size} id="stories-title" title="Delete item?" icon={IconTrash} />
+      <ModalHeaderIcon
+        size={size}
+        id="stories-title"
+        title="Delete item?"
+        icon={IconTrash}
+        iconBackgroundColor="red01"
+        iconColor="red07"
+      />
     </Box>
   );
 };

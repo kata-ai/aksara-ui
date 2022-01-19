@@ -154,7 +154,13 @@ export const WithIcon = () => {
         Toggle Modal
       </button>
       <Modal labelledById="stories-title" isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <ModalHeaderIcon id="stories-title" title="Delete item?" icon={IconTrash} />
+        <ModalHeaderIcon
+          id="stories-title"
+          title="Delete item?"
+          icon={IconTrash}
+          iconBackgroundColor="red01"
+          iconColor="red07"
+        />
         <ModalContent>
           <Stack textAlign="center">
             <Paragraph scale={300}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Paragraph>

@@ -8,10 +8,22 @@ export interface ModalHeaderIconProps extends BoxProps {
   style?: React.CSSProperties;
   title: string;
   icon: React.ComponentType<any>;
+  iconBackgroundColor: string;
+  iconColor: string;
 }
 
 // TODO move to BoxHeader
-const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({ id, className, style, children, title, icon, ...rest }) => {
+const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({
+  id,
+  className,
+  style,
+  children,
+  title,
+  icon,
+  iconBackgroundColor,
+  iconColor,
+  ...rest
+}) => {
   return (
     <Box
       className={className}
@@ -32,9 +44,9 @@ const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({ id, className, style,
         height={72}
         justifyContent="center"
         alignItems="center"
-        backgroundColor="red01"
-        color="red07"
         borderRadius={72}
+        backgroundColor={iconBackgroundColor}
+        color={iconColor}
       >
         {React.createElement(icon, { 'aria-hidden': true, size: 40, fill: 'currentColor' })}
       </Box>
