@@ -14,11 +14,13 @@ export interface PlainButtonProps extends PlainButtonBaseProps, React.ButtonHTML
   size?: PlainButtonSizes;
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
+  /** indicate button is selected */
+  selected?: boolean;
 }
 
 const PlainButton = React.forwardRef<HTMLButtonElement, PlainButtonProps>(
-  ({ children, size = 'sm', icon, iconPosition, disabled, isLoading, variant = 'primary', ...rest }, ref) => {
-    const plainButtonStyles = useComponentStyles('plainButton', { size, variant });
+  ({ children, size = 'sm', icon, iconPosition, disabled, isLoading, variant = 'primary', selected, ...rest }, ref) => {
+    const plainButtonStyles = useComponentStyles('plainButton', { size, variant, selected });
 
     return (
       <UnstyledButton

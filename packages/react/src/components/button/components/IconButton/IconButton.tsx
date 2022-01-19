@@ -14,6 +14,8 @@ export interface IconButtonProps extends IconButtonBaseProps, React.ComponentPro
   size?: IconButtonSizes;
   /** True if the button is disabled due to loading */
   isLoading?: boolean;
+  /** indicate button is selected */
+  selected?: boolean;
 }
 
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
@@ -32,7 +34,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     },
     ref
   ) => {
-    const iconButtonStyles = useComponentStyles('iconButton', { size, variant });
+    const iconButtonStyles = useComponentStyles('iconButton', { size, variant, selected });
 
     return (
       <UnstyledButton
