@@ -1,15 +1,13 @@
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import * as React from 'react';
-import { CSSObject } from '../../../../system';
-import { ActionListItem } from '../../../action-list';
+import { ActionListItem, ActionListItemProps } from '../../../action-list';
 
-export interface DropdownMenuItemProps extends RadixDropdownMenu.MenuItemProps {
-  className?: string;
-  itemStyle?: CSSObject;
-  isActive?: boolean;
-  children?: React.ReactNode;
-  disabled?: boolean;
-}
+export interface DropdownMenuItemProps
+  extends RadixDropdownMenu.MenuItemProps,
+    Pick<
+      ActionListItemProps,
+      'className' | 'style' | 'isActive' | 'children' | 'disabled' | 'variant' | 'containerStyle' | 'contentStyle'
+    > {}
 
 const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   className,
@@ -18,12 +16,19 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   isActive,
   onSelect,
   disabled,
-  itemStyle,
+  containerStyle,
+  contentStyle,
   ...rest
 }) => {
   return (
     <RadixDropdownMenu.Item asChild disabled={disabled} onSelect={onSelect} {...rest}>
-      <ActionListItem className={className} style={style} sx={{ ...itemStyle }} isActive={isActive}>
+      <ActionListItem
+        className={className}
+        style={style}
+        containerStyle={containerStyle}
+        isActive={isActive}
+        contentStyle={contentStyle}
+      >
         {children}
       </ActionListItem>
     </RadixDropdownMenu.Item>

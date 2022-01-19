@@ -42,7 +42,7 @@ const PaginationFilter = ({
             return (
               <Box key={item} px={'md'}>
                 <DropdownMenuItem
-                  itemStyle={{
+                  containerStyle={{
                     minWidth: 64,
                   }}
                   onSelect={() => {

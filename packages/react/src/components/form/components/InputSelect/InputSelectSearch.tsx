@@ -222,7 +222,7 @@ function InputSelect<T>({
                 const selected = selectedItem && itemValue(selectedItem) === itemValue(item);
                 return (
                   <ActionListItem
-                    sx={
+                    containerStyle={
                       highlightedIndex === index && (!selectedItem || !selected)
                         ? { backgroundColor: 'greylight03', borderRadius: 'lg' }
                         : {}

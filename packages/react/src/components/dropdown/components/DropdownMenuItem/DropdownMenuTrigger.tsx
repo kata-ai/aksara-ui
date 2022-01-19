@@ -2,10 +2,6 @@ import * as React from 'react';
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import styled from 'styled-components';
 
-export interface DropdownTriggerProps {
-  children?: React.ReactNode;
-}
-
 const Trigger = styled(RadixDropdownMenu.Trigger)`
   &:focus-visible {
     outline: 0px;
@@ -13,7 +9,7 @@ const Trigger = styled(RadixDropdownMenu.Trigger)`
   }
 `;
 
-const DropdownMenuTrigger: React.FC<DropdownTriggerProps> = ({ children }) => {
+const DropdownMenuTrigger: React.FC = ({ children }) => {
   return <Trigger asChild>{children}</Trigger>;
 };
 

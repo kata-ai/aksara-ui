@@ -200,7 +200,9 @@ function InputSelectTags({
             {isOpen && getFilteredItems.length !== 0 ? (
               getFilteredItems.map((item: string, index: number) => (
                 <ActionListItem
-                  sx={highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}}
+                  containerStyle={
+                    highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}
+                  }
                   key={`${item}_${index}`}
                   {...getItemProps({ item, index })}
                 >
