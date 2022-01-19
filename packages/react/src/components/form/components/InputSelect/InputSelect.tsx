@@ -32,6 +32,8 @@ export interface InputSelectProps<T> {
   handleSelectedItemChange?: (changes: UseSelectStateChange<T>) => void;
   /** If the item list is an object/shape, use this to map a custom element to render on the UI. */
   itemRenderer?: (item: T) => React.ReactNode;
+  /**  use this customize element to render input value. */
+  inputValueRenderer?: (item: T) => React.ReactNode;
   /** Name of the field form */
   name?: string;
   /** Logic on focus */
@@ -62,6 +64,7 @@ function InputSelect<T>({
   itemToString = item => (item ? String(item) : ''),
   itemValue = item => (item ? String(item) : ''),
   handleSelectedItemChange,
+  inputValueRenderer,
   itemRenderer,
   initialSelectedItem,
   onBlur,
@@ -83,6 +86,25 @@ function InputSelect<T>({
 
   const styles = useComponentStyles('inputSelect', { size, variant: errors ? 'error' : isOpen ? 'active' : 'default' });
 
+  const renderInputValue = () => {
+    if (!selectedItem) {
+      return (
+        <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
+          {placeholder}
+        </Text>
+      );
+    }
+
+    if (inputValueRenderer) {
+      return inputValueRenderer(selectedItem);
+    }
+
+    return (
+      <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
+        {itemToString ? itemToString(selectedItem) : selectedItem}
+      </Text>
+    );
+  };
   return (
     <Box width={width}>
       <Stack spacing="xxs" display="block" position="relative">
@@ -107,15 +129,8 @@ function InputSelect<T>({
           }}
           {...getToggleButtonProps()}
         >
-          <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
-            {selectedItem
-              ? itemRenderer
-                ? itemRenderer(selectedItem)
-                : itemToString
-                ? itemToString(selectedItem)
-                : selectedItem
-              : placeholder}
-          </Text>
+          {renderInputValue()}
+
           <Box position="absolute" right={8}>
             <IconChevronStepper size={16} />
           </Box>
