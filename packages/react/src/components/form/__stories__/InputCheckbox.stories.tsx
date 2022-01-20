@@ -4,6 +4,7 @@ import { Story } from '@storybook/react';
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
 import { InputCheckboxLabel, InputCheckbox, InputCheckboxProps } from '../components/InputCheckbox';
+import { CheckboxContainer, CheckboxIndicator } from '../components/InputCheckbox/CheckboxIndicator';
 
 export default {
   title: 'Core/Components/Form/InputCheckbox',
@@ -60,4 +61,13 @@ Example.args = {
   value: 'r1',
   disabled: false,
   errors: false,
+};
+
+export const CheckboxIndicatorExample: Story<{ selected: boolean }> = ({ selected }) => {
+  return <CheckboxContainer>{selected && <CheckboxIndicator />}</CheckboxContainer>;
+};
+CheckboxIndicatorExample.argTypes = {
+  selected: {
+    control: 'boolean',
+  },
 };
