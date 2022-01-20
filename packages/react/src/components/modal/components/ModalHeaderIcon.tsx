@@ -8,8 +8,8 @@ export interface ModalHeaderIconProps extends BoxProps {
   style?: React.CSSProperties;
   title: string;
   icon: React.ComponentType<any>;
-  iconBackgroundColor: string;
-  iconColor: string;
+  iconBackgroundColor?: string;
+  iconColor?: string;
 }
 
 // TODO move to BoxHeader
@@ -20,8 +20,8 @@ const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({
   children,
   title,
   icon,
-  iconBackgroundColor,
-  iconColor,
+  iconBackgroundColor = 'yellow02',
+  iconColor = 'yellow07',
   ...rest
 }) => {
   return (
