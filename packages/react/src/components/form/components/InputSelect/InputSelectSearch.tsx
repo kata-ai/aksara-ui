@@ -212,7 +212,7 @@ function InputSelect<T>({
           width={width}
           maxHeight={maxHeight}
           display={isOpen ? 'block' : 'none'}
-          elevation={3}
+          elevation={2}
           overflow="hidden"
           zIndex={1}
         >

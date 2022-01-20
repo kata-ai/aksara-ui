@@ -136,59 +136,6 @@ function InputSelect<T>({
           </Box>
         </UnstyledButton>
         <Card
-          as="ul"
-          elevation={3}
-          display={isOpen ? 'block' : 'none'}
-          position="absolute"
-          float="left"
-          top="100%"
-          zIndex="1"
-          left={0}
-          mt="xs"
-          width={width}
-          p={0}
-          m={0}
-          overflowY="hidden"
-          {...getMenuProps()}
-        >
-          <Box overflowY={'auto'} maxHeight={maxHeight}>
-            {items && items.length !== 0 ? (
-              items.map((item, index) => (
-                <Box
-                  as="li"
-                  px="md"
-                  py="xs"
-                  _hover={{
-                    backgroundColor: 'blue01',
-                  }}
-                  cursor="pointer"
-                  textAlign="left"
-                  lineHeight="20px"
-                  fontSize={14}
-                  sx={highlightedIndex === index ? { backgroundColor: 'blue01' } : {}}
-                  key={`${item}_${index}`}
-                  {...getItemProps({ item, index })}
-                >
-                  {itemRenderer ? itemRenderer(item) : itemToString ? itemToString(item) : item}
-                </Box>
-              ))
-            ) : (
-              <Box
-                as="li"
-                px="md"
-                py="xs"
-                color="grey06"
-                cursor="pointer"
-                fontSize={14}
-                textAlign="left"
-                lineHeight="20px"
-              >
-                No items.
-              </Box>
-            )}
-          </Box>
-        </Card>
-        <Card
           position="absolute"
           float="left"
           top="100%"
@@ -196,7 +143,7 @@ function InputSelect<T>({
           width={width}
           maxHeight={maxHeight}
           display={isOpen ? 'block' : 'none'}
-          elevation={3}
+          elevation={2}
           overflow="hidden"
           zIndex={1}
         >
