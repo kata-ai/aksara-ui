@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { CSSObject } from '../../../system';
 import { VisuallyHidden } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 
@@ -8,8 +9,7 @@ export interface ModalHeaderIconProps extends BoxProps {
   style?: React.CSSProperties;
   title: string;
   icon: React.ComponentType<any>;
-  iconBackgroundColor: string;
-  iconColor: string;
+  iconContainerStyle?: CSSObject;
 }
 
 // TODO move to BoxHeader
@@ -20,8 +20,10 @@ const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({
   children,
   title,
   icon,
-  iconBackgroundColor,
-  iconColor,
+  iconContainerStyle = {
+    backgroundColor: 'yellow02',
+    color: 'yellow07',
+  },
   ...rest
 }) => {
   return (
@@ -45,8 +47,7 @@ const ModalHeaderIcon: React.FC<ModalHeaderIconProps> = ({
         justifyContent="center"
         alignItems="center"
         borderRadius={72}
-        backgroundColor={iconBackgroundColor}
-        color={iconColor}
+        sx={{ ...iconContainerStyle }}
       >
         {React.createElement(icon, { 'aria-hidden': true, size: 40, fill: 'currentColor' })}
       </Box>
