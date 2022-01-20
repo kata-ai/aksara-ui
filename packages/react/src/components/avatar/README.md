@@ -14,23 +14,23 @@ export default function MyApp({ children }) {
 }
 ```
 
-Avatar also accepts any `px` values as number for size. If not set, the default is 40.
+### Avatar Background Color
 
-```jsx
-import { Avatar } from '@aksara-ui/react';
+When src and bg props not provided, Avatar component will generate bgColor based on name value to randomize the bgColor
 
-export default function MyApp({ children }) {
-  return <Avatar src="path/to/image" size={24} />;
-}
-```
-
-See more usage in the _JSX_ panel
+_List generated bgColor_ :
+`['indigo06', 'red07', 'yellow07', 'blue07', 'green07']`
 
 ## Props
 
-| Property  | Type                  | Required | Default     |
-| --------- | --------------------- | -------- | ----------- |
-| src       | `any`                 | **Yes**  | -           |
-| size      | `number`              | -        | `40`        |
-| className | `string`              | -        | `undefined` |
-| style     | `React.CSSProperties` | -        | `undefined` |
+| Property  | Type                       | Required | Default     |
+| --------- | -------------------------- | -------- | ----------- |
+| src       | `any`                      | -        | -           |
+| size      | `AvatarSize`               | -        | `lg`        |
+| className | `string`                   | -        | `undefined` |
+| style     | `React.CSSProperties`      | -        | `undefined` |
+| presence  | `PresenceProps`            | -        | `undefined` |
+| icon      | `React.ComponentType<any>` | -        | `undefined` |
+| bg        | `string`                   | -        | `undefined` |
+| alt       | `string`                   | -        | `undefined` |
+| name      | `string`                   | -        | `undefined` |

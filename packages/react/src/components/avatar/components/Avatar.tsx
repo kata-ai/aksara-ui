@@ -96,6 +96,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
     const renderAvatar = () => {
       return (
         <Box
+          data-testid="avatar-container"
           as="span"
           ref={ref}
           className={className}

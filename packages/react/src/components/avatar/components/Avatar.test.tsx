@@ -33,4 +33,19 @@ describe('components/Avatar', () => {
       expect(presence).not.toBeInTheDocument();
     });
   });
+  describe('Bg Color Generator', () => {
+    test('generate bgColor Correctly', () => {
+      const { getAllByTestId } = render(
+        <>
+          <Avatar name="Adry Muhammad" />
+          <Avatar name="Rara Pertama Sari" />
+          <Avatar name="Ardi Marimo" />
+        </>
+      );
+
+      const listContainer = getAllByTestId('avatar-container');
+      expect(!!(listContainer[0].className === listContainer[2].className)).toBe(true);
+      expect(!!(listContainer[0].className === listContainer[1].className)).toBe(false);
+    });
+  });
 });
