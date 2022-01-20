@@ -37,15 +37,17 @@ describe('components/Avatar', () => {
     test('generate bgColor Correctly', () => {
       const { getAllByTestId } = render(
         <>
-          <Avatar name="Adry Muhammad" />
-          <Avatar name="Rara Pertama Sari" />
-          <Avatar name="Ardi Marimo" />
+          <Avatar name="Adry Baba" />
+          <Avatar name="Rara Permai Sari" />
+          <Avatar name="Ardy Buba" />
+          <Avatar name="Ardy Brai" />
         </>
       );
 
       const listContainer = getAllByTestId('avatar-container');
       expect(!!(listContainer[0].className === listContainer[2].className)).toBe(true);
       expect(!!(listContainer[0].className === listContainer[1].className)).toBe(false);
+      expect(!!(listContainer[0].className === listContainer[3].className)).toBe(false);
     });
   });
 });

@@ -87,7 +87,8 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       const names = name.split(' ');
       let totalValue = 0;
       names.forEach(item => {
-        totalValue += new TextEncoder().encode(item[0])[0];
+        const utfValue = new TextEncoder().encode(`${item[0]}${item[item.length - 1]}`);
+        totalValue += utfValue[0] + utfValue[1];
       });
       const indexColor = totalValue % bgColors.length;
       return bgColors[indexColor];
