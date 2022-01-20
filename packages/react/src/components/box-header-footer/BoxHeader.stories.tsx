@@ -139,8 +139,10 @@ export const WithIcon = ({ size }: { size: 'sm' | 'lg' }) => {
         id="stories-title"
         title="Delete item?"
         icon={IconTrash}
-        iconBackgroundColor="red01"
-        iconColor="red07"
+        iconContainerStyle={{
+          backgroundColor: 'red01',
+          color: 'red07',
+        }}
       />
     </Box>
   );
