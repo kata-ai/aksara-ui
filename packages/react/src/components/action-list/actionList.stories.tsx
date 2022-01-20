@@ -4,6 +4,7 @@ import { IconPen } from '@aksara-ui/icons';
 import { Stack, Box } from '../../layout';
 import { Text } from '../../typography';
 import { ActionList, ActionListItem, ActionListItemVariant } from '.';
+import { CheckboxContainer, CheckboxIndicator } from '../form/components/InputCheckbox/CheckboxIndicator';
 
 export default {
   title: 'Core/Components/ActionList',
@@ -72,4 +73,54 @@ export const ActionListWithIconExample: Story = () => {
       </ActionListItem>
     </ActionList>
   );
+};
+
+export const ActionListWithCheckboxExample: Story<{ disabled: boolean }> = ({ disabled }) => {
+  const [selected, setSeleted] = React.useState<string>('');
+  return (
+    <ActionList width="200px">
+      <ActionListItem
+        marginX="sm"
+        isActive={selected === 'item-1'}
+        onClick={() => setSeleted('item-1')}
+        indicator={false}
+        disabled={disabled}
+      >
+        <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
+          <CheckboxContainer>{selected === 'item-1' && <CheckboxIndicator />}</CheckboxContainer>
+          <Text scale={300}>item sample 1</Text>
+        </Stack>
+      </ActionListItem>
+      <ActionListItem
+        marginX="sm"
+        isActive={selected === 'item-2'}
+        onClick={() => setSeleted('item-2')}
+        indicator={false}
+        disabled={disabled}
+      >
+        <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
+          <CheckboxContainer>{selected === 'item-2' && <CheckboxIndicator />}</CheckboxContainer>
+          <Text scale={300}>item sample 1</Text>
+        </Stack>
+      </ActionListItem>
+      <ActionListItem
+        marginX="sm"
+        isActive={selected === 'item-3'}
+        onClick={() => setSeleted('item-3')}
+        indicator={false}
+        disabled={disabled}
+      >
+        <Stack direction="horizontal" alignItems={'center'} spacing={'sm'}>
+          <CheckboxContainer>{selected === 'item-3' && <CheckboxIndicator />}</CheckboxContainer>
+          <Text scale={300}>item sample 1</Text>
+        </Stack>
+      </ActionListItem>
+    </ActionList>
+  );
+};
+ActionListWithCheckboxExample.argTypes = {
+  disabled: {
+    control: 'boolean',
+    defaultValue: false,
+  },
 };

@@ -14,10 +14,24 @@ export interface ActionListItemProps extends Omit<BoxProps, 'sx'>, React.Compone
   children?: React.ReactNode;
   disabled?: boolean;
   variant?: ActionListItemVariant;
+  indicator?: boolean;
 }
 
 const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
-  ({ style, children, isActive, disabled, containerStyle, variant = 'default', contentStyle, ...rest }, ref) => {
+  (
+    {
+      style,
+      children,
+      isActive,
+      disabled,
+      containerStyle,
+      variant = 'default',
+      contentStyle,
+      indicator = true,
+      ...rest
+    },
+    ref
+  ) => {
     const styles = useComponentStyles('actionListItem', { isActive, variant });
     const renderLabel = () => {
       if (typeof children === 'string' || typeof children === 'number') {
@@ -25,16 +39,10 @@ const ActionListItem = React.forwardRef<HTMLDivElement, ActionListItemProps>(
       }
       return children;
     };
+    const disabledProps = disabled ? { 'aria-disabled': true, 'data-disabled': true } : {};
     return (
-      <Box
-        aria-disabled={disabled}
-        data-disabled={disabled}
-        ref={ref}
-        sx={{ ...styles, ...containerStyle }}
-        style={style}
-        {...rest}
-      >
-        {isActive && (
+      <Box {...disabledProps} ref={ref} sx={{ ...styles, ...containerStyle }} style={style} {...rest}>
+        {isActive && indicator && (
           // Indicator
           <Box width={4} position="absolute" left="0" top="0" height="100%" backgroundColor={theme.colors.blue07} />
         )}
