@@ -3,8 +3,7 @@ import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
 import { Stack, Box } from '../../layout';
 import { Text } from '../../typography';
-import ActionListItem, { ActionListItemVariant } from './components/ActionListItem';
-import ActionList from './components/ActionList';
+import { ActionList, ActionListItem, ActionListItemVariant } from '.';
 
 export default {
   title: 'Core/Components/ActionList',
