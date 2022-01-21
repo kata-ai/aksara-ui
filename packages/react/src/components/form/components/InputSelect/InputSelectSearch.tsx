@@ -156,13 +156,13 @@ function InputSelect<T>({
     }
     if (inputValueRenderer) {
       return (
-        <Box position={'absolute'} left="12px">
+        <Box position={'absolute'} left="12px" pointerEvents={'none'}>
           {inputValueRenderer(selectedItem)}
         </Box>
       );
     }
     return (
-      <Box position={'absolute'} left="12px">
+      <Box position={'absolute'} left="12px" pointerEvents={'none'}>
         <Text scale={200} color={!disabled ? 'greydark02' : 'greymed01'}>
           {itemToString(selectedItem)}
         </Text>

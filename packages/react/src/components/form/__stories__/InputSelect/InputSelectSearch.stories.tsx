@@ -1,6 +1,8 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
+import { Box } from '../../../../layout';
 import { InputSelectSearch, InputSelectSearchProps } from '../../components/InputSelect';
+import { Text } from '../../../../typography';
 
 export default {
   title: 'Core/Components/Form/InputSelect/InputSelectSearch',
@@ -66,6 +68,11 @@ export const Example: Story<InputSelectSearchProps<ValueSchema>> = ({
           setSelected(selectedItem);
         }
       }}
+      inputValueRenderer={item => (
+        <Box>
+          <Text scale={200}>{item.label}</Text>
+        </Box>
+      )}
       items={items}
       width={width}
       maxHeight={maxHeight}
