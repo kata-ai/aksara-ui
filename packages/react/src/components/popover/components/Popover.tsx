@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Box } from '../../../layout';
+import styled from 'styled-components';
+import { theme } from '../../../theme';
+import { Box, BoxProps } from '../../../layout';
 import { SxProps, useComponentStyles } from '../../../system';
 
 export type PopoverProps = PopoverPrimitive.PopoverProps;
@@ -38,6 +40,23 @@ export const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children, ...res
   );
 };
 
+const PopOverContentBox = React.forwardRef<HTMLDivElement, React.PropsWithChildren<BoxProps>>(
+  ({ children, sx, ...props }, ref) => {
+    const popoverContentStyles = useComponentStyles('popoverContent');
+    return (
+      <Box ref={ref} sx={{ ...popoverContentStyles, ...sx }} {...props}>
+        {children}
+      </Box>
+    );
+  }
+);
+const BoxFilterDropdShadowSupport = styled(PopOverContentBox)`
+  @supports (filter: drop-shadow(0px 2px 4px #000)) {
+    filter: drop-shadow(${theme.shadows[2]});
+    box-shadow: none;
+  }
+`;
+
 export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>(
   (
     {
@@ -55,7 +74,6 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
     },
     ref
   ) => {
-    const popoverContentStyles = useComponentStyles('popoverContent');
     return (
       <PopoverPrimitive.Content
         asChild
@@ -65,12 +83,12 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
         alignOffset={alignOffset}
         {...rest}
       >
-        <Box ref={ref} className={className} style={style} sx={{ ...popoverContentStyles, ...sx }}>
+        <BoxFilterDropdShadowSupport ref={ref} className={className} style={style} sx={{ ...sx }}>
           {children}
           {!disableArrow && (
             <PopoverPrimitive.Arrow offset={arrowOffset} width={20} height={8} fill="var(--popover-border)" />
           )}
-        </Box>
+        </BoxFilterDropdShadowSupport>
       </PopoverPrimitive.Content>
     );
   }

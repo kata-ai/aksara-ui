@@ -2,7 +2,8 @@ import * as React from 'react';
 import { IconBriefcase, IconClock, IconKebab } from '@aksara-ui/icons';
 import { action } from '@storybook/addon-actions';
 
-import Card from './Card';
+import { Story } from '@storybook/react';
+import Card, { CardElevation } from './Card';
 import { Box, Stack, Wrap, WrapItem } from '../../../layout';
 import { Heading, Paragraph } from '../../../typography';
 import { Button, IconButton } from '../../button';
@@ -12,13 +13,18 @@ import { Badge } from '../../badge';
 
 export default {
   title: 'Core/Components/Card',
-  component: Card,
+  argTypes: {
+    elevation: {
+      options: [1, 2, 3, 4, 5],
+      control: { type: 'radio' },
+    },
+  },
 };
 
-export const BodyCard = () => {
+export const BodyCard: Story<{ elevation: CardElevation }> = ({ elevation }) => {
   return (
     <Box display="inline-flex">
-      <Card p="lg">
+      <Card p="lg" elevation={elevation}>
         <Stack spacing="md">
           <Avatar icon={IconBriefcase} bg="yellow01" color="yellow07" />
           <Stack spacing="xs">
