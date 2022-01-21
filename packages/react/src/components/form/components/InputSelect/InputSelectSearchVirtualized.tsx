@@ -166,9 +166,11 @@ function InputSelect<T>({
       return null;
     }
     if (inputValueRenderer) {
-      <Box position={'absolute'} left="12px">
-        {inputValueRenderer(selectedItem)}
-      </Box>;
+      return (
+        <Box position={'absolute'} left="12px">
+          {inputValueRenderer(selectedItem)}
+        </Box>
+      );
     }
     return (
       <Box position={'absolute'} left="12px">
