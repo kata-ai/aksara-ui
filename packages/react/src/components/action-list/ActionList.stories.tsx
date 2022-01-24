@@ -2,7 +2,7 @@ import { Story } from '@storybook/react';
 import * as React from 'react';
 import { IconPen } from '@aksara-ui/icons';
 import { Stack, Box } from '../../layout';
-import { Text } from '../../typography';
+import { Heading, Text } from '../../typography';
 import { ActionList, ActionListItem, ActionListItemVariant } from '.';
 import { CheckboxContainer, CheckboxIndicator } from '../form/components/InputCheckbox/CheckboxIndicator';
 
@@ -123,4 +123,40 @@ ActionListWithCheckboxExample.argTypes = {
     control: 'boolean',
     defaultValue: false,
   },
+};
+
+export const ActionListWithDescExample: Story<{ disabled: boolean }> = ({ disabled }) => {
+  const [selected, setSeleted] = React.useState<string>('');
+  return (
+    <ActionList width="200px">
+      <ActionListItem
+        marginX="sm"
+        isActive={selected === 'item-1'}
+        onClick={() => setSeleted('item-1')}
+        indicator={false}
+        disabled={disabled}
+      >
+        <Stack direction="vertical" spacing={'xxs'}>
+          <Heading scale={200}>Evan Irawan</Heading>
+          <Text display="block" fontSize="10px" lineHeight="16px">
+            Product Manager
+          </Text>
+        </Stack>
+      </ActionListItem>
+      <ActionListItem
+        marginX="sm"
+        isActive={selected === 'item-1'}
+        onClick={() => setSeleted('item-1')}
+        indicator={false}
+        disabled={disabled}
+      >
+        <Stack direction="vertical" spacing={'xxs'}>
+          <Heading scale={200}>Stevan Irawan</Heading>
+          <Text display="block" fontSize="10px" lineHeight="16px">
+            Software Engineer
+          </Text>
+        </Stack>
+      </ActionListItem>
+    </ActionList>
+  );
 };
