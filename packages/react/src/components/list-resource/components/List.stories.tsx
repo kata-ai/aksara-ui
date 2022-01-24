@@ -102,12 +102,15 @@ export const WithSelectedItem = () => {
     const selectedItemLength = Object.keys(selectedItem).length;
     if (headerCheckboxRef.current) {
       if (selectedItemLength === maxLength) {
+        headerCheckboxRef.current.readOnly = false;
         headerCheckboxRef.current.checked = true;
         headerCheckboxRef.current.indeterminate = false;
       } else if (selectedItemLength > 0 && selectedItemLength <= maxLength) {
+        headerCheckboxRef.current.readOnly = true;
         headerCheckboxRef.current.checked = false;
         headerCheckboxRef.current.indeterminate = true;
       } else {
+        headerCheckboxRef.current.readOnly = false;
         headerCheckboxRef.current.checked = false;
         headerCheckboxRef.current.indeterminate = false;
       }
@@ -154,7 +157,7 @@ export const WithSelectedItem = () => {
   );
 
   const toggleSelectHeader = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked) {
+    if (e.target.checked && !e.target.readOnly) {
       const selectAll: Record<string, boolean> = {};
       listItem.forEach(item => {
         selectAll[item.id] = true;
