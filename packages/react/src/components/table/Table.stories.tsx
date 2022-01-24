@@ -45,12 +45,15 @@ export const Example = () => {
     const maxLength = data.length;
     if (headerCheckboxRef.current) {
       if (selectedRows.length === maxLength) {
+        headerCheckboxRef.current.readOnly = false;
         headerCheckboxRef.current.checked = true;
         headerCheckboxRef.current.indeterminate = false;
       } else if (selectedRows.length > 0 && selectedRows.length <= maxLength) {
+        headerCheckboxRef.current.readOnly = true;
         headerCheckboxRef.current.checked = false;
         headerCheckboxRef.current.indeterminate = true;
       } else {
+        headerCheckboxRef.current.readOnly = false;
         headerCheckboxRef.current.checked = false;
         headerCheckboxRef.current.indeterminate = false;
       }
@@ -71,7 +74,7 @@ export const Example = () => {
               <InputCheckbox
                 ref={headerCheckboxRef}
                 onChange={e => {
-                  if (e.target.checked) {
+                  if (e.target.checked && !e.target.readOnly) {
                     setSelectedRows(data.map(({ id }) => id));
                   } else {
                     setSelectedRows([]);
