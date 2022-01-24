@@ -2,6 +2,8 @@ import { IconCloseRounded } from '@aksara-ui/icons';
 import * as React from 'react';
 import { Box, BoxProps, Stack } from '../../layout';
 import { Button, PlainButton } from '../button';
+import { InputGroup } from '../form/components/InputGroup';
+import { InputPrefix } from '../form/components/InputPrefix';
 import { InputSearchbox } from '../form/components/InputSearchbox';
 import { InputSelect } from '../form/components/InputSelect';
 import { Pill } from '../pill';
@@ -66,27 +68,28 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
         {orderByOptions.slice(0, MAX_ORDER_OPTIONS).map(orderItem => {
           return (
             <Box marginLeft={['xxs']} key={orderItem.key} data-testid="orderOption">
-              <InputSelect
-                selectedItem={orderOption[orderItem.key]}
-                width="300px"
-                placeholder={orderItem.label}
-                itemToString={item => (item ? `${item.label}` : '')}
-                itemRenderer={item => (
-                  <>
-                    <Box width={15} mr="sm" />
-                    {`${item.label}`}
-                  </>
-                )}
-                handleSelectedItemChange={({ selectedItem }) => {
-                  if (selectedItem) {
-                    setOrderOption({
-                      ...orderOption,
-                      [orderItem.key]: selectedItem,
-                    });
-                  }
-                }}
-                items={orderItem.options}
-              />
+              <InputGroup width="100%" maxWidth={360}>
+                <InputPrefix zIndex={1}>Sort by</InputPrefix>
+                <InputSelect
+                  selectedItem={orderOption[orderItem.key]}
+                  width="300px"
+                  placeholder={orderItem.label}
+                  itemToString={item => (item ? `${item.label}` : '')}
+                  itemValue={item => (item ? `${item.value}` : '')}
+                  handleSelectedItemChange={({ selectedItem }) => {
+                    if (selectedItem) {
+                      setOrderOption({
+                        ...orderOption,
+                        [orderItem.key]: selectedItem,
+                      });
+                    }
+                  }}
+                  items={orderItem.options}
+                  inputStyle={{
+                    pl: 58,
+                  }}
+                />
+              </InputGroup>
             </Box>
           );
         })}
