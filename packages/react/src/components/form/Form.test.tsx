@@ -6,11 +6,12 @@ import {
   InputText,
   InputTextarea,
   InputMessage,
-  InputCheckboxLabel,
   InputCheckbox,
   InputRadioLabel,
   InputRadio,
 } from './components';
+import { Box } from '../../layout/box';
+import { Text } from '../../typography';
 
 describe('components/Form', () => {
   test('renders standard text input correctly', () => {
@@ -65,10 +66,12 @@ describe('components/Form', () => {
 
   test('renders checkbox input correctly', () => {
     const { getByTestId } = render(
-      <InputCheckboxLabel htmlFor="checkbox">
+      <Box display="inline-flex" flexDirection="row" alignItems="center">
         <InputCheckbox id="checkbox" data-testid="checkbox-input" name="checkbox" />
-        Checkbox
-      </InputCheckboxLabel>
+        <Text as="label" scale={200} color={'greydark02'} ml="xs" htmlFor="c1">
+          Checkbox
+        </Text>
+      </Box>
     );
 
     const input = getByTestId('checkbox-input');
