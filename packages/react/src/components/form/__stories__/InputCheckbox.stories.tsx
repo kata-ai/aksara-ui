@@ -16,6 +16,9 @@ export default {
     id: {
       control: 'text',
     },
+    indeterminate: {
+      control: 'boolean',
+    },
   },
 };
 
@@ -28,20 +31,20 @@ CheckboxIndicatorExample.argTypes = {
   },
 };
 
-export const InputCheckboxExample: Story<CheckboxProps> = ({ disabled, errors, indeterminate }) => {
+export const InputCheckboxExample: Story<CheckboxProps & { indeterminate?: boolean }> = ({
+  disabled,
+  errors,
+  indeterminate,
+}) => {
+  const checked: CheckboxProps = indeterminate ? { checked: 'indeterminate' } : {};
   return (
     <form>
       <Box display="inline-flex" flexDirection="row" alignItems="center">
-        <InputCheckbox id="c1" indeterminate={indeterminate} disabled={disabled} errors={errors} />
+        <InputCheckbox id="c1" {...checked} disabled={disabled} errors={errors} />
         <Text as="label" scale={200} color={'greydark02'} ml="xs" htmlFor="c1">
           Checkbox
         </Text>
       </Box>
     </form>
   );
-};
-InputCheckboxExample.argTypes = {
-  indeterminate: {
-    control: 'boolean',
-  },
 };
