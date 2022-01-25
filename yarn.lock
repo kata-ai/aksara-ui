@@ -3024,6 +3024,22 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-primitive" "0.1.1"
 
+"@radix-ui/react-checkbox@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-checkbox/-/react-checkbox-0.1.4.tgz#170957725b0b64b9532621ec14e52c2d3e7a2bb6"
+  integrity sha512-UtiV0y4CNmcAdCqRaGGPxeET/asO44rfKxtBbMIxAD4BGPfSIe4+kkF0q624S5c7q07HXO0vhOYlSObR3Fj2bg==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/primitive" "0.1.0"
+    "@radix-ui/react-compose-refs" "0.1.0"
+    "@radix-ui/react-context" "0.1.1"
+    "@radix-ui/react-label" "0.1.4"
+    "@radix-ui/react-presence" "0.1.1"
+    "@radix-ui/react-primitive" "0.1.3"
+    "@radix-ui/react-use-controllable-state" "0.1.0"
+    "@radix-ui/react-use-previous" "0.1.0"
+    "@radix-ui/react-use-size" "0.1.0"
+
 "@radix-ui/react-collapsible@0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-collapsible/-/react-collapsible-0.1.5.tgz#086ebc9fb6ee35035dc3e755fa6940bc5b1e5206"
@@ -3145,6 +3161,17 @@
     "@radix-ui/react-context" "0.1.1"
     "@radix-ui/react-id" "0.1.1"
     "@radix-ui/react-primitive" "0.1.1"
+
+"@radix-ui/react-label@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-label/-/react-label-0.1.4.tgz#d62855ff6bb2950d6117462f8e00a0c5378651eb"
+  integrity sha512-I59IMdUhHixk6cG4D00UN+oFxTpur9cJQSOl+4EfSTJZs+x4PqDpM7p402/gb9sXJqylsUkDMHDdaPzLwPNf7g==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-compose-refs" "0.1.0"
+    "@radix-ui/react-context" "0.1.1"
+    "@radix-ui/react-id" "0.1.4"
+    "@radix-ui/react-primitive" "0.1.3"
 
 "@radix-ui/react-menu@0.1.1":
   version "0.1.1"

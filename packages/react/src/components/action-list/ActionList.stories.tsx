@@ -4,7 +4,7 @@ import { IconPen } from '@aksara-ui/icons';
 import { Stack, Box } from '../../layout';
 import { Heading, Text } from '../../typography';
 import { ActionList, ActionListItem, ActionListItemVariant } from '.';
-import { CheckboxContainer, CheckboxIndicator } from '../form/components/InputCheckbox/CheckboxIndicator';
+import { CheckboxContainer, CheckboxIndicator } from '../form/components/InputCheckbox/components/CheckboxIndicator';
 
 export default {
   title: 'Core/Components/ActionList',

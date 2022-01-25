@@ -25,6 +25,7 @@ import scrollArea from './scroll-area';
 import list from './list';
 import boxHeaderParty from './box-header-footer';
 import datepicker from './datepicker';
+import checkbox from './form/checkbox';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -56,6 +57,7 @@ const componentStyles = {
   ...list,
   ...boxHeaderParty,
   ...datepicker,
+  ...checkbox,
 };
 
 export default componentStyles;

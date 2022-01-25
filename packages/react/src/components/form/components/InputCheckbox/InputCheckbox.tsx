@@ -1,23 +1,24 @@
 import * as React from 'react';
+import * as CheckboxBase from '@radix-ui/react-checkbox';
+import { CheckboxContainer, CheckboxIndeterminate, CheckboxIndicator } from './components';
 
-import { CheckboxBase } from '../../styles';
-
-export interface InputCheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  /** True if the input has errors. */
+export interface CheckboxProps extends CheckboxBase.CheckboxProps {
+  indeterminate?: boolean;
   errors?: boolean;
 }
 
-const InputCheckbox = React.forwardRef<HTMLInputElement, InputCheckboxProps>(({ className, errors, ...rest }, ref) => {
+export const InputCheckbox: React.FC<CheckboxProps> = ({ indeterminate, errors, disabled, ...rest }) => {
   return (
-    <CheckboxBase className={className} inputVariant={errors ? 'errors' : 'base'} type="checkbox" ref={ref} {...rest} />
+    <CheckboxBase.Root asChild {...rest} disabled={disabled}>
+      <CheckboxContainer errors={errors} disabled={disabled}>
+        <CheckboxBase.Indicator asChild>
+          {indeterminate ? (
+            <CheckboxIndeterminate errors={errors} disabled={disabled} />
+          ) : (
+            <CheckboxIndicator errors={errors} disabled={disabled} />
+          )}
+        </CheckboxBase.Indicator>
+      </CheckboxContainer>
+    </CheckboxBase.Root>
   );
-});
-
-InputCheckbox.defaultProps = {
-  errors: false,
-  size: 40,
 };
-
-InputCheckbox.displayName = 'InputText';
-
-export default InputCheckbox;

@@ -95,27 +95,7 @@ const listItem = [
   },
 ];
 export const WithSelectedItem = () => {
-  const headerCheckboxRef = React.useRef<HTMLInputElement>(null);
   const [selectedItem, setSelectedItem] = React.useState<Record<string, boolean>>({});
-  React.useEffect(() => {
-    const maxLength = listItem.length;
-    const selectedItemLength = Object.keys(selectedItem).length;
-    if (headerCheckboxRef.current) {
-      if (selectedItemLength === maxLength) {
-        headerCheckboxRef.current.readOnly = false;
-        headerCheckboxRef.current.checked = true;
-        headerCheckboxRef.current.indeterminate = false;
-      } else if (selectedItemLength > 0 && selectedItemLength <= maxLength) {
-        headerCheckboxRef.current.readOnly = true;
-        headerCheckboxRef.current.checked = false;
-        headerCheckboxRef.current.indeterminate = true;
-      } else {
-        headerCheckboxRef.current.readOnly = false;
-        headerCheckboxRef.current.checked = false;
-        headerCheckboxRef.current.indeterminate = false;
-      }
-    }
-  }, [selectedItem, headerCheckboxRef]);
 
   const listItemTable = () => {
     return listItem.map(item => {
@@ -156,8 +136,8 @@ export const WithSelectedItem = () => {
     </Box>
   );
 
-  const toggleSelectHeader = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked && !e.target.readOnly) {
+  const toggleSelectHeader = React.useCallback(() => {
+    if (!Object.keys(selectedItem).length) {
       const selectAll: Record<string, boolean> = {};
       listItem.forEach(item => {
         selectAll[item.id] = true;
@@ -173,7 +153,7 @@ export const WithSelectedItem = () => {
       return (
         <Box display="flex" width="100%" alignItems="center">
           <Box width="50px">
-            <InputCheckbox ref={headerCheckboxRef} onChange={toggleSelectHeader} />
+            <InputCheckbox onCheckedChange={toggleSelectHeader} />
           </Box>
           <Box flex="1">
             <Text scale={300}>{`${hasSelectedItem} selected`}</Text>
@@ -190,7 +170,7 @@ export const WithSelectedItem = () => {
     return (
       <Box display="flex" width="100%" alignItems="center">
         <Box width="50px">
-          <InputCheckbox ref={headerCheckboxRef} onChange={toggleSelectHeader} />
+          <InputCheckbox onCheckedChange={toggleSelectHeader} />
         </Box>
         <Box flex="1">
           <Text fontWeight="700" fontSize="12px" lineHeight="16px">

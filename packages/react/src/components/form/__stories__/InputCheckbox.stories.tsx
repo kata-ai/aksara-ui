@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
-import { InputCheckboxLabel, InputCheckbox, InputCheckboxProps } from '../components/InputCheckbox';
-import { CheckboxContainer, CheckboxIndicator } from '../components/InputCheckbox/CheckboxIndicator';
+import {
+  InputCheckboxLabel,
+  CheckboxContainer,
+  CheckboxIndicator,
+  CheckboxProps,
+  InputCheckbox,
+} from '../components/InputCheckbox';
 
 export default {
   title: 'Core/Components/Form/InputCheckbox',
-  component: InputCheckbox,
   argTypes: {
     disabled: {
       control: 'boolean',
@@ -22,52 +25,32 @@ export default {
   },
 };
 
-export const Example: Story<InputCheckboxProps> = ({ id, value, disabled, ...rest }) => {
-  const checkboxRef = React.useRef<HTMLInputElement>(null);
-
-  const toggle = React.useCallback(() => {
-    if (checkboxRef.current) {
-      if (checkboxRef.current.readOnly) {
-        checkboxRef.current.checked = false;
-        checkboxRef.current.readOnly = false;
-      } else if (!checkboxRef.current.checked) {
-        checkboxRef.current.readOnly = true;
-        checkboxRef.current.indeterminate = true;
-      }
-    }
-  }, [checkboxRef]);
-
-  return (
-    <Box>
-      <InputCheckboxLabel htmlFor={id}>
-        <InputCheckbox
-          ref={checkboxRef}
-          id={id}
-          name={id}
-          value={value}
-          disabled={disabled}
-          onClick={toggle}
-          {...rest}
-        />
-        <Text scale={200} color={disabled ? 'greymed01' : 'greydark02'} ml="xs">
-          Checkbox
-        </Text>
-      </InputCheckboxLabel>
-    </Box>
-  );
-};
-Example.args = {
-  id: 'r1',
-  value: 'r1',
-  disabled: false,
-  errors: false,
-};
-
 export const CheckboxIndicatorExample: Story<{ selected: boolean }> = ({ selected }) => {
   return <CheckboxContainer>{selected && <CheckboxIndicator />}</CheckboxContainer>;
 };
 CheckboxIndicatorExample.argTypes = {
   selected: {
+    control: 'boolean',
+  },
+};
+
+export const CheckboxRadixExample: Story<CheckboxProps> = ({ disabled, errors, indeterminate }) => {
+  return (
+    <form>
+      <Box>
+        <InputCheckboxLabel htmlFor="c1">
+          <InputCheckbox defaultChecked id="c1" indeterminate={indeterminate} disabled={disabled} errors={errors} />
+          <Text scale={200} color={'greydark02'} ml="xs">
+            Checkbox
+          </Text>
+        </InputCheckboxLabel>
+      </Box>
+    </form>
+  );
+};
+CheckboxRadixExample.argTypes = {
+  indeterminate: {
+    options: [true, false],
     control: 'boolean',
   },
 };
