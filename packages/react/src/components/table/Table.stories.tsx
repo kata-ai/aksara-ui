@@ -52,8 +52,9 @@ export const Example = () => {
           <TableHeadRow>
             <TableHeadCell>
               <InputCheckbox
-                indeterminate={selectedRows.length > 0 && selectedRows.length < data.length}
-                checked={!!selectedRows.length}
+                checked={
+                  selectedRows.length > 0 && selectedRows.length < data.length ? 'indeterminate' : !!selectedRows.length
+                }
                 onCheckedChange={checked => {
                   if (checked) {
                     setSelectedRows(data.map(({ id }) => id));

@@ -3,16 +3,15 @@ import * as CheckboxBase from '@radix-ui/react-checkbox';
 import { CheckboxContainer, CheckboxIndeterminate, CheckboxIndicator } from './components';
 
 export interface CheckboxProps extends CheckboxBase.CheckboxProps {
-  indeterminate?: boolean;
   errors?: boolean;
 }
 
-export const InputCheckbox: React.FC<CheckboxProps> = ({ indeterminate, errors, disabled, ...rest }) => {
+export const InputCheckbox: React.FC<CheckboxProps> = ({ errors, disabled, checked, ...rest }) => {
   return (
-    <CheckboxBase.Root asChild {...rest} disabled={disabled}>
+    <CheckboxBase.Root asChild checked={checked} {...rest} disabled={disabled}>
       <CheckboxContainer errors={errors} disabled={disabled}>
         <CheckboxBase.Indicator asChild>
-          {indeterminate ? (
+          {checked === 'indeterminate' ? (
             <CheckboxIndeterminate errors={errors} disabled={disabled} />
           ) : (
             <CheckboxIndicator errors={errors} disabled={disabled} />
