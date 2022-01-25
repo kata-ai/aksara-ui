@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { BaseIconProps, iconDefaultProps } from '@aksara-ui/icons';
 
-const ChekcboxTickIcon: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
+// eslint-disable-next-line import/prefer-default-export
+export const ChekcboxTickIcon: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 8 6" fill="none" {...props} xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
@@ -14,5 +15,3 @@ const ChekcboxTickIcon: React.FC<BaseIconProps> = ({ size, fill, ...props }) => 
 ChekcboxTickIcon.defaultProps = {
   ...iconDefaultProps,
 };
-
-export default ChekcboxTickIcon;

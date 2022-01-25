@@ -30,7 +30,6 @@ export default {
 export const Example = () => {
   const data = React.useMemo(() => dummyData, []);
   const columns = React.useMemo(() => dummyColumns, []);
-  const headerCheckboxRef = React.useRef<HTMLInputElement>(null);
   const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
 
   const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useTable(
@@ -40,22 +39,6 @@ export const Example = () => {
     },
     useSortBy
   );
-
-  React.useEffect(() => {
-    const maxLength = data.length;
-    if (headerCheckboxRef.current) {
-      if (selectedRows.length === maxLength) {
-        headerCheckboxRef.current.checked = true;
-        headerCheckboxRef.current.indeterminate = false;
-      } else if (selectedRows.length > 0 && selectedRows.length <= maxLength) {
-        headerCheckboxRef.current.checked = false;
-        headerCheckboxRef.current.indeterminate = true;
-      } else {
-        headerCheckboxRef.current.checked = false;
-        headerCheckboxRef.current.indeterminate = false;
-      }
-    }
-  }, [selectedRows, headerCheckboxRef]);
 
   const getSortTypeValue = (column: any) => {
     if (!column.canSortHeader) return '';
@@ -69,9 +52,9 @@ export const Example = () => {
           <TableHeadRow>
             <TableHeadCell>
               <InputCheckbox
-                ref={headerCheckboxRef}
-                onChange={e => {
-                  if (e.target.checked) {
+                indeterminate={selectedRows.length > 0 && selectedRows.length <= data.length}
+                onChange={() => {
+                  if (!selectedRows.length) {
                     setSelectedRows(data.map(({ id }) => id));
                   } else {
                     setSelectedRows([]);
@@ -110,8 +93,8 @@ export const Example = () => {
                 <TableBodyCell>
                   <InputCheckbox
                     checked={selectedRows.findIndex(selectedRow => selectedRow === id) !== -1}
-                    onChange={e => {
-                      if (e.target.checked) {
+                    onCheckedChange={checked => {
+                      if (checked) {
                         setSelectedRows(prev => [...prev, id]);
                       } else {
                         setSelectedRows(prev => prev.filter(item => item !== id));

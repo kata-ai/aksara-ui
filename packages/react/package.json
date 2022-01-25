@@ -33,6 +33,7 @@
   "dependencies": {
     "@aksara-ui/core": "^1.0.1-canary.4",
     "@radix-ui/react-accordion": "^0.1.5",
+    "@radix-ui/react-checkbox": "^0.1.4",
     "@radix-ui/react-dropdown-menu": "^0.1.1",
     "@radix-ui/react-id": "^0.1.1",
     "@radix-ui/react-popover": "^0.1.1",
