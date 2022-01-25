@@ -1,3 +1,4 @@
+import { CheckedState } from '@radix-ui/react-checkbox';
 import * as React from 'react';
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
@@ -96,7 +97,6 @@ const listItem = [
 ];
 export const WithSelectedItem = () => {
   const [selectedItem, setSelectedItem] = React.useState<Record<string, boolean>>({});
-
   const listItemTable = () => {
     return listItem.map(item => {
       return {
@@ -109,18 +109,21 @@ export const WithSelectedItem = () => {
     <Box display="flex" width="100%">
       <Box width="50px">
         <InputCheckbox
-          checked={selectedItem[data.id]}
-          onClick={() => {
-            setSelectedItem(prev => {
-              if (prev[data.id]) {
+          checked={!!selectedItem[data.id]}
+          onCheckedChange={checked => {
+            if (checked) {
+              setSelectedItem(prev => {
+                return {
+                  ...prev,
+                  [data.id]: !!checked,
+                };
+              });
+            } else {
+              setSelectedItem(prev => {
                 const { [data.id]: removedValue, ...rest } = prev;
                 return rest;
-              }
-              return {
-                ...prev,
-                [data.id]: prev[data.id] ? !prev[data.id] : true,
-              };
-            });
+              });
+            }
           }}
         />
       </Box>
@@ -136,8 +139,8 @@ export const WithSelectedItem = () => {
     </Box>
   );
 
-  const toggleSelectHeader = React.useCallback(() => {
-    if (!Object.keys(selectedItem).length) {
+  const toggleSelectHeader = React.useCallback((checked: CheckedState) => {
+    if (checked) {
       const selectAll: Record<string, boolean> = {};
       listItem.forEach(item => {
         selectAll[item.id] = true;
@@ -153,7 +156,11 @@ export const WithSelectedItem = () => {
       return (
         <Box display="flex" width="100%" alignItems="center">
           <Box width="50px">
-            <InputCheckbox onCheckedChange={toggleSelectHeader} />
+            <InputCheckbox
+              indeterminate={Object.keys(selectedItem).length > 0 && Object.keys(selectedItem).length < listItem.length}
+              checked={!!Object.keys(selectedItem).length}
+              onCheckedChange={toggleSelectHeader}
+            />
           </Box>
           <Box flex="1">
             <Text scale={300}>{`${hasSelectedItem} selected`}</Text>
@@ -170,7 +177,11 @@ export const WithSelectedItem = () => {
     return (
       <Box display="flex" width="100%" alignItems="center">
         <Box width="50px">
-          <InputCheckbox onCheckedChange={toggleSelectHeader} />
+          <InputCheckbox
+            checked={!!Object.keys(selectedItem).length}
+            indeterminate={Object.keys(selectedItem).length > 0 && Object.keys(selectedItem).length <= listItem.length}
+            onCheckedChange={toggleSelectHeader}
+          />
         </Box>
         <Box flex="1">
           <Text fontWeight="700" fontSize="12px" lineHeight="16px">

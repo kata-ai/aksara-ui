@@ -41,6 +41,12 @@ const checkboxUnselectedBoxBaseStyle: ComponentThemeScaleFn<{
   top: 0,
   left: 0,
   borderColor: 'greylight05',
+  '&:not(:disabled)': {
+    '&:hover': {
+      backgroundColor: 'greylight03',
+      borderColor: 'greymed01',
+    },
+  },
   ...(errors && { borderColor: 'red07' }),
   ...(disabled && { borderColor: transparentize(0.5, theme.colors.greylight05), backgroundColor: 'greylight02' }),
 });
@@ -67,6 +73,11 @@ const checkboxIndicatorBaseStyle: ComponentThemeScaleFn<{
   justifyContent: 'center',
   ...(errors && { backgroundColor: 'red07' }),
   ...(disabled && { backgroundColor: 'greylight05' }),
+  '&:not(:disabled)': {
+    '&:hover': {
+      backgroundColor: 'blue08',
+    },
+  },
 });
 
 const checkboxIndicator: ComponentThemeConfig = {
