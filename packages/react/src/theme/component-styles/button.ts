@@ -111,6 +111,12 @@ export const buttonBase: ComponentThemeConfig = {
         '&:not(:disabled)': {
           backgroundColor: 'red07',
           color: 'greylight01',
+          '&:hover': {
+            backgroundColor: 'red08',
+          },
+          '&:active': {
+            backgroundColor: 'red09',
+          },
         },
         '&:disabled': {
           backgroundColor: 'greylight05',
