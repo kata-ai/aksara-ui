@@ -73,14 +73,20 @@ const SaveBar: React.FC<SaveBarProps> = ({ label, icon, actions, maxWidth, sx, i
         {state => {
           return (
             <SaveBarContainer data-state={state} sx={{ ...savebarStyle, ...sx }} {...rest}>
-              <Box position="absolute" left="24px">
-                {icon}
-              </Box>
-              <Box display="flex" alignItems="center" justifyContent="space-between" width="100%" maxWidth={maxWidth}>
-                <Text color="greylight01" scale={400}>
-                  {label}
-                </Text>
-                <Box>{actions}</Box>
+              <Box display={'flex'}>{icon}</Box>
+              <Box display="flex" alignItems="center" justifyContent="center" width="100%">
+                <Box
+                  display={'flex'}
+                  alignItems="center"
+                  maxWidth={maxWidth}
+                  width="100%"
+                  justifyContent="space-between"
+                >
+                  <Text color="greylight01" scale={400}>
+                    {label}
+                  </Text>
+                  <Box>{actions}</Box>
+                </Box>
               </Box>
             </SaveBarContainer>
           );
