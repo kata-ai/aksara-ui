@@ -1,3 +1,4 @@
+import { CheckedState } from '@radix-ui/react-checkbox';
 import * as React from 'react';
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
@@ -37,7 +38,7 @@ export const Example = () => {
       },
     },
   ];
-  const renderListItem = (data: Item) => (
+  const renderItem = (data: Item) => (
     <Box display="flex" width="100%">
       <Box flex="1">
         <Text>{data.name}</Text>
@@ -73,7 +74,7 @@ export const Example = () => {
         items={items}
         keyExtractor={(data, index) => `${data.name}-${index}`}
         header={renderHeader()}
-        renderItem={renderListItem}
+        renderItem={renderItem}
         onSelectItem={data => console.log('onSelectItem', data)}
       />
     </Box>
@@ -96,7 +97,6 @@ const listItem = [
 ];
 export const WithSelectedItem = () => {
   const [selectedItem, setSelectedItem] = React.useState<Record<string, boolean>>({});
-
   const listItemTable = () => {
     return listItem.map(item => {
       return {
@@ -105,39 +105,49 @@ export const WithSelectedItem = () => {
       };
     });
   };
-  const renderListItem = (data: Item) => (
-    <Box display="flex" width="100%">
-      <Box width="50px">
-        <InputCheckbox
-          checked={selectedItem[data.id]}
-          onClick={() => {
-            setSelectedItem(prev => {
-              if (prev[data.id]) {
-                const { [data.id]: removedValue, ...rest } = prev;
-                return rest;
-              }
-              return {
-                ...prev,
-                [data.id]: prev[data.id] ? !prev[data.id] : true,
-              };
-            });
-          }}
-        />
-      </Box>
-      <Box flex="1">
-        <Text scale={300}>{data.name}</Text>
-      </Box>
-      <Box width="200px">
-        <Text scale={300}>{data.role}</Text>
-      </Box>
-      <Box width="200px">
-        <Text scale={300}>{data.status}</Text>
-      </Box>
-    </Box>
-  );
 
-  const toggleSelectHeader = React.useCallback(() => {
-    if (!Object.keys(selectedItem).length) {
+  const checkedChangeHandler = React.useCallback((checked: CheckedState, data: Item) => {
+    if (checked) {
+      setSelectedItem(prev => {
+        return {
+          ...prev,
+          [data.id]: !!checked,
+        };
+      });
+    } else {
+      setSelectedItem(prev => {
+        const { [data.id]: removedValue, ...rest } = prev;
+        return rest;
+      });
+    }
+  }, []);
+
+  const renderItem = (data: Item) => {
+    return (
+      <Box display="flex" width="100%">
+        <Box width="50px">
+          <InputCheckbox
+            checked={!!selectedItem[data.id]}
+            onCheckedChange={checked => {
+              checkedChangeHandler(checked, data);
+            }}
+          />
+        </Box>
+        <Box flex="1">
+          <Text scale={300}>{data.name}</Text>
+        </Box>
+        <Box width="200px">
+          <Text scale={300}>{data.role}</Text>
+        </Box>
+        <Box width="200px">
+          <Text scale={300}>{data.status}</Text>
+        </Box>
+      </Box>
+    );
+  };
+
+  const toggleSelectHeader = React.useCallback((checked: boolean) => {
+    if (checked) {
       const selectAll: Record<string, boolean> = {};
       listItem.forEach(item => {
         selectAll[item.id] = true;
@@ -153,7 +163,14 @@ export const WithSelectedItem = () => {
       return (
         <Box display="flex" width="100%" alignItems="center">
           <Box width="50px">
-            <InputCheckbox onCheckedChange={toggleSelectHeader} />
+            <InputCheckbox
+              checked={
+                Object.keys(selectedItem).length > 0 && Object.keys(selectedItem).length < listItem.length
+                  ? 'indeterminate'
+                  : !!Object.keys(selectedItem).length
+              }
+              onCheckedChange={toggleSelectHeader}
+            />
           </Box>
           <Box flex="1">
             <Text scale={300}>{`${hasSelectedItem} selected`}</Text>
@@ -170,7 +187,14 @@ export const WithSelectedItem = () => {
     return (
       <Box display="flex" width="100%" alignItems="center">
         <Box width="50px">
-          <InputCheckbox onCheckedChange={toggleSelectHeader} />
+          <InputCheckbox
+            checked={
+              Object.keys(selectedItem).length > 0 && Object.keys(selectedItem).length < listItem.length
+                ? 'indeterminate'
+                : !!Object.keys(selectedItem).length
+            }
+            onCheckedChange={toggleSelectHeader}
+          />
         </Box>
         <Box flex="1">
           <Text fontWeight="700" fontSize="12px" lineHeight="16px">
@@ -192,7 +216,7 @@ export const WithSelectedItem = () => {
         items={listItemTable()}
         keyExtractor={(data, index) => `${data.name}-${index}`}
         header={renderHeader()}
-        renderItem={renderListItem}
+        renderItem={renderItem}
       />
     </Box>
   );

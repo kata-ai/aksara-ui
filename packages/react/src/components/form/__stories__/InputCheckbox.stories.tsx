@@ -2,13 +2,7 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import { Box } from '../../../layout';
 import { Text } from '../../../typography';
-import {
-  InputCheckboxLabel,
-  CheckboxContainer,
-  CheckboxIndicator,
-  CheckboxProps,
-  InputCheckbox,
-} from '../components/InputCheckbox';
+import { CheckboxContainer, CheckboxIndicator, CheckboxProps, InputCheckbox } from '../components/InputCheckbox';
 
 export default {
   title: 'Core/Components/Form/InputCheckbox',
@@ -22,6 +16,9 @@ export default {
     id: {
       control: 'text',
     },
+    indeterminate: {
+      control: 'boolean',
+    },
   },
 };
 
@@ -34,23 +31,20 @@ CheckboxIndicatorExample.argTypes = {
   },
 };
 
-export const CheckboxRadixExample: Story<CheckboxProps> = ({ disabled, errors, indeterminate }) => {
+export const InputCheckboxExample: Story<CheckboxProps & { indeterminate?: boolean }> = ({
+  disabled,
+  errors,
+  indeterminate,
+}) => {
+  const checked: CheckboxProps = indeterminate ? { checked: 'indeterminate' } : {};
   return (
     <form>
-      <Box>
-        <InputCheckboxLabel htmlFor="c1">
-          <InputCheckbox defaultChecked id="c1" indeterminate={indeterminate} disabled={disabled} errors={errors} />
-          <Text scale={200} color={'greydark02'} ml="xs">
-            Checkbox
-          </Text>
-        </InputCheckboxLabel>
+      <Box display="inline-flex" flexDirection="row" alignItems="center">
+        <InputCheckbox id="c1" {...checked} disabled={disabled} errors={errors} />
+        <Text as="label" scale={200} color={'greydark02'} ml="xs" htmlFor="c1">
+          Checkbox
+        </Text>
       </Box>
     </form>
   );
-};
-CheckboxRadixExample.argTypes = {
-  indeterminate: {
-    options: [true, false],
-    control: 'boolean',
-  },
 };
