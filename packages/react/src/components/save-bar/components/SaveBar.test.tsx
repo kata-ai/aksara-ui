@@ -10,7 +10,10 @@ describe('Components/PageHeader', () => {
       const { getByText } = render(
         <SaveBar
           isShow
-          maxWidth="800px"
+          containerStyle={{
+            maxWidth: '800px',
+            px: 'xxl',
+          }}
           label="Unsaved Changes"
           actions={
             <ButtonGroup size="md">
@@ -28,7 +31,10 @@ describe('Components/PageHeader', () => {
       const { getAllByRole } = render(
         <SaveBar
           isShow
-          maxWidth="800px"
+          containerStyle={{
+            maxWidth: '800px',
+            px: 'xxl',
+          }}
           label="Unsaved Changes"
           actions={
             <ButtonGroup size="md">
@@ -47,7 +53,10 @@ describe('Components/PageHeader', () => {
       const { queryByText } = render(
         <SaveBar
           isShow={false}
-          maxWidth="800px"
+          containerStyle={{
+            maxWidth: '800px',
+            px: 'xxl',
+          }}
           label="Unsaved Changes"
           actions={
             <ButtonGroup size="md">
