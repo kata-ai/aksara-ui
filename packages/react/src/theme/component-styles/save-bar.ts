@@ -9,7 +9,6 @@ const saveBarBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = ({ them
   alignItems: 'center',
   width: '100%',
   height: '56px',
-  px: 'lg',
   backgroundColor: theme.colors.greydark02,
 });
 

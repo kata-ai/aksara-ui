@@ -3,7 +3,7 @@ import { Transition } from 'react-transition-group';
 import styled, { keyframes } from 'styled-components';
 import { Box, BoxProps } from '../../../layout';
 import { Text } from '../../../typography';
-import { useComponentStyles } from '../../../system';
+import { CSSObject, useComponentStyles } from '../../../system';
 import { Portal } from '../../../helpers';
 
 const EnterAnimation = keyframes`
@@ -51,13 +51,13 @@ export interface SaveBarProps extends BoxProps {
   icon?: React.ReactNode;
   /** render actions */
   actions: React.ReactNode;
-  /** Set max width of content */
-  maxWidth: string | number;
+  /** Set Container style */
+  containerStyle: CSSObject;
   /**  */
   isShow: boolean;
 }
 
-const SaveBar: React.FC<SaveBarProps> = ({ label, icon, actions, maxWidth, sx, isShow, ...rest }) => {
+const SaveBar: React.FC<SaveBarProps> = ({ label, icon, actions, containerStyle, sx, isShow, ...rest }) => {
   const savebarStyle = useComponentStyles('saveBarBase');
   return (
     <Portal>
@@ -73,14 +73,14 @@ const SaveBar: React.FC<SaveBarProps> = ({ label, icon, actions, maxWidth, sx, i
         {state => {
           return (
             <SaveBarContainer data-state={state} sx={{ ...savebarStyle, ...sx }} {...rest}>
-              <Box display={'flex'}>{icon}</Box>
+              {icon}
               <Box
                 display="flex"
                 alignItems="center"
                 justifyContent="space-between"
                 margin="auto"
                 width={'100%'}
-                maxWidth={maxWidth}
+                sx={{ ...containerStyle }}
               >
                 <Text color="greylight01" scale={400}>
                   {label}
