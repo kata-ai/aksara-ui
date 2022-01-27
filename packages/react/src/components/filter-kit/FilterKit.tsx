@@ -6,7 +6,7 @@ import { InputGroup } from '../form/components/InputGroup';
 import { InputPrefix } from '../form/components/InputPrefix';
 import { InputSearchbox } from '../form/components/InputSearchbox';
 import { InputSelect } from '../form/components/InputSelect';
-import { Pill } from '../pill';
+import { Tag } from '../tag';
 import { Popover, PopoverContent, PopoverTrigger } from '../popover';
 
 export interface FilterPageHeaderProps extends BoxProps {
@@ -102,15 +102,14 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
     }
     const listFilterTag = listShownFilter.show.map(item => {
       return (
-        <Pill
+        <Tag
           data-testid="filter-tag"
           key={item.value}
           hasCloseIcon
           onClick={() => onRemoveFilter && onRemoveFilter({ label: item.label, value: item.value })}
-          variant="active"
         >
           {item.label}
-        </Pill>
+        </Tag>
       );
     });
     return (
@@ -127,15 +126,14 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
               <Stack direction="horizontal" p="xs" spacing="xxs">
                 {listShownFilter.more.map(item => {
                   return (
-                    <Pill
+                    <Tag
                       key={`${item.value}`}
                       data-testid="filter-tag-more"
                       hasCloseIcon
                       onClick={() => onRemoveFilter && onRemoveFilter({ label: item.label, value: item.value })}
-                      variant="active"
                     >
                       {item.label}
-                    </Pill>
+                    </Tag>
                   );
                 })}
               </Stack>

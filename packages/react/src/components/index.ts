@@ -22,7 +22,7 @@ export * from './notification';
 export * from './page-header';
 export * from './pagination';
 export * from './panel';
-export * from './pill';
+export * from './tag';
 export * from './popover';
 export * from './save-bar';
 export * from './scroll-area';

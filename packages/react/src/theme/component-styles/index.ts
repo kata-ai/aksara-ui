@@ -6,7 +6,7 @@ import card from './card';
 import form from './form';
 import message from './message';
 import navigation from './navigation';
-import pill from './pill';
+import tag from './tag';
 import popover from './popover';
 import slider from './slider';
 import stepper from './stepper';
@@ -39,7 +39,7 @@ const componentStyles = {
   ...form,
   ...message,
   ...navigation,
-  ...pill,
+  ...tag,
   ...popover,
   ...slider,
   ...stepper,
