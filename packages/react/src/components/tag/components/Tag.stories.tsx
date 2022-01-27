@@ -2,11 +2,11 @@ import * as React from 'react';
 import { IconWhatsapp } from '@aksara-ui/icons';
 import { Story, Meta } from '@storybook/react';
 import { Box } from '../../../layout';
-import Pill, { PillProps } from './Pill';
+import Tag, { TagProps } from './Tag';
 
 export default {
-  title: 'Core/Components/Pill',
-  component: Pill,
+  title: 'Core/Components/Tag',
+  component: Tag,
   argTypes: {
     disabled: {
       control: 'boolean',
@@ -20,16 +20,16 @@ export default {
   },
 } as Meta;
 
-const defaultArgs: PillProps = {
+const defaultArgs: TagProps = {
   disabled: false,
   children: 'Keyword',
 };
 
-const Template: Story<PillProps> = ({ hasCloseIcon, onClick, disabled, children }) => (
+const Template: Story<TagProps> = ({ hasCloseIcon, onClick, disabled, children }) => (
   <Box display="flex">
-    <Pill hasCloseIcon={hasCloseIcon} onClick={onClick} disabled={disabled}>
+    <Tag hasCloseIcon={hasCloseIcon} onClick={onClick} disabled={disabled}>
       {children}
-    </Pill>
+    </Tag>
   </Box>
 );
 
@@ -42,16 +42,16 @@ WithCloseIcon.args = {
   hasCloseIcon: true,
 };
 
-export const WithCustomIcon: Story<PillProps> = ({ hasCloseIcon: withCloseIcon, onClick, disabled, children }) => (
+export const WithCustomIcon: Story<TagProps> = ({ hasCloseIcon: withCloseIcon, onClick, disabled, children }) => (
   <Box display="flex">
-    <Pill
+    <Tag
       hasCloseIcon={withCloseIcon}
       onClick={onClick}
       icon={<IconWhatsapp aria-hidden fill="currentColor" size={16} />}
       disabled={disabled}
     >
       {children}
-    </Pill>
+    </Tag>
   </Box>
 );
 WithCustomIcon.args = defaultArgs;

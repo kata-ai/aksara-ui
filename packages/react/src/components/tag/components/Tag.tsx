@@ -5,22 +5,22 @@ import { Text } from '../../../typography';
 import { useComponentStyles } from '../../../system';
 import { UnstyledButton, UnstyledButtonProps } from '../../button';
 
-export interface PillProps extends Omit<UnstyledButtonProps, 'size'>, React.ComponentPropsWithoutRef<'button'> {
+export interface TagProps extends Omit<UnstyledButtonProps, 'size'>, React.ComponentPropsWithoutRef<'button'> {
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Additional CSS properties to give to the component. */
   style?: React.CSSProperties;
   /** Add a custom icon to the left of the icon. */
   icon?: React.ReactNode;
-  /** Set `true` to display the Close icon in the Pill. */
+  /** Set `true` to display the Close icon in the Tag. */
   hasCloseIcon?: boolean;
-  /** Triggers when the pill is clicked. */
+  /** Triggers when the Tag is clicked. */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
+const Tag = React.forwardRef<HTMLButtonElement, TagProps>(
   ({ className, style, children, icon, hasCloseIcon = false, onClick, sx, type = 'button', ...rest }, ref) => {
-    const boxStyles = useComponentStyles('pillRoot');
+    const boxStyles = useComponentStyles('tagRoot');
 
     return (
       <UnstyledButton
@@ -46,6 +46,6 @@ const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
   }
 );
 
-Pill.displayName = 'Pill';
+Tag.displayName = 'Tag';
 
-export default Pill;
+export default Tag;

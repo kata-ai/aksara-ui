@@ -1,6 +1,6 @@
 import type { ComponentThemeConfig } from '../../system';
 
-const pillRoot: ComponentThemeConfig = {
+const tagRoot: ComponentThemeConfig = {
   baseStyle: {
     display: 'inline-flex',
     flexDirection: 'row',
@@ -30,8 +30,8 @@ const pillRoot: ComponentThemeConfig = {
   },
 };
 
-const pill = {
-  pillRoot,
+const tag = {
+  tagRoot,
 };
 
-export default pill;
+export default tag;

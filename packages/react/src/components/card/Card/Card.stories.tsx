@@ -42,7 +42,7 @@ export const BodyCard: Story<{ elevation: CardElevation }> = ({ elevation }) => 
   );
 };
 
-export const WithPills = () => {
+export const Tags = () => {
   return (
     <Box display="inline-flex">
       <Card p="lg" width={300}>

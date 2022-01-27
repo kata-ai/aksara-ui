@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useCombobox, useMultipleSelection, UseMultipleSelectionStateChange } from 'downshift';
 import { IconChevronStepper } from '@aksara-ui/icons';
 
-import { Pill } from '../../../pill';
+import { Tag } from '../../../tag';
 import { Card } from '../../../card';
 import { FormLabel } from '../FormLabel';
 import { useComponentStyles } from '../../../../system';
@@ -106,7 +106,7 @@ function InputSelectTags({
   });
 
   const handleFocusInput = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // Prevent accidentally focusing on the input text when tag pills are clicked
+    // Prevent accidentally focusing on the input text when tag are clicked
     if (e.target !== e.currentTarget) {
       return;
     }
@@ -137,7 +137,7 @@ function InputSelectTags({
           <Wrap spacing="xxs" display="inline-flex">
             {selectedItems.map((selectedItem, index) => (
               <WrapItem key={`selected-item-${index}`} {...getSelectedItemProps({ selectedItem, index })}>
-                <Pill
+                <Tag
                   hasCloseIcon
                   disabled={disabled}
                   onClick={() => {
@@ -145,7 +145,7 @@ function InputSelectTags({
                   }}
                 >
                   {selectedItem}
-                </Pill>
+                </Tag>
               </WrapItem>
             ))}
             <WrapItem display="flex" flexGrow={1} alignItems="center" {...getComboboxProps()}>

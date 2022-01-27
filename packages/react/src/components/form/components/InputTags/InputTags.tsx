@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Wrap, WrapItem } from '../../../../layout';
 import { useComponentStyles } from '../../../../system';
-import { Pill } from '../../../pill';
+import { Tag } from '../../../tag';
 
 export interface InputTagsProps {
   value?: string[];
@@ -40,7 +40,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
   const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ focused, errors, disabled }) });
 
   const handleFocusInput = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Prevent accidentally focusing on the input text when tag pills are clicked
+    // Prevent accidentally focusing on the input text when tag are clicked
     if (e.target !== e.currentTarget) {
       return;
     }
@@ -95,7 +95,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
       <Wrap spacing="xxs" display="inline-flex">
         {tags.map((tag, i) => (
           <WrapItem key={tag}>
-            <Pill
+            <Tag
               hasCloseIcon
               disabled={disabled}
               onClick={() => {
@@ -103,7 +103,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
               }}
             >
               {tag}
-            </Pill>
+            </Tag>
           </WrapItem>
         ))}
         <WrapItem display="flex" flexGrow={1} alignItems="center">
