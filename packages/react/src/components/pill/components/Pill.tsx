@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { IconClose } from '@aksara-ui/icons';
-
-import { Box } from '../../../layout';
+import { Box, Stack } from '../../../layout';
+import { Text } from '../../../typography';
 import { useComponentStyles } from '../../../system';
 import { UnstyledButton, UnstyledButtonProps } from '../../button';
 
 export interface PillProps extends Omit<UnstyledButtonProps, 'size'>, React.ComponentPropsWithoutRef<'button'> {
-  /** The variant options available for a pill. */
-  variant?: 'default' | 'info' | 'critical' | 'success' | 'active';
   /** Additional CSS classes to give to the component. */
   className?: string;
   /** Additional CSS properties to give to the component. */
@@ -21,22 +19,8 @@ export interface PillProps extends Omit<UnstyledButtonProps, 'size'>, React.Comp
 }
 
 const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
-  (
-    {
-      className,
-      style,
-      children,
-      variant = 'default',
-      icon,
-      hasCloseIcon = false,
-      onClick,
-      sx,
-      type = 'button',
-      ...rest
-    },
-    ref
-  ) => {
-    const boxStyles = useComponentStyles('pillRoot', { variant });
+  ({ className, style, children, icon, hasCloseIcon = false, onClick, sx, type = 'button', ...rest }, ref) => {
+    const boxStyles = useComponentStyles('pillRoot');
 
     return (
       <UnstyledButton
@@ -48,15 +32,15 @@ const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
         onClick={onClick}
         {...rest}
       >
-        {icon}
-        <Box as="span" display="inline-blick" px="xxs" fontSize="12px" lineHeight="18px">
-          {children}
-        </Box>
-        {hasCloseIcon && (
-          <Box display="flex" alignItems="center" justifyContent="center">
-            <IconClose size={12} fill="currentColor" aria-hidden="true" display="inline-block" />
-          </Box>
-        )}
+        <Stack direction="horizontal" spacing={'xxs'} alignItems={'center'}>
+          {icon}
+          <Text scale={200}>{children}</Text>
+          {hasCloseIcon && (
+            <Box fontSize={12} width={12} height={12}>
+              <IconClose size={12} fill="currentColor" aria-hidden="true" />
+            </Box>
+          )}
+        </Stack>
       </UnstyledButton>
     );
   }

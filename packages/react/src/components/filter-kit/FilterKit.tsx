@@ -107,7 +107,6 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
           key={item.value}
           hasCloseIcon
           onClick={() => onRemoveFilter && onRemoveFilter({ label: item.label, value: item.value })}
-          variant="active"
         >
           {item.label}
         </Pill>
@@ -132,7 +131,6 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
                       data-testid="filter-tag-more"
                       hasCloseIcon
                       onClick={() => onRemoveFilter && onRemoveFilter({ label: item.label, value: item.value })}
-                      variant="active"
                     >
                       {item.label}
                     </Pill>

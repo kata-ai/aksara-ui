@@ -96,7 +96,6 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
         {tags.map((tag, i) => (
           <WrapItem key={tag}>
             <Pill
-              variant="active"
               hasCloseIcon
               disabled={disabled}
               onClick={() => {

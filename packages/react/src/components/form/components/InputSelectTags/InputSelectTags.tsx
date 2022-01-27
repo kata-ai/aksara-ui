@@ -138,7 +138,6 @@ function InputSelectTags({
             {selectedItems.map((selectedItem, index) => (
               <WrapItem key={`selected-item-${index}`} {...getSelectedItemProps({ selectedItem, index })}>
                 <Pill
-                  variant="default"
                   hasCloseIcon
                   disabled={disabled}
                   onClick={() => {
