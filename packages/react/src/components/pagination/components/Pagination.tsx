@@ -1,7 +1,7 @@
 // eslint-disable react/no-array-index-key
 
 import * as React from 'react';
-import { VisuallyHidden } from '../../../helpers';
+import { VisuallyHidden } from '@aksara-ui/helpers';
 import { Box } from '../../../layout';
 import { theme } from '../../../theme';
 import { Text } from '../../../typography';

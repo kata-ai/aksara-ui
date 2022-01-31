@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { VisuallyHidden } from '@aksara-ui/helpers';
 import { CSSObject } from '../../../system';
-import { VisuallyHidden } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 
 export interface ModalHeaderIconProps extends BoxProps {

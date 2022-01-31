@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PortalPrimitive from '@radix-ui/react-portal';
-import { useOnMount } from '../../../utils';
+import { useOnMount } from '../../utils';
 
 export type PortalProps = PortalPrimitive.PortalProps;
 

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Transition } from 'react-transition-group';
 import styled, { keyframes } from 'styled-components';
+import { Portal } from '@aksara-ui/helpers';
 import { Box, BoxProps } from '../../../layout';
 import { Text } from '../../../typography';
 import { CSSObject, useComponentStyles } from '../../../system';
-import { Portal } from '../../../helpers';
 
 const EnterAnimation = keyframes`
   0% {

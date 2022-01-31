@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VisuallyHidden } from '../../../helpers';
+import { VisuallyHidden } from '@aksara-ui/helpers';
 import { Box, BoxProps } from '../../../layout';
 import { theme } from '../../../theme';
 

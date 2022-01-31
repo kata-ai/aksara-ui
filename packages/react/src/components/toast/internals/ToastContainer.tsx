@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Portal } from '../../../helpers';
+import { Portal } from '@aksara-ui/helpers';
 import { Box } from '../../../layout';
 import Toast from '../Toast';
 import { ToastSettings } from '../types';

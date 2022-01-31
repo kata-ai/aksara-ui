@@ -4,7 +4,8 @@
     "paths": {
       "@aksara-ui/core": ["./packages/core/src"],
       "@aksara-ui/react": ["./packages/react/src"],
-      "@aksara-ui/icons": ["./packages/icons/src"]
+      "@aksara-ui/icons": ["./packages/icons/src"],
+      "@aksara-ui/helpers": ["./packages/helpers/src"]
     }
   }
 }

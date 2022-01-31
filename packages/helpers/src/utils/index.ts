@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export { default as runIfFn } from './runIfFn';
+export { default as useOnMount } from './useOnMount';
