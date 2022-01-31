@@ -1,9 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { transparentize } from 'polished';
+import { foundations } from '@aksara-ui/core';
 
-import { ANIMATION_DURATION } from '../../../components/notification/utils/constants';
-import { theme } from '../../../theme';
-
+const ANIMATION_DURATION = 400;
 // TODO convert to useComponentStyle
 const FadeIn = keyframes`
   0% {
@@ -60,7 +59,7 @@ const OverlayScreen = styled('div')<OverlayScreenProps>`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${transparentize(0.5, theme.colors.greylight05)};
+    background-color: ${transparentize(0.5, foundations.colors.greylight05)};
     content: ' ';
     visibility: hidden;
     opacity: 0;

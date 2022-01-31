@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { Box, Stack } from '../../../layout';
-import { Text } from '../../../typography';
-import VisuallyHidden from './VisuallyHidden';
+import { VisuallyHidden } from '@aksara-ui/helpers';
+import { Box, Stack } from '../../layout';
+import { Text } from '../../typography';
 
 export default {
   title: 'Core/Helpers/VisuallyHidden',

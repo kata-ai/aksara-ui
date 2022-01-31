@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VisuallyHidden } from '../../../../helpers';
+import { VisuallyHidden } from '@aksara-ui/helpers';
 import { UnstyledButton, UnstyledButtonProps } from '../../../button';
 
 export interface InputIconButtonProps extends UnstyledButtonProps, React.ComponentPropsWithoutRef<'button'> {

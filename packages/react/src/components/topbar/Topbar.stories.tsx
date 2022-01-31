@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 import { IconBell, IconBubble, IconChevronDown, IconChevronRight, IconFlowerGrid } from '@aksara-ui/icons';
 import * as React from 'react';
-import { VisuallyHidden } from '../../helpers';
+import { VisuallyHidden } from '@aksara-ui/helpers';
 import { Box, Stack } from '../../layout';
 import { Avatar } from '../avatar';
 import { Breadcrumb, BreadcrumbItem } from '../breadcrumb';

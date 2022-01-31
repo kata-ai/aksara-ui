@@ -26,7 +26,7 @@
     "lerna": "lerna",
     "lint": "lerna run lint",
     "prepublish": "lerna run prepublish",
-    "report-coverage": "yarn workspace @aksara-ui/react run report-coverage",
+    "report-coverage": "yarn workspace @aksara-ui/react run report-coverage & yarn workspace @aksara-ui/helpers run report-coverage ",
     "start": "lerna run start --stream --parallel",
     "storybook": "yarn workspace @aksara-ui/react run storybook",
     "storybook:build": "lerna run build-storybook",

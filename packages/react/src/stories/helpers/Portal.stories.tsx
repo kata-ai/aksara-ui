@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Box } from '../../../layout';
-import Portal from './Portal';
+import { Portal } from '@aksara-ui/helpers';
+import { Box } from '../../layout';
 
 export default {
   title: 'Core/Helpers/Portal',

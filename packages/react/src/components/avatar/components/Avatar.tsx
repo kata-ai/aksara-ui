@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { VisuallyHidden } from '@aksara-ui/helpers';
 import { avatarSizeOptions } from '../../../theme/component-styles/avatar';
-import { VisuallyHidden } from '../../../helpers';
 import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text } from '../../../typography';

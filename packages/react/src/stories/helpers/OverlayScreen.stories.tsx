@@ -3,14 +3,13 @@ import { Story } from '@storybook/react';
 
 import clsx from 'clsx';
 import { Transition } from 'react-transition-group';
-import OverlayScreen, { OverlayScreenProps } from './OverlayScreen';
-import { Box } from '../../../layout';
-import { Text } from '../../../typography';
-import { Portal } from '../../portal';
+import { OverlayScreenProps, Overlay, Portal } from '@aksara-ui/helpers';
+import { Box } from '../../layout';
+import { Text } from '../../typography';
 
 export default {
   title: 'Core/Helpers/Overlay',
-  component: OverlayScreen,
+  component: Overlay,
   argTypes: {
     backdropBlur: {
       control: 'boolean',
@@ -36,7 +35,7 @@ export const Example: Story<OverlayScreenProps> = ({ backdropBlur }) => {
           unmountOnExit
         >
           {state => (
-            <OverlayScreen
+            <Overlay
               backdropBlur={backdropBlur}
               className={clsx(isOpen && 'entered')}
               data-state={state}

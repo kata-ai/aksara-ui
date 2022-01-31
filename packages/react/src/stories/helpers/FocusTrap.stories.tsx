@@ -1,18 +1,12 @@
 import * as React from 'react';
 
+import { FocusTrap } from '@aksara-ui/helpers';
 import { Paragraph, Anchor } from '../../typography';
 import { SystemBlock } from '../../utils/storybook';
-import FocusTrap from './FocusTrap';
-
-const readme = require('./README.md');
 
 export default {
   title: 'Core/Helpers/FocusTrap',
   component: FocusTrap,
-  parameters: {
-    notes: { markdown: readme },
-    jsx: { skip: 1 },
-  },
 };
 
 export const Example = () => {

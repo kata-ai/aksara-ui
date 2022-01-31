@@ -4,10 +4,10 @@ import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
 
-import { Portal, FocusTrap } from '../../../helpers';
+import { Portal, FocusTrap, Overlay } from '@aksara-ui/helpers';
+
 import { Box, BoxProps } from '../../../layout';
 import { ANIMATION_DURATION } from '../constants';
-import { Overlay } from '../../../helpers/overlay';
 
 const SideSheetIn = keyframes`
   0% {
