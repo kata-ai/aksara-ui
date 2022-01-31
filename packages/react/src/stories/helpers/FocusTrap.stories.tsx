@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import FocusTrap from '@aksara-ui/helpers/src/focus-trap/FocusTrap';
+import { FocusTrap } from '@aksara-ui/helpers';
 import { Paragraph, Anchor } from '../../typography';
 import { SystemBlock } from '../../utils/storybook';
 
