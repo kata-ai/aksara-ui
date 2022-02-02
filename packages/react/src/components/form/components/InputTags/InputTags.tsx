@@ -66,8 +66,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
 
   const inputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const val = e.currentTarget.value || '';
-
-    if (e.key === 'Enter' && val) {
+    if ((val && e.key === 'Enter') || e.key === ',') {
       e.preventDefault(); // prevent accidently submiting form
       if (tags.find(tag => tag.toLowerCase() === val.toLowerCase())) {
         return;
@@ -82,6 +81,20 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
     } else if (e.key === 'Backspace' && !val) {
       removeTag(tags.length - 1);
     }
+  };
+
+  // TODO: add unit test pasteHandler
+  const pasteHandler = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const val = e.clipboardData.getData('text') || '';
+    if (!val) {
+      return;
+    }
+    const listTagRaw = val.split(/[\n,]+/).map(item => item.trim());
+    const newListTag = new Set([...tags, ...listTagRaw]);
+    const newTags = Array.from(newListTag);
+    setTags(newTags);
+    handleChange(newTags);
   };
 
   return (
@@ -126,6 +139,7 @@ const InputTags: React.FC<InputTagsProps> = ({ value, placeholder, disabled, err
               },
             }}
             onKeyDown={inputKeyDown}
+            onPaste={pasteHandler}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             placeholder={placeholder}
