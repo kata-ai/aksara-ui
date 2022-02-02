@@ -14,9 +14,9 @@ const badge: ComponentThemeConfig = {
   scales: {
     sizes: {
       sm: {
-        fontSize: '10px',
-        lineHeight: '16px',
-        fontWeight: 400,
+        fontSize: '12px',
+        lineHeight: '20px',
+        fontWeight: 500,
         height: '16px',
         borderRadius: '16px',
         px: 'xxs',
