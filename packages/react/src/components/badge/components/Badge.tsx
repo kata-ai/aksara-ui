@@ -12,7 +12,7 @@ export interface BadgeProps extends Omit<BoxProps, 'size'> {
   /** The variant options available for a badge. Defaults to 'default' */
   variant?: 'default' | 'info' | 'warning' | 'critical' | 'success' | 'active';
   /** Size of the badge. Defaults to 'md' */
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md';
   /** The icon that renders with the badge */
   icon?: React.ComponentType<any>;
   children?: React.ReactNode;
