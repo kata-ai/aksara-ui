@@ -6,7 +6,6 @@ const badge: ComponentThemeConfig = {
     alignItems: 'center',
     justifyContent: 'center',
     fontWeight: 500,
-    px: 'xs',
   },
   propToScaleMap: [
     ['size', 'sizes'],
@@ -20,6 +19,7 @@ const badge: ComponentThemeConfig = {
         fontWeight: 400,
         height: '16px',
         borderRadius: '16px',
+        px: 'xxs',
       },
       md: {
         fontSize: '12px',
@@ -27,13 +27,7 @@ const badge: ComponentThemeConfig = {
         fontWeight: 500,
         height: '24px',
         borderRadius: '24px',
-      },
-      lg: {
-        fontSize: '12px',
-        lineHeight: '20px',
-        fontWeight: 500,
-        height: '32px',
-        borderRadius: '32px',
+        px: 'xs',
       },
     },
     variants: {

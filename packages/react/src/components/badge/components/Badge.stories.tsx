@@ -12,7 +12,7 @@ export default {
       options: ['default', 'info', 'warning', 'critical', 'success', 'active'],
     },
     size: {
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md'],
     },
     children: {
       control: 'text',
