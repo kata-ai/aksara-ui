@@ -5,7 +5,7 @@ import { Story } from '@storybook/react';
 import { Box } from '../../../layout';
 import { Heading } from '../../../typography';
 import Avatar, { AvatarProps } from './Avatar';
-import { PresenceProps } from './Presence';
+import SignBadge from '../../badge/components/Sign/SignBadge';
 
 export default {
   title: 'Core/Components/Avatar',
@@ -73,19 +73,9 @@ interface AvatarWithPresenceProps extends AvatarProps {
 }
 
 export const WithPresence: Story<AvatarWithPresenceProps> = ({ name, presence, ...args }) => {
-  const presenceOption: PresenceProps = presence
-    ? {
-        ...presence,
-        position: args.presencePosition,
-        label: args.presenceLabel,
-      }
-    : {
-        position: args.presencePosition,
-        label: args.presenceLabel,
-      };
   return (
     <Box display="inline-flex" alignItems="center">
-      <Avatar name={name} presence={{ ...presenceOption }} {...args} />
+      <Avatar name={name} presence={<SignBadge>tes</SignBadge>} {...args} />
     </Box>
   );
 };
@@ -93,6 +83,4 @@ WithPresence.args = {
   size: 'lg',
   name: 'Adry Muhammad',
   src: 'https://picsum.photos/id/2/400/400',
-  presencePosition: 'top',
-  presenceLabel: '3',
 };

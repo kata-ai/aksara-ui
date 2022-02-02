@@ -32,7 +32,7 @@ import checkbox from './form/checkbox';
 const componentStyles = {
   ...avatar,
   ...actionList,
-  badge,
+  ...badge,
   ...breadcrumb,
   ...button,
   card,

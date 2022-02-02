@@ -10,6 +10,10 @@ export const parameters = {
         name: 'base',
         value: '#fff',
       },
+      {
+        name: 'dark',
+        value: '#b6b2b2',
+      },
     ],
   },
 };

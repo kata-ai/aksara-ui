@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 import Avatar from './Avatar';
+import SignBadge from '../../badge/components/Sign/SignBadge';
 
 describe('components/Avatar', () => {
   describe('<Avatar />', () => {
@@ -22,7 +23,7 @@ describe('components/Avatar', () => {
     });
 
     test('render presence correctly', () => {
-      const { getByTestId } = render(<Avatar name="Adry Muhammad" presence={{ label: '3', position: 'top' }} />);
+      const { getByTestId } = render(<Avatar name="Adry Muhammad" presence={<SignBadge>tes</SignBadge>} />);
       const presence = getByTestId('avatar-presence');
       expect(presence).toBeInTheDocument();
     });
