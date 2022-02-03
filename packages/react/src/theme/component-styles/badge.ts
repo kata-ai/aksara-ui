@@ -70,7 +70,7 @@ const signBadgeStyle: CSSObject = {
   verticalAlign: 'middle',
   overflow: 'hidden',
   userSelect: 'none',
-  fontSize: '8px',
+  fontSize: '12px',
   fontWeight: '400',
   color: 'white',
   boxSizing: 'content-box',
@@ -81,28 +81,23 @@ const SignBadge: ComponentThemeConfig = {
   baseStyle: signBadgeStyle,
   scales: {
     sizes: {
-      // size = 10px (width + padding)
       sm: {
         width: '8px',
         height: '8px',
         borderWidth: '1px',
         borderRadius: '8px',
-        // left: '14px', // avatarSize.sm - sizePresence
-        // // sizePresence 8px + 2px (both side padding 1px)
       },
       md: {
         width: '12px',
         height: '12px',
-        borderWidth: '2px',
+        borderWidth: '1px',
         borderRadius: '12px',
-        // left: '20px',
       },
       lg: {
         width: '16px',
         height: '16px',
-        borderWidth: '2px',
+        borderWidth: '1px',
         borderRadius: '16px',
-        // left: '28px',
       },
     },
   },
@@ -122,7 +117,7 @@ const NotificationBadgeStyle: ComponentThemeScaleFn<{ theme: DefaultTheme }> = (
   overflow: 'hidden',
   userSelect: 'none',
   background: theme.colors.red07,
-  fontSize: '8px',
+  fontSize: '12px',
   fontWeight: '400',
   color: 'white',
   boxSizing: 'content-box',
