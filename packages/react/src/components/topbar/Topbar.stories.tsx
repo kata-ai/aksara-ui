@@ -86,7 +86,7 @@ export const Example: Story<TopbarProps> = () => {
               <PopoverTrigger>
                 <TopbarRoundedButton isActive={popoverOpen}>
                   <Box role="presentation" position="relative">
-                    <Avatar icon={IconBell} size="md" color="greymed04" bg="greylight03" presence={'99+'} />
+                    <Avatar icon={IconBell} size="md" color="greymed04" bg="greylight03" notificationBadge="99+" />
                   </Box>
                   <VisuallyHidden>Notifications</VisuallyHidden>
                 </TopbarRoundedButton>

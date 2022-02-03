@@ -6,7 +6,7 @@ import NotificationBadge from './NotificationBadge';
 describe('components/Badge/NotificationBadge', () => {
   describe('<NotificationBadge />', () => {
     test('renders with correctly', () => {
-      const { container } = render(<NotificationBadge>99</NotificationBadge>);
+      const { container } = render(<NotificationBadge value="99" />);
 
       expect(container).toHaveTextContent('99');
     });

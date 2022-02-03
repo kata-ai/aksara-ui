@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 import Avatar from './Avatar';
-import SignBadge from '../../badge/components/Sign/SignBadge';
+import { Box } from '../../../layout';
 
 describe('components/Avatar', () => {
   describe('<Avatar />', () => {
@@ -22,16 +22,26 @@ describe('components/Avatar', () => {
       expect(getByRole('presentation')).toBeVisible();
     });
 
-    test('render presence correctly', () => {
-      const { getByTestId } = render(<Avatar name="Adry Muhammad" presence={<SignBadge>tes</SignBadge>} />);
-      const presence = getByTestId('avatar-presence');
+    test('render presence and notification badge correctly', () => {
+      const { getByTestId } = render(
+        <Avatar
+          name="Adry Muhammad"
+          presence={<Box width="100%" height="100%" backgroundColor={'red07'} />}
+          notificationBadge="99+"
+        />
+      );
+      const presence = getByTestId('sign-badge');
       expect(presence).toBeInTheDocument();
+      const notificationBadge = getByTestId('notification-badge');
+      expect(notificationBadge).toBeInTheDocument();
     });
 
     test('not render presence', () => {
       const { queryByTestId } = render(<Avatar name="Adry Muhammad" />);
-      const presence = queryByTestId('avatar-presence');
+      const presence = queryByTestId('sign-badge');
       expect(presence).not.toBeInTheDocument();
+      const notificationBadge = queryByTestId('notification-badge');
+      expect(notificationBadge).not.toBeInTheDocument();
     });
   });
   describe('Bg Color Generator', () => {
