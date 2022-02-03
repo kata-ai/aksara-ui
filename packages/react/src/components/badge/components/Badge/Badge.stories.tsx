@@ -5,7 +5,7 @@ import * as React from 'react';
 import Badge, { BadgeProps } from './Badge';
 
 export default {
-  title: 'Core/Components/Badge',
+  title: 'Core/Components/Badge/Badge',
   component: Badge,
   argTypes: {
     variant: {

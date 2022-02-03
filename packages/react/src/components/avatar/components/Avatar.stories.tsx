@@ -5,14 +5,13 @@ import { Story } from '@storybook/react';
 import { Box } from '../../../layout';
 import { Heading } from '../../../typography';
 import Avatar, { AvatarProps } from './Avatar';
-import { PresenceProps } from './Presence';
 
 export default {
   title: 'Core/Components/Avatar',
-  component: Avatar,
   argTypes: {
     size: {
       options: ['sm', 'md', 'lg', 'xl'],
+      control: { type: 'radio' },
     },
     name: {
       control: 'text',
@@ -20,11 +19,7 @@ export default {
     src: {
       control: 'text',
     },
-    presencePosition: {
-      options: ['top', 'bottom'],
-      control: { type: 'radio' },
-    },
-    presenceLabel: {
+    notificationBadge: {
       control: 'text',
     },
   },
@@ -67,25 +62,10 @@ WithLabel.args = {
   src: 'https://picsum.photos/id/2/400/400',
 };
 
-interface AvatarWithPresenceProps extends AvatarProps {
-  presencePosition: 'top' | 'bottom';
-  presenceLabel: string;
-}
-
-export const WithPresence: Story<AvatarWithPresenceProps> = ({ name, presence, ...args }) => {
-  const presenceOption: PresenceProps = presence
-    ? {
-        ...presence,
-        position: args.presencePosition,
-        label: args.presenceLabel,
-      }
-    : {
-        position: args.presencePosition,
-        label: args.presenceLabel,
-      };
+export const WithPresence: Story<AvatarProps> = ({ name, ...args }) => {
   return (
     <Box display="inline-flex" alignItems="center">
-      <Avatar name={name} presence={{ ...presenceOption }} {...args} />
+      <Avatar name={name} presence={<Box width="100%" height="100%" backgroundColor={'red07'} />} {...args} />
     </Box>
   );
 };
@@ -93,6 +73,18 @@ WithPresence.args = {
   size: 'lg',
   name: 'Adry Muhammad',
   src: 'https://picsum.photos/id/2/400/400',
-  presencePosition: 'top',
-  presenceLabel: '3',
+};
+
+export const WithNotificationBadge: Story<AvatarProps> = ({ name, notificationBadge, ...args }) => {
+  return (
+    <Box display="inline-flex" alignItems="center">
+      <Avatar name={name} notificationBadge={notificationBadge} {...args} />
+    </Box>
+  );
+};
+WithNotificationBadge.args = {
+  size: 'lg',
+  name: 'Adry Muhammad',
+  src: 'https://picsum.photos/id/2/400/400',
+  notificationBadge: '99',
 };

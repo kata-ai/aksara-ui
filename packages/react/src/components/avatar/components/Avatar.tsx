@@ -5,7 +5,8 @@ import { Box, BoxProps } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text } from '../../../typography';
 import getInitials from '../utils/getInitials';
-import Presence, { PresenceProps } from './Presence';
+import SignBadge from '../../badge/components/Sign/SignBadge';
+import NotificationBadge from '../../badge/components/Notification/NotificationBadge';
 
 type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';
 const bgColors = ['indigo06', 'red07', 'yellow07', 'blue07', 'green07'];
@@ -27,7 +28,9 @@ export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** Size of the avatar. */
   size?: AvatarSize;
   /** Presence option */
-  presence?: PresenceProps;
+  presence?: React.ReactNode;
+  /** Notification Badge  */
+  notificationBadge?: string;
 }
 
 function iconSizes(size: AvatarSize = 'lg') {
@@ -40,11 +43,30 @@ const initialSizes: Record<AvatarSize, string> = {
   lg: '14px',
   xl: '20px',
 };
+const offsetBadge: Record<AvatarSize, string> = {
+  sm: '14px',
+  md: '20px',
+  lg: '28px',
+  xl: '48px',
+};
 
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
   (
-    { className, style, src, alt = undefined, name, size = 'lg', color = 'white', bg, icon, presence, ...rest },
+    {
+      className,
+      style,
+      src,
+      alt = undefined,
+      name,
+      size = 'lg',
+      color = 'white',
+      bg,
+      icon,
+      presence,
+      notificationBadge,
+      ...rest
+    },
     ref
   ) => {
     const styles = useComponentStyles('avatar', { size: typeof size === 'string' ? size : undefined });
@@ -74,10 +96,6 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       }
 
       return renderInitials();
-    };
-
-    const renderPresence = (option: PresenceProps) => {
-      return <Presence {...option} size={size} />;
     };
 
     const bgColorsRandomizer = () => {
@@ -115,11 +133,20 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
         </Box>
       );
     };
-    if (presence) {
+    if (presence || notificationBadge) {
       return (
         <Box position="relative" data-testid="avatar-with-presence">
           {renderAvatar()}
-          {renderPresence(presence)}
+          {presence && (
+            <Box position={'absolute'} bottom={0} left={offsetBadge[size]}>
+              <SignBadge size={size === 'xl' ? 'lg' : size}>{presence}</SignBadge>
+            </Box>
+          )}
+          {notificationBadge && (
+            <Box position={'absolute'} top={0} left={offsetBadge[size]}>
+              <NotificationBadge value={notificationBadge} />
+            </Box>
+          )}
         </Box>
       );
     }
