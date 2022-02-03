@@ -37,7 +37,6 @@ export interface DisclosureNavItemProps extends UnstyledAnchorProps, React.Compo
 
 export const DisclosureNavTrigger: React.FC<DisclosureNavItemProps> = ({ icon, title, disabled, isActive }) => {
   const secondaryNavItemStyles = useComponentStyles('secondaryNavItem', {
-    variant: 'disclosure',
     disabled,
     isActive,
   });

@@ -57,6 +57,7 @@ const secondaryNavItem: ComponentThemeConfig = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    height: '40px',
     width: '100%',
     maxWidth: '272px',
     borderRadius: 12,
@@ -89,17 +90,6 @@ const secondaryNavItem: ComponentThemeConfig = {
         }
       : {}),
   }),
-  propToScaleMap: [['variant', 'variants']],
-  scales: {
-    variants: {
-      disclosure: {
-        height: '36px',
-      },
-      default: {
-        height: '40px',
-      },
-    },
-  },
 };
 
 const navItemBadge: ComponentThemeConfig = {

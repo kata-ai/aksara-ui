@@ -12,8 +12,8 @@ export interface SecondaryNavItemProps extends UnstyledAnchorProps, React.Compon
 
 const SecondaryNavItem = React.forwardRef<HTMLAnchorElement, SecondaryNavItemProps>(
   ({ icon, disabled, isActive, title, labelText, ...rest }, ref) => {
-    const secondaryNavItemStyles = useComponentStyles('secondaryNavItem', { variant: 'default', disabled, isActive });
-    const navItemBadgeStyles = useComponentStyles('navItemBadge', { variant: 'default', disabled, isActive });
+    const secondaryNavItemStyles = useComponentStyles('secondaryNavItem', { disabled, isActive });
+    const navItemBadgeStyles = useComponentStyles('navItemBadge', { disabled, isActive });
 
     return (
       <UnstyledAnchor ref={ref} sx={secondaryNavItemStyles} {...rest}>
