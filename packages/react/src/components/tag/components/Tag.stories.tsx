@@ -25,9 +25,9 @@ const defaultArgs: TagProps = {
   children: 'Keyword',
 };
 
-const Template: Story<TagProps> = ({ hasCloseIcon, onClick, disabled, children }) => (
+const Template: Story<TagProps> = ({ hasCloseIcon, onClick, disabled, children, selected }) => (
   <Box display="flex">
-    <Tag hasCloseIcon={hasCloseIcon} onClick={onClick} disabled={disabled}>
+    <Tag hasCloseIcon={hasCloseIcon} onClick={onClick} disabled={disabled} selected={selected}>
       {children}
     </Tag>
   </Box>
@@ -42,9 +42,16 @@ WithCloseIcon.args = {
   hasCloseIcon: true,
 };
 
-export const WithCustomIcon: Story<TagProps> = ({ hasCloseIcon: withCloseIcon, onClick, disabled, children }) => (
+export const WithCustomIcon: Story<TagProps> = ({
+  hasCloseIcon: withCloseIcon,
+  onClick,
+  disabled,
+  children,
+  selected,
+}) => (
   <Box display="flex">
     <Tag
+      selected={selected}
       hasCloseIcon={withCloseIcon}
       onClick={onClick}
       icon={<IconWhatsapp aria-hidden fill="currentColor" size={16} />}

@@ -16,11 +16,16 @@ export interface TagProps extends Omit<UnstyledButtonProps, 'size'>, React.Compo
   hasCloseIcon?: boolean;
   /** Triggers when the Tag is clicked. */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** selected state */
+  selected?: boolean;
 }
 
 const Tag = React.forwardRef<HTMLButtonElement, TagProps>(
-  ({ className, style, children, icon, hasCloseIcon = false, onClick, sx, type = 'button', ...rest }, ref) => {
-    const boxStyles = useComponentStyles('tagRoot');
+  (
+    { className, style, children, icon, hasCloseIcon = false, onClick, sx, type = 'button', selected, ...rest },
+    ref
+  ) => {
+    const boxStyles = useComponentStyles('tagRoot', { selected });
 
     return (
       <UnstyledButton

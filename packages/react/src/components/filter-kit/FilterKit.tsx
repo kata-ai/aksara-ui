@@ -103,6 +103,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
     const listFilterTag = listShownFilter.show.map(item => {
       return (
         <Tag
+          selected
           data-testid="filter-tag"
           key={item.value}
           hasCloseIcon
@@ -127,6 +128,7 @@ const FilterPageHeader: React.FC<FilterPageHeaderProps> = ({
                 {listShownFilter.more.map(item => {
                   return (
                     <Tag
+                      selected
                       key={`${item.value}`}
                       data-testid="filter-tag-more"
                       hasCloseIcon
