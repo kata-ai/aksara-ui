@@ -66,6 +66,7 @@ const signBadgeStyle: CSSObject = {
   justifyContent: 'center',
   borderStyle: 'solid',
   borderColor: 'white',
+  backgroundColor: 'white',
   verticalAlign: 'middle',
   overflow: 'hidden',
   userSelect: 'none',

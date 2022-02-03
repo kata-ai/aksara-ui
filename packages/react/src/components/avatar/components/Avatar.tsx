@@ -43,6 +43,12 @@ const initialSizes: Record<AvatarSize, string> = {
   lg: '14px',
   xl: '20px',
 };
+const offsetBadge: Record<AvatarSize, string> = {
+  sm: '14px',
+  md: '20px',
+  lg: '28px',
+  xl: '48px',
+};
 
 /** Resizable avatar component. */
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
@@ -131,8 +137,16 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       return (
         <Box position="relative" data-testid="avatar-with-presence">
           {renderAvatar()}
-          {presence && <SignBadge>{presence}</SignBadge>}
-          {notificationBadge && <NotificationBadge>{notificationBadge}</NotificationBadge>}
+          {presence && (
+            <Box position={'absolute'} bottom={0} left={offsetBadge[size]}>
+              <SignBadge size={size === 'xl' ? 'lg' : size}>{presence}</SignBadge>
+            </Box>
+          )}
+          {notificationBadge && (
+            <Box position={'absolute'} top={0} left={offsetBadge[size]}>
+              <NotificationBadge value={notificationBadge} />
+            </Box>
+          )}
         </Box>
       );
     }
