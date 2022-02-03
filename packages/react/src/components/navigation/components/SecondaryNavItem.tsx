@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { IconChevronRight } from '@aksara-ui/icons';
-import { Box } from '../../../layout';
 import { useComponentStyles } from '../../../system';
 import { Text, UnstyledAnchor, UnstyledAnchorProps } from '../../../typography';
 
 export interface SecondaryNavItemProps extends UnstyledAnchorProps, React.ComponentPropsWithoutRef<'a'> {
-  variant?: 'default' | 'disclosure';
   icon: React.ComponentType<any>;
   title: string;
   disabled?: boolean;
@@ -14,9 +11,9 @@ export interface SecondaryNavItemProps extends UnstyledAnchorProps, React.Compon
 }
 
 const SecondaryNavItem = React.forwardRef<HTMLAnchorElement, SecondaryNavItemProps>(
-  ({ icon, disabled, isActive, title, variant = 'default', labelText, ...rest }, ref) => {
-    const secondaryNavItemStyles = useComponentStyles('secondaryNavItem', { variant, disabled, isActive });
-    const navItemBadgeStyles = useComponentStyles('navItemBadge', { variant, disabled, isActive });
+  ({ icon, disabled, isActive, title, labelText, ...rest }, ref) => {
+    const secondaryNavItemStyles = useComponentStyles('secondaryNavItem', { variant: 'default', disabled, isActive });
+    const navItemBadgeStyles = useComponentStyles('navItemBadge', { variant: 'default', disabled, isActive });
 
     return (
       <UnstyledAnchor ref={ref} sx={secondaryNavItemStyles} {...rest}>
@@ -24,16 +21,10 @@ const SecondaryNavItem = React.forwardRef<HTMLAnchorElement, SecondaryNavItemPro
         <Text scale={300} display="block" flex="1 1 auto" ml="xs">
           {title}
         </Text>
-        {variant === 'default' ? (
-          labelText && (
-            <Text ml="md" sx={navItemBadgeStyles}>
-              {labelText}
-            </Text>
-          )
-        ) : (
-          <Box width={16} height={16} ml="md">
-            <IconChevronRight fill="currentColor" aria-hidden size={16} />
-          </Box>
+        {labelText && (
+          <Text ml="md" sx={navItemBadgeStyles}>
+            {labelText}
+          </Text>
         )}
       </UnstyledAnchor>
     );

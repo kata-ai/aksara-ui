@@ -34,19 +34,6 @@ export const IsActive = () => {
   );
 };
 
-export const Disclosure = () => {
-  return (
-    <SecondaryNavItem
-      title="Flow"
-      icon={IconGrid}
-      href="https://www.youtube.com/watch?v=QjGYHf0jTRA"
-      target="_blank"
-      rel="noopener noreferrer"
-      variant="disclosure"
-    />
-  );
-};
-
 export const Disabled = () => {
   return <SecondaryNavItem title="Flow" icon={IconGrid} labelText="Label" disabled />;
 };
