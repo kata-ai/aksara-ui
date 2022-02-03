@@ -45,9 +45,9 @@ const initialSizes: Record<AvatarSize, string> = {
 };
 const offsetBadge: Record<AvatarSize, string> = {
   sm: '14px',
-  md: '20px',
-  lg: '28px',
-  xl: '48px',
+  md: '18px',
+  lg: '22px',
+  xl: '46px',
 };
 
 /** Resizable avatar component. */
