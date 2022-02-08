@@ -37,10 +37,10 @@ const paginationButtonBaseStyle: ComponentThemeScaleFn<{ theme: DefaultTheme; is
         '&:active': {
           backgroundColor: theme.colors.blue07,
         },
+        backgroundColor: theme.colors.blue07,
+        color: theme.colors.white,
       }
     : {}),
-  backgroundColor: isActive ? theme.colors.blue07 : theme.colors.grey01,
-  color: isActive ? theme.colors.white : 'inherit',
 });
 
 const paginationButton: ComponentThemeConfig = {

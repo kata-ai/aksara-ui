@@ -1,8 +1,27 @@
-import { InputCheckboxLabelProps, InputCheckboxLabel } from '../InputCheckbox';
+import * as React from 'react';
+import { Box, BoxProps } from '../../../../layout';
 
-export type InputRadioLabelProps = InputCheckboxLabelProps;
+export interface InputCheckboxLabelProps extends BoxProps, React.LabelHTMLAttributes<HTMLLabelElement> {
+  className?: string;
+  style?: React.CSSProperties;
+}
 
-const InputRadioLabel = InputCheckboxLabel;
+const InputRadioLabel: React.FC<InputCheckboxLabelProps> = ({ className, style, children, ...rest }) => {
+  return (
+    <Box
+      as="label"
+      display="inline-flex"
+      flexDirection="row"
+      alignItems="center"
+      cursor="pointer"
+      className={className}
+      style={style}
+      {...rest}
+    >
+      {children}
+    </Box>
+  );
+};
 
 InputRadioLabel.displayName = 'InputRadioLabel';
 
