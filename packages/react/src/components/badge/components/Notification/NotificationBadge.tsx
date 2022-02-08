@@ -8,7 +8,7 @@ export interface NotificationBadgeProps {
   /** Additional CSS properties to give to the component. */
   style?: React.CSSProperties;
   /** Value for notification badge */
-  value?: React.ReactNode;
+  value?: string | number;
 }
 
 const NotificationBadge: React.FC<NotificationBadgeProps> = ({ value, ...rest }) => {

@@ -30,7 +30,7 @@ export interface AvatarProps extends Omit<BoxProps, 'size'> {
   /** Presence option */
   presence?: React.ReactNode;
   /** Notification Badge  */
-  notificationBadge?: string;
+  notificationBadge?: string | number;
 }
 
 function iconSizes(size: AvatarSize = 'lg') {
