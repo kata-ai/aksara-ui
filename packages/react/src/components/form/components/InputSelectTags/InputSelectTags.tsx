@@ -24,7 +24,6 @@ export interface InputSelectTagsProps {
   /** Max height for list box */
   maxHeight?: string | number;
 }
-// TODO : onChange inputText will filter option
 
 function inputTagsVariant({
   focused,
@@ -57,21 +56,32 @@ function InputSelectTags({
   width = '100%',
   maxHeight,
 }: InputSelectTagsProps) {
+  const [optionTags, setOptionTags] = React.useState<string[]>([]);
+  React.useEffect(() => {
+    setOptionTags(items);
+  }, []);
   const [inputValue, setInputValue] = React.useState('');
   const [, setFocused] = React.useState(false);
 
   const tagInputRef = React.useRef<HTMLInputElement>(null);
   const inputTagsStyles = useComponentStyles('inputTags', { variant: inputTagsVariant({ errors, disabled }) });
 
-  const { getSelectedItemProps, getDropdownProps, addSelectedItem, removeSelectedItem, selectedItems } =
-    useMultipleSelection({ initialSelectedItems: value, onSelectedItemsChange: hadleInputChange });
-
-  const getFilteredItems = React.useMemo(
-    () =>
-      items.filter(item => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())),
-    [items]
-  );
-
+  const {
+    getSelectedItemProps,
+    getDropdownProps,
+    addSelectedItem,
+    removeSelectedItem,
+    selectedItems,
+    setSelectedItems,
+  } = useMultipleSelection({
+    initialSelectedItems: value,
+    onSelectedItemsChange: hadleInputChange,
+  });
+  const getFilteredItems = () =>
+    optionTags.filter(
+      item => selectedItems.indexOf(item) < 0 && item.toLowerCase().startsWith(inputValue.toLowerCase())
+    );
+  const filteredItems = getFilteredItems();
   const {
     isOpen,
     getLabelProps,
@@ -83,8 +93,10 @@ function InputSelectTags({
     getToggleButtonProps,
   } = useCombobox<string>({
     inputValue,
-    items: getFilteredItems,
-    onStateChange: ({ inputValue, type, selectedItem }) => {
+    items: filteredItems,
+    selectedItem: null,
+    onStateChange: state => {
+      const { inputValue, type, selectedItem } = state;
       switch (type) {
         case useCombobox.stateChangeTypes.InputChange:
           setInputValue(inputValue || '');
@@ -95,9 +107,7 @@ function InputSelectTags({
           if (selectedItem) {
             setInputValue('');
             addSelectedItem(selectedItem);
-            // selectItem(null);
           }
-
           break;
         default:
           break;
@@ -113,6 +123,36 @@ function InputSelectTags({
     if (tagInputRef.current) {
       tagInputRef.current.focus();
     }
+  };
+
+  const inputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const val = e.currentTarget.value || '';
+    if ((val && e.key === 'Enter') || e.key === ',') {
+      e.preventDefault(); // prevent accidently submiting form
+      if (optionTags.find(itemValue => val.toLowerCase() === itemValue.toLowerCase())) {
+        return;
+      }
+      const newTags = [...optionTags, val];
+      setOptionTags(newTags);
+      addSelectedItem(val);
+      setInputValue('');
+    } else if (e.key === 'Backspace' && !val) {
+      removeSelectedItem(selectedItems[selectedItems.length - 1]);
+    }
+  };
+
+  // TODO: add unit test pasteHandler
+  const pasteHandler = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const val = e.clipboardData.getData('text') || '';
+    if (!val) {
+      return;
+    }
+    const listTagRaw = val.split(/[\n,]+/).map(item => item.trim());
+    const selectedListTag = new Set([...selectedItems, ...listTagRaw]);
+    const newOptions = new Set([...optionTags, ...listTagRaw]);
+    setOptionTags(Array.from(newOptions));
+    setSelectedItems(Array.from(selectedListTag));
   };
   return (
     <Box width={width}>
@@ -176,6 +216,8 @@ function InputSelectTags({
                 {...getInputProps({
                   ref: tagInputRef,
                   ...getDropdownProps({ preventKeyAction: isOpen }),
+                  onKeyDown: inputKeyDown,
+                  onPaste: pasteHandler,
                 })}
               />
             </WrapItem>
@@ -196,18 +238,20 @@ function InputSelectTags({
           overflowY="hidden"
         >
           <ActionList px="sm" overflowY="auto" maxHeight={maxHeight} {...getMenuProps()}>
-            {isOpen && getFilteredItems.length !== 0 ? (
-              getFilteredItems.map((item: string, index: number) => (
-                <ActionListItem
-                  containerStyle={
-                    highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}
-                  }
-                  key={`${item}_${index}`}
-                  {...getItemProps({ item, index })}
-                >
-                  {item}
-                </ActionListItem>
-              ))
+            {isOpen && filteredItems.length !== 0 ? (
+              filteredItems.map((item: string, index: number) => {
+                return (
+                  <ActionListItem
+                    containerStyle={
+                      highlightedIndex === index ? { backgroundColor: 'greylight03', borderRadius: 'lg' } : {}
+                    }
+                    key={`${item}_${index}`}
+                    {...getItemProps({ item, index })}
+                  >
+                    {item}
+                  </ActionListItem>
+                );
+              })
             ) : (
               <ActionListItem>No items.</ActionListItem>
             )}
