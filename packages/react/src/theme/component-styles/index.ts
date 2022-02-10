@@ -26,6 +26,7 @@ import list from './list';
 import boxHeaderParty from './box-header-footer';
 import datepicker from './datepicker';
 import checkbox from './form/checkbox';
+import conversation from './conversation';
 /**
  * Custom theme props based on custom component variants.
  */
@@ -58,6 +59,7 @@ const componentStyles = {
   ...boxHeaderParty,
   ...datepicker,
   ...checkbox,
+  ...conversation,
 };
 
 export default componentStyles;
