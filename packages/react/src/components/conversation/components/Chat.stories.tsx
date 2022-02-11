@@ -10,6 +10,10 @@ export default {
       options: ['inbound', 'outbound'],
       control: { type: 'radio' },
     },
+    messageStatus: {
+      options: ['read', 'sent', 'pending', 'error'],
+      control: { type: 'radio' },
+    },
   },
   parameters: {
     backgrounds: {

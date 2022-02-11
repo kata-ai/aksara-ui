@@ -11,12 +11,23 @@
  * time - absolute bottor right corner
  */
 
+import { IconTickSingle, IconTickDouble, IconWarningRounded } from '@aksara-ui/icons';
 import * as React from 'react';
 import { Box } from '../../../../layout';
 import { useComponentStyles } from '../../../../system';
-import { LoveIcon } from '../LoveIcon';
+import { LoveIcon } from '../icon/LoveIcon';
 
 export type MessageVariant = 'inbound' | 'outbound';
+
+// eslint-disable-next-line no-shadow
+enum MessageStatusEnum {
+  read = 'read',
+  sent = 'sent',
+  pending = 'pending',
+  error = 'error',
+}
+
+export type MessageStatus = `${MessageStatusEnum}`;
 
 export interface BaseMessageBoxProps {
   like?: boolean;
@@ -29,7 +40,7 @@ export interface InboundMessageBoxProps extends BaseMessageBoxProps {
 
 export interface OutboundMessageBoxProps extends BaseMessageBoxProps {
   variant: 'outbound';
-  read: boolean;
+  messageStatus: MessageStatus;
 }
 
 export type MessageBoxProps = InboundMessageBoxProps | OutboundMessageBoxProps;
@@ -43,17 +54,31 @@ export const MessageBox: React.FC<MessageBoxProps> = props => {
 
   const readStatus = () => {
     if (props.variant === 'outbound') {
-      const { read } = props;
-      if (read) {
-        return (
-          <Box position={'absolute'} right={0} bottom={8} display={'inline-block'} width={16} height={16}>
-            v
-          </Box>
-        );
+      const { messageStatus } = props;
+      let messageStatusIcon;
+      switch (messageStatus) {
+        case MessageStatusEnum.read: {
+          messageStatusIcon = <IconTickDouble aria-hidden fill="#006FE6" size={16} />;
+          break;
+        }
+        case MessageStatusEnum.sent: {
+          messageStatusIcon = <IconTickDouble aria-hidden fill="#6A7A8A" size={16} />;
+          break;
+        }
+        case MessageStatusEnum.pending: {
+          messageStatusIcon = <IconTickSingle aria-hidden fill="#6A7A8A" size={16} />;
+          break;
+        }
+        case MessageStatusEnum.error: {
+          messageStatusIcon = <IconWarningRounded size={16} aria-hidden fill="#FF6150" />;
+          break;
+        }
+        default:
+          break;
       }
       return (
-        <Box position={'absolute'} right={0} bottom={8} display={'inline-block'} width={16} height={16}>
-          v
+        <Box position={'absolute'} right={8} bottom={8} display={'inline-block'} width={16} height={16}>
+          {messageStatusIcon}
         </Box>
       );
     }
