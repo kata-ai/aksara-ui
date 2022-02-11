@@ -41,6 +41,10 @@ export interface InboundMessageBoxProps extends BaseMessageBoxProps {
 export interface OutboundMessageBoxProps extends BaseMessageBoxProps {
   variant: 'outbound';
   messageStatus: MessageStatus;
+  user: {
+    name: string;
+    src?: string;
+  };
 }
 
 export type MessageBoxProps = InboundMessageBoxProps | OutboundMessageBoxProps;

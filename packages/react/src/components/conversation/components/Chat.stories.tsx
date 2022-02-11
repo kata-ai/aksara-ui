@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react';
 import * as React from 'react';
-import { Chat, ChatProps } from './chat/Chat';
+import { Chat, OutboundChat } from './chat/Chat';
 
 export default {
   title: 'Core/Components/Conversation',
@@ -22,7 +22,7 @@ export default {
   },
 };
 
-export const MessageText: Story<ChatProps> = props => {
+export const MessageText: Story<OutboundChat> = props => {
   return <Chat {...props} />;
 };
 
@@ -31,5 +31,9 @@ MessageText.args = {
   like: true,
   data: { message: 'Hello World' },
   time: new Date(),
-  variant: 'inbound',
+  variant: 'outbound',
+  user: {
+    name: 'Rahmad ',
+  },
+  messageStatus: 'read',
 };

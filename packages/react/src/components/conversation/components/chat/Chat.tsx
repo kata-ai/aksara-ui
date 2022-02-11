@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Stack } from '../../../../layout';
+import { Avatar } from '../../../avatar';
 import { BaseMessageBoxProps, InboundMessageBoxProps, MessageBox, OutboundMessageBoxProps } from './MessageBox';
 import { TextMessage } from './TextMessage';
 
@@ -30,10 +32,17 @@ export type ChatProps = InboundChat | OutboundChat;
 export const Chat = ({ type, data, ...rest }: ChatProps) => {
   switch (type) {
     case MessageTypeValue.text: {
+      let avatar;
+      if (rest.variant === 'outbound') {
+        avatar = <Avatar name={rest.user.name} src={rest.user.src} size="md" />;
+      }
       return (
-        <MessageBox {...rest}>
-          <TextMessage variant={rest.variant}>{data.message}</TextMessage>
-        </MessageBox>
+        <Stack direction="horizontal" spacing={'xs'}>
+          <MessageBox {...rest}>
+            <TextMessage variant={rest.variant}>{data.message}</TextMessage>
+          </MessageBox>
+          {avatar}
+        </Stack>
       );
     }
     default:
