@@ -1,0 +1,15 @@
+import * as React from 'react';
+import { BaseIconProps, iconDefaultProps } from '@aksara-ui/icons';
+
+// eslint-disable-next-line import/prefer-default-export
+export const CopyIcon: React.FC<BaseIconProps> = ({ size, fill, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 16 16" fill="none" {...props} xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M12.6667 2H6C5.64638 2 5.30724 2.14048 5.05719 2.39052C4.80714 2.64057 4.66667 2.97971 4.66667 3.33333V4.66667H3.33333C2.97971 4.66667 2.64057 4.80714 2.39052 5.05719C2.14048 5.30724 2 5.64638 2 6V12.6667C2 13.0203 2.14048 13.3594 2.39052 13.6095C2.64057 13.8595 2.97971 14 3.33333 14H10C10.3536 14 10.6928 13.8595 10.9428 13.6095C11.1929 13.3594 11.3333 13.0203 11.3333 12.6667V11.3333H12.6667C13.0203 11.3333 13.3594 11.1929 13.6095 10.9428C13.8595 10.6928 14 10.3536 14 10V3.33333C14 2.97971 13.8595 2.64057 13.6095 2.39052C13.3594 2.14048 13.0203 2 12.6667 2ZM12.6667 10H11.3333V6C11.3333 5.64638 11.1929 5.30724 10.9428 5.05719C10.6928 4.80714 10.3536 4.66667 10 4.66667H6V3.33333H12.6667V10Z"
+      fill={fill}
+    />
+  </svg>
+);
+CopyIcon.defaultProps = {
+  ...iconDefaultProps,
+};
