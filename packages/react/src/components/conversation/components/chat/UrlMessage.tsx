@@ -3,6 +3,6 @@ import { Box } from '../../../../layout';
 
 // TODO
 // eslint-disable-next-line import/prefer-default-export
-export const VideoMessage = () => {
-  return <Box>videoMessage</Box>;
+export const UrlMessage = () => {
+  return <Box>urlMessage</Box>;
 };
